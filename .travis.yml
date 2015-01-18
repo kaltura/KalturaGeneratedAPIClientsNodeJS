@@ -1,4 +1,4 @@
 language: node_js
 node_js:
       - "0.10"
-script: cd node/tests && nodejs testme.js
+script: cd node/tests && node testme.js

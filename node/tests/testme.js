@@ -11,14 +11,12 @@
 
  var kc = require('../KalturaClient');
  var ktypes = require('../KalturaTypes');
-// var config = require ('./config.js');
+ var config = require ('./config.js');
 
- var partnerId = 101;
- var secret = '6aa758517fc892cf082185208a203116';
- var conf = new kc.KalturaConfiguration(partnerId);
- conf.serviceUrl = 'http://54.159.220.35/' ;
+ var kaltura_conf = new kc.KalturaConfiguration(config.partnerId);
+ kaltura_conf.serviceUrl = config.serviceUrl ;
 
- var client = new kc.KalturaClient(conf);
+ var client = new kc.KalturaClient(kaltura_conf);
  var userId=null;
 
 
@@ -26,6 +24,5 @@
 
  var expiry = null;
  var privileges = null;
-// var result = client.session.start(cb, config.secret, userId, type, config.partnerId, expiry, privileges);
- var ks = client.session.start(cb, secret, userId, type, partnerId, expiry, privileges);
+ var ks = client.session.start(cb, config.secret, config.userId, type, config.partnerId, expiry, privileges);
 

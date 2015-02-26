@@ -2,8 +2,8 @@
  var minus2_secret = 'a16c33ec08a992f49996a611ddcd24ac';
  var minus2_admin_secret = 'a7feada5ebfaddc0494648b7f79ed3aa';
  var partner_id = 101;
- var secret = '6aa758517fc892cf082185208a203116';
- var admin_secret = '0567e52a030ebc2ccb73b386aa1800e0';
+ var secret = '9c9f8d1cbb6bab63f3ac8450fcdb33f7';
+ var admin_secret = 'e068809c752fb5f311217eb3da3bc74d';
  var service_url = 'http://54.159.220.35/' ;
  var user_id = null;
 

@@ -8,7 +8,7 @@
 // to do with audio, video, and animation what Wiki platfroms allow them to do with
 // text.
 //
-// Copyright (C) 2006-2011  Kaltura Inc.
+// Copyright (C) 2006-2015  Kaltura Inc.
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as
@@ -484,104 +484,6 @@ function KalturaAttachmentAssetListResponse(){
 module.exports.KalturaAttachmentAssetListResponse = KalturaAttachmentAssetListResponse;
 
 util.inherits(KalturaAttachmentAssetListResponse, kaltura.KalturaObjectBase);
-
-
-/**
- */
-function KalturaAuditTrailInfo(){
-	KalturaAuditTrailInfo.super_.call(this);
-}
-module.exports.KalturaAuditTrailInfo = KalturaAuditTrailInfo;
-
-util.inherits(KalturaAuditTrailInfo, kaltura.KalturaObjectBase);
-
-
-/**
- * @param id int  (readOnly).
- * @param createdAt int  (readOnly).
- * @param parsedAt int Indicates when the data was parsed (readOnly).
- * @param status int  (readOnly).
- * @param auditObjectType string .
- * @param objectId string .
- * @param relatedObjectId string .
- * @param relatedObjectType string .
- * @param entryId string .
- * @param masterPartnerId int  (readOnly).
- * @param partnerId int  (readOnly).
- * @param requestId string  (readOnly).
- * @param userId string .
- * @param action string .
- * @param data KalturaAuditTrailInfo .
- * @param ks string  (readOnly).
- * @param context int  (readOnly).
- * @param entryPoint string The API service and action that called and caused this audit (readOnly).
- * @param serverName string  (readOnly).
- * @param ipAddress string  (readOnly).
- * @param userAgent string  (readOnly).
- * @param clientTag string .
- * @param description string .
- * @param errorDescription string  (readOnly).
- */
-function KalturaAuditTrail(){
-	KalturaAuditTrail.super_.call(this);
-	this.id = null;
-	this.createdAt = null;
-	this.parsedAt = null;
-	this.status = null;
-	this.auditObjectType = null;
-	this.objectId = null;
-	this.relatedObjectId = null;
-	this.relatedObjectType = null;
-	this.entryId = null;
-	this.masterPartnerId = null;
-	this.partnerId = null;
-	this.requestId = null;
-	this.userId = null;
-	this.action = null;
-	this.data = null;
-	this.ks = null;
-	this.context = null;
-	this.entryPoint = null;
-	this.serverName = null;
-	this.ipAddress = null;
-	this.userAgent = null;
-	this.clientTag = null;
-	this.description = null;
-	this.errorDescription = null;
-}
-module.exports.KalturaAuditTrail = KalturaAuditTrail;
-
-util.inherits(KalturaAuditTrail, kaltura.KalturaObjectBase);
-
-
-/**
- * @param descriptor string .
- * @param oldValue string .
- * @param newValue string .
- */
-function KalturaAuditTrailChangeItem(){
-	KalturaAuditTrailChangeItem.super_.call(this);
-	this.descriptor = null;
-	this.oldValue = null;
-	this.newValue = null;
-}
-module.exports.KalturaAuditTrailChangeItem = KalturaAuditTrailChangeItem;
-
-util.inherits(KalturaAuditTrailChangeItem, kaltura.KalturaObjectBase);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaAuditTrailListResponse(){
-	KalturaAuditTrailListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaAuditTrailListResponse = KalturaAuditTrailListResponse;
-
-util.inherits(KalturaAuditTrailListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -1925,100 +1827,6 @@ util.inherits(KalturaDocumentListResponse, kaltura.KalturaObjectBase);
 
 
 /**
- * @param id int  (readOnly).
- * @param partnerId int  (insertOnly).
- * @param name string .
- * @param systemName string .
- * @param description string .
- * @param provider string .
- * @param status int .
- * @param scenario string .
- * @param licenseType string .
- * @param licenseExpirationPolicy int .
- * @param duration int Duration in days the license is effective.
- * @param createdAt int  (readOnly).
- * @param updatedAt int  (readOnly).
- */
-function KalturaDrmPolicy(){
-	KalturaDrmPolicy.super_.call(this);
-	this.id = null;
-	this.partnerId = null;
-	this.name = null;
-	this.systemName = null;
-	this.description = null;
-	this.provider = null;
-	this.status = null;
-	this.scenario = null;
-	this.licenseType = null;
-	this.licenseExpirationPolicy = null;
-	this.duration = null;
-	this.createdAt = null;
-	this.updatedAt = null;
-}
-module.exports.KalturaDrmPolicy = KalturaDrmPolicy;
-
-util.inherits(KalturaDrmPolicy, kaltura.KalturaObjectBase);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaDrmPolicyListResponse(){
-	KalturaDrmPolicyListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaDrmPolicyListResponse = KalturaDrmPolicyListResponse;
-
-util.inherits(KalturaDrmPolicyListResponse, kaltura.KalturaObjectBase);
-
-
-/**
- * @param id int  (readOnly).
- * @param partnerId int  (insertOnly).
- * @param name string .
- * @param description string .
- * @param provider string .
- * @param status int .
- * @param licenseServerUrl string .
- * @param defaultPolicy string .
- * @param createdAt int  (readOnly).
- * @param updatedAt int  (readOnly).
- */
-function KalturaDrmProfile(){
-	KalturaDrmProfile.super_.call(this);
-	this.id = null;
-	this.partnerId = null;
-	this.name = null;
-	this.description = null;
-	this.provider = null;
-	this.status = null;
-	this.licenseServerUrl = null;
-	this.defaultPolicy = null;
-	this.createdAt = null;
-	this.updatedAt = null;
-}
-module.exports.KalturaDrmProfile = KalturaDrmProfile;
-
-util.inherits(KalturaDrmProfile, kaltura.KalturaObjectBase);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaDrmProfileListResponse(){
-	KalturaDrmProfileListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaDrmProfileListResponse = KalturaDrmProfileListResponse;
-
-util.inherits(KalturaDrmProfileListResponse, kaltura.KalturaObjectBase);
-
-
-/**
  * @param handlerType string  (readOnly).
  */
 function KalturaDropFolderFileHandlerConfig(){
@@ -2830,6 +2638,8 @@ util.inherits(KalturaFlavorAssetListResponse, kaltura.KalturaObjectBase);
  * @param multiStream string .
  * @param anamorphicPixels float .
  * @param isAvoidForcedKeyFrames int .
+ * @param isCropIMX int .
+ * @param optimizationPolicy int .
  * @param maxFrameRate int .
  * @param videoConstantBitrate int .
  * @param videoBitrateTolerance int .
@@ -2866,6 +2676,8 @@ function KalturaFlavorParams(){
 	this.multiStream = null;
 	this.anamorphicPixels = null;
 	this.isAvoidForcedKeyFrames = null;
+	this.isCropIMX = null;
+	this.optimizationPolicy = null;
 	this.maxFrameRate = null;
 	this.videoConstantBitrate = null;
 	this.videoBitrateTolerance = null;
@@ -3077,6 +2889,42 @@ util.inherits(KalturaGenericDistributionProviderListResponse, kaltura.KalturaObj
 
 
 /**
+ * @param userId string  (insertOnly).
+ * @param groupId string  (insertOnly).
+ * @param status int  (readOnly).
+ * @param partnerId int  (readOnly).
+ * @param createdAt int Creation date as Unix timestamp (In seconds) (readOnly).
+ * @param updatedAt int Last update date as Unix timestamp (In seconds) (readOnly).
+ */
+function KalturaGroupUser(){
+	KalturaGroupUser.super_.call(this);
+	this.userId = null;
+	this.groupId = null;
+	this.status = null;
+	this.partnerId = null;
+	this.createdAt = null;
+	this.updatedAt = null;
+}
+module.exports.KalturaGroupUser = KalturaGroupUser;
+
+util.inherits(KalturaGroupUser, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param objects array  (readOnly).
+ * @param totalCount int  (readOnly).
+ */
+function KalturaGroupUserListResponse(){
+	KalturaGroupUserListResponse.super_.call(this);
+	this.objects = null;
+	this.totalCount = null;
+}
+module.exports.KalturaGroupUserListResponse = KalturaGroupUserListResponse;
+
+util.inherits(KalturaGroupUserListResponse, kaltura.KalturaObjectBase);
+
+
+/**
  */
 function KalturaHttpNotificationData(){
 	KalturaHttpNotificationData.super_.call(this);
@@ -3087,15 +2935,43 @@ util.inherits(KalturaHttpNotificationData, kaltura.KalturaObjectBase);
 
 
 /**
- * @param value int .
+ * @param partner_id int .
+ * @param valid_until int .
+ * @param partner_pattern string .
+ * @param type int .
+ * @param error string .
+ * @param rand int .
+ * @param user string .
+ * @param privileges string .
  */
-function KalturaIntegerValue(){
-	KalturaIntegerValue.super_.call(this);
+function KalturaInternalToolsSession(){
+	KalturaInternalToolsSession.super_.call(this);
+	this.partner_id = null;
+	this.valid_until = null;
+	this.partner_pattern = null;
+	this.type = null;
+	this.error = null;
+	this.rand = null;
+	this.user = null;
+	this.privileges = null;
+}
+module.exports.KalturaInternalToolsSession = KalturaInternalToolsSession;
+
+util.inherits(KalturaInternalToolsSession, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param key string .
+ * @param value bool .
+ */
+function KalturaKeyBooleanValue(){
+	KalturaKeyBooleanValue.super_.call(this);
+	this.key = null;
 	this.value = null;
 }
-module.exports.KalturaIntegerValue = KalturaIntegerValue;
+module.exports.KalturaKeyBooleanValue = KalturaKeyBooleanValue;
 
-util.inherits(KalturaIntegerValue, KalturaValue);
+util.inherits(KalturaKeyBooleanValue, kaltura.KalturaObjectBase);
 
 
 /**
@@ -3135,6 +3011,18 @@ util.inherits(KalturaLiveStreamPushPublishConfiguration, kaltura.KalturaObjectBa
 
 
 /**
+ * @param shouldCopyEntitlement int .
+ */
+function KalturaLiveEntryRecordingOptions(){
+	KalturaLiveEntryRecordingOptions.super_.call(this);
+	this.shouldCopyEntitlement = null;
+}
+module.exports.KalturaLiveEntryRecordingOptions = KalturaLiveEntryRecordingOptions;
+
+util.inherits(KalturaLiveEntryRecordingOptions, kaltura.KalturaObjectBase);
+
+
+/**
  * @param offlineMessage string The message to be presented when the stream is offline.
  * @param recordStatus int Recording Status Enabled/Disabled (insertOnly).
  * @param dvrStatus int DVR Status Enabled/Disabled (insertOnly).
@@ -3147,6 +3035,7 @@ util.inherits(KalturaLiveStreamPushPublishConfiguration, kaltura.KalturaObjectBa
  * @param firstBroadcast int The first time in which the entry was broadcast (readOnly).
  * @param lastBroadcast int The Last time in which the entry was broadcast (readOnly).
  * @param currentBroadcastStartTime float The time (unix timestamp in milliseconds) in which the entry broadcast started or 0 when the entry is off the air.
+ * @param recordingOptions KalturaLiveEntryRecordingOptions  (insertOnly).
  */
 function KalturaLiveEntry(){
 	KalturaLiveEntry.super_.call(this);
@@ -3162,6 +3051,7 @@ function KalturaLiveEntry(){
 	this.firstBroadcast = null;
 	this.lastBroadcast = null;
 	this.currentBroadcastStartTime = null;
+	this.recordingOptions = null;
 }
 module.exports.KalturaLiveEntry = KalturaLiveEntry;
 
@@ -3285,6 +3175,7 @@ util.inherits(KalturaLiveReportExportResponse, kaltura.KalturaObjectBase);
  * @param fromTime int .
  * @param toTime int .
  * @param live int .
+ * @param orderBy string .
  */
 function KalturaLiveReportInputFilter(){
 	KalturaLiveReportInputFilter.super_.call(this);
@@ -3292,6 +3183,7 @@ function KalturaLiveReportInputFilter(){
 	this.fromTime = null;
 	this.toTime = null;
 	this.live = null;
+	this.orderBy = null;
 }
 module.exports.KalturaLiveReportInputFilter = KalturaLiveReportInputFilter;
 
@@ -3320,6 +3212,36 @@ function KalturaLiveStats(){
 module.exports.KalturaLiveStats = KalturaLiveStats;
 
 util.inherits(KalturaLiveStats, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param partnerId int .
+ * @param entryId string .
+ * @param eventType int .
+ * @param sessionId string a unique string generated by the client that will represent the client-side session: the primary component will pass it on to other components that sprout from it.
+ * @param eventIndex int incremental sequence of the event.
+ * @param bufferTime int buffer time in seconds from the last 10 seconds.
+ * @param bitrate int bitrate used in the last 10 seconds.
+ * @param referrer string the referrer of the client.
+ * @param isLive bool .
+ * @param deliveryType string delivery type used for this stream.
+ */
+function KalturaLiveStatsEvent(){
+	KalturaLiveStatsEvent.super_.call(this);
+	this.partnerId = null;
+	this.entryId = null;
+	this.eventType = null;
+	this.sessionId = null;
+	this.eventIndex = null;
+	this.bufferTime = null;
+	this.bitrate = null;
+	this.referrer = null;
+	this.isLive = null;
+	this.deliveryType = null;
+}
+module.exports.KalturaLiveStatsEvent = KalturaLiveStatsEvent;
+
+util.inherits(KalturaLiveStatsEvent, kaltura.KalturaObjectBase);
 
 
 /**
@@ -3477,6 +3399,8 @@ util.inherits(KalturaLiveStreamListResponse, kaltura.KalturaObjectBase);
  * @param rootEntryIdEqual string .
  * @param rootEntryIdIn string .
  * @param parentEntryIdEqual string .
+ * @param entitledUsersEditMatchAnd string .
+ * @param entitledUsersPublishMatchAnd string .
  * @param tagsNameMultiLikeOr string .
  * @param tagsAdminTagsMultiLikeOr string .
  * @param tagsAdminTagsNameMultiLikeOr string .
@@ -3553,6 +3477,8 @@ function KalturaBaseEntryBaseFilter(){
 	this.rootEntryIdEqual = null;
 	this.rootEntryIdIn = null;
 	this.parentEntryIdEqual = null;
+	this.entitledUsersEditMatchAnd = null;
+	this.entitledUsersPublishMatchAnd = null;
 	this.tagsNameMultiLikeOr = null;
 	this.tagsAdminTagsMultiLikeOr = null;
 	this.tagsAdminTagsNameMultiLikeOr = null;
@@ -4012,42 +3938,6 @@ util.inherits(KalturaModerationFlagListResponse, kaltura.KalturaObjectBase);
 
 
 /**
- */
-function KalturaObject(){
-	KalturaObject.super_.call(this);
-}
-module.exports.KalturaObject = KalturaObject;
-
-util.inherits(KalturaObject, kaltura.KalturaObjectBase);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaObjectListResponse(){
-	KalturaObjectListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaObjectListResponse = KalturaObjectListResponse;
-
-util.inherits(KalturaObjectListResponse, kaltura.KalturaObjectBase);
-
-
-/**
- * @param type string  (readOnly).
- */
-function KalturaObjectTask(){
-	KalturaObjectTask.super_.call(this);
-	this.type = null;
-}
-module.exports.KalturaObjectTask = KalturaObjectTask;
-
-util.inherits(KalturaObjectTask, kaltura.KalturaObjectBase);
-
-
-/**
  * @param id string .
  * @param label string .
  * @param flashvars array .
@@ -4416,116 +4306,6 @@ util.inherits(KalturaPermissionListResponse, kaltura.KalturaObjectBase);
 
 
 /**
- * @param type string The type of the play enabler.
- */
-function KalturaPlayReadyAnalogVideoOPIdHolder(){
-	KalturaPlayReadyAnalogVideoOPIdHolder.super_.call(this);
-	this.type = null;
-}
-module.exports.KalturaPlayReadyAnalogVideoOPIdHolder = KalturaPlayReadyAnalogVideoOPIdHolder;
-
-util.inherits(KalturaPlayReadyAnalogVideoOPIdHolder, kaltura.KalturaObjectBase);
-
-
-/**
- * @param keyId string Guid - key id of the specific content.
- * @param contentKey string License content key 64 bit encoded.
- */
-function KalturaPlayReadyContentKey(){
-	KalturaPlayReadyContentKey.super_.call(this);
-	this.keyId = null;
-	this.contentKey = null;
-}
-module.exports.KalturaPlayReadyContentKey = KalturaPlayReadyContentKey;
-
-util.inherits(KalturaPlayReadyContentKey, kaltura.KalturaObjectBase);
-
-
-/**
- * @param type string The type of the copy enabler.
- */
-function KalturaPlayReadyCopyEnablerHolder(){
-	KalturaPlayReadyCopyEnablerHolder.super_.call(this);
-	this.type = null;
-}
-module.exports.KalturaPlayReadyCopyEnablerHolder = KalturaPlayReadyCopyEnablerHolder;
-
-util.inherits(KalturaPlayReadyCopyEnablerHolder, kaltura.KalturaObjectBase);
-
-
-/**
- * @param type string The type of the play enabler.
- */
-function KalturaPlayReadyDigitalAudioOPIdHolder(){
-	KalturaPlayReadyDigitalAudioOPIdHolder.super_.call(this);
-	this.type = null;
-}
-module.exports.KalturaPlayReadyDigitalAudioOPIdHolder = KalturaPlayReadyDigitalAudioOPIdHolder;
-
-util.inherits(KalturaPlayReadyDigitalAudioOPIdHolder, kaltura.KalturaObjectBase);
-
-
-/**
- */
-function KalturaPlayReadyRight(){
-	KalturaPlayReadyRight.super_.call(this);
-}
-module.exports.KalturaPlayReadyRight = KalturaPlayReadyRight;
-
-util.inherits(KalturaPlayReadyRight, kaltura.KalturaObjectBase);
-
-
-/**
- * @param gracePeriod int .
- * @param licenseRemovalPolicy int .
- * @param licenseRemovalDuration int .
- * @param minSecurityLevel int .
- * @param rights array .
- */
-function KalturaPlayReadyPolicy(){
-	KalturaPlayReadyPolicy.super_.call(this);
-	this.gracePeriod = null;
-	this.licenseRemovalPolicy = null;
-	this.licenseRemovalDuration = null;
-	this.minSecurityLevel = null;
-	this.rights = null;
-}
-module.exports.KalturaPlayReadyPolicy = KalturaPlayReadyPolicy;
-
-util.inherits(KalturaPlayReadyPolicy, KalturaDrmPolicy);
-
-
-/**
- * @param policy KalturaPlayReadyPolicy PlayReady policy object.
- * @param beginDate int License begin date.
- * @param expirationDate int License expiration date.
- * @param removalDate int License removal date.
- */
-function KalturaPlayReadyLicenseDetails(){
-	KalturaPlayReadyLicenseDetails.super_.call(this);
-	this.policy = null;
-	this.beginDate = null;
-	this.expirationDate = null;
-	this.removalDate = null;
-}
-module.exports.KalturaPlayReadyLicenseDetails = KalturaPlayReadyLicenseDetails;
-
-util.inherits(KalturaPlayReadyLicenseDetails, kaltura.KalturaObjectBase);
-
-
-/**
- * @param type string The type of the play enabler.
- */
-function KalturaPlayReadyPlayEnablerHolder(){
-	KalturaPlayReadyPlayEnablerHolder.super_.call(this);
-	this.type = null;
-}
-module.exports.KalturaPlayReadyPlayEnablerHolder = KalturaPlayReadyPlayEnablerHolder;
-
-util.inherits(KalturaPlayReadyPlayEnablerHolder, kaltura.KalturaObjectBase);
-
-
-/**
  * @param playlistContent string Content of the playlist -
  * XML if the playlistType is dynamic
  * text if the playlistType is static
@@ -4623,6 +4403,32 @@ util.inherits(KalturaRemoteStorageResource, KalturaUrlResource);
 
 
 /**
+ * @param id int Report id (readOnly).
+ * @param partnerId int Partner id associated with the report.
+ * @param name string Report name.
+ * @param systemName string Used to identify system reports in a friendly way.
+ * @param description string Report description.
+ * @param query string Report query.
+ * @param createdAt int Creation date as Unix timestamp (In seconds) (readOnly).
+ * @param updatedAt int Last update date as Unix timestamp (In seconds) (readOnly).
+ */
+function KalturaReport(){
+	KalturaReport.super_.call(this);
+	this.id = null;
+	this.partnerId = null;
+	this.name = null;
+	this.systemName = null;
+	this.description = null;
+	this.query = null;
+	this.createdAt = null;
+	this.updatedAt = null;
+}
+module.exports.KalturaReport = KalturaReport;
+
+util.inherits(KalturaReport, kaltura.KalturaObjectBase);
+
+
+/**
  * @param id string .
  * @param data string .
  */
@@ -4669,6 +4475,20 @@ util.inherits(KalturaReportInputBaseFilter, kaltura.KalturaObjectBase);
 
 
 /**
+ * @param objects array  (readOnly).
+ * @param totalCount int  (readOnly).
+ */
+function KalturaReportListResponse(){
+	KalturaReportListResponse.super_.call(this);
+	this.objects = null;
+	this.totalCount = null;
+}
+module.exports.KalturaReportListResponse = KalturaReportListResponse;
+
+util.inherits(KalturaReportListResponse, kaltura.KalturaObjectBase);
+
+
+/**
  * @param columns string .
  * @param results array .
  */
@@ -4710,56 +4530,6 @@ function KalturaReportTotal(){
 module.exports.KalturaReportTotal = KalturaReportTotal;
 
 util.inherits(KalturaReportTotal, kaltura.KalturaObjectBase);
-
-
-/**
- * @param id int  (readOnly).
- * @param partnerId int  (readOnly).
- * @param name string .
- * @param systemName string .
- * @param description string .
- * @param status int .
- * @param objectFilterEngineType string The type of engine to use to list objects using the given "objectFilter".
- * @param objectFilter KalturaFilter A filter object (inherits KalturaFilter) that is used to list objects for scheduled tasks.
- * @param objectTasks array A list of tasks to execute on the founded objects.
- * @param createdAt int  (readOnly).
- * @param updatedAt int  (readOnly).
- * @param lastExecutionStartedAt int .
- * @param maxTotalCountAllowed int The maximum number of result count allowed to be processed by this profile per execution.
- */
-function KalturaScheduledTaskProfile(){
-	KalturaScheduledTaskProfile.super_.call(this);
-	this.id = null;
-	this.partnerId = null;
-	this.name = null;
-	this.systemName = null;
-	this.description = null;
-	this.status = null;
-	this.objectFilterEngineType = null;
-	this.objectFilter = null;
-	this.objectTasks = null;
-	this.createdAt = null;
-	this.updatedAt = null;
-	this.lastExecutionStartedAt = null;
-	this.maxTotalCountAllowed = null;
-}
-module.exports.KalturaScheduledTaskProfile = KalturaScheduledTaskProfile;
-
-util.inherits(KalturaScheduledTaskProfile, kaltura.KalturaObjectBase);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaScheduledTaskProfileListResponse(){
-	KalturaScheduledTaskProfileListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaScheduledTaskProfileListResponse = KalturaScheduledTaskProfileListResponse;
-
-util.inherits(KalturaScheduledTaskProfileListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -5069,6 +4839,9 @@ util.inherits(KalturaStatsKmcEvent, kaltura.KalturaObjectBase);
  * @param createFileLink bool Indicates to the local file transfer manager to create a link to the file instead of copying it.
  * @param rules array Holds storage profile export rules.
  * @param deliveryProfileIds array Delivery profile ids.
+ * @param privateKey string .
+ * @param publicKey string .
+ * @param passPhrase string .
  */
 function KalturaStorageProfile(){
 	KalturaStorageProfile.super_.call(this);
@@ -5100,6 +4873,9 @@ function KalturaStorageProfile(){
 	this.createFileLink = null;
 	this.rules = null;
 	this.deliveryProfileIds = null;
+	this.privateKey = null;
+	this.publicKey = null;
+	this.passPhrase = null;
 }
 module.exports.KalturaStorageProfile = KalturaStorageProfile;
 
@@ -5134,6 +4910,232 @@ function KalturaSyndicationFeedEntryCount(){
 module.exports.KalturaSyndicationFeedEntryCount = KalturaSyndicationFeedEntryCount;
 
 util.inherits(KalturaSyndicationFeedEntryCount, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param type string .
+ * @param max float .
+ */
+function KalturaSystemPartnerLimit(){
+	KalturaSystemPartnerLimit.super_.call(this);
+	this.type = null;
+	this.max = null;
+}
+module.exports.KalturaSystemPartnerLimit = KalturaSystemPartnerLimit;
+
+util.inherits(KalturaSystemPartnerLimit, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param id int  (readOnly).
+ * @param partnerName string .
+ * @param description string .
+ * @param adminName string .
+ * @param adminEmail string .
+ * @param host string .
+ * @param cdnHost string .
+ * @param thumbnailHost string .
+ * @param partnerPackage int .
+ * @param monitorUsage int .
+ * @param moderateContent bool .
+ * @param storageDeleteFromKaltura bool .
+ * @param storageServePriority int .
+ * @param kmcVersion int .
+ * @param restrictThumbnailByKs int .
+ * @param supportAnimatedThumbnails bool .
+ * @param defThumbOffset int .
+ * @param defThumbDensity int .
+ * @param userSessionRoleId int .
+ * @param adminSessionRoleId int .
+ * @param alwaysAllowedPermissionNames string .
+ * @param importRemoteSourceForConvert bool .
+ * @param permissions array .
+ * @param notificationsConfig string .
+ * @param allowMultiNotification bool .
+ * @param loginBlockPeriod int .
+ * @param numPrevPassToKeep int .
+ * @param passReplaceFreq int .
+ * @param isFirstLogin bool .
+ * @param partnerGroupType int .
+ * @param partnerParentId int .
+ * @param limits array .
+ * @param streamerType string http/rtmp/hdnetwork.
+ * @param mediaProtocol string http/https, rtmp/rtmpe.
+ * @param extendedFreeTrailExpiryReason string .
+ * @param extendedFreeTrailExpiryDate int Unix timestamp (In seconds).
+ * @param extendedFreeTrail int .
+ * @param crmId string .
+ * @param referenceId string .
+ * @param crmLink string .
+ * @param verticalClasiffication string .
+ * @param partnerPackageClassOfService string .
+ * @param enableBulkUploadNotificationsEmails bool .
+ * @param deliveryProfileIds string .
+ * @param enforceDelivery bool .
+ * @param bulkUploadNotificationsEmail string .
+ * @param internalUse bool .
+ * @param defaultLiveStreamEntrySourceType string .
+ * @param liveStreamProvisionParams string .
+ * @param autoModerateEntryFilter KalturaBaseEntryFilter .
+ * @param logoutUrl string .
+ * @param defaultEntitlementEnforcement bool .
+ * @param cacheFlavorVersion int .
+ * @param apiAccessControlId int .
+ * @param defaultDeliveryType string .
+ * @param defaultEmbedCodeType string .
+ * @param customDeliveryTypes array .
+ * @param restrictEntryByMetadata bool .
+ * @param language string .
+ * @param audioThumbEntryId string .
+ * @param liveThumbEntryId string .
+ */
+function KalturaSystemPartnerConfiguration(){
+	KalturaSystemPartnerConfiguration.super_.call(this);
+	this.id = null;
+	this.partnerName = null;
+	this.description = null;
+	this.adminName = null;
+	this.adminEmail = null;
+	this.host = null;
+	this.cdnHost = null;
+	this.thumbnailHost = null;
+	this.partnerPackage = null;
+	this.monitorUsage = null;
+	this.moderateContent = null;
+	this.storageDeleteFromKaltura = null;
+	this.storageServePriority = null;
+	this.kmcVersion = null;
+	this.restrictThumbnailByKs = null;
+	this.supportAnimatedThumbnails = null;
+	this.defThumbOffset = null;
+	this.defThumbDensity = null;
+	this.userSessionRoleId = null;
+	this.adminSessionRoleId = null;
+	this.alwaysAllowedPermissionNames = null;
+	this.importRemoteSourceForConvert = null;
+	this.permissions = null;
+	this.notificationsConfig = null;
+	this.allowMultiNotification = null;
+	this.loginBlockPeriod = null;
+	this.numPrevPassToKeep = null;
+	this.passReplaceFreq = null;
+	this.isFirstLogin = null;
+	this.partnerGroupType = null;
+	this.partnerParentId = null;
+	this.limits = null;
+	this.streamerType = null;
+	this.mediaProtocol = null;
+	this.extendedFreeTrailExpiryReason = null;
+	this.extendedFreeTrailExpiryDate = null;
+	this.extendedFreeTrail = null;
+	this.crmId = null;
+	this.referenceId = null;
+	this.crmLink = null;
+	this.verticalClasiffication = null;
+	this.partnerPackageClassOfService = null;
+	this.enableBulkUploadNotificationsEmails = null;
+	this.deliveryProfileIds = null;
+	this.enforceDelivery = null;
+	this.bulkUploadNotificationsEmail = null;
+	this.internalUse = null;
+	this.defaultLiveStreamEntrySourceType = null;
+	this.liveStreamProvisionParams = null;
+	this.autoModerateEntryFilter = null;
+	this.logoutUrl = null;
+	this.defaultEntitlementEnforcement = null;
+	this.cacheFlavorVersion = null;
+	this.apiAccessControlId = null;
+	this.defaultDeliveryType = null;
+	this.defaultEmbedCodeType = null;
+	this.customDeliveryTypes = null;
+	this.restrictEntryByMetadata = null;
+	this.language = null;
+	this.audioThumbEntryId = null;
+	this.liveThumbEntryId = null;
+}
+module.exports.KalturaSystemPartnerConfiguration = KalturaSystemPartnerConfiguration;
+
+util.inherits(KalturaSystemPartnerConfiguration, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param id int .
+ * @param name string .
+ */
+function KalturaSystemPartnerPackage(){
+	KalturaSystemPartnerPackage.super_.call(this);
+	this.id = null;
+	this.name = null;
+}
+module.exports.KalturaSystemPartnerPackage = KalturaSystemPartnerPackage;
+
+util.inherits(KalturaSystemPartnerPackage, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param partnerId int Partner ID.
+ * @param partnerName string Partner name.
+ * @param partnerStatus int Partner status.
+ * @param partnerPackage int Partner package.
+ * @param partnerCreatedAt int Partner creation date (Unix timestamp).
+ * @param views int Number of player loads in the specific date range.
+ * @param plays int Number of plays in the specific date range.
+ * @param entriesCount int Number of new entries created during specific date range.
+ * @param totalEntriesCount int Total number of entries.
+ * @param videoEntriesCount int Number of new video entries created during specific date range.
+ * @param imageEntriesCount int Number of new image entries created during specific date range.
+ * @param audioEntriesCount int Number of new audio entries created during specific date range.
+ * @param mixEntriesCount int Number of new mix entries created during specific date range.
+ * @param bandwidth float The total bandwidth usage during the given date range (in MB).
+ * @param totalStorage float The total storage consumption (in MB).
+ * @param storage float The change in storage consumption (new uploads) during the given date range (in MB).
+ * @param peakStorage float The peak amount of storage consumption during the given date range for the specific publisher.
+ * @param avgStorage float The average amount of storage consumption during the given date range for the specific publisher.
+ * @param combinedBandwidthStorage float The combined amount of bandwidth and storage consumed during the given date range for the specific publisher.
+ * @param deletedStorage float Amount of deleted storage in MB.
+ * @param transcodingUsage float Amount of transcoding usage in MB.
+ */
+function KalturaSystemPartnerUsageItem(){
+	KalturaSystemPartnerUsageItem.super_.call(this);
+	this.partnerId = null;
+	this.partnerName = null;
+	this.partnerStatus = null;
+	this.partnerPackage = null;
+	this.partnerCreatedAt = null;
+	this.views = null;
+	this.plays = null;
+	this.entriesCount = null;
+	this.totalEntriesCount = null;
+	this.videoEntriesCount = null;
+	this.imageEntriesCount = null;
+	this.audioEntriesCount = null;
+	this.mixEntriesCount = null;
+	this.bandwidth = null;
+	this.totalStorage = null;
+	this.storage = null;
+	this.peakStorage = null;
+	this.avgStorage = null;
+	this.combinedBandwidthStorage = null;
+	this.deletedStorage = null;
+	this.transcodingUsage = null;
+}
+module.exports.KalturaSystemPartnerUsageItem = KalturaSystemPartnerUsageItem;
+
+util.inherits(KalturaSystemPartnerUsageItem, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param objects array .
+ * @param totalCount int .
+ */
+function KalturaSystemPartnerUsageListResponse(){
+	KalturaSystemPartnerUsageListResponse.super_.call(this);
+	this.objects = null;
+	this.totalCount = null;
+}
+module.exports.KalturaSystemPartnerUsageListResponse = KalturaSystemPartnerUsageListResponse;
+
+util.inherits(KalturaSystemPartnerUsageListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -5311,6 +5313,64 @@ util.inherits(KalturaThumbnailServeOptions, kaltura.KalturaObjectBase);
 
 
 /**
+ * @param id int .
+ * @param trackEventType int .
+ * @param psVersion string .
+ * @param context string .
+ * @param partnerId int .
+ * @param entryId string .
+ * @param hostName string .
+ * @param userId string .
+ * @param changedProperties string .
+ * @param paramStr1 string .
+ * @param paramStr2 string .
+ * @param paramStr3 string .
+ * @param ks string .
+ * @param description string .
+ * @param createdAt int .
+ * @param updatedAt int .
+ * @param userIp string .
+ */
+function KalturaTrackEntry(){
+	KalturaTrackEntry.super_.call(this);
+	this.id = null;
+	this.trackEventType = null;
+	this.psVersion = null;
+	this.context = null;
+	this.partnerId = null;
+	this.entryId = null;
+	this.hostName = null;
+	this.userId = null;
+	this.changedProperties = null;
+	this.paramStr1 = null;
+	this.paramStr2 = null;
+	this.paramStr3 = null;
+	this.ks = null;
+	this.description = null;
+	this.createdAt = null;
+	this.updatedAt = null;
+	this.userIp = null;
+}
+module.exports.KalturaTrackEntry = KalturaTrackEntry;
+
+util.inherits(KalturaTrackEntry, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param objects array  (readOnly).
+ * @param totalCount int  (readOnly).
+ */
+function KalturaTrackEntryListResponse(){
+	KalturaTrackEntryListResponse.super_.call(this);
+	this.objects = null;
+	this.totalCount = null;
+}
+module.exports.KalturaTrackEntryListResponse = KalturaTrackEntryListResponse;
+
+util.inherits(KalturaTrackEntryListResponse, kaltura.KalturaObjectBase);
+
+
+/**
  * @param objects array  (readOnly).
  * @param totalCount int  (readOnly).
  * @param lowerVersionCount int  (readOnly).
@@ -5382,6 +5442,32 @@ function KalturaUiConf(){
 module.exports.KalturaUiConf = KalturaUiConf;
 
 util.inherits(KalturaUiConf, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param isPublic bool .
+ */
+function KalturaUiConfAdmin(){
+	KalturaUiConfAdmin.super_.call(this);
+	this.isPublic = null;
+}
+module.exports.KalturaUiConfAdmin = KalturaUiConfAdmin;
+
+util.inherits(KalturaUiConfAdmin, KalturaUiConf);
+
+
+/**
+ * @param objects array  (readOnly).
+ * @param totalCount int  (readOnly).
+ */
+function KalturaUiConfAdminListResponse(){
+	KalturaUiConfAdminListResponse.super_.call(this);
+	this.objects = null;
+	this.totalCount = null;
+}
+module.exports.KalturaUiConfAdminListResponse = KalturaUiConfAdminListResponse;
+
+util.inherits(KalturaUiConfAdminListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -5479,6 +5565,7 @@ util.inherits(KalturaUploadTokenListResponse, kaltura.KalturaObjectBase);
 /**
  * @param id string .
  * @param partnerId int  (readOnly).
+ * @param type int .
  * @param screenName string .
  * @param fullName string .
  * @param email string .
@@ -5518,6 +5605,7 @@ function KalturaUser(){
 	KalturaUser.super_.call(this);
 	this.id = null;
 	this.partnerId = null;
+	this.type = null;
 	this.screenName = null;
 	this.fullName = null;
 	this.email = null;
@@ -5570,6 +5658,34 @@ function KalturaUserListResponse(){
 module.exports.KalturaUserListResponse = KalturaUserListResponse;
 
 util.inherits(KalturaUserListResponse, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param id string .
+ * @param loginEmail string .
+ */
+function KalturaUserLoginData(){
+	KalturaUserLoginData.super_.call(this);
+	this.id = null;
+	this.loginEmail = null;
+}
+module.exports.KalturaUserLoginData = KalturaUserLoginData;
+
+util.inherits(KalturaUserLoginData, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param objects array  (readOnly).
+ * @param totalCount int  (readOnly).
+ */
+function KalturaUserLoginDataListResponse(){
+	KalturaUserLoginDataListResponse.super_.call(this);
+	this.objects = null;
+	this.totalCount = null;
+}
+module.exports.KalturaUserLoginDataListResponse = KalturaUserLoginDataListResponse;
+
+util.inherits(KalturaUserLoginDataListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -5713,16 +5829,6 @@ util.inherits(KalturaWidgetListResponse, kaltura.KalturaObjectBase);
 
 
 /**
- */
-function KalturaABCScreenersWatermarkCondition(){
-	KalturaABCScreenersWatermarkCondition.super_.call(this);
-}
-module.exports.KalturaABCScreenersWatermarkCondition = KalturaABCScreenersWatermarkCondition;
-
-util.inherits(KalturaABCScreenersWatermarkCondition, KalturaCondition);
-
-
-/**
  * @param idEqual int .
  * @param idIn string .
  * @param systemNameEqual string .
@@ -5766,18 +5872,6 @@ function KalturaAccessControlLimitFlavorsAction(){
 module.exports.KalturaAccessControlLimitFlavorsAction = KalturaAccessControlLimitFlavorsAction;
 
 util.inherits(KalturaAccessControlLimitFlavorsAction, KalturaRuleAction);
-
-
-/**
- * @param policyId int Play ready policy id.
- */
-function KalturaAccessControlPlayReadyPolicyAction(){
-	KalturaAccessControlPlayReadyPolicyAction.super_.call(this);
-	this.policyId = null;
-}
-module.exports.KalturaAccessControlPlayReadyPolicyAction = KalturaAccessControlPlayReadyPolicyAction;
-
-util.inherits(KalturaAccessControlPlayReadyPolicyAction, KalturaRuleAction);
 
 
 /**
@@ -6016,146 +6110,6 @@ util.inherits(KalturaAssetsParamsResourceContainers, KalturaResource);
 
 
 /**
- * @param idEqual int .
- * @param createdAtGreaterThanOrEqual int .
- * @param createdAtLessThanOrEqual int .
- * @param parsedAtGreaterThanOrEqual int .
- * @param parsedAtLessThanOrEqual int .
- * @param statusEqual int .
- * @param statusIn string .
- * @param auditObjectTypeEqual string .
- * @param auditObjectTypeIn string .
- * @param objectIdEqual string .
- * @param objectIdIn string .
- * @param relatedObjectIdEqual string .
- * @param relatedObjectIdIn string .
- * @param relatedObjectTypeEqual string .
- * @param relatedObjectTypeIn string .
- * @param entryIdEqual string .
- * @param entryIdIn string .
- * @param masterPartnerIdEqual int .
- * @param masterPartnerIdIn string .
- * @param partnerIdEqual int .
- * @param partnerIdIn string .
- * @param requestIdEqual string .
- * @param requestIdIn string .
- * @param userIdEqual string .
- * @param userIdIn string .
- * @param actionEqual string .
- * @param actionIn string .
- * @param ksEqual string .
- * @param contextEqual int .
- * @param contextIn string .
- * @param entryPointEqual string .
- * @param entryPointIn string .
- * @param serverNameEqual string .
- * @param serverNameIn string .
- * @param ipAddressEqual string .
- * @param ipAddressIn string .
- * @param clientTagEqual string .
- */
-function KalturaAuditTrailBaseFilter(){
-	KalturaAuditTrailBaseFilter.super_.call(this);
-	this.idEqual = null;
-	this.createdAtGreaterThanOrEqual = null;
-	this.createdAtLessThanOrEqual = null;
-	this.parsedAtGreaterThanOrEqual = null;
-	this.parsedAtLessThanOrEqual = null;
-	this.statusEqual = null;
-	this.statusIn = null;
-	this.auditObjectTypeEqual = null;
-	this.auditObjectTypeIn = null;
-	this.objectIdEqual = null;
-	this.objectIdIn = null;
-	this.relatedObjectIdEqual = null;
-	this.relatedObjectIdIn = null;
-	this.relatedObjectTypeEqual = null;
-	this.relatedObjectTypeIn = null;
-	this.entryIdEqual = null;
-	this.entryIdIn = null;
-	this.masterPartnerIdEqual = null;
-	this.masterPartnerIdIn = null;
-	this.partnerIdEqual = null;
-	this.partnerIdIn = null;
-	this.requestIdEqual = null;
-	this.requestIdIn = null;
-	this.userIdEqual = null;
-	this.userIdIn = null;
-	this.actionEqual = null;
-	this.actionIn = null;
-	this.ksEqual = null;
-	this.contextEqual = null;
-	this.contextIn = null;
-	this.entryPointEqual = null;
-	this.entryPointIn = null;
-	this.serverNameEqual = null;
-	this.serverNameIn = null;
-	this.ipAddressEqual = null;
-	this.ipAddressIn = null;
-	this.clientTagEqual = null;
-}
-module.exports.KalturaAuditTrailBaseFilter = KalturaAuditTrailBaseFilter;
-
-util.inherits(KalturaAuditTrailBaseFilter, KalturaFilter);
-
-
-/**
- * @param changedItems array .
- */
-function KalturaAuditTrailChangeInfo(){
-	KalturaAuditTrailChangeInfo.super_.call(this);
-	this.changedItems = null;
-}
-module.exports.KalturaAuditTrailChangeInfo = KalturaAuditTrailChangeInfo;
-
-util.inherits(KalturaAuditTrailChangeInfo, KalturaAuditTrailInfo);
-
-
-/**
- * @param type int .
- */
-function KalturaAuditTrailChangeXmlNode(){
-	KalturaAuditTrailChangeXmlNode.super_.call(this);
-	this.type = null;
-}
-module.exports.KalturaAuditTrailChangeXmlNode = KalturaAuditTrailChangeXmlNode;
-
-util.inherits(KalturaAuditTrailChangeXmlNode, KalturaAuditTrailChangeItem);
-
-
-/**
- * @param version string .
- * @param objectSubType int .
- * @param dc int .
- * @param original bool .
- * @param fileType int .
- */
-function KalturaAuditTrailFileSyncCreateInfo(){
-	KalturaAuditTrailFileSyncCreateInfo.super_.call(this);
-	this.version = null;
-	this.objectSubType = null;
-	this.dc = null;
-	this.original = null;
-	this.fileType = null;
-}
-module.exports.KalturaAuditTrailFileSyncCreateInfo = KalturaAuditTrailFileSyncCreateInfo;
-
-util.inherits(KalturaAuditTrailFileSyncCreateInfo, KalturaAuditTrailInfo);
-
-
-/**
- * @param info string .
- */
-function KalturaAuditTrailTextInfo(){
-	KalturaAuditTrailTextInfo.super_.call(this);
-	this.info = null;
-}
-module.exports.KalturaAuditTrailTextInfo = KalturaAuditTrailTextInfo;
-
-util.inherits(KalturaAuditTrailTextInfo, KalturaAuditTrailInfo);
-
-
-/**
  * @param privileges array The privelege needed to remove the restriction.
  */
 function KalturaAuthenticatedCondition(){
@@ -6303,6 +6257,16 @@ function KalturaBulkDownloadJobData(){
 module.exports.KalturaBulkDownloadJobData = KalturaBulkDownloadJobData;
 
 util.inherits(KalturaBulkDownloadJobData, KalturaJobData);
+
+
+/**
+ */
+function KalturaObject(){
+	KalturaObject.super_.call(this);
+}
+module.exports.KalturaObject = KalturaObject;
+
+util.inherits(KalturaObject, kaltura.KalturaObjectBase);
 
 
 /**
@@ -6896,6 +6860,18 @@ util.inherits(KalturaCodeCuePoint, KalturaCuePoint);
 
 
 /**
+ * @param value int .
+ */
+function KalturaIntegerValue(){
+	KalturaIntegerValue.super_.call(this);
+	this.value = null;
+}
+module.exports.KalturaIntegerValue = KalturaIntegerValue;
+
+util.inherits(KalturaIntegerValue, KalturaValue);
+
+
+/**
  * @param value KalturaIntegerValue Value to evaluate against the field and operator.
  * @param comparison string Comparing operator.
  */
@@ -7132,20 +7108,6 @@ util.inherits(KalturaConversionProfileBaseFilter, KalturaFilter);
 
 
 /**
- * @param flavorParamsIds string Comma separated list of flavor param ids to convert.
- * @param reconvert bool Should reconvert when flavor already exists?.
- */
-function KalturaConvertEntryFlavorsObjectTask(){
-	KalturaConvertEntryFlavorsObjectTask.super_.call(this);
-	this.flavorParamsIds = null;
-	this.reconvert = null;
-}
-module.exports.KalturaConvertEntryFlavorsObjectTask = KalturaConvertEntryFlavorsObjectTask;
-
-util.inherits(KalturaConvertEntryFlavorsObjectTask, KalturaObjectTask);
-
-
-/**
  * @param entryId string Live stream entry id.
  * @param assetId string .
  * @param mediaServerIndex int Primary or secondary media server.
@@ -7280,30 +7242,6 @@ util.inherits(KalturaCuePointBaseFilter, KalturaFilter);
 
 
 /**
- * @param deleteType int The logic to use to choose the flavors for deletion.
- * @param flavorParamsIds string Comma separated list of flavor param ids to delete or keep.
- */
-function KalturaDeleteEntryFlavorsObjectTask(){
-	KalturaDeleteEntryFlavorsObjectTask.super_.call(this);
-	this.deleteType = null;
-	this.flavorParamsIds = null;
-}
-module.exports.KalturaDeleteEntryFlavorsObjectTask = KalturaDeleteEntryFlavorsObjectTask;
-
-util.inherits(KalturaDeleteEntryFlavorsObjectTask, KalturaObjectTask);
-
-
-/**
- */
-function KalturaDeleteEntryObjectTask(){
-	KalturaDeleteEntryObjectTask.super_.call(this);
-}
-module.exports.KalturaDeleteEntryObjectTask = KalturaDeleteEntryObjectTask;
-
-util.inherits(KalturaDeleteEntryObjectTask, KalturaObjectTask);
-
-
-/**
  * @param localFileSyncPath string .
  */
 function KalturaDeleteFileJobData(){
@@ -7325,16 +7263,6 @@ function KalturaDeleteJobData(){
 module.exports.KalturaDeleteJobData = KalturaDeleteJobData;
 
 util.inherits(KalturaDeleteJobData, KalturaJobData);
-
-
-/**
- */
-function KalturaDeleteLocalContentObjectTask(){
-	KalturaDeleteLocalContentObjectTask.super_.call(this);
-}
-module.exports.KalturaDeleteLocalContentObjectTask = KalturaDeleteLocalContentObjectTask;
-
-util.inherits(KalturaDeleteLocalContentObjectTask, KalturaObjectTask);
 
 
 /**
@@ -7504,18 +7432,6 @@ util.inherits(KalturaDirectoryRestriction, KalturaBaseRestriction);
 
 
 /**
- * @param eventNotificationTemplateId int The event notification template id to dispatch.
- */
-function KalturaDispatchEventNotificationObjectTask(){
-	KalturaDispatchEventNotificationObjectTask.super_.call(this);
-	this.eventNotificationTemplateId = null;
-}
-module.exports.KalturaDispatchEventNotificationObjectTask = KalturaDispatchEventNotificationObjectTask;
-
-util.inherits(KalturaDispatchEventNotificationObjectTask, KalturaObjectTask);
-
-
-/**
  * @param distributionProfileId int .
  * @param distributionProfile KalturaDistributionProfile .
  * @param entryDistributionId int .
@@ -7661,84 +7577,6 @@ function KalturaDistributionValidationErrorMissingThumbnail(){
 module.exports.KalturaDistributionValidationErrorMissingThumbnail = KalturaDistributionValidationErrorMissingThumbnail;
 
 util.inherits(KalturaDistributionValidationErrorMissingThumbnail, KalturaDistributionValidationError);
-
-
-/**
- * @param partnerIdEqual int .
- * @param partnerIdIn string .
- * @param deviceIdLike string .
- * @param providerEqual string .
- * @param providerIn string .
- */
-function KalturaDrmDeviceBaseFilter(){
-	KalturaDrmDeviceBaseFilter.super_.call(this);
-	this.partnerIdEqual = null;
-	this.partnerIdIn = null;
-	this.deviceIdLike = null;
-	this.providerEqual = null;
-	this.providerIn = null;
-}
-module.exports.KalturaDrmDeviceBaseFilter = KalturaDrmDeviceBaseFilter;
-
-util.inherits(KalturaDrmDeviceBaseFilter, KalturaFilter);
-
-
-/**
- * @param partnerIdEqual int .
- * @param partnerIdIn string .
- * @param nameLike string .
- * @param systemNameLike string .
- * @param providerEqual string .
- * @param providerIn string .
- * @param statusEqual int .
- * @param statusIn string .
- * @param scenarioEqual string .
- * @param scenarioIn string .
- */
-function KalturaDrmPolicyBaseFilter(){
-	KalturaDrmPolicyBaseFilter.super_.call(this);
-	this.partnerIdEqual = null;
-	this.partnerIdIn = null;
-	this.nameLike = null;
-	this.systemNameLike = null;
-	this.providerEqual = null;
-	this.providerIn = null;
-	this.statusEqual = null;
-	this.statusIn = null;
-	this.scenarioEqual = null;
-	this.scenarioIn = null;
-}
-module.exports.KalturaDrmPolicyBaseFilter = KalturaDrmPolicyBaseFilter;
-
-util.inherits(KalturaDrmPolicyBaseFilter, KalturaFilter);
-
-
-/**
- * @param idEqual int .
- * @param idIn string .
- * @param partnerIdEqual int .
- * @param partnerIdIn string .
- * @param nameLike string .
- * @param providerEqual string .
- * @param providerIn string .
- * @param statusEqual int .
- * @param statusIn string .
- */
-function KalturaDrmProfileBaseFilter(){
-	KalturaDrmProfileBaseFilter.super_.call(this);
-	this.idEqual = null;
-	this.idIn = null;
-	this.partnerIdEqual = null;
-	this.partnerIdIn = null;
-	this.nameLike = null;
-	this.providerEqual = null;
-	this.providerIn = null;
-	this.statusEqual = null;
-	this.statusIn = null;
-}
-module.exports.KalturaDrmProfileBaseFilter = KalturaDrmProfileBaseFilter;
-
-util.inherits(KalturaDrmProfileBaseFilter, KalturaFilter);
 
 
 /**
@@ -7925,11 +7763,13 @@ util.inherits(KalturaDropFolderXmlBulkUploadFileHandlerConfig, KalturaDropFolder
 /**
  * @param categoryDirectMembers bool Return the list of categoryUser that are not inherited from parent category - only the direct categoryUsers.
  * @param freeText string Free text search on user id or screen name.
+ * @param relatedGroupsByUserId string Return a list of categoryUser that related to the userId in this field by groups.
  */
 function KalturaCategoryUserFilter(){
 	KalturaCategoryUserFilter.super_.call(this);
 	this.categoryDirectMembers = null;
 	this.freeText = null;
+	this.relatedGroupsByUserId = null;
 }
 module.exports.KalturaCategoryUserFilter = KalturaCategoryUserFilter;
 
@@ -8038,6 +7878,8 @@ util.inherits(KalturaEmailNotificationTemplate, KalturaEventNotificationTemplate
 
 /**
  * @param partnerIdEqual int .
+ * @param typeEqual int .
+ * @param typeIn string .
  * @param screenNameLike string .
  * @param screenNameStartsWith string .
  * @param emailLike string .
@@ -8055,6 +7897,8 @@ util.inherits(KalturaEmailNotificationTemplate, KalturaEventNotificationTemplate
 function KalturaUserBaseFilter(){
 	KalturaUserBaseFilter.super_.call(this);
 	this.partnerIdEqual = null;
+	this.typeEqual = null;
+	this.typeIn = null;
 	this.screenNameLike = null;
 	this.screenNameStartsWith = null;
 	this.emailLike = null;
@@ -8196,6 +8040,22 @@ function KalturaEntryContextDataResult(){
 module.exports.KalturaEntryContextDataResult = KalturaEntryContextDataResult;
 
 util.inherits(KalturaEntryContextDataResult, KalturaContextDataResult);
+
+
+/**
+ * @param cuePointsFreeText string .
+ * @param cuePointTypeIn string .
+ * @param cuePointSubTypeEqual int .
+ */
+function KalturaEntryCuePointSearchFilter(){
+	KalturaEntryCuePointSearchFilter.super_.call(this);
+	this.cuePointsFreeText = null;
+	this.cuePointTypeIn = null;
+	this.cuePointSubTypeEqual = null;
+}
+module.exports.KalturaEntryCuePointSearchFilter = KalturaEntryCuePointSearchFilter;
+
+util.inherits(KalturaEntryCuePointSearchFilter, KalturaSearchItem);
 
 
 /**
@@ -8401,22 +8261,6 @@ util.inherits(KalturaEventObjectChangedCondition, KalturaCondition);
 
 
 /**
- * @param metadataProfileId int Metadata profile id to lookup the metadata object.
- * @param metadataObjectType string Metadata object type to lookup the metadata object.
- * @param xslt string The XSLT to execute.
- */
-function KalturaExecuteMetadataXsltObjectTask(){
-	KalturaExecuteMetadataXsltObjectTask.super_.call(this);
-	this.metadataProfileId = null;
-	this.metadataObjectType = null;
-	this.xslt = null;
-}
-module.exports.KalturaExecuteMetadataXsltObjectTask = KalturaExecuteMetadataXsltObjectTask;
-
-util.inherits(KalturaExecuteMetadataXsltObjectTask, KalturaObjectTask);
-
-
-/**
  * @param idEqual int .
  * @param idIn string .
  * @param partnerIdEqual int .
@@ -8516,26 +8360,6 @@ function KalturaFileSyncBaseFilter(){
 module.exports.KalturaFileSyncBaseFilter = KalturaFileSyncBaseFilter;
 
 util.inherits(KalturaFileSyncBaseFilter, KalturaFilter);
-
-
-/**
- * @param sourceUrl string .
- * @param filesyncId string .
- * @param tmpFilePath string .
- * @param destFilePath string .
- * @param fileSize int .
- */
-function KalturaFileSyncImportJobData(){
-	KalturaFileSyncImportJobData.super_.call(this);
-	this.sourceUrl = null;
-	this.filesyncId = null;
-	this.tmpFilePath = null;
-	this.destFilePath = null;
-	this.fileSize = null;
-}
-module.exports.KalturaFileSyncImportJobData = KalturaFileSyncImportJobData;
-
-util.inherits(KalturaFileSyncImportJobData, KalturaJobData);
 
 
 /**
@@ -8642,6 +8466,36 @@ function KalturaGoogleVideoSyndicationFeed(){
 module.exports.KalturaGoogleVideoSyndicationFeed = KalturaGoogleVideoSyndicationFeed;
 
 util.inherits(KalturaGoogleVideoSyndicationFeed, KalturaBaseSyndicationFeed);
+
+
+/**
+ * @param userIdEqual string .
+ * @param userIdIn string .
+ * @param groupIdEqual string .
+ * @param groupIdIn string .
+ * @param statusEqual int .
+ * @param statusIn string .
+ * @param createdAtGreaterThanOrEqual int .
+ * @param createdAtLessThanOrEqual int .
+ * @param updatedAtGreaterThanOrEqual int .
+ * @param updatedAtLessThanOrEqual int .
+ */
+function KalturaGroupUserBaseFilter(){
+	KalturaGroupUserBaseFilter.super_.call(this);
+	this.userIdEqual = null;
+	this.userIdIn = null;
+	this.groupIdEqual = null;
+	this.groupIdIn = null;
+	this.statusEqual = null;
+	this.statusIn = null;
+	this.createdAtGreaterThanOrEqual = null;
+	this.createdAtLessThanOrEqual = null;
+	this.updatedAtGreaterThanOrEqual = null;
+	this.updatedAtLessThanOrEqual = null;
+}
+module.exports.KalturaGroupUserBaseFilter = KalturaGroupUserBaseFilter;
+
+util.inherits(KalturaGroupUserBaseFilter, KalturaFilter);
 
 
 /**
@@ -9123,20 +8977,6 @@ util.inherits(KalturaMetadataProfileBaseFilter, KalturaFilter);
 
 
 /**
- * @param addRemoveType int Should the object task add or remove categories?.
- * @param categoryIds array The list of category ids to add or remove.
- */
-function KalturaModifyCategoriesObjectTask(){
-	KalturaModifyCategoriesObjectTask.super_.call(this);
-	this.addRemoveType = null;
-	this.categoryIds = null;
-}
-module.exports.KalturaModifyCategoriesObjectTask = KalturaModifyCategoriesObjectTask;
-
-util.inherits(KalturaModifyCategoriesObjectTask, KalturaObjectTask);
-
-
-/**
  * @param srcCategoryId int Source category id.
  * @param destCategoryId int Destination category id.
  * @param lastMovedCategoryId int Saves the last category id that its entries moved completely
@@ -9191,6 +9031,18 @@ function KalturaNotificationJobData(){
 module.exports.KalturaNotificationJobData = KalturaNotificationJobData;
 
 util.inherits(KalturaNotificationJobData, KalturaJobData);
+
+
+/**
+ * @param conditions array .
+ */
+function KalturaOrCondition(){
+	KalturaOrCondition.super_.call(this);
+	this.conditions = null;
+}
+module.exports.KalturaOrCondition = KalturaOrCondition;
+
+util.inherits(KalturaOrCondition, KalturaCondition);
 
 
 /**
@@ -9328,60 +9180,6 @@ util.inherits(KalturaPermissionItemBaseFilter, KalturaFilter);
 
 
 /**
- * @param copyCount int .
- * @param copyEnablers array .
- */
-function KalturaPlayReadyCopyRight(){
-	KalturaPlayReadyCopyRight.super_.call(this);
-	this.copyCount = null;
-	this.copyEnablers = null;
-}
-module.exports.KalturaPlayReadyCopyRight = KalturaPlayReadyCopyRight;
-
-util.inherits(KalturaPlayReadyCopyRight, KalturaPlayReadyRight);
-
-
-/**
- * @param analogVideoOPL int .
- * @param analogVideoOutputProtectionList array .
- * @param compressedDigitalAudioOPL int .
- * @param compressedDigitalVideoOPL int .
- * @param digitalAudioOutputProtectionList array .
- * @param uncompressedDigitalAudioOPL int .
- * @param uncompressedDigitalVideoOPL int .
- * @param firstPlayExpiration int .
- * @param playEnablers array .
- */
-function KalturaPlayReadyPlayRight(){
-	KalturaPlayReadyPlayRight.super_.call(this);
-	this.analogVideoOPL = null;
-	this.analogVideoOutputProtectionList = null;
-	this.compressedDigitalAudioOPL = null;
-	this.compressedDigitalVideoOPL = null;
-	this.digitalAudioOutputProtectionList = null;
-	this.uncompressedDigitalAudioOPL = null;
-	this.uncompressedDigitalVideoOPL = null;
-	this.firstPlayExpiration = null;
-	this.playEnablers = null;
-}
-module.exports.KalturaPlayReadyPlayRight = KalturaPlayReadyPlayRight;
-
-util.inherits(KalturaPlayReadyPlayRight, KalturaPlayReadyRight);
-
-
-/**
- * @param keySeed string .
- */
-function KalturaPlayReadyProfile(){
-	KalturaPlayReadyProfile.super_.call(this);
-	this.keySeed = null;
-}
-module.exports.KalturaPlayReadyProfile = KalturaPlayReadyProfile;
-
-util.inherits(KalturaPlayReadyProfile, KalturaDrmProfile);
-
-
-/**
  * @param streamID string .
  * @param backupStreamID string .
  * @param rtmp string .
@@ -9469,60 +9267,6 @@ function KalturaReportInputFilter(){
 module.exports.KalturaReportInputFilter = KalturaReportInputFilter;
 
 util.inherits(KalturaReportInputFilter, KalturaReportInputBaseFilter);
-
-
-/**
- * @param maxResults int .
- * @param resultsFilePath string .
- * @param referenceTime int .
- */
-function KalturaScheduledTaskJobData(){
-	KalturaScheduledTaskJobData.super_.call(this);
-	this.maxResults = null;
-	this.resultsFilePath = null;
-	this.referenceTime = null;
-}
-module.exports.KalturaScheduledTaskJobData = KalturaScheduledTaskJobData;
-
-util.inherits(KalturaScheduledTaskJobData, KalturaJobData);
-
-
-/**
- * @param idEqual int .
- * @param idIn string .
- * @param partnerIdEqual int .
- * @param partnerIdIn string .
- * @param systemNameEqual string .
- * @param systemNameIn string .
- * @param statusEqual int .
- * @param statusIn string .
- * @param createdAtGreaterThanOrEqual int .
- * @param createdAtLessThanOrEqual int .
- * @param updatedAtGreaterThanOrEqual int .
- * @param updatedAtLessThanOrEqual int .
- * @param lastExecutionStartedAtGreaterThanOrEqual int .
- * @param lastExecutionStartedAtLessThanOrEqual int .
- */
-function KalturaScheduledTaskProfileBaseFilter(){
-	KalturaScheduledTaskProfileBaseFilter.super_.call(this);
-	this.idEqual = null;
-	this.idIn = null;
-	this.partnerIdEqual = null;
-	this.partnerIdIn = null;
-	this.systemNameEqual = null;
-	this.systemNameIn = null;
-	this.statusEqual = null;
-	this.statusIn = null;
-	this.createdAtGreaterThanOrEqual = null;
-	this.createdAtLessThanOrEqual = null;
-	this.updatedAtGreaterThanOrEqual = null;
-	this.updatedAtLessThanOrEqual = null;
-	this.lastExecutionStartedAtGreaterThanOrEqual = null;
-	this.lastExecutionStartedAtLessThanOrEqual = null;
-}
-module.exports.KalturaScheduledTaskProfileBaseFilter = KalturaScheduledTaskProfileBaseFilter;
-
-util.inherits(KalturaScheduledTaskProfileBaseFilter, KalturaFilter);
 
 
 /**
@@ -9633,6 +9377,9 @@ util.inherits(KalturaStorageAddAction, KalturaRuleAction);
  * @param serverUrl string .
  * @param serverUsername string .
  * @param serverPassword string .
+ * @param serverPrivateKey string .
+ * @param serverPublicKey string .
+ * @param serverPassPhrase string .
  * @param ftpPassiveMode bool .
  * @param srcFileSyncLocalPath string .
  * @param srcFileSyncId string .
@@ -9643,6 +9390,9 @@ function KalturaStorageJobData(){
 	this.serverUrl = null;
 	this.serverUsername = null;
 	this.serverPassword = null;
+	this.serverPrivateKey = null;
+	this.serverPublicKey = null;
+	this.serverPassPhrase = null;
 	this.ftpPassiveMode = null;
 	this.srcFileSyncLocalPath = null;
 	this.srcFileSyncId = null;
@@ -9734,6 +9484,36 @@ util.inherits(KalturaSyndicationDistributionProvider, KalturaDistributionProvide
 
 
 /**
+ * @param overagePrice float .
+ * @param overageUnit float .
+ */
+function KalturaSystemPartnerOveragedLimit(){
+	KalturaSystemPartnerOveragedLimit.super_.call(this);
+	this.overagePrice = null;
+	this.overageUnit = null;
+}
+module.exports.KalturaSystemPartnerOveragedLimit = KalturaSystemPartnerOveragedLimit;
+
+util.inherits(KalturaSystemPartnerOveragedLimit, KalturaSystemPartnerLimit);
+
+
+/**
+ * @param fromDate int Date range from.
+ * @param toDate int Date range to.
+ * @param timezoneOffset int Time zone offset.
+ */
+function KalturaSystemPartnerUsageFilter(){
+	KalturaSystemPartnerUsageFilter.super_.call(this);
+	this.fromDate = null;
+	this.toDate = null;
+	this.timezoneOffset = null;
+}
+module.exports.KalturaSystemPartnerUsageFilter = KalturaSystemPartnerUsageFilter;
+
+util.inherits(KalturaSystemPartnerUsageFilter, KalturaFilter);
+
+
+/**
  * @param objectTypeEqual string .
  * @param tagEqual string .
  * @param tagStartsWith string .
@@ -9751,24 +9531,6 @@ function KalturaTagFilter(){
 module.exports.KalturaTagFilter = KalturaTagFilter;
 
 util.inherits(KalturaTagFilter, KalturaFilter);
-
-
-/**
- * @param assetId string .
- * @param description string .
- * @param title string .
- * @param subType int The sub type of the ThumbCuePoint.
- */
-function KalturaThumbCuePoint(){
-	KalturaThumbCuePoint.super_.call(this);
-	this.assetId = null;
-	this.description = null;
-	this.title = null;
-	this.subType = null;
-}
-module.exports.KalturaThumbCuePoint = KalturaThumbCuePoint;
-
-util.inherits(KalturaThumbCuePoint, KalturaCuePoint);
 
 
 /**
@@ -10000,18 +9762,6 @@ util.inherits(KalturaUrlTokenizerLimeLight, KalturaUrlTokenizer);
 
 
 /**
- * @param accountId string accountId.
- */
-function KalturaUrlTokenizerUplynk(){
-	KalturaUrlTokenizerUplynk.super_.call(this);
-	this.accountId = null;
-}
-module.exports.KalturaUrlTokenizerUplynk = KalturaUrlTokenizerUplynk;
-
-util.inherits(KalturaUrlTokenizerUplynk, KalturaUrlTokenizer);
-
-
-/**
  * @param hdsPaths string hdsPaths.
  * @param paramName string tokenParamName.
  * @param authPrefix string secure URL prefix.
@@ -10176,88 +9926,6 @@ util.inherits(KalturaVirusScanProfileBaseFilter, KalturaFilter);
 
 
 /**
- * @param webexUserId string .
- * @param webexPassword string .
- * @param webexSiteId int .
- * @param webexPartnerId string .
- * @param webexServiceUrl string .
- * @param webexHostIdMetadataFieldName string .
- */
-function KalturaWebexDropFolder(){
-	KalturaWebexDropFolder.super_.call(this);
-	this.webexUserId = null;
-	this.webexPassword = null;
-	this.webexSiteId = null;
-	this.webexPartnerId = null;
-	this.webexServiceUrl = null;
-	this.webexHostIdMetadataFieldName = null;
-}
-module.exports.KalturaWebexDropFolder = KalturaWebexDropFolder;
-
-util.inherits(KalturaWebexDropFolder, KalturaDropFolder);
-
-
-/**
- * @param recordingId int .
- * @param webexHostId string .
- * @param description string .
- * @param confId string .
- * @param contentUrl string .
- */
-function KalturaWebexDropFolderFile(){
-	KalturaWebexDropFolderFile.super_.call(this);
-	this.recordingId = null;
-	this.webexHostId = null;
-	this.description = null;
-	this.confId = null;
-	this.contentUrl = null;
-}
-module.exports.KalturaWebexDropFolderFile = KalturaWebexDropFolderFile;
-
-util.inherits(KalturaWebexDropFolderFile, KalturaDropFolderFile);
-
-
-/**
- * @param key string .
- * @param iv string .
- * @param owner string .
- * @param portal string .
- * @param maxGop int .
- * @param regServerHost string .
- */
-function KalturaWidevineProfile(){
-	KalturaWidevineProfile.super_.call(this);
-	this.key = null;
-	this.iv = null;
-	this.owner = null;
-	this.portal = null;
-	this.maxGop = null;
-	this.regServerHost = null;
-}
-module.exports.KalturaWidevineProfile = KalturaWidevineProfile;
-
-util.inherits(KalturaWidevineProfile, KalturaDrmProfile);
-
-
-/**
- * @param syncMode int .
- * @param wvAssetIds string .
- * @param modifiedAttributes string .
- * @param monitorSyncCompletion int .
- */
-function KalturaWidevineRepositorySyncJobData(){
-	KalturaWidevineRepositorySyncJobData.super_.call(this);
-	this.syncMode = null;
-	this.wvAssetIds = null;
-	this.modifiedAttributes = null;
-	this.monitorSyncCompletion = null;
-}
-module.exports.KalturaWidevineRepositorySyncJobData = KalturaWidevineRepositorySyncJobData;
-
-util.inherits(KalturaWidevineRepositorySyncJobData, KalturaJobData);
-
-
-/**
  * @param idEqual string .
  * @param idIn string .
  * @param sourceWidgetIdEqual string .
@@ -10411,16 +10079,6 @@ function KalturaAssetResource(){
 module.exports.KalturaAssetResource = KalturaAssetResource;
 
 util.inherits(KalturaAssetResource, KalturaContentResource);
-
-
-/**
- */
-function KalturaAuditTrailFilter(){
-	KalturaAuditTrailFilter.super_.call(this);
-}
-module.exports.KalturaAuditTrailFilter = KalturaAuditTrailFilter;
-
-util.inherits(KalturaAuditTrailFilter, KalturaAuditTrailBaseFilter);
 
 
 /**
@@ -10645,9 +10303,11 @@ util.inherits(KalturaCountryCondition, KalturaMatchCondition);
 
 
 /**
+ * @param freeText string .
  */
 function KalturaCuePointFilter(){
 	KalturaCuePointFilter.super_.call(this);
+	this.freeText = null;
 }
 module.exports.KalturaCuePointFilter = KalturaCuePointFilter;
 
@@ -10766,36 +10426,6 @@ util.inherits(KalturaDocumentFlavorParams, KalturaFlavorParams);
 
 /**
  */
-function KalturaDrmDeviceFilter(){
-	KalturaDrmDeviceFilter.super_.call(this);
-}
-module.exports.KalturaDrmDeviceFilter = KalturaDrmDeviceFilter;
-
-util.inherits(KalturaDrmDeviceFilter, KalturaDrmDeviceBaseFilter);
-
-
-/**
- */
-function KalturaDrmPolicyFilter(){
-	KalturaDrmPolicyFilter.super_.call(this);
-}
-module.exports.KalturaDrmPolicyFilter = KalturaDrmPolicyFilter;
-
-util.inherits(KalturaDrmPolicyFilter, KalturaDrmPolicyBaseFilter);
-
-
-/**
- */
-function KalturaDrmProfileFilter(){
-	KalturaDrmProfileFilter.super_.call(this);
-}
-module.exports.KalturaDrmProfileFilter = KalturaDrmProfileFilter;
-
-util.inherits(KalturaDrmProfileFilter, KalturaDrmProfileBaseFilter);
-
-
-/**
- */
 function KalturaDropFolderFileFilter(){
 	KalturaDropFolderFileFilter.super_.call(this);
 }
@@ -10854,12 +10484,14 @@ util.inherits(KalturaEmailNotificationDispatchJobData, KalturaEventNotificationD
  * @param application string .
  * @param userIds string .
  * @param playbackContext string .
+ * @param ancestorPlaybackContext string .
  */
 function KalturaEndUserReportInputFilter(){
 	KalturaEndUserReportInputFilter.super_.call(this);
 	this.application = null;
 	this.userIds = null;
 	this.playbackContext = null;
+	this.ancestorPlaybackContext = null;
 }
 module.exports.KalturaEndUserReportInputFilter = KalturaEndUserReportInputFilter;
 
@@ -11074,6 +10706,16 @@ function KalturaGeoTimeLiveStats(){
 module.exports.KalturaGeoTimeLiveStats = KalturaGeoTimeLiveStats;
 
 util.inherits(KalturaGeoTimeLiveStats, KalturaEntryLiveStats);
+
+
+/**
+ */
+function KalturaGroupUserFilter(){
+	KalturaGroupUserFilter.super_.call(this);
+}
+module.exports.KalturaGroupUserFilter = KalturaGroupUserFilter;
+
+util.inherits(KalturaGroupUserFilter, KalturaGroupUserBaseFilter);
 
 
 /**
@@ -11425,16 +11067,6 @@ util.inherits(KalturaReportFilter, KalturaReportBaseFilter);
 
 
 /**
- */
-function KalturaScheduledTaskProfileFilter(){
-	KalturaScheduledTaskProfileFilter.super_.call(this);
-}
-module.exports.KalturaScheduledTaskProfileFilter = KalturaScheduledTaskProfileFilter;
-
-util.inherits(KalturaScheduledTaskProfileFilter, KalturaScheduledTaskProfileBaseFilter);
-
-
-/**
  * @param comparison string .
  */
 function KalturaSearchComparableCondition(){
@@ -11567,18 +11199,6 @@ util.inherits(KalturaSwfFlavorParams, KalturaFlavorParams);
 
 
 /**
- * @param cuePointId string Associated thumb cue point ID (insertOnly).
- */
-function KalturaTimedThumbAsset(){
-	KalturaTimedThumbAsset.super_.call(this);
-	this.cuePointId = null;
-}
-module.exports.KalturaTimedThumbAsset = KalturaTimedThumbAsset;
-
-util.inherits(KalturaTimedThumbAsset, KalturaThumbAsset);
-
-
-/**
  */
 function KalturaUiConfFilter(){
 	KalturaUiConfFilter.super_.call(this);
@@ -11642,46 +11262,6 @@ function KalturaVirusScanProfileFilter(){
 module.exports.KalturaVirusScanProfileFilter = KalturaVirusScanProfileFilter;
 
 util.inherits(KalturaVirusScanProfileFilter, KalturaVirusScanProfileBaseFilter);
-
-
-/**
- * @param description string .
- * @param webexHostId string .
- */
-function KalturaWebexDropFolderContentProcessorJobData(){
-	KalturaWebexDropFolderContentProcessorJobData.super_.call(this);
-	this.description = null;
-	this.webexHostId = null;
-}
-module.exports.KalturaWebexDropFolderContentProcessorJobData = KalturaWebexDropFolderContentProcessorJobData;
-
-util.inherits(KalturaWebexDropFolderContentProcessorJobData, KalturaDropFolderContentProcessorJobData);
-
-
-/**
- * @param widevineDistributionStartDate int License distribution window start date.
- * @param widevineDistributionEndDate int License distribution window end date.
- * @param widevineAssetId int Widevine unique asset id.
- */
-function KalturaWidevineFlavorAsset(){
-	KalturaWidevineFlavorAsset.super_.call(this);
-	this.widevineDistributionStartDate = null;
-	this.widevineDistributionEndDate = null;
-	this.widevineAssetId = null;
-}
-module.exports.KalturaWidevineFlavorAsset = KalturaWidevineFlavorAsset;
-
-util.inherits(KalturaWidevineFlavorAsset, KalturaFlavorAsset);
-
-
-/**
- */
-function KalturaWidevineFlavorParams(){
-	KalturaWidevineFlavorParams.super_.call(this);
-}
-module.exports.KalturaWidevineFlavorParams = KalturaWidevineFlavorParams;
-
-util.inherits(KalturaWidevineFlavorParams, KalturaFlavorParams);
 
 
 /**
@@ -12390,26 +11970,6 @@ util.inherits(KalturaPdfFlavorParamsOutput, KalturaFlavorParamsOutput);
 
 /**
  */
-function KalturaPlayReadyPolicyBaseFilter(){
-	KalturaPlayReadyPolicyBaseFilter.super_.call(this);
-}
-module.exports.KalturaPlayReadyPolicyBaseFilter = KalturaPlayReadyPolicyBaseFilter;
-
-util.inherits(KalturaPlayReadyPolicyBaseFilter, KalturaDrmPolicyFilter);
-
-
-/**
- */
-function KalturaPlayReadyProfileBaseFilter(){
-	KalturaPlayReadyProfileBaseFilter.super_.call(this);
-}
-module.exports.KalturaPlayReadyProfileBaseFilter = KalturaPlayReadyProfileBaseFilter;
-
-util.inherits(KalturaPlayReadyProfileBaseFilter, KalturaDrmProfileFilter);
-
-
-/**
- */
 function KalturaPlaylistBaseFilter(){
 	KalturaPlaylistBaseFilter.super_.call(this);
 }
@@ -12511,6 +12071,20 @@ util.inherits(KalturaSyndicationDistributionProviderBaseFilter, KalturaDistribut
 
 
 /**
+ * @param partnerParentIdEqual int .
+ * @param partnerParentIdIn string .
+ */
+function KalturaSystemPartnerFilter(){
+	KalturaSystemPartnerFilter.super_.call(this);
+	this.partnerParentIdEqual = null;
+	this.partnerParentIdIn = null;
+}
+module.exports.KalturaSystemPartnerFilter = KalturaSystemPartnerFilter;
+
+util.inherits(KalturaSystemPartnerFilter, KalturaPartnerFilter);
+
+
+/**
  * @param thumbParamsIdEqual int .
  * @param thumbParamsIdIn string .
  * @param statusEqual int .
@@ -12528,32 +12102,6 @@ function KalturaThumbAssetBaseFilter(){
 module.exports.KalturaThumbAssetBaseFilter = KalturaThumbAssetBaseFilter;
 
 util.inherits(KalturaThumbAssetBaseFilter, KalturaAssetFilter);
-
-
-/**
- * @param descriptionLike string .
- * @param descriptionMultiLikeOr string .
- * @param descriptionMultiLikeAnd string .
- * @param titleLike string .
- * @param titleMultiLikeOr string .
- * @param titleMultiLikeAnd string .
- * @param subTypeEqual int .
- * @param subTypeIn string .
- */
-function KalturaThumbCuePointBaseFilter(){
-	KalturaThumbCuePointBaseFilter.super_.call(this);
-	this.descriptionLike = null;
-	this.descriptionMultiLikeOr = null;
-	this.descriptionMultiLikeAnd = null;
-	this.titleLike = null;
-	this.titleMultiLikeOr = null;
-	this.titleMultiLikeAnd = null;
-	this.subTypeEqual = null;
-	this.subTypeIn = null;
-}
-module.exports.KalturaThumbCuePointBaseFilter = KalturaThumbCuePointBaseFilter;
-
-util.inherits(KalturaThumbCuePointBaseFilter, KalturaCuePointFilter);
 
 
 /**
@@ -12588,6 +12136,16 @@ function KalturaTubeMogulSyndicationFeedBaseFilter(){
 module.exports.KalturaTubeMogulSyndicationFeedBaseFilter = KalturaTubeMogulSyndicationFeedBaseFilter;
 
 util.inherits(KalturaTubeMogulSyndicationFeedBaseFilter, KalturaBaseSyndicationFeedFilter);
+
+
+/**
+ */
+function KalturaUiConfAdminBaseFilter(){
+	KalturaUiConfAdminBaseFilter.super_.call(this);
+}
+module.exports.KalturaUiConfAdminBaseFilter = KalturaUiConfAdminBaseFilter;
+
+util.inherits(KalturaUiConfAdminBaseFilter, KalturaUiConfFilter);
 
 
 /**
@@ -12658,50 +12216,6 @@ function KalturaWebcamTokenResource(){
 module.exports.KalturaWebcamTokenResource = KalturaWebcamTokenResource;
 
 util.inherits(KalturaWebcamTokenResource, KalturaDataCenterContentResource);
-
-
-/**
- */
-function KalturaWebexDropFolderBaseFilter(){
-	KalturaWebexDropFolderBaseFilter.super_.call(this);
-}
-module.exports.KalturaWebexDropFolderBaseFilter = KalturaWebexDropFolderBaseFilter;
-
-util.inherits(KalturaWebexDropFolderBaseFilter, KalturaDropFolderFilter);
-
-
-/**
- */
-function KalturaWebexDropFolderFileBaseFilter(){
-	KalturaWebexDropFolderFileBaseFilter.super_.call(this);
-}
-module.exports.KalturaWebexDropFolderFileBaseFilter = KalturaWebexDropFolderFileBaseFilter;
-
-util.inherits(KalturaWebexDropFolderFileBaseFilter, KalturaDropFolderFileFilter);
-
-
-/**
- * @param widevineDistributionStartDate int License distribution window start date.
- * @param widevineDistributionEndDate int License distribution window end date.
- */
-function KalturaWidevineFlavorParamsOutput(){
-	KalturaWidevineFlavorParamsOutput.super_.call(this);
-	this.widevineDistributionStartDate = null;
-	this.widevineDistributionEndDate = null;
-}
-module.exports.KalturaWidevineFlavorParamsOutput = KalturaWidevineFlavorParamsOutput;
-
-util.inherits(KalturaWidevineFlavorParamsOutput, KalturaFlavorParamsOutput);
-
-
-/**
- */
-function KalturaWidevineProfileBaseFilter(){
-	KalturaWidevineProfileBaseFilter.super_.call(this);
-}
-module.exports.KalturaWidevineProfileBaseFilter = KalturaWidevineProfileBaseFilter;
-
-util.inherits(KalturaWidevineProfileBaseFilter, KalturaDrmProfileFilter);
 
 
 /**
@@ -13056,26 +12570,6 @@ util.inherits(KalturaKontikiStorageProfileFilter, KalturaKontikiStorageProfileBa
 
 /**
  */
-function KalturaPlayReadyPolicyFilter(){
-	KalturaPlayReadyPolicyFilter.super_.call(this);
-}
-module.exports.KalturaPlayReadyPolicyFilter = KalturaPlayReadyPolicyFilter;
-
-util.inherits(KalturaPlayReadyPolicyFilter, KalturaPlayReadyPolicyBaseFilter);
-
-
-/**
- */
-function KalturaPlayReadyProfileFilter(){
-	KalturaPlayReadyProfileFilter.super_.call(this);
-}
-module.exports.KalturaPlayReadyProfileFilter = KalturaPlayReadyProfileFilter;
-
-util.inherits(KalturaPlayReadyProfileFilter, KalturaPlayReadyProfileBaseFilter);
-
-
-/**
- */
 function KalturaPlaylistFilter(){
 	KalturaPlaylistFilter.super_.call(this);
 }
@@ -13128,16 +12622,6 @@ util.inherits(KalturaThumbAssetFilter, KalturaThumbAssetBaseFilter);
 
 /**
  */
-function KalturaThumbCuePointFilter(){
-	KalturaThumbCuePointFilter.super_.call(this);
-}
-module.exports.KalturaThumbCuePointFilter = KalturaThumbCuePointFilter;
-
-util.inherits(KalturaThumbCuePointFilter, KalturaThumbCuePointBaseFilter);
-
-
-/**
- */
 function KalturaThumbParamsFilter(){
 	KalturaThumbParamsFilter.super_.call(this);
 }
@@ -13158,32 +12642,12 @@ util.inherits(KalturaTubeMogulSyndicationFeedFilter, KalturaTubeMogulSyndication
 
 /**
  */
-function KalturaWebexDropFolderFileFilter(){
-	KalturaWebexDropFolderFileFilter.super_.call(this);
+function KalturaUiConfAdminFilter(){
+	KalturaUiConfAdminFilter.super_.call(this);
 }
-module.exports.KalturaWebexDropFolderFileFilter = KalturaWebexDropFolderFileFilter;
+module.exports.KalturaUiConfAdminFilter = KalturaUiConfAdminFilter;
 
-util.inherits(KalturaWebexDropFolderFileFilter, KalturaWebexDropFolderFileBaseFilter);
-
-
-/**
- */
-function KalturaWebexDropFolderFilter(){
-	KalturaWebexDropFolderFilter.super_.call(this);
-}
-module.exports.KalturaWebexDropFolderFilter = KalturaWebexDropFolderFilter;
-
-util.inherits(KalturaWebexDropFolderFilter, KalturaWebexDropFolderBaseFilter);
-
-
-/**
- */
-function KalturaWidevineProfileFilter(){
-	KalturaWidevineProfileFilter.super_.call(this);
-}
-module.exports.KalturaWidevineProfileFilter = KalturaWidevineProfileFilter;
-
-util.inherits(KalturaWidevineProfileFilter, KalturaWidevineProfileBaseFilter);
+util.inherits(KalturaUiConfAdminFilter, KalturaUiConfAdminBaseFilter);
 
 
 /**
@@ -13402,36 +12866,6 @@ util.inherits(KalturaThumbParamsOutputBaseFilter, KalturaThumbParamsFilter);
 
 /**
  */
-function KalturaTimedThumbAssetBaseFilter(){
-	KalturaTimedThumbAssetBaseFilter.super_.call(this);
-}
-module.exports.KalturaTimedThumbAssetBaseFilter = KalturaTimedThumbAssetBaseFilter;
-
-util.inherits(KalturaTimedThumbAssetBaseFilter, KalturaThumbAssetFilter);
-
-
-/**
- */
-function KalturaWidevineFlavorAssetBaseFilter(){
-	KalturaWidevineFlavorAssetBaseFilter.super_.call(this);
-}
-module.exports.KalturaWidevineFlavorAssetBaseFilter = KalturaWidevineFlavorAssetBaseFilter;
-
-util.inherits(KalturaWidevineFlavorAssetBaseFilter, KalturaFlavorAssetFilter);
-
-
-/**
- */
-function KalturaWidevineFlavorParamsBaseFilter(){
-	KalturaWidevineFlavorParamsBaseFilter.super_.call(this);
-}
-module.exports.KalturaWidevineFlavorParamsBaseFilter = KalturaWidevineFlavorParamsBaseFilter;
-
-util.inherits(KalturaWidevineFlavorParamsBaseFilter, KalturaFlavorParamsFilter);
-
-
-/**
- */
 function KalturaDeliveryProfileGenericRtmpFilter(){
 	KalturaDeliveryProfileGenericRtmpFilter.super_.call(this);
 }
@@ -13572,36 +13006,6 @@ util.inherits(KalturaThumbParamsOutputFilter, KalturaThumbParamsOutputBaseFilter
 
 /**
  */
-function KalturaTimedThumbAssetFilter(){
-	KalturaTimedThumbAssetFilter.super_.call(this);
-}
-module.exports.KalturaTimedThumbAssetFilter = KalturaTimedThumbAssetFilter;
-
-util.inherits(KalturaTimedThumbAssetFilter, KalturaTimedThumbAssetBaseFilter);
-
-
-/**
- */
-function KalturaWidevineFlavorAssetFilter(){
-	KalturaWidevineFlavorAssetFilter.super_.call(this);
-}
-module.exports.KalturaWidevineFlavorAssetFilter = KalturaWidevineFlavorAssetFilter;
-
-util.inherits(KalturaWidevineFlavorAssetFilter, KalturaWidevineFlavorAssetBaseFilter);
-
-
-/**
- */
-function KalturaWidevineFlavorParamsFilter(){
-	KalturaWidevineFlavorParamsFilter.super_.call(this);
-}
-module.exports.KalturaWidevineFlavorParamsFilter = KalturaWidevineFlavorParamsFilter;
-
-util.inherits(KalturaWidevineFlavorParamsFilter, KalturaWidevineFlavorParamsBaseFilter);
-
-
-/**
- */
 function KalturaDocumentFlavorParamsOutputBaseFilter(){
 	KalturaDocumentFlavorParamsOutputBaseFilter.super_.call(this);
 }
@@ -13700,16 +13104,6 @@ util.inherits(KalturaSwfFlavorParamsOutputBaseFilter, KalturaFlavorParamsOutputF
 
 /**
  */
-function KalturaWidevineFlavorParamsOutputBaseFilter(){
-	KalturaWidevineFlavorParamsOutputBaseFilter.super_.call(this);
-}
-module.exports.KalturaWidevineFlavorParamsOutputBaseFilter = KalturaWidevineFlavorParamsOutputBaseFilter;
-
-util.inherits(KalturaWidevineFlavorParamsOutputBaseFilter, KalturaFlavorParamsOutputFilter);
-
-
-/**
- */
 function KalturaDocumentFlavorParamsOutputFilter(){
 	KalturaDocumentFlavorParamsOutputFilter.super_.call(this);
 }
@@ -13800,16 +13194,6 @@ function KalturaSwfFlavorParamsOutputFilter(){
 module.exports.KalturaSwfFlavorParamsOutputFilter = KalturaSwfFlavorParamsOutputFilter;
 
 util.inherits(KalturaSwfFlavorParamsOutputFilter, KalturaSwfFlavorParamsOutputBaseFilter);
-
-
-/**
- */
-function KalturaWidevineFlavorParamsOutputFilter(){
-	KalturaWidevineFlavorParamsOutputFilter.super_.call(this);
-}
-module.exports.KalturaWidevineFlavorParamsOutputFilter = KalturaWidevineFlavorParamsOutputFilter;
-
-util.inherits(KalturaWidevineFlavorParamsOutputFilter, KalturaWidevineFlavorParamsOutputBaseFilter);
 
 
 /**

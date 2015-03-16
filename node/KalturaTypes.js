@@ -486,6 +486,11 @@ SYNDICATION_ALL : 31,
 SYNDICATION_LIVE : 32,
 };
 
+var KalturaLiveStatsEventType = module.exports.KalturaLiveStatsEventType = {
+LIVE : 1,
+DVR : 2,
+};
+
 var KalturaMailJobStatus = module.exports.KalturaMailJobStatus = {
 PENDING : 1,
 SENT : 2,
@@ -630,7 +635,8 @@ MEMBERS_ONLY : 3,
 
 var KalturaRecordStatus = module.exports.KalturaRecordStatus = {
 DISABLED : 0,
-ENABLED : 1,
+APPENDED : 1,
+PER_SESSION : 2,
 };
 
 var KalturaReportType = module.exports.KalturaReportType = {
@@ -667,6 +673,14 @@ RESPONSE_TYPE_PHP_ARRAY : 4,
 RESPONSE_TYPE_HTML : 7,
 RESPONSE_TYPE_MRSS : 8,
 RESPONSE_TYPE_JSONP : 9,
+};
+
+var KalturaScheduledTaskProfileStatus = module.exports.KalturaScheduledTaskProfileStatus = {
+DISABLED : 1,
+ACTIVE : 2,
+DELETED : 3,
+SUSPENDED : 4,
+DRY_RUN_ONLY : 5,
 };
 
 var KalturaSearchOperatorType = module.exports.KalturaSearchOperatorType = {
@@ -1641,6 +1655,7 @@ LEVEL3_RTMP : '35',
 LIMELIGHT_HTTP : '44',
 LIMELIGHT_RTMP : '45',
 LOCAL_PATH_APPLE_HTTP : '51',
+LOCAL_PATH_HDS : '53',
 LOCAL_PATH_HTTP : '54',
 LOCAL_PATH_RTMP : '55',
 VOD_PACKAGER_HLS : '61',
@@ -3093,6 +3108,17 @@ BLOCK : '1',
 PREVIEW : '2',
 LIMIT_FLAVORS : '3',
 ADD_TO_STORAGE : '4',
+};
+
+var KalturaScheduledTaskProfileOrderBy = module.exports.KalturaScheduledTaskProfileOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+ID_ASC : '+id',
+LAST_EXECUTION_STARTED_AT_ASC : '+lastExecutionStartedAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+ID_DESC : '-id',
+LAST_EXECUTION_STARTED_AT_DESC : '-lastExecutionStartedAt',
+UPDATED_AT_DESC : '-updatedAt',
 };
 
 var KalturaSchemaType = module.exports.KalturaSchemaType = {

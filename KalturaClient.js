@@ -8,7 +8,7 @@
 // to do with audio, video, and animation what Wiki platfroms allow them to do with
 // text.
 //
-// Copyright (C) 2006-2011  Kaltura Inc.
+// Copyright (C) 2006-2015  Kaltura Inc.
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as
@@ -137,6 +137,11 @@ KalturaClient.prototype.flavorParamsOutput = null;
  */
 KalturaClient.prototype.flavorParams = null;
 /**
+ * Add & Manage GroupUser
+ * @param kaltura.services.KalturaGroupUserService
+ */
+KalturaClient.prototype.groupUser = null;
+/**
  * Manage live channel segments
  * @param kaltura.services.KalturaLiveChannelSegmentService
  */
@@ -153,9 +158,9 @@ KalturaClient.prototype.liveChannel = null;
 KalturaClient.prototype.liveReports = null;
 /**
  * Stats Service
- * @param kaltura.services.KalturaStatsService
+ * @param kaltura.services.KalturaLiveStatsService
  */
-KalturaClient.prototype.stats = null;
+KalturaClient.prototype.liveStats = null;
 /**
  * Live Stream service lets you manage live stream entries
  * @param kaltura.services.KalturaLiveStreamService
@@ -229,6 +234,11 @@ KalturaClient.prototype.search = null;
  * @param kaltura.services.KalturaSessionService
  */
 KalturaClient.prototype.session = null;
+/**
+ * Stats Service
+ * @param kaltura.services.KalturaStatsService
+ */
+KalturaClient.prototype.stats = null;
 /**
  * Storage Profiles service
  * @param kaltura.services.KalturaStorageProfileService
@@ -317,45 +327,40 @@ KalturaClient.prototype.metadataBatch = null;
  */
 KalturaClient.prototype.documents = null;
 /**
- * Annotation service - Video Annotation
- * @param kaltura.services.KalturaAnnotationService
+ * System user service
+ * @param kaltura.services.KalturaFileSyncService
  */
-KalturaClient.prototype.annotation = null;
+KalturaClient.prototype.fileSync = null;
 /**
- * Aspera service
- * @param kaltura.services.KalturaAsperaService
+ * System partner service
+ * @param kaltura.services.KalturaSystemPartnerService
  */
-KalturaClient.prototype.aspera = null;
+KalturaClient.prototype.systemPartner = null;
 /**
- * Retrieve information and invoke actions on attachment Asset
- * @param kaltura.services.KalturaAttachmentAssetService
+ * Entry Admin service
+ * @param kaltura.services.KalturaEntryAdminService
  */
-KalturaClient.prototype.attachmentAsset = null;
+KalturaClient.prototype.entryAdmin = null;
 /**
- * Audit Trail service
- * @param kaltura.services.KalturaAuditTrailService
+ * UiConf Admin service
+ * @param kaltura.services.KalturaUiConfAdminService
  */
-KalturaClient.prototype.auditTrail = null;
+KalturaClient.prototype.uiConfAdmin = null;
 /**
- * Bulk upload service is used to upload & manage bulk uploads
- * @param kaltura.services.KalturaBulkService
+ * 
+ * @param kaltura.services.KalturaReportAdminService
  */
-KalturaClient.prototype.bulk = null;
+KalturaClient.prototype.reportAdmin = null;
 /**
- * Retrieve information and invoke actions on caption Asset
- * @param kaltura.services.KalturaCaptionAssetService
+ * Internal Tools Service
+ * @param kaltura.services.KalturaKalturaInternalToolsSystemHelperService
  */
-KalturaClient.prototype.captionAsset = null;
+KalturaClient.prototype.kalturaInternalToolsSystemHelper = null;
 /**
- * Add & Manage Caption Params
- * @param kaltura.services.KalturaCaptionParamsService
+ * Virus scan profile service
+ * @param kaltura.services.KalturaVirusScanProfileService
  */
-KalturaClient.prototype.captionParams = null;
-/**
- * Search caption asset items
- * @param kaltura.services.KalturaCaptionAssetItemService
- */
-KalturaClient.prototype.captionAssetItem = null;
+KalturaClient.prototype.virusScanProfile = null;
 /**
  * Distribution Profile service
  * @param kaltura.services.KalturaDistributionProfileService
@@ -392,6 +397,21 @@ KalturaClient.prototype.contentDistributionBatch = null;
  */
 KalturaClient.prototype.cuePoint = null;
 /**
+ * Annotation service - Video Annotation
+ * @param kaltura.services.KalturaAnnotationService
+ */
+KalturaClient.prototype.annotation = null;
+/**
+ * Short link service
+ * @param kaltura.services.KalturaShortLinkService
+ */
+KalturaClient.prototype.shortLink = null;
+/**
+ * Bulk upload service is used to upload & manage bulk uploads
+ * @param kaltura.services.KalturaBulkService
+ */
+KalturaClient.prototype.bulk = null;
+/**
  * DropFolder service lets you create and manage drop folders
  * @param kaltura.services.KalturaDropFolderService
  */
@@ -402,70 +422,50 @@ KalturaClient.prototype.dropFolder = null;
  */
 KalturaClient.prototype.dropFolderFile = null;
 /**
- * Event notification template service lets you create and manage event notification templates
- * @param kaltura.services.KalturaEventNotificationTemplateService
+ * Retrieve information and invoke actions on caption Asset
+ * @param kaltura.services.KalturaCaptionAssetService
  */
-KalturaClient.prototype.eventNotificationTemplate = null;
+KalturaClient.prototype.captionAsset = null;
 /**
- * System user service
- * @param kaltura.services.KalturaFileSyncService
+ * Add & Manage Caption Params
+ * @param kaltura.services.KalturaCaptionParamsService
  */
-KalturaClient.prototype.fileSync = null;
+KalturaClient.prototype.captionParams = null;
 /**
- * Kaltura Sharepoint Extension Service
- * @param kaltura.services.KalturaSharepointExtensionService
+ * Search caption asset items
+ * @param kaltura.services.KalturaCaptionAssetItemService
  */
-KalturaClient.prototype.sharepointExtension = null;
+KalturaClient.prototype.captionAssetItem = null;
 /**
- * Allows user to 'like' or 'unlike' and entry
- * @param kaltura.services.KalturaLikeService
+ * Retrieve information and invoke actions on attachment Asset
+ * @param kaltura.services.KalturaAttachmentAssetService
  */
-KalturaClient.prototype.like = null;
-/**
- * 
- * @param kaltura.services.KalturaFilesyncImportBatchService
- */
-KalturaClient.prototype.filesyncImportBatch = null;
-/**
- * Short link service
- * @param kaltura.services.KalturaShortLinkService
- */
-KalturaClient.prototype.shortLink = null;
+KalturaClient.prototype.attachmentAsset = null;
 /**
  * Search object tags
  * @param kaltura.services.KalturaTagService
  */
 KalturaClient.prototype.tag = null;
 /**
+ * Allows user to 'like' or 'unlike' and entry
+ * @param kaltura.services.KalturaLikeService
+ */
+KalturaClient.prototype.like = null;
+/**
  * Utility service for the Multi-publishers console
  * @param kaltura.services.KalturaVarConsoleService
  */
 KalturaClient.prototype.varConsole = null;
 /**
- * Virus scan profile service
- * @param kaltura.services.KalturaVirusScanProfileService
+ * Event notification template service lets you create and manage event notification templates
+ * @param kaltura.services.KalturaEventNotificationTemplateService
  */
-KalturaClient.prototype.virusScanProfile = null;
+KalturaClient.prototype.eventNotificationTemplate = null;
 /**
  * External media service lets you upload and manage embed codes and external playable content
  * @param kaltura.services.KalturaExternalMediaService
  */
 KalturaClient.prototype.externalMedia = null;
-/**
- * 
- * @param kaltura.services.KalturaDrmPolicyService
- */
-KalturaClient.prototype.drmPolicy = null;
-/**
- * 
- * @param kaltura.services.KalturaDrmProfileService
- */
-KalturaClient.prototype.drmProfile = null;
-/**
- * WidevineDrmService serves as a license proxy to a Widevine license server
- * @param kaltura.services.KalturaWidevineDrmService
- */
-KalturaClient.prototype.widevineDrm = null;
 /**
  * Enable serving live conversion profile to the Wowza servers as XML
  * @param kaltura.services.KalturaLiveConversionProfileService
@@ -476,11 +476,6 @@ KalturaClient.prototype.liveConversionProfile = null;
  * @param kaltura.services.KalturaScheduledTaskProfileService
  */
 KalturaClient.prototype.scheduledTaskProfile = null;
-/**
- * 
- * @param kaltura.services.KalturaPlayReadyDrmService
- */
-KalturaClient.prototype.playReadyDrm = null;
 /**
  * The client constructor.
  * @param config the Kaltura configuration object holding partner credentials (type: KalturaConfiguration).
@@ -507,10 +502,11 @@ KalturaClient.prototype.init = function(config){
 	this.flavorAsset = new kaltura.services.KalturaFlavorAssetService(this);
 	this.flavorParamsOutput = new kaltura.services.KalturaFlavorParamsOutputService(this);
 	this.flavorParams = new kaltura.services.KalturaFlavorParamsService(this);
+	this.groupUser = new kaltura.services.KalturaGroupUserService(this);
 	this.liveChannelSegment = new kaltura.services.KalturaLiveChannelSegmentService(this);
 	this.liveChannel = new kaltura.services.KalturaLiveChannelService(this);
 	this.liveReports = new kaltura.services.KalturaLiveReportsService(this);
-	this.stats = new kaltura.services.KalturaStatsService(this);
+	this.liveStats = new kaltura.services.KalturaLiveStatsService(this);
 	this.liveStream = new kaltura.services.KalturaLiveStreamService(this);
 	this.mediaInfo = new kaltura.services.KalturaMediaInfoService(this);
 	this.mediaServer = new kaltura.services.KalturaMediaServerService(this);
@@ -525,6 +521,7 @@ KalturaClient.prototype.init = function(config){
 	this.schema = new kaltura.services.KalturaSchemaService(this);
 	this.search = new kaltura.services.KalturaSearchService(this);
 	this.session = new kaltura.services.KalturaSessionService(this);
+	this.stats = new kaltura.services.KalturaStatsService(this);
 	this.storageProfile = new kaltura.services.KalturaStorageProfileService(this);
 	this.syndicationFeed = new kaltura.services.KalturaSyndicationFeedService(this);
 	this.system = new kaltura.services.KalturaSystemService(this);
@@ -542,14 +539,13 @@ KalturaClient.prototype.init = function(config){
 	this.metadataProfile = new kaltura.services.KalturaMetadataProfileService(this);
 	this.metadataBatch = new kaltura.services.KalturaMetadataBatchService(this);
 	this.documents = new kaltura.services.KalturaDocumentsService(this);
-	this.annotation = new kaltura.services.KalturaAnnotationService(this);
-	this.aspera = new kaltura.services.KalturaAsperaService(this);
-	this.attachmentAsset = new kaltura.services.KalturaAttachmentAssetService(this);
-	this.auditTrail = new kaltura.services.KalturaAuditTrailService(this);
-	this.bulk = new kaltura.services.KalturaBulkService(this);
-	this.captionAsset = new kaltura.services.KalturaCaptionAssetService(this);
-	this.captionParams = new kaltura.services.KalturaCaptionParamsService(this);
-	this.captionAssetItem = new kaltura.services.KalturaCaptionAssetItemService(this);
+	this.fileSync = new kaltura.services.KalturaFileSyncService(this);
+	this.systemPartner = new kaltura.services.KalturaSystemPartnerService(this);
+	this.entryAdmin = new kaltura.services.KalturaEntryAdminService(this);
+	this.uiConfAdmin = new kaltura.services.KalturaUiConfAdminService(this);
+	this.reportAdmin = new kaltura.services.KalturaReportAdminService(this);
+	this.kalturaInternalToolsSystemHelper = new kaltura.services.KalturaKalturaInternalToolsSystemHelperService(this);
+	this.virusScanProfile = new kaltura.services.KalturaVirusScanProfileService(this);
 	this.distributionProfile = new kaltura.services.KalturaDistributionProfileService(this);
 	this.entryDistribution = new kaltura.services.KalturaEntryDistributionService(this);
 	this.distributionProvider = new kaltura.services.KalturaDistributionProviderService(this);
@@ -557,22 +553,20 @@ KalturaClient.prototype.init = function(config){
 	this.genericDistributionProviderAction = new kaltura.services.KalturaGenericDistributionProviderActionService(this);
 	this.contentDistributionBatch = new kaltura.services.KalturaContentDistributionBatchService(this);
 	this.cuePoint = new kaltura.services.KalturaCuePointService(this);
+	this.annotation = new kaltura.services.KalturaAnnotationService(this);
+	this.shortLink = new kaltura.services.KalturaShortLinkService(this);
+	this.bulk = new kaltura.services.KalturaBulkService(this);
 	this.dropFolder = new kaltura.services.KalturaDropFolderService(this);
 	this.dropFolderFile = new kaltura.services.KalturaDropFolderFileService(this);
-	this.eventNotificationTemplate = new kaltura.services.KalturaEventNotificationTemplateService(this);
-	this.fileSync = new kaltura.services.KalturaFileSyncService(this);
-	this.sharepointExtension = new kaltura.services.KalturaSharepointExtensionService(this);
-	this.like = new kaltura.services.KalturaLikeService(this);
-	this.filesyncImportBatch = new kaltura.services.KalturaFilesyncImportBatchService(this);
-	this.shortLink = new kaltura.services.KalturaShortLinkService(this);
+	this.captionAsset = new kaltura.services.KalturaCaptionAssetService(this);
+	this.captionParams = new kaltura.services.KalturaCaptionParamsService(this);
+	this.captionAssetItem = new kaltura.services.KalturaCaptionAssetItemService(this);
+	this.attachmentAsset = new kaltura.services.KalturaAttachmentAssetService(this);
 	this.tag = new kaltura.services.KalturaTagService(this);
+	this.like = new kaltura.services.KalturaLikeService(this);
 	this.varConsole = new kaltura.services.KalturaVarConsoleService(this);
-	this.virusScanProfile = new kaltura.services.KalturaVirusScanProfileService(this);
+	this.eventNotificationTemplate = new kaltura.services.KalturaEventNotificationTemplateService(this);
 	this.externalMedia = new kaltura.services.KalturaExternalMediaService(this);
-	this.drmPolicy = new kaltura.services.KalturaDrmPolicyService(this);
-	this.drmProfile = new kaltura.services.KalturaDrmProfileService(this);
-	this.widevineDrm = new kaltura.services.KalturaWidevineDrmService(this);
 	this.liveConversionProfile = new kaltura.services.KalturaLiveConversionProfileService(this);
 	this.scheduledTaskProfile = new kaltura.services.KalturaScheduledTaskProfileService(this);
-	this.playReadyDrm = new kaltura.services.KalturaPlayReadyDrmService(this);
 };

@@ -8,7 +8,7 @@
 // to do with audio, video, and animation what Wiki platfroms allow them to do with
 // text.
 //
-// Copyright (C) 2006-2011  Kaltura Inc.
+// Copyright (C) 2006-2015  Kaltura Inc.
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as
@@ -58,31 +58,6 @@ READY : 2,
 DELETED : 3,
 IMPORTING : 7,
 EXPORTING : 9,
-};
-
-var KalturaAuditTrailChangeXmlNodeType = module.exports.KalturaAuditTrailChangeXmlNodeType = {
-CHANGED : 1,
-ADDED : 2,
-REMOVED : 3,
-};
-
-var KalturaAuditTrailContext = module.exports.KalturaAuditTrailContext = {
-CLIENT : -1,
-SCRIPT : 0,
-PS2 : 1,
-API_V3 : 2,
-};
-
-var KalturaAuditTrailFileSyncType = module.exports.KalturaAuditTrailFileSyncType = {
-FILE : 1,
-LINK : 2,
-URL : 3,
-};
-
-var KalturaAuditTrailStatus = module.exports.KalturaAuditTrailStatus = {
-PENDING : 1,
-READY : 2,
-FAILED : 3,
 };
 
 var KalturaBatchJobErrorTypes = module.exports.KalturaBatchJobErrorTypes = {
@@ -197,6 +172,7 @@ var KalturaCuePointStatus = module.exports.KalturaCuePointStatus = {
 READY : 1,
 DELETED : 2,
 HANDLED : 3,
+PENDING : 4,
 };
 
 var KalturaDVRStatus = module.exports.KalturaDVRStatus = {
@@ -278,22 +254,6 @@ var KalturaDocumentType = module.exports.KalturaDocumentType = {
 DOCUMENT : 11,
 SWF : 12,
 PDF : 13,
-};
-
-var KalturaDrmLicenseExpirationPolicy = module.exports.KalturaDrmLicenseExpirationPolicy = {
-FIXED_DURATION : 1,
-ENTRY_SCHEDULING_END : 2,
-UNLIMITED : 3,
-};
-
-var KalturaDrmPolicyStatus = module.exports.KalturaDrmPolicyStatus = {
-ACTIVE : 1,
-DELETED : 2,
-};
-
-var KalturaDrmProfileStatus = module.exports.KalturaDrmProfileStatus = {
-ACTIVE : 1,
-DELETED : 2,
 };
 
 var KalturaDropFolderContentFileHandlerMatchPolicy = module.exports.KalturaDropFolderContentFileHandlerMatchPolicy = {
@@ -455,6 +415,11 @@ ACTIVE : 2,
 DELETED : 3,
 };
 
+var KalturaGroupUserStatus = module.exports.KalturaGroupUserStatus = {
+ACTIVE : 0,
+DELETED : 1,
+};
+
 var KalturaHttpNotificationAuthenticationMethod = module.exports.KalturaHttpNotificationAuthenticationMethod = {
 ANYSAFE : -18,
 ANY : -17,
@@ -525,6 +490,11 @@ LOCATION_ALL : 21,
 LOCATION_LIVE : 22,
 SYNDICATION_ALL : 31,
 SYNDICATION_LIVE : 32,
+};
+
+var KalturaLiveStatsEventType = module.exports.KalturaLiveStatsEventType = {
+LIVE : 1,
+DVR : 2,
 };
 
 var KalturaMailJobStatus = module.exports.KalturaMailJobStatus = {
@@ -657,43 +627,6 @@ PLUGIN : 3,
 PARTNER_GROUP : 4,
 };
 
-var KalturaPlayReadyAnalogVideoOPL = module.exports.KalturaPlayReadyAnalogVideoOPL = {
-MIN_100 : 100,
-MIN_150 : 150,
-MIN_200 : 200,
-};
-
-var KalturaPlayReadyCompressedDigitalVideoOPL = module.exports.KalturaPlayReadyCompressedDigitalVideoOPL = {
-MIN_400 : 400,
-MIN_500 : 500,
-};
-
-var KalturaPlayReadyDigitalAudioOPL = module.exports.KalturaPlayReadyDigitalAudioOPL = {
-MIN_100 : 100,
-MIN_150 : 150,
-MIN_200 : 200,
-MIN_250 : 250,
-MIN_300 : 300,
-};
-
-var KalturaPlayReadyLicenseRemovalPolicy = module.exports.KalturaPlayReadyLicenseRemovalPolicy = {
-FIXED_FROM_EXPIRATION : 1,
-ENTRY_SCHEDULING_END : 2,
-NONE : 3,
-};
-
-var KalturaPlayReadyMinimumLicenseSecurityLevel = module.exports.KalturaPlayReadyMinimumLicenseSecurityLevel = {
-NON_COMMERCIAL_QUALITY : 150,
-COMMERCIAL_QUALITY : 2000,
-};
-
-var KalturaPlayReadyUncompressedDigitalVideoOPL = module.exports.KalturaPlayReadyUncompressedDigitalVideoOPL = {
-MIN_100 : 100,
-MIN_250 : 250,
-MIN_270 : 270,
-MIN_300 : 300,
-};
-
 var KalturaPlaylistType = module.exports.KalturaPlaylistType = {
 STATIC_LIST : 3,
 DYNAMIC : 10,
@@ -708,7 +641,8 @@ MEMBERS_ONLY : 3,
 
 var KalturaRecordStatus = module.exports.KalturaRecordStatus = {
 DISABLED : 0,
-ENABLED : 1,
+APPENDED : 1,
+PER_SESSION : 2,
 };
 
 var KalturaReportType = module.exports.KalturaReportType = {
@@ -733,6 +667,7 @@ PLATFORMS : 21,
 OPERATION_SYSTEM : 22,
 BROWSERS : 23,
 LIVE : 24,
+TOP_PLAYBACK_CONTEXT : 25,
 PARTNER_USAGE : 201,
 };
 
@@ -930,6 +865,13 @@ AUTOMATIC : 2,
 MANUAL : 3,
 };
 
+var KalturaStorageServePriority = module.exports.KalturaStorageServePriority = {
+KALTURA_ONLY : 1,
+KALTURA_FIRST : 2,
+EXTERNAL_FIRST : 3,
+EXTERNAL_ONLY : 4,
+};
+
 var KalturaSyndicationFeedStatus = module.exports.KalturaSyndicationFeedStatus = {
 DELETED : -1,
 ACTIVE : 1,
@@ -962,9 +904,13 @@ CROP_FROM_TOP : 4,
 RESIZE_WITH_FORCE : 5,
 };
 
-var KalturaThumbCuePointSubType = module.exports.KalturaThumbCuePointSubType = {
-SLIDE : 1,
-CHAPTER : 2,
+var KalturaTrackEntryEventType = module.exports.KalturaTrackEntryEventType = {
+UPLOADED_FILE : 1,
+WEBCAM_COMPLETED : 2,
+IMPORT_STARTED : 3,
+ADD_ENTRY : 4,
+UPDATE_ENTRY : 5,
+DELETED_ENTRY : 6,
 };
 
 var KalturaUiConfCreationMode = module.exports.KalturaUiConfCreationMode = {
@@ -993,6 +939,7 @@ KMC_ROLES_AND_PERMISSIONS : 17,
 CLIPPER : 18,
 KSR : 19,
 KUPLOAD : 20,
+WEBCASTING : 21,
 };
 
 var KalturaUpdateMethodType = module.exports.KalturaUpdateMethodType = {
@@ -1038,6 +985,11 @@ ACTIVE : 1,
 DELETED : 2,
 };
 
+var KalturaUserType = module.exports.KalturaUserType = {
+USER : 0,
+GROUP : 1,
+};
+
 var KalturaVirusFoundAction = module.exports.KalturaVirusFoundAction = {
 NONE : 0,
 DELETE : 1,
@@ -1056,10 +1008,6 @@ var KalturaVirusScanProfileStatus = module.exports.KalturaVirusScanProfileStatus
 DISABLED : 1,
 ENABLED : 2,
 DELETED : 3,
-};
-
-var KalturaWidevineRepositorySyncMode = module.exports.KalturaWidevineRepositorySyncMode = {
-MODIFY : 0,
 };
 
 var KalturaWidgetSecurityType = module.exports.KalturaWidgetSecurityType = {
@@ -1200,8 +1148,6 @@ DOCUMENT : 'document.Document',
 IMAGE : 'document.Image',
 PDF : 'document.PDF',
 SWF : 'document.SWF',
-TIMED_THUMB_ASSET : 'thumbCuePoint.timedThumb',
-WIDEVINE_FLAVOR : 'widevine.WidevineFlavor',
 FLAVOR : '1',
 THUMBNAIL : '2',
 LIVE : '3',
@@ -1237,58 +1183,6 @@ PCM : 'pcm',
 VORBIS : 'vorbis',
 WMA : 'wma',
 WMAPRO : 'wmapro',
-};
-
-var KalturaAuditTrailAction = module.exports.KalturaAuditTrailAction = {
-CHANGED : 'CHANGED',
-CONTENT_VIEWED : 'CONTENT_VIEWED',
-COPIED : 'COPIED',
-CREATED : 'CREATED',
-DELETED : 'DELETED',
-FILE_SYNC_CREATED : 'FILE_SYNC_CREATED',
-RELATION_ADDED : 'RELATION_ADDED',
-RELATION_REMOVED : 'RELATION_REMOVED',
-VIEWED : 'VIEWED',
-};
-
-var KalturaAuditTrailObjectType = module.exports.KalturaAuditTrailObjectType = {
-BATCH_JOB : 'BatchJob',
-EMAIL_INGESTION_PROFILE : 'EmailIngestionProfile',
-FILE_SYNC : 'FileSync',
-KSHOW_KUSER : 'KshowKuser',
-METADATA : 'Metadata',
-METADATA_PROFILE : 'MetadataProfile',
-PARTNER : 'Partner',
-PERMISSION : 'Permission',
-UPLOAD_TOKEN : 'UploadToken',
-USER_LOGIN_DATA : 'UserLoginData',
-USER_ROLE : 'UserRole',
-ACCESS_CONTROL : 'accessControl',
-CATEGORY : 'category',
-CONVERSION_PROFILE_2 : 'conversionProfile2',
-ENTRY : 'entry',
-FLAVOR_ASSET : 'flavorAsset',
-FLAVOR_PARAMS : 'flavorParams',
-FLAVOR_PARAMS_CONVERSION_PROFILE : 'flavorParamsConversionProfile',
-FLAVOR_PARAMS_OUTPUT : 'flavorParamsOutput',
-KSHOW : 'kshow',
-KUSER : 'kuser',
-MEDIA_INFO : 'mediaInfo',
-MODERATION : 'moderation',
-ROUGHCUT : 'roughcutEntry',
-SYNDICATION : 'syndicationFeed',
-THUMBNAIL_ASSET : 'thumbAsset',
-THUMBNAIL_PARAMS : 'thumbParams',
-THUMBNAIL_PARAMS_OUTPUT : 'thumbParamsOutput',
-UI_CONF : 'uiConf',
-WIDGET : 'widget',
-};
-
-var KalturaAuditTrailOrderBy = module.exports.KalturaAuditTrailOrderBy = {
-CREATED_AT_ASC : '+createdAt',
-PARSED_AT_ASC : '+parsedAt',
-CREATED_AT_DESC : '-createdAt',
-PARSED_AT_DESC : '-parsedAt',
 };
 
 var KalturaBaseEntryOrderBy = module.exports.KalturaBaseEntryOrderBy = {
@@ -1351,9 +1245,9 @@ UPDATED_AT_DESC : '-updatedAt',
 };
 
 var KalturaBatchJobType = module.exports.KalturaBatchJobType = {
+CONVERT : '0',
 PARSE_CAPTION_ASSET : 'captionSearch.parseCaptionAsset',
 DISTRIBUTION_DELETE : 'contentDistribution.DistributionDelete',
-CONVERT : '0',
 DISTRIBUTION_DISABLE : 'contentDistribution.DistributionDisable',
 DISTRIBUTION_ENABLE : 'contentDistribution.DistributionEnable',
 DISTRIBUTION_FETCH_REPORT : 'contentDistribution.DistributionFetchReport',
@@ -1367,7 +1261,6 @@ SCHEDULED_TASK : 'scheduledTask.ScheduledTask',
 INDEX_TAGS : 'tagSearch.IndexTagsByPrivacyContext',
 TAG_RESOLVE : 'tagSearch.TagResolve',
 VIRUS_SCAN : 'virusScan.VirusScan',
-WIDEVINE_REPOSITORY_SYNC : 'widevine.WidevineRepositorySync',
 IMPORT : '1',
 DELETE : '2',
 FLATTEN : '3',
@@ -1531,7 +1424,6 @@ UPDATED_AT_DESC : '-updatedAt',
 };
 
 var KalturaConditionType = module.exports.KalturaConditionType = {
-ABC_WATERMARK : 'abcScreenersWatermarkAccessControl.abcWatermark',
 EVENT_NOTIFICATION_FIELD : 'eventNotification.BooleanField',
 EVENT_NOTIFICATION_OBJECT_CHANGED : 'eventNotification.ObjectChanged',
 METADATA_FIELD_CHANGED : 'metadata.FieldChanged',
@@ -1547,6 +1439,7 @@ FIELD_COMPARE : '7',
 ASSET_PROPERTIES_COMPARE : '8',
 USER_ROLE : '9',
 GEO_DISTANCE : '10',
+OR_OPERATOR : '11',
 };
 
 var KalturaConfigurableDistributionProfileOrderBy = module.exports.KalturaConfigurableDistributionProfileOrderBy = {
@@ -1637,7 +1530,6 @@ AD : 'adCuePoint.Ad',
 ANNOTATION : 'annotation.Annotation',
 CODE : 'codeCuePoint.Code',
 EVENT : 'eventCuePoint.Event',
-THUMB : 'thumbCuePoint.Thumb',
 };
 
 var KalturaDataEntryOrderBy = module.exports.KalturaDataEntryOrderBy = {
@@ -1746,8 +1638,6 @@ var KalturaDeliveryProfileType = module.exports.KalturaDeliveryProfileType = {
 EDGE_CAST_HTTP : 'edgeCast.EDGE_CAST_HTTP',
 EDGE_CAST_RTMP : 'edgeCast.EDGE_CAST_RTMP',
 KONTIKI_HTTP : 'kontiki.KONTIKI_HTTP',
-UPLYNK_HTTP : 'uplynk.UPLYNK_HTTP',
-UPLYNK_RTMP : 'uplynk.UPLYNK_RTMP',
 VELOCIX_HDS : 'velocix.VELOCIX_HDS',
 VELOCIX_HLS : 'velocix.VELOCIX_HLS',
 APPLE_HTTP : '1',
@@ -1777,6 +1667,7 @@ LEVEL3_RTMP : '35',
 LIMELIGHT_HTTP : '44',
 LIMELIGHT_RTMP : '45',
 LOCAL_PATH_APPLE_HTTP : '51',
+LOCAL_PATH_HDS : '53',
 LOCAL_PATH_HTTP : '54',
 LOCAL_PATH_RTMP : '55',
 VOD_PACKAGER_HLS : '61',
@@ -1785,6 +1676,7 @@ VOD_PACKAGER_MSS : '67',
 VOD_PACKAGER_DASH : '68',
 LIVE_HLS : '1001',
 LIVE_HDS : '1002',
+LIVE_DASH : '1003',
 LIVE_RTMP : '1005',
 LIVE_AKAMAI_HDS : '1013',
 };
@@ -1800,32 +1692,7 @@ var KalturaDistributionProviderOrderBy = module.exports.KalturaDistributionProvi
 };
 
 var KalturaDistributionProviderType = module.exports.KalturaDistributionProviderType = {
-ATT_UVERSE : 'attUverseDistribution.ATT_UVERSE',
-AVN : 'avnDistribution.AVN',
-COMCAST_MRSS : 'comcastMrssDistribution.COMCAST_MRSS',
-CROSS_KALTURA : 'crossKalturaDistribution.CROSS_KALTURA',
-DAILYMOTION : 'dailymotionDistribution.DAILYMOTION',
-DOUBLECLICK : 'doubleClickDistribution.DOUBLECLICK',
-FREEWHEEL : 'freewheelDistribution.FREEWHEEL',
-FREEWHEEL_GENERIC : 'freewheelGenericDistribution.FREEWHEEL_GENERIC',
-FTP : 'ftpDistribution.FTP',
-FTP_SCHEDULED : 'ftpDistribution.FTP_SCHEDULED',
-HULU : 'huluDistribution.HULU',
 IDETIC : 'ideticDistribution.IDETIC',
-METRO_PCS : 'metroPcsDistribution.METRO_PCS',
-MSN : 'msnDistribution.MSN',
-NDN : 'ndnDistribution.NDN',
-PODCAST : 'podcastDistribution.PODCAST',
-QUICKPLAY : 'quickPlayDistribution.QUICKPLAY',
-SYNACOR_HBO : 'synacorHboDistribution.SYNACOR_HBO',
-TIME_WARNER : 'timeWarnerDistribution.TIME_WARNER',
-TVCOM : 'tvComDistribution.TVCOM',
-TVINCI : 'tvinciDistribution.TVINCI',
-UVERSE_CLICK_TO_ORDER : 'uverseClickToOrderDistribution.UVERSE_CLICK_TO_ORDER',
-UVERSE : 'uverseDistribution.UVERSE',
-VERIZON_VCAST : 'verizonVcastDistribution.VERIZON_VCAST',
-YAHOO : 'yahooDistribution.YAHOO',
-YOUTUBE : 'youTubeDistribution.YOUTUBE',
 YOUTUBE_API : 'youtubeApiDistribution.YOUTUBE_API',
 GENERIC : '1',
 SYNDICATION : '2',
@@ -1860,38 +1727,6 @@ var KalturaDocumentFlavorParamsOrderBy = module.exports.KalturaDocumentFlavorPar
 };
 
 var KalturaDocumentFlavorParamsOutputOrderBy = module.exports.KalturaDocumentFlavorParamsOutputOrderBy = {
-};
-
-var KalturaDrmDeviceOrderBy = module.exports.KalturaDrmDeviceOrderBy = {
-CREATED_AT_ASC : '+createdAt',
-CREATED_AT_DESC : '-createdAt',
-};
-
-var KalturaDrmLicenseScenario = module.exports.KalturaDrmLicenseScenario = {
-PROTECTION : 'playReady.PROTECTION',
-PURCHASE : 'playReady.PURCHASE',
-RENTAL : 'playReady.RENTAL',
-SUBSCRIPTION : 'playReady.SUBSCRIPTION',
-};
-
-var KalturaDrmLicenseType = module.exports.KalturaDrmLicenseType = {
-NON_PERSISTENT : 'playReady.NON_PERSISTENT',
-PERSISTENT : 'playReady.PERSISTENT',
-};
-
-var KalturaDrmPolicyOrderBy = module.exports.KalturaDrmPolicyOrderBy = {
-};
-
-var KalturaDrmProfileOrderBy = module.exports.KalturaDrmProfileOrderBy = {
-ID_ASC : '+id',
-NAME_ASC : '+name',
-ID_DESC : '-id',
-NAME_DESC : '-name',
-};
-
-var KalturaDrmProviderType = module.exports.KalturaDrmProviderType = {
-PLAY_READY : 'playReady.PLAY_READY',
-WIDEVINE : 'widevine.WIDEVINE',
 };
 
 var KalturaDropFolderErrorCode = module.exports.KalturaDropFolderErrorCode = {
@@ -1962,7 +1797,6 @@ UPDATED_AT_DESC : '-updatedAt',
 };
 
 var KalturaDropFolderType = module.exports.KalturaDropFolderType = {
-WEBEX : 'WebexDropFolder.WEBEX',
 LOCAL : '1',
 FTP : '2',
 SCP : '3',
@@ -2074,6 +1908,8 @@ CODE_CUE_POINT : 'codeCuePointEventNotifications.CodeCuePoint',
 DISTRIBUTION_PROFILE : 'contentDistributionEventNotifications.DistributionProfile',
 ENTRY_DISTRIBUTION : 'contentDistributionEventNotifications.EntryDistribution',
 CUE_POINT : 'cuePointEventNotifications.CuePoint',
+DROP_FOLDER : 'dropFolderEventNotifications.DropFolder',
+DROP_FOLDER_FILE : 'dropFolderEventNotifications.DropFolderFile',
 METADATA : 'metadataEventNotifications.Metadata',
 ENTRY : '1',
 CATEGORY : '2',
@@ -2331,6 +2167,13 @@ CREATED_AT_DESC : '-createdAt',
 NAME_DESC : '-name',
 PLAYLIST_ID_DESC : '-playlistId',
 TYPE_DESC : '-type',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+var KalturaGroupUserOrderBy = module.exports.KalturaGroupUserOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
@@ -2866,6 +2709,12 @@ WEIGHT_DESC : '-weight',
 var KalturaLiveParamsOrderBy = module.exports.KalturaLiveParamsOrderBy = {
 };
 
+var KalturaLiveReportOrderBy = module.exports.KalturaLiveReportOrderBy = {
+AUDIENCE_DESC : '-audience',
+EVENT_TIME_DESC : '-eventTime',
+PLAYS_DESC : '-plays',
+};
+
 var KalturaLiveReportType = module.exports.KalturaLiveReportType = {
 ENTRY_GEO_TIME_LINE : 'ENTRY_GEO_TIME_LINE',
 ENTRY_SYNDICATION_TOTAL : 'ENTRY_SYNDICATION_TOTAL',
@@ -3043,7 +2892,6 @@ var KalturaMediaInfoOrderBy = module.exports.KalturaMediaInfoOrderBy = {
 
 var KalturaMediaParserType = module.exports.KalturaMediaParserType = {
 MEDIAINFO : '0',
-REMOTE_MEDIAINFO : 'remoteMediaInfo.RemoteMediaInfo',
 FFMPEG : '1',
 };
 
@@ -3058,7 +2906,6 @@ var KalturaMetadataObjectType = module.exports.KalturaMetadataObjectType = {
 AD_CUE_POINT : 'adCuePointMetadata.AdCuePoint',
 ANNOTATION : 'annotationMetadata.Annotation',
 CODE_CUE_POINT : 'codeCuePointMetadata.CodeCuePoint',
-THUMB_CUE_POINT : 'thumbCuePointMetadata.thumbCuePoint',
 ENTRY : '1',
 CATEGORY : '2',
 USER : '3',
@@ -3131,6 +2978,7 @@ ENTRY : '1',
 };
 
 var KalturaObjectTaskType = module.exports.KalturaObjectTaskType = {
+DISTRIBUTE : 'scheduledTaskContentDistribution.Distribute',
 DISPATCH_EVENT_NOTIFICATION : 'scheduledTaskEventNotification.DispatchEventNotification',
 EXECUTE_METADATA_XSLT : 'scheduledTaskMetadata.ExecuteMetadataXslt',
 DELETE_ENTRY : '1',
@@ -3138,6 +2986,7 @@ MODIFY_CATEGORIES : '2',
 DELETE_ENTRY_FLAVORS : '3',
 CONVERT_ENTRY_FLAVORS : '4',
 DELETE_LOCAL_CONTENT : '5',
+STORAGE_EXPORT : '6',
 };
 
 var KalturaPartnerOrderBy = module.exports.KalturaPartnerOrderBy = {
@@ -3186,53 +3035,6 @@ CREATED_AT_DESC : '-createdAt',
 ID_DESC : '-id',
 NAME_DESC : '-name',
 UPDATED_AT_DESC : '-updatedAt',
-};
-
-var KalturaPlayReadyAnalogVideoOPId = module.exports.KalturaPlayReadyAnalogVideoOPId = {
-EXPLICIT_ANALOG_TV : '2098DE8D-7DDD-4BAB-96C6-32EBB6FABEA3',
-BEST_EFFORT_EXPLICIT_ANALOG_TV : '225CD36F-F132-49EF-BA8C-C91EA28E4369',
-IMAGE_CONSTRAINT_VIDEO : '811C5110-46C8-4C6E-8163-C0482A15D47E',
-AGC_AND_COLOR_STRIPE : 'C3FD11C6-F8B7-4D20-B008-1DB17D61F2DA',
-IMAGE_CONSTRAINT_MONITOR : 'D783A191-E083-4BAF-B2DA-E69F910B3772',
-};
-
-var KalturaPlayReadyCopyEnablerType = module.exports.KalturaPlayReadyCopyEnablerType = {
-CSS : '3CAF2814-A7AB-467C-B4DF-54ACC56C66DC',
-PRINTER : '3CF2E054-F4D5-46cd-85A6-FCD152AD5FBE',
-DEVICE : '6848955D-516B-4EB0-90E8-8F6D5A77B85F',
-CLIPBOARD : '6E76C588-C3A9-47ea-A875-546D5209FF38',
-SDC : '79F78A0D-0B69-401e-8A90-8BEF30BCE192',
-SDC_PREVIEW : '81BD9AD4-A720-4ea1-B510-5D4E6FFB6A4D',
-AACS : 'C3CF56E0-7FF2-4491-809F-53E21D3ABF07',
-HELIX : 'CCB0B4E3-8B46-409e-A998-82556E3F5AF4',
-CPRM : 'CDD801AD-A577-48DB-950E-46D5F1592FAE',
-PC : 'CE480EDE-516B-40B3-90E1-D6CFC47630C5',
-SDC_LIMITED : 'E6785609-64CC-4bfa-B82D-6B619733B746',
-ORANGE_BOOK_CD : 'EC930B7D-1F2D-4682-A38B-8AB977721D0D',
-};
-
-var KalturaPlayReadyDigitalAudioOPId = module.exports.KalturaPlayReadyDigitalAudioOPId = {
-SCMS : '6D5CFA59-C250-4426-930E-FAC72C8FCFA6',
-};
-
-var KalturaPlayReadyPlayEnablerType = module.exports.KalturaPlayReadyPlayEnablerType = {
-HELIX : '002F9772-38A0-43E5-9F79-0F6361DCC62A',
-HDCP_WIVU : '1B4542E3-B5CF-4C99-B3BA-829AF46C92F8',
-AIRPLAY : '5ABF0F0D-DC29-4B82-9982-FD8E57525BFC',
-UNKNOWN : '786627D8-C2A6-44BE-8F88-08AE255B01A',
-HDCP_MIRACAST : 'A340C256-0941-4D4C-AD1D-0B6735C0CB24',
-UNKNOWN_520 : 'B621D91F-EDCC-4035-8D4B-DC71760D43E9',
-DTCP : 'D685030B-0F4F-43A6-BBAD-356F1EA0049A',
-};
-
-var KalturaPlayReadyPolicyOrderBy = module.exports.KalturaPlayReadyPolicyOrderBy = {
-};
-
-var KalturaPlayReadyProfileOrderBy = module.exports.KalturaPlayReadyProfileOrderBy = {
-ID_ASC : '+id',
-NAME_ASC : '+name',
-ID_DESC : '-id',
-NAME_DESC : '-name',
 };
 
 var KalturaPlayableEntryOrderBy = module.exports.KalturaPlayableEntryOrderBy = {
@@ -3330,7 +3132,6 @@ CREATED_AT_DESC : '-createdAt',
 };
 
 var KalturaRuleActionType = module.exports.KalturaRuleActionType = {
-DRM_POLICY : 'playReady.DRM_POLICY',
 BLOCK : '1',
 PREVIEW : '2',
 LIMIT_FLAVORS : '3',
@@ -3397,7 +3198,6 @@ UPDATED_AT_DESC : '-updatedAt',
 };
 
 var KalturaSourceType = module.exports.KalturaSourceType = {
-LIMELIGHT_LIVE : 'limeLight.LIVE_STREAM',
 VELOCIX_LIVE : 'velocix.VELOCIX_LIVE',
 FILE : '1',
 WEBCAM : '2',
@@ -3462,6 +3262,23 @@ CREATED_AT_DESC : '-createdAt',
 RECENT : 'recent',
 };
 
+var KalturaSystemPartnerLimitType = module.exports.KalturaSystemPartnerLimitType = {
+ACCESS_CONTROLS : 'ACCESS_CONTROLS',
+ADMIN_LOGIN_USERS : 'ADMIN_LOGIN_USERS',
+BULK_SIZE : 'BULK_SIZE',
+END_USERS : 'END_USERS',
+ENTRIES : 'ENTRIES',
+LIVE_STREAM_INPUTS : 'LIVE_STREAM_INPUTS',
+LIVE_STREAM_OUTPUTS : 'LIVE_STREAM_OUTPUTS',
+LOGIN_USERS : 'LOGIN_USERS',
+MONTHLY_BANDWIDTH : 'MONTHLY_BANDWIDTH',
+MONTHLY_STORAGE : 'MONTHLY_STORAGE',
+MONTHLY_STORAGE_AND_BANDWIDTH : 'MONTHLY_STORAGE_AND_BANDWIDTH',
+MONTHLY_STREAM_ENTRIES : 'MONTHLY_STREAM_ENTRIES',
+PUBLISHERS : 'PUBLISHERS',
+USER_LOGIN_ATTEMPTS : 'USER_LOGIN_ATTEMPTS',
+};
+
 var KalturaTaggedObjectType = module.exports.KalturaTaggedObjectType = {
 ENTRY : '1',
 CATEGORY : '2',
@@ -3478,34 +3295,10 @@ SIZE_DESC : '-size',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaThumbCuePointOrderBy = module.exports.KalturaThumbCuePointOrderBy = {
-CREATED_AT_ASC : '+createdAt',
-PARTNER_SORT_VALUE_ASC : '+partnerSortValue',
-START_TIME_ASC : '+startTime',
-TRIGGERED_AT_ASC : '+triggeredAt',
-UPDATED_AT_ASC : '+updatedAt',
-CREATED_AT_DESC : '-createdAt',
-PARTNER_SORT_VALUE_DESC : '-partnerSortValue',
-START_TIME_DESC : '-startTime',
-TRIGGERED_AT_DESC : '-triggeredAt',
-UPDATED_AT_DESC : '-updatedAt',
-};
-
 var KalturaThumbParamsOrderBy = module.exports.KalturaThumbParamsOrderBy = {
 };
 
 var KalturaThumbParamsOutputOrderBy = module.exports.KalturaThumbParamsOutputOrderBy = {
-};
-
-var KalturaTimedThumbAssetOrderBy = module.exports.KalturaTimedThumbAssetOrderBy = {
-CREATED_AT_ASC : '+createdAt',
-DELETED_AT_ASC : '+deletedAt',
-SIZE_ASC : '+size',
-UPDATED_AT_ASC : '+updatedAt',
-CREATED_AT_DESC : '-createdAt',
-DELETED_AT_DESC : '-deletedAt',
-SIZE_DESC : '-size',
-UPDATED_AT_DESC : '-updatedAt',
 };
 
 var KalturaTubeMogulSyndicationFeedCategories = module.exports.KalturaTubeMogulSyndicationFeedCategories = {
@@ -3536,6 +3329,13 @@ CREATED_AT_DESC : '-createdAt',
 NAME_DESC : '-name',
 PLAYLIST_ID_DESC : '-playlistId',
 TYPE_DESC : '-type',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+var KalturaUiConfAdminOrderBy = module.exports.KalturaUiConfAdminOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
@@ -3601,9 +3401,6 @@ WVC1A : 'wvc1a',
 
 var KalturaVirusScanEngineType = module.exports.KalturaVirusScanEngineType = {
 CLAMAV_SCAN_ENGINE : 'clamAVScanEngine.ClamAV',
-SYMANTEC_SCAN_DIRECT_ENGINE : 'symantecScanEngine.SymantecScanDirectEngine',
-SYMANTEC_SCAN_ENGINE : 'symantecScanEngine.SymantecScanEngine',
-SYMANTEC_SCAN_JAVA_ENGINE : 'symantecScanEngine.SymantecScanJavaEngine',
 };
 
 var KalturaVirusScanProfileOrderBy = module.exports.KalturaVirusScanProfileOrderBy = {
@@ -3611,60 +3408,6 @@ CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
-};
-
-var KalturaWebexDropFolderFileOrderBy = module.exports.KalturaWebexDropFolderFileOrderBy = {
-CREATED_AT_ASC : '+createdAt',
-FILE_NAME_ASC : '+fileName',
-FILE_SIZE_ASC : '+fileSize',
-FILE_SIZE_LAST_SET_AT_ASC : '+fileSizeLastSetAt',
-ID_ASC : '+id',
-PARSED_FLAVOR_ASC : '+parsedFlavor',
-PARSED_SLUG_ASC : '+parsedSlug',
-UPDATED_AT_ASC : '+updatedAt',
-CREATED_AT_DESC : '-createdAt',
-FILE_NAME_DESC : '-fileName',
-FILE_SIZE_DESC : '-fileSize',
-FILE_SIZE_LAST_SET_AT_DESC : '-fileSizeLastSetAt',
-ID_DESC : '-id',
-PARSED_FLAVOR_DESC : '-parsedFlavor',
-PARSED_SLUG_DESC : '-parsedSlug',
-UPDATED_AT_DESC : '-updatedAt',
-};
-
-var KalturaWebexDropFolderOrderBy = module.exports.KalturaWebexDropFolderOrderBy = {
-CREATED_AT_ASC : '+createdAt',
-ID_ASC : '+id',
-NAME_ASC : '+name',
-UPDATED_AT_ASC : '+updatedAt',
-CREATED_AT_DESC : '-createdAt',
-ID_DESC : '-id',
-NAME_DESC : '-name',
-UPDATED_AT_DESC : '-updatedAt',
-};
-
-var KalturaWidevineFlavorAssetOrderBy = module.exports.KalturaWidevineFlavorAssetOrderBy = {
-CREATED_AT_ASC : '+createdAt',
-DELETED_AT_ASC : '+deletedAt',
-SIZE_ASC : '+size',
-UPDATED_AT_ASC : '+updatedAt',
-CREATED_AT_DESC : '-createdAt',
-DELETED_AT_DESC : '-deletedAt',
-SIZE_DESC : '-size',
-UPDATED_AT_DESC : '-updatedAt',
-};
-
-var KalturaWidevineFlavorParamsOrderBy = module.exports.KalturaWidevineFlavorParamsOrderBy = {
-};
-
-var KalturaWidevineFlavorParamsOutputOrderBy = module.exports.KalturaWidevineFlavorParamsOutputOrderBy = {
-};
-
-var KalturaWidevineProfileOrderBy = module.exports.KalturaWidevineProfileOrderBy = {
-ID_ASC : '+id',
-NAME_ASC : '+name',
-ID_DESC : '-id',
-NAME_DESC : '-name',
 };
 
 var KalturaWidgetOrderBy = module.exports.KalturaWidgetOrderBy = {

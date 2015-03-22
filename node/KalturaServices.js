@@ -11388,3 +11388,133 @@ util.inherits(KalturaLiveConversionProfileService, kaltura.KalturaServiceBase);
 module.exports.KalturaLiveConversionProfileService = KalturaLiveConversionProfileService;
 
 
+/**
+ *Class definition for the Kaltura service: scheduledTaskProfile.
+ * The available service actions:
+ * @action add Add a new scheduled task profile.
+ * @action get Retrieve a scheduled task profile by id.
+ * @action update Update an existing scheduled task profile.
+ * @action delete Delete a scheduled task profile.
+ * @action list List scheduled task profiles.
+ * @action requestDryRun .
+ * @action getDryRunResults .
+ */
+function KalturaScheduledTaskProfileService(client){
+	KalturaScheduledTaskProfileService.super_.call(this);
+	this.init(client);
+}
+
+util.inherits(KalturaScheduledTaskProfileService, kaltura.KalturaServiceBase);
+module.exports.KalturaScheduledTaskProfileService = KalturaScheduledTaskProfileService;
+
+/**
+ * Add a new scheduled task profile.
+ * @param scheduledTaskProfile KalturaScheduledTaskProfile  (optional).
+ * @return KalturaScheduledTaskProfile.
+ */
+KalturaScheduledTaskProfileService.prototype.add = function(callback, scheduledTaskProfile){
+	var kparams = {};
+	this.client.addParam(kparams, 'scheduledTaskProfile', kaltura.toParams(scheduledTaskProfile));
+	this.client.queueServiceActionCall('scheduledtask_scheduledtaskprofile', 'add', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Retrieve a scheduled task profile by id.
+ * @param id int  (optional).
+ * @return KalturaScheduledTaskProfile.
+ */
+KalturaScheduledTaskProfileService.prototype.get = function(callback, id){
+	var kparams = {};
+	this.client.addParam(kparams, 'id', id);
+	this.client.queueServiceActionCall('scheduledtask_scheduledtaskprofile', 'get', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Update an existing scheduled task profile.
+ * @param id int  (optional).
+ * @param scheduledTaskProfile KalturaScheduledTaskProfile  (optional).
+ * @return KalturaScheduledTaskProfile.
+ */
+KalturaScheduledTaskProfileService.prototype.update = function(callback, id, scheduledTaskProfile){
+	var kparams = {};
+	this.client.addParam(kparams, 'id', id);
+	this.client.addParam(kparams, 'scheduledTaskProfile', kaltura.toParams(scheduledTaskProfile));
+	this.client.queueServiceActionCall('scheduledtask_scheduledtaskprofile', 'update', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Delete a scheduled task profile.
+ * @param id int  (optional).
+ * @return .
+ */
+KalturaScheduledTaskProfileService.prototype.deleteAction = function(callback, id){
+	var kparams = {};
+	this.client.addParam(kparams, 'id', id);
+	this.client.queueServiceActionCall('scheduledtask_scheduledtaskprofile', 'delete', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * List scheduled task profiles.
+ * @param filter KalturaScheduledTaskProfileFilter  (optional, default: null).
+ * @param pager KalturaFilterPager  (optional, default: null).
+ * @return KalturaScheduledTaskProfileListResponse.
+ */
+KalturaScheduledTaskProfileService.prototype.listAction = function(callback, filter, pager){
+	if(!filter){
+		filter = null;
+	}
+	if(!pager){
+		pager = null;
+	}
+	var kparams = {};
+	if (filter !== null){
+		this.client.addParam(kparams, 'filter', kaltura.toParams(filter));
+	}
+	if (pager !== null){
+		this.client.addParam(kparams, 'pager', kaltura.toParams(pager));
+	}
+	this.client.queueServiceActionCall('scheduledtask_scheduledtaskprofile', 'list', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * .
+ * @param scheduledTaskProfileId int  (optional).
+ * @param maxResults int  (optional, default: 500).
+ * @return int.
+ */
+KalturaScheduledTaskProfileService.prototype.requestDryRun = function(callback, scheduledTaskProfileId, maxResults){
+	if(!maxResults){
+		maxResults = 500;
+	}
+	var kparams = {};
+	this.client.addParam(kparams, 'scheduledTaskProfileId', scheduledTaskProfileId);
+	this.client.addParam(kparams, 'maxResults', maxResults);
+	this.client.queueServiceActionCall('scheduledtask_scheduledtaskprofile', 'requestDryRun', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * .
+ * @param requestId int  (optional).
+ * @return KalturaObjectListResponse.
+ */
+KalturaScheduledTaskProfileService.prototype.getDryRunResults = function(callback, requestId){
+	var kparams = {};
+	this.client.addParam(kparams, 'requestId', requestId);
+	this.client.queueServiceActionCall('scheduledtask_scheduledtaskprofile', 'getDryRunResults', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+

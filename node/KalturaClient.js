@@ -472,6 +472,11 @@ KalturaClient.prototype.externalMedia = null;
  */
 KalturaClient.prototype.liveConversionProfile = null;
 /**
+ * Schedule task service lets you create and manage scheduled task profiles
+ * @param kaltura.services.KalturaScheduledTaskProfileService
+ */
+KalturaClient.prototype.scheduledTaskProfile = null;
+/**
  * The client constructor.
  * @param config the Kaltura configuration object holding partner credentials (type: KalturaConfiguration).
  */
@@ -563,4 +568,5 @@ KalturaClient.prototype.init = function(config){
 	this.eventNotificationTemplate = new kaltura.services.KalturaEventNotificationTemplateService(this);
 	this.externalMedia = new kaltura.services.KalturaExternalMediaService(this);
 	this.liveConversionProfile = new kaltura.services.KalturaLiveConversionProfileService(this);
+	this.scheduledTaskProfile = new kaltura.services.KalturaScheduledTaskProfileService(this);
 };

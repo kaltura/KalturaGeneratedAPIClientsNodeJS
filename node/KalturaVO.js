@@ -2935,6 +2935,18 @@ util.inherits(KalturaHttpNotificationData, kaltura.KalturaObjectBase);
 
 
 /**
+ * @param value int .
+ */
+function KalturaIntegerValue(){
+	KalturaIntegerValue.super_.call(this);
+	this.value = null;
+}
+module.exports.KalturaIntegerValue = KalturaIntegerValue;
+
+util.inherits(KalturaIntegerValue, KalturaValue);
+
+
+/**
  * @param partner_id int .
  * @param valid_until int .
  * @param partner_pattern string .
@@ -3944,6 +3956,44 @@ util.inherits(KalturaModerationFlagListResponse, kaltura.KalturaObjectBase);
 
 
 /**
+ */
+function KalturaObject(){
+	KalturaObject.super_.call(this);
+}
+module.exports.KalturaObject = KalturaObject;
+
+util.inherits(KalturaObject, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param objects array  (readOnly).
+ * @param totalCount int  (readOnly).
+ */
+function KalturaObjectListResponse(){
+	KalturaObjectListResponse.super_.call(this);
+	this.objects = null;
+	this.totalCount = null;
+}
+module.exports.KalturaObjectListResponse = KalturaObjectListResponse;
+
+util.inherits(KalturaObjectListResponse, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param type string  (readOnly).
+ * @param stopProcessingOnError bool .
+ */
+function KalturaObjectTask(){
+	KalturaObjectTask.super_.call(this);
+	this.type = null;
+	this.stopProcessingOnError = null;
+}
+module.exports.KalturaObjectTask = KalturaObjectTask;
+
+util.inherits(KalturaObjectTask, kaltura.KalturaObjectBase);
+
+
+/**
  * @param id string .
  * @param label string .
  * @param flashvars array .
@@ -4536,6 +4586,56 @@ function KalturaReportTotal(){
 module.exports.KalturaReportTotal = KalturaReportTotal;
 
 util.inherits(KalturaReportTotal, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param id int  (readOnly).
+ * @param partnerId int  (readOnly).
+ * @param name string .
+ * @param systemName string .
+ * @param description string .
+ * @param status int .
+ * @param objectFilterEngineType string The type of engine to use to list objects using the given "objectFilter".
+ * @param objectFilter KalturaFilter A filter object (inherits KalturaFilter) that is used to list objects for scheduled tasks.
+ * @param objectTasks array A list of tasks to execute on the founded objects.
+ * @param createdAt int  (readOnly).
+ * @param updatedAt int  (readOnly).
+ * @param lastExecutionStartedAt int .
+ * @param maxTotalCountAllowed int The maximum number of result count allowed to be processed by this profile per execution.
+ */
+function KalturaScheduledTaskProfile(){
+	KalturaScheduledTaskProfile.super_.call(this);
+	this.id = null;
+	this.partnerId = null;
+	this.name = null;
+	this.systemName = null;
+	this.description = null;
+	this.status = null;
+	this.objectFilterEngineType = null;
+	this.objectFilter = null;
+	this.objectTasks = null;
+	this.createdAt = null;
+	this.updatedAt = null;
+	this.lastExecutionStartedAt = null;
+	this.maxTotalCountAllowed = null;
+}
+module.exports.KalturaScheduledTaskProfile = KalturaScheduledTaskProfile;
+
+util.inherits(KalturaScheduledTaskProfile, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param objects array  (readOnly).
+ * @param totalCount int  (readOnly).
+ */
+function KalturaScheduledTaskProfileListResponse(){
+	KalturaScheduledTaskProfileListResponse.super_.call(this);
+	this.objects = null;
+	this.totalCount = null;
+}
+module.exports.KalturaScheduledTaskProfileListResponse = KalturaScheduledTaskProfileListResponse;
+
+util.inherits(KalturaScheduledTaskProfileListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -6266,16 +6366,6 @@ util.inherits(KalturaBulkDownloadJobData, KalturaJobData);
 
 
 /**
- */
-function KalturaObject(){
-	KalturaObject.super_.call(this);
-}
-module.exports.KalturaObject = KalturaObject;
-
-util.inherits(KalturaObject, kaltura.KalturaObjectBase);
-
-
-/**
  * @param filter KalturaFilter Filter for extracting the objects list to upload.
  * @param templateObject KalturaObjectBase Template object for new object creation.
  */
@@ -6866,18 +6956,6 @@ util.inherits(KalturaCodeCuePoint, KalturaCuePoint);
 
 
 /**
- * @param value int .
- */
-function KalturaIntegerValue(){
-	KalturaIntegerValue.super_.call(this);
-	this.value = null;
-}
-module.exports.KalturaIntegerValue = KalturaIntegerValue;
-
-util.inherits(KalturaIntegerValue, KalturaValue);
-
-
-/**
  * @param value KalturaIntegerValue Value to evaluate against the field and operator.
  * @param comparison string Comparing operator.
  */
@@ -7114,6 +7192,20 @@ util.inherits(KalturaConversionProfileBaseFilter, KalturaFilter);
 
 
 /**
+ * @param flavorParamsIds string Comma separated list of flavor param ids to convert.
+ * @param reconvert bool Should reconvert when flavor already exists?.
+ */
+function KalturaConvertEntryFlavorsObjectTask(){
+	KalturaConvertEntryFlavorsObjectTask.super_.call(this);
+	this.flavorParamsIds = null;
+	this.reconvert = null;
+}
+module.exports.KalturaConvertEntryFlavorsObjectTask = KalturaConvertEntryFlavorsObjectTask;
+
+util.inherits(KalturaConvertEntryFlavorsObjectTask, KalturaObjectTask);
+
+
+/**
  * @param entryId string Live stream entry id.
  * @param assetId string .
  * @param mediaServerIndex int Primary or secondary media server.
@@ -7248,6 +7340,30 @@ util.inherits(KalturaCuePointBaseFilter, KalturaFilter);
 
 
 /**
+ * @param deleteType int The logic to use to choose the flavors for deletion.
+ * @param flavorParamsIds string Comma separated list of flavor param ids to delete or keep.
+ */
+function KalturaDeleteEntryFlavorsObjectTask(){
+	KalturaDeleteEntryFlavorsObjectTask.super_.call(this);
+	this.deleteType = null;
+	this.flavorParamsIds = null;
+}
+module.exports.KalturaDeleteEntryFlavorsObjectTask = KalturaDeleteEntryFlavorsObjectTask;
+
+util.inherits(KalturaDeleteEntryFlavorsObjectTask, KalturaObjectTask);
+
+
+/**
+ */
+function KalturaDeleteEntryObjectTask(){
+	KalturaDeleteEntryObjectTask.super_.call(this);
+}
+module.exports.KalturaDeleteEntryObjectTask = KalturaDeleteEntryObjectTask;
+
+util.inherits(KalturaDeleteEntryObjectTask, KalturaObjectTask);
+
+
+/**
  * @param localFileSyncPath string .
  */
 function KalturaDeleteFileJobData(){
@@ -7269,6 +7385,16 @@ function KalturaDeleteJobData(){
 module.exports.KalturaDeleteJobData = KalturaDeleteJobData;
 
 util.inherits(KalturaDeleteJobData, KalturaJobData);
+
+
+/**
+ */
+function KalturaDeleteLocalContentObjectTask(){
+	KalturaDeleteLocalContentObjectTask.super_.call(this);
+}
+module.exports.KalturaDeleteLocalContentObjectTask = KalturaDeleteLocalContentObjectTask;
+
+util.inherits(KalturaDeleteLocalContentObjectTask, KalturaObjectTask);
 
 
 /**
@@ -7435,6 +7561,30 @@ function KalturaDirectoryRestriction(){
 module.exports.KalturaDirectoryRestriction = KalturaDirectoryRestriction;
 
 util.inherits(KalturaDirectoryRestriction, KalturaBaseRestriction);
+
+
+/**
+ * @param eventNotificationTemplateId int The event notification template id to dispatch.
+ */
+function KalturaDispatchEventNotificationObjectTask(){
+	KalturaDispatchEventNotificationObjectTask.super_.call(this);
+	this.eventNotificationTemplateId = null;
+}
+module.exports.KalturaDispatchEventNotificationObjectTask = KalturaDispatchEventNotificationObjectTask;
+
+util.inherits(KalturaDispatchEventNotificationObjectTask, KalturaObjectTask);
+
+
+/**
+ * @param distributionProfileId string Distribution profile id.
+ */
+function KalturaDistributeObjectTask(){
+	KalturaDistributeObjectTask.super_.call(this);
+	this.distributionProfileId = null;
+}
+module.exports.KalturaDistributeObjectTask = KalturaDistributeObjectTask;
+
+util.inherits(KalturaDistributeObjectTask, KalturaObjectTask);
 
 
 /**
@@ -8269,6 +8419,22 @@ util.inherits(KalturaEventObjectChangedCondition, KalturaCondition);
 
 
 /**
+ * @param metadataProfileId int Metadata profile id to lookup the metadata object.
+ * @param metadataObjectType string Metadata object type to lookup the metadata object.
+ * @param xslt string The XSLT to execute.
+ */
+function KalturaExecuteMetadataXsltObjectTask(){
+	KalturaExecuteMetadataXsltObjectTask.super_.call(this);
+	this.metadataProfileId = null;
+	this.metadataObjectType = null;
+	this.xslt = null;
+}
+module.exports.KalturaExecuteMetadataXsltObjectTask = KalturaExecuteMetadataXsltObjectTask;
+
+util.inherits(KalturaExecuteMetadataXsltObjectTask, KalturaObjectTask);
+
+
+/**
  * @param idEqual int .
  * @param idIn string .
  * @param partnerIdEqual int .
@@ -8985,6 +9151,20 @@ util.inherits(KalturaMetadataProfileBaseFilter, KalturaFilter);
 
 
 /**
+ * @param addRemoveType int Should the object task add or remove categories?.
+ * @param categoryIds array The list of category ids to add or remove.
+ */
+function KalturaModifyCategoriesObjectTask(){
+	KalturaModifyCategoriesObjectTask.super_.call(this);
+	this.addRemoveType = null;
+	this.categoryIds = null;
+}
+module.exports.KalturaModifyCategoriesObjectTask = KalturaModifyCategoriesObjectTask;
+
+util.inherits(KalturaModifyCategoriesObjectTask, KalturaObjectTask);
+
+
+/**
  * @param srcCategoryId int Source category id.
  * @param destCategoryId int Destination category id.
  * @param lastMovedCategoryId int Saves the last category id that its entries moved completely
@@ -9433,6 +9613,18 @@ function KalturaStorageAddAction(){
 module.exports.KalturaStorageAddAction = KalturaStorageAddAction;
 
 util.inherits(KalturaStorageAddAction, KalturaRuleAction);
+
+
+/**
+ * @param storageId string Storage profile id.
+ */
+function KalturaStorageExportObjectTask(){
+	KalturaStorageExportObjectTask.super_.call(this);
+	this.storageId = null;
+}
+module.exports.KalturaStorageExportObjectTask = KalturaStorageExportObjectTask;
+
+util.inherits(KalturaStorageExportObjectTask, KalturaObjectTask);
 
 
 /**

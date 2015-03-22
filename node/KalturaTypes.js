@@ -180,6 +180,12 @@ DISABLED : 0,
 ENABLED : 1,
 };
 
+var KalturaDeleteFlavorsLogicType = module.exports.KalturaDeleteFlavorsLogicType = {
+KEEP_LIST_DELETE_OTHERS : 1,
+DELETE_LIST : 2,
+DELETE_KEEP_SMALLEST : 3,
+};
+
 var KalturaDeliveryStatus = module.exports.KalturaDeliveryStatus = {
 ACTIVE : 0,
 DELETED : 1,
@@ -673,6 +679,11 @@ RESPONSE_TYPE_PHP_ARRAY : 4,
 RESPONSE_TYPE_HTML : 7,
 RESPONSE_TYPE_MRSS : 8,
 RESPONSE_TYPE_JSONP : 9,
+};
+
+var KalturaScheduledTaskAddOrRemoveType = module.exports.KalturaScheduledTaskAddOrRemoveType = {
+ADD : 1,
+REMOVE : 2,
 };
 
 var KalturaScheduledTaskProfileStatus = module.exports.KalturaScheduledTaskProfileStatus = {
@@ -1234,18 +1245,19 @@ UPDATED_AT_DESC : '-updatedAt',
 };
 
 var KalturaBatchJobType = module.exports.KalturaBatchJobType = {
+CONVERT : '0',
 PARSE_CAPTION_ASSET : 'captionSearch.parseCaptionAsset',
 DISTRIBUTION_DELETE : 'contentDistribution.DistributionDelete',
 DISTRIBUTION_DISABLE : 'contentDistribution.DistributionDisable',
 DISTRIBUTION_ENABLE : 'contentDistribution.DistributionEnable',
 DISTRIBUTION_FETCH_REPORT : 'contentDistribution.DistributionFetchReport',
 DISTRIBUTION_SUBMIT : 'contentDistribution.DistributionSubmit',
-CONVERT : '0',
 DISTRIBUTION_SYNC : 'contentDistribution.DistributionSync',
 DISTRIBUTION_UPDATE : 'contentDistribution.DistributionUpdate',
 DROP_FOLDER_CONTENT_PROCESSOR : 'dropFolder.DropFolderContentProcessor',
 DROP_FOLDER_WATCHER : 'dropFolder.DropFolderWatcher',
 EVENT_NOTIFICATION_HANDLER : 'eventNotification.EventNotificationHandler',
+SCHEDULED_TASK : 'scheduledTask.ScheduledTask',
 INDEX_TAGS : 'tagSearch.IndexTagsByPrivacyContext',
 TAG_RESOLVE : 'tagSearch.TagResolve',
 VIRUS_SCAN : 'virusScan.VirusScan',
@@ -2959,6 +2971,22 @@ MODERATED : '2',
 var KalturaModerationObjectType = module.exports.KalturaModerationObjectType = {
 ENTRY : '2',
 USER : '3',
+};
+
+var KalturaObjectFilterEngineType = module.exports.KalturaObjectFilterEngineType = {
+ENTRY : '1',
+};
+
+var KalturaObjectTaskType = module.exports.KalturaObjectTaskType = {
+DISTRIBUTE : 'scheduledTaskContentDistribution.Distribute',
+DISPATCH_EVENT_NOTIFICATION : 'scheduledTaskEventNotification.DispatchEventNotification',
+EXECUTE_METADATA_XSLT : 'scheduledTaskMetadata.ExecuteMetadataXslt',
+DELETE_ENTRY : '1',
+MODIFY_CATEGORIES : '2',
+DELETE_ENTRY_FLAVORS : '3',
+CONVERT_ENTRY_FLAVORS : '4',
+DELETE_LOCAL_CONTENT : '5',
+STORAGE_EXPORT : '6',
 };
 
 var KalturaPartnerOrderBy = module.exports.KalturaPartnerOrderBy = {

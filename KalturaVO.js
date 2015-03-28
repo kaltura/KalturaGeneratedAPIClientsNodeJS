@@ -29,6 +29,18 @@ var util = require('util');
 var kaltura = require('./KalturaClientBase');
 
 /**
+ * @param totalCount int  (readOnly).
+ */
+function KalturaListResponse(){
+	KalturaListResponse.super_.call(this);
+	this.totalCount = null;
+}
+module.exports.KalturaListResponse = KalturaListResponse;
+
+util.inherits(KalturaListResponse, kaltura.KalturaObjectBase);
+
+
+/**
  */
 function KalturaBaseRestriction(){
 	KalturaBaseRestriction.super_.call(this);
@@ -86,20 +98,6 @@ function KalturaAccessControlContextTypeHolder(){
 module.exports.KalturaAccessControlContextTypeHolder = KalturaAccessControlContextTypeHolder;
 
 util.inherits(KalturaAccessControlContextTypeHolder, KalturaContextTypeHolder);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaAccessControlListResponse(){
-	KalturaAccessControlListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaAccessControlListResponse = KalturaAccessControlListResponse;
-
-util.inherits(KalturaAccessControlListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -176,20 +174,6 @@ function KalturaAccessControlProfile(){
 module.exports.KalturaAccessControlProfile = KalturaAccessControlProfile;
 
 util.inherits(KalturaAccessControlProfile, kaltura.KalturaObjectBase);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaAccessControlProfileListResponse(){
-	KalturaAccessControlProfileListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaAccessControlProfileListResponse = KalturaAccessControlProfileListResponse;
-
-util.inherits(KalturaAccessControlProfileListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -294,20 +278,6 @@ function KalturaAnnotation(){
 module.exports.KalturaAnnotation = KalturaAnnotation;
 
 util.inherits(KalturaAnnotation, KalturaCuePoint);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaAnnotationListResponse(){
-	KalturaAnnotationListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaAnnotationListResponse = KalturaAnnotationListResponse;
-
-util.inherits(KalturaAnnotationListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -473,20 +443,6 @@ util.inherits(KalturaAttachmentAsset, KalturaAsset);
 
 
 /**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaAttachmentAssetListResponse(){
-	KalturaAttachmentAssetListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaAttachmentAssetListResponse = KalturaAttachmentAssetListResponse;
-
-util.inherits(KalturaAttachmentAssetListResponse, kaltura.KalturaObjectBase);
-
-
-/**
  */
 function KalturaOperationAttributes(){
 	KalturaOperationAttributes.super_.call(this);
@@ -589,17 +545,13 @@ util.inherits(KalturaBaseEntry, kaltura.KalturaObjectBase);
 
 
 /**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
  */
-function KalturaBaseEntryListResponse(){
-	KalturaBaseEntryListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
+function KalturaBaseResponseProfile(){
+	KalturaBaseResponseProfile.super_.call(this);
 }
-module.exports.KalturaBaseEntryListResponse = KalturaBaseEntryListResponse;
+module.exports.KalturaBaseResponseProfile = KalturaBaseResponseProfile;
 
-util.inherits(KalturaBaseEntryListResponse, kaltura.KalturaObjectBase);
+util.inherits(KalturaBaseResponseProfile, kaltura.KalturaObjectBase);
 
 
 /**
@@ -655,20 +607,6 @@ function KalturaBaseSyndicationFeed(){
 module.exports.KalturaBaseSyndicationFeed = KalturaBaseSyndicationFeed;
 
 util.inherits(KalturaBaseSyndicationFeed, kaltura.KalturaObjectBase);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaBaseSyndicationFeedListResponse(){
-	KalturaBaseSyndicationFeedListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaBaseSyndicationFeedListResponse = KalturaBaseSyndicationFeedListResponse;
-
-util.inherits(KalturaBaseSyndicationFeedListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -908,20 +846,6 @@ util.inherits(KalturaBulkUpload, kaltura.KalturaObjectBase);
 
 
 /**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaBulkUploadListResponse(){
-	KalturaBulkUploadListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaBulkUploadListResponse = KalturaBulkUploadListResponse;
-
-util.inherits(KalturaBulkUploadListResponse, kaltura.KalturaObjectBase);
-
-
-/**
  */
 function KalturaBulkUploadObjectData(){
 	KalturaBulkUploadObjectData.super_.call(this);
@@ -1006,34 +930,6 @@ util.inherits(KalturaCaptionAssetItem, kaltura.KalturaObjectBase);
 
 
 /**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaCaptionAssetItemListResponse(){
-	KalturaCaptionAssetItemListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaCaptionAssetItemListResponse = KalturaCaptionAssetItemListResponse;
-
-util.inherits(KalturaCaptionAssetItemListResponse, kaltura.KalturaObjectBase);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaCaptionAssetListResponse(){
-	KalturaCaptionAssetListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaCaptionAssetListResponse = KalturaCaptionAssetListResponse;
-
-util.inherits(KalturaCaptionAssetListResponse, kaltura.KalturaObjectBase);
-
-
-/**
  * @param language string The language of the caption content (insertOnly).
  * @param isDefault int Is default caption asset of the entry.
  * @param label string Friendly label.
@@ -1051,20 +947,6 @@ function KalturaCaptionParams(){
 module.exports.KalturaCaptionParams = KalturaCaptionParams;
 
 util.inherits(KalturaCaptionParams, KalturaAssetParams);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaCaptionParamsListResponse(){
-	KalturaCaptionParamsListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaCaptionParamsListResponse = KalturaCaptionParamsListResponse;
-
-util.inherits(KalturaCaptionParamsListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -1165,34 +1047,6 @@ util.inherits(KalturaCategoryEntry, kaltura.KalturaObjectBase);
 
 
 /**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaCategoryEntryListResponse(){
-	KalturaCategoryEntryListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaCategoryEntryListResponse = KalturaCategoryEntryListResponse;
-
-util.inherits(KalturaCategoryEntryListResponse, kaltura.KalturaObjectBase);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaCategoryListResponse(){
-	KalturaCategoryListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaCategoryListResponse = KalturaCategoryListResponse;
-
-util.inherits(KalturaCategoryListResponse, kaltura.KalturaObjectBase);
-
-
-/**
  * @param categoryId int  (insertOnly).
  * @param userId string User id (insertOnly).
  * @param partnerId int Partner id (readOnly).
@@ -1220,20 +1074,6 @@ function KalturaCategoryUser(){
 module.exports.KalturaCategoryUser = KalturaCategoryUser;
 
 util.inherits(KalturaCategoryUser, kaltura.KalturaObjectBase);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaCategoryUserListResponse(){
-	KalturaCategoryUserListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaCategoryUserListResponse = KalturaCategoryUserListResponse;
-
-util.inherits(KalturaCategoryUserListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -1272,6 +1112,50 @@ function KalturaContextDataResult(){
 module.exports.KalturaContextDataResult = KalturaContextDataResult;
 
 util.inherits(KalturaContextDataResult, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param id int The id of the Category (readOnly).
+ * @param createdAt int Creation date as Unix timestamp (In seconds) (readOnly).
+ * @param createdBy string Creator name.
+ * @param updatedAt int Update date as Unix timestamp (In seconds) (readOnly).
+ * @param updatedBy string Updater name.
+ * @param createdById int Creator id.
+ * @param schedulerId int The id of the scheduler that the command refers to.
+ * @param workerId int The id of the scheduler worker that the command refers to.
+ * @param workerConfiguredId int The id of the scheduler worker as configured in the ini file.
+ * @param workerName int The name of the scheduler worker that the command refers to.
+ * @param batchIndex int The index of the batch process that the command refers to.
+ * @param type int The command type - stop / start / config.
+ * @param targetType int The command target type - data center / scheduler / job / job type.
+ * @param status int The command status.
+ * @param cause string The reason for the command.
+ * @param description string Command description.
+ * @param errorDescription string Error description.
+ */
+function KalturaControlPanelCommand(){
+	KalturaControlPanelCommand.super_.call(this);
+	this.id = null;
+	this.createdAt = null;
+	this.createdBy = null;
+	this.updatedAt = null;
+	this.updatedBy = null;
+	this.createdById = null;
+	this.schedulerId = null;
+	this.workerId = null;
+	this.workerConfiguredId = null;
+	this.workerName = null;
+	this.batchIndex = null;
+	this.type = null;
+	this.targetType = null;
+	this.status = null;
+	this.cause = null;
+	this.description = null;
+	this.errorDescription = null;
+}
+module.exports.KalturaControlPanelCommand = KalturaControlPanelCommand;
+
+util.inherits(KalturaControlPanelCommand, kaltura.KalturaObjectBase);
 
 
 /**
@@ -1381,34 +1265,6 @@ util.inherits(KalturaConversionProfileAssetParams, kaltura.KalturaObjectBase);
 
 
 /**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaConversionProfileAssetParamsListResponse(){
-	KalturaConversionProfileAssetParamsListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaConversionProfileAssetParamsListResponse = KalturaConversionProfileAssetParamsListResponse;
-
-util.inherits(KalturaConversionProfileAssetParamsListResponse, kaltura.KalturaObjectBase);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaConversionProfileListResponse(){
-	KalturaConversionProfileListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaConversionProfileListResponse = KalturaConversionProfileListResponse;
-
-util.inherits(KalturaConversionProfileListResponse, kaltura.KalturaObjectBase);
-
-
-/**
  * @param flavorAssetId string .
  * @param flavorParamsOutputId int .
  * @param readyBehavior int .
@@ -1449,20 +1305,6 @@ util.inherits(KalturaCoordinate, kaltura.KalturaObjectBase);
 
 
 /**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaCuePointListResponse(){
-	KalturaCuePointListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaCuePointListResponse = KalturaCuePointListResponse;
-
-util.inherits(KalturaCuePointListResponse, kaltura.KalturaObjectBase);
-
-
-/**
  * @param dataContent string The data of the entry.
  * @param retrieveDataContentByGet bool indicator whether to return the object for get action with the dataContent field (insertOnly).
  */
@@ -1474,20 +1316,6 @@ function KalturaDataEntry(){
 module.exports.KalturaDataEntry = KalturaDataEntry;
 
 util.inherits(KalturaDataEntry, KalturaBaseEntry);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaDataListResponse(){
-	KalturaDataListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaDataListResponse = KalturaDataListResponse;
-
-util.inherits(KalturaDataListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -1563,20 +1391,6 @@ util.inherits(KalturaDeliveryProfile, kaltura.KalturaObjectBase);
 
 
 /**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaDeliveryProfileListResponse(){
-	KalturaDeliveryProfileListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaDeliveryProfileListResponse = KalturaDeliveryProfileListResponse;
-
-util.inherits(KalturaDeliveryProfileListResponse, kaltura.KalturaObjectBase);
-
-
-/**
  * @param fileSyncLocalPath string .
  * @param fileSyncRemoteUrl string The translated path as used by the scheduler.
  * @param fileSyncObjectSubType int .
@@ -1600,6 +1414,92 @@ function KalturaDestFileSyncDescriptor(){
 module.exports.KalturaDestFileSyncDescriptor = KalturaDestFileSyncDescriptor;
 
 util.inherits(KalturaDestFileSyncDescriptor, KalturaFileSyncDescriptor);
+
+
+/**
+ */
+function KalturaSearchItem(){
+	KalturaSearchItem.super_.call(this);
+}
+module.exports.KalturaSearchItem = KalturaSearchItem;
+
+util.inherits(KalturaSearchItem, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param orderBy string .
+ * @param advancedSearch KalturaSearchItem .
+ */
+function KalturaFilter(){
+	KalturaFilter.super_.call(this);
+	this.orderBy = null;
+	this.advancedSearch = null;
+}
+module.exports.KalturaFilter = KalturaFilter;
+
+util.inherits(KalturaFilter, kaltura.KalturaObjectBase);
+
+
+/**
+ */
+function KalturaRelatedFilter(){
+	KalturaRelatedFilter.super_.call(this);
+}
+module.exports.KalturaRelatedFilter = KalturaRelatedFilter;
+
+util.inherits(KalturaRelatedFilter, KalturaFilter);
+
+
+/**
+ * @param pageSize int The number of objects to retrieve. (Default is 30, maximum page size is 500).
+ * @param pageIndex int The page number for which {pageSize} of objects should be retrieved (Default is 1).
+ */
+function KalturaFilterPager(){
+	KalturaFilterPager.super_.call(this);
+	this.pageSize = null;
+	this.pageIndex = null;
+}
+module.exports.KalturaFilterPager = KalturaFilterPager;
+
+util.inherits(KalturaFilterPager, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param parentProperty string .
+ * @param filterProperty string .
+ */
+function KalturaResponseProfileMapping(){
+	KalturaResponseProfileMapping.super_.call(this);
+	this.parentProperty = null;
+	this.filterProperty = null;
+}
+module.exports.KalturaResponseProfileMapping = KalturaResponseProfileMapping;
+
+util.inherits(KalturaResponseProfileMapping, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param name string Friendly name.
+ * @param type int .
+ * @param fields string Comma separated fields list to be included or excluded.
+ * @param filter KalturaRelatedFilter .
+ * @param pager KalturaFilterPager .
+ * @param relatedProfiles array .
+ * @param mappings array .
+ */
+function KalturaDetachedResponseProfile(){
+	KalturaDetachedResponseProfile.super_.call(this);
+	this.name = null;
+	this.type = null;
+	this.fields = null;
+	this.filter = null;
+	this.pager = null;
+	this.relatedProfiles = null;
+	this.mappings = null;
+}
+module.exports.KalturaDetachedResponseProfile = KalturaDetachedResponseProfile;
+
+util.inherits(KalturaDetachedResponseProfile, KalturaBaseResponseProfile);
 
 
 /**
@@ -1711,20 +1611,6 @@ util.inherits(KalturaDistributionProfile, kaltura.KalturaObjectBase);
 
 
 /**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaDistributionProfileListResponse(){
-	KalturaDistributionProfileListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaDistributionProfileListResponse = KalturaDistributionProfileListResponse;
-
-util.inherits(KalturaDistributionProfileListResponse, kaltura.KalturaObjectBase);
-
-
-/**
  * @param type string  (readOnly).
  * @param name string .
  * @param scheduleUpdateEnabled bool .
@@ -1750,20 +1636,6 @@ function KalturaDistributionProvider(){
 module.exports.KalturaDistributionProvider = KalturaDistributionProvider;
 
 util.inherits(KalturaDistributionProvider, kaltura.KalturaObjectBase);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaDistributionProviderListResponse(){
-	KalturaDistributionProviderListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaDistributionProviderListResponse = KalturaDistributionProviderListResponse;
-
-util.inherits(KalturaDistributionProviderListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -1810,20 +1682,6 @@ function KalturaDocumentEntry(){
 module.exports.KalturaDocumentEntry = KalturaDocumentEntry;
 
 util.inherits(KalturaDocumentEntry, KalturaBaseEntry);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaDocumentListResponse(){
-	KalturaDocumentListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaDocumentListResponse = KalturaDocumentListResponse;
-
-util.inherits(KalturaDocumentListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -1960,34 +1818,6 @@ function KalturaDropFolderFile(){
 module.exports.KalturaDropFolderFile = KalturaDropFolderFile;
 
 util.inherits(KalturaDropFolderFile, kaltura.KalturaObjectBase);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaDropFolderFileListResponse(){
-	KalturaDropFolderFileListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaDropFolderFileListResponse = KalturaDropFolderFileListResponse;
-
-util.inherits(KalturaDropFolderFileListResponse, kaltura.KalturaObjectBase);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaDropFolderListResponse(){
-	KalturaDropFolderListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaDropFolderListResponse = KalturaDropFolderListResponse;
-
-util.inherits(KalturaDropFolderListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -2159,20 +1989,6 @@ util.inherits(KalturaEntryDistribution, kaltura.KalturaObjectBase);
 
 
 /**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaEntryDistributionListResponse(){
-	KalturaEntryDistributionListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaEntryDistributionListResponse = KalturaEntryDistributionListResponse;
-
-util.inherits(KalturaEntryDistributionListResponse, kaltura.KalturaObjectBase);
-
-
-/**
  * @param keepManualThumbnails int If true manually created thumbnails will not be deleted on entry replacement.
  */
 function KalturaEntryReplacementOptions(){
@@ -2240,20 +2056,6 @@ function KalturaEventNotificationTemplate(){
 module.exports.KalturaEventNotificationTemplate = KalturaEventNotificationTemplate;
 
 util.inherits(KalturaEventNotificationTemplate, kaltura.KalturaObjectBase);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaEventNotificationTemplateListResponse(){
-	KalturaEventNotificationTemplateListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaEventNotificationTemplateListResponse = KalturaEventNotificationTemplateListResponse;
-
-util.inherits(KalturaEventNotificationTemplateListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -2371,20 +2173,6 @@ util.inherits(KalturaExternalMediaEntry, KalturaMediaEntry);
 
 
 /**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaExternalMediaEntryListResponse(){
-	KalturaExternalMediaEntryListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaExternalMediaEntryListResponse = KalturaExternalMediaEntryListResponse;
-
-util.inherits(KalturaExternalMediaEntryListResponse, kaltura.KalturaObjectBase);
-
-
-/**
  * @param type int .
  * @param value int .
  */
@@ -2396,20 +2184,6 @@ function KalturaFeatureStatus(){
 module.exports.KalturaFeatureStatus = KalturaFeatureStatus;
 
 util.inherits(KalturaFeatureStatus, kaltura.KalturaObjectBase);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaFeatureStatusListResponse(){
-	KalturaFeatureStatusListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaFeatureStatusListResponse = KalturaFeatureStatusListResponse;
-
-util.inherits(KalturaFeatureStatusListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -2442,20 +2216,6 @@ function KalturaFileAsset(){
 module.exports.KalturaFileAsset = KalturaFileAsset;
 
 util.inherits(KalturaFileAsset, kaltura.KalturaObjectBase);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaFileAssetListResponse(){
-	KalturaFileAssetListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaFileAssetListResponse = KalturaFileAssetListResponse;
-
-util.inherits(KalturaFileAssetListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -2515,58 +2275,6 @@ util.inherits(KalturaFileSync, kaltura.KalturaObjectBase);
 
 
 /**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaFileSyncListResponse(){
-	KalturaFileSyncListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaFileSyncListResponse = KalturaFileSyncListResponse;
-
-util.inherits(KalturaFileSyncListResponse, kaltura.KalturaObjectBase);
-
-
-/**
- */
-function KalturaSearchItem(){
-	KalturaSearchItem.super_.call(this);
-}
-module.exports.KalturaSearchItem = KalturaSearchItem;
-
-util.inherits(KalturaSearchItem, kaltura.KalturaObjectBase);
-
-
-/**
- * @param orderBy string .
- * @param advancedSearch KalturaSearchItem .
- */
-function KalturaFilter(){
-	KalturaFilter.super_.call(this);
-	this.orderBy = null;
-	this.advancedSearch = null;
-}
-module.exports.KalturaFilter = KalturaFilter;
-
-util.inherits(KalturaFilter, kaltura.KalturaObjectBase);
-
-
-/**
- * @param pageSize int The number of objects to retrieve. (Default is 30, maximum page size is 500).
- * @param pageIndex int The page number for which {pageSize} of objects should be retrieved (Default is 1).
- */
-function KalturaFilterPager(){
-	KalturaFilterPager.super_.call(this);
-	this.pageSize = null;
-	this.pageIndex = null;
-}
-module.exports.KalturaFilterPager = KalturaFilterPager;
-
-util.inherits(KalturaFilterPager, kaltura.KalturaObjectBase);
-
-
-/**
  * @param flavorParamsId int The Flavor Params used to create this Flavor Asset (insertOnly).
  * @param width int The width of the Flavor Asset (readOnly).
  * @param height int The height of the Flavor Asset (readOnly).
@@ -2594,20 +2302,6 @@ function KalturaFlavorAsset(){
 module.exports.KalturaFlavorAsset = KalturaFlavorAsset;
 
 util.inherits(KalturaFlavorAsset, KalturaAsset);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaFlavorAssetListResponse(){
-	KalturaFlavorAssetListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaFlavorAssetListResponse = KalturaFlavorAssetListResponse;
-
-util.inherits(KalturaFlavorAssetListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -2707,20 +2401,6 @@ util.inherits(KalturaFlavorAssetWithParams, kaltura.KalturaObjectBase);
 
 
 /**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaFlavorParamsListResponse(){
-	KalturaFlavorParamsListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaFlavorParamsListResponse = KalturaFlavorParamsListResponse;
-
-util.inherits(KalturaFlavorParamsListResponse, kaltura.KalturaObjectBase);
-
-
-/**
  * @param flavorParamsId int .
  * @param commandLinesStr string .
  * @param flavorParamsVersion string .
@@ -2740,20 +2420,6 @@ function KalturaFlavorParamsOutput(){
 module.exports.KalturaFlavorParamsOutput = KalturaFlavorParamsOutput;
 
 util.inherits(KalturaFlavorParamsOutput, KalturaFlavorParams);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaFlavorParamsOutputListResponse(){
-	KalturaFlavorParamsOutputListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaFlavorParamsOutputListResponse = KalturaFlavorParamsOutputListResponse;
-
-util.inherits(KalturaFlavorParamsOutputListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -2827,20 +2493,6 @@ util.inherits(KalturaGenericDistributionProviderAction, kaltura.KalturaObjectBas
 
 
 /**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaGenericDistributionProviderActionListResponse(){
-	KalturaGenericDistributionProviderActionListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaGenericDistributionProviderActionListResponse = KalturaGenericDistributionProviderActionListResponse;
-
-util.inherits(KalturaGenericDistributionProviderActionListResponse, kaltura.KalturaObjectBase);
-
-
-/**
  * @param id int Auto generated (readOnly).
  * @param createdAt int Generic distribution provider creation date as Unix timestamp (In seconds) (readOnly).
  * @param updatedAt int Generic distribution provider last update date as Unix timestamp (In seconds) (readOnly).
@@ -2875,20 +2527,6 @@ util.inherits(KalturaGenericDistributionProvider, KalturaDistributionProvider);
 
 
 /**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaGenericDistributionProviderListResponse(){
-	KalturaGenericDistributionProviderListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaGenericDistributionProviderListResponse = KalturaGenericDistributionProviderListResponse;
-
-util.inherits(KalturaGenericDistributionProviderListResponse, kaltura.KalturaObjectBase);
-
-
-/**
  * @param userId string  (insertOnly).
  * @param groupId string  (insertOnly).
  * @param status int  (readOnly).
@@ -2908,20 +2546,6 @@ function KalturaGroupUser(){
 module.exports.KalturaGroupUser = KalturaGroupUser;
 
 util.inherits(KalturaGroupUser, kaltura.KalturaObjectBase);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaGroupUserListResponse(){
-	KalturaGroupUserListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaGroupUserListResponse = KalturaGroupUserListResponse;
-
-util.inherits(KalturaGroupUserListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -3085,20 +2709,6 @@ util.inherits(KalturaLiveChannel, KalturaLiveEntry);
 
 
 /**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaLiveChannelListResponse(){
-	KalturaLiveChannelListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaLiveChannelListResponse = KalturaLiveChannelListResponse;
-
-util.inherits(KalturaLiveChannelListResponse, kaltura.KalturaObjectBase);
-
-
-/**
  * @param id string Unique identifier (readOnly).
  * @param partnerId int  (readOnly).
  * @param createdAt int Segment creation date as Unix timestamp (In seconds) (readOnly).
@@ -3136,20 +2746,6 @@ function KalturaLiveChannelSegment(){
 module.exports.KalturaLiveChannelSegment = KalturaLiveChannelSegment;
 
 util.inherits(KalturaLiveChannelSegment, kaltura.KalturaObjectBase);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaLiveChannelSegmentListResponse(){
-	KalturaLiveChannelSegmentListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaLiveChannelSegmentListResponse = KalturaLiveChannelSegmentListResponse;
-
-util.inherits(KalturaLiveChannelSegmentListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -3263,20 +2859,6 @@ util.inherits(KalturaLiveStatsEvent, kaltura.KalturaObjectBase);
 
 
 /**
- * @param objects KalturaLiveStats .
- * @param totalCount int .
- */
-function KalturaLiveStatsListResponse(){
-	KalturaLiveStatsListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaLiveStatsListResponse = KalturaLiveStatsListResponse;
-
-util.inherits(KalturaLiveStatsListResponse, kaltura.KalturaObjectBase);
-
-
-/**
  * @param bitrate int .
  * @param width int .
  * @param height int .
@@ -3332,20 +2914,6 @@ function KalturaLiveStreamEntry(){
 module.exports.KalturaLiveStreamEntry = KalturaLiveStreamEntry;
 
 util.inherits(KalturaLiveStreamEntry, KalturaLiveEntry);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaLiveStreamListResponse(){
-	KalturaLiveStreamListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaLiveStreamListResponse = KalturaLiveStreamListResponse;
-
-util.inherits(KalturaLiveStreamListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -3506,7 +3074,7 @@ function KalturaBaseEntryBaseFilter(){
 }
 module.exports.KalturaBaseEntryBaseFilter = KalturaBaseEntryBaseFilter;
 
-util.inherits(KalturaBaseEntryBaseFilter, KalturaFilter);
+util.inherits(KalturaBaseEntryBaseFilter, KalturaRelatedFilter);
 
 
 /**
@@ -3692,34 +3260,6 @@ util.inherits(KalturaMediaInfo, kaltura.KalturaObjectBase);
 
 
 /**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaMediaInfoListResponse(){
-	KalturaMediaInfoListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaMediaInfoListResponse = KalturaMediaInfoListResponse;
-
-util.inherits(KalturaMediaInfoListResponse, kaltura.KalturaObjectBase);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaMediaListResponse(){
-	KalturaMediaListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaMediaListResponse = KalturaMediaListResponse;
-
-util.inherits(KalturaMediaListResponse, kaltura.KalturaObjectBase);
-
-
-/**
  * @param id int Unique identifier (readOnly).
  * @param dc int Server data center id (readOnly).
  * @param hostname string Server host name (readOnly).
@@ -3782,20 +3322,6 @@ util.inherits(KalturaMetadata, kaltura.KalturaObjectBase);
 
 
 /**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaMetadataListResponse(){
-	KalturaMetadataListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaMetadataListResponse = KalturaMetadataListResponse;
-
-util.inherits(KalturaMetadataListResponse, kaltura.KalturaObjectBase);
-
-
-/**
  * @param id int  (readOnly).
  * @param partnerId int  (readOnly).
  * @param metadataObjectType string .
@@ -3852,34 +3378,6 @@ util.inherits(KalturaMetadataProfileField, kaltura.KalturaObjectBase);
 
 
 /**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaMetadataProfileFieldListResponse(){
-	KalturaMetadataProfileFieldListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaMetadataProfileFieldListResponse = KalturaMetadataProfileFieldListResponse;
-
-util.inherits(KalturaMetadataProfileFieldListResponse, kaltura.KalturaObjectBase);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaMetadataProfileListResponse(){
-	KalturaMetadataProfileListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaMetadataProfileListResponse = KalturaMetadataProfileListResponse;
-
-util.inherits(KalturaMetadataProfileListResponse, kaltura.KalturaObjectBase);
-
-
-/**
  * @param hasRealThumbnail bool Indicates whether the user has submited a real thumbnail to the mix (Not the one that was generated automaticaly) (readOnly).
  * @param editorType int The editor type used to edit the metadata.
  * @param dataContent string The xml data of the mix.
@@ -3893,20 +3391,6 @@ function KalturaMixEntry(){
 module.exports.KalturaMixEntry = KalturaMixEntry;
 
 util.inherits(KalturaMixEntry, KalturaPlayableEntry);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaMixListResponse(){
-	KalturaMixListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaMixListResponse = KalturaMixListResponse;
-
-util.inherits(KalturaMixListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -3942,41 +3426,15 @@ util.inherits(KalturaModerationFlag, kaltura.KalturaObjectBase);
 
 
 /**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaModerationFlagListResponse(){
-	KalturaModerationFlagListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaModerationFlagListResponse = KalturaModerationFlagListResponse;
-
-util.inherits(KalturaModerationFlagListResponse, kaltura.KalturaObjectBase);
-
-
-/**
+ * @param relatedObjects map .
  */
 function KalturaObject(){
 	KalturaObject.super_.call(this);
+	this.relatedObjects = null;
 }
 module.exports.KalturaObject = KalturaObject;
 
 util.inherits(KalturaObject, kaltura.KalturaObjectBase);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaObjectListResponse(){
-	KalturaObjectListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaObjectListResponse = KalturaObjectListResponse;
-
-util.inherits(KalturaObjectListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -4146,20 +3604,6 @@ util.inherits(KalturaPartner, kaltura.KalturaObjectBase);
 
 
 /**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaPartnerListResponse(){
-	KalturaPartnerListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaPartnerListResponse = KalturaPartnerListResponse;
-
-util.inherits(KalturaPartnerListResponse, kaltura.KalturaObjectBase);
-
-
-/**
  * @param packageBandwidthAndStorage int Package total allowed bandwidth and storage (readOnly).
  * @param hosting float Partner total hosting in GB on the disk (readOnly).
  * @param bandwidth float Partner total bandwidth in GB (readOnly).
@@ -4203,76 +3647,6 @@ function KalturaPartnerUsage(){
 module.exports.KalturaPartnerUsage = KalturaPartnerUsage;
 
 util.inherits(KalturaPartnerUsage, kaltura.KalturaObjectBase);
-
-
-/**
- * @param partnerId int Partner ID.
- * @param partnerName string Partner name.
- * @param partnerStatus int Partner status.
- * @param partnerPackage int Partner package.
- * @param partnerCreatedAt int Partner creation date (Unix timestamp).
- * @param views int Number of player loads in the specific date range.
- * @param plays int Number of plays in the specific date range.
- * @param entriesCount int Number of new entries created during specific date range.
- * @param totalEntriesCount int Total number of entries.
- * @param videoEntriesCount int Number of new video entries created during specific date range.
- * @param imageEntriesCount int Number of new image entries created during specific date range.
- * @param audioEntriesCount int Number of new audio entries created during specific date range.
- * @param mixEntriesCount int Number of new mix entries created during specific date range.
- * @param bandwidth float The total bandwidth usage during the given date range (in MB).
- * @param totalStorage float The total storage consumption (in MB).
- * @param storage float The added storage consumption (new uploads) during the given date range (in MB).
- * @param deletedStorage float The deleted storage consumption (new uploads) during the given date range (in MB).
- * @param peakStorage float The peak amount of storage consumption during the given date range for the specific publisher.
- * @param avgStorage float The average amount of storage consumption during the given date range for the specific publisher.
- * @param combinedStorageBandwidth float The combined amount of bandwidth and storage consumed during the given date range for the specific publisher.
- * @param transcodingUsage float Amount of transcoding usage in MB.
- * @param dateId string TGhe date at which the report was taken - Unix Timestamp.
- */
-function KalturaVarPartnerUsageItem(){
-	KalturaVarPartnerUsageItem.super_.call(this);
-	this.partnerId = null;
-	this.partnerName = null;
-	this.partnerStatus = null;
-	this.partnerPackage = null;
-	this.partnerCreatedAt = null;
-	this.views = null;
-	this.plays = null;
-	this.entriesCount = null;
-	this.totalEntriesCount = null;
-	this.videoEntriesCount = null;
-	this.imageEntriesCount = null;
-	this.audioEntriesCount = null;
-	this.mixEntriesCount = null;
-	this.bandwidth = null;
-	this.totalStorage = null;
-	this.storage = null;
-	this.deletedStorage = null;
-	this.peakStorage = null;
-	this.avgStorage = null;
-	this.combinedStorageBandwidth = null;
-	this.transcodingUsage = null;
-	this.dateId = null;
-}
-module.exports.KalturaVarPartnerUsageItem = KalturaVarPartnerUsageItem;
-
-util.inherits(KalturaVarPartnerUsageItem, kaltura.KalturaObjectBase);
-
-
-/**
- * @param total KalturaVarPartnerUsageItem .
- * @param objects array .
- * @param totalCount int .
- */
-function KalturaPartnerUsageListResponse(){
-	KalturaPartnerUsageListResponse.super_.call(this);
-	this.total = null;
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaPartnerUsageListResponse = KalturaPartnerUsageListResponse;
-
-util.inherits(KalturaPartnerUsageListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -4334,34 +3708,6 @@ util.inherits(KalturaPermissionItem, kaltura.KalturaObjectBase);
 
 
 /**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaPermissionItemListResponse(){
-	KalturaPermissionItemListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaPermissionItemListResponse = KalturaPermissionItemListResponse;
-
-util.inherits(KalturaPermissionItemListResponse, kaltura.KalturaObjectBase);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaPermissionListResponse(){
-	KalturaPermissionListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaPermissionListResponse = KalturaPermissionListResponse;
-
-util.inherits(KalturaPermissionListResponse, kaltura.KalturaObjectBase);
-
-
-/**
  * @param playlistContent string Content of the playlist -
  * XML if the playlistType is dynamic
  * text if the playlistType is static
@@ -4391,20 +3737,6 @@ util.inherits(KalturaPlaylist, KalturaBaseEntry);
 
 
 /**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaPlaylistListResponse(){
-	KalturaPlaylistListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaPlaylistListResponse = KalturaPlaylistListResponse;
-
-util.inherits(KalturaPlaylistListResponse, kaltura.KalturaObjectBase);
-
-
-/**
  * @param storageProfileId int  (readOnly).
  * @param uri string  (readOnly).
  */
@@ -4416,20 +3748,6 @@ function KalturaRemotePath(){
 module.exports.KalturaRemotePath = KalturaRemotePath;
 
 util.inherits(KalturaRemotePath, kaltura.KalturaObjectBase);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaRemotePathListResponse(){
-	KalturaRemotePathListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaRemotePathListResponse = KalturaRemotePathListResponse;
-
-util.inherits(KalturaRemotePathListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -4531,20 +3849,6 @@ util.inherits(KalturaReportInputBaseFilter, kaltura.KalturaObjectBase);
 
 
 /**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaReportListResponse(){
-	KalturaReportListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaReportListResponse = KalturaReportListResponse;
-
-util.inherits(KalturaReportListResponse, kaltura.KalturaObjectBase);
-
-
-/**
  * @param columns string .
  * @param results array .
  */
@@ -4589,6 +3893,28 @@ util.inherits(KalturaReportTotal, kaltura.KalturaObjectBase);
 
 
 /**
+ * @param id int Auto generated numeric identifier (readOnly).
+ * @param systemName string Unique system name.
+ * @param partnerId int  (readOnly).
+ * @param createdAt int Creation time as Unix timestamp (In seconds) (readOnly).
+ * @param updatedAt int Update time as Unix timestamp (In seconds) (readOnly).
+ * @param status int  (readOnly).
+ */
+function KalturaResponseProfile(){
+	KalturaResponseProfile.super_.call(this);
+	this.id = null;
+	this.systemName = null;
+	this.partnerId = null;
+	this.createdAt = null;
+	this.updatedAt = null;
+	this.status = null;
+}
+module.exports.KalturaResponseProfile = KalturaResponseProfile;
+
+util.inherits(KalturaResponseProfile, KalturaDetachedResponseProfile);
+
+
+/**
  * @param id int  (readOnly).
  * @param partnerId int  (readOnly).
  * @param name string .
@@ -4625,17 +3951,135 @@ util.inherits(KalturaScheduledTaskProfile, kaltura.KalturaObjectBase);
 
 
 /**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
+ * @param id int The id of the Category (readOnly).
+ * @param schedulerConfiguredId int The configured id of the scheduler.
+ * @param workerConfiguredId int The configured id of the job worker.
+ * @param workerType string The type of the job worker.
+ * @param type int The status type.
+ * @param value int The status value.
+ * @param schedulerId int The id of the scheduler (readOnly).
+ * @param workerId int The id of the worker (readOnly).
  */
-function KalturaScheduledTaskProfileListResponse(){
-	KalturaScheduledTaskProfileListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
+function KalturaSchedulerStatus(){
+	KalturaSchedulerStatus.super_.call(this);
+	this.id = null;
+	this.schedulerConfiguredId = null;
+	this.workerConfiguredId = null;
+	this.workerType = null;
+	this.type = null;
+	this.value = null;
+	this.schedulerId = null;
+	this.workerId = null;
 }
-module.exports.KalturaScheduledTaskProfileListResponse = KalturaScheduledTaskProfileListResponse;
+module.exports.KalturaSchedulerStatus = KalturaSchedulerStatus;
 
-util.inherits(KalturaScheduledTaskProfileListResponse, kaltura.KalturaObjectBase);
+util.inherits(KalturaSchedulerStatus, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param id int The id of the Category (readOnly).
+ * @param createdBy string Creator name.
+ * @param updatedBy string Updater name.
+ * @param commandId string Id of the control panel command that created this config item.
+ * @param commandStatus string The status of the control panel command.
+ * @param schedulerId int The id of the scheduler.
+ * @param schedulerConfiguredId int The configured id of the scheduler.
+ * @param schedulerName string The name of the scheduler.
+ * @param workerId int The id of the job worker.
+ * @param workerConfiguredId int The configured id of the job worker.
+ * @param workerName string The name of the job worker.
+ * @param variable string The name of the variable.
+ * @param variablePart string The part of the variable.
+ * @param value string The value of the variable.
+ */
+function KalturaSchedulerConfig(){
+	KalturaSchedulerConfig.super_.call(this);
+	this.id = null;
+	this.createdBy = null;
+	this.updatedBy = null;
+	this.commandId = null;
+	this.commandStatus = null;
+	this.schedulerId = null;
+	this.schedulerConfiguredId = null;
+	this.schedulerName = null;
+	this.workerId = null;
+	this.workerConfiguredId = null;
+	this.workerName = null;
+	this.variable = null;
+	this.variablePart = null;
+	this.value = null;
+}
+module.exports.KalturaSchedulerConfig = KalturaSchedulerConfig;
+
+util.inherits(KalturaSchedulerConfig, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param id int The id of the Worker (readOnly).
+ * @param configuredId int The id as configured in the batch config.
+ * @param schedulerId int The id of the Scheduler.
+ * @param schedulerConfiguredId int The id of the scheduler as configured in the batch config.
+ * @param type string The worker type.
+ * @param typeName string The friendly name of the type.
+ * @param name string The scheduler name.
+ * @param statuses array Array of the last statuses.
+ * @param configs array Array of the last configs.
+ * @param lockedJobs array Array of jobs that locked to this worker.
+ * @param avgWait int Avarage time between creation and queue time.
+ * @param avgWork int Avarage time between queue time end finish time.
+ * @param lastStatus int last status time.
+ * @param lastStatusStr string last status formated.
+ */
+function KalturaSchedulerWorker(){
+	KalturaSchedulerWorker.super_.call(this);
+	this.id = null;
+	this.configuredId = null;
+	this.schedulerId = null;
+	this.schedulerConfiguredId = null;
+	this.type = null;
+	this.typeName = null;
+	this.name = null;
+	this.statuses = null;
+	this.configs = null;
+	this.lockedJobs = null;
+	this.avgWait = null;
+	this.avgWork = null;
+	this.lastStatus = null;
+	this.lastStatusStr = null;
+}
+module.exports.KalturaSchedulerWorker = KalturaSchedulerWorker;
+
+util.inherits(KalturaSchedulerWorker, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param id int The id of the Scheduler (readOnly).
+ * @param configuredId int The id as configured in the batch config.
+ * @param name string The scheduler name.
+ * @param host string The host name.
+ * @param statuses array Array of the last statuses (readOnly).
+ * @param configs array Array of the last configs (readOnly).
+ * @param workers array Array of the workers (readOnly).
+ * @param createdAt int creation time (readOnly).
+ * @param lastStatus int last status time (readOnly).
+ * @param lastStatusStr string last status formated (readOnly).
+ */
+function KalturaScheduler(){
+	KalturaScheduler.super_.call(this);
+	this.id = null;
+	this.configuredId = null;
+	this.name = null;
+	this.host = null;
+	this.statuses = null;
+	this.configs = null;
+	this.workers = null;
+	this.createdAt = null;
+	this.lastStatus = null;
+	this.lastStatusStr = null;
+}
+module.exports.KalturaScheduler = KalturaScheduler;
+
+util.inherits(KalturaScheduler, kaltura.KalturaObjectBase);
 
 
 /**
@@ -4782,20 +4226,6 @@ function KalturaShortLink(){
 module.exports.KalturaShortLink = KalturaShortLink;
 
 util.inherits(KalturaShortLink, kaltura.KalturaObjectBase);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaShortLinkListResponse(){
-	KalturaShortLinkListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaShortLinkListResponse = KalturaShortLinkListResponse;
-
-util.inherits(KalturaShortLinkListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -4986,20 +4416,6 @@ function KalturaStorageProfile(){
 module.exports.KalturaStorageProfile = KalturaStorageProfile;
 
 util.inherits(KalturaStorageProfile, kaltura.KalturaObjectBase);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaStorageProfileListResponse(){
-	KalturaStorageProfileListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaStorageProfileListResponse = KalturaStorageProfileListResponse;
-
-util.inherits(KalturaStorageProfileListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -5231,20 +4647,6 @@ util.inherits(KalturaSystemPartnerUsageItem, kaltura.KalturaObjectBase);
 
 
 /**
- * @param objects array .
- * @param totalCount int .
- */
-function KalturaSystemPartnerUsageListResponse(){
-	KalturaSystemPartnerUsageListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaSystemPartnerUsageListResponse = KalturaSystemPartnerUsageListResponse;
-
-util.inherits(KalturaSystemPartnerUsageListResponse, kaltura.KalturaObjectBase);
-
-
-/**
  * @param id int  (readOnly).
  * @param tag string  (readOnly).
  * @param taggedObjectType string  (readOnly).
@@ -5269,20 +4671,6 @@ util.inherits(KalturaTag, kaltura.KalturaObjectBase);
 
 
 /**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaTagListResponse(){
-	KalturaTagListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaTagListResponse = KalturaTagListResponse;
-
-util.inherits(KalturaTagListResponse, kaltura.KalturaObjectBase);
-
-
-/**
  * @param thumbParamsId int The Flavor Params used to create this Flavor Asset (insertOnly).
  * @param width int The width of the Flavor Asset (readOnly).
  * @param height int The height of the Flavor Asset (readOnly).
@@ -5298,20 +4686,6 @@ function KalturaThumbAsset(){
 module.exports.KalturaThumbAsset = KalturaThumbAsset;
 
 util.inherits(KalturaThumbAsset, KalturaAsset);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaThumbAssetListResponse(){
-	KalturaThumbAssetListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaThumbAssetListResponse = KalturaThumbAssetListResponse;
-
-util.inherits(KalturaThumbAssetListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -5359,20 +4733,6 @@ util.inherits(KalturaThumbParams, KalturaAssetParams);
 
 
 /**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaThumbParamsListResponse(){
-	KalturaThumbParamsListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaThumbParamsListResponse = KalturaThumbParamsListResponse;
-
-util.inherits(KalturaThumbParamsListResponse, kaltura.KalturaObjectBase);
-
-
-/**
  * @param thumbParamsId int .
  * @param thumbParamsVersion string .
  * @param thumbAssetId string .
@@ -5390,20 +4750,6 @@ function KalturaThumbParamsOutput(){
 module.exports.KalturaThumbParamsOutput = KalturaThumbParamsOutput;
 
 util.inherits(KalturaThumbParamsOutput, KalturaThumbParams);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaThumbParamsOutputListResponse(){
-	KalturaThumbParamsOutputListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaThumbParamsOutputListResponse = KalturaThumbParamsOutputListResponse;
-
-util.inherits(KalturaThumbParamsOutputListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -5460,20 +4806,6 @@ function KalturaTrackEntry(){
 module.exports.KalturaTrackEntry = KalturaTrackEntry;
 
 util.inherits(KalturaTrackEntry, kaltura.KalturaObjectBase);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaTrackEntryListResponse(){
-	KalturaTrackEntryListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaTrackEntryListResponse = KalturaTrackEntryListResponse;
-
-util.inherits(KalturaTrackEntryListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -5563,34 +4895,6 @@ util.inherits(KalturaUiConfAdmin, KalturaUiConf);
 
 
 /**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaUiConfAdminListResponse(){
-	KalturaUiConfAdminListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaUiConfAdminListResponse = KalturaUiConfAdminListResponse;
-
-util.inherits(KalturaUiConfAdminListResponse, kaltura.KalturaObjectBase);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaUiConfListResponse(){
-	KalturaUiConfListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaUiConfListResponse = KalturaUiConfListResponse;
-
-util.inherits(KalturaUiConfListResponse, kaltura.KalturaObjectBase);
-
-
-/**
  * @param type int UiConf Type.
  * @param versions array Available versions.
  * @param directory string The direcotry this type is saved at.
@@ -5652,20 +4956,6 @@ function KalturaUploadToken(){
 module.exports.KalturaUploadToken = KalturaUploadToken;
 
 util.inherits(KalturaUploadToken, kaltura.KalturaObjectBase);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaUploadTokenListResponse(){
-	KalturaUploadTokenListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaUploadTokenListResponse = KalturaUploadTokenListResponse;
-
-util.inherits(KalturaUploadTokenListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -5753,20 +5043,6 @@ util.inherits(KalturaUser, kaltura.KalturaObjectBase);
 
 
 /**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaUserListResponse(){
-	KalturaUserListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaUserListResponse = KalturaUserListResponse;
-
-util.inherits(KalturaUserListResponse, kaltura.KalturaObjectBase);
-
-
-/**
  * @param id string .
  * @param loginEmail string .
  */
@@ -5778,20 +5054,6 @@ function KalturaUserLoginData(){
 module.exports.KalturaUserLoginData = KalturaUserLoginData;
 
 util.inherits(KalturaUserLoginData, kaltura.KalturaObjectBase);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaUserLoginDataListResponse(){
-	KalturaUserLoginDataListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaUserLoginDataListResponse = KalturaUserLoginDataListResponse;
-
-util.inherits(KalturaUserLoginDataListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -5825,17 +5087,57 @@ util.inherits(KalturaUserRole, kaltura.KalturaObjectBase);
 
 
 /**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
+ * @param partnerId int Partner ID.
+ * @param partnerName string Partner name.
+ * @param partnerStatus int Partner status.
+ * @param partnerPackage int Partner package.
+ * @param partnerCreatedAt int Partner creation date (Unix timestamp).
+ * @param views int Number of player loads in the specific date range.
+ * @param plays int Number of plays in the specific date range.
+ * @param entriesCount int Number of new entries created during specific date range.
+ * @param totalEntriesCount int Total number of entries.
+ * @param videoEntriesCount int Number of new video entries created during specific date range.
+ * @param imageEntriesCount int Number of new image entries created during specific date range.
+ * @param audioEntriesCount int Number of new audio entries created during specific date range.
+ * @param mixEntriesCount int Number of new mix entries created during specific date range.
+ * @param bandwidth float The total bandwidth usage during the given date range (in MB).
+ * @param totalStorage float The total storage consumption (in MB).
+ * @param storage float The added storage consumption (new uploads) during the given date range (in MB).
+ * @param deletedStorage float The deleted storage consumption (new uploads) during the given date range (in MB).
+ * @param peakStorage float The peak amount of storage consumption during the given date range for the specific publisher.
+ * @param avgStorage float The average amount of storage consumption during the given date range for the specific publisher.
+ * @param combinedStorageBandwidth float The combined amount of bandwidth and storage consumed during the given date range for the specific publisher.
+ * @param transcodingUsage float Amount of transcoding usage in MB.
+ * @param dateId string TGhe date at which the report was taken - Unix Timestamp.
  */
-function KalturaUserRoleListResponse(){
-	KalturaUserRoleListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
+function KalturaVarPartnerUsageItem(){
+	KalturaVarPartnerUsageItem.super_.call(this);
+	this.partnerId = null;
+	this.partnerName = null;
+	this.partnerStatus = null;
+	this.partnerPackage = null;
+	this.partnerCreatedAt = null;
+	this.views = null;
+	this.plays = null;
+	this.entriesCount = null;
+	this.totalEntriesCount = null;
+	this.videoEntriesCount = null;
+	this.imageEntriesCount = null;
+	this.audioEntriesCount = null;
+	this.mixEntriesCount = null;
+	this.bandwidth = null;
+	this.totalStorage = null;
+	this.storage = null;
+	this.deletedStorage = null;
+	this.peakStorage = null;
+	this.avgStorage = null;
+	this.combinedStorageBandwidth = null;
+	this.transcodingUsage = null;
+	this.dateId = null;
 }
-module.exports.KalturaUserRoleListResponse = KalturaUserRoleListResponse;
+module.exports.KalturaVarPartnerUsageItem = KalturaVarPartnerUsageItem;
 
-util.inherits(KalturaUserRoleListResponse, kaltura.KalturaObjectBase);
+util.inherits(KalturaVarPartnerUsageItem, kaltura.KalturaObjectBase);
 
 
 /**
@@ -5864,20 +5166,6 @@ function KalturaVirusScanProfile(){
 module.exports.KalturaVirusScanProfile = KalturaVirusScanProfile;
 
 util.inherits(KalturaVirusScanProfile, kaltura.KalturaObjectBase);
-
-
-/**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaVirusScanProfileListResponse(){
-	KalturaVirusScanProfileListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaVirusScanProfileListResponse = KalturaVirusScanProfileListResponse;
-
-util.inherits(KalturaVirusScanProfileListResponse, kaltura.KalturaObjectBase);
 
 
 /**
@@ -5921,42 +5209,6 @@ util.inherits(KalturaWidget, kaltura.KalturaObjectBase);
 
 
 /**
- * @param objects array  (readOnly).
- * @param totalCount int  (readOnly).
- */
-function KalturaWidgetListResponse(){
-	KalturaWidgetListResponse.super_.call(this);
-	this.objects = null;
-	this.totalCount = null;
-}
-module.exports.KalturaWidgetListResponse = KalturaWidgetListResponse;
-
-util.inherits(KalturaWidgetListResponse, kaltura.KalturaObjectBase);
-
-
-/**
- * @param idEqual int .
- * @param idIn string .
- * @param systemNameEqual string .
- * @param systemNameIn string .
- * @param createdAtGreaterThanOrEqual int .
- * @param createdAtLessThanOrEqual int .
- */
-function KalturaAccessControlBaseFilter(){
-	KalturaAccessControlBaseFilter.super_.call(this);
-	this.idEqual = null;
-	this.idIn = null;
-	this.systemNameEqual = null;
-	this.systemNameIn = null;
-	this.createdAtGreaterThanOrEqual = null;
-	this.createdAtLessThanOrEqual = null;
-}
-module.exports.KalturaAccessControlBaseFilter = KalturaAccessControlBaseFilter;
-
-util.inherits(KalturaAccessControlBaseFilter, KalturaFilter);
-
-
-/**
  */
 function KalturaAccessControlBlockAction(){
 	KalturaAccessControlBlockAction.super_.call(this);
@@ -5981,6 +5233,18 @@ util.inherits(KalturaAccessControlLimitFlavorsAction, KalturaRuleAction);
 
 
 /**
+ * @param objects array  (readOnly).
+ */
+function KalturaAccessControlListResponse(){
+	KalturaAccessControlListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaAccessControlListResponse = KalturaAccessControlListResponse;
+
+util.inherits(KalturaAccessControlListResponse, KalturaListResponse);
+
+
+/**
  * @param limit int .
  */
 function KalturaAccessControlPreviewAction(){
@@ -5993,29 +5257,15 @@ util.inherits(KalturaAccessControlPreviewAction, KalturaRuleAction);
 
 
 /**
- * @param idEqual int .
- * @param idIn string .
- * @param systemNameEqual string .
- * @param systemNameIn string .
- * @param createdAtGreaterThanOrEqual int .
- * @param createdAtLessThanOrEqual int .
- * @param updatedAtGreaterThanOrEqual int .
- * @param updatedAtLessThanOrEqual int .
+ * @param objects array  (readOnly).
  */
-function KalturaAccessControlProfileBaseFilter(){
-	KalturaAccessControlProfileBaseFilter.super_.call(this);
-	this.idEqual = null;
-	this.idIn = null;
-	this.systemNameEqual = null;
-	this.systemNameIn = null;
-	this.createdAtGreaterThanOrEqual = null;
-	this.createdAtLessThanOrEqual = null;
-	this.updatedAtGreaterThanOrEqual = null;
-	this.updatedAtLessThanOrEqual = null;
+function KalturaAccessControlProfileListResponse(){
+	KalturaAccessControlProfileListResponse.super_.call(this);
+	this.objects = null;
 }
-module.exports.KalturaAccessControlProfileBaseFilter = KalturaAccessControlProfileBaseFilter;
+module.exports.KalturaAccessControlProfileListResponse = KalturaAccessControlProfileListResponse;
 
-util.inherits(KalturaAccessControlProfileBaseFilter, KalturaFilter);
+util.inherits(KalturaAccessControlProfileListResponse, KalturaListResponse);
 
 
 /**
@@ -6063,6 +5313,18 @@ util.inherits(KalturaAmazonS3StorageProfile, KalturaStorageProfile);
 
 
 /**
+ * @param objects array  (readOnly).
+ */
+function KalturaAnnotationListResponse(){
+	KalturaAnnotationListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaAnnotationListResponse = KalturaAnnotationListResponse;
+
+util.inherits(KalturaAnnotationListResponse, KalturaListResponse);
+
+
+/**
  * @param service string .
  * @param action string .
  */
@@ -6093,50 +5355,6 @@ util.inherits(KalturaApiParameterPermissionItem, KalturaPermissionItem);
 
 
 /**
- * @param idEqual string .
- * @param idIn string .
- * @param entryIdEqual string .
- * @param entryIdIn string .
- * @param partnerIdEqual int .
- * @param partnerIdIn string .
- * @param sizeGreaterThanOrEqual int .
- * @param sizeLessThanOrEqual int .
- * @param tagsLike string .
- * @param tagsMultiLikeOr string .
- * @param tagsMultiLikeAnd string .
- * @param createdAtGreaterThanOrEqual int .
- * @param createdAtLessThanOrEqual int .
- * @param updatedAtGreaterThanOrEqual int .
- * @param updatedAtLessThanOrEqual int .
- * @param deletedAtGreaterThanOrEqual int .
- * @param deletedAtLessThanOrEqual int .
- */
-function KalturaAssetBaseFilter(){
-	KalturaAssetBaseFilter.super_.call(this);
-	this.idEqual = null;
-	this.idIn = null;
-	this.entryIdEqual = null;
-	this.entryIdIn = null;
-	this.partnerIdEqual = null;
-	this.partnerIdIn = null;
-	this.sizeGreaterThanOrEqual = null;
-	this.sizeLessThanOrEqual = null;
-	this.tagsLike = null;
-	this.tagsMultiLikeOr = null;
-	this.tagsMultiLikeAnd = null;
-	this.createdAtGreaterThanOrEqual = null;
-	this.createdAtLessThanOrEqual = null;
-	this.updatedAtGreaterThanOrEqual = null;
-	this.updatedAtLessThanOrEqual = null;
-	this.deletedAtGreaterThanOrEqual = null;
-	this.deletedAtLessThanOrEqual = null;
-}
-module.exports.KalturaAssetBaseFilter = KalturaAssetBaseFilter;
-
-util.inherits(KalturaAssetBaseFilter, KalturaFilter);
-
-
-/**
  * @param propertyName string The property name to look for, this will match to a getter on the asset object.
  * Should be camelCase naming convention (defining "myPropertyName" will look for getMyPropertyName()).
  * @param propertyValue string The value to compare.
@@ -6149,24 +5367,6 @@ function KalturaAssetDistributionPropertyCondition(){
 module.exports.KalturaAssetDistributionPropertyCondition = KalturaAssetDistributionPropertyCondition;
 
 util.inherits(KalturaAssetDistributionPropertyCondition, KalturaAssetDistributionCondition);
-
-
-/**
- * @param systemNameEqual string .
- * @param systemNameIn string .
- * @param isSystemDefaultEqual int .
- * @param tagsEqual string .
- */
-function KalturaAssetParamsBaseFilter(){
-	KalturaAssetParamsBaseFilter.super_.call(this);
-	this.systemNameEqual = null;
-	this.systemNameIn = null;
-	this.isSystemDefaultEqual = null;
-	this.tagsEqual = null;
-}
-module.exports.KalturaAssetParamsBaseFilter = KalturaAssetParamsBaseFilter;
-
-util.inherits(KalturaAssetParamsBaseFilter, KalturaFilter);
 
 
 /**
@@ -6216,6 +5416,18 @@ util.inherits(KalturaAssetsParamsResourceContainers, KalturaResource);
 
 
 /**
+ * @param objects array  (readOnly).
+ */
+function KalturaAttachmentAssetListResponse(){
+	KalturaAttachmentAssetListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaAttachmentAssetListResponse = KalturaAttachmentAssetListResponse;
+
+util.inherits(KalturaAttachmentAssetListResponse, KalturaListResponse);
+
+
+/**
  * @param privileges array The privelege needed to remove the restriction.
  */
 function KalturaAuthenticatedCondition(){
@@ -6228,6 +5440,18 @@ util.inherits(KalturaAuthenticatedCondition, KalturaCondition);
 
 
 /**
+ * @param objects array  (readOnly).
+ */
+function KalturaBaseEntryListResponse(){
+	KalturaBaseEntryListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaBaseEntryListResponse = KalturaBaseEntryListResponse;
+
+util.inherits(KalturaBaseEntryListResponse, KalturaListResponse);
+
+
+/**
  */
 function KalturaBaseSyndicationFeedBaseFilter(){
 	KalturaBaseSyndicationFeedBaseFilter.super_.call(this);
@@ -6235,6 +5459,18 @@ function KalturaBaseSyndicationFeedBaseFilter(){
 module.exports.KalturaBaseSyndicationFeedBaseFilter = KalturaBaseSyndicationFeedBaseFilter;
 
 util.inherits(KalturaBaseSyndicationFeedBaseFilter, KalturaFilter);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaBaseSyndicationFeedListResponse(){
+	KalturaBaseSyndicationFeedListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaBaseSyndicationFeedListResponse = KalturaBaseSyndicationFeedListResponse;
+
+util.inherits(KalturaBaseSyndicationFeedListResponse, KalturaListResponse);
 
 
 /**
@@ -6335,6 +5571,18 @@ function KalturaBatchJobBaseFilter(){
 module.exports.KalturaBatchJobBaseFilter = KalturaBatchJobBaseFilter;
 
 util.inherits(KalturaBatchJobBaseFilter, KalturaFilter);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaBatchJobListResponse(){
+	KalturaBatchJobListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaBatchJobListResponse = KalturaBatchJobListResponse;
+
+util.inherits(KalturaBatchJobListResponse, KalturaListResponse);
 
 
 /**
@@ -6481,6 +5729,18 @@ function KalturaBulkUploadJobData(){
 module.exports.KalturaBulkUploadJobData = KalturaBulkUploadJobData;
 
 util.inherits(KalturaBulkUploadJobData, KalturaJobData);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaBulkUploadListResponse(){
+	KalturaBulkUploadListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaBulkUploadListResponse = KalturaBulkUploadListResponse;
+
+util.inherits(KalturaBulkUploadListResponse, KalturaListResponse);
 
 
 /**
@@ -6656,6 +5916,42 @@ util.inherits(KalturaBulkUploadUserData, KalturaBulkUploadObjectData);
 
 
 /**
+ * @param objects array  (readOnly).
+ */
+function KalturaCaptionAssetItemListResponse(){
+	KalturaCaptionAssetItemListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaCaptionAssetItemListResponse = KalturaCaptionAssetItemListResponse;
+
+util.inherits(KalturaCaptionAssetItemListResponse, KalturaListResponse);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaCaptionAssetListResponse(){
+	KalturaCaptionAssetListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaCaptionAssetListResponse = KalturaCaptionAssetListResponse;
+
+util.inherits(KalturaCaptionAssetListResponse, KalturaListResponse);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaCaptionParamsListResponse(){
+	KalturaCaptionParamsListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaCaptionParamsListResponse = KalturaCaptionParamsListResponse;
+
+util.inherits(KalturaCaptionParamsListResponse, KalturaListResponse);
+
+
+/**
  * @param srcFileSyncLocalPath string .
  * @param actualSrcFileSyncLocalPath string The translated path as used by the scheduler.
  * @param srcFileSyncRemoteUrl string .
@@ -6682,90 +5978,6 @@ util.inherits(KalturaCaptureThumbJobData, KalturaJobData);
 
 
 /**
- * @param idEqual int .
- * @param idIn string .
- * @param parentIdEqual int .
- * @param parentIdIn string .
- * @param depthEqual int .
- * @param fullNameEqual string .
- * @param fullNameStartsWith string .
- * @param fullNameIn string .
- * @param fullIdsEqual string .
- * @param fullIdsStartsWith string .
- * @param fullIdsMatchOr string .
- * @param createdAtGreaterThanOrEqual int .
- * @param createdAtLessThanOrEqual int .
- * @param updatedAtGreaterThanOrEqual int .
- * @param updatedAtLessThanOrEqual int .
- * @param tagsLike string .
- * @param tagsMultiLikeOr string .
- * @param tagsMultiLikeAnd string .
- * @param appearInListEqual int .
- * @param privacyEqual int .
- * @param privacyIn string .
- * @param inheritanceTypeEqual int .
- * @param inheritanceTypeIn string .
- * @param referenceIdEqual string .
- * @param referenceIdEmpty int .
- * @param contributionPolicyEqual int .
- * @param membersCountGreaterThanOrEqual int .
- * @param membersCountLessThanOrEqual int .
- * @param pendingMembersCountGreaterThanOrEqual int .
- * @param pendingMembersCountLessThanOrEqual int .
- * @param privacyContextEqual string .
- * @param statusEqual int .
- * @param statusIn string .
- * @param inheritedParentIdEqual int .
- * @param inheritedParentIdIn string .
- * @param partnerSortValueGreaterThanOrEqual int .
- * @param partnerSortValueLessThanOrEqual int .
- */
-function KalturaCategoryBaseFilter(){
-	KalturaCategoryBaseFilter.super_.call(this);
-	this.idEqual = null;
-	this.idIn = null;
-	this.parentIdEqual = null;
-	this.parentIdIn = null;
-	this.depthEqual = null;
-	this.fullNameEqual = null;
-	this.fullNameStartsWith = null;
-	this.fullNameIn = null;
-	this.fullIdsEqual = null;
-	this.fullIdsStartsWith = null;
-	this.fullIdsMatchOr = null;
-	this.createdAtGreaterThanOrEqual = null;
-	this.createdAtLessThanOrEqual = null;
-	this.updatedAtGreaterThanOrEqual = null;
-	this.updatedAtLessThanOrEqual = null;
-	this.tagsLike = null;
-	this.tagsMultiLikeOr = null;
-	this.tagsMultiLikeAnd = null;
-	this.appearInListEqual = null;
-	this.privacyEqual = null;
-	this.privacyIn = null;
-	this.inheritanceTypeEqual = null;
-	this.inheritanceTypeIn = null;
-	this.referenceIdEqual = null;
-	this.referenceIdEmpty = null;
-	this.contributionPolicyEqual = null;
-	this.membersCountGreaterThanOrEqual = null;
-	this.membersCountLessThanOrEqual = null;
-	this.pendingMembersCountGreaterThanOrEqual = null;
-	this.pendingMembersCountLessThanOrEqual = null;
-	this.privacyContextEqual = null;
-	this.statusEqual = null;
-	this.statusIn = null;
-	this.inheritedParentIdEqual = null;
-	this.inheritedParentIdIn = null;
-	this.partnerSortValueGreaterThanOrEqual = null;
-	this.partnerSortValueLessThanOrEqual = null;
-}
-module.exports.KalturaCategoryBaseFilter = KalturaCategoryBaseFilter;
-
-util.inherits(KalturaCategoryBaseFilter, KalturaFilter);
-
-
-/**
  * @param categoriesMatchOr string .
  * @param categoryEntryStatusIn string .
  * @param orderBy string .
@@ -6784,31 +5996,15 @@ util.inherits(KalturaCategoryEntryAdvancedFilter, KalturaSearchItem);
 
 
 /**
- * @param categoryIdEqual int .
- * @param categoryIdIn string .
- * @param entryIdEqual string .
- * @param entryIdIn string .
- * @param createdAtGreaterThanOrEqual int .
- * @param createdAtLessThanOrEqual int .
- * @param categoryFullIdsStartsWith string .
- * @param statusEqual int .
- * @param statusIn string .
+ * @param objects array  (readOnly).
  */
-function KalturaCategoryEntryBaseFilter(){
-	KalturaCategoryEntryBaseFilter.super_.call(this);
-	this.categoryIdEqual = null;
-	this.categoryIdIn = null;
-	this.entryIdEqual = null;
-	this.entryIdIn = null;
-	this.createdAtGreaterThanOrEqual = null;
-	this.createdAtLessThanOrEqual = null;
-	this.categoryFullIdsStartsWith = null;
-	this.statusEqual = null;
-	this.statusIn = null;
+function KalturaCategoryEntryListResponse(){
+	KalturaCategoryEntryListResponse.super_.call(this);
+	this.objects = null;
 }
-module.exports.KalturaCategoryEntryBaseFilter = KalturaCategoryEntryBaseFilter;
+module.exports.KalturaCategoryEntryListResponse = KalturaCategoryEntryListResponse;
 
-util.inherits(KalturaCategoryEntryBaseFilter, KalturaFilter);
+util.inherits(KalturaCategoryEntryListResponse, KalturaListResponse);
 
 
 /**
@@ -6821,6 +6017,18 @@ function KalturaCategoryIdentifier(){
 module.exports.KalturaCategoryIdentifier = KalturaCategoryIdentifier;
 
 util.inherits(KalturaCategoryIdentifier, KalturaObjectIdentifier);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaCategoryListResponse(){
+	KalturaCategoryListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaCategoryListResponse = KalturaCategoryListResponse;
+
+util.inherits(KalturaCategoryListResponse, KalturaListResponse);
 
 
 /**
@@ -6842,51 +6050,15 @@ util.inherits(KalturaCategoryUserAdvancedFilter, KalturaSearchItem);
 
 
 /**
- * @param categoryIdEqual int .
- * @param categoryIdIn string .
- * @param userIdEqual string .
- * @param userIdIn string .
- * @param permissionLevelEqual int .
- * @param permissionLevelIn string .
- * @param statusEqual int .
- * @param statusIn string .
- * @param createdAtGreaterThanOrEqual int .
- * @param createdAtLessThanOrEqual int .
- * @param updatedAtGreaterThanOrEqual int .
- * @param updatedAtLessThanOrEqual int .
- * @param updateMethodEqual int .
- * @param updateMethodIn string .
- * @param categoryFullIdsStartsWith string .
- * @param categoryFullIdsEqual string .
- * @param permissionNamesMatchAnd string .
- * @param permissionNamesMatchOr string .
- * @param permissionNamesNotContains string .
+ * @param objects array  (readOnly).
  */
-function KalturaCategoryUserBaseFilter(){
-	KalturaCategoryUserBaseFilter.super_.call(this);
-	this.categoryIdEqual = null;
-	this.categoryIdIn = null;
-	this.userIdEqual = null;
-	this.userIdIn = null;
-	this.permissionLevelEqual = null;
-	this.permissionLevelIn = null;
-	this.statusEqual = null;
-	this.statusIn = null;
-	this.createdAtGreaterThanOrEqual = null;
-	this.createdAtLessThanOrEqual = null;
-	this.updatedAtGreaterThanOrEqual = null;
-	this.updatedAtLessThanOrEqual = null;
-	this.updateMethodEqual = null;
-	this.updateMethodIn = null;
-	this.categoryFullIdsStartsWith = null;
-	this.categoryFullIdsEqual = null;
-	this.permissionNamesMatchAnd = null;
-	this.permissionNamesMatchOr = null;
-	this.permissionNamesNotContains = null;
+function KalturaCategoryUserListResponse(){
+	KalturaCategoryUserListResponse.super_.call(this);
+	this.objects = null;
 }
-module.exports.KalturaCategoryUserBaseFilter = KalturaCategoryUserBaseFilter;
+module.exports.KalturaCategoryUserListResponse = KalturaCategoryUserListResponse;
 
-util.inherits(KalturaCategoryUserBaseFilter, KalturaFilter);
+util.inherits(KalturaCategoryUserListResponse, KalturaListResponse);
 
 
 /**
@@ -7094,6 +6266,18 @@ util.inherits(KalturaControlPanelCommandBaseFilter, KalturaFilter);
 
 
 /**
+ * @param objects array  (readOnly).
+ */
+function KalturaControlPanelCommandListResponse(){
+	KalturaControlPanelCommandListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaControlPanelCommandListResponse = KalturaControlPanelCommandListResponse;
+
+util.inherits(KalturaControlPanelCommandListResponse, KalturaListResponse);
+
+
+/**
  * @param srcFileSyncLocalPath string .
  * @param actualSrcFileSyncLocalPath string The translated path as used by the scheduler.
  * @param srcFileSyncRemoteUrl string .
@@ -7126,69 +6310,27 @@ util.inherits(KalturaConvartableJobData, KalturaJobData);
 
 
 /**
- * @param conversionProfileIdEqual int .
- * @param conversionProfileIdIn string .
- * @param assetParamsIdEqual int .
- * @param assetParamsIdIn string .
- * @param readyBehaviorEqual int .
- * @param readyBehaviorIn string .
- * @param originEqual int .
- * @param originIn string .
- * @param systemNameEqual string .
- * @param systemNameIn string .
+ * @param objects array  (readOnly).
  */
-function KalturaConversionProfileAssetParamsBaseFilter(){
-	KalturaConversionProfileAssetParamsBaseFilter.super_.call(this);
-	this.conversionProfileIdEqual = null;
-	this.conversionProfileIdIn = null;
-	this.assetParamsIdEqual = null;
-	this.assetParamsIdIn = null;
-	this.readyBehaviorEqual = null;
-	this.readyBehaviorIn = null;
-	this.originEqual = null;
-	this.originIn = null;
-	this.systemNameEqual = null;
-	this.systemNameIn = null;
+function KalturaConversionProfileAssetParamsListResponse(){
+	KalturaConversionProfileAssetParamsListResponse.super_.call(this);
+	this.objects = null;
 }
-module.exports.KalturaConversionProfileAssetParamsBaseFilter = KalturaConversionProfileAssetParamsBaseFilter;
+module.exports.KalturaConversionProfileAssetParamsListResponse = KalturaConversionProfileAssetParamsListResponse;
 
-util.inherits(KalturaConversionProfileAssetParamsBaseFilter, KalturaFilter);
+util.inherits(KalturaConversionProfileAssetParamsListResponse, KalturaListResponse);
 
 
 /**
- * @param idEqual int .
- * @param idIn string .
- * @param statusEqual string .
- * @param statusIn string .
- * @param typeEqual string .
- * @param typeIn string .
- * @param nameEqual string .
- * @param systemNameEqual string .
- * @param systemNameIn string .
- * @param tagsMultiLikeOr string .
- * @param tagsMultiLikeAnd string .
- * @param defaultEntryIdEqual string .
- * @param defaultEntryIdIn string .
+ * @param objects array  (readOnly).
  */
-function KalturaConversionProfileBaseFilter(){
-	KalturaConversionProfileBaseFilter.super_.call(this);
-	this.idEqual = null;
-	this.idIn = null;
-	this.statusEqual = null;
-	this.statusIn = null;
-	this.typeEqual = null;
-	this.typeIn = null;
-	this.nameEqual = null;
-	this.systemNameEqual = null;
-	this.systemNameIn = null;
-	this.tagsMultiLikeOr = null;
-	this.tagsMultiLikeAnd = null;
-	this.defaultEntryIdEqual = null;
-	this.defaultEntryIdIn = null;
+function KalturaConversionProfileListResponse(){
+	KalturaConversionProfileListResponse.super_.call(this);
+	this.objects = null;
 }
-module.exports.KalturaConversionProfileBaseFilter = KalturaConversionProfileBaseFilter;
+module.exports.KalturaConversionProfileListResponse = KalturaConversionProfileListResponse;
 
-util.inherits(KalturaConversionProfileBaseFilter, KalturaFilter);
+util.inherits(KalturaConversionProfileListResponse, KalturaListResponse);
 
 
 /**
@@ -7274,69 +6416,27 @@ util.inherits(KalturaCountryRestriction, KalturaBaseRestriction);
 
 
 /**
- * @param idEqual string .
- * @param idIn string .
- * @param cuePointTypeEqual string .
- * @param cuePointTypeIn string .
- * @param statusEqual int .
- * @param statusIn string .
- * @param entryIdEqual string .
- * @param entryIdIn string .
- * @param createdAtGreaterThanOrEqual int .
- * @param createdAtLessThanOrEqual int .
- * @param updatedAtGreaterThanOrEqual int .
- * @param updatedAtLessThanOrEqual int .
- * @param triggeredAtGreaterThanOrEqual int .
- * @param triggeredAtLessThanOrEqual int .
- * @param tagsLike string .
- * @param tagsMultiLikeOr string .
- * @param tagsMultiLikeAnd string .
- * @param startTimeGreaterThanOrEqual int .
- * @param startTimeLessThanOrEqual int .
- * @param userIdEqual string .
- * @param userIdIn string .
- * @param partnerSortValueEqual int .
- * @param partnerSortValueIn string .
- * @param partnerSortValueGreaterThanOrEqual int .
- * @param partnerSortValueLessThanOrEqual int .
- * @param forceStopEqual int .
- * @param systemNameEqual string .
- * @param systemNameIn string .
+ * @param objects array  (readOnly).
  */
-function KalturaCuePointBaseFilter(){
-	KalturaCuePointBaseFilter.super_.call(this);
-	this.idEqual = null;
-	this.idIn = null;
-	this.cuePointTypeEqual = null;
-	this.cuePointTypeIn = null;
-	this.statusEqual = null;
-	this.statusIn = null;
-	this.entryIdEqual = null;
-	this.entryIdIn = null;
-	this.createdAtGreaterThanOrEqual = null;
-	this.createdAtLessThanOrEqual = null;
-	this.updatedAtGreaterThanOrEqual = null;
-	this.updatedAtLessThanOrEqual = null;
-	this.triggeredAtGreaterThanOrEqual = null;
-	this.triggeredAtLessThanOrEqual = null;
-	this.tagsLike = null;
-	this.tagsMultiLikeOr = null;
-	this.tagsMultiLikeAnd = null;
-	this.startTimeGreaterThanOrEqual = null;
-	this.startTimeLessThanOrEqual = null;
-	this.userIdEqual = null;
-	this.userIdIn = null;
-	this.partnerSortValueEqual = null;
-	this.partnerSortValueIn = null;
-	this.partnerSortValueGreaterThanOrEqual = null;
-	this.partnerSortValueLessThanOrEqual = null;
-	this.forceStopEqual = null;
-	this.systemNameEqual = null;
-	this.systemNameIn = null;
+function KalturaCuePointListResponse(){
+	KalturaCuePointListResponse.super_.call(this);
+	this.objects = null;
 }
-module.exports.KalturaCuePointBaseFilter = KalturaCuePointBaseFilter;
+module.exports.KalturaCuePointListResponse = KalturaCuePointListResponse;
 
-util.inherits(KalturaCuePointBaseFilter, KalturaFilter);
+util.inherits(KalturaCuePointListResponse, KalturaListResponse);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaDataListResponse(){
+	KalturaDataListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaDataListResponse = KalturaDataListResponse;
+
+util.inherits(KalturaDataListResponse, KalturaListResponse);
 
 
 /**
@@ -7524,6 +6624,18 @@ util.inherits(KalturaDeliveryProfileGenericSilverLight, KalturaDeliveryProfile);
 
 
 /**
+ * @param objects array  (readOnly).
+ */
+function KalturaDeliveryProfileListResponse(){
+	KalturaDeliveryProfileListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaDeliveryProfileListResponse = KalturaDeliveryProfileListResponse;
+
+util.inherits(KalturaDeliveryProfileListResponse, KalturaListResponse);
+
+
+/**
  * @param disableExtraAttributes bool .
  * @param forceProxy bool .
  */
@@ -7549,6 +6661,36 @@ function KalturaDeliveryProfileRtmp(){
 module.exports.KalturaDeliveryProfileRtmp = KalturaDeliveryProfileRtmp;
 
 util.inherits(KalturaDeliveryProfileRtmp, KalturaDeliveryProfile);
+
+
+/**
+ * @param idEqual int .
+ * @param idIn string .
+ * @param systemNameEqual string .
+ * @param systemNameIn string .
+ * @param createdAtGreaterThanOrEqual int .
+ * @param createdAtLessThanOrEqual int .
+ * @param updatedAtGreaterThanOrEqual int .
+ * @param updatedAtLessThanOrEqual int .
+ * @param statusEqual int .
+ * @param statusIn string .
+ */
+function KalturaDetachedResponseProfileFilter(){
+	KalturaDetachedResponseProfileFilter.super_.call(this);
+	this.idEqual = null;
+	this.idIn = null;
+	this.systemNameEqual = null;
+	this.systemNameIn = null;
+	this.createdAtGreaterThanOrEqual = null;
+	this.createdAtLessThanOrEqual = null;
+	this.updatedAtGreaterThanOrEqual = null;
+	this.updatedAtLessThanOrEqual = null;
+	this.statusEqual = null;
+	this.statusIn = null;
+}
+module.exports.KalturaDetachedResponseProfileFilter = KalturaDetachedResponseProfileFilter;
+
+util.inherits(KalturaDetachedResponseProfileFilter, KalturaFilter);
 
 
 /**
@@ -7645,6 +6787,18 @@ util.inherits(KalturaDistributionProfileBaseFilter, KalturaFilter);
 
 
 /**
+ * @param objects array  (readOnly).
+ */
+function KalturaDistributionProfileListResponse(){
+	KalturaDistributionProfileListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaDistributionProfileListResponse = KalturaDistributionProfileListResponse;
+
+util.inherits(KalturaDistributionProfileListResponse, KalturaListResponse);
+
+
+/**
  * @param typeEqual string .
  * @param typeIn string .
  */
@@ -7656,6 +6810,18 @@ function KalturaDistributionProviderBaseFilter(){
 module.exports.KalturaDistributionProviderBaseFilter = KalturaDistributionProviderBaseFilter;
 
 util.inherits(KalturaDistributionProviderBaseFilter, KalturaFilter);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaDistributionProviderListResponse(){
+	KalturaDistributionProviderListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaDistributionProviderListResponse = KalturaDistributionProviderListResponse;
+
+util.inherits(KalturaDistributionProviderListResponse, KalturaListResponse);
 
 
 /**
@@ -7733,6 +6899,18 @@ function KalturaDistributionValidationErrorMissingThumbnail(){
 module.exports.KalturaDistributionValidationErrorMissingThumbnail = KalturaDistributionValidationErrorMissingThumbnail;
 
 util.inherits(KalturaDistributionValidationErrorMissingThumbnail, KalturaDistributionValidationError);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaDocumentListResponse(){
+	KalturaDocumentListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaDocumentListResponse = KalturaDocumentListResponse;
+
+util.inherits(KalturaDocumentListResponse, KalturaListResponse);
 
 
 /**
@@ -7907,6 +7085,30 @@ util.inherits(KalturaDropFolderFileBaseFilter, KalturaFilter);
 
 
 /**
+ * @param objects array  (readOnly).
+ */
+function KalturaDropFolderFileListResponse(){
+	KalturaDropFolderFileListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaDropFolderFileListResponse = KalturaDropFolderFileListResponse;
+
+util.inherits(KalturaDropFolderFileListResponse, KalturaListResponse);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaDropFolderListResponse(){
+	KalturaDropFolderListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaDropFolderListResponse = KalturaDropFolderListResponse;
+
+util.inherits(KalturaDropFolderListResponse, KalturaListResponse);
+
+
+/**
  */
 function KalturaDropFolderXmlBulkUploadFileHandlerConfig(){
 	KalturaDropFolderXmlBulkUploadFileHandlerConfig.super_.call(this);
@@ -7914,6 +7116,54 @@ function KalturaDropFolderXmlBulkUploadFileHandlerConfig(){
 module.exports.KalturaDropFolderXmlBulkUploadFileHandlerConfig = KalturaDropFolderXmlBulkUploadFileHandlerConfig;
 
 util.inherits(KalturaDropFolderXmlBulkUploadFileHandlerConfig, KalturaDropFolderFileHandlerConfig);
+
+
+/**
+ * @param categoryIdEqual int .
+ * @param categoryIdIn string .
+ * @param userIdEqual string .
+ * @param userIdIn string .
+ * @param permissionLevelEqual int .
+ * @param permissionLevelIn string .
+ * @param statusEqual int .
+ * @param statusIn string .
+ * @param createdAtGreaterThanOrEqual int .
+ * @param createdAtLessThanOrEqual int .
+ * @param updatedAtGreaterThanOrEqual int .
+ * @param updatedAtLessThanOrEqual int .
+ * @param updateMethodEqual int .
+ * @param updateMethodIn string .
+ * @param categoryFullIdsStartsWith string .
+ * @param categoryFullIdsEqual string .
+ * @param permissionNamesMatchAnd string .
+ * @param permissionNamesMatchOr string .
+ * @param permissionNamesNotContains string .
+ */
+function KalturaCategoryUserBaseFilter(){
+	KalturaCategoryUserBaseFilter.super_.call(this);
+	this.categoryIdEqual = null;
+	this.categoryIdIn = null;
+	this.userIdEqual = null;
+	this.userIdIn = null;
+	this.permissionLevelEqual = null;
+	this.permissionLevelIn = null;
+	this.statusEqual = null;
+	this.statusIn = null;
+	this.createdAtGreaterThanOrEqual = null;
+	this.createdAtLessThanOrEqual = null;
+	this.updatedAtGreaterThanOrEqual = null;
+	this.updatedAtLessThanOrEqual = null;
+	this.updateMethodEqual = null;
+	this.updateMethodIn = null;
+	this.categoryFullIdsStartsWith = null;
+	this.categoryFullIdsEqual = null;
+	this.permissionNamesMatchAnd = null;
+	this.permissionNamesMatchOr = null;
+	this.permissionNamesNotContains = null;
+}
+module.exports.KalturaCategoryUserBaseFilter = KalturaCategoryUserBaseFilter;
+
+util.inherits(KalturaCategoryUserBaseFilter, KalturaRelatedFilter);
 
 
 /**
@@ -8071,7 +7321,7 @@ function KalturaUserBaseFilter(){
 }
 module.exports.KalturaUserBaseFilter = KalturaUserBaseFilter;
 
-util.inherits(KalturaUserBaseFilter, KalturaFilter);
+util.inherits(KalturaUserBaseFilter, KalturaRelatedFilter);
 
 
 /**
@@ -8215,53 +7465,15 @@ util.inherits(KalturaEntryCuePointSearchFilter, KalturaSearchItem);
 
 
 /**
- * @param idEqual int .
- * @param idIn string .
- * @param createdAtGreaterThanOrEqual int .
- * @param createdAtLessThanOrEqual int .
- * @param updatedAtGreaterThanOrEqual int .
- * @param updatedAtLessThanOrEqual int .
- * @param submittedAtGreaterThanOrEqual int .
- * @param submittedAtLessThanOrEqual int .
- * @param entryIdEqual string .
- * @param entryIdIn string .
- * @param distributionProfileIdEqual int .
- * @param distributionProfileIdIn string .
- * @param statusEqual int .
- * @param statusIn string .
- * @param dirtyStatusEqual int .
- * @param dirtyStatusIn string .
- * @param sunriseGreaterThanOrEqual int .
- * @param sunriseLessThanOrEqual int .
- * @param sunsetGreaterThanOrEqual int .
- * @param sunsetLessThanOrEqual int .
+ * @param objects array  (readOnly).
  */
-function KalturaEntryDistributionBaseFilter(){
-	KalturaEntryDistributionBaseFilter.super_.call(this);
-	this.idEqual = null;
-	this.idIn = null;
-	this.createdAtGreaterThanOrEqual = null;
-	this.createdAtLessThanOrEqual = null;
-	this.updatedAtGreaterThanOrEqual = null;
-	this.updatedAtLessThanOrEqual = null;
-	this.submittedAtGreaterThanOrEqual = null;
-	this.submittedAtLessThanOrEqual = null;
-	this.entryIdEqual = null;
-	this.entryIdIn = null;
-	this.distributionProfileIdEqual = null;
-	this.distributionProfileIdIn = null;
-	this.statusEqual = null;
-	this.statusIn = null;
-	this.dirtyStatusEqual = null;
-	this.dirtyStatusIn = null;
-	this.sunriseGreaterThanOrEqual = null;
-	this.sunriseLessThanOrEqual = null;
-	this.sunsetGreaterThanOrEqual = null;
-	this.sunsetLessThanOrEqual = null;
+function KalturaEntryDistributionListResponse(){
+	KalturaEntryDistributionListResponse.super_.call(this);
+	this.objects = null;
 }
-module.exports.KalturaEntryDistributionBaseFilter = KalturaEntryDistributionBaseFilter;
+module.exports.KalturaEntryDistributionListResponse = KalturaEntryDistributionListResponse;
 
-util.inherits(KalturaEntryDistributionBaseFilter, KalturaFilter);
+util.inherits(KalturaEntryDistributionListResponse, KalturaListResponse);
 
 
 /**
@@ -8407,6 +7619,18 @@ util.inherits(KalturaEventNotificationTemplateBaseFilter, KalturaFilter);
 
 
 /**
+ * @param objects array  (readOnly).
+ */
+function KalturaEventNotificationTemplateListResponse(){
+	KalturaEventNotificationTemplateListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaEventNotificationTemplateListResponse = KalturaEventNotificationTemplateListResponse;
+
+util.inherits(KalturaEventNotificationTemplateListResponse, KalturaListResponse);
+
+
+/**
  * @param modifiedColumns string Comma seperated column names to be tested.
  */
 function KalturaEventObjectChangedCondition(){
@@ -8435,37 +7659,39 @@ util.inherits(KalturaExecuteMetadataXsltObjectTask, KalturaObjectTask);
 
 
 /**
- * @param idEqual int .
- * @param idIn string .
- * @param partnerIdEqual int .
- * @param fileAssetObjectTypeEqual string .
- * @param objectIdEqual string .
- * @param objectIdIn string .
- * @param createdAtGreaterThanOrEqual int .
- * @param createdAtLessThanOrEqual int .
- * @param updatedAtGreaterThanOrEqual int .
- * @param updatedAtLessThanOrEqual int .
- * @param statusEqual string .
- * @param statusIn string .
+ * @param objects array  (readOnly).
  */
-function KalturaFileAssetBaseFilter(){
-	KalturaFileAssetBaseFilter.super_.call(this);
-	this.idEqual = null;
-	this.idIn = null;
-	this.partnerIdEqual = null;
-	this.fileAssetObjectTypeEqual = null;
-	this.objectIdEqual = null;
-	this.objectIdIn = null;
-	this.createdAtGreaterThanOrEqual = null;
-	this.createdAtLessThanOrEqual = null;
-	this.updatedAtGreaterThanOrEqual = null;
-	this.updatedAtLessThanOrEqual = null;
-	this.statusEqual = null;
-	this.statusIn = null;
+function KalturaExternalMediaEntryListResponse(){
+	KalturaExternalMediaEntryListResponse.super_.call(this);
+	this.objects = null;
 }
-module.exports.KalturaFileAssetBaseFilter = KalturaFileAssetBaseFilter;
+module.exports.KalturaExternalMediaEntryListResponse = KalturaExternalMediaEntryListResponse;
 
-util.inherits(KalturaFileAssetBaseFilter, KalturaFilter);
+util.inherits(KalturaExternalMediaEntryListResponse, KalturaListResponse);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaFeatureStatusListResponse(){
+	KalturaFeatureStatusListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaFeatureStatusListResponse = KalturaFeatureStatusListResponse;
+
+util.inherits(KalturaFeatureStatusListResponse, KalturaListResponse);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaFileAssetListResponse(){
+	KalturaFileAssetListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaFileAssetListResponse = KalturaFileAssetListResponse;
+
+util.inherits(KalturaFileAssetListResponse, KalturaListResponse);
 
 
 /**
@@ -8537,6 +7763,18 @@ util.inherits(KalturaFileSyncBaseFilter, KalturaFilter);
 
 
 /**
+ * @param objects array  (readOnly).
+ */
+function KalturaFileSyncListResponse(){
+	KalturaFileSyncListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaFileSyncListResponse = KalturaFileSyncListResponse;
+
+util.inherits(KalturaFileSyncListResponse, KalturaListResponse);
+
+
+/**
  */
 function KalturaFlattenJobData(){
 	KalturaFlattenJobData.super_.call(this);
@@ -8544,6 +7782,42 @@ function KalturaFlattenJobData(){
 module.exports.KalturaFlattenJobData = KalturaFlattenJobData;
 
 util.inherits(KalturaFlattenJobData, KalturaJobData);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaFlavorAssetListResponse(){
+	KalturaFlavorAssetListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaFlavorAssetListResponse = KalturaFlavorAssetListResponse;
+
+util.inherits(KalturaFlavorAssetListResponse, KalturaListResponse);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaFlavorParamsListResponse(){
+	KalturaFlavorParamsListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaFlavorParamsListResponse = KalturaFlavorParamsListResponse;
+
+util.inherits(KalturaFlavorParamsListResponse, KalturaListResponse);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaFlavorParamsOutputListResponse(){
+	KalturaFlavorParamsOutputListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaFlavorParamsOutputListResponse = KalturaFlavorParamsOutputListResponse;
+
+util.inherits(KalturaFlavorParamsOutputListResponse, KalturaListResponse);
 
 
 /**
@@ -8617,6 +7891,30 @@ util.inherits(KalturaGenericDistributionProviderActionBaseFilter, KalturaFilter)
 
 
 /**
+ * @param objects array  (readOnly).
+ */
+function KalturaGenericDistributionProviderActionListResponse(){
+	KalturaGenericDistributionProviderActionListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaGenericDistributionProviderActionListResponse = KalturaGenericDistributionProviderActionListResponse;
+
+util.inherits(KalturaGenericDistributionProviderActionListResponse, KalturaListResponse);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaGenericDistributionProviderListResponse(){
+	KalturaGenericDistributionProviderListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaGenericDistributionProviderListResponse = KalturaGenericDistributionProviderListResponse;
+
+util.inherits(KalturaGenericDistributionProviderListResponse, KalturaListResponse);
+
+
+/**
  * @param feedDescription string feed description.
  * @param feedLandingPage string feed landing page (i.e publisher website).
  */
@@ -8643,33 +7941,15 @@ util.inherits(KalturaGoogleVideoSyndicationFeed, KalturaBaseSyndicationFeed);
 
 
 /**
- * @param userIdEqual string .
- * @param userIdIn string .
- * @param groupIdEqual string .
- * @param groupIdIn string .
- * @param statusEqual int .
- * @param statusIn string .
- * @param createdAtGreaterThanOrEqual int .
- * @param createdAtLessThanOrEqual int .
- * @param updatedAtGreaterThanOrEqual int .
- * @param updatedAtLessThanOrEqual int .
+ * @param objects array  (readOnly).
  */
-function KalturaGroupUserBaseFilter(){
-	KalturaGroupUserBaseFilter.super_.call(this);
-	this.userIdEqual = null;
-	this.userIdIn = null;
-	this.groupIdEqual = null;
-	this.groupIdIn = null;
-	this.statusEqual = null;
-	this.statusIn = null;
-	this.createdAtGreaterThanOrEqual = null;
-	this.createdAtLessThanOrEqual = null;
-	this.updatedAtGreaterThanOrEqual = null;
-	this.updatedAtLessThanOrEqual = null;
+function KalturaGroupUserListResponse(){
+	KalturaGroupUserListResponse.super_.call(this);
+	this.objects = null;
 }
-module.exports.KalturaGroupUserBaseFilter = KalturaGroupUserBaseFilter;
+module.exports.KalturaGroupUserListResponse = KalturaGroupUserListResponse;
 
-util.inherits(KalturaGroupUserBaseFilter, KalturaFilter);
+util.inherits(KalturaGroupUserListResponse, KalturaListResponse);
 
 
 /**
@@ -8909,33 +8189,27 @@ util.inherits(KalturaLimitFlavorsRestriction, KalturaBaseRestriction);
 
 
 /**
- * @param createdAtGreaterThanOrEqual int .
- * @param createdAtLessThanOrEqual int .
- * @param updatedAtGreaterThanOrEqual int .
- * @param updatedAtLessThanOrEqual int .
- * @param statusEqual string .
- * @param statusIn string .
- * @param channelIdEqual string .
- * @param channelIdIn string .
- * @param startTimeGreaterThanOrEqual float .
- * @param startTimeLessThanOrEqual float .
+ * @param objects array  (readOnly).
  */
-function KalturaLiveChannelSegmentBaseFilter(){
-	KalturaLiveChannelSegmentBaseFilter.super_.call(this);
-	this.createdAtGreaterThanOrEqual = null;
-	this.createdAtLessThanOrEqual = null;
-	this.updatedAtGreaterThanOrEqual = null;
-	this.updatedAtLessThanOrEqual = null;
-	this.statusEqual = null;
-	this.statusIn = null;
-	this.channelIdEqual = null;
-	this.channelIdIn = null;
-	this.startTimeGreaterThanOrEqual = null;
-	this.startTimeLessThanOrEqual = null;
+function KalturaLiveChannelListResponse(){
+	KalturaLiveChannelListResponse.super_.call(this);
+	this.objects = null;
 }
-module.exports.KalturaLiveChannelSegmentBaseFilter = KalturaLiveChannelSegmentBaseFilter;
+module.exports.KalturaLiveChannelListResponse = KalturaLiveChannelListResponse;
 
-util.inherits(KalturaLiveChannelSegmentBaseFilter, KalturaFilter);
+util.inherits(KalturaLiveChannelListResponse, KalturaListResponse);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaLiveChannelSegmentListResponse(){
+	KalturaLiveChannelSegmentListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaLiveChannelSegmentListResponse = KalturaLiveChannelSegmentListResponse;
+
+util.inherits(KalturaLiveChannelSegmentListResponse, KalturaListResponse);
 
 
 /**
@@ -8956,6 +8230,30 @@ function KalturaLiveReportExportJobData(){
 module.exports.KalturaLiveReportExportJobData = KalturaLiveReportExportJobData;
 
 util.inherits(KalturaLiveReportExportJobData, KalturaJobData);
+
+
+/**
+ * @param objects KalturaLiveStats .
+ */
+function KalturaLiveStatsListResponse(){
+	KalturaLiveStatsListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaLiveStatsListResponse = KalturaLiveStatsListResponse;
+
+util.inherits(KalturaLiveStatsListResponse, KalturaListResponse);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaLiveStreamListResponse(){
+	KalturaLiveStreamListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaLiveStreamListResponse = KalturaLiveStreamListResponse;
+
+util.inherits(KalturaLiveStreamListResponse, KalturaListResponse);
 
 
 /**
@@ -9043,6 +8341,30 @@ util.inherits(KalturaMediaInfoBaseFilter, KalturaFilter);
 
 
 /**
+ * @param objects array  (readOnly).
+ */
+function KalturaMediaInfoListResponse(){
+	KalturaMediaInfoListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaMediaInfoListResponse = KalturaMediaInfoListResponse;
+
+util.inherits(KalturaMediaInfoListResponse, KalturaListResponse);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaMediaListResponse(){
+	KalturaMediaListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaMediaListResponse = KalturaMediaListResponse;
+
+util.inherits(KalturaMediaListResponse, KalturaListResponse);
+
+
+/**
  * @param createdAtGreaterThanOrEqual int .
  * @param createdAtLessThanOrEqual int .
  * @param updatedAtGreaterThanOrEqual int .
@@ -9061,47 +8383,15 @@ util.inherits(KalturaMediaServerBaseFilter, KalturaFilter);
 
 
 /**
- * @param partnerIdEqual int .
- * @param metadataProfileIdEqual int .
- * @param metadataProfileVersionEqual int .
- * @param metadataProfileVersionGreaterThanOrEqual int .
- * @param metadataProfileVersionLessThanOrEqual int .
- * @param metadataObjectTypeEqual string .
- * @param objectIdEqual string .
- * @param objectIdIn string .
- * @param versionEqual int .
- * @param versionGreaterThanOrEqual int .
- * @param versionLessThanOrEqual int .
- * @param createdAtGreaterThanOrEqual int .
- * @param createdAtLessThanOrEqual int .
- * @param updatedAtGreaterThanOrEqual int .
- * @param updatedAtLessThanOrEqual int .
- * @param statusEqual int .
- * @param statusIn string .
+ * @param objects array  (readOnly).
  */
-function KalturaMetadataBaseFilter(){
-	KalturaMetadataBaseFilter.super_.call(this);
-	this.partnerIdEqual = null;
-	this.metadataProfileIdEqual = null;
-	this.metadataProfileVersionEqual = null;
-	this.metadataProfileVersionGreaterThanOrEqual = null;
-	this.metadataProfileVersionLessThanOrEqual = null;
-	this.metadataObjectTypeEqual = null;
-	this.objectIdEqual = null;
-	this.objectIdIn = null;
-	this.versionEqual = null;
-	this.versionGreaterThanOrEqual = null;
-	this.versionLessThanOrEqual = null;
-	this.createdAtGreaterThanOrEqual = null;
-	this.createdAtLessThanOrEqual = null;
-	this.updatedAtGreaterThanOrEqual = null;
-	this.updatedAtLessThanOrEqual = null;
-	this.statusEqual = null;
-	this.statusIn = null;
+function KalturaMetadataListResponse(){
+	KalturaMetadataListResponse.super_.call(this);
+	this.objects = null;
 }
-module.exports.KalturaMetadataBaseFilter = KalturaMetadataBaseFilter;
+module.exports.KalturaMetadataListResponse = KalturaMetadataListResponse;
 
-util.inherits(KalturaMetadataBaseFilter, KalturaFilter);
+util.inherits(KalturaMetadataListResponse, KalturaListResponse);
 
 
 /**
@@ -9148,6 +8438,54 @@ function KalturaMetadataProfileBaseFilter(){
 module.exports.KalturaMetadataProfileBaseFilter = KalturaMetadataProfileBaseFilter;
 
 util.inherits(KalturaMetadataProfileBaseFilter, KalturaFilter);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaMetadataProfileFieldListResponse(){
+	KalturaMetadataProfileFieldListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaMetadataProfileFieldListResponse = KalturaMetadataProfileFieldListResponse;
+
+util.inherits(KalturaMetadataProfileFieldListResponse, KalturaListResponse);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaMetadataProfileListResponse(){
+	KalturaMetadataProfileListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaMetadataProfileListResponse = KalturaMetadataProfileListResponse;
+
+util.inherits(KalturaMetadataProfileListResponse, KalturaListResponse);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaMixListResponse(){
+	KalturaMixListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaMixListResponse = KalturaMixListResponse;
+
+util.inherits(KalturaMixListResponse, KalturaListResponse);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaModerationFlagListResponse(){
+	KalturaModerationFlagListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaModerationFlagListResponse = KalturaModerationFlagListResponse;
+
+util.inherits(KalturaModerationFlagListResponse, KalturaListResponse);
 
 
 /**
@@ -9222,6 +8560,18 @@ util.inherits(KalturaNotificationJobData, KalturaJobData);
 
 
 /**
+ * @param objects array  (readOnly).
+ */
+function KalturaObjectListResponse(){
+	KalturaObjectListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaObjectListResponse = KalturaObjectListResponse;
+
+util.inherits(KalturaObjectListResponse, KalturaListResponse);
+
+
+/**
  * @param conditions array .
  */
 function KalturaOrCondition(){
@@ -9284,87 +8634,65 @@ util.inherits(KalturaPartnerBaseFilter, KalturaFilter);
 
 
 /**
- * @param idEqual int .
- * @param idIn string .
- * @param typeEqual int .
- * @param typeIn string .
- * @param nameEqual string .
- * @param nameIn string .
- * @param friendlyNameLike string .
- * @param descriptionLike string .
- * @param statusEqual int .
- * @param statusIn string .
- * @param partnerIdEqual int .
- * @param partnerIdIn string .
- * @param dependsOnPermissionNamesMultiLikeOr string .
- * @param dependsOnPermissionNamesMultiLikeAnd string .
- * @param tagsMultiLikeOr string .
- * @param tagsMultiLikeAnd string .
- * @param createdAtGreaterThanOrEqual int .
- * @param createdAtLessThanOrEqual int .
- * @param updatedAtGreaterThanOrEqual int .
- * @param updatedAtLessThanOrEqual int .
+ * @param objects array  (readOnly).
  */
-function KalturaPermissionBaseFilter(){
-	KalturaPermissionBaseFilter.super_.call(this);
-	this.idEqual = null;
-	this.idIn = null;
-	this.typeEqual = null;
-	this.typeIn = null;
-	this.nameEqual = null;
-	this.nameIn = null;
-	this.friendlyNameLike = null;
-	this.descriptionLike = null;
-	this.statusEqual = null;
-	this.statusIn = null;
-	this.partnerIdEqual = null;
-	this.partnerIdIn = null;
-	this.dependsOnPermissionNamesMultiLikeOr = null;
-	this.dependsOnPermissionNamesMultiLikeAnd = null;
-	this.tagsMultiLikeOr = null;
-	this.tagsMultiLikeAnd = null;
-	this.createdAtGreaterThanOrEqual = null;
-	this.createdAtLessThanOrEqual = null;
-	this.updatedAtGreaterThanOrEqual = null;
-	this.updatedAtLessThanOrEqual = null;
+function KalturaPartnerListResponse(){
+	KalturaPartnerListResponse.super_.call(this);
+	this.objects = null;
 }
-module.exports.KalturaPermissionBaseFilter = KalturaPermissionBaseFilter;
+module.exports.KalturaPartnerListResponse = KalturaPartnerListResponse;
 
-util.inherits(KalturaPermissionBaseFilter, KalturaFilter);
+util.inherits(KalturaPartnerListResponse, KalturaListResponse);
 
 
 /**
- * @param idEqual int .
- * @param idIn string .
- * @param typeEqual string .
- * @param typeIn string .
- * @param partnerIdEqual int .
- * @param partnerIdIn string .
- * @param tagsMultiLikeOr string .
- * @param tagsMultiLikeAnd string .
- * @param createdAtGreaterThanOrEqual int .
- * @param createdAtLessThanOrEqual int .
- * @param updatedAtGreaterThanOrEqual int .
- * @param updatedAtLessThanOrEqual int .
+ * @param total KalturaVarPartnerUsageItem .
+ * @param objects array .
  */
-function KalturaPermissionItemBaseFilter(){
-	KalturaPermissionItemBaseFilter.super_.call(this);
-	this.idEqual = null;
-	this.idIn = null;
-	this.typeEqual = null;
-	this.typeIn = null;
-	this.partnerIdEqual = null;
-	this.partnerIdIn = null;
-	this.tagsMultiLikeOr = null;
-	this.tagsMultiLikeAnd = null;
-	this.createdAtGreaterThanOrEqual = null;
-	this.createdAtLessThanOrEqual = null;
-	this.updatedAtGreaterThanOrEqual = null;
-	this.updatedAtLessThanOrEqual = null;
+function KalturaPartnerUsageListResponse(){
+	KalturaPartnerUsageListResponse.super_.call(this);
+	this.total = null;
+	this.objects = null;
 }
-module.exports.KalturaPermissionItemBaseFilter = KalturaPermissionItemBaseFilter;
+module.exports.KalturaPartnerUsageListResponse = KalturaPartnerUsageListResponse;
 
-util.inherits(KalturaPermissionItemBaseFilter, KalturaFilter);
+util.inherits(KalturaPartnerUsageListResponse, KalturaListResponse);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaPermissionItemListResponse(){
+	KalturaPermissionItemListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaPermissionItemListResponse = KalturaPermissionItemListResponse;
+
+util.inherits(KalturaPermissionItemListResponse, KalturaListResponse);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaPermissionListResponse(){
+	KalturaPermissionListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaPermissionListResponse = KalturaPermissionListResponse;
+
+util.inherits(KalturaPermissionListResponse, KalturaListResponse);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaPlaylistListResponse(){
+	KalturaPlaylistListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaPlaylistListResponse = KalturaPlaylistListResponse;
+
+util.inherits(KalturaPlaylistListResponse, KalturaListResponse);
 
 
 /**
@@ -9414,6 +8742,18 @@ util.inherits(KalturaRemoteDropFolder, KalturaDropFolder);
 
 
 /**
+ * @param objects array  (readOnly).
+ */
+function KalturaRemotePathListResponse(){
+	KalturaRemotePathListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaRemotePathListResponse = KalturaRemotePathListResponse;
+
+util.inherits(KalturaRemotePathListResponse, KalturaListResponse);
+
+
+/**
  * @param idEqual int .
  * @param idIn string .
  * @param partnerIdEqual int .
@@ -9455,6 +8795,44 @@ function KalturaReportInputFilter(){
 module.exports.KalturaReportInputFilter = KalturaReportInputFilter;
 
 util.inherits(KalturaReportInputFilter, KalturaReportInputBaseFilter);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaReportListResponse(){
+	KalturaReportListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaReportListResponse = KalturaReportListResponse;
+
+util.inherits(KalturaReportListResponse, KalturaListResponse);
+
+
+/**
+ * @param id int Auto generated numeric identifier.
+ * @param systemName string Unique system name.
+ */
+function KalturaResponseProfileHolder(){
+	KalturaResponseProfileHolder.super_.call(this);
+	this.id = null;
+	this.systemName = null;
+}
+module.exports.KalturaResponseProfileHolder = KalturaResponseProfileHolder;
+
+util.inherits(KalturaResponseProfileHolder, KalturaBaseResponseProfile);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaResponseProfileListResponse(){
+	KalturaResponseProfileListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaResponseProfileListResponse = KalturaResponseProfileListResponse;
+
+util.inherits(KalturaResponseProfileListResponse, KalturaListResponse);
 
 
 /**
@@ -9509,6 +8887,42 @@ function KalturaScheduledTaskProfileBaseFilter(){
 module.exports.KalturaScheduledTaskProfileBaseFilter = KalturaScheduledTaskProfileBaseFilter;
 
 util.inherits(KalturaScheduledTaskProfileBaseFilter, KalturaFilter);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaScheduledTaskProfileListResponse(){
+	KalturaScheduledTaskProfileListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaScheduledTaskProfileListResponse = KalturaScheduledTaskProfileListResponse;
+
+util.inherits(KalturaScheduledTaskProfileListResponse, KalturaListResponse);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaSchedulerListResponse(){
+	KalturaSchedulerListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaSchedulerListResponse = KalturaSchedulerListResponse;
+
+util.inherits(KalturaSchedulerListResponse, KalturaListResponse);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaSchedulerWorkerListResponse(){
+	KalturaSchedulerWorkerListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaSchedulerWorkerListResponse = KalturaSchedulerWorkerListResponse;
+
+util.inherits(KalturaSchedulerWorkerListResponse, KalturaListResponse);
 
 
 /**
@@ -9589,6 +9003,18 @@ function KalturaShortLinkBaseFilter(){
 module.exports.KalturaShortLinkBaseFilter = KalturaShortLinkBaseFilter;
 
 util.inherits(KalturaShortLinkBaseFilter, KalturaFilter);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaShortLinkListResponse(){
+	KalturaShortLinkListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaShortLinkListResponse = KalturaShortLinkListResponse;
+
+util.inherits(KalturaShortLinkListResponse, KalturaListResponse);
 
 
 /**
@@ -9696,6 +9122,18 @@ util.inherits(KalturaStorageProfileBaseFilter, KalturaFilter);
 
 
 /**
+ * @param objects array  (readOnly).
+ */
+function KalturaStorageProfileListResponse(){
+	KalturaStorageProfileListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaStorageProfileListResponse = KalturaStorageProfileListResponse;
+
+util.inherits(KalturaStorageProfileListResponse, KalturaListResponse);
+
+
+/**
  * @param categoryId int category id.
  * @param lastUpdatedCategoryEntryCreatedAt int Saves the last category entry creation date that was updated
  * In case of crash the batch will restart from that point.
@@ -9768,6 +9206,18 @@ util.inherits(KalturaSystemPartnerUsageFilter, KalturaFilter);
 
 
 /**
+ * @param objects array .
+ */
+function KalturaSystemPartnerUsageListResponse(){
+	KalturaSystemPartnerUsageListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaSystemPartnerUsageListResponse = KalturaSystemPartnerUsageListResponse;
+
+util.inherits(KalturaSystemPartnerUsageListResponse, KalturaListResponse);
+
+
+/**
  * @param objectTypeEqual string .
  * @param tagEqual string .
  * @param tagStartsWith string .
@@ -9785,6 +9235,66 @@ function KalturaTagFilter(){
 module.exports.KalturaTagFilter = KalturaTagFilter;
 
 util.inherits(KalturaTagFilter, KalturaFilter);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaTagListResponse(){
+	KalturaTagListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaTagListResponse = KalturaTagListResponse;
+
+util.inherits(KalturaTagListResponse, KalturaListResponse);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaThumbAssetListResponse(){
+	KalturaThumbAssetListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaThumbAssetListResponse = KalturaThumbAssetListResponse;
+
+util.inherits(KalturaThumbAssetListResponse, KalturaListResponse);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaThumbParamsListResponse(){
+	KalturaThumbParamsListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaThumbParamsListResponse = KalturaThumbParamsListResponse;
+
+util.inherits(KalturaThumbParamsListResponse, KalturaListResponse);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaThumbParamsOutputListResponse(){
+	KalturaThumbParamsOutputListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaThumbParamsOutputListResponse = KalturaThumbParamsOutputListResponse;
+
+util.inherits(KalturaThumbParamsOutputListResponse, KalturaListResponse);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaTrackEntryListResponse(){
+	KalturaTrackEntryListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaTrackEntryListResponse = KalturaTrackEntryListResponse;
+
+util.inherits(KalturaTrackEntryListResponse, KalturaListResponse);
 
 
 /**
@@ -9817,6 +9327,18 @@ function KalturaTubeMogulSyndicationFeed(){
 module.exports.KalturaTubeMogulSyndicationFeed = KalturaTubeMogulSyndicationFeed;
 
 util.inherits(KalturaTubeMogulSyndicationFeed, KalturaBaseSyndicationFeed);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaUiConfAdminListResponse(){
+	KalturaUiConfAdminListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaUiConfAdminListResponse = KalturaUiConfAdminListResponse;
+
+util.inherits(KalturaUiConfAdminListResponse, KalturaListResponse);
 
 
 /**
@@ -9870,6 +9392,18 @@ util.inherits(KalturaUiConfBaseFilter, KalturaFilter);
 
 
 /**
+ * @param objects array  (readOnly).
+ */
+function KalturaUiConfListResponse(){
+	KalturaUiConfListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaUiConfListResponse = KalturaUiConfListResponse;
+
+util.inherits(KalturaUiConfListResponse, KalturaListResponse);
+
+
+/**
  * @param idEqual string .
  * @param idIn string .
  * @param userIdEqual string .
@@ -9891,6 +9425,18 @@ function KalturaUploadTokenBaseFilter(){
 module.exports.KalturaUploadTokenBaseFilter = KalturaUploadTokenBaseFilter;
 
 util.inherits(KalturaUploadTokenBaseFilter, KalturaFilter);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaUploadTokenListResponse(){
+	KalturaUploadTokenListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaUploadTokenListResponse = KalturaUploadTokenListResponse;
+
+util.inherits(KalturaUploadTokenListResponse, KalturaListResponse);
 
 
 /**
@@ -10046,59 +9592,27 @@ util.inherits(KalturaUserAgentRestriction, KalturaBaseRestriction);
 
 
 /**
- * @param loginEmailEqual string .
+ * @param objects array  (readOnly).
  */
-function KalturaUserLoginDataBaseFilter(){
-	KalturaUserLoginDataBaseFilter.super_.call(this);
-	this.loginEmailEqual = null;
+function KalturaUserListResponse(){
+	KalturaUserListResponse.super_.call(this);
+	this.objects = null;
 }
-module.exports.KalturaUserLoginDataBaseFilter = KalturaUserLoginDataBaseFilter;
+module.exports.KalturaUserListResponse = KalturaUserListResponse;
 
-util.inherits(KalturaUserLoginDataBaseFilter, KalturaFilter);
+util.inherits(KalturaUserListResponse, KalturaListResponse);
 
 
 /**
- * @param idEqual int .
- * @param idIn string .
- * @param nameEqual string .
- * @param nameIn string .
- * @param systemNameEqual string .
- * @param systemNameIn string .
- * @param descriptionLike string .
- * @param statusEqual int .
- * @param statusIn string .
- * @param partnerIdEqual int .
- * @param partnerIdIn string .
- * @param tagsMultiLikeOr string .
- * @param tagsMultiLikeAnd string .
- * @param createdAtGreaterThanOrEqual int .
- * @param createdAtLessThanOrEqual int .
- * @param updatedAtGreaterThanOrEqual int .
- * @param updatedAtLessThanOrEqual int .
+ * @param objects array  (readOnly).
  */
-function KalturaUserRoleBaseFilter(){
-	KalturaUserRoleBaseFilter.super_.call(this);
-	this.idEqual = null;
-	this.idIn = null;
-	this.nameEqual = null;
-	this.nameIn = null;
-	this.systemNameEqual = null;
-	this.systemNameIn = null;
-	this.descriptionLike = null;
-	this.statusEqual = null;
-	this.statusIn = null;
-	this.partnerIdEqual = null;
-	this.partnerIdIn = null;
-	this.tagsMultiLikeOr = null;
-	this.tagsMultiLikeAnd = null;
-	this.createdAtGreaterThanOrEqual = null;
-	this.createdAtLessThanOrEqual = null;
-	this.updatedAtGreaterThanOrEqual = null;
-	this.updatedAtLessThanOrEqual = null;
+function KalturaUserLoginDataListResponse(){
+	KalturaUserLoginDataListResponse.super_.call(this);
+	this.objects = null;
 }
-module.exports.KalturaUserRoleBaseFilter = KalturaUserRoleBaseFilter;
+module.exports.KalturaUserLoginDataListResponse = KalturaUserLoginDataListResponse;
 
-util.inherits(KalturaUserRoleBaseFilter, KalturaFilter);
+util.inherits(KalturaUserLoginDataListResponse, KalturaListResponse);
 
 
 /**
@@ -10111,6 +9625,18 @@ function KalturaUserRoleCondition(){
 module.exports.KalturaUserRoleCondition = KalturaUserRoleCondition;
 
 util.inherits(KalturaUserRoleCondition, KalturaCondition);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaUserRoleListResponse(){
+	KalturaUserRoleListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaUserRoleListResponse = KalturaUserRoleListResponse;
+
+util.inherits(KalturaUserRoleListResponse, KalturaListResponse);
 
 
 /**
@@ -10180,6 +9706,18 @@ util.inherits(KalturaVirusScanProfileBaseFilter, KalturaFilter);
 
 
 /**
+ * @param objects array  (readOnly).
+ */
+function KalturaVirusScanProfileListResponse(){
+	KalturaVirusScanProfileListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaVirusScanProfileListResponse = KalturaVirusScanProfileListResponse;
+
+util.inherits(KalturaVirusScanProfileListResponse, KalturaListResponse);
+
+
+/**
  * @param idEqual string .
  * @param idIn string .
  * @param sourceWidgetIdEqual string .
@@ -10214,6 +9752,18 @@ util.inherits(KalturaWidgetBaseFilter, KalturaFilter);
 
 
 /**
+ * @param objects array  (readOnly).
+ */
+function KalturaWidgetListResponse(){
+	KalturaWidgetListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaWidgetListResponse = KalturaWidgetListResponse;
+
+util.inherits(KalturaWidgetListResponse, KalturaListResponse);
+
+
+/**
  * @param category string  (readOnly).
  * @param adultContent string .
  * @param feedDescription string feed description.
@@ -10232,23 +9782,51 @@ util.inherits(KalturaYahooSyndicationFeed, KalturaBaseSyndicationFeed);
 
 
 /**
+ * @param idEqual int .
+ * @param idIn string .
+ * @param systemNameEqual string .
+ * @param systemNameIn string .
+ * @param createdAtGreaterThanOrEqual int .
+ * @param createdAtLessThanOrEqual int .
  */
-function KalturaAccessControlFilter(){
-	KalturaAccessControlFilter.super_.call(this);
+function KalturaAccessControlBaseFilter(){
+	KalturaAccessControlBaseFilter.super_.call(this);
+	this.idEqual = null;
+	this.idIn = null;
+	this.systemNameEqual = null;
+	this.systemNameIn = null;
+	this.createdAtGreaterThanOrEqual = null;
+	this.createdAtLessThanOrEqual = null;
 }
-module.exports.KalturaAccessControlFilter = KalturaAccessControlFilter;
+module.exports.KalturaAccessControlBaseFilter = KalturaAccessControlBaseFilter;
 
-util.inherits(KalturaAccessControlFilter, KalturaAccessControlBaseFilter);
+util.inherits(KalturaAccessControlBaseFilter, KalturaRelatedFilter);
 
 
 /**
+ * @param idEqual int .
+ * @param idIn string .
+ * @param systemNameEqual string .
+ * @param systemNameIn string .
+ * @param createdAtGreaterThanOrEqual int .
+ * @param createdAtLessThanOrEqual int .
+ * @param updatedAtGreaterThanOrEqual int .
+ * @param updatedAtLessThanOrEqual int .
  */
-function KalturaAccessControlProfileFilter(){
-	KalturaAccessControlProfileFilter.super_.call(this);
+function KalturaAccessControlProfileBaseFilter(){
+	KalturaAccessControlProfileBaseFilter.super_.call(this);
+	this.idEqual = null;
+	this.idIn = null;
+	this.systemNameEqual = null;
+	this.systemNameIn = null;
+	this.createdAtGreaterThanOrEqual = null;
+	this.createdAtLessThanOrEqual = null;
+	this.updatedAtGreaterThanOrEqual = null;
+	this.updatedAtLessThanOrEqual = null;
 }
-module.exports.KalturaAccessControlProfileFilter = KalturaAccessControlProfileFilter;
+module.exports.KalturaAccessControlProfileBaseFilter = KalturaAccessControlProfileBaseFilter;
 
-util.inherits(KalturaAccessControlProfileFilter, KalturaAccessControlProfileBaseFilter);
+util.inherits(KalturaAccessControlProfileBaseFilter, KalturaRelatedFilter);
 
 
 /**
@@ -10304,23 +9882,65 @@ util.inherits(KalturaAkamaiUniversalProvisionJobData, KalturaProvisionJobData);
 
 
 /**
+ * @param idEqual string .
+ * @param idIn string .
+ * @param entryIdEqual string .
+ * @param entryIdIn string .
+ * @param partnerIdEqual int .
+ * @param partnerIdIn string .
+ * @param sizeGreaterThanOrEqual int .
+ * @param sizeLessThanOrEqual int .
+ * @param tagsLike string .
+ * @param tagsMultiLikeOr string .
+ * @param tagsMultiLikeAnd string .
+ * @param createdAtGreaterThanOrEqual int .
+ * @param createdAtLessThanOrEqual int .
+ * @param updatedAtGreaterThanOrEqual int .
+ * @param updatedAtLessThanOrEqual int .
+ * @param deletedAtGreaterThanOrEqual int .
+ * @param deletedAtLessThanOrEqual int .
  */
-function KalturaAssetFilter(){
-	KalturaAssetFilter.super_.call(this);
+function KalturaAssetBaseFilter(){
+	KalturaAssetBaseFilter.super_.call(this);
+	this.idEqual = null;
+	this.idIn = null;
+	this.entryIdEqual = null;
+	this.entryIdIn = null;
+	this.partnerIdEqual = null;
+	this.partnerIdIn = null;
+	this.sizeGreaterThanOrEqual = null;
+	this.sizeLessThanOrEqual = null;
+	this.tagsLike = null;
+	this.tagsMultiLikeOr = null;
+	this.tagsMultiLikeAnd = null;
+	this.createdAtGreaterThanOrEqual = null;
+	this.createdAtLessThanOrEqual = null;
+	this.updatedAtGreaterThanOrEqual = null;
+	this.updatedAtLessThanOrEqual = null;
+	this.deletedAtGreaterThanOrEqual = null;
+	this.deletedAtLessThanOrEqual = null;
 }
-module.exports.KalturaAssetFilter = KalturaAssetFilter;
+module.exports.KalturaAssetBaseFilter = KalturaAssetBaseFilter;
 
-util.inherits(KalturaAssetFilter, KalturaAssetBaseFilter);
+util.inherits(KalturaAssetBaseFilter, KalturaRelatedFilter);
 
 
 /**
+ * @param systemNameEqual string .
+ * @param systemNameIn string .
+ * @param isSystemDefaultEqual int .
+ * @param tagsEqual string .
  */
-function KalturaAssetParamsFilter(){
-	KalturaAssetParamsFilter.super_.call(this);
+function KalturaAssetParamsBaseFilter(){
+	KalturaAssetParamsBaseFilter.super_.call(this);
+	this.systemNameEqual = null;
+	this.systemNameIn = null;
+	this.isSystemDefaultEqual = null;
+	this.tagsEqual = null;
 }
-module.exports.KalturaAssetParamsFilter = KalturaAssetParamsFilter;
+module.exports.KalturaAssetParamsBaseFilter = KalturaAssetParamsBaseFilter;
 
-util.inherits(KalturaAssetParamsFilter, KalturaAssetParamsBaseFilter);
+util.inherits(KalturaAssetParamsBaseFilter, KalturaRelatedFilter);
 
 
 /**
@@ -10404,39 +10024,115 @@ util.inherits(KalturaBulkUploadXmlJobData, KalturaBulkUploadJobData);
 
 
 /**
+ * @param idEqual int .
+ * @param idIn string .
+ * @param parentIdEqual int .
+ * @param parentIdIn string .
+ * @param depthEqual int .
+ * @param fullNameEqual string .
+ * @param fullNameStartsWith string .
+ * @param fullNameIn string .
+ * @param fullIdsEqual string .
+ * @param fullIdsStartsWith string .
+ * @param fullIdsMatchOr string .
+ * @param createdAtGreaterThanOrEqual int .
+ * @param createdAtLessThanOrEqual int .
+ * @param updatedAtGreaterThanOrEqual int .
+ * @param updatedAtLessThanOrEqual int .
+ * @param tagsLike string .
+ * @param tagsMultiLikeOr string .
+ * @param tagsMultiLikeAnd string .
+ * @param appearInListEqual int .
+ * @param privacyEqual int .
+ * @param privacyIn string .
+ * @param inheritanceTypeEqual int .
+ * @param inheritanceTypeIn string .
+ * @param referenceIdEqual string .
+ * @param referenceIdEmpty int .
+ * @param contributionPolicyEqual int .
+ * @param membersCountGreaterThanOrEqual int .
+ * @param membersCountLessThanOrEqual int .
+ * @param pendingMembersCountGreaterThanOrEqual int .
+ * @param pendingMembersCountLessThanOrEqual int .
+ * @param privacyContextEqual string .
+ * @param statusEqual int .
+ * @param statusIn string .
+ * @param inheritedParentIdEqual int .
+ * @param inheritedParentIdIn string .
+ * @param partnerSortValueGreaterThanOrEqual int .
+ * @param partnerSortValueLessThanOrEqual int .
  */
-function KalturaCategoryEntryFilter(){
-	KalturaCategoryEntryFilter.super_.call(this);
+function KalturaCategoryBaseFilter(){
+	KalturaCategoryBaseFilter.super_.call(this);
+	this.idEqual = null;
+	this.idIn = null;
+	this.parentIdEqual = null;
+	this.parentIdIn = null;
+	this.depthEqual = null;
+	this.fullNameEqual = null;
+	this.fullNameStartsWith = null;
+	this.fullNameIn = null;
+	this.fullIdsEqual = null;
+	this.fullIdsStartsWith = null;
+	this.fullIdsMatchOr = null;
+	this.createdAtGreaterThanOrEqual = null;
+	this.createdAtLessThanOrEqual = null;
+	this.updatedAtGreaterThanOrEqual = null;
+	this.updatedAtLessThanOrEqual = null;
+	this.tagsLike = null;
+	this.tagsMultiLikeOr = null;
+	this.tagsMultiLikeAnd = null;
+	this.appearInListEqual = null;
+	this.privacyEqual = null;
+	this.privacyIn = null;
+	this.inheritanceTypeEqual = null;
+	this.inheritanceTypeIn = null;
+	this.referenceIdEqual = null;
+	this.referenceIdEmpty = null;
+	this.contributionPolicyEqual = null;
+	this.membersCountGreaterThanOrEqual = null;
+	this.membersCountLessThanOrEqual = null;
+	this.pendingMembersCountGreaterThanOrEqual = null;
+	this.pendingMembersCountLessThanOrEqual = null;
+	this.privacyContextEqual = null;
+	this.statusEqual = null;
+	this.statusIn = null;
+	this.inheritedParentIdEqual = null;
+	this.inheritedParentIdIn = null;
+	this.partnerSortValueGreaterThanOrEqual = null;
+	this.partnerSortValueLessThanOrEqual = null;
 }
-module.exports.KalturaCategoryEntryFilter = KalturaCategoryEntryFilter;
+module.exports.KalturaCategoryBaseFilter = KalturaCategoryBaseFilter;
 
-util.inherits(KalturaCategoryEntryFilter, KalturaCategoryEntryBaseFilter);
+util.inherits(KalturaCategoryBaseFilter, KalturaRelatedFilter);
 
 
 /**
- * @param freeText string .
- * @param membersIn string .
- * @param nameOrReferenceIdStartsWith string .
- * @param managerEqual string .
- * @param memberEqual string .
- * @param fullNameStartsWithIn string .
- * @param ancestorIdIn string not includes the category itself (only sub categories).
- * @param idOrInheritedParentIdIn string .
+ * @param categoryIdEqual int .
+ * @param categoryIdIn string .
+ * @param entryIdEqual string .
+ * @param entryIdIn string .
+ * @param createdAtGreaterThanOrEqual int .
+ * @param createdAtLessThanOrEqual int .
+ * @param categoryFullIdsStartsWith string .
+ * @param statusEqual int .
+ * @param statusIn string .
  */
-function KalturaCategoryFilter(){
-	KalturaCategoryFilter.super_.call(this);
-	this.freeText = null;
-	this.membersIn = null;
-	this.nameOrReferenceIdStartsWith = null;
-	this.managerEqual = null;
-	this.memberEqual = null;
-	this.fullNameStartsWithIn = null;
-	this.ancestorIdIn = null;
-	this.idOrInheritedParentIdIn = null;
+function KalturaCategoryEntryBaseFilter(){
+	KalturaCategoryEntryBaseFilter.super_.call(this);
+	this.categoryIdEqual = null;
+	this.categoryIdIn = null;
+	this.entryIdEqual = null;
+	this.entryIdIn = null;
+	this.createdAtGreaterThanOrEqual = null;
+	this.createdAtLessThanOrEqual = null;
+	this.categoryFullIdsStartsWith = null;
+	this.statusEqual = null;
+	this.statusIn = null;
 }
-module.exports.KalturaCategoryFilter = KalturaCategoryFilter;
+module.exports.KalturaCategoryEntryBaseFilter = KalturaCategoryEntryBaseFilter;
 
-util.inherits(KalturaCategoryFilter, KalturaCategoryBaseFilter);
+util.inherits(KalturaCategoryEntryBaseFilter, KalturaRelatedFilter);
 
 
 /**
@@ -10469,27 +10165,69 @@ util.inherits(KalturaControlPanelCommandFilter, KalturaControlPanelCommandBaseFi
 
 
 /**
+ * @param conversionProfileIdEqual int .
+ * @param conversionProfileIdIn string .
+ * @param assetParamsIdEqual int .
+ * @param assetParamsIdIn string .
+ * @param readyBehaviorEqual int .
+ * @param readyBehaviorIn string .
+ * @param originEqual int .
+ * @param originIn string .
+ * @param systemNameEqual string .
+ * @param systemNameIn string .
  */
-function KalturaConversionProfileFilter(){
-	KalturaConversionProfileFilter.super_.call(this);
+function KalturaConversionProfileAssetParamsBaseFilter(){
+	KalturaConversionProfileAssetParamsBaseFilter.super_.call(this);
+	this.conversionProfileIdEqual = null;
+	this.conversionProfileIdIn = null;
+	this.assetParamsIdEqual = null;
+	this.assetParamsIdIn = null;
+	this.readyBehaviorEqual = null;
+	this.readyBehaviorIn = null;
+	this.originEqual = null;
+	this.originIn = null;
+	this.systemNameEqual = null;
+	this.systemNameIn = null;
 }
-module.exports.KalturaConversionProfileFilter = KalturaConversionProfileFilter;
+module.exports.KalturaConversionProfileAssetParamsBaseFilter = KalturaConversionProfileAssetParamsBaseFilter;
 
-util.inherits(KalturaConversionProfileFilter, KalturaConversionProfileBaseFilter);
+util.inherits(KalturaConversionProfileAssetParamsBaseFilter, KalturaRelatedFilter);
 
 
 /**
- * @param conversionProfileIdFilter KalturaConversionProfileFilter .
- * @param assetParamsIdFilter KalturaAssetParamsFilter .
+ * @param idEqual int .
+ * @param idIn string .
+ * @param statusEqual string .
+ * @param statusIn string .
+ * @param typeEqual string .
+ * @param typeIn string .
+ * @param nameEqual string .
+ * @param systemNameEqual string .
+ * @param systemNameIn string .
+ * @param tagsMultiLikeOr string .
+ * @param tagsMultiLikeAnd string .
+ * @param defaultEntryIdEqual string .
+ * @param defaultEntryIdIn string .
  */
-function KalturaConversionProfileAssetParamsFilter(){
-	KalturaConversionProfileAssetParamsFilter.super_.call(this);
-	this.conversionProfileIdFilter = null;
-	this.assetParamsIdFilter = null;
+function KalturaConversionProfileBaseFilter(){
+	KalturaConversionProfileBaseFilter.super_.call(this);
+	this.idEqual = null;
+	this.idIn = null;
+	this.statusEqual = null;
+	this.statusIn = null;
+	this.typeEqual = null;
+	this.typeIn = null;
+	this.nameEqual = null;
+	this.systemNameEqual = null;
+	this.systemNameIn = null;
+	this.tagsMultiLikeOr = null;
+	this.tagsMultiLikeAnd = null;
+	this.defaultEntryIdEqual = null;
+	this.defaultEntryIdIn = null;
 }
-module.exports.KalturaConversionProfileAssetParamsFilter = KalturaConversionProfileAssetParamsFilter;
+module.exports.KalturaConversionProfileBaseFilter = KalturaConversionProfileBaseFilter;
 
-util.inherits(KalturaConversionProfileAssetParamsFilter, KalturaConversionProfileAssetParamsBaseFilter);
+util.inherits(KalturaConversionProfileBaseFilter, KalturaRelatedFilter);
 
 
 /**
@@ -10557,15 +10295,69 @@ util.inherits(KalturaCountryCondition, KalturaMatchCondition);
 
 
 /**
- * @param freeText string .
+ * @param idEqual string .
+ * @param idIn string .
+ * @param cuePointTypeEqual string .
+ * @param cuePointTypeIn string .
+ * @param statusEqual int .
+ * @param statusIn string .
+ * @param entryIdEqual string .
+ * @param entryIdIn string .
+ * @param createdAtGreaterThanOrEqual int .
+ * @param createdAtLessThanOrEqual int .
+ * @param updatedAtGreaterThanOrEqual int .
+ * @param updatedAtLessThanOrEqual int .
+ * @param triggeredAtGreaterThanOrEqual int .
+ * @param triggeredAtLessThanOrEqual int .
+ * @param tagsLike string .
+ * @param tagsMultiLikeOr string .
+ * @param tagsMultiLikeAnd string .
+ * @param startTimeGreaterThanOrEqual int .
+ * @param startTimeLessThanOrEqual int .
+ * @param userIdEqual string .
+ * @param userIdIn string .
+ * @param partnerSortValueEqual int .
+ * @param partnerSortValueIn string .
+ * @param partnerSortValueGreaterThanOrEqual int .
+ * @param partnerSortValueLessThanOrEqual int .
+ * @param forceStopEqual int .
+ * @param systemNameEqual string .
+ * @param systemNameIn string .
  */
-function KalturaCuePointFilter(){
-	KalturaCuePointFilter.super_.call(this);
-	this.freeText = null;
+function KalturaCuePointBaseFilter(){
+	KalturaCuePointBaseFilter.super_.call(this);
+	this.idEqual = null;
+	this.idIn = null;
+	this.cuePointTypeEqual = null;
+	this.cuePointTypeIn = null;
+	this.statusEqual = null;
+	this.statusIn = null;
+	this.entryIdEqual = null;
+	this.entryIdIn = null;
+	this.createdAtGreaterThanOrEqual = null;
+	this.createdAtLessThanOrEqual = null;
+	this.updatedAtGreaterThanOrEqual = null;
+	this.updatedAtLessThanOrEqual = null;
+	this.triggeredAtGreaterThanOrEqual = null;
+	this.triggeredAtLessThanOrEqual = null;
+	this.tagsLike = null;
+	this.tagsMultiLikeOr = null;
+	this.tagsMultiLikeAnd = null;
+	this.startTimeGreaterThanOrEqual = null;
+	this.startTimeLessThanOrEqual = null;
+	this.userIdEqual = null;
+	this.userIdIn = null;
+	this.partnerSortValueEqual = null;
+	this.partnerSortValueIn = null;
+	this.partnerSortValueGreaterThanOrEqual = null;
+	this.partnerSortValueLessThanOrEqual = null;
+	this.forceStopEqual = null;
+	this.systemNameEqual = null;
+	this.systemNameIn = null;
 }
-module.exports.KalturaCuePointFilter = KalturaCuePointFilter;
+module.exports.KalturaCuePointBaseFilter = KalturaCuePointBaseFilter;
 
-util.inherits(KalturaCuePointFilter, KalturaCuePointBaseFilter);
+util.inherits(KalturaCuePointBaseFilter, KalturaRelatedFilter);
 
 
 /**
@@ -10753,13 +10545,53 @@ util.inherits(KalturaEndUserReportInputFilter, KalturaReportInputFilter);
 
 
 /**
+ * @param idEqual int .
+ * @param idIn string .
+ * @param createdAtGreaterThanOrEqual int .
+ * @param createdAtLessThanOrEqual int .
+ * @param updatedAtGreaterThanOrEqual int .
+ * @param updatedAtLessThanOrEqual int .
+ * @param submittedAtGreaterThanOrEqual int .
+ * @param submittedAtLessThanOrEqual int .
+ * @param entryIdEqual string .
+ * @param entryIdIn string .
+ * @param distributionProfileIdEqual int .
+ * @param distributionProfileIdIn string .
+ * @param statusEqual int .
+ * @param statusIn string .
+ * @param dirtyStatusEqual int .
+ * @param dirtyStatusIn string .
+ * @param sunriseGreaterThanOrEqual int .
+ * @param sunriseLessThanOrEqual int .
+ * @param sunsetGreaterThanOrEqual int .
+ * @param sunsetLessThanOrEqual int .
  */
-function KalturaEntryDistributionFilter(){
-	KalturaEntryDistributionFilter.super_.call(this);
+function KalturaEntryDistributionBaseFilter(){
+	KalturaEntryDistributionBaseFilter.super_.call(this);
+	this.idEqual = null;
+	this.idIn = null;
+	this.createdAtGreaterThanOrEqual = null;
+	this.createdAtLessThanOrEqual = null;
+	this.updatedAtGreaterThanOrEqual = null;
+	this.updatedAtLessThanOrEqual = null;
+	this.submittedAtGreaterThanOrEqual = null;
+	this.submittedAtLessThanOrEqual = null;
+	this.entryIdEqual = null;
+	this.entryIdIn = null;
+	this.distributionProfileIdEqual = null;
+	this.distributionProfileIdIn = null;
+	this.statusEqual = null;
+	this.statusIn = null;
+	this.dirtyStatusEqual = null;
+	this.dirtyStatusIn = null;
+	this.sunriseGreaterThanOrEqual = null;
+	this.sunriseLessThanOrEqual = null;
+	this.sunsetGreaterThanOrEqual = null;
+	this.sunsetLessThanOrEqual = null;
 }
-module.exports.KalturaEntryDistributionFilter = KalturaEntryDistributionFilter;
+module.exports.KalturaEntryDistributionBaseFilter = KalturaEntryDistributionBaseFilter;
 
-util.inherits(KalturaEntryDistributionFilter, KalturaEntryDistributionBaseFilter);
+util.inherits(KalturaEntryDistributionBaseFilter, KalturaRelatedFilter);
 
 
 /**
@@ -10855,13 +10687,37 @@ util.inherits(KalturaFieldMatchCondition, KalturaMatchCondition);
 
 
 /**
+ * @param idEqual int .
+ * @param idIn string .
+ * @param partnerIdEqual int .
+ * @param fileAssetObjectTypeEqual string .
+ * @param objectIdEqual string .
+ * @param objectIdIn string .
+ * @param createdAtGreaterThanOrEqual int .
+ * @param createdAtLessThanOrEqual int .
+ * @param updatedAtGreaterThanOrEqual int .
+ * @param updatedAtLessThanOrEqual int .
+ * @param statusEqual string .
+ * @param statusIn string .
  */
-function KalturaFileAssetFilter(){
-	KalturaFileAssetFilter.super_.call(this);
+function KalturaFileAssetBaseFilter(){
+	KalturaFileAssetBaseFilter.super_.call(this);
+	this.idEqual = null;
+	this.idIn = null;
+	this.partnerIdEqual = null;
+	this.fileAssetObjectTypeEqual = null;
+	this.objectIdEqual = null;
+	this.objectIdIn = null;
+	this.createdAtGreaterThanOrEqual = null;
+	this.createdAtLessThanOrEqual = null;
+	this.updatedAtGreaterThanOrEqual = null;
+	this.updatedAtLessThanOrEqual = null;
+	this.statusEqual = null;
+	this.statusIn = null;
 }
-module.exports.KalturaFileAssetFilter = KalturaFileAssetFilter;
+module.exports.KalturaFileAssetBaseFilter = KalturaFileAssetBaseFilter;
 
-util.inherits(KalturaFileAssetFilter, KalturaFileAssetBaseFilter);
+util.inherits(KalturaFileAssetBaseFilter, KalturaRelatedFilter);
 
 
 /**
@@ -10963,13 +10819,33 @@ util.inherits(KalturaGeoTimeLiveStats, KalturaEntryLiveStats);
 
 
 /**
+ * @param userIdEqual string .
+ * @param userIdIn string .
+ * @param groupIdEqual string .
+ * @param groupIdIn string .
+ * @param statusEqual int .
+ * @param statusIn string .
+ * @param createdAtGreaterThanOrEqual int .
+ * @param createdAtLessThanOrEqual int .
+ * @param updatedAtGreaterThanOrEqual int .
+ * @param updatedAtLessThanOrEqual int .
  */
-function KalturaGroupUserFilter(){
-	KalturaGroupUserFilter.super_.call(this);
+function KalturaGroupUserBaseFilter(){
+	KalturaGroupUserBaseFilter.super_.call(this);
+	this.userIdEqual = null;
+	this.userIdIn = null;
+	this.groupIdEqual = null;
+	this.groupIdIn = null;
+	this.statusEqual = null;
+	this.statusIn = null;
+	this.createdAtGreaterThanOrEqual = null;
+	this.createdAtLessThanOrEqual = null;
+	this.updatedAtGreaterThanOrEqual = null;
+	this.updatedAtLessThanOrEqual = null;
 }
-module.exports.KalturaGroupUserFilter = KalturaGroupUserFilter;
+module.exports.KalturaGroupUserBaseFilter = KalturaGroupUserBaseFilter;
 
-util.inherits(KalturaGroupUserFilter, KalturaGroupUserBaseFilter);
+util.inherits(KalturaGroupUserBaseFilter, KalturaRelatedFilter);
 
 
 /**
@@ -11067,13 +10943,33 @@ util.inherits(KalturaLiveAsset, KalturaFlavorAsset);
 
 
 /**
+ * @param createdAtGreaterThanOrEqual int .
+ * @param createdAtLessThanOrEqual int .
+ * @param updatedAtGreaterThanOrEqual int .
+ * @param updatedAtLessThanOrEqual int .
+ * @param statusEqual string .
+ * @param statusIn string .
+ * @param channelIdEqual string .
+ * @param channelIdIn string .
+ * @param startTimeGreaterThanOrEqual float .
+ * @param startTimeLessThanOrEqual float .
  */
-function KalturaLiveChannelSegmentFilter(){
-	KalturaLiveChannelSegmentFilter.super_.call(this);
+function KalturaLiveChannelSegmentBaseFilter(){
+	KalturaLiveChannelSegmentBaseFilter.super_.call(this);
+	this.createdAtGreaterThanOrEqual = null;
+	this.createdAtLessThanOrEqual = null;
+	this.updatedAtGreaterThanOrEqual = null;
+	this.updatedAtLessThanOrEqual = null;
+	this.statusEqual = null;
+	this.statusIn = null;
+	this.channelIdEqual = null;
+	this.channelIdIn = null;
+	this.startTimeGreaterThanOrEqual = null;
+	this.startTimeLessThanOrEqual = null;
 }
-module.exports.KalturaLiveChannelSegmentFilter = KalturaLiveChannelSegmentFilter;
+module.exports.KalturaLiveChannelSegmentBaseFilter = KalturaLiveChannelSegmentBaseFilter;
 
-util.inherits(KalturaLiveChannelSegmentFilter, KalturaLiveChannelSegmentBaseFilter);
+util.inherits(KalturaLiveChannelSegmentBaseFilter, KalturaRelatedFilter);
 
 
 /**
@@ -11128,13 +11024,47 @@ util.inherits(KalturaMediaInfoFilter, KalturaMediaInfoBaseFilter);
 
 
 /**
+ * @param partnerIdEqual int .
+ * @param metadataProfileIdEqual int .
+ * @param metadataProfileVersionEqual int .
+ * @param metadataProfileVersionGreaterThanOrEqual int .
+ * @param metadataProfileVersionLessThanOrEqual int .
+ * @param metadataObjectTypeEqual string .
+ * @param objectIdEqual string .
+ * @param objectIdIn string .
+ * @param versionEqual int .
+ * @param versionGreaterThanOrEqual int .
+ * @param versionLessThanOrEqual int .
+ * @param createdAtGreaterThanOrEqual int .
+ * @param createdAtLessThanOrEqual int .
+ * @param updatedAtGreaterThanOrEqual int .
+ * @param updatedAtLessThanOrEqual int .
+ * @param statusEqual int .
+ * @param statusIn string .
  */
-function KalturaMediaServerFilter(){
-	KalturaMediaServerFilter.super_.call(this);
+function KalturaMetadataBaseFilter(){
+	KalturaMetadataBaseFilter.super_.call(this);
+	this.partnerIdEqual = null;
+	this.metadataProfileIdEqual = null;
+	this.metadataProfileVersionEqual = null;
+	this.metadataProfileVersionGreaterThanOrEqual = null;
+	this.metadataProfileVersionLessThanOrEqual = null;
+	this.metadataObjectTypeEqual = null;
+	this.objectIdEqual = null;
+	this.objectIdIn = null;
+	this.versionEqual = null;
+	this.versionGreaterThanOrEqual = null;
+	this.versionLessThanOrEqual = null;
+	this.createdAtGreaterThanOrEqual = null;
+	this.createdAtLessThanOrEqual = null;
+	this.updatedAtGreaterThanOrEqual = null;
+	this.updatedAtLessThanOrEqual = null;
+	this.statusEqual = null;
+	this.statusIn = null;
 }
-module.exports.KalturaMediaServerFilter = KalturaMediaServerFilter;
+module.exports.KalturaMetadataBaseFilter = KalturaMetadataBaseFilter;
 
-util.inherits(KalturaMediaServerFilter, KalturaMediaServerBaseFilter);
+util.inherits(KalturaMetadataBaseFilter, KalturaRelatedFilter);
 
 
 /**
@@ -11158,16 +11088,6 @@ function KalturaMetadataFieldChangedCondition(){
 module.exports.KalturaMetadataFieldChangedCondition = KalturaMetadataFieldChangedCondition;
 
 util.inherits(KalturaMetadataFieldChangedCondition, KalturaMatchCondition);
-
-
-/**
- */
-function KalturaMetadataFilter(){
-	KalturaMetadataFilter.super_.call(this);
-}
-module.exports.KalturaMetadataFilter = KalturaMetadataFilter;
-
-util.inherits(KalturaMetadataFilter, KalturaMetadataBaseFilter);
 
 
 /**
@@ -11233,23 +11153,87 @@ util.inherits(KalturaPdfFlavorParams, KalturaFlavorParams);
 
 
 /**
+ * @param idEqual int .
+ * @param idIn string .
+ * @param typeEqual int .
+ * @param typeIn string .
+ * @param nameEqual string .
+ * @param nameIn string .
+ * @param friendlyNameLike string .
+ * @param descriptionLike string .
+ * @param statusEqual int .
+ * @param statusIn string .
+ * @param partnerIdEqual int .
+ * @param partnerIdIn string .
+ * @param dependsOnPermissionNamesMultiLikeOr string .
+ * @param dependsOnPermissionNamesMultiLikeAnd string .
+ * @param tagsMultiLikeOr string .
+ * @param tagsMultiLikeAnd string .
+ * @param createdAtGreaterThanOrEqual int .
+ * @param createdAtLessThanOrEqual int .
+ * @param updatedAtGreaterThanOrEqual int .
+ * @param updatedAtLessThanOrEqual int .
  */
-function KalturaPermissionFilter(){
-	KalturaPermissionFilter.super_.call(this);
+function KalturaPermissionBaseFilter(){
+	KalturaPermissionBaseFilter.super_.call(this);
+	this.idEqual = null;
+	this.idIn = null;
+	this.typeEqual = null;
+	this.typeIn = null;
+	this.nameEqual = null;
+	this.nameIn = null;
+	this.friendlyNameLike = null;
+	this.descriptionLike = null;
+	this.statusEqual = null;
+	this.statusIn = null;
+	this.partnerIdEqual = null;
+	this.partnerIdIn = null;
+	this.dependsOnPermissionNamesMultiLikeOr = null;
+	this.dependsOnPermissionNamesMultiLikeAnd = null;
+	this.tagsMultiLikeOr = null;
+	this.tagsMultiLikeAnd = null;
+	this.createdAtGreaterThanOrEqual = null;
+	this.createdAtLessThanOrEqual = null;
+	this.updatedAtGreaterThanOrEqual = null;
+	this.updatedAtLessThanOrEqual = null;
 }
-module.exports.KalturaPermissionFilter = KalturaPermissionFilter;
+module.exports.KalturaPermissionBaseFilter = KalturaPermissionBaseFilter;
 
-util.inherits(KalturaPermissionFilter, KalturaPermissionBaseFilter);
+util.inherits(KalturaPermissionBaseFilter, KalturaRelatedFilter);
 
 
 /**
+ * @param idEqual int .
+ * @param idIn string .
+ * @param typeEqual string .
+ * @param typeIn string .
+ * @param partnerIdEqual int .
+ * @param partnerIdIn string .
+ * @param tagsMultiLikeOr string .
+ * @param tagsMultiLikeAnd string .
+ * @param createdAtGreaterThanOrEqual int .
+ * @param createdAtLessThanOrEqual int .
+ * @param updatedAtGreaterThanOrEqual int .
+ * @param updatedAtLessThanOrEqual int .
  */
-function KalturaPermissionItemFilter(){
-	KalturaPermissionItemFilter.super_.call(this);
+function KalturaPermissionItemBaseFilter(){
+	KalturaPermissionItemBaseFilter.super_.call(this);
+	this.idEqual = null;
+	this.idIn = null;
+	this.typeEqual = null;
+	this.typeIn = null;
+	this.partnerIdEqual = null;
+	this.partnerIdIn = null;
+	this.tagsMultiLikeOr = null;
+	this.tagsMultiLikeAnd = null;
+	this.createdAtGreaterThanOrEqual = null;
+	this.createdAtLessThanOrEqual = null;
+	this.updatedAtGreaterThanOrEqual = null;
+	this.updatedAtLessThanOrEqual = null;
 }
-module.exports.KalturaPermissionItemFilter = KalturaPermissionItemFilter;
+module.exports.KalturaPermissionItemBaseFilter = KalturaPermissionItemBaseFilter;
 
-util.inherits(KalturaPermissionItemFilter, KalturaPermissionItemBaseFilter);
+util.inherits(KalturaPermissionItemBaseFilter, KalturaRelatedFilter);
 
 
 /**
@@ -11318,6 +11302,16 @@ function KalturaReportFilter(){
 module.exports.KalturaReportFilter = KalturaReportFilter;
 
 util.inherits(KalturaReportFilter, KalturaReportBaseFilter);
+
+
+/**
+ */
+function KalturaResponseProfileFilter(){
+	KalturaResponseProfileFilter.super_.call(this);
+}
+module.exports.KalturaResponseProfileFilter = KalturaResponseProfileFilter;
+
+util.inherits(KalturaResponseProfileFilter, KalturaDetachedResponseProfileFilter);
 
 
 /**
@@ -11483,23 +11477,59 @@ util.inherits(KalturaUploadTokenFilter, KalturaUploadTokenBaseFilter);
 
 
 /**
+ * @param loginEmailEqual string .
  */
-function KalturaUserLoginDataFilter(){
-	KalturaUserLoginDataFilter.super_.call(this);
+function KalturaUserLoginDataBaseFilter(){
+	KalturaUserLoginDataBaseFilter.super_.call(this);
+	this.loginEmailEqual = null;
 }
-module.exports.KalturaUserLoginDataFilter = KalturaUserLoginDataFilter;
+module.exports.KalturaUserLoginDataBaseFilter = KalturaUserLoginDataBaseFilter;
 
-util.inherits(KalturaUserLoginDataFilter, KalturaUserLoginDataBaseFilter);
+util.inherits(KalturaUserLoginDataBaseFilter, KalturaRelatedFilter);
 
 
 /**
+ * @param idEqual int .
+ * @param idIn string .
+ * @param nameEqual string .
+ * @param nameIn string .
+ * @param systemNameEqual string .
+ * @param systemNameIn string .
+ * @param descriptionLike string .
+ * @param statusEqual int .
+ * @param statusIn string .
+ * @param partnerIdEqual int .
+ * @param partnerIdIn string .
+ * @param tagsMultiLikeOr string .
+ * @param tagsMultiLikeAnd string .
+ * @param createdAtGreaterThanOrEqual int .
+ * @param createdAtLessThanOrEqual int .
+ * @param updatedAtGreaterThanOrEqual int .
+ * @param updatedAtLessThanOrEqual int .
  */
-function KalturaUserRoleFilter(){
-	KalturaUserRoleFilter.super_.call(this);
+function KalturaUserRoleBaseFilter(){
+	KalturaUserRoleBaseFilter.super_.call(this);
+	this.idEqual = null;
+	this.idIn = null;
+	this.nameEqual = null;
+	this.nameIn = null;
+	this.systemNameEqual = null;
+	this.systemNameIn = null;
+	this.descriptionLike = null;
+	this.statusEqual = null;
+	this.statusIn = null;
+	this.partnerIdEqual = null;
+	this.partnerIdIn = null;
+	this.tagsMultiLikeOr = null;
+	this.tagsMultiLikeAnd = null;
+	this.createdAtGreaterThanOrEqual = null;
+	this.createdAtLessThanOrEqual = null;
+	this.updatedAtGreaterThanOrEqual = null;
+	this.updatedAtLessThanOrEqual = null;
 }
-module.exports.KalturaUserRoleFilter = KalturaUserRoleFilter;
+module.exports.KalturaUserRoleBaseFilter = KalturaUserRoleBaseFilter;
 
-util.inherits(KalturaUserRoleFilter, KalturaUserRoleBaseFilter);
+util.inherits(KalturaUserRoleBaseFilter, KalturaRelatedFilter);
 
 
 /**
@@ -11539,41 +11569,23 @@ util.inherits(KalturaWidgetFilter, KalturaWidgetBaseFilter);
 
 
 /**
- * @param protocolTypeEqual string .
- * @param protocolTypeIn string .
- * @param titleLike string .
- * @param titleMultiLikeOr string .
- * @param titleMultiLikeAnd string .
- * @param endTimeGreaterThanOrEqual int .
- * @param endTimeLessThanOrEqual int .
- * @param durationGreaterThanOrEqual int .
- * @param durationLessThanOrEqual int .
  */
-function KalturaAdCuePointBaseFilter(){
-	KalturaAdCuePointBaseFilter.super_.call(this);
-	this.protocolTypeEqual = null;
-	this.protocolTypeIn = null;
-	this.titleLike = null;
-	this.titleMultiLikeOr = null;
-	this.titleMultiLikeAnd = null;
-	this.endTimeGreaterThanOrEqual = null;
-	this.endTimeLessThanOrEqual = null;
-	this.durationGreaterThanOrEqual = null;
-	this.durationLessThanOrEqual = null;
+function KalturaAccessControlFilter(){
+	KalturaAccessControlFilter.super_.call(this);
 }
-module.exports.KalturaAdCuePointBaseFilter = KalturaAdCuePointBaseFilter;
+module.exports.KalturaAccessControlFilter = KalturaAccessControlFilter;
 
-util.inherits(KalturaAdCuePointBaseFilter, KalturaCuePointFilter);
+util.inherits(KalturaAccessControlFilter, KalturaAccessControlBaseFilter);
 
 
 /**
  */
-function KalturaAdminUserBaseFilter(){
-	KalturaAdminUserBaseFilter.super_.call(this);
+function KalturaAccessControlProfileFilter(){
+	KalturaAccessControlProfileFilter.super_.call(this);
 }
-module.exports.KalturaAdminUserBaseFilter = KalturaAdminUserBaseFilter;
+module.exports.KalturaAccessControlProfileFilter = KalturaAccessControlProfileFilter;
 
-util.inherits(KalturaAdminUserBaseFilter, KalturaUserFilter);
+util.inherits(KalturaAccessControlProfileFilter, KalturaAccessControlProfileBaseFilter);
 
 
 /**
@@ -11599,81 +11611,23 @@ util.inherits(KalturaAmazonS3StorageProfileBaseFilter, KalturaStorageProfileFilt
 
 
 /**
- * @param parentIdEqual string .
- * @param parentIdIn string .
- * @param textLike string .
- * @param textMultiLikeOr string .
- * @param textMultiLikeAnd string .
- * @param endTimeGreaterThanOrEqual int .
- * @param endTimeLessThanOrEqual int .
- * @param durationGreaterThanOrEqual int .
- * @param durationLessThanOrEqual int .
  */
-function KalturaAnnotationBaseFilter(){
-	KalturaAnnotationBaseFilter.super_.call(this);
-	this.parentIdEqual = null;
-	this.parentIdIn = null;
-	this.textLike = null;
-	this.textMultiLikeOr = null;
-	this.textMultiLikeAnd = null;
-	this.endTimeGreaterThanOrEqual = null;
-	this.endTimeLessThanOrEqual = null;
-	this.durationGreaterThanOrEqual = null;
-	this.durationLessThanOrEqual = null;
+function KalturaAssetFilter(){
+	KalturaAssetFilter.super_.call(this);
 }
-module.exports.KalturaAnnotationBaseFilter = KalturaAnnotationBaseFilter;
+module.exports.KalturaAssetFilter = KalturaAssetFilter;
 
-util.inherits(KalturaAnnotationBaseFilter, KalturaCuePointFilter);
+util.inherits(KalturaAssetFilter, KalturaAssetBaseFilter);
 
 
 /**
  */
-function KalturaApiActionPermissionItemBaseFilter(){
-	KalturaApiActionPermissionItemBaseFilter.super_.call(this);
+function KalturaAssetParamsFilter(){
+	KalturaAssetParamsFilter.super_.call(this);
 }
-module.exports.KalturaApiActionPermissionItemBaseFilter = KalturaApiActionPermissionItemBaseFilter;
+module.exports.KalturaAssetParamsFilter = KalturaAssetParamsFilter;
 
-util.inherits(KalturaApiActionPermissionItemBaseFilter, KalturaPermissionItemFilter);
-
-
-/**
- */
-function KalturaApiParameterPermissionItemBaseFilter(){
-	KalturaApiParameterPermissionItemBaseFilter.super_.call(this);
-}
-module.exports.KalturaApiParameterPermissionItemBaseFilter = KalturaApiParameterPermissionItemBaseFilter;
-
-util.inherits(KalturaApiParameterPermissionItemBaseFilter, KalturaPermissionItemFilter);
-
-
-/**
- */
-function KalturaAssetParamsOutputBaseFilter(){
-	KalturaAssetParamsOutputBaseFilter.super_.call(this);
-}
-module.exports.KalturaAssetParamsOutputBaseFilter = KalturaAssetParamsOutputBaseFilter;
-
-util.inherits(KalturaAssetParamsOutputBaseFilter, KalturaAssetParamsFilter);
-
-
-/**
- * @param formatEqual string .
- * @param formatIn string .
- * @param statusEqual int .
- * @param statusIn string .
- * @param statusNotIn string .
- */
-function KalturaAttachmentAssetBaseFilter(){
-	KalturaAttachmentAssetBaseFilter.super_.call(this);
-	this.formatEqual = null;
-	this.formatIn = null;
-	this.statusEqual = null;
-	this.statusIn = null;
-	this.statusNotIn = null;
-}
-module.exports.KalturaAttachmentAssetBaseFilter = KalturaAttachmentAssetBaseFilter;
-
-util.inherits(KalturaAttachmentAssetBaseFilter, KalturaAssetFilter);
+util.inherits(KalturaAssetParamsFilter, KalturaAssetParamsBaseFilter);
 
 
 /**
@@ -11689,75 +11643,39 @@ util.inherits(KalturaBatchJobFilterExt, KalturaBatchJobFilter);
 
 
 /**
- * @param captionParamsIdEqual int .
- * @param captionParamsIdIn string .
- * @param formatEqual string .
- * @param formatIn string .
- * @param statusEqual int .
- * @param statusIn string .
- * @param statusNotIn string .
  */
-function KalturaCaptionAssetBaseFilter(){
-	KalturaCaptionAssetBaseFilter.super_.call(this);
-	this.captionParamsIdEqual = null;
-	this.captionParamsIdIn = null;
-	this.formatEqual = null;
-	this.formatIn = null;
-	this.statusEqual = null;
-	this.statusIn = null;
-	this.statusNotIn = null;
+function KalturaCategoryEntryFilter(){
+	KalturaCategoryEntryFilter.super_.call(this);
 }
-module.exports.KalturaCaptionAssetBaseFilter = KalturaCaptionAssetBaseFilter;
+module.exports.KalturaCategoryEntryFilter = KalturaCategoryEntryFilter;
 
-util.inherits(KalturaCaptionAssetBaseFilter, KalturaAssetFilter);
+util.inherits(KalturaCategoryEntryFilter, KalturaCategoryEntryBaseFilter);
 
 
 /**
- * @param formatEqual string .
- * @param formatIn string .
+ * @param freeText string .
+ * @param membersIn string .
+ * @param nameOrReferenceIdStartsWith string .
+ * @param managerEqual string .
+ * @param memberEqual string .
+ * @param fullNameStartsWithIn string .
+ * @param ancestorIdIn string not includes the category itself (only sub categories).
+ * @param idOrInheritedParentIdIn string .
  */
-function KalturaCaptionParamsBaseFilter(){
-	KalturaCaptionParamsBaseFilter.super_.call(this);
-	this.formatEqual = null;
-	this.formatIn = null;
+function KalturaCategoryFilter(){
+	KalturaCategoryFilter.super_.call(this);
+	this.freeText = null;
+	this.membersIn = null;
+	this.nameOrReferenceIdStartsWith = null;
+	this.managerEqual = null;
+	this.memberEqual = null;
+	this.fullNameStartsWithIn = null;
+	this.ancestorIdIn = null;
+	this.idOrInheritedParentIdIn = null;
 }
-module.exports.KalturaCaptionParamsBaseFilter = KalturaCaptionParamsBaseFilter;
+module.exports.KalturaCategoryFilter = KalturaCategoryFilter;
 
-util.inherits(KalturaCaptionParamsBaseFilter, KalturaAssetParamsFilter);
-
-
-/**
- * @param codeLike string .
- * @param codeMultiLikeOr string .
- * @param codeMultiLikeAnd string .
- * @param codeEqual string .
- * @param codeIn string .
- * @param descriptionLike string .
- * @param descriptionMultiLikeOr string .
- * @param descriptionMultiLikeAnd string .
- * @param endTimeGreaterThanOrEqual int .
- * @param endTimeLessThanOrEqual int .
- * @param durationGreaterThanOrEqual int .
- * @param durationLessThanOrEqual int .
- */
-function KalturaCodeCuePointBaseFilter(){
-	KalturaCodeCuePointBaseFilter.super_.call(this);
-	this.codeLike = null;
-	this.codeMultiLikeOr = null;
-	this.codeMultiLikeAnd = null;
-	this.codeEqual = null;
-	this.codeIn = null;
-	this.descriptionLike = null;
-	this.descriptionMultiLikeOr = null;
-	this.descriptionMultiLikeAnd = null;
-	this.endTimeGreaterThanOrEqual = null;
-	this.endTimeLessThanOrEqual = null;
-	this.durationGreaterThanOrEqual = null;
-	this.durationLessThanOrEqual = null;
-}
-module.exports.KalturaCodeCuePointBaseFilter = KalturaCodeCuePointBaseFilter;
-
-util.inherits(KalturaCodeCuePointBaseFilter, KalturaCuePointFilter);
+util.inherits(KalturaCategoryFilter, KalturaCategoryBaseFilter);
 
 
 /**
@@ -11768,6 +11686,30 @@ function KalturaConfigurableDistributionProfileBaseFilter(){
 module.exports.KalturaConfigurableDistributionProfileBaseFilter = KalturaConfigurableDistributionProfileBaseFilter;
 
 util.inherits(KalturaConfigurableDistributionProfileBaseFilter, KalturaDistributionProfileFilter);
+
+
+/**
+ */
+function KalturaConversionProfileFilter(){
+	KalturaConversionProfileFilter.super_.call(this);
+}
+module.exports.KalturaConversionProfileFilter = KalturaConversionProfileFilter;
+
+util.inherits(KalturaConversionProfileFilter, KalturaConversionProfileBaseFilter);
+
+
+/**
+ * @param conversionProfileIdFilter KalturaConversionProfileFilter .
+ * @param assetParamsIdFilter KalturaAssetParamsFilter .
+ */
+function KalturaConversionProfileAssetParamsFilter(){
+	KalturaConversionProfileAssetParamsFilter.super_.call(this);
+	this.conversionProfileIdFilter = null;
+	this.assetParamsIdFilter = null;
+}
+module.exports.KalturaConversionProfileAssetParamsFilter = KalturaConversionProfileAssetParamsFilter;
+
+util.inherits(KalturaConversionProfileAssetParamsFilter, KalturaConversionProfileAssetParamsBaseFilter);
 
 
 /**
@@ -11795,13 +11737,15 @@ util.inherits(KalturaCountryContextField, KalturaStringField);
 
 
 /**
+ * @param freeText string .
  */
-function KalturaDataEntryBaseFilter(){
-	KalturaDataEntryBaseFilter.super_.call(this);
+function KalturaCuePointFilter(){
+	KalturaCuePointFilter.super_.call(this);
+	this.freeText = null;
 }
-module.exports.KalturaDataEntryBaseFilter = KalturaDataEntryBaseFilter;
+module.exports.KalturaCuePointFilter = KalturaCuePointFilter;
 
-util.inherits(KalturaDataEntryBaseFilter, KalturaBaseEntryFilter);
+util.inherits(KalturaCuePointFilter, KalturaCuePointBaseFilter);
 
 
 /**
@@ -11915,24 +11859,6 @@ util.inherits(KalturaDistributionEnableJobData, KalturaDistributionUpdateJobData
 
 
 /**
- * @param documentTypeEqual int .
- * @param documentTypeIn string .
- * @param assetParamsIdsMatchOr string .
- * @param assetParamsIdsMatchAnd string .
- */
-function KalturaDocumentEntryBaseFilter(){
-	KalturaDocumentEntryBaseFilter.super_.call(this);
-	this.documentTypeEqual = null;
-	this.documentTypeIn = null;
-	this.assetParamsIdsMatchOr = null;
-	this.assetParamsIdsMatchAnd = null;
-}
-module.exports.KalturaDocumentEntryBaseFilter = KalturaDocumentEntryBaseFilter;
-
-util.inherits(KalturaDocumentEntryBaseFilter, KalturaBaseEntryFilter);
-
-
-/**
  */
 function KalturaDocumentFlavorParamsOutput(){
 	KalturaDocumentFlavorParamsOutput.super_.call(this);
@@ -11977,6 +11903,16 @@ util.inherits(KalturaEmailNotificationTemplateBaseFilter, KalturaEventNotificati
 
 
 /**
+ */
+function KalturaEntryDistributionFilter(){
+	KalturaEntryDistributionFilter.super_.call(this);
+}
+module.exports.KalturaEntryDistributionFilter = KalturaEntryDistributionFilter;
+
+util.inherits(KalturaEntryDistributionFilter, KalturaEntryDistributionBaseFilter);
+
+
+/**
  * @param code string PHP code.
  */
 function KalturaEvalBooleanField(){
@@ -12001,49 +11937,13 @@ util.inherits(KalturaEvalStringField, KalturaStringField);
 
 
 /**
- * @param eventTypeEqual string .
- * @param eventTypeIn string .
  */
-function KalturaEventCuePointBaseFilter(){
-	KalturaEventCuePointBaseFilter.super_.call(this);
-	this.eventTypeEqual = null;
-	this.eventTypeIn = null;
+function KalturaFileAssetFilter(){
+	KalturaFileAssetFilter.super_.call(this);
 }
-module.exports.KalturaEventCuePointBaseFilter = KalturaEventCuePointBaseFilter;
+module.exports.KalturaFileAssetFilter = KalturaFileAssetFilter;
 
-util.inherits(KalturaEventCuePointBaseFilter, KalturaCuePointFilter);
-
-
-/**
- * @param flavorParamsIdEqual int .
- * @param flavorParamsIdIn string .
- * @param statusEqual int .
- * @param statusIn string .
- * @param statusNotIn string .
- */
-function KalturaFlavorAssetBaseFilter(){
-	KalturaFlavorAssetBaseFilter.super_.call(this);
-	this.flavorParamsIdEqual = null;
-	this.flavorParamsIdIn = null;
-	this.statusEqual = null;
-	this.statusIn = null;
-	this.statusNotIn = null;
-}
-module.exports.KalturaFlavorAssetBaseFilter = KalturaFlavorAssetBaseFilter;
-
-util.inherits(KalturaFlavorAssetBaseFilter, KalturaAssetFilter);
-
-
-/**
- * @param formatEqual string .
- */
-function KalturaFlavorParamsBaseFilter(){
-	KalturaFlavorParamsBaseFilter.super_.call(this);
-	this.formatEqual = null;
-}
-module.exports.KalturaFlavorParamsBaseFilter = KalturaFlavorParamsBaseFilter;
-
-util.inherits(KalturaFlavorParamsBaseFilter, KalturaAssetParamsFilter);
+util.inherits(KalturaFileAssetFilter, KalturaFileAssetBaseFilter);
 
 
 /**
@@ -12108,6 +12008,16 @@ function KalturaGoogleVideoSyndicationFeedBaseFilter(){
 module.exports.KalturaGoogleVideoSyndicationFeedBaseFilter = KalturaGoogleVideoSyndicationFeedBaseFilter;
 
 util.inherits(KalturaGoogleVideoSyndicationFeedBaseFilter, KalturaBaseSyndicationFeedFilter);
+
+
+/**
+ */
+function KalturaGroupUserFilter(){
+	KalturaGroupUserFilter.super_.call(this);
+}
+module.exports.KalturaGroupUserFilter = KalturaGroupUserFilter;
+
+util.inherits(KalturaGroupUserFilter, KalturaGroupUserBaseFilter);
 
 
 /**
@@ -12202,12 +12112,32 @@ util.inherits(KalturaKontikiStorageProfileBaseFilter, KalturaStorageProfileFilte
 
 /**
  */
+function KalturaLiveChannelSegmentFilter(){
+	KalturaLiveChannelSegmentFilter.super_.call(this);
+}
+module.exports.KalturaLiveChannelSegmentFilter = KalturaLiveChannelSegmentFilter;
+
+util.inherits(KalturaLiveChannelSegmentFilter, KalturaLiveChannelSegmentBaseFilter);
+
+
+/**
+ */
 function KalturaMediaFlavorParamsOutput(){
 	KalturaMediaFlavorParamsOutput.super_.call(this);
 }
 module.exports.KalturaMediaFlavorParamsOutput = KalturaMediaFlavorParamsOutput;
 
 util.inherits(KalturaMediaFlavorParamsOutput, KalturaFlavorParamsOutput);
+
+
+/**
+ */
+function KalturaMetadataFilter(){
+	KalturaMetadataFilter.super_.call(this);
+}
+module.exports.KalturaMetadataFilter = KalturaMetadataFilter;
+
+util.inherits(KalturaMetadataFilter, KalturaMetadataBaseFilter);
 
 
 /**
@@ -12234,12 +12164,22 @@ util.inherits(KalturaPdfFlavorParamsOutput, KalturaFlavorParamsOutput);
 
 /**
  */
-function KalturaPlaylistBaseFilter(){
-	KalturaPlaylistBaseFilter.super_.call(this);
+function KalturaPermissionFilter(){
+	KalturaPermissionFilter.super_.call(this);
 }
-module.exports.KalturaPlaylistBaseFilter = KalturaPlaylistBaseFilter;
+module.exports.KalturaPermissionFilter = KalturaPermissionFilter;
 
-util.inherits(KalturaPlaylistBaseFilter, KalturaBaseEntryFilter);
+util.inherits(KalturaPermissionFilter, KalturaPermissionBaseFilter);
+
+
+/**
+ */
+function KalturaPermissionItemFilter(){
+	KalturaPermissionItemFilter.super_.call(this);
+}
+module.exports.KalturaPermissionItemFilter = KalturaPermissionItemFilter;
+
+util.inherits(KalturaPermissionItemFilter, KalturaPermissionItemBaseFilter);
 
 
 /**
@@ -12349,38 +12289,6 @@ util.inherits(KalturaSystemPartnerFilter, KalturaPartnerFilter);
 
 
 /**
- * @param thumbParamsIdEqual int .
- * @param thumbParamsIdIn string .
- * @param statusEqual int .
- * @param statusIn string .
- * @param statusNotIn string .
- */
-function KalturaThumbAssetBaseFilter(){
-	KalturaThumbAssetBaseFilter.super_.call(this);
-	this.thumbParamsIdEqual = null;
-	this.thumbParamsIdIn = null;
-	this.statusEqual = null;
-	this.statusIn = null;
-	this.statusNotIn = null;
-}
-module.exports.KalturaThumbAssetBaseFilter = KalturaThumbAssetBaseFilter;
-
-util.inherits(KalturaThumbAssetBaseFilter, KalturaAssetFilter);
-
-
-/**
- * @param formatEqual string .
- */
-function KalturaThumbParamsBaseFilter(){
-	KalturaThumbParamsBaseFilter.super_.call(this);
-	this.formatEqual = null;
-}
-module.exports.KalturaThumbParamsBaseFilter = KalturaThumbParamsBaseFilter;
-
-util.inherits(KalturaThumbParamsBaseFilter, KalturaAssetParamsFilter);
-
-
-/**
  * @param offset int Time offset in seconds since current time.
  */
 function KalturaTimeContextField(){
@@ -12455,6 +12363,26 @@ util.inherits(KalturaUserEmailContextField, KalturaStringField);
 
 
 /**
+ */
+function KalturaUserLoginDataFilter(){
+	KalturaUserLoginDataFilter.super_.call(this);
+}
+module.exports.KalturaUserLoginDataFilter = KalturaUserLoginDataFilter;
+
+util.inherits(KalturaUserLoginDataFilter, KalturaUserLoginDataBaseFilter);
+
+
+/**
+ */
+function KalturaUserRoleFilter(){
+	KalturaUserRoleFilter.super_.call(this);
+}
+module.exports.KalturaUserRoleFilter = KalturaUserRoleFilter;
+
+util.inherits(KalturaUserRoleFilter, KalturaUserRoleBaseFilter);
+
+
+/**
  * @param groupTypeEq int Eq filter for the partner's group type.
  * @param groupTypeIn string In filter for the partner's group type.
  * @param partnerPermissionsExist string Filter for partner permissions- filter contains comma-separated string of permission names which the returned partners should have.
@@ -12493,23 +12421,41 @@ util.inherits(KalturaYahooSyndicationFeedBaseFilter, KalturaBaseSyndicationFeedF
 
 
 /**
+ * @param protocolTypeEqual string .
+ * @param protocolTypeIn string .
+ * @param titleLike string .
+ * @param titleMultiLikeOr string .
+ * @param titleMultiLikeAnd string .
+ * @param endTimeGreaterThanOrEqual int .
+ * @param endTimeLessThanOrEqual int .
+ * @param durationGreaterThanOrEqual int .
+ * @param durationLessThanOrEqual int .
  */
-function KalturaAdCuePointFilter(){
-	KalturaAdCuePointFilter.super_.call(this);
+function KalturaAdCuePointBaseFilter(){
+	KalturaAdCuePointBaseFilter.super_.call(this);
+	this.protocolTypeEqual = null;
+	this.protocolTypeIn = null;
+	this.titleLike = null;
+	this.titleMultiLikeOr = null;
+	this.titleMultiLikeAnd = null;
+	this.endTimeGreaterThanOrEqual = null;
+	this.endTimeLessThanOrEqual = null;
+	this.durationGreaterThanOrEqual = null;
+	this.durationLessThanOrEqual = null;
 }
-module.exports.KalturaAdCuePointFilter = KalturaAdCuePointFilter;
+module.exports.KalturaAdCuePointBaseFilter = KalturaAdCuePointBaseFilter;
 
-util.inherits(KalturaAdCuePointFilter, KalturaAdCuePointBaseFilter);
+util.inherits(KalturaAdCuePointBaseFilter, KalturaCuePointFilter);
 
 
 /**
  */
-function KalturaAdminUserFilter(){
-	KalturaAdminUserFilter.super_.call(this);
+function KalturaAdminUserBaseFilter(){
+	KalturaAdminUserBaseFilter.super_.call(this);
 }
-module.exports.KalturaAdminUserFilter = KalturaAdminUserFilter;
+module.exports.KalturaAdminUserBaseFilter = KalturaAdminUserBaseFilter;
 
-util.inherits(KalturaAdminUserFilter, KalturaAdminUserBaseFilter);
+util.inherits(KalturaAdminUserBaseFilter, KalturaUserFilter);
 
 
 /**
@@ -12523,83 +12469,153 @@ util.inherits(KalturaAmazonS3StorageProfileFilter, KalturaAmazonS3StorageProfile
 
 
 /**
+ * @param parentIdEqual string .
+ * @param parentIdIn string .
+ * @param textLike string .
+ * @param textMultiLikeOr string .
+ * @param textMultiLikeAnd string .
+ * @param endTimeGreaterThanOrEqual int .
+ * @param endTimeLessThanOrEqual int .
+ * @param durationGreaterThanOrEqual int .
+ * @param durationLessThanOrEqual int .
  */
-function KalturaAnnotationFilter(){
-	KalturaAnnotationFilter.super_.call(this);
+function KalturaAnnotationBaseFilter(){
+	KalturaAnnotationBaseFilter.super_.call(this);
+	this.parentIdEqual = null;
+	this.parentIdIn = null;
+	this.textLike = null;
+	this.textMultiLikeOr = null;
+	this.textMultiLikeAnd = null;
+	this.endTimeGreaterThanOrEqual = null;
+	this.endTimeLessThanOrEqual = null;
+	this.durationGreaterThanOrEqual = null;
+	this.durationLessThanOrEqual = null;
 }
-module.exports.KalturaAnnotationFilter = KalturaAnnotationFilter;
+module.exports.KalturaAnnotationBaseFilter = KalturaAnnotationBaseFilter;
 
-util.inherits(KalturaAnnotationFilter, KalturaAnnotationBaseFilter);
+util.inherits(KalturaAnnotationBaseFilter, KalturaCuePointFilter);
 
 
 /**
  */
-function KalturaApiActionPermissionItemFilter(){
-	KalturaApiActionPermissionItemFilter.super_.call(this);
+function KalturaApiActionPermissionItemBaseFilter(){
+	KalturaApiActionPermissionItemBaseFilter.super_.call(this);
 }
-module.exports.KalturaApiActionPermissionItemFilter = KalturaApiActionPermissionItemFilter;
+module.exports.KalturaApiActionPermissionItemBaseFilter = KalturaApiActionPermissionItemBaseFilter;
 
-util.inherits(KalturaApiActionPermissionItemFilter, KalturaApiActionPermissionItemBaseFilter);
+util.inherits(KalturaApiActionPermissionItemBaseFilter, KalturaPermissionItemFilter);
 
 
 /**
  */
-function KalturaApiParameterPermissionItemFilter(){
-	KalturaApiParameterPermissionItemFilter.super_.call(this);
+function KalturaApiParameterPermissionItemBaseFilter(){
+	KalturaApiParameterPermissionItemBaseFilter.super_.call(this);
 }
-module.exports.KalturaApiParameterPermissionItemFilter = KalturaApiParameterPermissionItemFilter;
+module.exports.KalturaApiParameterPermissionItemBaseFilter = KalturaApiParameterPermissionItemBaseFilter;
 
-util.inherits(KalturaApiParameterPermissionItemFilter, KalturaApiParameterPermissionItemBaseFilter);
+util.inherits(KalturaApiParameterPermissionItemBaseFilter, KalturaPermissionItemFilter);
 
 
 /**
  */
-function KalturaAssetParamsOutputFilter(){
-	KalturaAssetParamsOutputFilter.super_.call(this);
+function KalturaAssetParamsOutputBaseFilter(){
+	KalturaAssetParamsOutputBaseFilter.super_.call(this);
 }
-module.exports.KalturaAssetParamsOutputFilter = KalturaAssetParamsOutputFilter;
+module.exports.KalturaAssetParamsOutputBaseFilter = KalturaAssetParamsOutputBaseFilter;
 
-util.inherits(KalturaAssetParamsOutputFilter, KalturaAssetParamsOutputBaseFilter);
+util.inherits(KalturaAssetParamsOutputBaseFilter, KalturaAssetParamsFilter);
 
 
 /**
+ * @param formatEqual string .
+ * @param formatIn string .
+ * @param statusEqual int .
+ * @param statusIn string .
+ * @param statusNotIn string .
  */
-function KalturaAttachmentAssetFilter(){
-	KalturaAttachmentAssetFilter.super_.call(this);
+function KalturaAttachmentAssetBaseFilter(){
+	KalturaAttachmentAssetBaseFilter.super_.call(this);
+	this.formatEqual = null;
+	this.formatIn = null;
+	this.statusEqual = null;
+	this.statusIn = null;
+	this.statusNotIn = null;
 }
-module.exports.KalturaAttachmentAssetFilter = KalturaAttachmentAssetFilter;
+module.exports.KalturaAttachmentAssetBaseFilter = KalturaAttachmentAssetBaseFilter;
 
-util.inherits(KalturaAttachmentAssetFilter, KalturaAttachmentAssetBaseFilter);
+util.inherits(KalturaAttachmentAssetBaseFilter, KalturaAssetFilter);
 
 
 /**
+ * @param captionParamsIdEqual int .
+ * @param captionParamsIdIn string .
+ * @param formatEqual string .
+ * @param formatIn string .
+ * @param statusEqual int .
+ * @param statusIn string .
+ * @param statusNotIn string .
  */
-function KalturaCaptionAssetFilter(){
-	KalturaCaptionAssetFilter.super_.call(this);
+function KalturaCaptionAssetBaseFilter(){
+	KalturaCaptionAssetBaseFilter.super_.call(this);
+	this.captionParamsIdEqual = null;
+	this.captionParamsIdIn = null;
+	this.formatEqual = null;
+	this.formatIn = null;
+	this.statusEqual = null;
+	this.statusIn = null;
+	this.statusNotIn = null;
 }
-module.exports.KalturaCaptionAssetFilter = KalturaCaptionAssetFilter;
+module.exports.KalturaCaptionAssetBaseFilter = KalturaCaptionAssetBaseFilter;
 
-util.inherits(KalturaCaptionAssetFilter, KalturaCaptionAssetBaseFilter);
+util.inherits(KalturaCaptionAssetBaseFilter, KalturaAssetFilter);
 
 
 /**
+ * @param formatEqual string .
+ * @param formatIn string .
  */
-function KalturaCaptionParamsFilter(){
-	KalturaCaptionParamsFilter.super_.call(this);
+function KalturaCaptionParamsBaseFilter(){
+	KalturaCaptionParamsBaseFilter.super_.call(this);
+	this.formatEqual = null;
+	this.formatIn = null;
 }
-module.exports.KalturaCaptionParamsFilter = KalturaCaptionParamsFilter;
+module.exports.KalturaCaptionParamsBaseFilter = KalturaCaptionParamsBaseFilter;
 
-util.inherits(KalturaCaptionParamsFilter, KalturaCaptionParamsBaseFilter);
+util.inherits(KalturaCaptionParamsBaseFilter, KalturaAssetParamsFilter);
 
 
 /**
+ * @param codeLike string .
+ * @param codeMultiLikeOr string .
+ * @param codeMultiLikeAnd string .
+ * @param codeEqual string .
+ * @param codeIn string .
+ * @param descriptionLike string .
+ * @param descriptionMultiLikeOr string .
+ * @param descriptionMultiLikeAnd string .
+ * @param endTimeGreaterThanOrEqual int .
+ * @param endTimeLessThanOrEqual int .
+ * @param durationGreaterThanOrEqual int .
+ * @param durationLessThanOrEqual int .
  */
-function KalturaCodeCuePointFilter(){
-	KalturaCodeCuePointFilter.super_.call(this);
+function KalturaCodeCuePointBaseFilter(){
+	KalturaCodeCuePointBaseFilter.super_.call(this);
+	this.codeLike = null;
+	this.codeMultiLikeOr = null;
+	this.codeMultiLikeAnd = null;
+	this.codeEqual = null;
+	this.codeIn = null;
+	this.descriptionLike = null;
+	this.descriptionMultiLikeOr = null;
+	this.descriptionMultiLikeAnd = null;
+	this.endTimeGreaterThanOrEqual = null;
+	this.endTimeLessThanOrEqual = null;
+	this.durationGreaterThanOrEqual = null;
+	this.durationLessThanOrEqual = null;
 }
-module.exports.KalturaCodeCuePointFilter = KalturaCodeCuePointFilter;
+module.exports.KalturaCodeCuePointBaseFilter = KalturaCodeCuePointBaseFilter;
 
-util.inherits(KalturaCodeCuePointFilter, KalturaCodeCuePointBaseFilter);
+util.inherits(KalturaCodeCuePointBaseFilter, KalturaCuePointFilter);
 
 
 /**
@@ -12614,12 +12630,12 @@ util.inherits(KalturaConfigurableDistributionProfileFilter, KalturaConfigurableD
 
 /**
  */
-function KalturaDataEntryFilter(){
-	KalturaDataEntryFilter.super_.call(this);
+function KalturaDataEntryBaseFilter(){
+	KalturaDataEntryBaseFilter.super_.call(this);
 }
-module.exports.KalturaDataEntryFilter = KalturaDataEntryFilter;
+module.exports.KalturaDataEntryBaseFilter = KalturaDataEntryBaseFilter;
 
-util.inherits(KalturaDataEntryFilter, KalturaDataEntryBaseFilter);
+util.inherits(KalturaDataEntryBaseFilter, KalturaBaseEntryFilter);
 
 
 /**
@@ -12713,13 +12729,21 @@ util.inherits(KalturaDeliveryProfileRtmpFilter, KalturaDeliveryProfileRtmpBaseFi
 
 
 /**
+ * @param documentTypeEqual int .
+ * @param documentTypeIn string .
+ * @param assetParamsIdsMatchOr string .
+ * @param assetParamsIdsMatchAnd string .
  */
-function KalturaDocumentEntryFilter(){
-	KalturaDocumentEntryFilter.super_.call(this);
+function KalturaDocumentEntryBaseFilter(){
+	KalturaDocumentEntryBaseFilter.super_.call(this);
+	this.documentTypeEqual = null;
+	this.documentTypeIn = null;
+	this.assetParamsIdsMatchOr = null;
+	this.assetParamsIdsMatchAnd = null;
 }
-module.exports.KalturaDocumentEntryFilter = KalturaDocumentEntryFilter;
+module.exports.KalturaDocumentEntryBaseFilter = KalturaDocumentEntryBaseFilter;
 
-util.inherits(KalturaDocumentEntryFilter, KalturaDocumentEntryBaseFilter);
+util.inherits(KalturaDocumentEntryBaseFilter, KalturaBaseEntryFilter);
 
 
 /**
@@ -12733,33 +12757,49 @@ util.inherits(KalturaEmailNotificationTemplateFilter, KalturaEmailNotificationTe
 
 
 /**
+ * @param eventTypeEqual string .
+ * @param eventTypeIn string .
  */
-function KalturaEventCuePointFilter(){
-	KalturaEventCuePointFilter.super_.call(this);
+function KalturaEventCuePointBaseFilter(){
+	KalturaEventCuePointBaseFilter.super_.call(this);
+	this.eventTypeEqual = null;
+	this.eventTypeIn = null;
 }
-module.exports.KalturaEventCuePointFilter = KalturaEventCuePointFilter;
+module.exports.KalturaEventCuePointBaseFilter = KalturaEventCuePointBaseFilter;
 
-util.inherits(KalturaEventCuePointFilter, KalturaEventCuePointBaseFilter);
+util.inherits(KalturaEventCuePointBaseFilter, KalturaCuePointFilter);
 
 
 /**
+ * @param flavorParamsIdEqual int .
+ * @param flavorParamsIdIn string .
+ * @param statusEqual int .
+ * @param statusIn string .
+ * @param statusNotIn string .
  */
-function KalturaFlavorAssetFilter(){
-	KalturaFlavorAssetFilter.super_.call(this);
+function KalturaFlavorAssetBaseFilter(){
+	KalturaFlavorAssetBaseFilter.super_.call(this);
+	this.flavorParamsIdEqual = null;
+	this.flavorParamsIdIn = null;
+	this.statusEqual = null;
+	this.statusIn = null;
+	this.statusNotIn = null;
 }
-module.exports.KalturaFlavorAssetFilter = KalturaFlavorAssetFilter;
+module.exports.KalturaFlavorAssetBaseFilter = KalturaFlavorAssetBaseFilter;
 
-util.inherits(KalturaFlavorAssetFilter, KalturaFlavorAssetBaseFilter);
+util.inherits(KalturaFlavorAssetBaseFilter, KalturaAssetFilter);
 
 
 /**
+ * @param formatEqual string .
  */
-function KalturaFlavorParamsFilter(){
-	KalturaFlavorParamsFilter.super_.call(this);
+function KalturaFlavorParamsBaseFilter(){
+	KalturaFlavorParamsBaseFilter.super_.call(this);
+	this.formatEqual = null;
 }
-module.exports.KalturaFlavorParamsFilter = KalturaFlavorParamsFilter;
+module.exports.KalturaFlavorParamsBaseFilter = KalturaFlavorParamsBaseFilter;
 
-util.inherits(KalturaFlavorParamsFilter, KalturaFlavorParamsBaseFilter);
+util.inherits(KalturaFlavorParamsBaseFilter, KalturaAssetParamsFilter);
 
 
 /**
@@ -12834,12 +12874,12 @@ util.inherits(KalturaKontikiStorageProfileFilter, KalturaKontikiStorageProfileBa
 
 /**
  */
-function KalturaPlaylistFilter(){
-	KalturaPlaylistFilter.super_.call(this);
+function KalturaPlaylistBaseFilter(){
+	KalturaPlaylistBaseFilter.super_.call(this);
 }
-module.exports.KalturaPlaylistFilter = KalturaPlaylistFilter;
+module.exports.KalturaPlaylistBaseFilter = KalturaPlaylistBaseFilter;
 
-util.inherits(KalturaPlaylistFilter, KalturaPlaylistBaseFilter);
+util.inherits(KalturaPlaylistBaseFilter, KalturaBaseEntryFilter);
 
 
 /**
@@ -12863,35 +12903,35 @@ util.inherits(KalturaSyndicationDistributionProfileFilter, KalturaSyndicationDis
 
 
 /**
+ * @param thumbParamsIdEqual int .
+ * @param thumbParamsIdIn string .
+ * @param statusEqual int .
+ * @param statusIn string .
+ * @param statusNotIn string .
  */
-function KalturaSyndicationDistributionProviderFilter(){
-	KalturaSyndicationDistributionProviderFilter.super_.call(this);
+function KalturaThumbAssetBaseFilter(){
+	KalturaThumbAssetBaseFilter.super_.call(this);
+	this.thumbParamsIdEqual = null;
+	this.thumbParamsIdIn = null;
+	this.statusEqual = null;
+	this.statusIn = null;
+	this.statusNotIn = null;
 }
-module.exports.KalturaSyndicationDistributionProviderFilter = KalturaSyndicationDistributionProviderFilter;
+module.exports.KalturaThumbAssetBaseFilter = KalturaThumbAssetBaseFilter;
 
-util.inherits(KalturaSyndicationDistributionProviderFilter, KalturaSyndicationDistributionProviderBaseFilter);
+util.inherits(KalturaThumbAssetBaseFilter, KalturaAssetFilter);
 
 
 /**
- * @param typeIn string .
+ * @param formatEqual string .
  */
-function KalturaThumbAssetFilter(){
-	KalturaThumbAssetFilter.super_.call(this);
-	this.typeIn = null;
+function KalturaThumbParamsBaseFilter(){
+	KalturaThumbParamsBaseFilter.super_.call(this);
+	this.formatEqual = null;
 }
-module.exports.KalturaThumbAssetFilter = KalturaThumbAssetFilter;
+module.exports.KalturaThumbParamsBaseFilter = KalturaThumbParamsBaseFilter;
 
-util.inherits(KalturaThumbAssetFilter, KalturaThumbAssetBaseFilter);
-
-
-/**
- */
-function KalturaThumbParamsFilter(){
-	KalturaThumbParamsFilter.super_.call(this);
-}
-module.exports.KalturaThumbParamsFilter = KalturaThumbParamsFilter;
-
-util.inherits(KalturaThumbParamsFilter, KalturaThumbParamsBaseFilter);
+util.inherits(KalturaThumbParamsBaseFilter, KalturaAssetParamsFilter);
 
 
 /**
@@ -12922,6 +12962,238 @@ function KalturaYahooSyndicationFeedFilter(){
 module.exports.KalturaYahooSyndicationFeedFilter = KalturaYahooSyndicationFeedFilter;
 
 util.inherits(KalturaYahooSyndicationFeedFilter, KalturaYahooSyndicationFeedBaseFilter);
+
+
+/**
+ */
+function KalturaAdCuePointFilter(){
+	KalturaAdCuePointFilter.super_.call(this);
+}
+module.exports.KalturaAdCuePointFilter = KalturaAdCuePointFilter;
+
+util.inherits(KalturaAdCuePointFilter, KalturaAdCuePointBaseFilter);
+
+
+/**
+ */
+function KalturaAdminUserFilter(){
+	KalturaAdminUserFilter.super_.call(this);
+}
+module.exports.KalturaAdminUserFilter = KalturaAdminUserFilter;
+
+util.inherits(KalturaAdminUserFilter, KalturaAdminUserBaseFilter);
+
+
+/**
+ */
+function KalturaAnnotationFilter(){
+	KalturaAnnotationFilter.super_.call(this);
+}
+module.exports.KalturaAnnotationFilter = KalturaAnnotationFilter;
+
+util.inherits(KalturaAnnotationFilter, KalturaAnnotationBaseFilter);
+
+
+/**
+ */
+function KalturaApiActionPermissionItemFilter(){
+	KalturaApiActionPermissionItemFilter.super_.call(this);
+}
+module.exports.KalturaApiActionPermissionItemFilter = KalturaApiActionPermissionItemFilter;
+
+util.inherits(KalturaApiActionPermissionItemFilter, KalturaApiActionPermissionItemBaseFilter);
+
+
+/**
+ */
+function KalturaApiParameterPermissionItemFilter(){
+	KalturaApiParameterPermissionItemFilter.super_.call(this);
+}
+module.exports.KalturaApiParameterPermissionItemFilter = KalturaApiParameterPermissionItemFilter;
+
+util.inherits(KalturaApiParameterPermissionItemFilter, KalturaApiParameterPermissionItemBaseFilter);
+
+
+/**
+ */
+function KalturaAssetParamsOutputFilter(){
+	KalturaAssetParamsOutputFilter.super_.call(this);
+}
+module.exports.KalturaAssetParamsOutputFilter = KalturaAssetParamsOutputFilter;
+
+util.inherits(KalturaAssetParamsOutputFilter, KalturaAssetParamsOutputBaseFilter);
+
+
+/**
+ */
+function KalturaAttachmentAssetFilter(){
+	KalturaAttachmentAssetFilter.super_.call(this);
+}
+module.exports.KalturaAttachmentAssetFilter = KalturaAttachmentAssetFilter;
+
+util.inherits(KalturaAttachmentAssetFilter, KalturaAttachmentAssetBaseFilter);
+
+
+/**
+ */
+function KalturaCaptionAssetFilter(){
+	KalturaCaptionAssetFilter.super_.call(this);
+}
+module.exports.KalturaCaptionAssetFilter = KalturaCaptionAssetFilter;
+
+util.inherits(KalturaCaptionAssetFilter, KalturaCaptionAssetBaseFilter);
+
+
+/**
+ */
+function KalturaCaptionParamsFilter(){
+	KalturaCaptionParamsFilter.super_.call(this);
+}
+module.exports.KalturaCaptionParamsFilter = KalturaCaptionParamsFilter;
+
+util.inherits(KalturaCaptionParamsFilter, KalturaCaptionParamsBaseFilter);
+
+
+/**
+ */
+function KalturaCodeCuePointFilter(){
+	KalturaCodeCuePointFilter.super_.call(this);
+}
+module.exports.KalturaCodeCuePointFilter = KalturaCodeCuePointFilter;
+
+util.inherits(KalturaCodeCuePointFilter, KalturaCodeCuePointBaseFilter);
+
+
+/**
+ */
+function KalturaDataEntryFilter(){
+	KalturaDataEntryFilter.super_.call(this);
+}
+module.exports.KalturaDataEntryFilter = KalturaDataEntryFilter;
+
+util.inherits(KalturaDataEntryFilter, KalturaDataEntryBaseFilter);
+
+
+/**
+ */
+function KalturaDeliveryProfileGenericRtmpBaseFilter(){
+	KalturaDeliveryProfileGenericRtmpBaseFilter.super_.call(this);
+}
+module.exports.KalturaDeliveryProfileGenericRtmpBaseFilter = KalturaDeliveryProfileGenericRtmpBaseFilter;
+
+util.inherits(KalturaDeliveryProfileGenericRtmpBaseFilter, KalturaDeliveryProfileRtmpFilter);
+
+
+/**
+ */
+function KalturaDocumentEntryFilter(){
+	KalturaDocumentEntryFilter.super_.call(this);
+}
+module.exports.KalturaDocumentEntryFilter = KalturaDocumentEntryFilter;
+
+util.inherits(KalturaDocumentEntryFilter, KalturaDocumentEntryBaseFilter);
+
+
+/**
+ */
+function KalturaEventCuePointFilter(){
+	KalturaEventCuePointFilter.super_.call(this);
+}
+module.exports.KalturaEventCuePointFilter = KalturaEventCuePointFilter;
+
+util.inherits(KalturaEventCuePointFilter, KalturaEventCuePointBaseFilter);
+
+
+/**
+ */
+function KalturaFlavorAssetFilter(){
+	KalturaFlavorAssetFilter.super_.call(this);
+}
+module.exports.KalturaFlavorAssetFilter = KalturaFlavorAssetFilter;
+
+util.inherits(KalturaFlavorAssetFilter, KalturaFlavorAssetBaseFilter);
+
+
+/**
+ */
+function KalturaFlavorParamsFilter(){
+	KalturaFlavorParamsFilter.super_.call(this);
+}
+module.exports.KalturaFlavorParamsFilter = KalturaFlavorParamsFilter;
+
+util.inherits(KalturaFlavorParamsFilter, KalturaFlavorParamsBaseFilter);
+
+
+/**
+ */
+function KalturaFtpDropFolderBaseFilter(){
+	KalturaFtpDropFolderBaseFilter.super_.call(this);
+}
+module.exports.KalturaFtpDropFolderBaseFilter = KalturaFtpDropFolderBaseFilter;
+
+util.inherits(KalturaFtpDropFolderBaseFilter, KalturaRemoteDropFolderFilter);
+
+
+/**
+ */
+function KalturaGenericXsltSyndicationFeedBaseFilter(){
+	KalturaGenericXsltSyndicationFeedBaseFilter.super_.call(this);
+}
+module.exports.KalturaGenericXsltSyndicationFeedBaseFilter = KalturaGenericXsltSyndicationFeedBaseFilter;
+
+util.inherits(KalturaGenericXsltSyndicationFeedBaseFilter, KalturaGenericSyndicationFeedFilter);
+
+
+/**
+ */
+function KalturaLiveStreamAdminEntry(){
+	KalturaLiveStreamAdminEntry.super_.call(this);
+}
+module.exports.KalturaLiveStreamAdminEntry = KalturaLiveStreamAdminEntry;
+
+util.inherits(KalturaLiveStreamAdminEntry, KalturaLiveStreamEntry);
+
+
+/**
+ */
+function KalturaPlaylistFilter(){
+	KalturaPlaylistFilter.super_.call(this);
+}
+module.exports.KalturaPlaylistFilter = KalturaPlaylistFilter;
+
+util.inherits(KalturaPlaylistFilter, KalturaPlaylistBaseFilter);
+
+
+/**
+ */
+function KalturaSshDropFolderBaseFilter(){
+	KalturaSshDropFolderBaseFilter.super_.call(this);
+}
+module.exports.KalturaSshDropFolderBaseFilter = KalturaSshDropFolderBaseFilter;
+
+util.inherits(KalturaSshDropFolderBaseFilter, KalturaRemoteDropFolderFilter);
+
+
+/**
+ * @param typeIn string .
+ */
+function KalturaThumbAssetFilter(){
+	KalturaThumbAssetFilter.super_.call(this);
+	this.typeIn = null;
+}
+module.exports.KalturaThumbAssetFilter = KalturaThumbAssetFilter;
+
+util.inherits(KalturaThumbAssetFilter, KalturaThumbAssetBaseFilter);
+
+
+/**
+ */
+function KalturaThumbParamsFilter(){
+	KalturaThumbParamsFilter.super_.call(this);
+}
+module.exports.KalturaThumbParamsFilter = KalturaThumbParamsFilter;
+
+util.inherits(KalturaThumbParamsFilter, KalturaThumbParamsBaseFilter);
 
 
 /**
@@ -12964,12 +13236,12 @@ util.inherits(KalturaCaptionAssetItemFilter, KalturaCaptionAssetFilter);
 
 /**
  */
-function KalturaDeliveryProfileGenericRtmpBaseFilter(){
-	KalturaDeliveryProfileGenericRtmpBaseFilter.super_.call(this);
+function KalturaDeliveryProfileGenericRtmpFilter(){
+	KalturaDeliveryProfileGenericRtmpFilter.super_.call(this);
 }
-module.exports.KalturaDeliveryProfileGenericRtmpBaseFilter = KalturaDeliveryProfileGenericRtmpBaseFilter;
+module.exports.KalturaDeliveryProfileGenericRtmpFilter = KalturaDeliveryProfileGenericRtmpFilter;
 
-util.inherits(KalturaDeliveryProfileGenericRtmpBaseFilter, KalturaDeliveryProfileRtmpFilter);
+util.inherits(KalturaDeliveryProfileGenericRtmpFilter, KalturaDeliveryProfileGenericRtmpBaseFilter);
 
 
 /**
@@ -13002,22 +13274,22 @@ util.inherits(KalturaFlavorParamsOutputBaseFilter, KalturaFlavorParamsFilter);
 
 /**
  */
-function KalturaFtpDropFolderBaseFilter(){
-	KalturaFtpDropFolderBaseFilter.super_.call(this);
+function KalturaFtpDropFolderFilter(){
+	KalturaFtpDropFolderFilter.super_.call(this);
 }
-module.exports.KalturaFtpDropFolderBaseFilter = KalturaFtpDropFolderBaseFilter;
+module.exports.KalturaFtpDropFolderFilter = KalturaFtpDropFolderFilter;
 
-util.inherits(KalturaFtpDropFolderBaseFilter, KalturaRemoteDropFolderFilter);
+util.inherits(KalturaFtpDropFolderFilter, KalturaFtpDropFolderBaseFilter);
 
 
 /**
  */
-function KalturaGenericXsltSyndicationFeedBaseFilter(){
-	KalturaGenericXsltSyndicationFeedBaseFilter.super_.call(this);
+function KalturaGenericXsltSyndicationFeedFilter(){
+	KalturaGenericXsltSyndicationFeedFilter.super_.call(this);
 }
-module.exports.KalturaGenericXsltSyndicationFeedBaseFilter = KalturaGenericXsltSyndicationFeedBaseFilter;
+module.exports.KalturaGenericXsltSyndicationFeedFilter = KalturaGenericXsltSyndicationFeedFilter;
 
-util.inherits(KalturaGenericXsltSyndicationFeedBaseFilter, KalturaGenericSyndicationFeedFilter);
+util.inherits(KalturaGenericXsltSyndicationFeedFilter, KalturaGenericXsltSyndicationFeedBaseFilter);
 
 
 /**
@@ -13052,16 +13324,6 @@ util.inherits(KalturaLiveParamsBaseFilter, KalturaFlavorParamsFilter);
 
 /**
  */
-function KalturaLiveStreamAdminEntry(){
-	KalturaLiveStreamAdminEntry.super_.call(this);
-}
-module.exports.KalturaLiveStreamAdminEntry = KalturaLiveStreamAdminEntry;
-
-util.inherits(KalturaLiveStreamAdminEntry, KalturaLiveStreamEntry);
-
-
-/**
- */
 function KalturaMediaFlavorParamsBaseFilter(){
 	KalturaMediaFlavorParamsBaseFilter.super_.call(this);
 }
@@ -13092,12 +13354,12 @@ util.inherits(KalturaPdfFlavorParamsBaseFilter, KalturaFlavorParamsFilter);
 
 /**
  */
-function KalturaSshDropFolderBaseFilter(){
-	KalturaSshDropFolderBaseFilter.super_.call(this);
+function KalturaSshDropFolderFilter(){
+	KalturaSshDropFolderFilter.super_.call(this);
 }
-module.exports.KalturaSshDropFolderBaseFilter = KalturaSshDropFolderBaseFilter;
+module.exports.KalturaSshDropFolderFilter = KalturaSshDropFolderFilter;
 
-util.inherits(KalturaSshDropFolderBaseFilter, KalturaRemoteDropFolderFilter);
+util.inherits(KalturaSshDropFolderFilter, KalturaSshDropFolderBaseFilter);
 
 
 /**
@@ -13130,16 +13392,6 @@ util.inherits(KalturaThumbParamsOutputBaseFilter, KalturaThumbParamsFilter);
 
 /**
  */
-function KalturaDeliveryProfileGenericRtmpFilter(){
-	KalturaDeliveryProfileGenericRtmpFilter.super_.call(this);
-}
-module.exports.KalturaDeliveryProfileGenericRtmpFilter = KalturaDeliveryProfileGenericRtmpFilter;
-
-util.inherits(KalturaDeliveryProfileGenericRtmpFilter, KalturaDeliveryProfileGenericRtmpBaseFilter);
-
-
-/**
- */
 function KalturaDocumentFlavorParamsFilter(){
 	KalturaDocumentFlavorParamsFilter.super_.call(this);
 }
@@ -13156,26 +13408,6 @@ function KalturaFlavorParamsOutputFilter(){
 module.exports.KalturaFlavorParamsOutputFilter = KalturaFlavorParamsOutputFilter;
 
 util.inherits(KalturaFlavorParamsOutputFilter, KalturaFlavorParamsOutputBaseFilter);
-
-
-/**
- */
-function KalturaFtpDropFolderFilter(){
-	KalturaFtpDropFolderFilter.super_.call(this);
-}
-module.exports.KalturaFtpDropFolderFilter = KalturaFtpDropFolderFilter;
-
-util.inherits(KalturaFtpDropFolderFilter, KalturaFtpDropFolderBaseFilter);
-
-
-/**
- */
-function KalturaGenericXsltSyndicationFeedFilter(){
-	KalturaGenericXsltSyndicationFeedFilter.super_.call(this);
-}
-module.exports.KalturaGenericXsltSyndicationFeedFilter = KalturaGenericXsltSyndicationFeedFilter;
-
-util.inherits(KalturaGenericXsltSyndicationFeedFilter, KalturaGenericXsltSyndicationFeedBaseFilter);
 
 
 /**
@@ -13240,12 +13472,22 @@ util.inherits(KalturaPdfFlavorParamsFilter, KalturaPdfFlavorParamsBaseFilter);
 
 /**
  */
-function KalturaSshDropFolderFilter(){
-	KalturaSshDropFolderFilter.super_.call(this);
+function KalturaScpDropFolderBaseFilter(){
+	KalturaScpDropFolderBaseFilter.super_.call(this);
 }
-module.exports.KalturaSshDropFolderFilter = KalturaSshDropFolderFilter;
+module.exports.KalturaScpDropFolderBaseFilter = KalturaScpDropFolderBaseFilter;
 
-util.inherits(KalturaSshDropFolderFilter, KalturaSshDropFolderBaseFilter);
+util.inherits(KalturaScpDropFolderBaseFilter, KalturaSshDropFolderFilter);
+
+
+/**
+ */
+function KalturaSftpDropFolderBaseFilter(){
+	KalturaSftpDropFolderBaseFilter.super_.call(this);
+}
+module.exports.KalturaSftpDropFolderBaseFilter = KalturaSftpDropFolderBaseFilter;
+
+util.inherits(KalturaSftpDropFolderBaseFilter, KalturaSshDropFolderFilter);
 
 
 /**
@@ -13338,22 +13580,22 @@ util.inherits(KalturaPdfFlavorParamsOutputBaseFilter, KalturaFlavorParamsOutputF
 
 /**
  */
-function KalturaScpDropFolderBaseFilter(){
-	KalturaScpDropFolderBaseFilter.super_.call(this);
+function KalturaScpDropFolderFilter(){
+	KalturaScpDropFolderFilter.super_.call(this);
 }
-module.exports.KalturaScpDropFolderBaseFilter = KalturaScpDropFolderBaseFilter;
+module.exports.KalturaScpDropFolderFilter = KalturaScpDropFolderFilter;
 
-util.inherits(KalturaScpDropFolderBaseFilter, KalturaSshDropFolderFilter);
+util.inherits(KalturaScpDropFolderFilter, KalturaScpDropFolderBaseFilter);
 
 
 /**
  */
-function KalturaSftpDropFolderBaseFilter(){
-	KalturaSftpDropFolderBaseFilter.super_.call(this);
+function KalturaSftpDropFolderFilter(){
+	KalturaSftpDropFolderFilter.super_.call(this);
 }
-module.exports.KalturaSftpDropFolderBaseFilter = KalturaSftpDropFolderBaseFilter;
+module.exports.KalturaSftpDropFolderFilter = KalturaSftpDropFolderFilter;
 
-util.inherits(KalturaSftpDropFolderBaseFilter, KalturaSshDropFolderFilter);
+util.inherits(KalturaSftpDropFolderFilter, KalturaSftpDropFolderBaseFilter);
 
 
 /**
@@ -13428,26 +13670,6 @@ function KalturaPdfFlavorParamsOutputFilter(){
 module.exports.KalturaPdfFlavorParamsOutputFilter = KalturaPdfFlavorParamsOutputFilter;
 
 util.inherits(KalturaPdfFlavorParamsOutputFilter, KalturaPdfFlavorParamsOutputBaseFilter);
-
-
-/**
- */
-function KalturaScpDropFolderFilter(){
-	KalturaScpDropFolderFilter.super_.call(this);
-}
-module.exports.KalturaScpDropFolderFilter = KalturaScpDropFolderFilter;
-
-util.inherits(KalturaScpDropFolderFilter, KalturaScpDropFolderBaseFilter);
-
-
-/**
- */
-function KalturaSftpDropFolderFilter(){
-	KalturaSftpDropFolderFilter.super_.call(this);
-}
-module.exports.KalturaSftpDropFolderFilter = KalturaSftpDropFolderFilter;
-
-util.inherits(KalturaSftpDropFolderFilter, KalturaSftpDropFolderBaseFilter);
 
 
 /**

@@ -5329,6 +5329,119 @@ KalturaReportService.prototype.execute = function(callback, id, params){
 };
 
 /**
+ *Class definition for the Kaltura service: responseProfile.
+ * The available service actions:
+ * @action add Add new response profile.
+ * @action get Get response profile by id.
+ * @action update Update response profile by id.
+ * @action updateStatus Update response profile status by id.
+ * @action delete Delete response profile by id.
+ * @action list List response profiles by filter and pager.
+ */
+function KalturaResponseProfileService(client){
+	KalturaResponseProfileService.super_.call(this);
+	this.init(client);
+}
+
+util.inherits(KalturaResponseProfileService, kaltura.KalturaServiceBase);
+module.exports.KalturaResponseProfileService = KalturaResponseProfileService;
+
+/**
+ * Add new response profile.
+ * @param addResponseProfile KalturaResponseProfile  (optional).
+ * @return KalturaResponseProfile.
+ */
+KalturaResponseProfileService.prototype.add = function(callback, addResponseProfile){
+	var kparams = {};
+	this.client.addParam(kparams, 'addResponseProfile', kaltura.toParams(addResponseProfile));
+	this.client.queueServiceActionCall('responseprofile', 'add', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Get response profile by id.
+ * @param id int  (optional).
+ * @return KalturaResponseProfile.
+ */
+KalturaResponseProfileService.prototype.get = function(callback, id){
+	var kparams = {};
+	this.client.addParam(kparams, 'id', id);
+	this.client.queueServiceActionCall('responseprofile', 'get', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Update response profile by id.
+ * @param id int  (optional).
+ * @param updateResponseProfile KalturaResponseProfile  (optional).
+ * @return KalturaResponseProfile.
+ */
+KalturaResponseProfileService.prototype.update = function(callback, id, updateResponseProfile){
+	var kparams = {};
+	this.client.addParam(kparams, 'id', id);
+	this.client.addParam(kparams, 'updateResponseProfile', kaltura.toParams(updateResponseProfile));
+	this.client.queueServiceActionCall('responseprofile', 'update', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Update response profile status by id.
+ * @param id int  (optional).
+ * @param status int  (optional, enum: KalturaResponseProfileStatus).
+ * @return KalturaResponseProfile.
+ */
+KalturaResponseProfileService.prototype.updateStatus = function(callback, id, status){
+	var kparams = {};
+	this.client.addParam(kparams, 'id', id);
+	this.client.addParam(kparams, 'status', status);
+	this.client.queueServiceActionCall('responseprofile', 'updateStatus', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Delete response profile by id.
+ * @param id int  (optional).
+ * @return .
+ */
+KalturaResponseProfileService.prototype.deleteAction = function(callback, id){
+	var kparams = {};
+	this.client.addParam(kparams, 'id', id);
+	this.client.queueServiceActionCall('responseprofile', 'delete', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * List response profiles by filter and pager.
+ * @param filter KalturaResponseProfileFilter  (optional, default: null).
+ * @param pager KalturaFilterPager  (optional, default: null).
+ * @return KalturaResponseProfileListResponse.
+ */
+KalturaResponseProfileService.prototype.listAction = function(callback, filter, pager){
+	if(!filter){
+		filter = null;
+	}
+	if(!pager){
+		pager = null;
+	}
+	var kparams = {};
+	if (filter !== null){
+		this.client.addParam(kparams, 'filter', kaltura.toParams(filter));
+	}
+	if (pager !== null){
+		this.client.addParam(kparams, 'pager', kaltura.toParams(pager));
+	}
+	this.client.queueServiceActionCall('responseprofile', 'list', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+
+/**
  *Class definition for the Kaltura service: schema.
  * The available service actions:
  */

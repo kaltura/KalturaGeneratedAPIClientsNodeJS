@@ -43,7 +43,7 @@ module.exports = kaltura;
 module.exports.KalturaClient = KalturaClient;
 
 util.inherits(KalturaClient, kaltura.KalturaClientBase);
-KalturaClient.prototype.apiVersion = '3.1.6';
+KalturaClient.prototype.apiVersion = '3.2.0';
 
 /**
  * Manage access control profiles
@@ -218,6 +218,11 @@ KalturaClient.prototype.playlist = null;
  * @param kaltura.services.KalturaReportService
  */
 KalturaClient.prototype.report = null;
+/**
+ * Manage response profiles
+ * @param kaltura.services.KalturaResponseProfileService
+ */
+KalturaClient.prototype.responseProfile = null;
 /**
  * Expose the schema definitions for syndication MRSS, bulk upload XML and other schema types
  * @param kaltura.services.KalturaSchemaService
@@ -518,6 +523,7 @@ KalturaClient.prototype.init = function(config){
 	this.permission = new kaltura.services.KalturaPermissionService(this);
 	this.playlist = new kaltura.services.KalturaPlaylistService(this);
 	this.report = new kaltura.services.KalturaReportService(this);
+	this.responseProfile = new kaltura.services.KalturaResponseProfileService(this);
 	this.schema = new kaltura.services.KalturaSchemaService(this);
 	this.search = new kaltura.services.KalturaSearchService(this);
 	this.session = new kaltura.services.KalturaSessionService(this);

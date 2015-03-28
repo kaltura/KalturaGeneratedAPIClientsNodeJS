@@ -671,6 +671,17 @@ TOP_PLAYBACK_CONTEXT : 25,
 PARTNER_USAGE : 201,
 };
 
+var KalturaResponseProfileStatus = module.exports.KalturaResponseProfileStatus = {
+DISABLED : 1,
+ENABLED : 2,
+DELETED : 3,
+};
+
+var KalturaResponseProfileType = module.exports.KalturaResponseProfileType = {
+INCLUDE_FIELDS : 1,
+EXCLUDE_FIELDS : 2,
+};
+
 var KalturaResponseType = module.exports.KalturaResponseType = {
 RESPONSE_TYPE_JSON : 1,
 RESPONSE_TYPE_XML : 2,
@@ -692,6 +703,16 @@ ACTIVE : 2,
 DELETED : 3,
 SUSPENDED : 4,
 DRY_RUN_ONLY : 5,
+};
+
+var KalturaSchedulerStatusType = module.exports.KalturaSchedulerStatusType = {
+RUNNING_BATCHES_COUNT : 1,
+RUNNING_BATCHES_CPU : 2,
+RUNNING_BATCHES_MEMORY : 3,
+RUNNING_BATCHES_NETWORK : 4,
+RUNNING_BATCHES_DISC_IO : 5,
+RUNNING_BATCHES_DISC_SPACE : 6,
+RUNNING_BATCHES_IS_RUNNING : 7,
 };
 
 var KalturaSearchOperatorType = module.exports.KalturaSearchOperatorType = {
@@ -2895,13 +2916,6 @@ MEDIAINFO : '0',
 FFMPEG : '1',
 };
 
-var KalturaMediaServerOrderBy = module.exports.KalturaMediaServerOrderBy = {
-CREATED_AT_ASC : '+createdAt',
-UPDATED_AT_ASC : '+updatedAt',
-CREATED_AT_DESC : '-createdAt',
-UPDATED_AT_DESC : '-updatedAt',
-};
-
 var KalturaMetadataObjectType = module.exports.KalturaMetadataObjectType = {
 AD_CUE_POINT : 'adCuePointMetadata.AdCuePoint',
 ANNOTATION : 'annotationMetadata.Annotation',
@@ -3131,6 +3145,13 @@ CREATED_AT_ASC : '+createdAt',
 CREATED_AT_DESC : '-createdAt',
 };
 
+var KalturaResponseProfileOrderBy = module.exports.KalturaResponseProfileOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
 var KalturaRuleActionType = module.exports.KalturaRuleActionType = {
 BLOCK : '1',
 PREVIEW : '2',
@@ -3252,9 +3273,6 @@ CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
-};
-
-var KalturaSyndicationDistributionProviderOrderBy = module.exports.KalturaSyndicationDistributionProviderOrderBy = {
 };
 
 var KalturaSyndicationFeedEntriesOrderBy = module.exports.KalturaSyndicationFeedEntriesOrderBy = {

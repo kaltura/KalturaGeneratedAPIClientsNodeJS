@@ -2731,6 +2731,7 @@ var KalturaLiveParamsOrderBy = module.exports.KalturaLiveParamsOrderBy = {
 };
 
 var KalturaLiveReportOrderBy = module.exports.KalturaLiveReportOrderBy = {
+NAME_ASC : '+name',
 AUDIENCE_DESC : '-audience',
 EVENT_TIME_DESC : '-eventTime',
 PLAYS_DESC : '-plays',
@@ -2924,6 +2925,7 @@ ENTRY : '1',
 CATEGORY : '2',
 USER : '3',
 PARTNER : '4',
+DYNAMIC_OBJECT : '5',
 };
 
 var KalturaMetadataOrderBy = module.exports.KalturaMetadataOrderBy = {

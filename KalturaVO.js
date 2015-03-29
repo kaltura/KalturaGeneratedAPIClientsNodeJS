@@ -5302,10 +5302,12 @@ util.inherits(KalturaAdminUser, KalturaUser);
 
 /**
  * @param filesPermissionInS3 string .
+ * @param s3Region string .
  */
 function KalturaAmazonS3StorageProfile(){
 	KalturaAmazonS3StorageProfile.super_.call(this);
 	this.filesPermissionInS3 = null;
+	this.s3Region = null;
 }
 module.exports.KalturaAmazonS3StorageProfile = KalturaAmazonS3StorageProfile;
 
@@ -11029,7 +11031,7 @@ util.inherits(KalturaMediaInfoFilter, KalturaMediaInfoBaseFilter);
  * @param metadataProfileVersionEqual int .
  * @param metadataProfileVersionGreaterThanOrEqual int .
  * @param metadataProfileVersionLessThanOrEqual int .
- * @param metadataObjectTypeEqual string .
+ * @param metadataObjectTypeEqual string When null, default is KalturaMetadataObjectType::ENTRY.
  * @param objectIdEqual string .
  * @param objectIdIn string .
  * @param versionEqual int .
@@ -11590,10 +11592,12 @@ util.inherits(KalturaAccessControlProfileFilter, KalturaAccessControlProfileBase
 
 /**
  * @param filesPermissionInS3 string .
+ * @param s3Region string .
  */
 function KalturaAmazonS3StorageExportJobData(){
 	KalturaAmazonS3StorageExportJobData.super_.call(this);
 	this.filesPermissionInS3 = null;
+	this.s3Region = null;
 }
 module.exports.KalturaAmazonS3StorageExportJobData = KalturaAmazonS3StorageExportJobData;
 

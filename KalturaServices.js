@@ -7515,6 +7515,7 @@ KalturaXInternalService.prototype.xAddBulkDownload = function(callback, entryIds
  * @action delete Delete an existing metadata.
  * @action invalidate Mark existing metadata as invalid
  * Used by batch metadata transform.
+ * @action index Index metadata by id, will also index the related object.
  * @action updateFromXSL Action transforms current metadata object XML using a provided XSL.
  */
 function KalturaMetadataService(client){
@@ -7711,6 +7712,21 @@ KalturaMetadataService.prototype.invalidate = function(callback, id, version){
 	this.client.addParam(kparams, 'id', id);
 	this.client.addParam(kparams, 'version', version);
 	this.client.queueServiceActionCall('metadata_metadata', 'invalidate', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Index metadata by id, will also index the related object.
+ * @param id string  (optional).
+ * @param shouldUpdate bool  (optional).
+ * @return int.
+ */
+KalturaMetadataService.prototype.index = function(callback, id, shouldUpdate){
+	var kparams = {};
+	this.client.addParam(kparams, 'id', id);
+	this.client.addParam(kparams, 'shouldUpdate', shouldUpdate);
+	this.client.queueServiceActionCall('metadata_metadata', 'index', kparams);
 	if (!this.client.isMultiRequest()){
 		this.client.doQueue(callback);
 	}

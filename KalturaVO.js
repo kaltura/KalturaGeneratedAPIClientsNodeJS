@@ -9538,6 +9538,20 @@ util.inherits(KalturaUrlTokenizerBitGravity, KalturaUrlTokenizer);
 
 
 /**
+ * @param keyPairId string .
+ * @param rootDir string .
+ */
+function KalturaUrlTokenizerCloudFront(){
+	KalturaUrlTokenizerCloudFront.super_.call(this);
+	this.keyPairId = null;
+	this.rootDir = null;
+}
+module.exports.KalturaUrlTokenizerCloudFront = KalturaUrlTokenizerCloudFront;
+
+util.inherits(KalturaUrlTokenizerCloudFront, KalturaUrlTokenizer);
+
+
+/**
  * @param paramName string paramName.
  * @param expiryName string expiryName.
  * @param gen string gen.

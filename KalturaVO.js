@@ -1467,11 +1467,13 @@ util.inherits(KalturaFilterPager, kaltura.KalturaObjectBase);
 /**
  * @param parentProperty string .
  * @param filterProperty string .
+ * @param allowNull bool .
  */
 function KalturaResponseProfileMapping(){
 	KalturaResponseProfileMapping.super_.call(this);
 	this.parentProperty = null;
 	this.filterProperty = null;
+	this.allowNull = null;
 }
 module.exports.KalturaResponseProfileMapping = KalturaResponseProfileMapping;
 
@@ -8464,6 +8466,16 @@ function KalturaMetadataProfileListResponse(){
 module.exports.KalturaMetadataProfileListResponse = KalturaMetadataProfileListResponse;
 
 util.inherits(KalturaMetadataProfileListResponse, KalturaListResponse);
+
+
+/**
+ */
+function KalturaMetadataResponseProfileMapping(){
+	KalturaMetadataResponseProfileMapping.super_.call(this);
+}
+module.exports.KalturaMetadataResponseProfileMapping = KalturaMetadataResponseProfileMapping;
+
+util.inherits(KalturaMetadataResponseProfileMapping, KalturaResponseProfileMapping);
 
 
 /**

@@ -2307,6 +2307,18 @@ util.inherits(KalturaFlavorAsset, KalturaAsset);
 
 
 /**
+ * @param fileName string The name of the downloaded file.
+ */
+function KalturaFlavorAssetUrlOptions(){
+	KalturaFlavorAssetUrlOptions.super_.call(this);
+	this.fileName = null;
+}
+module.exports.KalturaFlavorAssetUrlOptions = KalturaFlavorAssetUrlOptions;
+
+util.inherits(KalturaFlavorAssetUrlOptions, kaltura.KalturaObjectBase);
+
+
+/**
  * @param videoCodec string The video codec of the Flavor Params.
  * @param videoBitrate int The video bitrate (in KBits) of the Flavor Params.
  * @param audioCodec string The audio codec of the Flavor Params.

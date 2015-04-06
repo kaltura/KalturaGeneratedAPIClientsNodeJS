@@ -2450,19 +2450,26 @@ KalturaFlavorAssetService.prototype.deleteAction = function(callback, id){
  * @param id string  (optional).
  * @param storageId int  (optional, default: null).
  * @param forceProxy bool  (optional, default: false).
+ * @param options KalturaFlavorAssetUrlOptions  (optional, default: null).
  * @return string.
  */
-KalturaFlavorAssetService.prototype.getUrl = function(callback, id, storageId, forceProxy){
+KalturaFlavorAssetService.prototype.getUrl = function(callback, id, storageId, forceProxy, options){
 	if(!storageId){
 		storageId = null;
 	}
 	if(!forceProxy){
 		forceProxy = false;
 	}
+	if(!options){
+		options = null;
+	}
 	var kparams = {};
 	this.client.addParam(kparams, 'id', id);
 	this.client.addParam(kparams, 'storageId', storageId);
 	this.client.addParam(kparams, 'forceProxy', forceProxy);
+	if (options !== null){
+		this.client.addParam(kparams, 'options', kaltura.toParams(options));
+	}
 	this.client.queueServiceActionCall('flavorasset', 'getUrl', kparams);
 	if (!this.client.isMultiRequest()){
 		this.client.doQueue(callback);

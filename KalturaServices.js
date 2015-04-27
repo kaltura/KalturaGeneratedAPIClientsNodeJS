@@ -1876,7 +1876,7 @@ KalturaDocumentService.prototype.addFromFlavorAsset = function(callback, sourceF
  * @param entryId string Document entry id (optional).
  * @param conversionProfileId int  (optional, default: null).
  * @param dynamicConversionAttributes array  (optional, default: null).
- * @return int.
+ * @return bigint.
  */
 KalturaDocumentService.prototype.convert = function(callback, entryId, conversionProfileId, dynamicConversionAttributes){
 	if(!conversionProfileId){
@@ -3818,7 +3818,7 @@ KalturaMediaService.prototype.addFromFlavorAsset = function(callback, sourceFlav
  * @param entryId string Media entry id (optional).
  * @param conversionProfileId int  (optional, default: null).
  * @param dynamicConversionAttributes array  (optional, default: null).
- * @return int.
+ * @return bigint.
  */
 KalturaMediaService.prototype.convert = function(callback, entryId, conversionProfileId, dynamicConversionAttributes){
 	if(!conversionProfileId){
@@ -5057,9 +5057,10 @@ KalturaPlaylistService.prototype.listAction = function(callback, filter, pager){
  * @param detailed string  (optional).
  * @param playlistContext KalturaContext  (optional, default: null).
  * @param filter KalturaMediaEntryFilterForPlaylist  (optional, default: null).
+ * @param pager KalturaFilterPager  (optional, default: null).
  * @return array.
  */
-KalturaPlaylistService.prototype.execute = function(callback, id, detailed, playlistContext, filter){
+KalturaPlaylistService.prototype.execute = function(callback, id, detailed, playlistContext, filter, pager){
 	if(!detailed){
 		detailed = '';
 	}
@@ -5069,6 +5070,9 @@ KalturaPlaylistService.prototype.execute = function(callback, id, detailed, play
 	if(!filter){
 		filter = null;
 	}
+	if(!pager){
+		pager = null;
+	}
 	var kparams = {};
 	this.client.addParam(kparams, 'id', id);
 	this.client.addParam(kparams, 'detailed', detailed);
@@ -5077,6 +5081,9 @@ KalturaPlaylistService.prototype.execute = function(callback, id, detailed, play
 	}
 	if (filter !== null){
 		this.client.addParam(kparams, 'filter', kaltura.toParams(filter));
+	}
+	if (pager !== null){
+		this.client.addParam(kparams, 'pager', kaltura.toParams(pager));
 	}
 	this.client.queueServiceActionCall('playlist', 'execute', kparams);
 	if (!this.client.isMultiRequest()){
@@ -5088,16 +5095,23 @@ KalturaPlaylistService.prototype.execute = function(callback, id, detailed, play
  * @param playlistType int  (optional, enum: KalturaPlaylistType).
  * @param playlistContent string  (optional).
  * @param detailed string  (optional).
+ * @param pager KalturaFilterPager  (optional, default: null).
  * @return array.
  */
-KalturaPlaylistService.prototype.executeFromContent = function(callback, playlistType, playlistContent, detailed){
+KalturaPlaylistService.prototype.executeFromContent = function(callback, playlistType, playlistContent, detailed, pager){
 	if(!detailed){
 		detailed = '';
+	}
+	if(!pager){
+		pager = null;
 	}
 	var kparams = {};
 	this.client.addParam(kparams, 'playlistType', playlistType);
 	this.client.addParam(kparams, 'playlistContent', playlistContent);
 	this.client.addParam(kparams, 'detailed', detailed);
+	if (pager !== null){
+		this.client.addParam(kparams, 'pager', kaltura.toParams(pager));
+	}
 	this.client.queueServiceActionCall('playlist', 'executeFromContent', kparams);
 	if (!this.client.isMultiRequest()){
 		this.client.doQueue(callback);
@@ -5107,12 +5121,16 @@ KalturaPlaylistService.prototype.executeFromContent = function(callback, playlis
  * Revrieve playlist for playing purpose, based on media entry filters.
  * @param filters array  (optional).
  * @param totalResults int  (optional).
- * @param detailed string  (optional).
+ * @param detailed string  (optional, default: 1).
+ * @param pager KalturaFilterPager  (optional, default: null).
  * @return array.
  */
-KalturaPlaylistService.prototype.executeFromFilters = function(callback, filters, totalResults, detailed){
+KalturaPlaylistService.prototype.executeFromFilters = function(callback, filters, totalResults, detailed, pager){
 	if(!detailed){
-		detailed = '';
+		detailed = 1;
+	}
+	if(!pager){
+		pager = null;
 	}
 	var kparams = {};
 for(var index in filters)
@@ -5122,6 +5140,9 @@ for(var index in filters)
 }
 	this.client.addParam(kparams, 'totalResults', totalResults);
 	this.client.addParam(kparams, 'detailed', detailed);
+	if (pager !== null){
+		this.client.addParam(kparams, 'pager', kaltura.toParams(pager));
+	}
 	this.client.queueServiceActionCall('playlist', 'executeFromFilters', kparams);
 	if (!this.client.isMultiRequest()){
 		this.client.doQueue(callback);
@@ -8131,7 +8152,7 @@ KalturaDocumentsService.prototype.addFromFlavorAsset = function(callback, source
  * @param entryId string Document entry id (optional).
  * @param conversionProfileId int  (optional, default: null).
  * @param dynamicConversionAttributes array  (optional, default: null).
- * @return int.
+ * @return bigint.
  */
 KalturaDocumentsService.prototype.convert = function(callback, entryId, conversionProfileId, dynamicConversionAttributes){
 	if(!conversionProfileId){

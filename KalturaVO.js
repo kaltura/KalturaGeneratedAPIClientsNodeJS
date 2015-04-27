@@ -1077,6 +1077,20 @@ util.inherits(KalturaCategoryUser, kaltura.KalturaObjectBase);
 
 
 /**
+ * @param clientTag string .
+ * @param apiVersion string .
+ */
+function KalturaClientConfiguration(){
+	KalturaClientConfiguration.super_.call(this);
+	this.clientTag = null;
+	this.apiVersion = null;
+}
+module.exports.KalturaClientConfiguration = KalturaClientConfiguration;
+
+util.inherits(KalturaClientConfiguration, kaltura.KalturaObjectBase);
+
+
+/**
  * @param url string The URL where the notification should be sent to.
  * @param data string The serialized notification data to send.
  */
@@ -2186,6 +2200,34 @@ function KalturaFeatureStatus(){
 module.exports.KalturaFeatureStatus = KalturaFeatureStatus;
 
 util.inherits(KalturaFeatureStatus, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param itemXPath string .
+ * @param itemPublishDateXPath string .
+ * @param itemUniqueIdentifierXPath string .
+ * @param itemContentFileSizeXPath string .
+ * @param itemContentUrlXPath string .
+ * @param itemContentBitrateXPath string .
+ * @param itemHashXPath string .
+ * @param itemContentXpath string .
+ * @param contentBitrateAttributeName string .
+ */
+function KalturaFeedItemInfo(){
+	KalturaFeedItemInfo.super_.call(this);
+	this.itemXPath = null;
+	this.itemPublishDateXPath = null;
+	this.itemUniqueIdentifierXPath = null;
+	this.itemContentFileSizeXPath = null;
+	this.itemContentUrlXPath = null;
+	this.itemContentBitrateXPath = null;
+	this.itemHashXPath = null;
+	this.itemContentXpath = null;
+	this.contentBitrateAttributeName = null;
+}
+module.exports.KalturaFeedItemInfo = KalturaFeedItemInfo;
+
+util.inherits(KalturaFeedItemInfo, kaltura.KalturaObjectBase);
 
 
 /**
@@ -3904,6 +3946,22 @@ function KalturaReportTotal(){
 module.exports.KalturaReportTotal = KalturaReportTotal;
 
 util.inherits(KalturaReportTotal, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param partnerId int Impersonated partner id.
+ * @param ks string Kaltura API session.
+ * @param responseProfile KalturaBaseResponseProfile Response profile.
+ */
+function KalturaRequestConfiguration(){
+	KalturaRequestConfiguration.super_.call(this);
+	this.partnerId = null;
+	this.ks = null;
+	this.responseProfile = null;
+}
+module.exports.KalturaRequestConfiguration = KalturaRequestConfiguration;
+
+util.inherits(KalturaRequestConfiguration, kaltura.KalturaObjectBase);
 
 
 /**
@@ -6680,36 +6738,6 @@ util.inherits(KalturaDeliveryProfileRtmp, KalturaDeliveryProfile);
 
 
 /**
- * @param idEqual int .
- * @param idIn string .
- * @param systemNameEqual string .
- * @param systemNameIn string .
- * @param createdAtGreaterThanOrEqual int .
- * @param createdAtLessThanOrEqual int .
- * @param updatedAtGreaterThanOrEqual int .
- * @param updatedAtLessThanOrEqual int .
- * @param statusEqual int .
- * @param statusIn string .
- */
-function KalturaDetachedResponseProfileFilter(){
-	KalturaDetachedResponseProfileFilter.super_.call(this);
-	this.idEqual = null;
-	this.idIn = null;
-	this.systemNameEqual = null;
-	this.systemNameIn = null;
-	this.createdAtGreaterThanOrEqual = null;
-	this.createdAtLessThanOrEqual = null;
-	this.updatedAtGreaterThanOrEqual = null;
-	this.updatedAtLessThanOrEqual = null;
-	this.statusEqual = null;
-	this.statusIn = null;
-}
-module.exports.KalturaDetachedResponseProfileFilter = KalturaDetachedResponseProfileFilter;
-
-util.inherits(KalturaDetachedResponseProfileFilter, KalturaFilter);
-
-
-/**
  * @param directoryRestrictionType int Kaltura directory restriction type.
  */
 function KalturaDirectoryRestriction(){
@@ -7696,6 +7724,34 @@ function KalturaFeatureStatusListResponse(){
 module.exports.KalturaFeatureStatusListResponse = KalturaFeatureStatusListResponse;
 
 util.inherits(KalturaFeatureStatusListResponse, KalturaListResponse);
+
+
+/**
+ * @param itemHandlingLimit int .
+ * @param feedItemInfo KalturaFeedItemInfo .
+ */
+function KalturaFeedDropFolder(){
+	KalturaFeedDropFolder.super_.call(this);
+	this.itemHandlingLimit = null;
+	this.feedItemInfo = null;
+}
+module.exports.KalturaFeedDropFolder = KalturaFeedDropFolder;
+
+util.inherits(KalturaFeedDropFolder, KalturaDropFolder);
+
+
+/**
+ * @param hash string MD5 or Sha1 encrypted string.
+ * @param feedXmlPath string Path of the original Feed content XML.
+ */
+function KalturaFeedDropFolderFile(){
+	KalturaFeedDropFolderFile.super_.call(this);
+	this.hash = null;
+	this.feedXmlPath = null;
+}
+module.exports.KalturaFeedDropFolderFile = KalturaFeedDropFolderFile;
+
+util.inherits(KalturaFeedDropFolderFile, KalturaDropFolderFile);
 
 
 /**
@@ -8833,6 +8889,36 @@ function KalturaReportListResponse(){
 module.exports.KalturaReportListResponse = KalturaReportListResponse;
 
 util.inherits(KalturaReportListResponse, KalturaListResponse);
+
+
+/**
+ * @param idEqual int .
+ * @param idIn string .
+ * @param systemNameEqual string .
+ * @param systemNameIn string .
+ * @param createdAtGreaterThanOrEqual int .
+ * @param createdAtLessThanOrEqual int .
+ * @param updatedAtGreaterThanOrEqual int .
+ * @param updatedAtLessThanOrEqual int .
+ * @param statusEqual int .
+ * @param statusIn string .
+ */
+function KalturaResponseProfileBaseFilter(){
+	KalturaResponseProfileBaseFilter.super_.call(this);
+	this.idEqual = null;
+	this.idIn = null;
+	this.systemNameEqual = null;
+	this.systemNameIn = null;
+	this.createdAtGreaterThanOrEqual = null;
+	this.createdAtLessThanOrEqual = null;
+	this.updatedAtGreaterThanOrEqual = null;
+	this.updatedAtLessThanOrEqual = null;
+	this.statusEqual = null;
+	this.statusIn = null;
+}
+module.exports.KalturaResponseProfileBaseFilter = KalturaResponseProfileBaseFilter;
+
+util.inherits(KalturaResponseProfileBaseFilter, KalturaFilter);
 
 
 /**
@@ -11351,7 +11437,7 @@ function KalturaResponseProfileFilter(){
 }
 module.exports.KalturaResponseProfileFilter = KalturaResponseProfileFilter;
 
-util.inherits(KalturaResponseProfileFilter, KalturaDetachedResponseProfileFilter);
+util.inherits(KalturaResponseProfileFilter, KalturaResponseProfileBaseFilter);
 
 
 /**

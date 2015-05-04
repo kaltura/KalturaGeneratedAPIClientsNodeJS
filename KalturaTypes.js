@@ -1820,6 +1820,7 @@ UPDATED_AT_DESC : '-updatedAt',
 };
 
 var KalturaDropFolderType = module.exports.KalturaDropFolderType = {
+FEED : 'FeedDropFolder.FEED',
 LOCAL : '1',
 FTP : '2',
 SCP : '3',

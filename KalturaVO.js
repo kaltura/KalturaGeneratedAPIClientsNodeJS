@@ -1378,6 +1378,7 @@ util.inherits(KalturaUrlTokenizer, kaltura.KalturaObjectBase);
  * @param isDefault int True if this is the systemwide default for the protocol (readOnly).
  * @param parentId int the object from which this object was cloned (or 0) (readOnly).
  * @param mediaProtocols string Comma separated list of supported media protocols. f.i. rtmpe.
+ * @param priority int priority used for ordering similar delivery profiles.
  */
 function KalturaDeliveryProfile(){
 	KalturaDeliveryProfile.super_.call(this);
@@ -1398,6 +1399,7 @@ function KalturaDeliveryProfile(){
 	this.isDefault = null;
 	this.parentId = null;
 	this.mediaProtocols = null;
+	this.priority = null;
 }
 module.exports.KalturaDeliveryProfile = KalturaDeliveryProfile;
 

@@ -7425,6 +7425,22 @@ util.inherits(KalturaEmailNotificationUserRecipientProvider, KalturaEmailNotific
 
 
 /**
+ * @param contentLike string .
+ * @param contentMultiLikeOr string .
+ * @param contentMultiLikeAnd string .
+ */
+function KalturaEntryCaptionAssetSearchItem(){
+	KalturaEntryCaptionAssetSearchItem.super_.call(this);
+	this.contentLike = null;
+	this.contentMultiLikeOr = null;
+	this.contentMultiLikeAnd = null;
+}
+module.exports.KalturaEntryCaptionAssetSearchItem = KalturaEntryCaptionAssetSearchItem;
+
+util.inherits(KalturaEntryCaptionAssetSearchItem, KalturaSearchItem);
+
+
+/**
  * @param entryId string The entry ID in the context of which the playlist should be built.
  * @param followEntryRedirect int Is this a redirected entry followup?.
  */

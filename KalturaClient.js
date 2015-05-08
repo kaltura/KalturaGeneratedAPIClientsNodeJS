@@ -36,6 +36,8 @@ kaltura.services = require('./KalturaServices');
 kaltura.enums = require('./KalturaTypes');
 
 function KalturaClient(config) {
+	this.setApiVersion('3.2.0');
+	this.setClientTag('node:15-05-08');
 	this.init(config);
 }
 
@@ -43,7 +45,6 @@ module.exports = kaltura;
 module.exports.KalturaClient = KalturaClient;
 
 util.inherits(KalturaClient, kaltura.KalturaClientBase);
-KalturaClient.prototype.apiVersion = '3.2.0';
 
 /**
  * Manage access control profiles
@@ -576,3 +577,110 @@ KalturaClient.prototype.init = function(config){
 	this.liveConversionProfile = new kaltura.services.KalturaLiveConversionProfileService(this);
 	this.scheduledTaskProfile = new kaltura.services.KalturaScheduledTaskProfileService(this);
 };
+/**
+ * @param string clientTag
+ */
+KalturaClient.prototype.setClientTag = function(clientTag){
+	this.clientConfiguration['clientTag'] = clientTag;
+};
+
+/**
+ * @return string
+ */
+KalturaClient.prototype.getClientTag = function(){
+	return this.clientConfiguration['clientTag'];
+};
+
+/**
+ * @param string apiVersion
+ */
+KalturaClient.prototype.setApiVersion = function(apiVersion){
+	this.clientConfiguration['apiVersion'] = apiVersion;
+};
+
+/**
+ * @return string
+ */
+KalturaClient.prototype.getApiVersion = function(){
+	return this.clientConfiguration['apiVersion'];
+};
+
+/**
+ * Impersonated partner id
+ * 
+ * @param int partnerId
+ */
+KalturaClient.prototype.setPartnerId = function(partnerId){
+	this.requestConfiguration['partnerId'] = partnerId;
+};
+
+/**
+ * Impersonated partner id
+ * 
+ * @return int
+ */
+KalturaClient.prototype.getPartnerId = function(){
+	return this.requestConfiguration['partnerId'];
+};
+
+/**
+ * Kaltura API session
+ * 
+ * @param string ks
+ */
+KalturaClient.prototype.setKs = function(ks){
+	this.requestConfiguration['ks'] = ks;
+};
+
+/**
+ * Kaltura API session
+ * 
+ * @return string
+ */
+KalturaClient.prototype.getKs = function(){
+	return this.requestConfiguration['ks'];
+};
+
+/**
+ * Kaltura API session
+ * 
+ * @param string sessionId
+ */
+KalturaClient.prototype.setSessionId = function(sessionId){
+	this.requestConfiguration['ks'] = sessionId;
+};
+
+/**
+ * Kaltura API session
+ * 
+ * @return string
+ */
+KalturaClient.prototype.getSessionId = function(){
+	return this.requestConfiguration['ks'];
+};
+
+/**
+ * Response profile
+ * 
+ * @param KalturaBaseResponseProfile responseProfile
+ */
+KalturaClient.prototype.setResponseProfile = function(responseProfile){
+	this.requestConfiguration['responseProfile'] = responseProfile;
+};
+
+/**
+ * Response profile
+ * 
+ * @return KalturaBaseResponseProfile
+ */
+KalturaClient.prototype.getResponseProfile = function(){
+	return this.requestConfiguration['responseProfile'];
+};
+
+/**
+ * Clear all volatile configuration parameters
+ */
+KalturaClient.prototype.resetRequest = function(){
+	delete this.requestConfiguration['responseProfile'];
+};
+

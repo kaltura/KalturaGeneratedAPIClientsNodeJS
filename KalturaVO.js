@@ -264,6 +264,8 @@ util.inherits(KalturaCuePoint, kaltura.KalturaObjectBase);
  * @param depth int Depth in the tree (readOnly).
  * @param childrenCount int Number of all descendants (readOnly).
  * @param directChildrenCount int Number of children, first generation only (readOnly).
+ * @param isPublic int Is the annotation public.
+ * @param searchableOnEntry int Should the cue point get indexed on the entry.
  */
 function KalturaAnnotation(){
 	KalturaAnnotation.super_.call(this);
@@ -274,6 +276,8 @@ function KalturaAnnotation(){
 	this.depth = null;
 	this.childrenCount = null;
 	this.directChildrenCount = null;
+	this.isPublic = null;
+	this.searchableOnEntry = null;
 }
 module.exports.KalturaAnnotation = KalturaAnnotation;
 
@@ -12624,6 +12628,7 @@ util.inherits(KalturaAmazonS3StorageProfileFilter, KalturaAmazonS3StorageProfile
  * @param endTimeLessThanOrEqual int .
  * @param durationGreaterThanOrEqual int .
  * @param durationLessThanOrEqual int .
+ * @param isPublicEqual int .
  */
 function KalturaAnnotationBaseFilter(){
 	KalturaAnnotationBaseFilter.super_.call(this);
@@ -12636,6 +12641,7 @@ function KalturaAnnotationBaseFilter(){
 	this.endTimeLessThanOrEqual = null;
 	this.durationGreaterThanOrEqual = null;
 	this.durationLessThanOrEqual = null;
+	this.isPublicEqual = null;
 }
 module.exports.KalturaAnnotationBaseFilter = KalturaAnnotationBaseFilter;
 

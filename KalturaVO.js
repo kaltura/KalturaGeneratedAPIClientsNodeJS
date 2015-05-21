@@ -482,7 +482,7 @@ util.inherits(KalturaOperationAttributes, kaltura.KalturaObjectBase);
  * @param searchText string Indexed search text for full text search (readOnly).
  * @param licenseType int License type used for this entry.
  * @param version int Version of the entry data (readOnly).
- * @param thumbnailUrl string Thumbnail URL (insertOnly).
+ * @param thumbnailUrl string Thumbnail URL (readOnly).
  * @param accessControlId int The Access Control ID assigned to this entry (null when not set, send -1 to remove).
  * @param startDate int Entry scheduling start date (null when not set, send -1 to remove).
  * @param endDate int Entry scheduling end date (null when not set, send -1 to remove).
@@ -3799,6 +3799,16 @@ util.inherits(KalturaPlaylist, KalturaBaseEntry);
 
 
 /**
+ */
+function KalturaPluginData(){
+	KalturaPluginData.super_.call(this);
+}
+module.exports.KalturaPluginData = KalturaPluginData;
+
+util.inherits(KalturaPluginData, kaltura.KalturaObjectBase);
+
+
+/**
  * @param storageProfileId int  (readOnly).
  * @param uri string  (readOnly).
  */
@@ -6964,6 +6974,19 @@ util.inherits(KalturaDocumentListResponse, KalturaListResponse);
 
 
 /**
+ * @param flavorData string For the uDRM we give the drm context data which is a json encoding of an array containing the uDRM data
+ * for each flavor that is required from this getContextData request.
+ */
+function KalturaDrmEntryContextPluginData(){
+	KalturaDrmEntryContextPluginData.super_.call(this);
+	this.flavorData = null;
+}
+module.exports.KalturaDrmEntryContextPluginData = KalturaDrmEntryContextPluginData;
+
+util.inherits(KalturaDrmEntryContextPluginData, KalturaPluginData);
+
+
+/**
  * @param idEqual int .
  * @param idIn string .
  * @param partnerIdEqual int .
@@ -7491,6 +7514,7 @@ util.inherits(KalturaEntryContextDataParams, KalturaAccessControlScope);
  * @param accessControlMessages array Array of messages as received from the access control rules that invalidated.
  * @param accessControlActions array Array of actions as received from the access control rules that invalidated.
  * @param flavorAssets array Array of allowed flavor assets according to access control limitations and requested tags.
+ * @param pluginData map Array of allowed flavor assets according to access control limitations and requested tags.
  */
 function KalturaEntryContextDataResult(){
 	KalturaEntryContextDataResult.super_.call(this);
@@ -7508,6 +7532,7 @@ function KalturaEntryContextDataResult(){
 	this.accessControlMessages = null;
 	this.accessControlActions = null;
 	this.flavorAssets = null;
+	this.pluginData = null;
 }
 module.exports.KalturaEntryContextDataResult = KalturaEntryContextDataResult;
 

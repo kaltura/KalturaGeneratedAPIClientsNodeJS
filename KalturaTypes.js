@@ -3162,6 +3162,7 @@ BLOCK : '1',
 PREVIEW : '2',
 LIMIT_FLAVORS : '3',
 ADD_TO_STORAGE : '4',
+LIMIT_DELIVERY_PROFILES : '5',
 };
 
 var KalturaScheduledTaskProfileOrderBy = module.exports.KalturaScheduledTaskProfileOrderBy = {

@@ -5307,6 +5307,20 @@ util.inherits(KalturaAccessControlBlockAction, KalturaRuleAction);
 
 
 /**
+ * @param deliveryProfileIds string Comma separated list of delivery profile ids.
+ * @param isBlockedList bool .
+ */
+function KalturaAccessControlLimitDeliveryProfilesAction(){
+	KalturaAccessControlLimitDeliveryProfilesAction.super_.call(this);
+	this.deliveryProfileIds = null;
+	this.isBlockedList = null;
+}
+module.exports.KalturaAccessControlLimitDeliveryProfilesAction = KalturaAccessControlLimitDeliveryProfilesAction;
+
+util.inherits(KalturaAccessControlLimitDeliveryProfilesAction, KalturaRuleAction);
+
+
+/**
  * @param flavorParamsIds string Comma separated list of flavor ids.
  * @param isBlockedList bool .
  */

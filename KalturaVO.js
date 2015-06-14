@@ -897,6 +897,7 @@ util.inherits(KalturaCEError, kaltura.KalturaObjectBase);
  * @param label string Friendly label.
  * @param format string The caption format (insertOnly).
  * @param status int The status of the asset (readOnly).
+ * @param parentId string The parent id of the asset (insertOnly).
  */
 function KalturaCaptionAsset(){
 	KalturaCaptionAsset.super_.call(this);
@@ -907,6 +908,7 @@ function KalturaCaptionAsset(){
 	this.label = null;
 	this.format = null;
 	this.status = null;
+	this.parentId = null;
 }
 module.exports.KalturaCaptionAsset = KalturaCaptionAsset;
 
@@ -1840,6 +1842,42 @@ function KalturaDropFolderFile(){
 module.exports.KalturaDropFolderFile = KalturaDropFolderFile;
 
 util.inherits(KalturaDropFolderFile, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param id int  (readOnly).
+ * @param createdAt int  (readOnly).
+ * @param updatedAt int  (readOnly).
+ * @param partnerId int  (readOnly).
+ * @param name string edgeServer name.
+ * @param systemName string edgeServer uniqe system name.
+ * @param desciption string edgeServer description.
+ * @param status int .
+ * @param tags string edgeServer tags.
+ * @param hostName string edgeServer host name.
+ * @param playbackHostName string edgeServer playback hostName.
+ * @param deliveryProfileIds string Delivery profile ids comma seperated.
+ * @param parentId int Id of the parent edge server.
+ */
+function KalturaEdgeServer(){
+	KalturaEdgeServer.super_.call(this);
+	this.id = null;
+	this.createdAt = null;
+	this.updatedAt = null;
+	this.partnerId = null;
+	this.name = null;
+	this.systemName = null;
+	this.desciption = null;
+	this.status = null;
+	this.tags = null;
+	this.hostName = null;
+	this.playbackHostName = null;
+	this.deliveryProfileIds = null;
+	this.parentId = null;
+}
+module.exports.KalturaEdgeServer = KalturaEdgeServer;
+
+util.inherits(KalturaEdgeServer, kaltura.KalturaObjectBase);
 
 
 /**
@@ -7206,6 +7244,74 @@ util.inherits(KalturaDropFolderXmlBulkUploadFileHandlerConfig, KalturaDropFolder
 
 
 /**
+ * @param idEqual int .
+ * @param idIn string .
+ * @param createdAtGreaterThanOrEqual int .
+ * @param createdAtLessThanOrEqual int .
+ * @param updatedAtGreaterThanOrEqual int .
+ * @param updatedAtLessThanOrEqual int .
+ * @param nameEqual string .
+ * @param nameIn string .
+ * @param systemNameEqual string .
+ * @param systemNameIn string .
+ * @param statusEqual int .
+ * @param statusIn string .
+ * @param tagsLike string .
+ * @param tagsMultiLikeOr string .
+ * @param tagsMultiLikeAnd string .
+ * @param hostNameLike string .
+ * @param hostNameMultiLikeOr string .
+ * @param hostNameMultiLikeAnd string .
+ * @param playbackHostNameLike string .
+ * @param playbackHostNameMultiLikeOr string .
+ * @param playbackHostNameMultiLikeAnd string .
+ * @param parentIdEqual int .
+ * @param parentIdIn string .
+ */
+function KalturaEdgeServerBaseFilter(){
+	KalturaEdgeServerBaseFilter.super_.call(this);
+	this.idEqual = null;
+	this.idIn = null;
+	this.createdAtGreaterThanOrEqual = null;
+	this.createdAtLessThanOrEqual = null;
+	this.updatedAtGreaterThanOrEqual = null;
+	this.updatedAtLessThanOrEqual = null;
+	this.nameEqual = null;
+	this.nameIn = null;
+	this.systemNameEqual = null;
+	this.systemNameIn = null;
+	this.statusEqual = null;
+	this.statusIn = null;
+	this.tagsLike = null;
+	this.tagsMultiLikeOr = null;
+	this.tagsMultiLikeAnd = null;
+	this.hostNameLike = null;
+	this.hostNameMultiLikeOr = null;
+	this.hostNameMultiLikeAnd = null;
+	this.playbackHostNameLike = null;
+	this.playbackHostNameMultiLikeOr = null;
+	this.playbackHostNameMultiLikeAnd = null;
+	this.parentIdEqual = null;
+	this.parentIdIn = null;
+}
+module.exports.KalturaEdgeServerBaseFilter = KalturaEdgeServerBaseFilter;
+
+util.inherits(KalturaEdgeServerBaseFilter, KalturaFilter);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaEdgeServerListResponse(){
+	KalturaEdgeServerListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaEdgeServerListResponse = KalturaEdgeServerListResponse;
+
+util.inherits(KalturaEdgeServerListResponse, KalturaListResponse);
+
+
+/**
  * @param categoryIdEqual int .
  * @param categoryIdIn string .
  * @param userIdEqual string .
@@ -8086,6 +8192,20 @@ util.inherits(KalturaGroupUserListResponse, KalturaListResponse);
 
 
 /**
+ * @param hashName string hash name.
+ * @param hashSecret string hash secret.
+ */
+function KalturaHashCondition(){
+	KalturaHashCondition.super_.call(this);
+	this.hashName = null;
+	this.hashSecret = null;
+}
+module.exports.KalturaHashCondition = KalturaHashCondition;
+
+util.inherits(KalturaHashCondition, KalturaCondition);
+
+
+/**
  */
 function KalturaHttpNotificationDataFields(){
 	KalturaHttpNotificationDataFields.super_.call(this);
@@ -8736,6 +8856,22 @@ function KalturaParseCaptionAssetJobData(){
 module.exports.KalturaParseCaptionAssetJobData = KalturaParseCaptionAssetJobData;
 
 util.inherits(KalturaParseCaptionAssetJobData, KalturaJobData);
+
+
+/**
+ * @param multiLanaguageCaptionAssetId string .
+ * @param entryId string .
+ * @param fileLocation string .
+ */
+function KalturaParseMultiLanguageCaptionAssetJobData(){
+	KalturaParseMultiLanguageCaptionAssetJobData.super_.call(this);
+	this.multiLanaguageCaptionAssetId = null;
+	this.entryId = null;
+	this.fileLocation = null;
+}
+module.exports.KalturaParseMultiLanguageCaptionAssetJobData = KalturaParseMultiLanguageCaptionAssetJobData;
+
+util.inherits(KalturaParseMultiLanguageCaptionAssetJobData, KalturaJobData);
 
 
 /**
@@ -10677,6 +10813,16 @@ function KalturaDropFolderFilter(){
 module.exports.KalturaDropFolderFilter = KalturaDropFolderFilter;
 
 util.inherits(KalturaDropFolderFilter, KalturaDropFolderBaseFilter);
+
+
+/**
+ */
+function KalturaEdgeServerFilter(){
+	KalturaEdgeServerFilter.super_.call(this);
+}
+module.exports.KalturaEdgeServerFilter = KalturaEdgeServerFilter;
+
+util.inherits(KalturaEdgeServerFilter, KalturaEdgeServerBaseFilter);
 
 
 /**

@@ -113,6 +113,11 @@ KalturaClient.prototype.deliveryProfile = null;
  */
 KalturaClient.prototype.document = null;
 /**
+ * Edge Server service
+ * @param kaltura.services.KalturaEdgeServerService
+ */
+KalturaClient.prototype.edgeServer = null;
+/**
  * EmailIngestionProfile service lets you manage email ingestion profile records
  * @param kaltura.services.KalturaEmailIngestionProfileService
  */
@@ -503,6 +508,7 @@ KalturaClient.prototype.init = function(config){
 	this.data = new kaltura.services.KalturaDataService(this);
 	this.deliveryProfile = new kaltura.services.KalturaDeliveryProfileService(this);
 	this.document = new kaltura.services.KalturaDocumentService(this);
+	this.edgeServer = new kaltura.services.KalturaEdgeServerService(this);
 	this.EmailIngestionProfile = new kaltura.services.KalturaEmailIngestionProfileService(this);
 	this.fileAsset = new kaltura.services.KalturaFileAssetService(this);
 	this.flavorAsset = new kaltura.services.KalturaFlavorAssetService(this);

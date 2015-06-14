@@ -2047,6 +2047,103 @@ KalturaDocumentService.prototype.cancelReplace = function(callback, entryId){
 };
 
 /**
+ *Class definition for the Kaltura service: edgeServer.
+ * The available service actions:
+ * @action add Adds a edge server to the Kaltura DB.
+ * @action get Get edge server by id.
+ * @action update Update edge server by id.
+ * @action delete delete edge server by id.
+ * @action list .
+ */
+function KalturaEdgeServerService(client){
+	KalturaEdgeServerService.super_.call(this);
+	this.init(client);
+}
+
+util.inherits(KalturaEdgeServerService, kaltura.KalturaServiceBase);
+module.exports.KalturaEdgeServerService = KalturaEdgeServerService;
+
+/**
+ * Adds a edge server to the Kaltura DB.
+ * @param edgeServer KalturaEdgeServer sto (optional).
+ * @return KalturaEdgeServer.
+ */
+KalturaEdgeServerService.prototype.add = function(callback, edgeServer){
+	var kparams = {};
+	this.client.addParam(kparams, 'edgeServer', kaltura.toParams(edgeServer));
+	this.client.queueServiceActionCall('edgeserver', 'add', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Get edge server by id.
+ * @param edgeServerId int  (optional).
+ * @return KalturaEdgeServer.
+ */
+KalturaEdgeServerService.prototype.get = function(callback, edgeServerId){
+	var kparams = {};
+	this.client.addParam(kparams, 'edgeServerId', edgeServerId);
+	this.client.queueServiceActionCall('edgeserver', 'get', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Update edge server by id.
+ * @param edgeServerId int  (optional).
+ * @param edgeServer KalturaEdgeServer Id (optional).
+ * @return KalturaEdgeServer.
+ */
+KalturaEdgeServerService.prototype.update = function(callback, edgeServerId, edgeServer){
+	var kparams = {};
+	this.client.addParam(kparams, 'edgeServerId', edgeServerId);
+	this.client.addParam(kparams, 'edgeServer', kaltura.toParams(edgeServer));
+	this.client.queueServiceActionCall('edgeserver', 'update', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * delete edge server by id.
+ * @param edgeServerId string  (optional).
+ * @return .
+ */
+KalturaEdgeServerService.prototype.deleteAction = function(callback, edgeServerId){
+	var kparams = {};
+	this.client.addParam(kparams, 'edgeServerId', edgeServerId);
+	this.client.queueServiceActionCall('edgeserver', 'delete', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * .
+ * @param filter KalturaEdgeServerFilter  (optional, default: null).
+ * @param pager KalturaFilterPager  (optional, default: null).
+ * @return KalturaEdgeServerListResponse.
+ */
+KalturaEdgeServerService.prototype.listAction = function(callback, filter, pager){
+	if(!filter){
+		filter = null;
+	}
+	if(!pager){
+		pager = null;
+	}
+	var kparams = {};
+	if (filter !== null){
+		this.client.addParam(kparams, 'filter', kaltura.toParams(filter));
+	}
+	if (pager !== null){
+		this.client.addParam(kparams, 'pager', kaltura.toParams(pager));
+	}
+	this.client.queueServiceActionCall('edgeserver', 'list', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+
+/**
  *Class definition for the Kaltura service: EmailIngestionProfile.
  * The available service actions:
  * @action add EmailIngestionProfile Add action allows you to add a EmailIngestionProfile to Kaltura DB.

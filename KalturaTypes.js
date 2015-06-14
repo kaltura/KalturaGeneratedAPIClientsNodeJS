@@ -293,6 +293,12 @@ DELETED : 2,
 ERROR : 3,
 };
 
+var KalturaEdgeServerStatus = module.exports.KalturaEdgeServerStatus = {
+ACTIVE : 1,
+DISABLED : 2,
+DELETED : 3,
+};
+
 var KalturaEditorType = module.exports.KalturaEditorType = {
 SIMPLE : 1,
 ADVANCED : 2,
@@ -1267,6 +1273,7 @@ UPDATED_AT_DESC : '-updatedAt',
 
 var KalturaBatchJobType = module.exports.KalturaBatchJobType = {
 CONVERT : '0',
+PARSE_MULTI_LANGUAGE_CAPTION_ASSET : 'caption.parsemultilanguagecaptionasset',
 PARSE_CAPTION_ASSET : 'captionSearch.parseCaptionAsset',
 DISTRIBUTION_DELETE : 'contentDistribution.DistributionDelete',
 DISTRIBUTION_DISABLE : 'contentDistribution.DistributionDisable',
@@ -1461,6 +1468,7 @@ ASSET_PROPERTIES_COMPARE : '8',
 USER_ROLE : '9',
 GEO_DISTANCE : '10',
 OR_OPERATOR : '11',
+HASH : '12',
 };
 
 var KalturaConfigurableDistributionProfileOrderBy = module.exports.KalturaConfigurableDistributionProfileOrderBy = {
@@ -1478,6 +1486,7 @@ BMP : 'bmp',
 COPY : 'copy',
 FLV : 'flv',
 HLS : 'hls',
+ISMA : 'isma',
 ISMV : 'ismv',
 JPG : 'jpg',
 M2TS : 'm2ts',
@@ -1836,6 +1845,13 @@ SHORT : 'short',
 };
 
 var KalturaDynamicEnum = module.exports.KalturaDynamicEnum = {
+};
+
+var KalturaEdgeServerOrderBy = module.exports.KalturaEdgeServerOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
 };
 
 var KalturaEmailNotificationFormat = module.exports.KalturaEmailNotificationFormat = {
@@ -2410,6 +2426,7 @@ MI : 'Maori',
 MR : 'Marathi',
 MO : 'Moldavian',
 MN : 'Mongolian',
+MU : 'Multilingual',
 NA : 'Nauru',
 NE : 'Nepali',
 NO : 'Norwegian',
@@ -2464,8 +2481,8 @@ VO : 'Volapuk',
 CY : 'Welsh',
 WO : 'Wolof',
 XH : 'Xhosa',
-YI : 'Yiddish',
 JI : 'Yiddish',
+YI : 'Yiddish',
 YO : 'Yoruba',
 ZU : 'Zulu',
 };
@@ -2554,6 +2571,7 @@ MO : 'mo',
 MR : 'mr',
 MS : 'ms',
 MT : 'mt',
+MU : 'multilingual',
 MY : 'my',
 NA : 'na',
 NE : 'ne',

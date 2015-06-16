@@ -4582,6 +4582,7 @@ util.inherits(KalturaSystemPartnerLimit, kaltura.KalturaObjectBase);
  * @param adminEmail string .
  * @param host string .
  * @param cdnHost string .
+ * @param cdnHostWhiteList string .
  * @param thumbnailHost string .
  * @param partnerPackage int .
  * @param monitorUsage int .
@@ -4646,6 +4647,7 @@ function KalturaSystemPartnerConfiguration(){
 	this.adminEmail = null;
 	this.host = null;
 	this.cdnHost = null;
+	this.cdnHostWhiteList = null;
 	this.thumbnailHost = null;
 	this.partnerPackage = null;
 	this.monitorUsage = null;

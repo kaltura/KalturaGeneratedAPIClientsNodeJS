@@ -297,6 +297,11 @@ KalturaClient.prototype.upload = null;
  */
 KalturaClient.prototype.uploadToken = null;
 /**
+ * 
+ * @param kaltura.services.KalturaUserEntryService
+ */
+KalturaClient.prototype.userEntry = null;
+/**
  * UserRole service lets you create and manage user roles
  * @param kaltura.services.KalturaUserRoleService
  */
@@ -544,6 +549,7 @@ KalturaClient.prototype.init = function(config){
 	this.uiConf = new kaltura.services.KalturaUiConfService(this);
 	this.upload = new kaltura.services.KalturaUploadService(this);
 	this.uploadToken = new kaltura.services.KalturaUploadTokenService(this);
+	this.userEntry = new kaltura.services.KalturaUserEntryService(this);
 	this.userRole = new kaltura.services.KalturaUserRoleService(this);
 	this.user = new kaltura.services.KalturaUserService(this);
 	this.widget = new kaltura.services.KalturaWidgetService(this);

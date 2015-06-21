@@ -6992,6 +6992,98 @@ KalturaUploadTokenService.prototype.listAction = function(callback, filter, page
 };
 
 /**
+ *Class definition for the Kaltura service: userEntry.
+ * The available service actions:
+ * @action add Adds a user_entry to the Kaltura DB.
+ * @action update .
+ * @action delete .
+ * @action list .
+ * @action get .
+ */
+function KalturaUserEntryService(client){
+	KalturaUserEntryService.super_.call(this);
+	this.init(client);
+}
+
+util.inherits(KalturaUserEntryService, kaltura.KalturaServiceBase);
+module.exports.KalturaUserEntryService = KalturaUserEntryService;
+
+/**
+ * Adds a user_entry to the Kaltura DB.
+ * @param userEntry KalturaUserEntry  (optional).
+ * @return KalturaUserEntry.
+ */
+KalturaUserEntryService.prototype.add = function(callback, userEntry){
+	var kparams = {};
+	this.client.addParam(kparams, 'userEntry', kaltura.toParams(userEntry));
+	this.client.queueServiceActionCall('userentry', 'add', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * .
+ * @param id int  (optional).
+ * @param userEntry KalturaUserEntry  (optional).
+ * @return .
+ */
+KalturaUserEntryService.prototype.update = function(callback, id, userEntry){
+	var kparams = {};
+	this.client.addParam(kparams, 'id', id);
+	this.client.addParam(kparams, 'userEntry', kaltura.toParams(userEntry));
+	this.client.queueServiceActionCall('userentry', 'update', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * .
+ * @param id int  (optional).
+ * @return KalturaUserEntry.
+ */
+KalturaUserEntryService.prototype.deleteAction = function(callback, id){
+	var kparams = {};
+	this.client.addParam(kparams, 'id', id);
+	this.client.queueServiceActionCall('userentry', 'delete', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * .
+ * @param filter KalturaUserEntryFilter  (optional).
+ * @param pager KalturaFilterPager  (optional, default: null).
+ * @return KalturaUserEntryListResponse.
+ */
+KalturaUserEntryService.prototype.listAction = function(callback, filter, pager){
+	if(!pager){
+		pager = null;
+	}
+	var kparams = {};
+	this.client.addParam(kparams, 'filter', kaltura.toParams(filter));
+	if (pager !== null){
+		this.client.addParam(kparams, 'pager', kaltura.toParams(pager));
+	}
+	this.client.queueServiceActionCall('userentry', 'list', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * .
+ * @param id string  (optional).
+ * @return KalturaUserEntry.
+ */
+KalturaUserEntryService.prototype.get = function(callback, id){
+	var kparams = {};
+	this.client.addParam(kparams, 'id', id);
+	this.client.queueServiceActionCall('userentry', 'get', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+
+/**
  *Class definition for the Kaltura service: userRole.
  * The available service actions:
  * @action add Adds a new user role object to the account.

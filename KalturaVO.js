@@ -5775,6 +5775,18 @@ util.inherits(KalturaAccessControlProfileListResponse, KalturaListResponse);
 
 
 /**
+ * @param edgeServerIds string Comma separated list of edge servers playBack should be done from.
+ */
+function KalturaAccessControlServeRemoteEdgeServerAction(){
+	KalturaAccessControlServeRemoteEdgeServerAction.super_.call(this);
+	this.edgeServerIds = null;
+}
+module.exports.KalturaAccessControlServeRemoteEdgeServerAction = KalturaAccessControlServeRemoteEdgeServerAction;
+
+util.inherits(KalturaAccessControlServeRemoteEdgeServerAction, KalturaRuleAction);
+
+
+/**
  * @param protocolType string  (insertOnly).
  * @param sourceUrl string .
  * @param adType string .

@@ -418,6 +418,11 @@ KalturaClient.prototype.cuePoint = null;
  */
 KalturaClient.prototype.annotation = null;
 /**
+ * Allows user to handle quizzes
+ * @param kaltura.services.KalturaQuizService
+ */
+KalturaClient.prototype.quiz = null;
+/**
  * Short link service
  * @param kaltura.services.KalturaShortLinkService
  */
@@ -573,6 +578,7 @@ KalturaClient.prototype.init = function(config){
 	this.contentDistributionBatch = new kaltura.services.KalturaContentDistributionBatchService(this);
 	this.cuePoint = new kaltura.services.KalturaCuePointService(this);
 	this.annotation = new kaltura.services.KalturaAnnotationService(this);
+	this.quiz = new kaltura.services.KalturaQuizService(this);
 	this.shortLink = new kaltura.services.KalturaShortLinkService(this);
 	this.bulk = new kaltura.services.KalturaBulkService(this);
 	this.dropFolder = new kaltura.services.KalturaDropFolderService(this);

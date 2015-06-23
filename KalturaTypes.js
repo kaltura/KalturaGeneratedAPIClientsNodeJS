@@ -1048,6 +1048,7 @@ PREVIEW : '2',
 LIMIT_FLAVORS : '3',
 ADD_TO_STORAGE : '4',
 LIMIT_DELIVERY_PROFILES : '5',
+SERVE_FROM_REMOTE_SERVER : '6',
 };
 
 var KalturaAccessControlOrderBy = module.exports.KalturaAccessControlOrderBy = {
@@ -1136,13 +1137,11 @@ UPDATED_AT_DESC : '-updatedAt',
 
 var KalturaAnswerCuePointOrderBy = module.exports.KalturaAnswerCuePointOrderBy = {
 CREATED_AT_ASC : '+createdAt',
-IS_CORRECT_ASC : '+isCorrect',
 PARTNER_SORT_VALUE_ASC : '+partnerSortValue',
 START_TIME_ASC : '+startTime',
 TRIGGERED_AT_ASC : '+triggeredAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
-IS_CORRECT_DESC : '-isCorrect',
 PARTNER_SORT_VALUE_DESC : '-partnerSortValue',
 START_TIME_DESC : '-startTime',
 TRIGGERED_AT_DESC : '-triggeredAt',
@@ -1585,6 +1584,8 @@ AD : 'adCuePoint.Ad',
 ANNOTATION : 'annotation.Annotation',
 CODE : 'codeCuePoint.Code',
 EVENT : 'eventCuePoint.Event',
+QUIZ_ANSWER : 'quiz.QUIZ_ANSWER',
+QUIZ_QUESTION : 'quiz.QUIZ_QUESTION',
 };
 
 var KalturaDataEntryOrderBy = module.exports.KalturaDataEntryOrderBy = {
@@ -3173,13 +3174,11 @@ WEIGHT_DESC : '-weight',
 var KalturaQuestionCuePointOrderBy = module.exports.KalturaQuestionCuePointOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 PARTNER_SORT_VALUE_ASC : '+partnerSortValue',
-QUESTION_ASC : '+question',
 START_TIME_ASC : '+startTime',
 TRIGGERED_AT_ASC : '+triggeredAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 PARTNER_SORT_VALUE_DESC : '-partnerSortValue',
-QUESTION_DESC : '-question',
 START_TIME_DESC : '-startTime',
 TRIGGERED_AT_DESC : '-triggeredAt',
 UPDATED_AT_DESC : '-updatedAt',
@@ -3187,10 +3186,8 @@ UPDATED_AT_DESC : '-updatedAt',
 
 var KalturaQuizUserEntryOrderBy = module.exports.KalturaQuizUserEntryOrderBy = {
 CREATED_AT_ASC : '+createdAt',
-SCORE_ASC : '+score',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
-SCORE_DESC : '-score',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
@@ -3228,6 +3225,7 @@ PREVIEW : '2',
 LIMIT_FLAVORS : '3',
 ADD_TO_STORAGE : '4',
 LIMIT_DELIVERY_PROFILES : '5',
+SERVE_FROM_REMOTE_SERVER : '6',
 };
 
 var KalturaScheduledTaskProfileOrderBy = module.exports.KalturaScheduledTaskProfileOrderBy = {
@@ -3448,6 +3446,7 @@ UPDATED_AT_DESC : '-updatedAt',
 };
 
 var KalturaUserEntryStatus = module.exports.KalturaUserEntryStatus = {
+QUIZ_SUBMITTED : 'quiz.3',
 ACTIVE : '1',
 DELETED : '2',
 };

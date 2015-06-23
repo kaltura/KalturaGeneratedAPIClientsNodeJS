@@ -6999,6 +6999,7 @@ KalturaUploadTokenService.prototype.listAction = function(callback, filter, page
  * @action delete .
  * @action list .
  * @action get .
+ * @action submitQuiz Submits the quiz so that it's status will be submitted and calculates the score for the quiz.
  */
 function KalturaUserEntryService(client){
 	KalturaUserEntryService.super_.call(this);
@@ -7078,6 +7079,19 @@ KalturaUserEntryService.prototype.get = function(callback, id){
 	var kparams = {};
 	this.client.addParam(kparams, 'id', id);
 	this.client.queueServiceActionCall('userentry', 'get', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Submits the quiz so that it's status will be submitted and calculates the score for the quiz.
+ * @param id int  (optional).
+ * @return KalturaQuizUserEntry.
+ */
+KalturaUserEntryService.prototype.submitQuiz = function(callback, id){
+	var kparams = {};
+	this.client.addParam(kparams, 'id', id);
+	this.client.queueServiceActionCall('userentry', 'submitQuiz', kparams);
 	if (!this.client.isMultiRequest()){
 		this.client.doQueue(callback);
 	}
@@ -10324,6 +10338,91 @@ KalturaAnnotationService.prototype.deleteAction = function(callback, id){
 	var kparams = {};
 	this.client.addParam(kparams, 'id', id);
 	this.client.queueServiceActionCall('annotation_annotation', 'delete', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+
+/**
+ *Class definition for the Kaltura service: quiz.
+ * The available service actions:
+ * @action add Allows to add a quiz to an entry.
+ * @action update Allows to update a quiz.
+ * @action get Allows to get a quiz.
+ * @action list List quiz objects by filter and pager.
+ */
+function KalturaQuizService(client){
+	KalturaQuizService.super_.call(this);
+	this.init(client);
+}
+
+util.inherits(KalturaQuizService, kaltura.KalturaServiceBase);
+module.exports.KalturaQuizService = KalturaQuizService;
+
+/**
+ * Allows to add a quiz to an entry.
+ * @param entryId string  (optional).
+ * @param quiz KalturaQuiz  (optional).
+ * @return KalturaQuiz.
+ */
+KalturaQuizService.prototype.add = function(callback, entryId, quiz){
+	var kparams = {};
+	this.client.addParam(kparams, 'entryId', entryId);
+	this.client.addParam(kparams, 'quiz', kaltura.toParams(quiz));
+	this.client.queueServiceActionCall('quiz_quiz', 'add', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Allows to update a quiz.
+ * @param entryId string  (optional).
+ * @param quiz KalturaQuiz  (optional).
+ * @return KalturaQuiz.
+ */
+KalturaQuizService.prototype.update = function(callback, entryId, quiz){
+	var kparams = {};
+	this.client.addParam(kparams, 'entryId', entryId);
+	this.client.addParam(kparams, 'quiz', kaltura.toParams(quiz));
+	this.client.queueServiceActionCall('quiz_quiz', 'update', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Allows to get a quiz.
+ * @param entryId string  (optional).
+ * @return KalturaQuiz.
+ */
+KalturaQuizService.prototype.get = function(callback, entryId){
+	var kparams = {};
+	this.client.addParam(kparams, 'entryId', entryId);
+	this.client.queueServiceActionCall('quiz_quiz', 'get', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * List quiz objects by filter and pager.
+ * @param filter KalturaQuizFilter  (optional, default: null).
+ * @param pager KalturaFilterPager  (optional, default: null).
+ * @return KalturaQuizListResponse.
+ */
+KalturaQuizService.prototype.listAction = function(callback, filter, pager){
+	if(!filter){
+		filter = null;
+	}
+	if(!pager){
+		pager = null;
+	}
+	var kparams = {};
+	if (filter !== null){
+		this.client.addParam(kparams, 'filter', kaltura.toParams(filter));
+	}
+	if (pager !== null){
+		this.client.addParam(kparams, 'pager', kaltura.toParams(pager));
+	}
+	this.client.queueServiceActionCall('quiz_quiz', 'list', kparams);
 	if (!this.client.isMultiRequest()){
 		this.client.doQueue(callback);
 	}

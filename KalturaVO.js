@@ -11596,9 +11596,13 @@ util.inherits(KalturaImageFlavorParams, KalturaFlavorParams);
 
 
 /**
+ * @param acceptInternalIps bool allow internal ips.
+ * @param httpHeader string http header name for extracting the ip.
  */
 function KalturaIpAddressCondition(){
 	KalturaIpAddressCondition.super_.call(this);
+	this.acceptInternalIps = null;
+	this.httpHeader = null;
 }
 module.exports.KalturaIpAddressCondition = KalturaIpAddressCondition;
 

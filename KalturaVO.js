@@ -311,6 +311,38 @@ util.inherits(KalturaApiExceptionArg, kaltura.KalturaObjectBase);
 
 
 /**
+ * @param id string The id of the application token (readOnly).
+ * @param token string The application token (readOnly).
+ * @param partnerId int  (readOnly).
+ * @param createdAt int Creation time as Unix timestamp (In seconds) (readOnly).
+ * @param updatedAt int Update time as Unix timestamp (In seconds) (readOnly).
+ * @param status int Application token status (readOnly).
+ * @param expiry int Expiry time of current token (unix timestamp in seconds).
+ * @param sessionType int Type of KS (Kaltura Session) that created using the current token.
+ * @param sessionUserId string User id of KS (Kaltura Session) that created using the current token.
+ * @param sessionDuration int Expiry duration of KS (Kaltura Session) that created using the current token (in seconds).
+ * @param sessionPrivileges string Comma separated privileges to be applied on KS (Kaltura Session) that created using the current token.
+ */
+function KalturaAppToken(){
+	KalturaAppToken.super_.call(this);
+	this.id = null;
+	this.token = null;
+	this.partnerId = null;
+	this.createdAt = null;
+	this.updatedAt = null;
+	this.status = null;
+	this.expiry = null;
+	this.sessionType = null;
+	this.sessionUserId = null;
+	this.sessionDuration = null;
+	this.sessionPrivileges = null;
+}
+module.exports.KalturaAppToken = KalturaAppToken;
+
+util.inherits(KalturaAppToken, kaltura.KalturaObjectBase);
+
+
+/**
  * @param id string The ID of the Flavor Asset (readOnly).
  * @param entryId string The entry ID of the Flavor Asset (readOnly).
  * @param partnerId int  (readOnly).
@@ -3768,7 +3800,7 @@ util.inherits(KalturaModerationFlag, kaltura.KalturaObjectBase);
 
 
 /**
- * @param relatedObjects map .
+ * @param relatedObjects map  (readOnly).
  */
 function KalturaObject(){
 	KalturaObject.super_.call(this);
@@ -5385,11 +5417,12 @@ util.inherits(KalturaUser, kaltura.KalturaObjectBase);
 /**
  * @param id int unique auto-generated identifier (readOnly).
  * @param entryId string  (insertOnly).
- * @param userId int  (insertOnly).
+ * @param userId string  (insertOnly).
  * @param partnerId int  (readOnly).
  * @param status string  (readOnly).
  * @param createdAt int  (readOnly).
  * @param updatedAt int  (readOnly).
+ * @param type string  (readOnly).
  */
 function KalturaUserEntry(){
 	KalturaUserEntry.super_.call(this);
@@ -5400,6 +5433,7 @@ function KalturaUserEntry(){
 	this.status = null;
 	this.createdAt = null;
 	this.updatedAt = null;
+	this.type = null;
 }
 module.exports.KalturaUserEntry = KalturaUserEntry;
 
@@ -5894,6 +5928,40 @@ function KalturaApiParameterPermissionItem(){
 module.exports.KalturaApiParameterPermissionItem = KalturaApiParameterPermissionItem;
 
 util.inherits(KalturaApiParameterPermissionItem, KalturaPermissionItem);
+
+
+/**
+ * @param idEqual int .
+ * @param idIn string .
+ * @param createdAtGreaterThanOrEqual int .
+ * @param createdAtLessThanOrEqual int .
+ * @param updatedAtGreaterThanOrEqual int .
+ * @param updatedAtLessThanOrEqual int .
+ */
+function KalturaAppTokenBaseFilter(){
+	KalturaAppTokenBaseFilter.super_.call(this);
+	this.idEqual = null;
+	this.idIn = null;
+	this.createdAtGreaterThanOrEqual = null;
+	this.createdAtLessThanOrEqual = null;
+	this.updatedAtGreaterThanOrEqual = null;
+	this.updatedAtLessThanOrEqual = null;
+}
+module.exports.KalturaAppTokenBaseFilter = KalturaAppTokenBaseFilter;
+
+util.inherits(KalturaAppTokenBaseFilter, KalturaFilter);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaAppTokenListResponse(){
+	KalturaAppTokenListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaAppTokenListResponse = KalturaAppTokenListResponse;
+
+util.inherits(KalturaAppTokenListResponse, KalturaListResponse);
 
 
 /**
@@ -6997,6 +7065,18 @@ function KalturaDeliveryProfileBaseFilter(){
 module.exports.KalturaDeliveryProfileBaseFilter = KalturaDeliveryProfileBaseFilter;
 
 util.inherits(KalturaDeliveryProfileBaseFilter, KalturaFilter);
+
+
+/**
+ * @param deliveryProfileIds array The delivery ids that are accepted by this condition.
+ */
+function KalturaDeliveryProfileCondition(){
+	KalturaDeliveryProfileCondition.super_.call(this);
+	this.deliveryProfileIds = null;
+}
+module.exports.KalturaDeliveryProfileCondition = KalturaDeliveryProfileCondition;
+
+util.inherits(KalturaDeliveryProfileCondition, KalturaCondition);
 
 
 /**
@@ -10218,10 +10298,12 @@ util.inherits(KalturaUserAgentRestriction, KalturaBaseRestriction);
  * @param userIdEqual int .
  * @param userIdIn string .
  * @param userIdNotIn string .
+ * @param statusEqual string .
  * @param createdAtLessThanOrEqual int .
  * @param createdAtGreaterThanOrEqual int .
  * @param updatedAtLessThanOrEqual int .
  * @param updatedAtGreaterThanOrEqual int .
+ * @param typeEqual string .
  */
 function KalturaUserEntryBaseFilter(){
 	KalturaUserEntryBaseFilter.super_.call(this);
@@ -10234,10 +10316,12 @@ function KalturaUserEntryBaseFilter(){
 	this.userIdEqual = null;
 	this.userIdIn = null;
 	this.userIdNotIn = null;
+	this.statusEqual = null;
 	this.createdAtLessThanOrEqual = null;
 	this.createdAtGreaterThanOrEqual = null;
 	this.updatedAtLessThanOrEqual = null;
 	this.updatedAtGreaterThanOrEqual = null;
+	this.typeEqual = null;
 }
 module.exports.KalturaUserEntryBaseFilter = KalturaUserEntryBaseFilter;
 
@@ -10544,6 +10628,16 @@ function KalturaAkamaiUniversalProvisionJobData(){
 module.exports.KalturaAkamaiUniversalProvisionJobData = KalturaAkamaiUniversalProvisionJobData;
 
 util.inherits(KalturaAkamaiUniversalProvisionJobData, KalturaProvisionJobData);
+
+
+/**
+ */
+function KalturaAppTokenFilter(){
+	KalturaAppTokenFilter.super_.call(this);
+}
+module.exports.KalturaAppTokenFilter = KalturaAppTokenFilter;
+
+util.inherits(KalturaAppTokenFilter, KalturaAppTokenBaseFilter);
 
 
 /**

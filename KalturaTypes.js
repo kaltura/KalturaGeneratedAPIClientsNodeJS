@@ -26,6 +26,12 @@
 // @ignore
 // ===================================================================================================
 
+var KalturaAppTokenStatus = module.exports.KalturaAppTokenStatus = {
+DISABLED : 1,
+ACTIVE : 2,
+DELETED : 3,
+};
+
 var KalturaAppearInListType = module.exports.KalturaAppearInListType = {
 PARTNER_ONLY : 1,
 CATEGORY_MEMBERS_ONLY : 3,
@@ -1173,6 +1179,13 @@ ID_DESC : '-id',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
+var KalturaAppTokenOrderBy = module.exports.KalturaAppTokenOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
 var KalturaAssetOrderBy = module.exports.KalturaAssetOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 DELETED_AT_ASC : '+deletedAt',
@@ -1491,6 +1504,7 @@ USER_ROLE : '9',
 GEO_DISTANCE : '10',
 OR_OPERATOR : '11',
 HASH : '12',
+DELIVERY_PROFILE : '13',
 };
 
 var KalturaConfigurableDistributionProfileOrderBy = module.exports.KalturaConfigurableDistributionProfileOrderBy = {
@@ -1538,6 +1552,7 @@ DOWNLOAD : '2',
 THUMBNAIL : '3',
 METADATA : '4',
 EXPORT : '5',
+SERVE : '6',
 };
 
 var KalturaControlPanelCommandOrderBy = module.exports.KalturaControlPanelCommandOrderBy = {
@@ -3449,6 +3464,10 @@ var KalturaUserEntryStatus = module.exports.KalturaUserEntryStatus = {
 QUIZ_SUBMITTED : 'quiz.3',
 ACTIVE : '1',
 DELETED : '2',
+};
+
+var KalturaUserEntryType = module.exports.KalturaUserEntryType = {
+QUIZ : 'quiz.QUIZ',
 };
 
 var KalturaUserLoginDataOrderBy = module.exports.KalturaUserLoginDataOrderBy = {

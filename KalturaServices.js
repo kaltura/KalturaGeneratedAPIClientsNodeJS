@@ -313,6 +313,134 @@ KalturaAdminUserService.prototype.setInitialPassword = function(callback, hashKe
 };
 
 /**
+ *Class definition for the Kaltura service: appToken.
+ * The available service actions:
+ * @action add Add new application authentication token.
+ * @action get Get application authentication token by id.
+ * @action update Update application authentication token by id.
+ * @action delete Delete application authentication token by id.
+ * @action list List application authentication tokens by filter and pager.
+ * @action startSession Starts a new KS (kaltura Session) based on application authentication token id.
+ */
+function KalturaAppTokenService(client){
+	KalturaAppTokenService.super_.call(this);
+	this.init(client);
+}
+
+util.inherits(KalturaAppTokenService, kaltura.KalturaServiceBase);
+module.exports.KalturaAppTokenService = KalturaAppTokenService;
+
+/**
+ * Add new application authentication token.
+ * @param appToken KalturaAppToken  (optional).
+ * @return KalturaAppToken.
+ */
+KalturaAppTokenService.prototype.add = function(callback, appToken){
+	var kparams = {};
+	this.client.addParam(kparams, 'appToken', kaltura.toParams(appToken));
+	this.client.queueServiceActionCall('apptoken', 'add', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Get application authentication token by id.
+ * @param id string  (optional).
+ * @return KalturaAppToken.
+ */
+KalturaAppTokenService.prototype.get = function(callback, id){
+	var kparams = {};
+	this.client.addParam(kparams, 'id', id);
+	this.client.queueServiceActionCall('apptoken', 'get', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Update application authentication token by id.
+ * @param id string  (optional).
+ * @param appToken KalturaAppToken  (optional).
+ * @return KalturaAppToken.
+ */
+KalturaAppTokenService.prototype.update = function(callback, id, appToken){
+	var kparams = {};
+	this.client.addParam(kparams, 'id', id);
+	this.client.addParam(kparams, 'appToken', kaltura.toParams(appToken));
+	this.client.queueServiceActionCall('apptoken', 'update', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Delete application authentication token by id.
+ * @param id string  (optional).
+ * @return .
+ */
+KalturaAppTokenService.prototype.deleteAction = function(callback, id){
+	var kparams = {};
+	this.client.addParam(kparams, 'id', id);
+	this.client.queueServiceActionCall('apptoken', 'delete', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * List application authentication tokens by filter and pager.
+ * @param filter KalturaAppTokenFilter  (optional, default: null).
+ * @param pager KalturaFilterPager  (optional, default: null).
+ * @return KalturaAppTokenListResponse.
+ */
+KalturaAppTokenService.prototype.listAction = function(callback, filter, pager){
+	if(!filter){
+		filter = null;
+	}
+	if(!pager){
+		pager = null;
+	}
+	var kparams = {};
+	if (filter !== null){
+		this.client.addParam(kparams, 'filter', kaltura.toParams(filter));
+	}
+	if (pager !== null){
+		this.client.addParam(kparams, 'pager', kaltura.toParams(pager));
+	}
+	this.client.queueServiceActionCall('apptoken', 'list', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Starts a new KS (kaltura Session) based on application authentication token id.
+ * @param id string application token id (optional).
+ * @param tokenHash string hashed token, built of sha1 on current KS concatenated with the application token (optional).
+ * @param userId string session user id, will be ignored if a different user id already defined on the application token (optional, default: null).
+ * @param type int session type, will be ignored if a different session type already defined on the application token (optional, enum: KalturaSessionType, default: null).
+ * @param expiry int session expiry (in seconds), could be overwritten by shorter expiry of the application token and the session-expiry that defined on the application token (optional, default: null).
+ * @return KalturaSessionInfo.
+ */
+KalturaAppTokenService.prototype.startSession = function(callback, id, tokenHash, userId, type, expiry){
+	if(!userId){
+		userId = null;
+	}
+	if(!type){
+		type = null;
+	}
+	if(!expiry){
+		expiry = null;
+	}
+	var kparams = {};
+	this.client.addParam(kparams, 'id', id);
+	this.client.addParam(kparams, 'tokenHash', tokenHash);
+	this.client.addParam(kparams, 'userId', userId);
+	this.client.addParam(kparams, 'type', type);
+	this.client.addParam(kparams, 'expiry', expiry);
+	this.client.queueServiceActionCall('apptoken', 'startSession', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+
+/**
  *Class definition for the Kaltura service: baseEntry.
  * The available service actions:
  * @action add Generic add entry, should be used when the uploaded entry type is not known.

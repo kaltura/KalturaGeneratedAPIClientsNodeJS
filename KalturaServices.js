@@ -8657,7 +8657,7 @@ KalturaDocumentsService.prototype.cancelReplace = function(callback, entryId){
  *Class definition for the Kaltura service: fileSync.
  * The available service actions:
  * @action list List file syce objects by filter and pager.
- * @action sync .
+ * @action update Update file sync by id.
  */
 function KalturaFileSyncService(client){
 	KalturaFileSyncService.super_.call(this);
@@ -8693,17 +8693,16 @@ KalturaFileSyncService.prototype.listAction = function(callback, filter, pager){
 	}
 };
 /**
- * .
- * @param fileSyncId int  (optional).
- * @param fileData file  (optional).
+ * Update file sync by id.
+ * @param id int  (optional).
+ * @param fileSync KalturaFileSync  (optional).
  * @return KalturaFileSync.
  */
-KalturaFileSyncService.prototype.sync = function(callback, fileSyncId, fileData){
+KalturaFileSyncService.prototype.update = function(callback, id, fileSync){
 	var kparams = {};
-	this.client.addParam(kparams, 'fileSyncId', fileSyncId);
-	var kfiles = {};
-	this.client.addParam(kfiles, 'fileData', fileData);
-	this.client.queueServiceActionCall('filesync_filesync', 'sync', kparams, kfiles);
+	this.client.addParam(kparams, 'id', id);
+	this.client.addParam(kparams, 'fileSync', kaltura.toParams(fileSync));
+	this.client.queueServiceActionCall('filesync_filesync', 'update', kparams);
 	if (!this.client.isMultiRequest()){
 		this.client.doQueue(callback);
 	}

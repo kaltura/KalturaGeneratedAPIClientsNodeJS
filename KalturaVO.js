@@ -2423,17 +2423,19 @@ util.inherits(KalturaFileAsset, kaltura.KalturaObjectBase);
  * @param updatedAt int  (readOnly).
  * @param readyAt int  (readOnly).
  * @param syncTime int  (readOnly).
- * @param status int  (readOnly).
+ * @param status int .
  * @param fileType int  (readOnly).
  * @param linkedId int  (readOnly).
  * @param linkCount int  (readOnly).
- * @param fileRoot string  (readOnly).
- * @param filePath string  (readOnly).
+ * @param fileRoot string .
+ * @param filePath string .
  * @param fileSize float  (readOnly).
  * @param fileUrl string  (readOnly).
  * @param fileContent string  (readOnly).
  * @param fileDiscSize float  (readOnly).
  * @param isCurrentDc bool  (readOnly).
+ * @param isDir bool  (readOnly).
+ * @param originalId int  (readOnly).
  */
 function KalturaFileSync(){
 	KalturaFileSync.super_.call(this);
@@ -2460,6 +2462,8 @@ function KalturaFileSync(){
 	this.fileContent = null;
 	this.fileDiscSize = null;
 	this.isCurrentDc = null;
+	this.isDir = null;
+	this.originalId = null;
 }
 module.exports.KalturaFileSync = KalturaFileSync;
 

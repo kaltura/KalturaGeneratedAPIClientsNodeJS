@@ -1749,6 +1749,7 @@ LIVE_HLS : '1001',
 LIVE_HDS : '1002',
 LIVE_DASH : '1003',
 LIVE_RTMP : '1005',
+LIVE_HLS_TO_MULTICAST : '1006',
 LIVE_AKAMAI_HDS : '1013',
 };
 
@@ -3148,6 +3149,7 @@ WEIGHT_DESC : '-weight',
 
 var KalturaPlaybackProtocol = module.exports.KalturaPlaybackProtocol = {
 APPLE_HTTP : 'applehttp',
+APPLE_HTTP_TO_MC : 'applehttp_to_mc',
 AUTO : 'auto',
 AKAMAI_HD : 'hdnetwork',
 AKAMAI_HDS : 'hdnetworkmanifest',

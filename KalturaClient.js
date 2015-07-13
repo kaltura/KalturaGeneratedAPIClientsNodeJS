@@ -684,7 +684,7 @@ KalturaClient.prototype.getSessionId = function(){
 };
 
 /**
- * Response profile
+ * Response profile - this attribute will be automatically unset after every API call.
  * 
  * @param KalturaBaseResponseProfile responseProfile
  */
@@ -693,7 +693,7 @@ KalturaClient.prototype.setResponseProfile = function(responseProfile){
 };
 
 /**
- * Response profile
+ * Response profile - this attribute will be automatically unset after every API call.
  * 
  * @return KalturaBaseResponseProfile
  */

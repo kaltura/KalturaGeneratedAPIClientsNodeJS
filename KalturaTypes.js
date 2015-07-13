@@ -657,32 +657,6 @@ APPENDED : 1,
 PER_SESSION : 2,
 };
 
-var KalturaReportType = module.exports.KalturaReportType = {
-TOP_CONTENT : 1,
-CONTENT_DROPOFF : 2,
-CONTENT_INTERACTIONS : 3,
-MAP_OVERLAY : 4,
-TOP_CONTRIBUTORS : 5,
-TOP_SYNDICATION : 6,
-CONTENT_CONTRIBUTIONS : 7,
-USER_ENGAGEMENT : 11,
-SPEFICIC_USER_ENGAGEMENT : 12,
-USER_TOP_CONTENT : 13,
-USER_CONTENT_DROPOFF : 14,
-USER_CONTENT_INTERACTIONS : 15,
-APPLICATIONS : 16,
-USER_USAGE : 17,
-SPECIFIC_USER_USAGE : 18,
-VAR_USAGE : 19,
-TOP_CREATORS : 20,
-PLATFORMS : 21,
-OPERATION_SYSTEM : 22,
-BROWSERS : 23,
-LIVE : 24,
-TOP_PLAYBACK_CONTEXT : 25,
-PARTNER_USAGE : 201,
-};
-
 var KalturaResponseProfileStatus = module.exports.KalturaResponseProfileStatus = {
 DISABLED : 1,
 ENABLED : 2,
@@ -935,6 +909,11 @@ RESIZE_WITH_PADDING : 2,
 CROP : 3,
 CROP_FROM_TOP : 4,
 RESIZE_WITH_FORCE : 5,
+};
+
+var KalturaThumbCuePointSubType = module.exports.KalturaThumbCuePointSubType = {
+SLIDE : 1,
+CHAPTER : 2,
 };
 
 var KalturaTrackEntryEventType = module.exports.KalturaTrackEntryEventType = {
@@ -1210,6 +1189,7 @@ DOCUMENT : 'document.Document',
 IMAGE : 'document.Image',
 PDF : 'document.PDF',
 SWF : 'document.SWF',
+TIMED_THUMB_ASSET : 'thumbCuePoint.timedThumb',
 FLAVOR : '1',
 THUMBNAIL : '2',
 LIVE : '3',
@@ -1360,6 +1340,7 @@ COPY_PARTNER : '37',
 VALIDATE_LIVE_MEDIA_SERVERS : '38',
 SYNC_CATEGORY_PRIVACY_CONTEXT : '39',
 LIVE_REPORT_EXPORT : '40',
+RECALCULATE_CACHE : '41',
 };
 
 var KalturaBulkUploadAction = module.exports.KalturaBulkUploadAction = {
@@ -1601,6 +1582,7 @@ CODE : 'codeCuePoint.Code',
 EVENT : 'eventCuePoint.Event',
 QUIZ_ANSWER : 'quiz.QUIZ_ANSWER',
 QUIZ_QUESTION : 'quiz.QUIZ_QUESTION',
+THUMB : 'thumbCuePoint.Thumb',
 };
 
 var KalturaDataEntryOrderBy = module.exports.KalturaDataEntryOrderBy = {
@@ -2982,6 +2964,7 @@ var KalturaMetadataObjectType = module.exports.KalturaMetadataObjectType = {
 AD_CUE_POINT : 'adCuePointMetadata.AdCuePoint',
 ANNOTATION : 'annotationMetadata.Annotation',
 CODE_CUE_POINT : 'codeCuePointMetadata.CodeCuePoint',
+THUMB_CUE_POINT : 'thumbCuePointMetadata.thumbCuePoint',
 ENTRY : '1',
 CATEGORY : '2',
 USER : '3',
@@ -3229,6 +3212,34 @@ CREATED_AT_ASC : '+createdAt',
 CREATED_AT_DESC : '-createdAt',
 };
 
+var KalturaReportType = module.exports.KalturaReportType = {
+QUIZ : 'quiz.QUIZ',
+QUIZ_USER_PERCENTAGE : 'quiz.self::QUIZ_USER_PERCENTAGE',
+TOP_CONTENT : '1',
+CONTENT_DROPOFF : '2',
+CONTENT_INTERACTIONS : '3',
+MAP_OVERLAY : '4',
+TOP_CONTRIBUTORS : '5',
+TOP_SYNDICATION : '6',
+CONTENT_CONTRIBUTIONS : '7',
+USER_ENGAGEMENT : '11',
+SPEFICIC_USER_ENGAGEMENT : '12',
+USER_TOP_CONTENT : '13',
+USER_CONTENT_DROPOFF : '14',
+USER_CONTENT_INTERACTIONS : '15',
+APPLICATIONS : '16',
+USER_USAGE : '17',
+SPECIFIC_USER_USAGE : '18',
+VAR_USAGE : '19',
+TOP_CREATORS : '20',
+PLATFORMS : '21',
+OPERATION_SYSTEM : '22',
+BROWSERS : '23',
+LIVE : '24',
+TOP_PLAYBACK_CONTEXT : '25',
+PARTNER_USAGE : '201',
+};
+
 var KalturaResponseProfileOrderBy = module.exports.KalturaResponseProfileOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
@@ -3399,10 +3410,34 @@ SIZE_DESC : '-size',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
+var KalturaThumbCuePointOrderBy = module.exports.KalturaThumbCuePointOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+PARTNER_SORT_VALUE_ASC : '+partnerSortValue',
+START_TIME_ASC : '+startTime',
+TRIGGERED_AT_ASC : '+triggeredAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+PARTNER_SORT_VALUE_DESC : '-partnerSortValue',
+START_TIME_DESC : '-startTime',
+TRIGGERED_AT_DESC : '-triggeredAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
 var KalturaThumbParamsOrderBy = module.exports.KalturaThumbParamsOrderBy = {
 };
 
 var KalturaThumbParamsOutputOrderBy = module.exports.KalturaThumbParamsOutputOrderBy = {
+};
+
+var KalturaTimedThumbAssetOrderBy = module.exports.KalturaTimedThumbAssetOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+DELETED_AT_ASC : '+deletedAt',
+SIZE_ASC : '+size',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+DELETED_AT_DESC : '-deletedAt',
+SIZE_DESC : '-size',
+UPDATED_AT_DESC : '-updatedAt',
 };
 
 var KalturaTubeMogulSyndicationFeedCategories = module.exports.KalturaTubeMogulSyndicationFeedCategories = {

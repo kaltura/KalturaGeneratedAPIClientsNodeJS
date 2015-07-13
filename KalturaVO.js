@@ -4323,7 +4323,7 @@ util.inherits(KalturaReportTotal, kaltura.KalturaObjectBase);
 /**
  * @param partnerId int Impersonated partner id.
  * @param ks string Kaltura API session.
- * @param responseProfile KalturaBaseResponseProfile Response profile.
+ * @param responseProfile KalturaBaseResponseProfile Response profile - this attribute will be automatically unset after every API call.
  */
 function KalturaRequestConfiguration(){
 	KalturaRequestConfiguration.super_.call(this);
@@ -4343,6 +4343,7 @@ util.inherits(KalturaRequestConfiguration, kaltura.KalturaObjectBase);
  * @param createdAt int Creation time as Unix timestamp (In seconds) (readOnly).
  * @param updatedAt int Update time as Unix timestamp (In seconds) (readOnly).
  * @param status int  (readOnly).
+ * @param version int  (readOnly).
  */
 function KalturaResponseProfile(){
 	KalturaResponseProfile.super_.call(this);
@@ -4352,10 +4353,49 @@ function KalturaResponseProfile(){
 	this.createdAt = null;
 	this.updatedAt = null;
 	this.status = null;
+	this.version = null;
 }
 module.exports.KalturaResponseProfile = KalturaResponseProfile;
 
 util.inherits(KalturaResponseProfile, KalturaDetachedResponseProfile);
+
+
+/**
+ * @param limit int Maximum number of keys to recalculate.
+ * @param cachedObjectType string Class name.
+ * @param objectId string .
+ * @param startObjectKey string .
+ * @param endObjectKey string .
+ * @param jobCreatedAt int .
+ * @param isFirstLoop bool .
+ */
+function KalturaResponseProfileCacheRecalculateOptions(){
+	KalturaResponseProfileCacheRecalculateOptions.super_.call(this);
+	this.limit = null;
+	this.cachedObjectType = null;
+	this.objectId = null;
+	this.startObjectKey = null;
+	this.endObjectKey = null;
+	this.jobCreatedAt = null;
+	this.isFirstLoop = null;
+}
+module.exports.KalturaResponseProfileCacheRecalculateOptions = KalturaResponseProfileCacheRecalculateOptions;
+
+util.inherits(KalturaResponseProfileCacheRecalculateOptions, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param lastObjectKey string Last recalculated id.
+ * @param recalculated int Number of recalculated keys.
+ */
+function KalturaResponseProfileCacheRecalculateResults(){
+	KalturaResponseProfileCacheRecalculateResults.super_.call(this);
+	this.lastObjectKey = null;
+	this.recalculated = null;
+}
+module.exports.KalturaResponseProfileCacheRecalculateResults = KalturaResponseProfileCacheRecalculateResults;
+
+util.inherits(KalturaResponseProfileCacheRecalculateResults, kaltura.KalturaObjectBase);
 
 
 /**
@@ -9402,6 +9442,16 @@ util.inherits(KalturaQuizUserEntry, KalturaUserEntry);
 
 /**
  */
+function KalturaRecalculateCacheJobData(){
+	KalturaRecalculateCacheJobData.super_.call(this);
+}
+module.exports.KalturaRecalculateCacheJobData = KalturaRecalculateCacheJobData;
+
+util.inherits(KalturaRecalculateCacheJobData, KalturaJobData);
+
+
+/**
+ */
 function KalturaRemoteDropFolder(){
 	KalturaRemoteDropFolder.super_.call(this);
 }
@@ -9961,6 +10011,24 @@ util.inherits(KalturaThumbAssetListResponse, KalturaListResponse);
 
 
 /**
+ * @param assetId string .
+ * @param description string .
+ * @param title string .
+ * @param subType int The sub type of the ThumbCuePoint.
+ */
+function KalturaThumbCuePoint(){
+	KalturaThumbCuePoint.super_.call(this);
+	this.assetId = null;
+	this.description = null;
+	this.title = null;
+	this.subType = null;
+}
+module.exports.KalturaThumbCuePoint = KalturaThumbCuePoint;
+
+util.inherits(KalturaThumbCuePoint, KalturaCuePoint);
+
+
+/**
  * @param objects array  (readOnly).
  */
 function KalturaThumbParamsListResponse(){
@@ -10299,7 +10367,7 @@ util.inherits(KalturaUserAgentRestriction, KalturaBaseRestriction);
  * @param entryIdEqual string .
  * @param entryIdIn string .
  * @param entryIdNotIn string .
- * @param userIdEqual int .
+ * @param userIdEqual string .
  * @param userIdIn string .
  * @param userIdNotIn string .
  * @param statusEqual string .
@@ -12066,6 +12134,30 @@ util.inherits(KalturaQuizFilter, KalturaRelatedFilter);
 
 
 /**
+ * @param protocol string http / https.
+ * @param ksType int .
+ * @param userRoles array .
+ * @param cachedObjectType string Class name.
+ * @param objectId string .
+ * @param startObjectKey string .
+ * @param endObjectKey string .
+ */
+function KalturaRecalculateResponseProfileCacheJobData(){
+	KalturaRecalculateResponseProfileCacheJobData.super_.call(this);
+	this.protocol = null;
+	this.ksType = null;
+	this.userRoles = null;
+	this.cachedObjectType = null;
+	this.objectId = null;
+	this.startObjectKey = null;
+	this.endObjectKey = null;
+}
+module.exports.KalturaRecalculateResponseProfileCacheJobData = KalturaRecalculateResponseProfileCacheJobData;
+
+util.inherits(KalturaRecalculateResponseProfileCacheJobData, KalturaRecalculateCacheJobData);
+
+
+/**
  */
 function KalturaRegexCondition(){
 	KalturaRegexCondition.super_.call(this);
@@ -12250,6 +12342,18 @@ util.inherits(KalturaSwfFlavorParams, KalturaFlavorParams);
 
 
 /**
+ * @param cuePointId string Associated thumb cue point ID (insertOnly).
+ */
+function KalturaTimedThumbAsset(){
+	KalturaTimedThumbAsset.super_.call(this);
+	this.cuePointId = null;
+}
+module.exports.KalturaTimedThumbAsset = KalturaTimedThumbAsset;
+
+util.inherits(KalturaTimedThumbAsset, KalturaThumbAsset);
+
+
+/**
  */
 function KalturaUiConfFilter(){
 	KalturaUiConfFilter.super_.call(this);
@@ -12270,9 +12374,11 @@ util.inherits(KalturaUploadTokenFilter, KalturaUploadTokenBaseFilter);
 
 
 /**
+ * @param userIdEqualCurrent int .
  */
 function KalturaUserEntryFilter(){
 	KalturaUserEntryFilter.super_.call(this);
+	this.userIdEqualCurrent = null;
 }
 module.exports.KalturaUserEntryFilter = KalturaUserEntryFilter;
 
@@ -12543,10 +12649,14 @@ util.inherits(KalturaCountryContextField, KalturaStringField);
 
 /**
  * @param freeText string .
+ * @param userIdEqualCurrent int .
+ * @param userIdCurrent int .
  */
 function KalturaCuePointFilter(){
 	KalturaCuePointFilter.super_.call(this);
 	this.freeText = null;
+	this.userIdEqualCurrent = null;
+	this.userIdCurrent = null;
 }
 module.exports.KalturaCuePointFilter = KalturaCuePointFilter;
 
@@ -13776,6 +13886,32 @@ util.inherits(KalturaThumbAssetBaseFilter, KalturaAssetFilter);
 
 
 /**
+ * @param descriptionLike string .
+ * @param descriptionMultiLikeOr string .
+ * @param descriptionMultiLikeAnd string .
+ * @param titleLike string .
+ * @param titleMultiLikeOr string .
+ * @param titleMultiLikeAnd string .
+ * @param subTypeEqual int .
+ * @param subTypeIn string .
+ */
+function KalturaThumbCuePointBaseFilter(){
+	KalturaThumbCuePointBaseFilter.super_.call(this);
+	this.descriptionLike = null;
+	this.descriptionMultiLikeOr = null;
+	this.descriptionMultiLikeAnd = null;
+	this.titleLike = null;
+	this.titleMultiLikeOr = null;
+	this.titleMultiLikeAnd = null;
+	this.subTypeEqual = null;
+	this.subTypeIn = null;
+}
+module.exports.KalturaThumbCuePointBaseFilter = KalturaThumbCuePointBaseFilter;
+
+util.inherits(KalturaThumbCuePointBaseFilter, KalturaCuePointFilter);
+
+
+/**
  * @param formatEqual string .
  */
 function KalturaThumbParamsBaseFilter(){
@@ -14061,6 +14197,16 @@ util.inherits(KalturaThumbAssetFilter, KalturaThumbAssetBaseFilter);
 
 /**
  */
+function KalturaThumbCuePointFilter(){
+	KalturaThumbCuePointFilter.super_.call(this);
+}
+module.exports.KalturaThumbCuePointFilter = KalturaThumbCuePointFilter;
+
+util.inherits(KalturaThumbCuePointFilter, KalturaThumbCuePointBaseFilter);
+
+
+/**
+ */
 function KalturaThumbParamsFilter(){
 	KalturaThumbParamsFilter.super_.call(this);
 }
@@ -14265,6 +14411,16 @@ util.inherits(KalturaThumbParamsOutputBaseFilter, KalturaThumbParamsFilter);
 
 /**
  */
+function KalturaTimedThumbAssetBaseFilter(){
+	KalturaTimedThumbAssetBaseFilter.super_.call(this);
+}
+module.exports.KalturaTimedThumbAssetBaseFilter = KalturaTimedThumbAssetBaseFilter;
+
+util.inherits(KalturaTimedThumbAssetBaseFilter, KalturaThumbAssetFilter);
+
+
+/**
+ */
 function KalturaDocumentFlavorParamsFilter(){
 	KalturaDocumentFlavorParamsFilter.super_.call(this);
 }
@@ -14381,6 +14537,16 @@ function KalturaThumbParamsOutputFilter(){
 module.exports.KalturaThumbParamsOutputFilter = KalturaThumbParamsOutputFilter;
 
 util.inherits(KalturaThumbParamsOutputFilter, KalturaThumbParamsOutputBaseFilter);
+
+
+/**
+ */
+function KalturaTimedThumbAssetFilter(){
+	KalturaTimedThumbAssetFilter.super_.call(this);
+}
+module.exports.KalturaTimedThumbAssetFilter = KalturaTimedThumbAssetFilter;
+
+util.inherits(KalturaTimedThumbAssetFilter, KalturaTimedThumbAssetBaseFilter);
 
 
 /**

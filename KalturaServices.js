@@ -5410,7 +5410,7 @@ module.exports.KalturaReportService = KalturaReportService;
 
 /**
  * report getGraphs action allows to get a graph data for a specific report.
- * @param reportType int  (optional, enum: KalturaReportType).
+ * @param reportType string  (optional, enum: KalturaReportType).
  * @param reportInputFilter KalturaReportInputFilter  (optional).
  * @param dimension string  (optional, default: null).
  * @param objectIds string - one ID or more (separated by ',') of specific objects to query (optional, default: null).
@@ -5435,7 +5435,7 @@ KalturaReportService.prototype.getGraphs = function(callback, reportType, report
 };
 /**
  * report getTotal action allows to get a graph data for a specific report.
- * @param reportType int  (optional, enum: KalturaReportType).
+ * @param reportType string  (optional, enum: KalturaReportType).
  * @param reportInputFilter KalturaReportInputFilter  (optional).
  * @param objectIds string - one ID or more (separated by ',') of specific objects to query (optional, default: null).
  * @return KalturaReportTotal.
@@ -5455,7 +5455,7 @@ KalturaReportService.prototype.getTotal = function(callback, reportType, reportI
 };
 /**
  * report getBaseTotal action allows to get a the total base for storage reports.
- * @param reportType int  (optional, enum: KalturaReportType).
+ * @param reportType string  (optional, enum: KalturaReportType).
  * @param reportInputFilter KalturaReportInputFilter  (optional).
  * @param objectIds string - one ID or more (separated by ',') of specific objects to query (optional, default: null).
  * @return array.
@@ -5475,7 +5475,7 @@ KalturaReportService.prototype.getBaseTotal = function(callback, reportType, rep
 };
 /**
  * report getTable action allows to get a graph data for a specific report.
- * @param reportType int  (optional, enum: KalturaReportType).
+ * @param reportType string  (optional, enum: KalturaReportType).
  * @param reportInputFilter KalturaReportInputFilter  (optional).
  * @param pager KalturaFilterPager  (optional).
  * @param order string  (optional, default: null).
@@ -5505,7 +5505,7 @@ KalturaReportService.prototype.getTable = function(callback, reportType, reportI
  * @param reportTitle string The title of the report to display at top of CSV (optional).
  * @param reportText string The text of the filter of the report (optional).
  * @param headers string The headers of the columns - a map between the enumerations on the server side and the their display text (optional).
- * @param reportType int  (optional, enum: KalturaReportType).
+ * @param reportType string  (optional, enum: KalturaReportType).
  * @param reportInputFilter KalturaReportInputFilter  (optional).
  * @param dimension string  (optional, default: null).
  * @param pager KalturaFilterPager  (optional, default: null).
@@ -5590,6 +5590,7 @@ KalturaReportService.prototype.execute = function(callback, id, params){
  * @action updateStatus Update response profile status by id.
  * @action delete Delete response profile by id.
  * @action list List response profiles by filter and pager.
+ * @action recalculate Recalculate response profile cached objects.
  */
 function KalturaResponseProfileService(client){
 	KalturaResponseProfileService.super_.call(this);
@@ -5689,6 +5690,19 @@ KalturaResponseProfileService.prototype.listAction = function(callback, filter, 
 		this.client.addParam(kparams, 'pager', kaltura.toParams(pager));
 	}
 	this.client.queueServiceActionCall('responseprofile', 'list', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Recalculate response profile cached objects.
+ * @param options KalturaResponseProfileCacheRecalculateOptions  (optional).
+ * @return KalturaResponseProfileCacheRecalculateResults.
+ */
+KalturaResponseProfileService.prototype.recalculate = function(callback, options){
+	var kparams = {};
+	this.client.addParam(kparams, 'options', kaltura.toParams(options));
+	this.client.queueServiceActionCall('responseprofile', 'recalculate', kparams);
 	if (!this.client.isMultiRequest()){
 		this.client.doQueue(callback);
 	}

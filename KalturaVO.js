@@ -1955,7 +1955,7 @@ util.inherits(KalturaDropFolderFile, kaltura.KalturaObjectBase);
  * @param partnerId int  (readOnly).
  * @param name string edgeServer name.
  * @param systemName string edgeServer uniqe system name.
- * @param desciption string edgeServer description.
+ * @param description string edgeServer description.
  * @param status int .
  * @param tags string edgeServer tags.
  * @param hostName string edgeServer host name.
@@ -1971,7 +1971,7 @@ function KalturaEdgeServer(){
 	this.partnerId = null;
 	this.name = null;
 	this.systemName = null;
-	this.desciption = null;
+	this.description = null;
 	this.status = null;
 	this.tags = null;
 	this.hostName = null;

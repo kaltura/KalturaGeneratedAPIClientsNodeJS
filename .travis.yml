@@ -4,3 +4,10 @@ node_js:
       - "0.11"
 before_install: npm install deadunit
 script: cd tests && node testme.js 
+notifications:
+  email:
+    recipients:
+      - moshe.maor@kaltura.com
+      - jess.portnoy@kaltura.com
+    on_success: change
+    on_failure: always

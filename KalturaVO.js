@@ -79,18 +79,6 @@ util.inherits(KalturaAccessControl, kaltura.KalturaObjectBase);
 
 
 /**
- * @param type string The type of the access control action (readOnly).
- */
-function KalturaAccessControlAction(){
-	KalturaAccessControlAction.super_.call(this);
-	this.type = null;
-}
-module.exports.KalturaAccessControlAction = KalturaAccessControlAction;
-
-util.inherits(KalturaAccessControlAction, kaltura.KalturaObjectBase);
-
-
-/**
  * @param type string The type of the condition context.
  */
 function KalturaContextTypeHolder(){
@@ -795,50 +783,6 @@ function KalturaBatchJob(){
 module.exports.KalturaBatchJob = KalturaBatchJob;
 
 util.inherits(KalturaBatchJob, kaltura.KalturaObjectBase);
-
-
-/**
- * @param jobType string .
- * @param workerId int The worker configured id.
- * @param typeName string The friendly name of the type.
- * @param size int The size of the queue.
- * @param waitTime int The avarage wait time.
- */
-function KalturaBatchQueuesStatus(){
-	KalturaBatchQueuesStatus.super_.call(this);
-	this.jobType = null;
-	this.workerId = null;
-	this.typeName = null;
-	this.size = null;
-	this.waitTime = null;
-}
-module.exports.KalturaBatchQueuesStatus = KalturaBatchQueuesStatus;
-
-util.inherits(KalturaBatchQueuesStatus, kaltura.KalturaObjectBase);
-
-
-/**
- * @param description string .
- */
-function KalturaValue(){
-	KalturaValue.super_.call(this);
-	this.description = null;
-}
-module.exports.KalturaValue = KalturaValue;
-
-util.inherits(KalturaValue, kaltura.KalturaObjectBase);
-
-
-/**
- * @param value bool .
- */
-function KalturaBooleanValue(){
-	KalturaBooleanValue.super_.call(this);
-	this.value = null;
-}
-module.exports.KalturaBooleanValue = KalturaBooleanValue;
-
-util.inherits(KalturaBooleanValue, KalturaValue);
 
 
 /**
@@ -2027,6 +1971,18 @@ util.inherits(KalturaEmailIngestionProfile, kaltura.KalturaObjectBase);
 
 
 /**
+ * @param description string .
+ */
+function KalturaValue(){
+	KalturaValue.super_.call(this);
+	this.description = null;
+}
+module.exports.KalturaValue = KalturaValue;
+
+util.inherits(KalturaValue, kaltura.KalturaObjectBase);
+
+
+/**
  * @param value string .
  */
 function KalturaStringValue(){
@@ -2150,16 +2106,6 @@ function KalturaEntryReplacementOptions(){
 module.exports.KalturaEntryReplacementOptions = KalturaEntryReplacementOptions;
 
 util.inherits(KalturaEntryReplacementOptions, kaltura.KalturaObjectBase);
-
-
-/**
- */
-function KalturaEventCondition(){
-	KalturaEventCondition.super_.call(this);
-}
-module.exports.KalturaEventCondition = KalturaEventCondition;
-
-util.inherits(KalturaEventCondition, kaltura.KalturaObjectBase);
 
 
 /**
@@ -2805,250 +2751,6 @@ util.inherits(KalturaInternalToolsSession, kaltura.KalturaObjectBase);
 
 
 /**
- * @param objects array  (readOnly).
- */
-function KalturaFileSyncListResponse(){
-	KalturaFileSyncListResponse.super_.call(this);
-	this.objects = null;
-}
-module.exports.KalturaFileSyncListResponse = KalturaFileSyncListResponse;
-
-util.inherits(KalturaFileSyncListResponse, KalturaListResponse);
-
-
-/**
- * @param id int The id of the media info (readOnly).
- * @param flavorAssetId string The id of the related flavor asset.
- * @param fileSize int The file size.
- * @param containerFormat string The container format.
- * @param containerId string The container id.
- * @param containerProfile string The container profile.
- * @param containerDuration int The container duration.
- * @param containerBitRate int The container bit rate.
- * @param videoFormat string The video format.
- * @param videoCodecId string The video codec id.
- * @param videoDuration int The video duration.
- * @param videoBitRate int The video bit rate.
- * @param videoBitRateMode int The video bit rate mode.
- * @param videoWidth int The video width.
- * @param videoHeight int The video height.
- * @param videoFrameRate float The video frame rate.
- * @param videoDar float The video display aspect ratio (dar).
- * @param videoRotation int .
- * @param audioFormat string The audio format.
- * @param audioCodecId string The audio codec id.
- * @param audioDuration int The audio duration.
- * @param audioBitRate int The audio bit rate.
- * @param audioBitRateMode int The audio bit rate mode.
- * @param audioChannels int The number of audio channels.
- * @param audioSamplingRate int The audio sampling rate.
- * @param audioResolution int The audio resolution.
- * @param writingLib string The writing library.
- * @param rawData string The data as returned by the mediainfo command line.
- * @param multiStreamInfo string .
- * @param scanType int .
- * @param multiStream string .
- * @param isFastStart int .
- * @param contentStreams string .
- */
-function KalturaMediaInfo(){
-	KalturaMediaInfo.super_.call(this);
-	this.id = null;
-	this.flavorAssetId = null;
-	this.fileSize = null;
-	this.containerFormat = null;
-	this.containerId = null;
-	this.containerProfile = null;
-	this.containerDuration = null;
-	this.containerBitRate = null;
-	this.videoFormat = null;
-	this.videoCodecId = null;
-	this.videoDuration = null;
-	this.videoBitRate = null;
-	this.videoBitRateMode = null;
-	this.videoWidth = null;
-	this.videoHeight = null;
-	this.videoFrameRate = null;
-	this.videoDar = null;
-	this.videoRotation = null;
-	this.audioFormat = null;
-	this.audioCodecId = null;
-	this.audioDuration = null;
-	this.audioBitRate = null;
-	this.audioBitRateMode = null;
-	this.audioChannels = null;
-	this.audioSamplingRate = null;
-	this.audioResolution = null;
-	this.writingLib = null;
-	this.rawData = null;
-	this.multiStreamInfo = null;
-	this.scanType = null;
-	this.multiStream = null;
-	this.isFastStart = null;
-	this.contentStreams = null;
-}
-module.exports.KalturaMediaInfo = KalturaMediaInfo;
-
-util.inherits(KalturaMediaInfo, kaltura.KalturaObjectBase);
-
-
-/**
- * @param objects array  (readOnly).
- */
-function KalturaMediaInfoListResponse(){
-	KalturaMediaInfoListResponse.super_.call(this);
-	this.objects = null;
-}
-module.exports.KalturaMediaInfoListResponse = KalturaMediaInfoListResponse;
-
-util.inherits(KalturaMediaInfoListResponse, KalturaListResponse);
-
-
-/**
- * @param objects array  (readOnly).
- */
-function KalturaFlavorParamsOutputListResponse(){
-	KalturaFlavorParamsOutputListResponse.super_.call(this);
-	this.objects = null;
-}
-module.exports.KalturaFlavorParamsOutputListResponse = KalturaFlavorParamsOutputListResponse;
-
-util.inherits(KalturaFlavorParamsOutputListResponse, KalturaListResponse);
-
-
-/**
- * @param flavorAsset KalturaFlavorAsset  (readOnly).
- * @param fileSyncs KalturaFileSyncListResponse  (readOnly).
- * @param mediaInfos KalturaMediaInfoListResponse  (readOnly).
- * @param flavorParams KalturaFlavorParams  (readOnly).
- * @param flavorParamsOutputs KalturaFlavorParamsOutputListResponse  (readOnly).
- */
-function KalturaInvestigateFlavorAssetData(){
-	KalturaInvestigateFlavorAssetData.super_.call(this);
-	this.flavorAsset = null;
-	this.fileSyncs = null;
-	this.mediaInfos = null;
-	this.flavorParams = null;
-	this.flavorParamsOutputs = null;
-}
-module.exports.KalturaInvestigateFlavorAssetData = KalturaInvestigateFlavorAssetData;
-
-util.inherits(KalturaInvestigateFlavorAssetData, kaltura.KalturaObjectBase);
-
-
-/**
- * @param thumbParamsId int The Flavor Params used to create this Flavor Asset (insertOnly).
- * @param width int The width of the Flavor Asset (readOnly).
- * @param height int The height of the Flavor Asset (readOnly).
- * @param status int The status of the asset (readOnly).
- */
-function KalturaThumbAsset(){
-	KalturaThumbAsset.super_.call(this);
-	this.thumbParamsId = null;
-	this.width = null;
-	this.height = null;
-	this.status = null;
-}
-module.exports.KalturaThumbAsset = KalturaThumbAsset;
-
-util.inherits(KalturaThumbAsset, KalturaAsset);
-
-
-/**
- * @param cropType int .
- * @param quality int .
- * @param cropX int .
- * @param cropY int .
- * @param cropWidth int .
- * @param cropHeight int .
- * @param videoOffset float .
- * @param width int .
- * @param height int .
- * @param scaleWidth float .
- * @param scaleHeight float .
- * @param backgroundColor string Hexadecimal value.
- * @param sourceParamsId int Id of the flavor params or the thumbnail params to be used as source for the thumbnail creation.
- * @param format string The container format of the Flavor Params.
- * @param density int The image density (dpi) for example: 72 or 96.
- * @param stripProfiles bool Strip profiles and comments.
- * @param videoOffsetInPercentage int Create thumbnail from the videoLengthpercentage second.
- */
-function KalturaThumbParams(){
-	KalturaThumbParams.super_.call(this);
-	this.cropType = null;
-	this.quality = null;
-	this.cropX = null;
-	this.cropY = null;
-	this.cropWidth = null;
-	this.cropHeight = null;
-	this.videoOffset = null;
-	this.width = null;
-	this.height = null;
-	this.scaleWidth = null;
-	this.scaleHeight = null;
-	this.backgroundColor = null;
-	this.sourceParamsId = null;
-	this.format = null;
-	this.density = null;
-	this.stripProfiles = null;
-	this.videoOffsetInPercentage = null;
-}
-module.exports.KalturaThumbParams = KalturaThumbParams;
-
-util.inherits(KalturaThumbParams, KalturaAssetParams);
-
-
-/**
- * @param thumbParamsId int .
- * @param thumbParamsVersion string .
- * @param thumbAssetId string .
- * @param thumbAssetVersion string .
- * @param rotate int .
- */
-function KalturaThumbParamsOutput(){
-	KalturaThumbParamsOutput.super_.call(this);
-	this.thumbParamsId = null;
-	this.thumbParamsVersion = null;
-	this.thumbAssetId = null;
-	this.thumbAssetVersion = null;
-	this.rotate = null;
-}
-module.exports.KalturaThumbParamsOutput = KalturaThumbParamsOutput;
-
-util.inherits(KalturaThumbParamsOutput, KalturaThumbParams);
-
-
-/**
- * @param objects array  (readOnly).
- */
-function KalturaThumbParamsOutputListResponse(){
-	KalturaThumbParamsOutputListResponse.super_.call(this);
-	this.objects = null;
-}
-module.exports.KalturaThumbParamsOutputListResponse = KalturaThumbParamsOutputListResponse;
-
-util.inherits(KalturaThumbParamsOutputListResponse, KalturaListResponse);
-
-
-/**
- * @param thumbAsset KalturaThumbAsset  (readOnly).
- * @param fileSyncs KalturaFileSyncListResponse  (readOnly).
- * @param thumbParams KalturaThumbParams  (readOnly).
- * @param thumbParamsOutputs KalturaThumbParamsOutputListResponse  (readOnly).
- */
-function KalturaInvestigateThumbAssetData(){
-	KalturaInvestigateThumbAssetData.super_.call(this);
-	this.thumbAsset = null;
-	this.fileSyncs = null;
-	this.thumbParams = null;
-	this.thumbParamsOutputs = null;
-}
-module.exports.KalturaInvestigateThumbAssetData = KalturaInvestigateThumbAssetData;
-
-util.inherits(KalturaInvestigateThumbAssetData, kaltura.KalturaObjectBase);
-
-
-/**
  * @param key string .
  * @param value bool .
  */
@@ -3633,6 +3335,82 @@ function KalturaMediaEntryFilterForPlaylist(){
 module.exports.KalturaMediaEntryFilterForPlaylist = KalturaMediaEntryFilterForPlaylist;
 
 util.inherits(KalturaMediaEntryFilterForPlaylist, KalturaMediaEntryFilter);
+
+
+/**
+ * @param id int The id of the media info (readOnly).
+ * @param flavorAssetId string The id of the related flavor asset.
+ * @param fileSize int The file size.
+ * @param containerFormat string The container format.
+ * @param containerId string The container id.
+ * @param containerProfile string The container profile.
+ * @param containerDuration int The container duration.
+ * @param containerBitRate int The container bit rate.
+ * @param videoFormat string The video format.
+ * @param videoCodecId string The video codec id.
+ * @param videoDuration int The video duration.
+ * @param videoBitRate int The video bit rate.
+ * @param videoBitRateMode int The video bit rate mode.
+ * @param videoWidth int The video width.
+ * @param videoHeight int The video height.
+ * @param videoFrameRate float The video frame rate.
+ * @param videoDar float The video display aspect ratio (dar).
+ * @param videoRotation int .
+ * @param audioFormat string The audio format.
+ * @param audioCodecId string The audio codec id.
+ * @param audioDuration int The audio duration.
+ * @param audioBitRate int The audio bit rate.
+ * @param audioBitRateMode int The audio bit rate mode.
+ * @param audioChannels int The number of audio channels.
+ * @param audioSamplingRate int The audio sampling rate.
+ * @param audioResolution int The audio resolution.
+ * @param writingLib string The writing library.
+ * @param rawData string The data as returned by the mediainfo command line.
+ * @param multiStreamInfo string .
+ * @param scanType int .
+ * @param multiStream string .
+ * @param isFastStart int .
+ * @param contentStreams string .
+ */
+function KalturaMediaInfo(){
+	KalturaMediaInfo.super_.call(this);
+	this.id = null;
+	this.flavorAssetId = null;
+	this.fileSize = null;
+	this.containerFormat = null;
+	this.containerId = null;
+	this.containerProfile = null;
+	this.containerDuration = null;
+	this.containerBitRate = null;
+	this.videoFormat = null;
+	this.videoCodecId = null;
+	this.videoDuration = null;
+	this.videoBitRate = null;
+	this.videoBitRateMode = null;
+	this.videoWidth = null;
+	this.videoHeight = null;
+	this.videoFrameRate = null;
+	this.videoDar = null;
+	this.videoRotation = null;
+	this.audioFormat = null;
+	this.audioCodecId = null;
+	this.audioDuration = null;
+	this.audioBitRate = null;
+	this.audioBitRateMode = null;
+	this.audioChannels = null;
+	this.audioSamplingRate = null;
+	this.audioResolution = null;
+	this.writingLib = null;
+	this.rawData = null;
+	this.multiStreamInfo = null;
+	this.scanType = null;
+	this.multiStream = null;
+	this.isFastStart = null;
+	this.contentStreams = null;
+}
+module.exports.KalturaMediaInfo = KalturaMediaInfo;
+
+util.inherits(KalturaMediaInfo, kaltura.KalturaObjectBase);
 
 
 /**
@@ -5157,6 +4935,88 @@ util.inherits(KalturaTag, kaltura.KalturaObjectBase);
 
 
 /**
+ * @param thumbParamsId int The Flavor Params used to create this Flavor Asset (insertOnly).
+ * @param width int The width of the Flavor Asset (readOnly).
+ * @param height int The height of the Flavor Asset (readOnly).
+ * @param status int The status of the asset (readOnly).
+ */
+function KalturaThumbAsset(){
+	KalturaThumbAsset.super_.call(this);
+	this.thumbParamsId = null;
+	this.width = null;
+	this.height = null;
+	this.status = null;
+}
+module.exports.KalturaThumbAsset = KalturaThumbAsset;
+
+util.inherits(KalturaThumbAsset, KalturaAsset);
+
+
+/**
+ * @param cropType int .
+ * @param quality int .
+ * @param cropX int .
+ * @param cropY int .
+ * @param cropWidth int .
+ * @param cropHeight int .
+ * @param videoOffset float .
+ * @param width int .
+ * @param height int .
+ * @param scaleWidth float .
+ * @param scaleHeight float .
+ * @param backgroundColor string Hexadecimal value.
+ * @param sourceParamsId int Id of the flavor params or the thumbnail params to be used as source for the thumbnail creation.
+ * @param format string The container format of the Flavor Params.
+ * @param density int The image density (dpi) for example: 72 or 96.
+ * @param stripProfiles bool Strip profiles and comments.
+ * @param videoOffsetInPercentage int Create thumbnail from the videoLengthpercentage second.
+ */
+function KalturaThumbParams(){
+	KalturaThumbParams.super_.call(this);
+	this.cropType = null;
+	this.quality = null;
+	this.cropX = null;
+	this.cropY = null;
+	this.cropWidth = null;
+	this.cropHeight = null;
+	this.videoOffset = null;
+	this.width = null;
+	this.height = null;
+	this.scaleWidth = null;
+	this.scaleHeight = null;
+	this.backgroundColor = null;
+	this.sourceParamsId = null;
+	this.format = null;
+	this.density = null;
+	this.stripProfiles = null;
+	this.videoOffsetInPercentage = null;
+}
+module.exports.KalturaThumbParams = KalturaThumbParams;
+
+util.inherits(KalturaThumbParams, KalturaAssetParams);
+
+
+/**
+ * @param thumbParamsId int .
+ * @param thumbParamsVersion string .
+ * @param thumbAssetId string .
+ * @param thumbAssetVersion string .
+ * @param rotate int .
+ */
+function KalturaThumbParamsOutput(){
+	KalturaThumbParamsOutput.super_.call(this);
+	this.thumbParamsId = null;
+	this.thumbParamsVersion = null;
+	this.thumbAssetId = null;
+	this.thumbAssetVersion = null;
+	this.rotate = null;
+}
+module.exports.KalturaThumbParamsOutput = KalturaThumbParamsOutput;
+
+util.inherits(KalturaThumbParamsOutput, KalturaThumbParams);
+
+
+/**
  * @param download bool .
  */
 function KalturaThumbnailServeOptions(){
@@ -5226,18 +5086,6 @@ function KalturaTransformMetadataResponse(){
 module.exports.KalturaTransformMetadataResponse = KalturaTransformMetadataResponse;
 
 util.inherits(KalturaTransformMetadataResponse, kaltura.KalturaObjectBase);
-
-
-/**
- * @param count int .
- */
-function KalturaTypedArray(){
-	KalturaTypedArray.super_.call(this);
-	this.count = null;
-}
-module.exports.KalturaTypedArray = KalturaTypedArray;
-
-util.inherits(KalturaTypedArray, kaltura.KalturaObjectBase);
 
 
 /**
@@ -5651,134 +5499,6 @@ util.inherits(KalturaWidget, kaltura.KalturaObjectBase);
 
 
 /**
- * @param idEqual int .
- * @param idGreaterThanOrEqual int .
- * @param partnerIdEqual int .
- * @param partnerIdIn string .
- * @param partnerIdNotIn string .
- * @param createdAtGreaterThanOrEqual int .
- * @param createdAtLessThanOrEqual int .
- * @param updatedAtGreaterThanOrEqual int .
- * @param updatedAtLessThanOrEqual int .
- * @param executionAttemptsGreaterThanOrEqual int .
- * @param executionAttemptsLessThanOrEqual int .
- * @param lockVersionGreaterThanOrEqual int .
- * @param lockVersionLessThanOrEqual int .
- * @param entryIdEqual string .
- * @param jobTypeEqual string .
- * @param jobTypeIn string .
- * @param jobTypeNotIn string .
- * @param jobSubTypeEqual int .
- * @param jobSubTypeIn string .
- * @param jobSubTypeNotIn string .
- * @param statusEqual int .
- * @param statusIn string .
- * @param statusNotIn string .
- * @param priorityGreaterThanOrEqual int .
- * @param priorityLessThanOrEqual int .
- * @param priorityEqual int .
- * @param priorityIn string .
- * @param priorityNotIn string .
- * @param batchVersionGreaterThanOrEqual int .
- * @param batchVersionLessThanOrEqual int .
- * @param batchVersionEqual int .
- * @param queueTimeGreaterThanOrEqual int .
- * @param queueTimeLessThanOrEqual int .
- * @param finishTimeGreaterThanOrEqual int .
- * @param finishTimeLessThanOrEqual int .
- * @param errTypeEqual int .
- * @param errTypeIn string .
- * @param errTypeNotIn string .
- * @param errNumberEqual int .
- * @param errNumberIn string .
- * @param errNumberNotIn string .
- * @param estimatedEffortLessThan int .
- * @param estimatedEffortGreaterThan int .
- * @param urgencyLessThanOrEqual int .
- * @param urgencyGreaterThanOrEqual int .
- */
-function KalturaBatchJobBaseFilter(){
-	KalturaBatchJobBaseFilter.super_.call(this);
-	this.idEqual = null;
-	this.idGreaterThanOrEqual = null;
-	this.partnerIdEqual = null;
-	this.partnerIdIn = null;
-	this.partnerIdNotIn = null;
-	this.createdAtGreaterThanOrEqual = null;
-	this.createdAtLessThanOrEqual = null;
-	this.updatedAtGreaterThanOrEqual = null;
-	this.updatedAtLessThanOrEqual = null;
-	this.executionAttemptsGreaterThanOrEqual = null;
-	this.executionAttemptsLessThanOrEqual = null;
-	this.lockVersionGreaterThanOrEqual = null;
-	this.lockVersionLessThanOrEqual = null;
-	this.entryIdEqual = null;
-	this.jobTypeEqual = null;
-	this.jobTypeIn = null;
-	this.jobTypeNotIn = null;
-	this.jobSubTypeEqual = null;
-	this.jobSubTypeIn = null;
-	this.jobSubTypeNotIn = null;
-	this.statusEqual = null;
-	this.statusIn = null;
-	this.statusNotIn = null;
-	this.priorityGreaterThanOrEqual = null;
-	this.priorityLessThanOrEqual = null;
-	this.priorityEqual = null;
-	this.priorityIn = null;
-	this.priorityNotIn = null;
-	this.batchVersionGreaterThanOrEqual = null;
-	this.batchVersionLessThanOrEqual = null;
-	this.batchVersionEqual = null;
-	this.queueTimeGreaterThanOrEqual = null;
-	this.queueTimeLessThanOrEqual = null;
-	this.finishTimeGreaterThanOrEqual = null;
-	this.finishTimeLessThanOrEqual = null;
-	this.errTypeEqual = null;
-	this.errTypeIn = null;
-	this.errTypeNotIn = null;
-	this.errNumberEqual = null;
-	this.errNumberIn = null;
-	this.errNumberNotIn = null;
-	this.estimatedEffortLessThan = null;
-	this.estimatedEffortGreaterThan = null;
-	this.urgencyLessThanOrEqual = null;
-	this.urgencyGreaterThanOrEqual = null;
-}
-module.exports.KalturaBatchJobBaseFilter = KalturaBatchJobBaseFilter;
-
-util.inherits(KalturaBatchJobBaseFilter, KalturaFilter);
-
-
-/**
- */
-function KalturaBatchJobFilter(){
-	KalturaBatchJobFilter.super_.call(this);
-}
-module.exports.KalturaBatchJobFilter = KalturaBatchJobFilter;
-
-util.inherits(KalturaBatchJobFilter, KalturaBatchJobBaseFilter);
-
-
-/**
- * @param schedulerId int .
- * @param workerId int .
- * @param jobType string .
- * @param filter KalturaBatchJobFilter .
- */
-function KalturaWorkerQueueFilter(){
-	KalturaWorkerQueueFilter.super_.call(this);
-	this.schedulerId = null;
-	this.workerId = null;
-	this.jobType = null;
-	this.filter = null;
-}
-module.exports.KalturaWorkerQueueFilter = KalturaWorkerQueueFilter;
-
-util.inherits(KalturaWorkerQueueFilter, kaltura.KalturaObjectBase);
-
-
-/**
  */
 function KalturaAccessControlBlockAction(){
 	KalturaAccessControlBlockAction.super_.call(this);
@@ -5927,7 +5647,7 @@ util.inherits(KalturaAnnotationListResponse, KalturaListResponse);
  * @param quizUserEntryId string  (insertOnly).
  * @param answerKey string .
  * @param isCorrect int  (readOnly).
- * @param correctAnswerKeys KalturaTypedArray Array of string (readOnly).
+ * @param correctAnswerKeys array Array of string (readOnly).
  * @param explanation string  (readOnly).
  */
 function KalturaAnswerCuePoint(){
@@ -6128,6 +5848,106 @@ util.inherits(KalturaBaseSyndicationFeedListResponse, KalturaListResponse);
 
 
 /**
+ * @param idEqual int .
+ * @param idGreaterThanOrEqual int .
+ * @param partnerIdEqual int .
+ * @param partnerIdIn string .
+ * @param partnerIdNotIn string .
+ * @param createdAtGreaterThanOrEqual int .
+ * @param createdAtLessThanOrEqual int .
+ * @param updatedAtGreaterThanOrEqual int .
+ * @param updatedAtLessThanOrEqual int .
+ * @param executionAttemptsGreaterThanOrEqual int .
+ * @param executionAttemptsLessThanOrEqual int .
+ * @param lockVersionGreaterThanOrEqual int .
+ * @param lockVersionLessThanOrEqual int .
+ * @param entryIdEqual string .
+ * @param jobTypeEqual string .
+ * @param jobTypeIn string .
+ * @param jobTypeNotIn string .
+ * @param jobSubTypeEqual int .
+ * @param jobSubTypeIn string .
+ * @param jobSubTypeNotIn string .
+ * @param statusEqual int .
+ * @param statusIn string .
+ * @param statusNotIn string .
+ * @param priorityGreaterThanOrEqual int .
+ * @param priorityLessThanOrEqual int .
+ * @param priorityEqual int .
+ * @param priorityIn string .
+ * @param priorityNotIn string .
+ * @param batchVersionGreaterThanOrEqual int .
+ * @param batchVersionLessThanOrEqual int .
+ * @param batchVersionEqual int .
+ * @param queueTimeGreaterThanOrEqual int .
+ * @param queueTimeLessThanOrEqual int .
+ * @param finishTimeGreaterThanOrEqual int .
+ * @param finishTimeLessThanOrEqual int .
+ * @param errTypeEqual int .
+ * @param errTypeIn string .
+ * @param errTypeNotIn string .
+ * @param errNumberEqual int .
+ * @param errNumberIn string .
+ * @param errNumberNotIn string .
+ * @param estimatedEffortLessThan int .
+ * @param estimatedEffortGreaterThan int .
+ * @param urgencyLessThanOrEqual int .
+ * @param urgencyGreaterThanOrEqual int .
+ */
+function KalturaBatchJobBaseFilter(){
+	KalturaBatchJobBaseFilter.super_.call(this);
+	this.idEqual = null;
+	this.idGreaterThanOrEqual = null;
+	this.partnerIdEqual = null;
+	this.partnerIdIn = null;
+	this.partnerIdNotIn = null;
+	this.createdAtGreaterThanOrEqual = null;
+	this.createdAtLessThanOrEqual = null;
+	this.updatedAtGreaterThanOrEqual = null;
+	this.updatedAtLessThanOrEqual = null;
+	this.executionAttemptsGreaterThanOrEqual = null;
+	this.executionAttemptsLessThanOrEqual = null;
+	this.lockVersionGreaterThanOrEqual = null;
+	this.lockVersionLessThanOrEqual = null;
+	this.entryIdEqual = null;
+	this.jobTypeEqual = null;
+	this.jobTypeIn = null;
+	this.jobTypeNotIn = null;
+	this.jobSubTypeEqual = null;
+	this.jobSubTypeIn = null;
+	this.jobSubTypeNotIn = null;
+	this.statusEqual = null;
+	this.statusIn = null;
+	this.statusNotIn = null;
+	this.priorityGreaterThanOrEqual = null;
+	this.priorityLessThanOrEqual = null;
+	this.priorityEqual = null;
+	this.priorityIn = null;
+	this.priorityNotIn = null;
+	this.batchVersionGreaterThanOrEqual = null;
+	this.batchVersionLessThanOrEqual = null;
+	this.batchVersionEqual = null;
+	this.queueTimeGreaterThanOrEqual = null;
+	this.queueTimeLessThanOrEqual = null;
+	this.finishTimeGreaterThanOrEqual = null;
+	this.finishTimeLessThanOrEqual = null;
+	this.errTypeEqual = null;
+	this.errTypeIn = null;
+	this.errTypeNotIn = null;
+	this.errNumberEqual = null;
+	this.errNumberIn = null;
+	this.errNumberNotIn = null;
+	this.estimatedEffortLessThan = null;
+	this.estimatedEffortGreaterThan = null;
+	this.urgencyLessThanOrEqual = null;
+	this.urgencyGreaterThanOrEqual = null;
+}
+module.exports.KalturaBatchJobBaseFilter = KalturaBatchJobBaseFilter;
+
+util.inherits(KalturaBatchJobBaseFilter, KalturaFilter);
+
+
+/**
  * @param objects array  (readOnly).
  */
 function KalturaBatchJobListResponse(){
@@ -6137,6 +5957,18 @@ function KalturaBatchJobListResponse(){
 module.exports.KalturaBatchJobListResponse = KalturaBatchJobListResponse;
 
 util.inherits(KalturaBatchJobListResponse, KalturaListResponse);
+
+
+/**
+ * @param value bool .
+ */
+function KalturaBooleanValue(){
+	KalturaBooleanValue.super_.call(this);
+	this.value = null;
+}
+module.exports.KalturaBooleanValue = KalturaBooleanValue;
+
+util.inherits(KalturaBooleanValue, KalturaValue);
 
 
 /**
@@ -8414,6 +8246,18 @@ util.inherits(KalturaFileSyncBaseFilter, KalturaFilter);
 
 
 /**
+ * @param objects array  (readOnly).
+ */
+function KalturaFileSyncListResponse(){
+	KalturaFileSyncListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaFileSyncListResponse = KalturaFileSyncListResponse;
+
+util.inherits(KalturaFileSyncListResponse, KalturaListResponse);
+
+
+/**
  */
 function KalturaFlattenJobData(){
 	KalturaFlattenJobData.super_.call(this);
@@ -8445,6 +8289,18 @@ function KalturaFlavorParamsListResponse(){
 module.exports.KalturaFlavorParamsListResponse = KalturaFlavorParamsListResponse;
 
 util.inherits(KalturaFlavorParamsListResponse, KalturaListResponse);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaFlavorParamsOutputListResponse(){
+	KalturaFlavorParamsOutputListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaFlavorParamsOutputListResponse = KalturaFlavorParamsOutputListResponse;
+
+util.inherits(KalturaFlavorParamsOutputListResponse, KalturaListResponse);
 
 
 /**
@@ -8979,6 +8835,18 @@ function KalturaMediaInfoBaseFilter(){
 module.exports.KalturaMediaInfoBaseFilter = KalturaMediaInfoBaseFilter;
 
 util.inherits(KalturaMediaInfoBaseFilter, KalturaFilter);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaMediaInfoListResponse(){
+	KalturaMediaInfoListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaMediaInfoListResponse = KalturaMediaInfoListResponse;
+
+util.inherits(KalturaMediaInfoListResponse, KalturaListResponse);
 
 
 /**
@@ -10043,6 +9911,18 @@ util.inherits(KalturaThumbParamsListResponse, KalturaListResponse);
 /**
  * @param objects array  (readOnly).
  */
+function KalturaThumbParamsOutputListResponse(){
+	KalturaThumbParamsOutputListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaThumbParamsOutputListResponse = KalturaThumbParamsOutputListResponse;
+
+util.inherits(KalturaThumbParamsOutputListResponse, KalturaListResponse);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
 function KalturaTrackEntryListResponse(){
 	KalturaTrackEntryListResponse.super_.call(this);
 	this.objects = null;
@@ -10794,6 +10674,16 @@ function KalturaBaseSyndicationFeedFilter(){
 module.exports.KalturaBaseSyndicationFeedFilter = KalturaBaseSyndicationFeedFilter;
 
 util.inherits(KalturaBaseSyndicationFeedFilter, KalturaBaseSyndicationFeedBaseFilter);
+
+
+/**
+ */
+function KalturaBatchJobFilter(){
+	KalturaBatchJobFilter.super_.call(this);
+}
+module.exports.KalturaBatchJobFilter = KalturaBatchJobFilter;
+
+util.inherits(KalturaBatchJobFilter, KalturaBatchJobBaseFilter);
 
 
 /**
@@ -13424,9 +13314,13 @@ util.inherits(KalturaAnnotationBaseFilter, KalturaCuePointFilter);
 
 
 /**
+ * @param parentIdEqual string .
+ * @param parentIdIn string .
  */
 function KalturaAnswerCuePointBaseFilter(){
 	KalturaAnswerCuePointBaseFilter.super_.call(this);
+	this.parentIdEqual = null;
+	this.parentIdIn = null;
 }
 module.exports.KalturaAnswerCuePointBaseFilter = KalturaAnswerCuePointBaseFilter;
 

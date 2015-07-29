@@ -1027,15 +1027,6 @@ NONE : 1,
 TIMEHASH : 2,
 };
 
-var KalturaAccessControlActionType = module.exports.KalturaAccessControlActionType = {
-BLOCK : '1',
-PREVIEW : '2',
-LIMIT_FLAVORS : '3',
-ADD_TO_STORAGE : '4',
-LIMIT_DELIVERY_PROFILES : '5',
-SERVE_FROM_REMOTE_SERVER : '6',
-};
-
 var KalturaAccessControlOrderBy = module.exports.KalturaAccessControlOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 CREATED_AT_DESC : '-createdAt',
@@ -3218,7 +3209,7 @@ CREATED_AT_DESC : '-createdAt',
 
 var KalturaReportType = module.exports.KalturaReportType = {
 QUIZ : 'quiz.QUIZ',
-QUIZ_USER_PERCENTAGE : 'quiz.self::QUIZ_USER_PERCENTAGE',
+QUIZ_USER_PERCENTAGE : 'quiz.QUIZ_USER_PERCENTAGE',
 TOP_CONTENT : '1',
 CONTENT_DROPOFF : '2',
 CONTENT_INTERACTIONS : '3',

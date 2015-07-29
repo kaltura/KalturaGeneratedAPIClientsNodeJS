@@ -5591,6 +5591,7 @@ KalturaReportService.prototype.execute = function(callback, id, params){
  * @action delete Delete response profile by id.
  * @action list List response profiles by filter and pager.
  * @action recalculate Recalculate response profile cached objects.
+ * @action clone Clone an existing response profile.
  */
 function KalturaResponseProfileService(client){
 	KalturaResponseProfileService.super_.call(this);
@@ -5703,6 +5704,21 @@ KalturaResponseProfileService.prototype.recalculate = function(callback, options
 	var kparams = {};
 	this.client.addParam(kparams, 'options', kaltura.toParams(options));
 	this.client.queueServiceActionCall('responseprofile', 'recalculate', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Clone an existing response profile.
+ * @param id int  (optional).
+ * @param profile KalturaResponseProfile  (optional).
+ * @return KalturaResponseProfile.
+ */
+KalturaResponseProfileService.prototype.cloneAction = function(callback, id, profile){
+	var kparams = {};
+	this.client.addParam(kparams, 'id', id);
+	this.client.addParam(kparams, 'profile', kaltura.toParams(profile));
+	this.client.queueServiceActionCall('responseprofile', 'clone', kparams);
 	if (!this.client.isMultiRequest()){
 		this.client.doQueue(callback);
 	}

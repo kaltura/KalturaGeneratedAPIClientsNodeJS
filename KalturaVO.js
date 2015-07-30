@@ -946,6 +946,7 @@ util.inherits(KalturaCEError, kaltura.KalturaObjectBase);
  * @param format string The caption format (insertOnly).
  * @param status int The status of the asset (readOnly).
  * @param parentId string The parent id of the asset (insertOnly).
+ * @param accuracy int The Accuracy of the caption content.
  */
 function KalturaCaptionAsset(){
 	KalturaCaptionAsset.super_.call(this);
@@ -957,6 +958,7 @@ function KalturaCaptionAsset(){
 	this.format = null;
 	this.status = null;
 	this.parentId = null;
+	this.accuracy = null;
 }
 module.exports.KalturaCaptionAsset = KalturaCaptionAsset;
 

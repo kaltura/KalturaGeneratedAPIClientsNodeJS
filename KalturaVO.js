@@ -12114,6 +12114,18 @@ util.inherits(KalturaSearchComparableCondition, KalturaSearchCondition);
 
 
 /**
+ * @param not bool .
+ */
+function KalturaSearchMatchCondition(){
+	KalturaSearchMatchCondition.super_.call(this);
+	this.not = null;
+}
+module.exports.KalturaSearchMatchCondition = KalturaSearchMatchCondition;
+
+util.inherits(KalturaSearchMatchCondition, KalturaSearchCondition);
+
+
+/**
  */
 function KalturaShortLinkFilter(){
 	KalturaShortLinkFilter.super_.call(this);

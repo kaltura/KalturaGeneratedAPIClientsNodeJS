@@ -3209,6 +3209,8 @@ CREATED_AT_DESC : '-createdAt',
 
 var KalturaReportType = module.exports.KalturaReportType = {
 QUIZ : 'quiz.QUIZ',
+QUIZ_AGGREGATE_BY_QUESTION : 'quiz.QUIZ_AGGREGATE_BY_QUESTION',
+QUIZ_USER_AGGREGATE_BY_QUESTION : 'quiz.QUIZ_USER_AGGREGATE_BY_QUESTION',
 QUIZ_USER_PERCENTAGE : 'quiz.QUIZ_USER_PERCENTAGE',
 TOP_CONTENT : '1',
 CONTENT_DROPOFF : '2',
@@ -3288,6 +3290,7 @@ GREATER_THAN : '2',
 GREATER_THAN_OR_EQUAL : '3',
 LESS_THAN : '4',
 LESS_THAN_OR_EQUAL : '5',
+NOT_EQUAL : '6',
 };
 
 var KalturaSftpDropFolderOrderBy = module.exports.KalturaSftpDropFolderOrderBy = {

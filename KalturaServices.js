@@ -11662,7 +11662,7 @@ KalturaVarConsoleService.prototype.updateStatus = function(callback, id, status)
 /**
  *Class definition for the Kaltura service: eventNotificationTemplate.
  * The available service actions:
- * @action add This action allows for the creation of new backend event types in the system. This action requires access to the Kaltura server Admin Console. If you’re looking to register to existing event types, please use the clone action instead.
+ * @action add This action allows for the creation of new backend event types in the system. This action requires access to the Kaltura server Admin Console. If you're looking to register to existing event types, please use the clone action instead.
  * @action clone This action allows registering to various backend event. Use this action to create notifications that will react to events such as new video was uploaded or metadata field was updated. To see the list of available event types, call the listTemplates action.
  * @action get Retrieve an event notification template object by id.
  * @action update Update an existing event notification template object.
@@ -11682,7 +11682,7 @@ util.inherits(KalturaEventNotificationTemplateService, kaltura.KalturaServiceBas
 module.exports.KalturaEventNotificationTemplateService = KalturaEventNotificationTemplateService;
 
 /**
- * This action allows for the creation of new backend event types in the system. This action requires access to the Kaltura server Admin Console. If you’re looking to register to existing event types, please use the clone action instead.
+ * This action allows for the creation of new backend event types in the system. This action requires access to the Kaltura server Admin Console. If you're looking to register to existing event types, please use the clone action instead.
  * @param eventNotificationTemplate KalturaEventNotificationTemplate  (optional).
  * @return KalturaEventNotificationTemplate.
  */

@@ -1149,6 +1149,13 @@ ID_DESC : '-id',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
+var KalturaAppTokenHashType = module.exports.KalturaAppTokenHashType = {
+MD5 : 'MD5',
+SHA1 : 'SHA1',
+SHA256 : 'SHA256',
+SHA512 : 'SHA512',
+};
+
 var KalturaAppTokenOrderBy = module.exports.KalturaAppTokenOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',

@@ -310,6 +310,7 @@ util.inherits(KalturaApiExceptionArg, kaltura.KalturaObjectBase);
  * @param sessionUserId string User id of KS (Kaltura Session) that created using the current token.
  * @param sessionDuration int Expiry duration of KS (Kaltura Session) that created using the current token (in seconds).
  * @param sessionPrivileges string Comma separated privileges to be applied on KS (Kaltura Session) that created using the current token.
+ * @param hashType string .
  */
 function KalturaAppToken(){
 	KalturaAppToken.super_.call(this);
@@ -324,6 +325,7 @@ function KalturaAppToken(){
 	this.sessionUserId = null;
 	this.sessionDuration = null;
 	this.sessionPrivileges = null;
+	this.hashType = null;
 }
 module.exports.KalturaAppToken = KalturaAppToken;
 

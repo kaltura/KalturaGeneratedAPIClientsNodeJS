@@ -310,7 +310,6 @@ util.inherits(KalturaApiExceptionArg, kaltura.KalturaObjectBase);
  * @param sessionUserId string User id of KS (Kaltura Session) that created using the current token.
  * @param sessionDuration int Expiry duration of KS (Kaltura Session) that created using the current token (in seconds).
  * @param sessionPrivileges string Comma separated privileges to be applied on KS (Kaltura Session) that created using the current token.
- * @param hashType string .
  */
 function KalturaAppToken(){
 	KalturaAppToken.super_.call(this);
@@ -325,7 +324,6 @@ function KalturaAppToken(){
 	this.sessionUserId = null;
 	this.sessionDuration = null;
 	this.sessionPrivileges = null;
-	this.hashType = null;
 }
 module.exports.KalturaAppToken = KalturaAppToken;
 
@@ -5803,6 +5801,18 @@ function KalturaAttachmentAssetListResponse(){
 module.exports.KalturaAttachmentAssetListResponse = KalturaAttachmentAssetListResponse;
 
 util.inherits(KalturaAttachmentAssetListResponse, KalturaListResponse);
+
+
+/**
+ * @param value string .
+ */
+function KalturaAttributeCondition(){
+	KalturaAttributeCondition.super_.call(this);
+	this.value = null;
+}
+module.exports.KalturaAttributeCondition = KalturaAttributeCondition;
+
+util.inherits(KalturaAttributeCondition, KalturaSearchItem);
 
 
 /**
@@ -12106,6 +12116,18 @@ util.inherits(KalturaScheduledTaskProfileFilter, KalturaScheduledTaskProfileBase
 /**
  * @param comparison string .
  */
+function KalturaSearchComparableAttributeCondition(){
+	KalturaSearchComparableAttributeCondition.super_.call(this);
+	this.comparison = null;
+}
+module.exports.KalturaSearchComparableAttributeCondition = KalturaSearchComparableAttributeCondition;
+
+util.inherits(KalturaSearchComparableAttributeCondition, KalturaAttributeCondition);
+
+
+/**
+ * @param comparison string .
+ */
 function KalturaSearchComparableCondition(){
 	KalturaSearchComparableCondition.super_.call(this);
 	this.comparison = null;
@@ -12113,6 +12135,18 @@ function KalturaSearchComparableCondition(){
 module.exports.KalturaSearchComparableCondition = KalturaSearchComparableCondition;
 
 util.inherits(KalturaSearchComparableCondition, KalturaSearchCondition);
+
+
+/**
+ * @param not bool .
+ */
+function KalturaSearchMatchAttributeCondition(){
+	KalturaSearchMatchAttributeCondition.super_.call(this);
+	this.not = null;
+}
+module.exports.KalturaSearchMatchAttributeCondition = KalturaSearchMatchAttributeCondition;
+
+util.inherits(KalturaSearchMatchAttributeCondition, KalturaAttributeCondition);
 
 
 /**
@@ -12448,6 +12482,30 @@ util.inherits(KalturaAssetParamsFilter, KalturaAssetParamsBaseFilter);
 
 
 /**
+ * @param attribute string .
+ */
+function KalturaBaseEntryCompareAttributeCondition(){
+	KalturaBaseEntryCompareAttributeCondition.super_.call(this);
+	this.attribute = null;
+}
+module.exports.KalturaBaseEntryCompareAttributeCondition = KalturaBaseEntryCompareAttributeCondition;
+
+util.inherits(KalturaBaseEntryCompareAttributeCondition, KalturaSearchComparableAttributeCondition);
+
+
+/**
+ * @param attribute string .
+ */
+function KalturaBaseEntryMatchAttributeCondition(){
+	KalturaBaseEntryMatchAttributeCondition.super_.call(this);
+	this.attribute = null;
+}
+module.exports.KalturaBaseEntryMatchAttributeCondition = KalturaBaseEntryMatchAttributeCondition;
+
+util.inherits(KalturaBaseEntryMatchAttributeCondition, KalturaSearchMatchAttributeCondition);
+
+
+/**
  * @param jobTypeAndSubTypeIn string .
  */
 function KalturaBatchJobFilterExt(){
@@ -12570,6 +12628,30 @@ util.inherits(KalturaCuePointFilter, KalturaCuePointBaseFilter);
 
 
 /**
+ * @param attribute string .
+ */
+function KalturaDataEntryCompareAttributeCondition(){
+	KalturaDataEntryCompareAttributeCondition.super_.call(this);
+	this.attribute = null;
+}
+module.exports.KalturaDataEntryCompareAttributeCondition = KalturaDataEntryCompareAttributeCondition;
+
+util.inherits(KalturaDataEntryCompareAttributeCondition, KalturaSearchComparableAttributeCondition);
+
+
+/**
+ * @param attribute string .
+ */
+function KalturaDataEntryMatchAttributeCondition(){
+	KalturaDataEntryMatchAttributeCondition.super_.call(this);
+	this.attribute = null;
+}
+module.exports.KalturaDataEntryMatchAttributeCondition = KalturaDataEntryMatchAttributeCondition;
+
+util.inherits(KalturaDataEntryMatchAttributeCondition, KalturaSearchMatchAttributeCondition);
+
+
+/**
  */
 function KalturaDeliveryProfileAkamaiAppleHttpManifestBaseFilter(){
 	KalturaDeliveryProfileAkamaiAppleHttpManifestBaseFilter.super_.call(this);
@@ -12680,6 +12762,30 @@ util.inherits(KalturaDistributionEnableJobData, KalturaDistributionUpdateJobData
 
 
 /**
+ * @param attribute string .
+ */
+function KalturaDocumentEntryCompareAttributeCondition(){
+	KalturaDocumentEntryCompareAttributeCondition.super_.call(this);
+	this.attribute = null;
+}
+module.exports.KalturaDocumentEntryCompareAttributeCondition = KalturaDocumentEntryCompareAttributeCondition;
+
+util.inherits(KalturaDocumentEntryCompareAttributeCondition, KalturaSearchComparableAttributeCondition);
+
+
+/**
+ * @param attribute string .
+ */
+function KalturaDocumentEntryMatchAttributeCondition(){
+	KalturaDocumentEntryMatchAttributeCondition.super_.call(this);
+	this.attribute = null;
+}
+module.exports.KalturaDocumentEntryMatchAttributeCondition = KalturaDocumentEntryMatchAttributeCondition;
+
+util.inherits(KalturaDocumentEntryMatchAttributeCondition, KalturaSearchMatchAttributeCondition);
+
+
+/**
  */
 function KalturaDocumentFlavorParamsOutput(){
 	KalturaDocumentFlavorParamsOutput.super_.call(this);
@@ -12755,6 +12861,30 @@ function KalturaEvalStringField(){
 module.exports.KalturaEvalStringField = KalturaEvalStringField;
 
 util.inherits(KalturaEvalStringField, KalturaStringField);
+
+
+/**
+ * @param attribute string .
+ */
+function KalturaExternalMediaEntryCompareAttributeCondition(){
+	KalturaExternalMediaEntryCompareAttributeCondition.super_.call(this);
+	this.attribute = null;
+}
+module.exports.KalturaExternalMediaEntryCompareAttributeCondition = KalturaExternalMediaEntryCompareAttributeCondition;
+
+util.inherits(KalturaExternalMediaEntryCompareAttributeCondition, KalturaSearchComparableAttributeCondition);
+
+
+/**
+ * @param attribute string .
+ */
+function KalturaExternalMediaEntryMatchAttributeCondition(){
+	KalturaExternalMediaEntryMatchAttributeCondition.super_.call(this);
+	this.attribute = null;
+}
+module.exports.KalturaExternalMediaEntryMatchAttributeCondition = KalturaExternalMediaEntryMatchAttributeCondition;
+
+util.inherits(KalturaExternalMediaEntryMatchAttributeCondition, KalturaSearchMatchAttributeCondition);
 
 
 /**
@@ -12932,6 +13062,30 @@ util.inherits(KalturaKontikiStorageProfileBaseFilter, KalturaStorageProfileFilte
 
 
 /**
+ * @param attribute string .
+ */
+function KalturaLiveChannelCompareAttributeCondition(){
+	KalturaLiveChannelCompareAttributeCondition.super_.call(this);
+	this.attribute = null;
+}
+module.exports.KalturaLiveChannelCompareAttributeCondition = KalturaLiveChannelCompareAttributeCondition;
+
+util.inherits(KalturaLiveChannelCompareAttributeCondition, KalturaSearchComparableAttributeCondition);
+
+
+/**
+ * @param attribute string .
+ */
+function KalturaLiveChannelMatchAttributeCondition(){
+	KalturaLiveChannelMatchAttributeCondition.super_.call(this);
+	this.attribute = null;
+}
+module.exports.KalturaLiveChannelMatchAttributeCondition = KalturaLiveChannelMatchAttributeCondition;
+
+util.inherits(KalturaLiveChannelMatchAttributeCondition, KalturaSearchMatchAttributeCondition);
+
+
+/**
  */
 function KalturaLiveChannelSegmentFilter(){
 	KalturaLiveChannelSegmentFilter.super_.call(this);
@@ -12939,6 +13093,102 @@ function KalturaLiveChannelSegmentFilter(){
 module.exports.KalturaLiveChannelSegmentFilter = KalturaLiveChannelSegmentFilter;
 
 util.inherits(KalturaLiveChannelSegmentFilter, KalturaLiveChannelSegmentBaseFilter);
+
+
+/**
+ * @param attribute string .
+ */
+function KalturaLiveEntryCompareAttributeCondition(){
+	KalturaLiveEntryCompareAttributeCondition.super_.call(this);
+	this.attribute = null;
+}
+module.exports.KalturaLiveEntryCompareAttributeCondition = KalturaLiveEntryCompareAttributeCondition;
+
+util.inherits(KalturaLiveEntryCompareAttributeCondition, KalturaSearchComparableAttributeCondition);
+
+
+/**
+ * @param attribute string .
+ */
+function KalturaLiveEntryMatchAttributeCondition(){
+	KalturaLiveEntryMatchAttributeCondition.super_.call(this);
+	this.attribute = null;
+}
+module.exports.KalturaLiveEntryMatchAttributeCondition = KalturaLiveEntryMatchAttributeCondition;
+
+util.inherits(KalturaLiveEntryMatchAttributeCondition, KalturaSearchMatchAttributeCondition);
+
+
+/**
+ * @param attribute string .
+ */
+function KalturaLiveStreamAdminEntryCompareAttributeCondition(){
+	KalturaLiveStreamAdminEntryCompareAttributeCondition.super_.call(this);
+	this.attribute = null;
+}
+module.exports.KalturaLiveStreamAdminEntryCompareAttributeCondition = KalturaLiveStreamAdminEntryCompareAttributeCondition;
+
+util.inherits(KalturaLiveStreamAdminEntryCompareAttributeCondition, KalturaSearchComparableAttributeCondition);
+
+
+/**
+ * @param attribute string .
+ */
+function KalturaLiveStreamAdminEntryMatchAttributeCondition(){
+	KalturaLiveStreamAdminEntryMatchAttributeCondition.super_.call(this);
+	this.attribute = null;
+}
+module.exports.KalturaLiveStreamAdminEntryMatchAttributeCondition = KalturaLiveStreamAdminEntryMatchAttributeCondition;
+
+util.inherits(KalturaLiveStreamAdminEntryMatchAttributeCondition, KalturaSearchMatchAttributeCondition);
+
+
+/**
+ * @param attribute string .
+ */
+function KalturaLiveStreamEntryCompareAttributeCondition(){
+	KalturaLiveStreamEntryCompareAttributeCondition.super_.call(this);
+	this.attribute = null;
+}
+module.exports.KalturaLiveStreamEntryCompareAttributeCondition = KalturaLiveStreamEntryCompareAttributeCondition;
+
+util.inherits(KalturaLiveStreamEntryCompareAttributeCondition, KalturaSearchComparableAttributeCondition);
+
+
+/**
+ * @param attribute string .
+ */
+function KalturaLiveStreamEntryMatchAttributeCondition(){
+	KalturaLiveStreamEntryMatchAttributeCondition.super_.call(this);
+	this.attribute = null;
+}
+module.exports.KalturaLiveStreamEntryMatchAttributeCondition = KalturaLiveStreamEntryMatchAttributeCondition;
+
+util.inherits(KalturaLiveStreamEntryMatchAttributeCondition, KalturaSearchMatchAttributeCondition);
+
+
+/**
+ * @param attribute string .
+ */
+function KalturaMediaEntryCompareAttributeCondition(){
+	KalturaMediaEntryCompareAttributeCondition.super_.call(this);
+	this.attribute = null;
+}
+module.exports.KalturaMediaEntryCompareAttributeCondition = KalturaMediaEntryCompareAttributeCondition;
+
+util.inherits(KalturaMediaEntryCompareAttributeCondition, KalturaSearchComparableAttributeCondition);
+
+
+/**
+ * @param attribute string .
+ */
+function KalturaMediaEntryMatchAttributeCondition(){
+	KalturaMediaEntryMatchAttributeCondition.super_.call(this);
+	this.attribute = null;
+}
+module.exports.KalturaMediaEntryMatchAttributeCondition = KalturaMediaEntryMatchAttributeCondition;
+
+util.inherits(KalturaMediaEntryMatchAttributeCondition, KalturaSearchMatchAttributeCondition);
 
 
 /**
@@ -12959,6 +13209,30 @@ function KalturaMetadataFilter(){
 module.exports.KalturaMetadataFilter = KalturaMetadataFilter;
 
 util.inherits(KalturaMetadataFilter, KalturaMetadataBaseFilter);
+
+
+/**
+ * @param attribute string .
+ */
+function KalturaMixEntryCompareAttributeCondition(){
+	KalturaMixEntryCompareAttributeCondition.super_.call(this);
+	this.attribute = null;
+}
+module.exports.KalturaMixEntryCompareAttributeCondition = KalturaMixEntryCompareAttributeCondition;
+
+util.inherits(KalturaMixEntryCompareAttributeCondition, KalturaSearchComparableAttributeCondition);
+
+
+/**
+ * @param attribute string .
+ */
+function KalturaMixEntryMatchAttributeCondition(){
+	KalturaMixEntryMatchAttributeCondition.super_.call(this);
+	this.attribute = null;
+}
+module.exports.KalturaMixEntryMatchAttributeCondition = KalturaMixEntryMatchAttributeCondition;
+
+util.inherits(KalturaMixEntryMatchAttributeCondition, KalturaSearchMatchAttributeCondition);
 
 
 /**
@@ -13001,6 +13275,54 @@ function KalturaPermissionItemFilter(){
 module.exports.KalturaPermissionItemFilter = KalturaPermissionItemFilter;
 
 util.inherits(KalturaPermissionItemFilter, KalturaPermissionItemBaseFilter);
+
+
+/**
+ * @param attribute string .
+ */
+function KalturaPlayableEntryCompareAttributeCondition(){
+	KalturaPlayableEntryCompareAttributeCondition.super_.call(this);
+	this.attribute = null;
+}
+module.exports.KalturaPlayableEntryCompareAttributeCondition = KalturaPlayableEntryCompareAttributeCondition;
+
+util.inherits(KalturaPlayableEntryCompareAttributeCondition, KalturaSearchComparableAttributeCondition);
+
+
+/**
+ * @param attribute string .
+ */
+function KalturaPlayableEntryMatchAttributeCondition(){
+	KalturaPlayableEntryMatchAttributeCondition.super_.call(this);
+	this.attribute = null;
+}
+module.exports.KalturaPlayableEntryMatchAttributeCondition = KalturaPlayableEntryMatchAttributeCondition;
+
+util.inherits(KalturaPlayableEntryMatchAttributeCondition, KalturaSearchMatchAttributeCondition);
+
+
+/**
+ * @param attribute string .
+ */
+function KalturaPlaylistCompareAttributeCondition(){
+	KalturaPlaylistCompareAttributeCondition.super_.call(this);
+	this.attribute = null;
+}
+module.exports.KalturaPlaylistCompareAttributeCondition = KalturaPlaylistCompareAttributeCondition;
+
+util.inherits(KalturaPlaylistCompareAttributeCondition, KalturaSearchComparableAttributeCondition);
+
+
+/**
+ * @param attribute string .
+ */
+function KalturaPlaylistMatchAttributeCondition(){
+	KalturaPlaylistMatchAttributeCondition.super_.call(this);
+	this.attribute = null;
+}
+module.exports.KalturaPlaylistMatchAttributeCondition = KalturaPlaylistMatchAttributeCondition;
+
+util.inherits(KalturaPlaylistMatchAttributeCondition, KalturaSearchMatchAttributeCondition);
 
 
 /**

@@ -1149,13 +1149,6 @@ ID_DESC : '-id',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaAppTokenHashType = module.exports.KalturaAppTokenHashType = {
-MD5 : 'MD5',
-SHA1 : 'SHA1',
-SHA256 : 'SHA256',
-SHA512 : 'SHA512',
-};
-
 var KalturaAppTokenOrderBy = module.exports.KalturaAppTokenOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
@@ -1223,6 +1216,39 @@ PCM : 'pcm',
 VORBIS : 'vorbis',
 WMA : 'wma',
 WMAPRO : 'wmapro',
+};
+
+var KalturaBaseEntryCompareAttribute = module.exports.KalturaBaseEntryCompareAttribute = {
+ACCESS_CONTROL_ID : 'accessControlId',
+CREATED_AT : 'createdAt',
+END_DATE : 'endDate',
+MODERATION_COUNT : 'moderationCount',
+MODERATION_STATUS : 'moderationStatus',
+PARTNER_ID : 'partnerId',
+PARTNER_SORT_VALUE : 'partnerSortValue',
+RANK : 'rank',
+REPLACEMENT_STATUS : 'replacementStatus',
+START_DATE : 'startDate',
+STATUS : 'status',
+TOTAL_RANK : 'totalRank',
+TYPE : 'type',
+UPDATED_AT : 'updatedAt',
+};
+
+var KalturaBaseEntryMatchAttribute = module.exports.KalturaBaseEntryMatchAttribute = {
+ADMIN_TAGS : 'adminTags',
+CATEGORIES_IDS : 'categoriesIds',
+CREATOR_ID : 'creatorId',
+DESCRIPTION : 'description',
+GROUP_ID : 'groupId',
+ID : 'id',
+NAME : 'name',
+REFERENCE_ID : 'referenceId',
+REPLACED_ENTRY_ID : 'replacedEntryId',
+REPLACING_ENTRY_ID : 'replacingEntryId',
+SEARCH_TEXT : 'searchText',
+TAGS : 'tags',
+USER_ID : 'userId',
 };
 
 var KalturaBaseEntryOrderBy = module.exports.KalturaBaseEntryOrderBy = {
@@ -1583,6 +1609,39 @@ QUIZ_QUESTION : 'quiz.QUIZ_QUESTION',
 THUMB : 'thumbCuePoint.Thumb',
 };
 
+var KalturaDataEntryCompareAttribute = module.exports.KalturaDataEntryCompareAttribute = {
+ACCESS_CONTROL_ID : 'accessControlId',
+CREATED_AT : 'createdAt',
+END_DATE : 'endDate',
+MODERATION_COUNT : 'moderationCount',
+MODERATION_STATUS : 'moderationStatus',
+PARTNER_ID : 'partnerId',
+PARTNER_SORT_VALUE : 'partnerSortValue',
+RANK : 'rank',
+REPLACEMENT_STATUS : 'replacementStatus',
+START_DATE : 'startDate',
+STATUS : 'status',
+TOTAL_RANK : 'totalRank',
+TYPE : 'type',
+UPDATED_AT : 'updatedAt',
+};
+
+var KalturaDataEntryMatchAttribute = module.exports.KalturaDataEntryMatchAttribute = {
+ADMIN_TAGS : 'adminTags',
+CATEGORIES_IDS : 'categoriesIds',
+CREATOR_ID : 'creatorId',
+DESCRIPTION : 'description',
+GROUP_ID : 'groupId',
+ID : 'id',
+NAME : 'name',
+REFERENCE_ID : 'referenceId',
+REPLACED_ENTRY_ID : 'replacedEntryId',
+REPLACING_ENTRY_ID : 'replacingEntryId',
+SEARCH_TEXT : 'searchText',
+TAGS : 'tags',
+USER_ID : 'userId',
+};
+
 var KalturaDataEntryOrderBy = module.exports.KalturaDataEntryOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 END_DATE_ASC : '+endDate',
@@ -1748,6 +1807,39 @@ IDETIC : 'ideticDistribution.IDETIC',
 YOUTUBE_API : 'youtubeApiDistribution.YOUTUBE_API',
 GENERIC : '1',
 SYNDICATION : '2',
+};
+
+var KalturaDocumentEntryCompareAttribute = module.exports.KalturaDocumentEntryCompareAttribute = {
+ACCESS_CONTROL_ID : 'accessControlId',
+CREATED_AT : 'createdAt',
+END_DATE : 'endDate',
+MODERATION_COUNT : 'moderationCount',
+MODERATION_STATUS : 'moderationStatus',
+PARTNER_ID : 'partnerId',
+PARTNER_SORT_VALUE : 'partnerSortValue',
+RANK : 'rank',
+REPLACEMENT_STATUS : 'replacementStatus',
+START_DATE : 'startDate',
+STATUS : 'status',
+TOTAL_RANK : 'totalRank',
+TYPE : 'type',
+UPDATED_AT : 'updatedAt',
+};
+
+var KalturaDocumentEntryMatchAttribute = module.exports.KalturaDocumentEntryMatchAttribute = {
+ADMIN_TAGS : 'adminTags',
+CATEGORIES_IDS : 'categoriesIds',
+CREATOR_ID : 'creatorId',
+DESCRIPTION : 'description',
+GROUP_ID : 'groupId',
+ID : 'id',
+NAME : 'name',
+REFERENCE_ID : 'referenceId',
+REPLACED_ENTRY_ID : 'replacedEntryId',
+REPLACING_ENTRY_ID : 'replacingEntryId',
+SEARCH_TEXT : 'searchText',
+TAGS : 'tags',
+USER_ID : 'userId',
 };
 
 var KalturaDocumentEntryOrderBy = module.exports.KalturaDocumentEntryOrderBy = {
@@ -2039,6 +2131,47 @@ HTTP : 'httpNotification.Http',
 var KalturaEventType = module.exports.KalturaEventType = {
 BROADCAST_START : '1',
 BROADCAST_END : '2',
+};
+
+var KalturaExternalMediaEntryCompareAttribute = module.exports.KalturaExternalMediaEntryCompareAttribute = {
+ACCESS_CONTROL_ID : 'accessControlId',
+CREATED_AT : 'createdAt',
+END_DATE : 'endDate',
+LAST_PLAYED_AT : 'lastPlayedAt',
+MEDIA_DATE : 'mediaDate',
+MEDIA_TYPE : 'mediaType',
+MODERATION_COUNT : 'moderationCount',
+MODERATION_STATUS : 'moderationStatus',
+MS_DURATION : 'msDuration',
+PARTNER_ID : 'partnerId',
+PARTNER_SORT_VALUE : 'partnerSortValue',
+PLAYS : 'plays',
+RANK : 'rank',
+REPLACEMENT_STATUS : 'replacementStatus',
+START_DATE : 'startDate',
+STATUS : 'status',
+TOTAL_RANK : 'totalRank',
+TYPE : 'type',
+UPDATED_AT : 'updatedAt',
+VIEWS : 'views',
+};
+
+var KalturaExternalMediaEntryMatchAttribute = module.exports.KalturaExternalMediaEntryMatchAttribute = {
+ADMIN_TAGS : 'adminTags',
+CATEGORIES_IDS : 'categoriesIds',
+CREATOR_ID : 'creatorId',
+DESCRIPTION : 'description',
+DURATION_TYPE : 'durationType',
+FLAVOR_PARAMS_IDS : 'flavorParamsIds',
+GROUP_ID : 'groupId',
+ID : 'id',
+NAME : 'name',
+REFERENCE_ID : 'referenceId',
+REPLACED_ENTRY_ID : 'replacedEntryId',
+REPLACING_ENTRY_ID : 'replacingEntryId',
+SEARCH_TEXT : 'searchText',
+TAGS : 'tags',
+USER_ID : 'userId',
 };
 
 var KalturaExternalMediaEntryOrderBy = module.exports.KalturaExternalMediaEntryOrderBy = {
@@ -2669,6 +2802,47 @@ SIZE_DESC : '-size',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
+var KalturaLiveChannelCompareAttribute = module.exports.KalturaLiveChannelCompareAttribute = {
+ACCESS_CONTROL_ID : 'accessControlId',
+CREATED_AT : 'createdAt',
+END_DATE : 'endDate',
+LAST_PLAYED_AT : 'lastPlayedAt',
+MEDIA_DATE : 'mediaDate',
+MEDIA_TYPE : 'mediaType',
+MODERATION_COUNT : 'moderationCount',
+MODERATION_STATUS : 'moderationStatus',
+MS_DURATION : 'msDuration',
+PARTNER_ID : 'partnerId',
+PARTNER_SORT_VALUE : 'partnerSortValue',
+PLAYS : 'plays',
+RANK : 'rank',
+REPLACEMENT_STATUS : 'replacementStatus',
+START_DATE : 'startDate',
+STATUS : 'status',
+TOTAL_RANK : 'totalRank',
+TYPE : 'type',
+UPDATED_AT : 'updatedAt',
+VIEWS : 'views',
+};
+
+var KalturaLiveChannelMatchAttribute = module.exports.KalturaLiveChannelMatchAttribute = {
+ADMIN_TAGS : 'adminTags',
+CATEGORIES_IDS : 'categoriesIds',
+CREATOR_ID : 'creatorId',
+DESCRIPTION : 'description',
+DURATION_TYPE : 'durationType',
+FLAVOR_PARAMS_IDS : 'flavorParamsIds',
+GROUP_ID : 'groupId',
+ID : 'id',
+NAME : 'name',
+REFERENCE_ID : 'referenceId',
+REPLACED_ENTRY_ID : 'replacedEntryId',
+REPLACING_ENTRY_ID : 'replacingEntryId',
+SEARCH_TEXT : 'searchText',
+TAGS : 'tags',
+USER_ID : 'userId',
+};
+
 var KalturaLiveChannelOrderBy = module.exports.KalturaLiveChannelOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 DURATION_ASC : '+duration',
@@ -2733,6 +2907,47 @@ var KalturaLiveChannelSegmentType = module.exports.KalturaLiveChannelSegmentType
 VIDEO_AND_AUDIO : '1',
 };
 
+var KalturaLiveEntryCompareAttribute = module.exports.KalturaLiveEntryCompareAttribute = {
+ACCESS_CONTROL_ID : 'accessControlId',
+CREATED_AT : 'createdAt',
+END_DATE : 'endDate',
+LAST_PLAYED_AT : 'lastPlayedAt',
+MEDIA_DATE : 'mediaDate',
+MEDIA_TYPE : 'mediaType',
+MODERATION_COUNT : 'moderationCount',
+MODERATION_STATUS : 'moderationStatus',
+MS_DURATION : 'msDuration',
+PARTNER_ID : 'partnerId',
+PARTNER_SORT_VALUE : 'partnerSortValue',
+PLAYS : 'plays',
+RANK : 'rank',
+REPLACEMENT_STATUS : 'replacementStatus',
+START_DATE : 'startDate',
+STATUS : 'status',
+TOTAL_RANK : 'totalRank',
+TYPE : 'type',
+UPDATED_AT : 'updatedAt',
+VIEWS : 'views',
+};
+
+var KalturaLiveEntryMatchAttribute = module.exports.KalturaLiveEntryMatchAttribute = {
+ADMIN_TAGS : 'adminTags',
+CATEGORIES_IDS : 'categoriesIds',
+CREATOR_ID : 'creatorId',
+DESCRIPTION : 'description',
+DURATION_TYPE : 'durationType',
+FLAVOR_PARAMS_IDS : 'flavorParamsIds',
+GROUP_ID : 'groupId',
+ID : 'id',
+NAME : 'name',
+REFERENCE_ID : 'referenceId',
+REPLACED_ENTRY_ID : 'replacedEntryId',
+REPLACING_ENTRY_ID : 'replacingEntryId',
+SEARCH_TEXT : 'searchText',
+TAGS : 'tags',
+USER_ID : 'userId',
+};
+
 var KalturaLiveEntryOrderBy = module.exports.KalturaLiveEntryOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 DURATION_ASC : '+duration',
@@ -2790,6 +3005,47 @@ ENTRY_TOTAL : 'ENTRY_TOTAL',
 PARTNER_TOTAL : 'PARTNER_TOTAL',
 };
 
+var KalturaLiveStreamAdminEntryCompareAttribute = module.exports.KalturaLiveStreamAdminEntryCompareAttribute = {
+ACCESS_CONTROL_ID : 'accessControlId',
+CREATED_AT : 'createdAt',
+END_DATE : 'endDate',
+LAST_PLAYED_AT : 'lastPlayedAt',
+MEDIA_DATE : 'mediaDate',
+MEDIA_TYPE : 'mediaType',
+MODERATION_COUNT : 'moderationCount',
+MODERATION_STATUS : 'moderationStatus',
+MS_DURATION : 'msDuration',
+PARTNER_ID : 'partnerId',
+PARTNER_SORT_VALUE : 'partnerSortValue',
+PLAYS : 'plays',
+RANK : 'rank',
+REPLACEMENT_STATUS : 'replacementStatus',
+START_DATE : 'startDate',
+STATUS : 'status',
+TOTAL_RANK : 'totalRank',
+TYPE : 'type',
+UPDATED_AT : 'updatedAt',
+VIEWS : 'views',
+};
+
+var KalturaLiveStreamAdminEntryMatchAttribute = module.exports.KalturaLiveStreamAdminEntryMatchAttribute = {
+ADMIN_TAGS : 'adminTags',
+CATEGORIES_IDS : 'categoriesIds',
+CREATOR_ID : 'creatorId',
+DESCRIPTION : 'description',
+DURATION_TYPE : 'durationType',
+FLAVOR_PARAMS_IDS : 'flavorParamsIds',
+GROUP_ID : 'groupId',
+ID : 'id',
+NAME : 'name',
+REFERENCE_ID : 'referenceId',
+REPLACED_ENTRY_ID : 'replacedEntryId',
+REPLACING_ENTRY_ID : 'replacingEntryId',
+SEARCH_TEXT : 'searchText',
+TAGS : 'tags',
+USER_ID : 'userId',
+};
+
 var KalturaLiveStreamAdminEntryOrderBy = module.exports.KalturaLiveStreamAdminEntryOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 DURATION_ASC : '+duration',
@@ -2827,6 +3083,47 @@ TOTAL_RANK_DESC : '-totalRank',
 UPDATED_AT_DESC : '-updatedAt',
 VIEWS_DESC : '-views',
 WEIGHT_DESC : '-weight',
+};
+
+var KalturaLiveStreamEntryCompareAttribute = module.exports.KalturaLiveStreamEntryCompareAttribute = {
+ACCESS_CONTROL_ID : 'accessControlId',
+CREATED_AT : 'createdAt',
+END_DATE : 'endDate',
+LAST_PLAYED_AT : 'lastPlayedAt',
+MEDIA_DATE : 'mediaDate',
+MEDIA_TYPE : 'mediaType',
+MODERATION_COUNT : 'moderationCount',
+MODERATION_STATUS : 'moderationStatus',
+MS_DURATION : 'msDuration',
+PARTNER_ID : 'partnerId',
+PARTNER_SORT_VALUE : 'partnerSortValue',
+PLAYS : 'plays',
+RANK : 'rank',
+REPLACEMENT_STATUS : 'replacementStatus',
+START_DATE : 'startDate',
+STATUS : 'status',
+TOTAL_RANK : 'totalRank',
+TYPE : 'type',
+UPDATED_AT : 'updatedAt',
+VIEWS : 'views',
+};
+
+var KalturaLiveStreamEntryMatchAttribute = module.exports.KalturaLiveStreamEntryMatchAttribute = {
+ADMIN_TAGS : 'adminTags',
+CATEGORIES_IDS : 'categoriesIds',
+CREATOR_ID : 'creatorId',
+DESCRIPTION : 'description',
+DURATION_TYPE : 'durationType',
+FLAVOR_PARAMS_IDS : 'flavorParamsIds',
+GROUP_ID : 'groupId',
+ID : 'id',
+NAME : 'name',
+REFERENCE_ID : 'referenceId',
+REPLACED_ENTRY_ID : 'replacedEntryId',
+REPLACING_ENTRY_ID : 'replacingEntryId',
+SEARCH_TEXT : 'searchText',
+TAGS : 'tags',
+USER_ID : 'userId',
 };
 
 var KalturaLiveStreamEntryOrderBy = module.exports.KalturaLiveStreamEntryOrderBy = {
@@ -2913,6 +3210,47 @@ MAIL_TYPE_LIVE_REPORT_EXPORT_FAILURE : '131',
 MAIL_TYPE_LIVE_REPORT_EXPORT_ABORT : '132',
 };
 
+var KalturaMediaEntryCompareAttribute = module.exports.KalturaMediaEntryCompareAttribute = {
+ACCESS_CONTROL_ID : 'accessControlId',
+CREATED_AT : 'createdAt',
+END_DATE : 'endDate',
+LAST_PLAYED_AT : 'lastPlayedAt',
+MEDIA_DATE : 'mediaDate',
+MEDIA_TYPE : 'mediaType',
+MODERATION_COUNT : 'moderationCount',
+MODERATION_STATUS : 'moderationStatus',
+MS_DURATION : 'msDuration',
+PARTNER_ID : 'partnerId',
+PARTNER_SORT_VALUE : 'partnerSortValue',
+PLAYS : 'plays',
+RANK : 'rank',
+REPLACEMENT_STATUS : 'replacementStatus',
+START_DATE : 'startDate',
+STATUS : 'status',
+TOTAL_RANK : 'totalRank',
+TYPE : 'type',
+UPDATED_AT : 'updatedAt',
+VIEWS : 'views',
+};
+
+var KalturaMediaEntryMatchAttribute = module.exports.KalturaMediaEntryMatchAttribute = {
+ADMIN_TAGS : 'adminTags',
+CATEGORIES_IDS : 'categoriesIds',
+CREATOR_ID : 'creatorId',
+DESCRIPTION : 'description',
+DURATION_TYPE : 'durationType',
+FLAVOR_PARAMS_IDS : 'flavorParamsIds',
+GROUP_ID : 'groupId',
+ID : 'id',
+NAME : 'name',
+REFERENCE_ID : 'referenceId',
+REPLACED_ENTRY_ID : 'replacedEntryId',
+REPLACING_ENTRY_ID : 'replacingEntryId',
+SEARCH_TEXT : 'searchText',
+TAGS : 'tags',
+USER_ID : 'userId',
+};
+
 var KalturaMediaEntryOrderBy = module.exports.KalturaMediaEntryOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 DURATION_ASC : '+duration',
@@ -2990,6 +3328,44 @@ CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
+};
+
+var KalturaMixEntryCompareAttribute = module.exports.KalturaMixEntryCompareAttribute = {
+ACCESS_CONTROL_ID : 'accessControlId',
+CREATED_AT : 'createdAt',
+END_DATE : 'endDate',
+LAST_PLAYED_AT : 'lastPlayedAt',
+MODERATION_COUNT : 'moderationCount',
+MODERATION_STATUS : 'moderationStatus',
+MS_DURATION : 'msDuration',
+PARTNER_ID : 'partnerId',
+PARTNER_SORT_VALUE : 'partnerSortValue',
+PLAYS : 'plays',
+RANK : 'rank',
+REPLACEMENT_STATUS : 'replacementStatus',
+START_DATE : 'startDate',
+STATUS : 'status',
+TOTAL_RANK : 'totalRank',
+TYPE : 'type',
+UPDATED_AT : 'updatedAt',
+VIEWS : 'views',
+};
+
+var KalturaMixEntryMatchAttribute = module.exports.KalturaMixEntryMatchAttribute = {
+ADMIN_TAGS : 'adminTags',
+CATEGORIES_IDS : 'categoriesIds',
+CREATOR_ID : 'creatorId',
+DESCRIPTION : 'description',
+DURATION_TYPE : 'durationType',
+GROUP_ID : 'groupId',
+ID : 'id',
+NAME : 'name',
+REFERENCE_ID : 'referenceId',
+REPLACED_ENTRY_ID : 'replacedEntryId',
+REPLACING_ENTRY_ID : 'replacingEntryId',
+SEARCH_TEXT : 'searchText',
+TAGS : 'tags',
+USER_ID : 'userId',
 };
 
 var KalturaMixEntryOrderBy = module.exports.KalturaMixEntryOrderBy = {
@@ -3099,6 +3475,44 @@ NAME_DESC : '-name',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
+var KalturaPlayableEntryCompareAttribute = module.exports.KalturaPlayableEntryCompareAttribute = {
+ACCESS_CONTROL_ID : 'accessControlId',
+CREATED_AT : 'createdAt',
+END_DATE : 'endDate',
+LAST_PLAYED_AT : 'lastPlayedAt',
+MODERATION_COUNT : 'moderationCount',
+MODERATION_STATUS : 'moderationStatus',
+MS_DURATION : 'msDuration',
+PARTNER_ID : 'partnerId',
+PARTNER_SORT_VALUE : 'partnerSortValue',
+PLAYS : 'plays',
+RANK : 'rank',
+REPLACEMENT_STATUS : 'replacementStatus',
+START_DATE : 'startDate',
+STATUS : 'status',
+TOTAL_RANK : 'totalRank',
+TYPE : 'type',
+UPDATED_AT : 'updatedAt',
+VIEWS : 'views',
+};
+
+var KalturaPlayableEntryMatchAttribute = module.exports.KalturaPlayableEntryMatchAttribute = {
+ADMIN_TAGS : 'adminTags',
+CATEGORIES_IDS : 'categoriesIds',
+CREATOR_ID : 'creatorId',
+DESCRIPTION : 'description',
+DURATION_TYPE : 'durationType',
+GROUP_ID : 'groupId',
+ID : 'id',
+NAME : 'name',
+REFERENCE_ID : 'referenceId',
+REPLACED_ENTRY_ID : 'replacedEntryId',
+REPLACING_ENTRY_ID : 'replacingEntryId',
+SEARCH_TEXT : 'searchText',
+TAGS : 'tags',
+USER_ID : 'userId',
+};
+
 var KalturaPlayableEntryOrderBy = module.exports.KalturaPlayableEntryOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 DURATION_ASC : '+duration',
@@ -3146,6 +3560,39 @@ MULTICAST_SL : 'multicast_silverlight',
 RTMP : 'rtmp',
 RTSP : 'rtsp',
 SILVER_LIGHT : 'sl',
+};
+
+var KalturaPlaylistCompareAttribute = module.exports.KalturaPlaylistCompareAttribute = {
+ACCESS_CONTROL_ID : 'accessControlId',
+CREATED_AT : 'createdAt',
+END_DATE : 'endDate',
+MODERATION_COUNT : 'moderationCount',
+MODERATION_STATUS : 'moderationStatus',
+PARTNER_ID : 'partnerId',
+PARTNER_SORT_VALUE : 'partnerSortValue',
+RANK : 'rank',
+REPLACEMENT_STATUS : 'replacementStatus',
+START_DATE : 'startDate',
+STATUS : 'status',
+TOTAL_RANK : 'totalRank',
+TYPE : 'type',
+UPDATED_AT : 'updatedAt',
+};
+
+var KalturaPlaylistMatchAttribute = module.exports.KalturaPlaylistMatchAttribute = {
+ADMIN_TAGS : 'adminTags',
+CATEGORIES_IDS : 'categoriesIds',
+CREATOR_ID : 'creatorId',
+DESCRIPTION : 'description',
+GROUP_ID : 'groupId',
+ID : 'id',
+NAME : 'name',
+REFERENCE_ID : 'referenceId',
+REPLACED_ENTRY_ID : 'replacedEntryId',
+REPLACING_ENTRY_ID : 'replacingEntryId',
+SEARCH_TEXT : 'searchText',
+TAGS : 'tags',
+USER_ID : 'userId',
 };
 
 var KalturaPlaylistOrderBy = module.exports.KalturaPlaylistOrderBy = {

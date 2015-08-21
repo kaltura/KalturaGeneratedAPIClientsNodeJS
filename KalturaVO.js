@@ -2727,6 +2727,26 @@ util.inherits(KalturaIntegerValue, KalturaValue);
 
 
 /**
+ */
+function KalturaIntegrationJobProviderData(){
+	KalturaIntegrationJobProviderData.super_.call(this);
+}
+module.exports.KalturaIntegrationJobProviderData = KalturaIntegrationJobProviderData;
+
+util.inherits(KalturaIntegrationJobProviderData, kaltura.KalturaObjectBase);
+
+
+/**
+ */
+function KalturaIntegrationJobTriggerData(){
+	KalturaIntegrationJobTriggerData.super_.call(this);
+}
+module.exports.KalturaIntegrationJobTriggerData = KalturaIntegrationJobTriggerData;
+
+util.inherits(KalturaIntegrationJobTriggerData, kaltura.KalturaObjectBase);
+
+
+/**
  * @param partner_id int .
  * @param valid_until int .
  * @param partner_pattern string .
@@ -8660,6 +8680,26 @@ util.inherits(KalturaIndexTagsByPrivacyContextJobData, KalturaJobData);
 
 
 /**
+ * @param callbackNotificationUrl string  (readOnly).
+ * @param providerType string .
+ * @param providerData KalturaIntegrationJobProviderData Additional data that relevant for the provider only.
+ * @param triggerType string .
+ * @param triggerData KalturaIntegrationJobTriggerData Additional data that relevant for the trigger only.
+ */
+function KalturaIntegrationJobData(){
+	KalturaIntegrationJobData.super_.call(this);
+	this.callbackNotificationUrl = null;
+	this.providerType = null;
+	this.providerData = null;
+	this.triggerType = null;
+	this.triggerData = null;
+}
+module.exports.KalturaIntegrationJobData = KalturaIntegrationJobData;
+
+util.inherits(KalturaIntegrationJobData, KalturaJobData);
+
+
+/**
  * @param ipAddressRestrictionType int Ip address restriction type (Allow or deny).
  * @param ipAddressList string Comma separated list of ip address to allow to deny.
  */
@@ -10430,6 +10470,34 @@ function KalturaVirusScanProfileListResponse(){
 module.exports.KalturaVirusScanProfileListResponse = KalturaVirusScanProfileListResponse;
 
 util.inherits(KalturaVirusScanProfileListResponse, KalturaListResponse);
+
+
+/**
+ * @param entryId string Entry ID.
+ * @param flavorAssetId string Flavor ID.
+ * @param transcriptId string input Transcript-asset ID.
+ * @param captionAssetFormats string Caption formats.
+ * @param apiKey string Api key for service provider (readOnly).
+ * @param apiPassword string Api key for service provider (readOnly).
+ * @param spokenLanguage string Transcript content language.
+ * @param fileLocation string Transcript Content location (readOnly).
+ * @param replaceMediaContent bool should replace remote media content.
+ */
+function KalturaVoicebaseJobProviderData(){
+	KalturaVoicebaseJobProviderData.super_.call(this);
+	this.entryId = null;
+	this.flavorAssetId = null;
+	this.transcriptId = null;
+	this.captionAssetFormats = null;
+	this.apiKey = null;
+	this.apiPassword = null;
+	this.spokenLanguage = null;
+	this.fileLocation = null;
+	this.replaceMediaContent = null;
+}
+module.exports.KalturaVoicebaseJobProviderData = KalturaVoicebaseJobProviderData;
+
+util.inherits(KalturaVoicebaseJobProviderData, KalturaIntegrationJobProviderData);
 
 
 /**

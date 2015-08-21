@@ -2486,6 +2486,14 @@ var KalturaImageFlavorParamsOrderBy = module.exports.KalturaImageFlavorParamsOrd
 var KalturaImageFlavorParamsOutputOrderBy = module.exports.KalturaImageFlavorParamsOutputOrderBy = {
 };
 
+var KalturaIntegrationProviderType = module.exports.KalturaIntegrationProviderType = {
+VOICEBASE : 'voicebase.Voicebase',
+};
+
+var KalturaIntegrationTriggerType = module.exports.KalturaIntegrationTriggerType = {
+MANUAL : '1',
+};
+
 var KalturaKontikiStorageProfileOrderBy = module.exports.KalturaKontikiStorageProfileOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',

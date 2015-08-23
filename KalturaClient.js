@@ -37,7 +37,7 @@ kaltura.enums = require('./KalturaTypes');
 
 function KalturaClient(config) {
 	this.setApiVersion('3.2.0');
-	this.setClientTag('node:15-08-22');
+	this.setClientTag('node:15-08-23');
 	this.init(config);
 }
 
@@ -503,6 +503,11 @@ KalturaClient.prototype.liveConversionProfile = null;
  */
 KalturaClient.prototype.scheduledTaskProfile = null;
 /**
+ * Integration service lets you dispatch integration tasks
+ * @param kaltura.services.KalturaIntegrationService
+ */
+KalturaClient.prototype.integration = null;
+/**
  * The client constructor.
  * @param config the Kaltura configuration object holding partner credentials (type: KalturaConfiguration).
  */
@@ -600,6 +605,7 @@ KalturaClient.prototype.init = function(config){
 	this.externalMedia = new kaltura.services.KalturaExternalMediaService(this);
 	this.liveConversionProfile = new kaltura.services.KalturaLiveConversionProfileService(this);
 	this.scheduledTaskProfile = new kaltura.services.KalturaScheduledTaskProfileService(this);
+	this.integration = new kaltura.services.KalturaIntegrationService(this);
 };
 /**
  * @param string clientTag

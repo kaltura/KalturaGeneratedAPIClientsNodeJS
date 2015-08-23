@@ -12120,3 +12120,48 @@ KalturaScheduledTaskProfileService.prototype.getDryRunResults = function(callbac
 	}
 };
 
+/**
+ *Class definition for the Kaltura service: integration.
+ * The available service actions:
+ * @action dispatch Dispatch integration task.
+ * @action notify .
+ */
+function KalturaIntegrationService(client){
+	KalturaIntegrationService.super_.call(this);
+	this.init(client);
+}
+
+util.inherits(KalturaIntegrationService, kaltura.KalturaServiceBase);
+module.exports.KalturaIntegrationService = KalturaIntegrationService;
+
+/**
+ * Dispatch integration task.
+ * @param data KalturaIntegrationJobData  (optional).
+ * @param objectType string  (optional, enum: KalturaBatchJobObjectType).
+ * @param objectId string  (optional).
+ * @return int.
+ */
+KalturaIntegrationService.prototype.dispatch = function(callback, data, objectType, objectId){
+	var kparams = {};
+	this.client.addParam(kparams, 'data', kaltura.toParams(data));
+	this.client.addParam(kparams, 'objectType', objectType);
+	this.client.addParam(kparams, 'objectId', objectId);
+	this.client.queueServiceActionCall('integration_integration', 'dispatch', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * .
+ * @param id int integration job id (optional).
+ * @return .
+ */
+KalturaIntegrationService.prototype.notify = function(callback, id){
+	var kparams = {};
+	this.client.addParam(kparams, 'id', id);
+	this.client.queueServiceActionCall('integration_integration', 'notify', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+

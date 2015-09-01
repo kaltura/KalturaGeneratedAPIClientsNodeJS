@@ -3740,6 +3740,7 @@ util.inherits(KalturaPlayerEmbedCodeType, kaltura.KalturaObjectBase);
  * @param partnerParentId int  (readOnly).
  * @param crmId string  (readOnly).
  * @param referenceId string .
+ * @param timeAlignedRenditions bool  (readOnly).
  */
 function KalturaPartner(){
 	KalturaPartner.super_.call(this);
@@ -3795,6 +3796,7 @@ function KalturaPartner(){
 	this.partnerParentId = null;
 	this.crmId = null;
 	this.referenceId = null;
+	this.timeAlignedRenditions = null;
 }
 module.exports.KalturaPartner = KalturaPartner;
 
@@ -4797,6 +4799,7 @@ util.inherits(KalturaSystemPartnerLimit, kaltura.KalturaObjectBase);
  * @param language string .
  * @param audioThumbEntryId string .
  * @param liveThumbEntryId string .
+ * @param timeAlignedRenditions bool .
  */
 function KalturaSystemPartnerConfiguration(){
 	KalturaSystemPartnerConfiguration.super_.call(this);
@@ -4862,6 +4865,7 @@ function KalturaSystemPartnerConfiguration(){
 	this.language = null;
 	this.audioThumbEntryId = null;
 	this.liveThumbEntryId = null;
+	this.timeAlignedRenditions = null;
 }
 module.exports.KalturaSystemPartnerConfiguration = KalturaSystemPartnerConfiguration;
 
@@ -9187,6 +9191,7 @@ util.inherits(KalturaParseMultiLanguageCaptionAssetJobData, KalturaJobData);
  * @param partnerPackageEqual int .
  * @param partnerPackageGreaterThanOrEqual int .
  * @param partnerPackageLessThanOrEqual int .
+ * @param partnerPackageIn string .
  * @param partnerGroupTypeEqual int .
  * @param partnerNameDescriptionWebsiteAdminNameAdminEmailLike string .
  */
@@ -9204,6 +9209,7 @@ function KalturaPartnerBaseFilter(){
 	this.partnerPackageEqual = null;
 	this.partnerPackageGreaterThanOrEqual = null;
 	this.partnerPackageLessThanOrEqual = null;
+	this.partnerPackageIn = null;
 	this.partnerGroupTypeEqual = null;
 	this.partnerNameDescriptionWebsiteAdminNameAdminEmailLike = null;
 }

@@ -5577,6 +5577,20 @@ util.inherits(KalturaAccessControlListResponse, KalturaListResponse);
 
 
 /**
+ * @param pattern string Request host regex pattern.
+ * @param replacement string Request host regex replacment.
+ */
+function KalturaAccessControlModifyRequestHostRegexAction(){
+	KalturaAccessControlModifyRequestHostRegexAction.super_.call(this);
+	this.pattern = null;
+	this.replacement = null;
+}
+module.exports.KalturaAccessControlModifyRequestHostRegexAction = KalturaAccessControlModifyRequestHostRegexAction;
+
+util.inherits(KalturaAccessControlModifyRequestHostRegexAction, KalturaRuleAction);
+
+
+/**
  * @param limit int .
  */
 function KalturaAccessControlPreviewAction(){

@@ -1494,17 +1494,6 @@ CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaCielo24Fidelity = module.exports.KalturaCielo24Fidelity = {
-MECHANICAL : 'MECHANICAL',
-PREMIUM : 'PREMIUM',
-PROFESSIONAL : 'PROFESSIONAL',
-};
-
-var KalturaCielo24Priority = module.exports.KalturaCielo24Priority = {
-PRIORITY : 'PRIORITY',
-STANDARD : 'STANDARD',
-};
-
 var KalturaCodeCuePointOrderBy = module.exports.KalturaCodeCuePointOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 DURATION_ASC : '+duration',

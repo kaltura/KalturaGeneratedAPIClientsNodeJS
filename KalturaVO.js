@@ -10249,11 +10249,13 @@ util.inherits(KalturaUrlTokenizerBitGravity, KalturaUrlTokenizer);
 /**
  * @param keyPairId string .
  * @param rootDir string .
+ * @param limitIpAddress bool .
  */
 function KalturaUrlTokenizerCloudFront(){
 	KalturaUrlTokenizerCloudFront.super_.call(this);
 	this.keyPairId = null;
 	this.rootDir = null;
+	this.limitIpAddress = null;
 }
 module.exports.KalturaUrlTokenizerCloudFront = KalturaUrlTokenizerCloudFront;
 

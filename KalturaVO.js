@@ -13746,11 +13746,15 @@ util.inherits(KalturaAnnotationBaseFilter, KalturaCuePointFilter);
 /**
  * @param parentIdEqual string .
  * @param parentIdIn string .
+ * @param quizUserEntryIdEqual string .
+ * @param quizUserEntryIdIn string .
  */
 function KalturaAnswerCuePointBaseFilter(){
 	KalturaAnswerCuePointBaseFilter.super_.call(this);
 	this.parentIdEqual = null;
 	this.parentIdIn = null;
+	this.quizUserEntryIdEqual = null;
+	this.quizUserEntryIdIn = null;
 }
 module.exports.KalturaAnswerCuePointBaseFilter = KalturaAnswerCuePointBaseFilter;
 

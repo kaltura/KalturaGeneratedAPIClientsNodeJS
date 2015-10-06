@@ -6524,6 +6524,34 @@ util.inherits(KalturaCategoryUserProviderFilter, KalturaFilter);
 
 
 /**
+ * @param entryId string Entry ID.
+ * @param flavorAssetId string Flavor ID.
+ * @param captionAssetFormats string Caption formats.
+ * @param priority string .
+ * @param fidelity string .
+ * @param username string Api key for service provider (readOnly).
+ * @param password string Api key for service provider (readOnly).
+ * @param spokenLanguage string Transcript content language.
+ * @param replaceMediaContent bool should replace remote media content.
+ */
+function KalturaCielo24JobProviderData(){
+	KalturaCielo24JobProviderData.super_.call(this);
+	this.entryId = null;
+	this.flavorAssetId = null;
+	this.captionAssetFormats = null;
+	this.priority = null;
+	this.fidelity = null;
+	this.username = null;
+	this.password = null;
+	this.spokenLanguage = null;
+	this.replaceMediaContent = null;
+}
+module.exports.KalturaCielo24JobProviderData = KalturaCielo24JobProviderData;
+
+util.inherits(KalturaCielo24JobProviderData, KalturaIntegrationJobProviderData);
+
+
+/**
  * @param offset int Offset in milliseconds.
  * @param duration int Duration in milliseconds.
  */

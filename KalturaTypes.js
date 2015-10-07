@@ -2518,6 +2518,7 @@ var KalturaImageFlavorParamsOutputOrderBy = module.exports.KalturaImageFlavorPar
 };
 
 var KalturaIntegrationProviderType = module.exports.KalturaIntegrationProviderType = {
+CIELO24 : 'cielo24.Cielo24',
 VOICEBASE : 'voicebase.Voicebase',
 };
 

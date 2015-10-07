@@ -3953,6 +3953,7 @@ util.inherits(KalturaPluginData, kaltura.KalturaObjectBase);
  * @param showCorrectKeyOnAnswer int .
  * @param allowAnswerUpdate int .
  * @param showCorrectAfterSubmission int .
+ * @param allowDownload int .
  */
 function KalturaQuiz(){
 	KalturaQuiz.super_.call(this);
@@ -3962,6 +3963,7 @@ function KalturaQuiz(){
 	this.showCorrectKeyOnAnswer = null;
 	this.allowAnswerUpdate = null;
 	this.showCorrectAfterSubmission = null;
+	this.allowDownload = null;
 }
 module.exports.KalturaQuiz = KalturaQuiz;
 

@@ -4090,11 +4090,15 @@ KalturaMediaService.prototype.get = function(callback, entryId, version){
  * XML will return as an escaped string.
  * @param entryId string Entry id (optional).
  * @param extendingItemsArray array  (optional, default: null).
+ * @param features string  (optional, default: null).
  * @return string.
  */
-KalturaMediaService.prototype.getMrss = function(callback, entryId, extendingItemsArray){
+KalturaMediaService.prototype.getMrss = function(callback, entryId, extendingItemsArray, features){
 	if(!extendingItemsArray){
 		extendingItemsArray = null;
+	}
+	if(!features){
+		features = null;
 	}
 	var kparams = {};
 	this.client.addParam(kparams, 'entryId', entryId);
@@ -4105,6 +4109,7 @@ KalturaMediaService.prototype.getMrss = function(callback, entryId, extendingIte
 		this.client.addParam(kparams, 'extendingItemsArray:' + index, kaltura.toParams(obj));
 	}
 	}
+	this.client.addParam(kparams, 'features', features);
 	this.client.queueServiceActionCall('media', 'getMrss', kparams);
 	if (!this.client.isMultiRequest()){
 		this.client.doQueue(callback);

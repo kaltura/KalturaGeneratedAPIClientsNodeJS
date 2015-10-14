@@ -6656,11 +6656,13 @@ util.inherits(KalturaConfigurableDistributionJobProviderData, KalturaDistributio
 /**
  * @param fieldConfigArray array .
  * @param itemXpathsToExtend array .
+ * @param useCategoryEntries bool When checking custom XSLT conditions using the fieldConfigArray - address only categories associated with the entry via the categoryEntry object.
  */
 function KalturaConfigurableDistributionProfile(){
 	KalturaConfigurableDistributionProfile.super_.call(this);
 	this.fieldConfigArray = null;
 	this.itemXpathsToExtend = null;
+	this.useCategoryEntries = null;
 }
 module.exports.KalturaConfigurableDistributionProfile = KalturaConfigurableDistributionProfile;
 

@@ -5103,6 +5103,22 @@ util.inherits(KalturaTrackEntry, kaltura.KalturaObjectBase);
 
 
 /**
+ * @param accuracy float The accuracy of the transcript - values between 0 and 1.
+ * @param humanVerified int Was verified by human or machine.
+ * @param language string The language of the transcript.
+ */
+function KalturaTranscriptAsset(){
+	KalturaTranscriptAsset.super_.call(this);
+	this.accuracy = null;
+	this.humanVerified = null;
+	this.language = null;
+}
+module.exports.KalturaTranscriptAsset = KalturaTranscriptAsset;
+
+util.inherits(KalturaTranscriptAsset, KalturaAttachmentAsset);
+
+
+/**
  * @param objects array  (readOnly).
  * @param totalCount int  (readOnly).
  * @param lowerVersionCount int  (readOnly).
@@ -10041,6 +10057,18 @@ util.inherits(KalturaTrackEntryListResponse, KalturaListResponse);
 
 
 /**
+ * @param objects array  (readOnly).
+ */
+function KalturaTranscriptAssetListResponse(){
+	KalturaTranscriptAssetListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaTranscriptAssetListResponse = KalturaTranscriptAssetListResponse;
+
+util.inherits(KalturaTranscriptAssetListResponse, KalturaListResponse);
+
+
+/**
  * @param srcXslPath string .
  * @param srcVersion int .
  * @param destVersion int .
@@ -14781,6 +14809,16 @@ util.inherits(KalturaTimedThumbAssetBaseFilter, KalturaThumbAssetFilter);
 
 /**
  */
+function KalturaTranscriptAssetBaseFilter(){
+	KalturaTranscriptAssetBaseFilter.super_.call(this);
+}
+module.exports.KalturaTranscriptAssetBaseFilter = KalturaTranscriptAssetBaseFilter;
+
+util.inherits(KalturaTranscriptAssetBaseFilter, KalturaAttachmentAssetFilter);
+
+
+/**
+ */
 function KalturaDocumentFlavorParamsFilter(){
 	KalturaDocumentFlavorParamsFilter.super_.call(this);
 }
@@ -14907,6 +14945,16 @@ function KalturaTimedThumbAssetFilter(){
 module.exports.KalturaTimedThumbAssetFilter = KalturaTimedThumbAssetFilter;
 
 util.inherits(KalturaTimedThumbAssetFilter, KalturaTimedThumbAssetBaseFilter);
+
+
+/**
+ */
+function KalturaTranscriptAssetFilter(){
+	KalturaTranscriptAssetFilter.super_.call(this);
+}
+module.exports.KalturaTranscriptAssetFilter = KalturaTranscriptAssetFilter;
+
+util.inherits(KalturaTranscriptAssetFilter, KalturaTranscriptAssetBaseFilter);
 
 
 /**

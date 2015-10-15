@@ -3933,6 +3933,17 @@ SIZE_DESC : '-size',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
+var KalturaTranscriptAssetOrderBy = module.exports.KalturaTranscriptAssetOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+DELETED_AT_ASC : '+deletedAt',
+SIZE_ASC : '+size',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+DELETED_AT_DESC : '-deletedAt',
+SIZE_DESC : '-size',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
 var KalturaTubeMogulSyndicationFeedCategories = module.exports.KalturaTubeMogulSyndicationFeedCategories = {
 ANIMALS_AND_PETS : 'Animals &amp; Pets',
 ARTS_AND_ANIMATION : 'Arts &amp; Animation',

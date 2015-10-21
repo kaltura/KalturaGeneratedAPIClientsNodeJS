@@ -11548,6 +11548,7 @@ KalturaTagService.prototype.indexCategoryEntryTags = function(callback, category
  * @action like .
  * @action unlike .
  * @action checkLikeExists .
+ * @action list .
  */
 function KalturaLikeService(client){
 	KalturaLikeService.super_.call(this);
@@ -11597,6 +11598,31 @@ KalturaLikeService.prototype.checkLikeExists = function(callback, entryId, userI
 	this.client.addParam(kparams, 'entryId', entryId);
 	this.client.addParam(kparams, 'userId', userId);
 	this.client.queueServiceActionCall('like_like', 'checkLikeExists', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * .
+ * @param filter KalturaLikeFilter  (optional, default: null).
+ * @param pager KalturaFilterPager  (optional, default: null).
+ * @return KalturaLikeListResponse.
+ */
+KalturaLikeService.prototype.listAction = function(callback, filter, pager){
+	if(!filter){
+		filter = null;
+	}
+	if(!pager){
+		pager = null;
+	}
+	var kparams = {};
+	if (filter !== null){
+		this.client.addParam(kparams, 'filter', kaltura.toParams(filter));
+	}
+	if (pager !== null){
+		this.client.addParam(kparams, 'pager', kaltura.toParams(pager));
+	}
+	this.client.queueServiceActionCall('like_like', 'list', kparams);
 	if (!this.client.isMultiRequest()){
 		this.client.doQueue(callback);
 	}

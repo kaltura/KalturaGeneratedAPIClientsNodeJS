@@ -2832,6 +2832,9 @@ ZH : 'zh',
 ZU : 'zu',
 };
 
+var KalturaLikeOrderBy = module.exports.KalturaLikeOrderBy = {
+};
+
 var KalturaLiveAssetOrderBy = module.exports.KalturaLiveAssetOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 DELETED_AT_ASC : '+deletedAt',

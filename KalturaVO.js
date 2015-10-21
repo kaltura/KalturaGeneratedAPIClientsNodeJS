@@ -2789,6 +2789,20 @@ util.inherits(KalturaKeyBooleanValue, kaltura.KalturaObjectBase);
 
 
 /**
+ * @param entryId string The id of the entry that the like belongs to.
+ * @param userId string The id of user that the like belongs to.
+ */
+function KalturaLike(){
+	KalturaLike.super_.call(this);
+	this.entryId = null;
+	this.userId = null;
+}
+module.exports.KalturaLike = KalturaLike;
+
+util.inherits(KalturaLike, kaltura.KalturaObjectBase);
+
+
+/**
  * @param protocol string .
  * @param url string .
  * @param publishUrl string .
@@ -8794,6 +8808,18 @@ util.inherits(KalturaKontikiStorageProfile, KalturaStorageProfile);
 
 
 /**
+ * @param objects array  (readOnly).
+ */
+function KalturaLikeListResponse(){
+	KalturaLikeListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaLikeListResponse = KalturaLikeListResponse;
+
+util.inherits(KalturaLikeListResponse, KalturaListResponse);
+
+
+/**
  * @param limitFlavorsRestrictionType int Limit flavors restriction type (Allow or deny).
  * @param flavorParamsIds string Comma separated list of flavor params ids to allow to deny.
  */
@@ -11832,6 +11858,20 @@ util.inherits(KalturaIpAddressCondition, KalturaMatchCondition);
 
 
 /**
+ * @param entryIdEqual string .
+ * @param userIdEqual string .
+ */
+function KalturaLikeBaseFilter(){
+	KalturaLikeBaseFilter.super_.call(this);
+	this.entryIdEqual = null;
+	this.userIdEqual = null;
+}
+module.exports.KalturaLikeBaseFilter = KalturaLikeBaseFilter;
+
+util.inherits(KalturaLikeBaseFilter, KalturaRelatedFilter);
+
+
+/**
  * @param multicastIP string .
  * @param multicastPort int .
  */
@@ -13211,6 +13251,16 @@ function KalturaKontikiStorageProfileBaseFilter(){
 module.exports.KalturaKontikiStorageProfileBaseFilter = KalturaKontikiStorageProfileBaseFilter;
 
 util.inherits(KalturaKontikiStorageProfileBaseFilter, KalturaStorageProfileFilter);
+
+
+/**
+ */
+function KalturaLikeFilter(){
+	KalturaLikeFilter.super_.call(this);
+}
+module.exports.KalturaLikeFilter = KalturaLikeFilter;
+
+util.inherits(KalturaLikeFilter, KalturaLikeBaseFilter);
 
 
 /**

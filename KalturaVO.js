@@ -1588,6 +1588,7 @@ util.inherits(KalturaDetachedResponseProfile, KalturaBaseResponseProfile);
  * @param updateOnChange bool Trigger distribution update when this field changes or not ?.
  * @param updateParams array Entry column or metadata xpath that should trigger an update.
  * @param isDefault bool Is this field config is the default for the distribution provider? (readOnly).
+ * @param triggerDeleteOnError bool Is an error on this field going to trigger deletion of distributed content?.
  */
 function KalturaDistributionFieldConfig(){
 	KalturaDistributionFieldConfig.super_.call(this);
@@ -1598,6 +1599,7 @@ function KalturaDistributionFieldConfig(){
 	this.updateOnChange = null;
 	this.updateParams = null;
 	this.isDefault = null;
+	this.triggerDeleteOnError = null;
 }
 module.exports.KalturaDistributionFieldConfig = KalturaDistributionFieldConfig;
 

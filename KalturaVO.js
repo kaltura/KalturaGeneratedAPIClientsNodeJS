@@ -2473,7 +2473,7 @@ util.inherits(KalturaFlavorAssetUrlOptions, kaltura.KalturaObjectBase);
  * @param audioSampleRate int The audio sample rate of the Flavor Params.
  * @param width int The desired width of the Flavor Params.
  * @param height int The desired height of the Flavor Params.
- * @param frameRate int The frame rate of the Flavor Params.
+ * @param frameRate float The frame rate of the Flavor Params.
  * @param gopSize int The gop size of the Flavor Params.
  * @param conversionEngines string The list of conversion engines (comma separated).
  * @param conversionEnginesExtraParams string The list of conversion engines extra params (separated with "|").

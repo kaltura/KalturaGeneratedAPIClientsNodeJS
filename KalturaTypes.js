@@ -651,6 +651,10 @@ AUTHENTICATED_USERS : 2,
 MEMBERS_ONLY : 3,
 };
 
+var KalturaQuizFileType = module.exports.KalturaQuizFileType = {
+PDF : 1,
+};
+
 var KalturaRecordStatus = module.exports.KalturaRecordStatus = {
 DISABLED : 0,
 APPENDED : 1,

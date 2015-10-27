@@ -10512,6 +10512,7 @@ KalturaAnnotationService.prototype.deleteAction = function(callback, id){
  * @action update Allows to update a quiz.
  * @action get Allows to get a quiz.
  * @action list List quiz objects by filter and pager.
+ * @action getUrl sends a with an api request for pdf from quiz object.
  */
 function KalturaQuizService(client){
 	KalturaQuizService.super_.call(this);
@@ -10585,6 +10586,21 @@ KalturaQuizService.prototype.listAction = function(callback, filter, pager){
 		this.client.addParam(kparams, 'pager', kaltura.toParams(pager));
 	}
 	this.client.queueServiceActionCall('quiz_quiz', 'list', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * sends a with an api request for pdf from quiz object.
+ * @param entryId string  (optional).
+ * @param quizFileType int  (optional, enum: KalturaQuizFileType).
+ * @return string.
+ */
+KalturaQuizService.prototype.getUrl = function(callback, entryId, quizFileType){
+	var kparams = {};
+	this.client.addParam(kparams, 'entryId', entryId);
+	this.client.addParam(kparams, 'quizFileType', quizFileType);
+	this.client.queueServiceActionCall('quiz_quiz', 'getUrl', kparams);
 	if (!this.client.isMultiRequest()){
 		this.client.doQueue(callback);
 	}

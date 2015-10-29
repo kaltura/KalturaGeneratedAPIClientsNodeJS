@@ -1900,42 +1900,6 @@ util.inherits(KalturaDropFolderFile, kaltura.KalturaObjectBase);
 
 /**
  * @param id int  (readOnly).
- * @param createdAt int  (readOnly).
- * @param updatedAt int  (readOnly).
- * @param partnerId int  (readOnly).
- * @param name string edgeServer name.
- * @param systemName string edgeServer uniqe system name.
- * @param description string edgeServer description.
- * @param status int .
- * @param tags string edgeServer tags.
- * @param hostName string edgeServer host name.
- * @param playbackHostName string edgeServer playback hostName.
- * @param deliveryProfileIds string Delivery profile ids comma seperated.
- * @param parentId int Id of the parent edge server.
- */
-function KalturaEdgeServer(){
-	KalturaEdgeServer.super_.call(this);
-	this.id = null;
-	this.createdAt = null;
-	this.updatedAt = null;
-	this.partnerId = null;
-	this.name = null;
-	this.systemName = null;
-	this.description = null;
-	this.status = null;
-	this.tags = null;
-	this.hostName = null;
-	this.playbackHostName = null;
-	this.deliveryProfileIds = null;
-	this.parentId = null;
-}
-module.exports.KalturaEdgeServer = KalturaEdgeServer;
-
-util.inherits(KalturaEdgeServer, kaltura.KalturaObjectBase);
-
-
-/**
- * @param id int  (readOnly).
  * @param name string .
  * @param description string .
  * @param emailAddress string .
@@ -3454,36 +3418,6 @@ util.inherits(KalturaMediaInfo, kaltura.KalturaObjectBase);
 
 
 /**
- * @param id int Unique identifier (readOnly).
- * @param dc int Server data center id (readOnly).
- * @param hostname string Server host name (readOnly).
- * @param createdAt int Server first registration date as Unix timestamp (In seconds) (readOnly).
- * @param updatedAt int Server last update date as Unix timestamp (In seconds) (readOnly).
- */
-function KalturaMediaServer(){
-	KalturaMediaServer.super_.call(this);
-	this.id = null;
-	this.dc = null;
-	this.hostname = null;
-	this.createdAt = null;
-	this.updatedAt = null;
-}
-module.exports.KalturaMediaServer = KalturaMediaServer;
-
-util.inherits(KalturaMediaServer, kaltura.KalturaObjectBase);
-
-
-/**
- */
-function KalturaMediaServerStatus(){
-	KalturaMediaServerStatus.super_.call(this);
-}
-module.exports.KalturaMediaServerStatus = KalturaMediaServerStatus;
-
-util.inherits(KalturaMediaServerStatus, kaltura.KalturaObjectBase);
-
-
-/**
  * @param id int  (readOnly).
  * @param partnerId int  (readOnly).
  * @param metadataProfileId int  (readOnly).
@@ -4480,6 +4414,44 @@ function KalturaSearchResultResponse(){
 module.exports.KalturaSearchResultResponse = KalturaSearchResultResponse;
 
 util.inherits(KalturaSearchResultResponse, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param id int  (readOnly).
+ * @param partnerId int  (readOnly).
+ * @param createdAt int  (readOnly).
+ * @param updatedAt int  (readOnly).
+ * @param heartbeatTime int  (readOnly).
+ * @param name string serverNode name.
+ * @param systemName string serverNode uniqe system name.
+ * @param description string .
+ * @param hostName string serverNode hostName.
+ * @param status int  (readOnly).
+ * @param type string  (readOnly).
+ * @param tags string serverNode tags.
+ * @param dc int DC where the serverNode is located (readOnly).
+ * @param parentId int Id of the parent serverNode.
+ */
+function KalturaServerNode(){
+	KalturaServerNode.super_.call(this);
+	this.id = null;
+	this.partnerId = null;
+	this.createdAt = null;
+	this.updatedAt = null;
+	this.heartbeatTime = null;
+	this.name = null;
+	this.systemName = null;
+	this.description = null;
+	this.hostName = null;
+	this.status = null;
+	this.type = null;
+	this.tags = null;
+	this.dc = null;
+	this.parentId = null;
+}
+module.exports.KalturaServerNode = KalturaServerNode;
+
+util.inherits(KalturaServerNode, kaltura.KalturaObjectBase);
 
 
 /**
@@ -7168,6 +7140,18 @@ util.inherits(KalturaDeliveryProfileRtmp, KalturaDeliveryProfile);
 
 
 /**
+ * @param playbackDomain string Delivery server playback Domain.
+ */
+function KalturaDeliveryServerNode(){
+	KalturaDeliveryServerNode.super_.call(this);
+	this.playbackDomain = null;
+}
+module.exports.KalturaDeliveryServerNode = KalturaDeliveryServerNode;
+
+util.inherits(KalturaDeliveryServerNode, KalturaServerNode);
+
+
+/**
  * @param directoryRestrictionType int Kaltura directory restriction type.
  */
 function KalturaDirectoryRestriction(){
@@ -7603,74 +7587,6 @@ function KalturaDropFolderXmlBulkUploadFileHandlerConfig(){
 module.exports.KalturaDropFolderXmlBulkUploadFileHandlerConfig = KalturaDropFolderXmlBulkUploadFileHandlerConfig;
 
 util.inherits(KalturaDropFolderXmlBulkUploadFileHandlerConfig, KalturaDropFolderFileHandlerConfig);
-
-
-/**
- * @param idEqual int .
- * @param idIn string .
- * @param createdAtGreaterThanOrEqual int .
- * @param createdAtLessThanOrEqual int .
- * @param updatedAtGreaterThanOrEqual int .
- * @param updatedAtLessThanOrEqual int .
- * @param nameEqual string .
- * @param nameIn string .
- * @param systemNameEqual string .
- * @param systemNameIn string .
- * @param statusEqual int .
- * @param statusIn string .
- * @param tagsLike string .
- * @param tagsMultiLikeOr string .
- * @param tagsMultiLikeAnd string .
- * @param hostNameLike string .
- * @param hostNameMultiLikeOr string .
- * @param hostNameMultiLikeAnd string .
- * @param playbackHostNameLike string .
- * @param playbackHostNameMultiLikeOr string .
- * @param playbackHostNameMultiLikeAnd string .
- * @param parentIdEqual int .
- * @param parentIdIn string .
- */
-function KalturaEdgeServerBaseFilter(){
-	KalturaEdgeServerBaseFilter.super_.call(this);
-	this.idEqual = null;
-	this.idIn = null;
-	this.createdAtGreaterThanOrEqual = null;
-	this.createdAtLessThanOrEqual = null;
-	this.updatedAtGreaterThanOrEqual = null;
-	this.updatedAtLessThanOrEqual = null;
-	this.nameEqual = null;
-	this.nameIn = null;
-	this.systemNameEqual = null;
-	this.systemNameIn = null;
-	this.statusEqual = null;
-	this.statusIn = null;
-	this.tagsLike = null;
-	this.tagsMultiLikeOr = null;
-	this.tagsMultiLikeAnd = null;
-	this.hostNameLike = null;
-	this.hostNameMultiLikeOr = null;
-	this.hostNameMultiLikeAnd = null;
-	this.playbackHostNameLike = null;
-	this.playbackHostNameMultiLikeOr = null;
-	this.playbackHostNameMultiLikeAnd = null;
-	this.parentIdEqual = null;
-	this.parentIdIn = null;
-}
-module.exports.KalturaEdgeServerBaseFilter = KalturaEdgeServerBaseFilter;
-
-util.inherits(KalturaEdgeServerBaseFilter, KalturaFilter);
-
-
-/**
- * @param objects array  (readOnly).
- */
-function KalturaEdgeServerListResponse(){
-	KalturaEdgeServerListResponse.super_.call(this);
-	this.objects = null;
-}
-module.exports.KalturaEdgeServerListResponse = KalturaEdgeServerListResponse;
-
-util.inherits(KalturaEdgeServerListResponse, KalturaListResponse);
 
 
 /**
@@ -9012,24 +8928,6 @@ util.inherits(KalturaMediaListResponse, KalturaListResponse);
 
 
 /**
- * @param createdAtGreaterThanOrEqual int .
- * @param createdAtLessThanOrEqual int .
- * @param updatedAtGreaterThanOrEqual int .
- * @param updatedAtLessThanOrEqual int .
- */
-function KalturaMediaServerBaseFilter(){
-	KalturaMediaServerBaseFilter.super_.call(this);
-	this.createdAtGreaterThanOrEqual = null;
-	this.createdAtLessThanOrEqual = null;
-	this.updatedAtGreaterThanOrEqual = null;
-	this.updatedAtLessThanOrEqual = null;
-}
-module.exports.KalturaMediaServerBaseFilter = KalturaMediaServerBaseFilter;
-
-util.inherits(KalturaMediaServerBaseFilter, KalturaFilter);
-
-
-/**
  * @param objects array  (readOnly).
  */
 function KalturaMetadataListResponse(){
@@ -9720,6 +9618,80 @@ function KalturaSearchOperator(){
 module.exports.KalturaSearchOperator = KalturaSearchOperator;
 
 util.inherits(KalturaSearchOperator, KalturaSearchItem);
+
+
+/**
+ * @param idEqual int .
+ * @param idIn string .
+ * @param createdAtGreaterThanOrEqual int .
+ * @param createdAtLessThanOrEqual int .
+ * @param updatedAtGreaterThanOrEqual int .
+ * @param updatedAtLessThanOrEqual int .
+ * @param heartbeatTimeGreaterThanOrEqual int .
+ * @param heartbeatTimeLessThanOrEqual int .
+ * @param nameEqual string .
+ * @param nameIn string .
+ * @param systemNameEqual string .
+ * @param systemNameIn string .
+ * @param hostNameLike string .
+ * @param hostNameMultiLikeOr string .
+ * @param hostNameMultiLikeAnd string .
+ * @param statusEqual int .
+ * @param statusIn string .
+ * @param typeEqual string .
+ * @param typeIn string .
+ * @param tagsLike string .
+ * @param tagsMultiLikeOr string .
+ * @param tagsMultiLikeAnd string .
+ * @param dcEqual int .
+ * @param dcIn string .
+ * @param parentIdEqual int .
+ * @param parentIdIn string .
+ */
+function KalturaServerNodeBaseFilter(){
+	KalturaServerNodeBaseFilter.super_.call(this);
+	this.idEqual = null;
+	this.idIn = null;
+	this.createdAtGreaterThanOrEqual = null;
+	this.createdAtLessThanOrEqual = null;
+	this.updatedAtGreaterThanOrEqual = null;
+	this.updatedAtLessThanOrEqual = null;
+	this.heartbeatTimeGreaterThanOrEqual = null;
+	this.heartbeatTimeLessThanOrEqual = null;
+	this.nameEqual = null;
+	this.nameIn = null;
+	this.systemNameEqual = null;
+	this.systemNameIn = null;
+	this.hostNameLike = null;
+	this.hostNameMultiLikeOr = null;
+	this.hostNameMultiLikeAnd = null;
+	this.statusEqual = null;
+	this.statusIn = null;
+	this.typeEqual = null;
+	this.typeIn = null;
+	this.tagsLike = null;
+	this.tagsMultiLikeOr = null;
+	this.tagsMultiLikeAnd = null;
+	this.dcEqual = null;
+	this.dcIn = null;
+	this.parentIdEqual = null;
+	this.parentIdIn = null;
+}
+module.exports.KalturaServerNodeBaseFilter = KalturaServerNodeBaseFilter;
+
+util.inherits(KalturaServerNodeBaseFilter, KalturaFilter);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaServerNodeListResponse(){
+	KalturaServerNodeListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaServerNodeListResponse = KalturaServerNodeListResponse;
+
+util.inherits(KalturaServerNodeListResponse, KalturaListResponse);
 
 
 /**
@@ -11411,12 +11383,12 @@ util.inherits(KalturaDynamicObjectSearchItem, KalturaSearchOperator);
 
 /**
  */
-function KalturaEdgeServerFilter(){
-	KalturaEdgeServerFilter.super_.call(this);
+function KalturaEdgeServerNode(){
+	KalturaEdgeServerNode.super_.call(this);
 }
-module.exports.KalturaEdgeServerFilter = KalturaEdgeServerFilter;
+module.exports.KalturaEdgeServerNode = KalturaEdgeServerNode;
 
-util.inherits(KalturaEdgeServerFilter, KalturaEdgeServerBaseFilter);
+util.inherits(KalturaEdgeServerNode, KalturaDeliveryServerNode);
 
 
 /**
@@ -11969,6 +11941,22 @@ util.inherits(KalturaMediaInfoFilter, KalturaMediaInfoBaseFilter);
 
 
 /**
+ * @param applicationName string Media server application name.
+ * @param mediaServerPortConfig array Media server playback port configuration by protocol and format.
+ * @param mediaServerPlaybackDomainConfig array Media server playback Domain configuration by protocol and format.
+ */
+function KalturaMediaServerNode(){
+	KalturaMediaServerNode.super_.call(this);
+	this.applicationName = null;
+	this.mediaServerPortConfig = null;
+	this.mediaServerPlaybackDomainConfig = null;
+}
+module.exports.KalturaMediaServerNode = KalturaMediaServerNode;
+
+util.inherits(KalturaMediaServerNode, KalturaDeliveryServerNode);
+
+
+/**
  * @param partnerIdEqual int .
  * @param metadataProfileIdEqual int .
  * @param metadataProfileVersionEqual int .
@@ -12353,6 +12341,16 @@ function KalturaSearchMatchCondition(){
 module.exports.KalturaSearchMatchCondition = KalturaSearchMatchCondition;
 
 util.inherits(KalturaSearchMatchCondition, KalturaSearchCondition);
+
+
+/**
+ */
+function KalturaServerNodeFilter(){
+	KalturaServerNodeFilter.super_.call(this);
+}
+module.exports.KalturaServerNodeFilter = KalturaServerNodeFilter;
+
+util.inherits(KalturaServerNodeFilter, KalturaServerNodeBaseFilter);
 
 
 /**
@@ -12933,6 +12931,22 @@ function KalturaDeliveryProfileRtmpBaseFilter(){
 module.exports.KalturaDeliveryProfileRtmpBaseFilter = KalturaDeliveryProfileRtmpBaseFilter;
 
 util.inherits(KalturaDeliveryProfileRtmpBaseFilter, KalturaDeliveryProfileFilter);
+
+
+/**
+ * @param playbackDomainLike string .
+ * @param playbackDomainMultiLikeOr string .
+ * @param playbackDomainMultiLikeAnd string .
+ */
+function KalturaDeliveryServerNodeBaseFilter(){
+	KalturaDeliveryServerNodeBaseFilter.super_.call(this);
+	this.playbackDomainLike = null;
+	this.playbackDomainMultiLikeOr = null;
+	this.playbackDomainMultiLikeAnd = null;
+}
+module.exports.KalturaDeliveryServerNodeBaseFilter = KalturaDeliveryServerNodeBaseFilter;
+
+util.inherits(KalturaDeliveryServerNodeBaseFilter, KalturaServerNodeFilter);
 
 
 /**
@@ -13768,6 +13782,28 @@ util.inherits(KalturaWebcamTokenResource, KalturaDataCenterContentResource);
 
 
 /**
+ * @param appPrefix string Wowza Media server app prefix.
+ * @param transcoder string Wowza Media server transcoder configuration overide.
+ * @param GPUID int Wowza Media server GPU index id.
+ * @param liveServicePort int Live service port.
+ * @param liveServiceProtocol string Live service protocol.
+ * @param liveServiceInternalDomain string Wowza media server live service internal domain.
+ */
+function KalturaWowzaMediaServerNode(){
+	KalturaWowzaMediaServerNode.super_.call(this);
+	this.appPrefix = null;
+	this.transcoder = null;
+	this.GPUID = null;
+	this.liveServicePort = null;
+	this.liveServiceProtocol = null;
+	this.liveServiceInternalDomain = null;
+}
+module.exports.KalturaWowzaMediaServerNode = KalturaWowzaMediaServerNode;
+
+util.inherits(KalturaWowzaMediaServerNode, KalturaMediaServerNode);
+
+
+/**
  */
 function KalturaYahooSyndicationFeedBaseFilter(){
 	KalturaYahooSyndicationFeedBaseFilter.super_.call(this);
@@ -14103,6 +14139,16 @@ function KalturaDeliveryProfileRtmpFilter(){
 module.exports.KalturaDeliveryProfileRtmpFilter = KalturaDeliveryProfileRtmpFilter;
 
 util.inherits(KalturaDeliveryProfileRtmpFilter, KalturaDeliveryProfileRtmpBaseFilter);
+
+
+/**
+ */
+function KalturaDeliveryServerNodeFilter(){
+	KalturaDeliveryServerNodeFilter.super_.call(this);
+}
+module.exports.KalturaDeliveryServerNodeFilter = KalturaDeliveryServerNodeFilter;
+
+util.inherits(KalturaDeliveryServerNodeFilter, KalturaDeliveryServerNodeBaseFilter);
 
 
 /**
@@ -14535,6 +14581,16 @@ util.inherits(KalturaDocumentEntryFilter, KalturaDocumentEntryBaseFilter);
 
 /**
  */
+function KalturaEdgeServerNodeBaseFilter(){
+	KalturaEdgeServerNodeBaseFilter.super_.call(this);
+}
+module.exports.KalturaEdgeServerNodeBaseFilter = KalturaEdgeServerNodeBaseFilter;
+
+util.inherits(KalturaEdgeServerNodeBaseFilter, KalturaDeliveryServerNodeFilter);
+
+
+/**
+ */
 function KalturaEventCuePointFilter(){
 	KalturaEventCuePointFilter.super_.call(this);
 }
@@ -14591,6 +14647,16 @@ function KalturaLiveStreamAdminEntry(){
 module.exports.KalturaLiveStreamAdminEntry = KalturaLiveStreamAdminEntry;
 
 util.inherits(KalturaLiveStreamAdminEntry, KalturaLiveStreamEntry);
+
+
+/**
+ */
+function KalturaMediaServerNodeBaseFilter(){
+	KalturaMediaServerNodeBaseFilter.super_.call(this);
+}
+module.exports.KalturaMediaServerNodeBaseFilter = KalturaMediaServerNodeBaseFilter;
+
+util.inherits(KalturaMediaServerNodeBaseFilter, KalturaDeliveryServerNodeFilter);
 
 
 /**
@@ -14714,6 +14780,16 @@ util.inherits(KalturaDocumentFlavorParamsBaseFilter, KalturaFlavorParamsFilter);
 
 
 /**
+ */
+function KalturaEdgeServerNodeFilter(){
+	KalturaEdgeServerNodeFilter.super_.call(this);
+}
+module.exports.KalturaEdgeServerNodeFilter = KalturaEdgeServerNodeFilter;
+
+util.inherits(KalturaEdgeServerNodeFilter, KalturaEdgeServerNodeBaseFilter);
+
+
+/**
  * @param flavorParamsIdEqual int .
  * @param flavorParamsVersionEqual string .
  * @param flavorAssetIdEqual string .
@@ -14789,6 +14865,16 @@ function KalturaMediaFlavorParamsBaseFilter(){
 module.exports.KalturaMediaFlavorParamsBaseFilter = KalturaMediaFlavorParamsBaseFilter;
 
 util.inherits(KalturaMediaFlavorParamsBaseFilter, KalturaFlavorParamsFilter);
+
+
+/**
+ */
+function KalturaMediaServerNodeFilter(){
+	KalturaMediaServerNodeFilter.super_.call(this);
+}
+module.exports.KalturaMediaServerNodeFilter = KalturaMediaServerNodeFilter;
+
+util.inherits(KalturaMediaServerNodeFilter, KalturaMediaServerNodeBaseFilter);
 
 
 /**
@@ -15011,6 +15097,16 @@ util.inherits(KalturaTranscriptAssetFilter, KalturaTranscriptAssetBaseFilter);
 
 /**
  */
+function KalturaWowzaMediaServerNodeBaseFilter(){
+	KalturaWowzaMediaServerNodeBaseFilter.super_.call(this);
+}
+module.exports.KalturaWowzaMediaServerNodeBaseFilter = KalturaWowzaMediaServerNodeBaseFilter;
+
+util.inherits(KalturaWowzaMediaServerNodeBaseFilter, KalturaMediaServerNodeFilter);
+
+
+/**
+ */
 function KalturaDocumentFlavorParamsOutputBaseFilter(){
 	KalturaDocumentFlavorParamsOutputBaseFilter.super_.call(this);
 }
@@ -15105,6 +15201,16 @@ function KalturaSwfFlavorParamsOutputBaseFilter(){
 module.exports.KalturaSwfFlavorParamsOutputBaseFilter = KalturaSwfFlavorParamsOutputBaseFilter;
 
 util.inherits(KalturaSwfFlavorParamsOutputBaseFilter, KalturaFlavorParamsOutputFilter);
+
+
+/**
+ */
+function KalturaWowzaMediaServerNodeFilter(){
+	KalturaWowzaMediaServerNodeFilter.super_.call(this);
+}
+module.exports.KalturaWowzaMediaServerNodeFilter = KalturaWowzaMediaServerNodeFilter;
+
+util.inherits(KalturaWowzaMediaServerNodeFilter, KalturaWowzaMediaServerNodeBaseFilter);
 
 
 /**

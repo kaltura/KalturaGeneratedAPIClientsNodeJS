@@ -37,7 +37,7 @@ kaltura.enums = require('./KalturaTypes');
 
 function KalturaClient(config) {
 	this.setApiVersion('3.3.0');
-	this.setClientTag('node:15-10-28');
+	this.setClientTag('node:15-10-29');
 	this.init(config);
 }
 
@@ -118,11 +118,6 @@ KalturaClient.prototype.deliveryProfile = null;
  */
 KalturaClient.prototype.document = null;
 /**
- * Edge Server service
- * @param kaltura.services.KalturaEdgeServerService
- */
-KalturaClient.prototype.edgeServer = null;
-/**
  * EmailIngestionProfile service lets you manage email ingestion profile records
  * @param kaltura.services.KalturaEmailIngestionProfileService
  */
@@ -183,11 +178,6 @@ KalturaClient.prototype.liveStream = null;
  */
 KalturaClient.prototype.mediaInfo = null;
 /**
- * Manage media servers
- * @param kaltura.services.KalturaMediaServerService
- */
-KalturaClient.prototype.mediaServer = null;
-/**
  * Media service lets you upload and manage media files (images / videos & audio)
  * @param kaltura.services.KalturaMediaService
  */
@@ -245,6 +235,11 @@ KalturaClient.prototype.schema = null;
  * @param kaltura.services.KalturaSearchService
  */
 KalturaClient.prototype.search = null;
+/**
+ * Server Node service
+ * @param kaltura.services.KalturaServerNodeService
+ */
+KalturaClient.prototype.serverNode = null;
 /**
  * Session service
  * @param kaltura.services.KalturaSessionService
@@ -529,7 +524,6 @@ KalturaClient.prototype.init = function(config){
 	this.data = new kaltura.services.KalturaDataService(this);
 	this.deliveryProfile = new kaltura.services.KalturaDeliveryProfileService(this);
 	this.document = new kaltura.services.KalturaDocumentService(this);
-	this.edgeServer = new kaltura.services.KalturaEdgeServerService(this);
 	this.EmailIngestionProfile = new kaltura.services.KalturaEmailIngestionProfileService(this);
 	this.fileAsset = new kaltura.services.KalturaFileAssetService(this);
 	this.flavorAsset = new kaltura.services.KalturaFlavorAssetService(this);
@@ -542,7 +536,6 @@ KalturaClient.prototype.init = function(config){
 	this.liveStats = new kaltura.services.KalturaLiveStatsService(this);
 	this.liveStream = new kaltura.services.KalturaLiveStreamService(this);
 	this.mediaInfo = new kaltura.services.KalturaMediaInfoService(this);
-	this.mediaServer = new kaltura.services.KalturaMediaServerService(this);
 	this.media = new kaltura.services.KalturaMediaService(this);
 	this.mixing = new kaltura.services.KalturaMixingService(this);
 	this.notification = new kaltura.services.KalturaNotificationService(this);
@@ -554,6 +547,7 @@ KalturaClient.prototype.init = function(config){
 	this.responseProfile = new kaltura.services.KalturaResponseProfileService(this);
 	this.schema = new kaltura.services.KalturaSchemaService(this);
 	this.search = new kaltura.services.KalturaSearchService(this);
+	this.serverNode = new kaltura.services.KalturaServerNodeService(this);
 	this.session = new kaltura.services.KalturaSessionService(this);
 	this.stats = new kaltura.services.KalturaStatsService(this);
 	this.storageProfile = new kaltura.services.KalturaStorageProfileService(this);

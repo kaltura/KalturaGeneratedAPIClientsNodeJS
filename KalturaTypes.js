@@ -299,12 +299,6 @@ DELETED : 2,
 ERROR : 3,
 };
 
-var KalturaEdgeServerStatus = module.exports.KalturaEdgeServerStatus = {
-ACTIVE : 1,
-DISABLED : 2,
-DELETED : 3,
-};
-
 var KalturaEditorType = module.exports.KalturaEditorType = {
 SIMPLE : 1,
 ADVANCED : 2,
@@ -651,7 +645,7 @@ AUTHENTICATED_USERS : 2,
 MEMBERS_ONLY : 3,
 };
 
-var KalturaQuizFileType = module.exports.KalturaQuizFileType = {
+var KalturaQuizOutputType = module.exports.KalturaQuizOutputType = {
 PDF : 1,
 };
 
@@ -727,6 +721,13 @@ KALTURA_PARTNER : 23,
 METACAFE : 24,
 SEARCH_PROXY : 28,
 PARTNER_SPECIFIC : 100,
+};
+
+var KalturaServerNodeStatus = module.exports.KalturaServerNodeStatus = {
+ACTIVE : 1,
+DISABLED : 2,
+DELETED : 3,
+NOT_REGISTERED : 4,
 };
 
 var KalturaSessionType = module.exports.KalturaSessionType = {
@@ -1828,6 +1829,15 @@ LIVE_HLS_TO_MULTICAST : '1006',
 LIVE_AKAMAI_HDS : '1013',
 };
 
+var KalturaDeliveryServerNodeOrderBy = module.exports.KalturaDeliveryServerNodeOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+HEARTBEAT_TIME_ASC : '+heartbeatTime',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+HEARTBEAT_TIME_DESC : '-heartbeatTime',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
 var KalturaDistributionProfileOrderBy = module.exports.KalturaDistributionProfileOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
@@ -1995,10 +2005,12 @@ SHORT : 'short',
 var KalturaDynamicEnum = module.exports.KalturaDynamicEnum = {
 };
 
-var KalturaEdgeServerOrderBy = module.exports.KalturaEdgeServerOrderBy = {
+var KalturaEdgeServerNodeOrderBy = module.exports.KalturaEdgeServerNodeOrderBy = {
 CREATED_AT_ASC : '+createdAt',
+HEARTBEAT_TIME_ASC : '+heartbeatTime',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
+HEARTBEAT_TIME_DESC : '-heartbeatTime',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
@@ -3348,6 +3360,15 @@ MEDIAINFO : '0',
 FFMPEG : '1',
 };
 
+var KalturaMediaServerNodeOrderBy = module.exports.KalturaMediaServerNodeOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+HEARTBEAT_TIME_ASC : '+heartbeatTime',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+HEARTBEAT_TIME_DESC : '-heartbeatTime',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
 var KalturaMetadataObjectType = module.exports.KalturaMetadataObjectType = {
 AD_CUE_POINT : 'adCuePointMetadata.AdCuePoint',
 ANNOTATION : 'annotationMetadata.Annotation',
@@ -3796,6 +3817,20 @@ LESS_THAN_OR_EQUAL : '5',
 NOT_EQUAL : '6',
 };
 
+var KalturaServerNodeOrderBy = module.exports.KalturaServerNodeOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+HEARTBEAT_TIME_ASC : '+heartbeatTime',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+HEARTBEAT_TIME_DESC : '-heartbeatTime',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+var KalturaServerNodeType = module.exports.KalturaServerNodeType = {
+WOWZA_MEDIA_SERVER : 'wowza.WOWZA_MEDIA_SERVER',
+EDGE : '1',
+};
+
 var KalturaSftpDropFolderOrderBy = module.exports.KalturaSftpDropFolderOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 ID_ASC : '+id',
@@ -4081,6 +4116,15 @@ UPDATED_AT_DESC : '-updatedAt',
 var KalturaWidgetOrderBy = module.exports.KalturaWidgetOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 CREATED_AT_DESC : '-createdAt',
+};
+
+var KalturaWowzaMediaServerNodeOrderBy = module.exports.KalturaWowzaMediaServerNodeOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+HEARTBEAT_TIME_ASC : '+heartbeatTime',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+HEARTBEAT_TIME_DESC : '-heartbeatTime',
+UPDATED_AT_DESC : '-updatedAt',
 };
 
 var KalturaYahooSyndicationFeedAdultValues = module.exports.KalturaYahooSyndicationFeedAdultValues = {

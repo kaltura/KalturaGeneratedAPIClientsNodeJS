@@ -2757,11 +2757,13 @@ util.inherits(KalturaKeyBooleanValue, kaltura.KalturaObjectBase);
 /**
  * @param entryId string The id of the entry that the like belongs to.
  * @param userId string The id of user that the like belongs to.
+ * @param createdAt int The date of the like's creation.
  */
 function KalturaLike(){
 	KalturaLike.super_.call(this);
 	this.entryId = null;
 	this.userId = null;
+	this.createdAt = null;
 }
 module.exports.KalturaLike = KalturaLike;
 
@@ -11834,11 +11836,15 @@ util.inherits(KalturaIpAddressCondition, KalturaMatchCondition);
 /**
  * @param entryIdEqual string .
  * @param userIdEqual string .
+ * @param createdAtGreaterThanOrEqual int .
+ * @param createdAtLessThanOrEqual int .
  */
 function KalturaLikeBaseFilter(){
 	KalturaLikeBaseFilter.super_.call(this);
 	this.entryIdEqual = null;
 	this.userIdEqual = null;
+	this.createdAtGreaterThanOrEqual = null;
+	this.createdAtLessThanOrEqual = null;
 }
 module.exports.KalturaLikeBaseFilter = KalturaLikeBaseFilter;
 

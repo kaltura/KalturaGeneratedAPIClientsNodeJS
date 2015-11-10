@@ -599,6 +599,18 @@ util.inherits(KalturaBaseEntry, kaltura.KalturaObjectBase);
 
 
 /**
+ * @param shouldCopyEntitlement int .
+ */
+function KalturaBaseEntryCloneOptions(){
+	KalturaBaseEntryCloneOptions.super_.call(this);
+	this.shouldCopyEntitlement = null;
+}
+module.exports.KalturaBaseEntryCloneOptions = KalturaBaseEntryCloneOptions;
+
+util.inherits(KalturaBaseEntryCloneOptions, kaltura.KalturaObjectBase);
+
+
+/**
  */
 function KalturaBaseResponseProfile(){
 	KalturaBaseResponseProfile.super_.call(this);
@@ -3906,6 +3918,7 @@ util.inherits(KalturaPluginData, kaltura.KalturaObjectBase);
  * @param allowAnswerUpdate int .
  * @param showCorrectAfterSubmission int .
  * @param allowDownload int .
+ * @param showGradeAfterSubmission int .
  */
 function KalturaQuiz(){
 	KalturaQuiz.super_.call(this);
@@ -3916,6 +3929,7 @@ function KalturaQuiz(){
 	this.allowAnswerUpdate = null;
 	this.showCorrectAfterSubmission = null;
 	this.allowDownload = null;
+	this.showGradeAfterSubmission = null;
 }
 module.exports.KalturaQuiz = KalturaQuiz;
 

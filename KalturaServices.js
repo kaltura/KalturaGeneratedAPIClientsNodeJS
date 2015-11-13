@@ -879,13 +879,11 @@ KalturaBaseEntryService.prototype.index = function(callback, id, shouldUpdate){
 /**
  * Clone an entry with optional attributes to apply to the clone.
  * @param entryId string Id of entry to clone (optional).
- * @param cloneOptions KalturaBaseEntryCloneOptions  (optional).
  * @return KalturaBaseEntry.
  */
-KalturaBaseEntryService.prototype.cloneAction = function(callback, entryId, cloneOptions){
+KalturaBaseEntryService.prototype.cloneAction = function(callback, entryId){
 	var kparams = {};
 	this.client.addParam(kparams, 'entryId', entryId);
-	this.client.addParam(kparams, 'cloneOptions', kaltura.toParams(cloneOptions));
 	this.client.queueServiceActionCall('baseentry', 'clone', kparams);
 	if (!this.client.isMultiRequest()){
 		this.client.doQueue(callback);

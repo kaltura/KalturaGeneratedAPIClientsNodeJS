@@ -599,18 +599,6 @@ util.inherits(KalturaBaseEntry, kaltura.KalturaObjectBase);
 
 
 /**
- * @param shouldCopyEntitlement int .
- */
-function KalturaBaseEntryCloneOptions(){
-	KalturaBaseEntryCloneOptions.super_.call(this);
-	this.shouldCopyEntitlement = null;
-}
-module.exports.KalturaBaseEntryCloneOptions = KalturaBaseEntryCloneOptions;
-
-util.inherits(KalturaBaseEntryCloneOptions, kaltura.KalturaObjectBase);
-
-
-/**
  */
 function KalturaBaseResponseProfile(){
 	KalturaBaseResponseProfile.super_.call(this);

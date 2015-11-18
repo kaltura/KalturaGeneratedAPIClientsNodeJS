@@ -634,6 +634,7 @@ util.inherits(KalturaBaseResponseProfile, kaltura.KalturaObjectBase);
  * @param enforceEntitlement bool Should enforce entitlement on feed entries.
  * @param privacyContext string Set privacy context for search entries that assiged to private and public categories within a category privacy context.
  * @param updatedAt int Update date as Unix timestamp (In seconds) (readOnly).
+ * @param useCategoryEntries bool .
  */
 function KalturaBaseSyndicationFeed(){
 	KalturaBaseSyndicationFeed.super_.call(this);
@@ -657,6 +658,7 @@ function KalturaBaseSyndicationFeed(){
 	this.enforceEntitlement = null;
 	this.privacyContext = null;
 	this.updatedAt = null;
+	this.useCategoryEntries = null;
 }
 module.exports.KalturaBaseSyndicationFeed = KalturaBaseSyndicationFeed;
 

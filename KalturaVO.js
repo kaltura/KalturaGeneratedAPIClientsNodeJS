@@ -11388,9 +11388,11 @@ util.inherits(KalturaDynamicObjectSearchItem, KalturaSearchOperator);
 
 
 /**
+ * @param deliveryProfileIds array Delivery profile ids.
  */
 function KalturaEdgeServerNode(){
 	KalturaEdgeServerNode.super_.call(this);
+	this.deliveryProfileIds = null;
 }
 module.exports.KalturaEdgeServerNode = KalturaEdgeServerNode;
 

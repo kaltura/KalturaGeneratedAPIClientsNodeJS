@@ -6637,6 +6637,7 @@ util.inherits(KalturaConcatAttributes, KalturaOperationAttributes);
  * @param flavorAssetId string Flavor asset to be ingested with the output.
  * @param offset float Clipping offset in seconds.
  * @param duration float Clipping duration in seconds.
+ * @param amfArray array .
  */
 function KalturaConcatJobData(){
 	KalturaConcatJobData.super_.call(this);
@@ -6645,6 +6646,7 @@ function KalturaConcatJobData(){
 	this.flavorAssetId = null;
 	this.offset = null;
 	this.duration = null;
+	this.amfArray = null;
 }
 module.exports.KalturaConcatJobData = KalturaConcatJobData;
 
@@ -6825,6 +6827,7 @@ util.inherits(KalturaConvertEntryFlavorsObjectTask, KalturaObjectTask);
  * @param srcFilePath string The recorded live media.
  * @param destFilePath string The output file.
  * @param endTime float Duration of the live entry including all recorded segments including the current.
+ * @param amfArray array .
  */
 function KalturaConvertLiveSegmentJobData(){
 	KalturaConvertLiveSegmentJobData.super_.call(this);
@@ -6835,6 +6838,7 @@ function KalturaConvertLiveSegmentJobData(){
 	this.srcFilePath = null;
 	this.destFilePath = null;
 	this.endTime = null;
+	this.amfArray = null;
 }
 module.exports.KalturaConvertLiveSegmentJobData = KalturaConvertLiveSegmentJobData;
 
@@ -11389,10 +11393,12 @@ util.inherits(KalturaDynamicObjectSearchItem, KalturaSearchOperator);
 
 /**
  * @param deliveryProfileIds array Delivery profile ids.
+ * @param config string Overdie edge server default configuration - json format.
  */
 function KalturaEdgeServerNode(){
 	KalturaEdgeServerNode.super_.call(this);
 	this.deliveryProfileIds = null;
+	this.config = null;
 }
 module.exports.KalturaEdgeServerNode = KalturaEdgeServerNode;
 

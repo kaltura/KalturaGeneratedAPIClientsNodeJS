@@ -6637,7 +6637,7 @@ util.inherits(KalturaConcatAttributes, KalturaOperationAttributes);
  * @param flavorAssetId string Flavor asset to be ingested with the output.
  * @param offset float Clipping offset in seconds.
  * @param duration float Clipping duration in seconds.
- * @param amfArray array .
+ * @param concatenatedDuration float duration of the concated video.
  */
 function KalturaConcatJobData(){
 	KalturaConcatJobData.super_.call(this);
@@ -6646,7 +6646,7 @@ function KalturaConcatJobData(){
 	this.flavorAssetId = null;
 	this.offset = null;
 	this.duration = null;
-	this.amfArray = null;
+	this.concatenatedDuration = null;
 }
 module.exports.KalturaConcatJobData = KalturaConcatJobData;
 
@@ -6828,6 +6828,8 @@ util.inherits(KalturaConvertEntryFlavorsObjectTask, KalturaObjectTask);
  * @param destFilePath string The output file.
  * @param endTime float Duration of the live entry including all recorded segments including the current.
  * @param amfArray array .
+ * @param duration float Duration of the live segment.
+ * filled by the ConvertLiveSegment job.
  */
 function KalturaConvertLiveSegmentJobData(){
 	KalturaConvertLiveSegmentJobData.super_.call(this);
@@ -6839,6 +6841,7 @@ function KalturaConvertLiveSegmentJobData(){
 	this.destFilePath = null;
 	this.endTime = null;
 	this.amfArray = null;
+	this.duration = null;
 }
 module.exports.KalturaConvertLiveSegmentJobData = KalturaConvertLiveSegmentJobData;
 

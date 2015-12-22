@@ -1439,6 +1439,7 @@ util.inherits(KalturaUrlTokenizer, kaltura.KalturaObjectBase);
  * @param parentId int the object from which this object was cloned (or 0) (readOnly).
  * @param mediaProtocols string Comma separated list of supported media protocols. f.i. rtmpe.
  * @param priority int priority used for ordering similar delivery profiles.
+ * @param extraParams string Extra query string parameters that should be added to the url.
  */
 function KalturaDeliveryProfile(){
 	KalturaDeliveryProfile.super_.call(this);
@@ -1460,6 +1461,7 @@ function KalturaDeliveryProfile(){
 	this.parentId = null;
 	this.mediaProtocols = null;
 	this.priority = null;
+	this.extraParams = null;
 }
 module.exports.KalturaDeliveryProfile = KalturaDeliveryProfile;
 

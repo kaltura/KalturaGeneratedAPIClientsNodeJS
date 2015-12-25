@@ -6829,9 +6829,7 @@ util.inherits(KalturaConvertEntryFlavorsObjectTask, KalturaObjectTask);
  * @param srcFilePath string The recorded live media.
  * @param destFilePath string The output file.
  * @param endTime float Duration of the live entry including all recorded segments including the current.
- * @param amfArray array .
- * @param duration float Duration of the live segment.
- * filled by the ConvertLiveSegment job.
+ * @param destDataFilePath string The data output file.
  */
 function KalturaConvertLiveSegmentJobData(){
 	KalturaConvertLiveSegmentJobData.super_.call(this);
@@ -6842,8 +6840,7 @@ function KalturaConvertLiveSegmentJobData(){
 	this.srcFilePath = null;
 	this.destFilePath = null;
 	this.endTime = null;
-	this.amfArray = null;
-	this.duration = null;
+	this.destDataFilePath = null;
 }
 module.exports.KalturaConvertLiveSegmentJobData = KalturaConvertLiveSegmentJobData;
 
@@ -10491,6 +10488,18 @@ function KalturaUserRoleListResponse(){
 module.exports.KalturaUserRoleListResponse = KalturaUserRoleListResponse;
 
 util.inherits(KalturaUserRoleListResponse, KalturaListResponse);
+
+
+/**
+ * @param edgeServerIds string Comma separated list of edge servers to validate are active.
+ */
+function KalturaValidateActiveEdgeCondition(){
+	KalturaValidateActiveEdgeCondition.super_.call(this);
+	this.edgeServerIds = null;
+}
+module.exports.KalturaValidateActiveEdgeCondition = KalturaValidateActiveEdgeCondition;
+
+util.inherits(KalturaValidateActiveEdgeCondition, KalturaCondition);
 
 
 /**

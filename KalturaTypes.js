@@ -1850,6 +1850,7 @@ var KalturaDistributionProviderOrderBy = module.exports.KalturaDistributionProvi
 };
 
 var KalturaDistributionProviderType = module.exports.KalturaDistributionProviderType = {
+FACEBOOK : 'facebookDistribution.FACEBOOK',
 IDETIC : 'ideticDistribution.IDETIC',
 YOUTUBE_API : 'youtubeApiDistribution.YOUTUBE_API',
 GENERIC : '1',

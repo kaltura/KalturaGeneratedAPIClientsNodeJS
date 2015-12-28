@@ -600,6 +600,16 @@ util.inherits(KalturaBaseEntry, kaltura.KalturaObjectBase);
 
 /**
  */
+function KalturaBaseEntryCloneOptionItem(){
+	KalturaBaseEntryCloneOptionItem.super_.call(this);
+}
+module.exports.KalturaBaseEntryCloneOptionItem = KalturaBaseEntryCloneOptionItem;
+
+util.inherits(KalturaBaseEntryCloneOptionItem, kaltura.KalturaObjectBase);
+
+
+/**
+ */
 function KalturaBaseResponseProfile(){
 	KalturaBaseResponseProfile.super_.call(this);
 }
@@ -5879,6 +5889,20 @@ function KalturaAuthenticatedCondition(){
 module.exports.KalturaAuthenticatedCondition = KalturaAuthenticatedCondition;
 
 util.inherits(KalturaAuthenticatedCondition, KalturaCondition);
+
+
+/**
+ * @param itemType string .
+ * @param rule string condition rule (include/exclude).
+ */
+function KalturaBaseEntryCloneOptionComponent(){
+	KalturaBaseEntryCloneOptionComponent.super_.call(this);
+	this.itemType = null;
+	this.rule = null;
+}
+module.exports.KalturaBaseEntryCloneOptionComponent = KalturaBaseEntryCloneOptionComponent;
+
+util.inherits(KalturaBaseEntryCloneOptionComponent, KalturaBaseEntryCloneOptionItem);
 
 
 /**

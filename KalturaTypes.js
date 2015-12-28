@@ -1231,6 +1231,11 @@ WMA : 'wma',
 WMAPRO : 'wmapro',
 };
 
+var KalturaBaseEntryCloneOptions = module.exports.KalturaBaseEntryCloneOptions = {
+USERS : '1',
+CATEGORIES : '2',
+};
+
 var KalturaBaseEntryCompareAttribute = module.exports.KalturaBaseEntryCompareAttribute = {
 ACCESS_CONTROL_ID : 'accessControlId',
 CREATED_AT : 'createdAt',
@@ -1509,6 +1514,11 @@ PROFESSIONAL : 'PROFESSIONAL',
 var KalturaCielo24Priority = module.exports.KalturaCielo24Priority = {
 PRIORITY : 'PRIORITY',
 STANDARD : 'STANDARD',
+};
+
+var KalturaCloneComponentSelectorType = module.exports.KalturaCloneComponentSelectorType = {
+INCLUDE_COMPONENT : '0',
+EXCLUDE_COMPONENT : '1',
 };
 
 var KalturaCodeCuePointOrderBy = module.exports.KalturaCodeCuePointOrderBy = {

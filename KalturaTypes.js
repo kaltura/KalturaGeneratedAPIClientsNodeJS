@@ -482,6 +482,12 @@ RESTRICT_LIST : 0,
 ALLOW_LIST : 1,
 };
 
+var KalturaLiveEntryStatus = module.exports.KalturaLiveEntryStatus = {
+STOPPED : 0,
+PLAYABLE : 1,
+BROADCASTING : 2,
+};
+
 var KalturaLivePublishStatus = module.exports.KalturaLivePublishStatus = {
 DISABLED : 0,
 ENABLED : 1,

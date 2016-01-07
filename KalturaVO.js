@@ -129,6 +129,8 @@ util.inherits(KalturaCondition, kaltura.KalturaObjectBase);
 
 
 /**
+ * @param description string Short Rule Description.
+ * @param ruleData string Rule Custom Data to allow saving rule specific information.
  * @param message string Message to be thrown to the player in case the rule is fulfilled.
  * @param actions array Actions to be performed by the player in case the rule is fulfilled.
  * @param conditions array Conditions to validate the rule.
@@ -137,6 +139,8 @@ util.inherits(KalturaCondition, kaltura.KalturaObjectBase);
  */
 function KalturaRule(){
 	KalturaRule.super_.call(this);
+	this.description = null;
+	this.ruleData = null;
 	this.message = null;
 	this.actions = null;
 	this.conditions = null;
@@ -2846,6 +2850,7 @@ util.inherits(KalturaLiveEntryRecordingOptions, kaltura.KalturaObjectBase);
  * @param lastBroadcast int The Last time in which the entry was broadcast (readOnly).
  * @param currentBroadcastStartTime float The time (unix timestamp in milliseconds) in which the entry broadcast started or 0 when the entry is off the air.
  * @param recordingOptions KalturaLiveEntryRecordingOptions  (insertOnly).
+ * @param liveStatus int the status of the entry of type LiveEntryStatus.
  */
 function KalturaLiveEntry(){
 	KalturaLiveEntry.super_.call(this);
@@ -2862,6 +2867,7 @@ function KalturaLiveEntry(){
 	this.lastBroadcast = null;
 	this.currentBroadcastStartTime = null;
 	this.recordingOptions = null;
+	this.liveStatus = null;
 }
 module.exports.KalturaLiveEntry = KalturaLiveEntry;
 

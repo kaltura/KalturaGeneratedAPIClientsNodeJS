@@ -3176,17 +3176,22 @@ KalturaLiveChannelService.prototype.appendRecording = function(callback, entryId
  * @param hostname string Media server host name (optional).
  * @param mediaServerIndex int Media server index primary / secondary (optional, enum: KalturaMediaServerIndex).
  * @param applicationName string the application to which entry is being broadcast (optional, default: null).
+ * @param liveEntryStatus int the new status KalturaLiveEntryStatus::PLAYABLE | KalturaLiveEntryStatus::BROADCASTING (optional, enum: KalturaLiveEntryStatus, default: 1).
  * @return KalturaLiveEntry.
  */
-KalturaLiveChannelService.prototype.registerMediaServer = function(callback, entryId, hostname, mediaServerIndex, applicationName){
+KalturaLiveChannelService.prototype.registerMediaServer = function(callback, entryId, hostname, mediaServerIndex, applicationName, liveEntryStatus){
 	if(!applicationName){
 		applicationName = null;
+	}
+	if(!liveEntryStatus){
+		liveEntryStatus = 1;
 	}
 	var kparams = {};
 	this.client.addParam(kparams, 'entryId', entryId);
 	this.client.addParam(kparams, 'hostname', hostname);
 	this.client.addParam(kparams, 'mediaServerIndex', mediaServerIndex);
 	this.client.addParam(kparams, 'applicationName', applicationName);
+	this.client.addParam(kparams, 'liveEntryStatus', liveEntryStatus);
 	this.client.queueServiceActionCall('livechannel', 'registerMediaServer', kparams);
 	if (!this.client.isMultiRequest()){
 		this.client.doQueue(callback);
@@ -3605,17 +3610,22 @@ KalturaLiveStreamService.prototype.appendRecording = function(callback, entryId,
  * @param hostname string Media server host name (optional).
  * @param mediaServerIndex int Media server index primary / secondary (optional, enum: KalturaMediaServerIndex).
  * @param applicationName string the application to which entry is being broadcast (optional, default: null).
+ * @param liveEntryStatus int the new status KalturaLiveEntryStatus::PLAYABLE | KalturaLiveEntryStatus::BROADCASTING (optional, enum: KalturaLiveEntryStatus, default: 1).
  * @return KalturaLiveEntry.
  */
-KalturaLiveStreamService.prototype.registerMediaServer = function(callback, entryId, hostname, mediaServerIndex, applicationName){
+KalturaLiveStreamService.prototype.registerMediaServer = function(callback, entryId, hostname, mediaServerIndex, applicationName, liveEntryStatus){
 	if(!applicationName){
 		applicationName = null;
+	}
+	if(!liveEntryStatus){
+		liveEntryStatus = 1;
 	}
 	var kparams = {};
 	this.client.addParam(kparams, 'entryId', entryId);
 	this.client.addParam(kparams, 'hostname', hostname);
 	this.client.addParam(kparams, 'mediaServerIndex', mediaServerIndex);
 	this.client.addParam(kparams, 'applicationName', applicationName);
+	this.client.addParam(kparams, 'liveEntryStatus', liveEntryStatus);
 	this.client.queueServiceActionCall('livestream', 'registerMediaServer', kparams);
 	if (!this.client.isMultiRequest()){
 		this.client.doQueue(callback);

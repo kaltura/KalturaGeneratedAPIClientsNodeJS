@@ -9035,6 +9035,7 @@ KalturaSystemPartnerService.prototype.listUserLoginData = function(callback, fil
  * @action get Get base entry by ID with no filters.
  * @action getByFlavorId Get base entry by flavor ID with no filters.
  * @action getTracks Get base entry by ID with no filters.
+ * @action restoreDeletedEntry Restore deleted entry.
  */
 function KalturaEntryAdminService(client){
 	KalturaEntryAdminService.super_.call(this);
@@ -9089,6 +9090,19 @@ KalturaEntryAdminService.prototype.getTracks = function(callback, entryId){
 	var kparams = {};
 	this.client.addParam(kparams, 'entryId', entryId);
 	this.client.queueServiceActionCall('adminconsole_entryadmin', 'getTracks', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Restore deleted entry.
+ * @param entryId string  (optional).
+ * @return KalturaBaseEntry.
+ */
+KalturaEntryAdminService.prototype.restoreDeletedEntry = function(callback, entryId){
+	var kparams = {};
+	this.client.addParam(kparams, 'entryId', entryId);
+	this.client.queueServiceActionCall('adminconsole_entryadmin', 'restoreDeletedEntry', kparams);
 	if (!this.client.isMultiRequest()){
 		this.client.doQueue(callback);
 	}

@@ -7954,6 +7954,7 @@ util.inherits(KalturaEntryContextDataParams, KalturaAccessControlScope);
  * @param accessControlMessages array Array of messages as received from the access control rules that invalidated.
  * @param accessControlActions array Array of actions as received from the access control rules that invalidated.
  * @param flavorAssets array Array of allowed flavor assets according to access control limitations and requested tags.
+ * @param msDuration int The duration of the entry in milliseconds.
  * @param pluginData map Array of allowed flavor assets according to access control limitations and requested tags.
  */
 function KalturaEntryContextDataResult(){
@@ -7972,6 +7973,7 @@ function KalturaEntryContextDataResult(){
 	this.accessControlMessages = null;
 	this.accessControlActions = null;
 	this.flavorAssets = null;
+	this.msDuration = null;
 	this.pluginData = null;
 }
 module.exports.KalturaEntryContextDataResult = KalturaEntryContextDataResult;
@@ -14384,9 +14386,11 @@ util.inherits(KalturaQuestionCuePointBaseFilter, KalturaCuePointFilter);
 
 
 /**
+ * @param isAnonymous int .
  */
 function KalturaQuizUserEntryFilter(){
 	KalturaQuizUserEntryFilter.super_.call(this);
+	this.isAnonymous = null;
 }
 module.exports.KalturaQuizUserEntryFilter = KalturaQuizUserEntryFilter;
 

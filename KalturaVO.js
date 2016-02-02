@@ -2480,6 +2480,7 @@ util.inherits(KalturaFlavorAssetUrlOptions, kaltura.KalturaObjectBase);
  * @param videoConstantBitrate int .
  * @param videoBitrateTolerance int .
  * @param watermarkData string .
+ * @param isEncrypted int .
  * @param clipOffset int .
  * @param clipDuration int .
  */
@@ -2518,6 +2519,7 @@ function KalturaFlavorParams(){
 	this.videoConstantBitrate = null;
 	this.videoBitrateTolerance = null;
 	this.watermarkData = null;
+	this.isEncrypted = null;
 	this.clipOffset = null;
 	this.clipDuration = null;
 }
@@ -8038,6 +8040,22 @@ util.inherits(KalturaEntryLiveStats, KalturaLiveStats);
 
 
 /**
+ * @param contentLike string .
+ * @param contentMultiLikeOr string .
+ * @param contentMultiLikeAnd string .
+ */
+function KalturaEntryTranscriptAssetSearchItem(){
+	KalturaEntryTranscriptAssetSearchItem.super_.call(this);
+	this.contentLike = null;
+	this.contentMultiLikeOr = null;
+	this.contentMultiLikeAnd = null;
+}
+module.exports.KalturaEntryTranscriptAssetSearchItem = KalturaEntryTranscriptAssetSearchItem;
+
+util.inherits(KalturaEntryTranscriptAssetSearchItem, KalturaSearchItem);
+
+
+/**
  * @param eventType string .
  */
 function KalturaEventCuePoint(){
@@ -9391,7 +9409,7 @@ util.inherits(KalturaQuizListResponse, KalturaListResponse);
 
 
 /**
- * @param score int  (readOnly).
+ * @param score float  (readOnly).
  */
 function KalturaQuizUserEntry(){
 	KalturaQuizUserEntry.super_.call(this);

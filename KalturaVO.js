@@ -3168,7 +3168,9 @@ util.inherits(KalturaLiveStreamEntry, KalturaLiveEntry);
  * @param rootEntryIdIn string .
  * @param parentEntryIdEqual string .
  * @param entitledUsersEditMatchAnd string .
+ * @param entitledUsersEditMatchOr string .
  * @param entitledUsersPublishMatchAnd string .
+ * @param entitledUsersPublishMatchOr string .
  * @param tagsNameMultiLikeOr string .
  * @param tagsAdminTagsMultiLikeOr string .
  * @param tagsAdminTagsNameMultiLikeOr string .
@@ -3246,7 +3248,9 @@ function KalturaBaseEntryBaseFilter(){
 	this.rootEntryIdIn = null;
 	this.parentEntryIdEqual = null;
 	this.entitledUsersEditMatchAnd = null;
+	this.entitledUsersEditMatchOr = null;
 	this.entitledUsersPublishMatchAnd = null;
+	this.entitledUsersPublishMatchOr = null;
 	this.tagsNameMultiLikeOr = null;
 	this.tagsAdminTagsMultiLikeOr = null;
 	this.tagsAdminTagsNameMultiLikeOr = null;
@@ -12589,10 +12593,12 @@ util.inherits(KalturaUploadTokenFilter, KalturaUploadTokenBaseFilter);
 
 /**
  * @param userIdEqualCurrent int .
+ * @param isAnonymous int .
  */
 function KalturaUserEntryFilter(){
 	KalturaUserEntryFilter.super_.call(this);
 	this.userIdEqualCurrent = null;
+	this.isAnonymous = null;
 }
 module.exports.KalturaUserEntryFilter = KalturaUserEntryFilter;
 
@@ -14404,11 +14410,9 @@ util.inherits(KalturaQuestionCuePointBaseFilter, KalturaCuePointFilter);
 
 
 /**
- * @param isAnonymous int .
  */
 function KalturaQuizUserEntryFilter(){
 	KalturaQuizUserEntryFilter.super_.call(this);
-	this.isAnonymous = null;
 }
 module.exports.KalturaQuizUserEntryFilter = KalturaQuizUserEntryFilter;
 

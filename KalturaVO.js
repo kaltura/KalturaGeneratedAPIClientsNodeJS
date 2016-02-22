@@ -8,7 +8,7 @@
 // to do with audio, video, and animation what Wiki platfroms allow them to do with
 // text.
 //
-// Copyright (C) 2006-2015  Kaltura Inc.
+// Copyright (C) 2006-2016  Kaltura Inc.
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as
@@ -2841,8 +2841,8 @@ util.inherits(KalturaLiveEntryRecordingOptions, kaltura.KalturaObjectBase);
 /**
  * @param offlineMessage string The message to be presented when the stream is offline.
  * @param recordStatus int Recording Status Enabled/Disabled (insertOnly).
- * @param dvrStatus int DVR Status Enabled/Disabled (insertOnly).
- * @param dvrWindow int Window of time which the DVR allows for backwards scrubbing (in minutes) (insertOnly).
+ * @param dvrStatus int DVR Status Enabled/Disabled.
+ * @param dvrWindow int Window of time which the DVR allows for backwards scrubbing (in minutes).
  * @param lastElapsedRecordingTime int Elapsed recording time (in msec) up to the point where the live stream was last stopped (unpublished).
  * @param liveStreamConfigurations array Array of key value protocol->live stream url objects.
  * @param recordedEntryId string Recorded entry id.

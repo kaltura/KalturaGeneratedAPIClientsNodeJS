@@ -37,7 +37,7 @@ kaltura.enums = require('./KalturaTypes');
 
 function KalturaClient(config) {
 	this.setApiVersion('3.3.0');
-	this.setClientTag('node:16-02-28');
+	this.setClientTag('node:16-02-29');
 	this.init(config);
 }
 

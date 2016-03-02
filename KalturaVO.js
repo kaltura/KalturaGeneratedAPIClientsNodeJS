@@ -5538,6 +5538,7 @@ util.inherits(KalturaVirusScanProfile, kaltura.KalturaObjectBase);
  * @param enforceEntitlement bool Should enforce entitlement on feed entries.
  * @param privacyContext string Set privacy context for search entries that assiged to private and public categories within a category privacy context.
  * @param addEmbedHtml5Support bool Addes the HTML5 script line to the widget's embed code.
+ * @param roles string .
  */
 function KalturaWidget(){
 	KalturaWidget.super_.call(this);
@@ -5556,6 +5557,7 @@ function KalturaWidget(){
 	this.enforceEntitlement = null;
 	this.privacyContext = null;
 	this.addEmbedHtml5Support = null;
+	this.roles = null;
 }
 module.exports.KalturaWidget = KalturaWidget;
 

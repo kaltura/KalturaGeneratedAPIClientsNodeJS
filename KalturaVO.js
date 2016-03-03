@@ -11342,9 +11342,11 @@ util.inherits(KalturaDeliveryProfileGenericRtmp, KalturaDeliveryProfileRtmp);
 
 
 /**
+ * @param keepDistributionItem bool Flag signifying that the associated distribution item should not be moved to 'removed' status.
  */
 function KalturaDistributionDeleteJobData(){
 	KalturaDistributionDeleteJobData.super_.call(this);
+	this.keepDistributionItem = null;
 }
 module.exports.KalturaDistributionDeleteJobData = KalturaDistributionDeleteJobData;
 
@@ -12047,6 +12049,7 @@ util.inherits(KalturaMediaServerNode, KalturaDeliveryServerNode);
 /**
  * @param partnerIdEqual int .
  * @param metadataProfileIdEqual int .
+ * @param metadataProfileIdIn string .
  * @param metadataProfileVersionEqual int .
  * @param metadataProfileVersionGreaterThanOrEqual int .
  * @param metadataProfileVersionLessThanOrEqual int .
@@ -12067,6 +12070,7 @@ function KalturaMetadataBaseFilter(){
 	KalturaMetadataBaseFilter.super_.call(this);
 	this.partnerIdEqual = null;
 	this.metadataProfileIdEqual = null;
+	this.metadataProfileIdIn = null;
 	this.metadataProfileVersionEqual = null;
 	this.metadataProfileVersionGreaterThanOrEqual = null;
 	this.metadataProfileVersionLessThanOrEqual = null;

@@ -5066,10 +5066,12 @@ util.inherits(KalturaThumbParamsOutput, KalturaThumbParams);
 
 /**
  * @param download bool .
+ * @param referrer string .
  */
 function KalturaThumbnailServeOptions(){
 	KalturaThumbnailServeOptions.super_.call(this);
 	this.download = null;
+	this.referrer = null;
 }
 module.exports.KalturaThumbnailServeOptions = KalturaThumbnailServeOptions;
 

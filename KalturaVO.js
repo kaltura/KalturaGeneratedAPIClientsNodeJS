@@ -2840,7 +2840,7 @@ util.inherits(KalturaLiveEntryRecordingOptions, kaltura.KalturaObjectBase);
 
 /**
  * @param offlineMessage string The message to be presented when the stream is offline.
- * @param recordStatus int Recording Status Enabled/Disabled (insertOnly).
+ * @param recordStatus int Recording Status Enabled/Disabled.
  * @param dvrStatus int DVR Status Enabled/Disabled.
  * @param dvrWindow int Window of time which the DVR allows for backwards scrubbing (in minutes).
  * @param lastElapsedRecordingTime int Elapsed recording time (in msec) up to the point where the live stream was last stopped (unpublished).
@@ -2851,7 +2851,7 @@ util.inherits(KalturaLiveEntryRecordingOptions, kaltura.KalturaObjectBase);
  * @param firstBroadcast int The first time in which the entry was broadcast (readOnly).
  * @param lastBroadcast int The Last time in which the entry was broadcast (readOnly).
  * @param currentBroadcastStartTime float The time (unix timestamp in milliseconds) in which the entry broadcast started or 0 when the entry is off the air.
- * @param recordingOptions KalturaLiveEntryRecordingOptions  (insertOnly).
+ * @param recordingOptions KalturaLiveEntryRecordingOptions .
  * @param liveStatus int the status of the entry of type LiveEntryStatus.
  */
 function KalturaLiveEntry(){

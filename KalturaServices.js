@@ -10310,6 +10310,7 @@ KalturaContentDistributionBatchService.prototype.getAssetUrl = function(callback
  * @action count count cue point objects by filter.
  * @action update Update cue point by id.
  * @action delete delete cue point by id, and delete all children cue points.
+ * @action updateStatus Update cuePoint status by id.
  */
 function KalturaCuePointService(client){
 	KalturaCuePointService.super_.call(this);
@@ -10430,6 +10431,21 @@ KalturaCuePointService.prototype.deleteAction = function(callback, id){
 		this.client.doQueue(callback);
 	}
 };
+/**
+ * Update cuePoint status by id.
+ * @param id string  (optional).
+ * @param status int  (optional, enum: KalturaCuePointStatus).
+ * @return .
+ */
+KalturaCuePointService.prototype.updateStatus = function(callback, id, status){
+	var kparams = {};
+	this.client.addParam(kparams, 'id', id);
+	this.client.addParam(kparams, 'status', status);
+	this.client.queueServiceActionCall('cuepoint_cuepoint', 'updateStatus', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
 
 /**
  *Class definition for the Kaltura service: annotation.
@@ -10441,6 +10457,7 @@ KalturaCuePointService.prototype.deleteAction = function(callback, id){
  * @action get Retrieve an CuePoint object by id.
  * @action count count cue point objects by filter.
  * @action delete delete cue point by id, and delete all children cue points.
+ * @action updateStatus Update cuePoint status by id.
  */
 function KalturaAnnotationService(client){
 	KalturaAnnotationService.super_.call(this);
@@ -10557,6 +10574,21 @@ KalturaAnnotationService.prototype.deleteAction = function(callback, id){
 	var kparams = {};
 	this.client.addParam(kparams, 'id', id);
 	this.client.queueServiceActionCall('annotation_annotation', 'delete', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Update cuePoint status by id.
+ * @param id string  (optional).
+ * @param status int  (optional, enum: KalturaCuePointStatus).
+ * @return .
+ */
+KalturaAnnotationService.prototype.updateStatus = function(callback, id, status){
+	var kparams = {};
+	this.client.addParam(kparams, 'id', id);
+	this.client.addParam(kparams, 'status', status);
+	this.client.queueServiceActionCall('annotation_annotation', 'updateStatus', kparams);
 	if (!this.client.isMultiRequest()){
 		this.client.doQueue(callback);
 	}

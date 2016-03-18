@@ -354,6 +354,13 @@ FLAGGED_FOR_REVIEW : 5,
 AUTO_APPROVED : 6,
 };
 
+var KalturaEntryServerNodeStatus = module.exports.KalturaEntryServerNodeStatus = {
+STOPPED : 0,
+PLAYABLE : 1,
+BROADCASTING : 2,
+AUTHENTICATED : 3,
+};
+
 var KalturaEventNotificationTemplateStatus = module.exports.KalturaEventNotificationTemplateStatus = {
 DISABLED : 1,
 ACTIVE : 2,
@@ -482,12 +489,6 @@ RESTRICT_LIST : 0,
 ALLOW_LIST : 1,
 };
 
-var KalturaLiveEntryStatus = module.exports.KalturaLiveEntryStatus = {
-STOPPED : 0,
-PLAYABLE : 1,
-BROADCASTING : 2,
-};
-
 var KalturaLivePublishStatus = module.exports.KalturaLivePublishStatus = {
 DISABLED : 0,
 ENABLED : 1,
@@ -514,11 +515,6 @@ PENDING : 1,
 SENT : 2,
 ERROR : 3,
 QUEUED : 4,
-};
-
-var KalturaMediaServerIndex = module.exports.KalturaMediaServerIndex = {
-PRIMARY : 0,
-SECONDARY : 1,
 };
 
 var KalturaMediaType = module.exports.KalturaMediaType = {
@@ -2080,6 +2076,18 @@ APPROVED_BUT_NOT_READY : '1',
 READY_BUT_NOT_APPROVED : '2',
 NOT_READY_AND_NOT_APPROVED : '3',
 FAILED : '4',
+};
+
+var KalturaEntryServerNodeOrderBy = module.exports.KalturaEntryServerNodeOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+var KalturaEntryServerNodeType = module.exports.KalturaEntryServerNodeType = {
+LIVE_PRIMARY : '0',
+LIVE_BACKUP : '1',
 };
 
 var KalturaEntryStatus = module.exports.KalturaEntryStatus = {

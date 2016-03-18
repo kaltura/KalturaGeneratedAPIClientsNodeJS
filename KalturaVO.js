@@ -2097,6 +2097,32 @@ util.inherits(KalturaEntryReplacementOptions, kaltura.KalturaObjectBase);
 
 
 /**
+ * @param id int unique auto-generated identifier (readOnly).
+ * @param entryId string  (readOnly).
+ * @param serverNodeId int  (readOnly).
+ * @param partnerId int  (readOnly).
+ * @param createdAt int  (readOnly).
+ * @param updatedAt int  (readOnly).
+ * @param status int  (readOnly).
+ * @param serverType string  (readOnly).
+ */
+function KalturaEntryServerNode(){
+	KalturaEntryServerNode.super_.call(this);
+	this.id = null;
+	this.entryId = null;
+	this.serverNodeId = null;
+	this.partnerId = null;
+	this.createdAt = null;
+	this.updatedAt = null;
+	this.status = null;
+	this.serverType = null;
+}
+module.exports.KalturaEntryServerNode = KalturaEntryServerNode;
+
+util.inherits(KalturaEntryServerNode, kaltura.KalturaObjectBase);
+
+
+/**
  * @param key string The key in the subject and body to be replaced with the dynamic value.
  * @param description string .
  * @param value KalturaStringValue The dynamic value to be placed in the final output.
@@ -2852,7 +2878,7 @@ util.inherits(KalturaLiveEntryRecordingOptions, kaltura.KalturaObjectBase);
  * @param lastBroadcast int The Last time in which the entry was broadcast (readOnly).
  * @param currentBroadcastStartTime float The time (unix timestamp in milliseconds) in which the entry broadcast started or 0 when the entry is off the air.
  * @param recordingOptions KalturaLiveEntryRecordingOptions .
- * @param liveStatus int the status of the entry of type LiveEntryStatus.
+ * @param liveStatus int the status of the entry of type EntryServerNodeStatus (readOnly).
  */
 function KalturaLiveEntry(){
 	KalturaLiveEntry.super_.call(this);
@@ -3096,6 +3122,26 @@ function KalturaLiveStreamEntry(){
 module.exports.KalturaLiveStreamEntry = KalturaLiveStreamEntry;
 
 util.inherits(KalturaLiveStreamEntry, KalturaLiveEntry);
+
+
+/**
+ * @param bitrate int Bit rate of the stream. (i.e. 900).
+ * @param flavorId string flavor asset id.
+ * @param width int Stream's width.
+ * @param height int Stream's height.
+ * @param codec string Live stream's codec.
+ */
+function KalturaLiveStreamParams(){
+	KalturaLiveStreamParams.super_.call(this);
+	this.bitrate = null;
+	this.flavorId = null;
+	this.width = null;
+	this.height = null;
+	this.codec = null;
+}
+module.exports.KalturaLiveStreamParams = KalturaLiveStreamParams;
+
+util.inherits(KalturaLiveStreamParams, kaltura.KalturaObjectBase);
 
 
 /**
@@ -6864,7 +6910,7 @@ util.inherits(KalturaConvertEntryFlavorsObjectTask, KalturaObjectTask);
 /**
  * @param entryId string Live stream entry id.
  * @param assetId string .
- * @param mediaServerIndex int Primary or secondary media server.
+ * @param mediaServerIndex string Primary or secondary media server.
  * @param fileIndex int The index of the file within the entry.
  * @param srcFilePath string The recorded live media.
  * @param destFilePath string The output file.
@@ -8048,6 +8094,18 @@ util.inherits(KalturaEntryLiveStats, KalturaLiveStats);
 
 
 /**
+ * @param objects array  (readOnly).
+ */
+function KalturaEntryServerNodeListResponse(){
+	KalturaEntryServerNodeListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaEntryServerNodeListResponse = KalturaEntryServerNodeListResponse;
+
+util.inherits(KalturaEntryServerNodeListResponse, KalturaListResponse);
+
+
+/**
  * @param contentLike string .
  * @param contentMultiLikeOr string .
  * @param contentMultiLikeAnd string .
@@ -8843,6 +8901,18 @@ function KalturaLiveChannelSegmentListResponse(){
 module.exports.KalturaLiveChannelSegmentListResponse = KalturaLiveChannelSegmentListResponse;
 
 util.inherits(KalturaLiveChannelSegmentListResponse, KalturaListResponse);
+
+
+/**
+ * @param streams array parameters of the stream we got.
+ */
+function KalturaLiveEntryServerNode(){
+	KalturaLiveEntryServerNode.super_.call(this);
+	this.streams = null;
+}
+module.exports.KalturaLiveEntryServerNode = KalturaLiveEntryServerNode;
+
+util.inherits(KalturaLiveEntryServerNode, KalturaEntryServerNode);
 
 
 /**
@@ -11608,6 +11678,46 @@ util.inherits(KalturaEntryResource, KalturaContentResource);
 
 
 /**
+ * @param idEqual int .
+ * @param idIn string .
+ * @param idNotIn string .
+ * @param entryIdEqual string .
+ * @param entryIdIn string .
+ * @param entryIdNotIn string .
+ * @param serverNodeIdEqual int .
+ * @param serverNodeIdIn string .
+ * @param serverNodeIdNotIn string .
+ * @param createdAtLessThanOrEqual int .
+ * @param createdAtGreaterThanOrEqual int .
+ * @param updatedAtLessThanOrEqual int .
+ * @param updatedAtGreaterThanOrEqual int .
+ * @param statusEqual int .
+ * @param serverTypeEqual string .
+ */
+function KalturaEntryServerNodeBaseFilter(){
+	KalturaEntryServerNodeBaseFilter.super_.call(this);
+	this.idEqual = null;
+	this.idIn = null;
+	this.idNotIn = null;
+	this.entryIdEqual = null;
+	this.entryIdIn = null;
+	this.entryIdNotIn = null;
+	this.serverNodeIdEqual = null;
+	this.serverNodeIdIn = null;
+	this.serverNodeIdNotIn = null;
+	this.createdAtLessThanOrEqual = null;
+	this.createdAtGreaterThanOrEqual = null;
+	this.updatedAtLessThanOrEqual = null;
+	this.updatedAtGreaterThanOrEqual = null;
+	this.statusEqual = null;
+	this.serverTypeEqual = null;
+}
+module.exports.KalturaEntryServerNodeBaseFilter = KalturaEntryServerNodeBaseFilter;
+
+util.inherits(KalturaEntryServerNodeBaseFilter, KalturaRelatedFilter);
+
+
+/**
  */
 function KalturaEventNotificationTemplateFilter(){
 	KalturaEventNotificationTemplateFilter.super_.call(this);
@@ -13141,6 +13251,16 @@ function KalturaEntryDistributionFilter(){
 module.exports.KalturaEntryDistributionFilter = KalturaEntryDistributionFilter;
 
 util.inherits(KalturaEntryDistributionFilter, KalturaEntryDistributionBaseFilter);
+
+
+/**
+ */
+function KalturaEntryServerNodeFilter(){
+	KalturaEntryServerNodeFilter.super_.call(this);
+}
+module.exports.KalturaEntryServerNodeFilter = KalturaEntryServerNodeFilter;
+
+util.inherits(KalturaEntryServerNodeFilter, KalturaEntryServerNodeBaseFilter);
 
 
 /**

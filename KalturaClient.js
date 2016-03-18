@@ -37,7 +37,7 @@ kaltura.enums = require('./KalturaTypes');
 
 function KalturaClient(config) {
 	this.setApiVersion('3.3.0');
-	this.setClientTag('node:16-03-16');
+	this.setClientTag('node:16-03-18');
 	this.init(config);
 }
 
@@ -122,6 +122,11 @@ KalturaClient.prototype.document = null;
  * @param kaltura.services.KalturaEmailIngestionProfileService
  */
 KalturaClient.prototype.EmailIngestionProfile = null;
+/**
+ * Base class for entry server node
+ * @param kaltura.services.KalturaEntryServerNodeService
+ */
+KalturaClient.prototype.entryServerNode = null;
 /**
  * Manage file assets
  * @param kaltura.services.KalturaFileAssetService
@@ -525,6 +530,7 @@ KalturaClient.prototype.init = function(config){
 	this.deliveryProfile = new kaltura.services.KalturaDeliveryProfileService(this);
 	this.document = new kaltura.services.KalturaDocumentService(this);
 	this.EmailIngestionProfile = new kaltura.services.KalturaEmailIngestionProfileService(this);
+	this.entryServerNode = new kaltura.services.KalturaEntryServerNodeService(this);
 	this.fileAsset = new kaltura.services.KalturaFileAssetService(this);
 	this.flavorAsset = new kaltura.services.KalturaFlavorAssetService(this);
 	this.flavorParamsOutput = new kaltura.services.KalturaFlavorParamsOutputService(this);

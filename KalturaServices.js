@@ -2293,6 +2293,54 @@ KalturaEmailIngestionProfileService.prototype.addMediaEntry = function(callback,
 };
 
 /**
+ *Class definition for the Kaltura service: entryServerNode.
+ * The available service actions:
+ * @action list .
+ * @action get .
+ */
+function KalturaEntryServerNodeService(client){
+	KalturaEntryServerNodeService.super_.call(this);
+	this.init(client);
+}
+
+util.inherits(KalturaEntryServerNodeService, kaltura.KalturaServiceBase);
+module.exports.KalturaEntryServerNodeService = KalturaEntryServerNodeService;
+
+/**
+ * .
+ * @param filter KalturaEntryServerNodeFilter  (optional).
+ * @param pager KalturaFilterPager  (optional, default: null).
+ * @return KalturaEntryServerNodeListResponse.
+ */
+KalturaEntryServerNodeService.prototype.listAction = function(callback, filter, pager){
+	if(!pager){
+		pager = null;
+	}
+	var kparams = {};
+	this.client.addParam(kparams, 'filter', kaltura.toParams(filter));
+	if (pager !== null){
+		this.client.addParam(kparams, 'pager', kaltura.toParams(pager));
+	}
+	this.client.queueServiceActionCall('entryservernode', 'list', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * .
+ * @param id string  (optional).
+ * @return KalturaEntryServerNode.
+ */
+KalturaEntryServerNodeService.prototype.get = function(callback, id){
+	var kparams = {};
+	this.client.addParam(kparams, 'id', id);
+	this.client.queueServiceActionCall('entryservernode', 'get', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+
+/**
  *Class definition for the Kaltura service: fileAsset.
  * The available service actions:
  * @action add Add new file asset.
@@ -3148,7 +3196,7 @@ KalturaLiveChannelService.prototype.isLive = function(callback, id){
  * Append recorded video to live entry.
  * @param entryId string Live entry id (optional).
  * @param assetId string Live asset id (optional).
- * @param mediaServerIndex int  (optional, enum: KalturaMediaServerIndex).
+ * @param mediaServerIndex string  (optional, enum: KalturaEntryServerNodeType).
  * @param resource KalturaDataCenterContentResource  (optional).
  * @param duration float in seconds (optional).
  * @param isLastChunk bool Is this the last recorded chunk in the current session (i.e. following a stream stop event) (optional, default: false).
@@ -3174,9 +3222,9 @@ KalturaLiveChannelService.prototype.appendRecording = function(callback, entryId
  * Register media server to live entry.
  * @param entryId string Live entry id (optional).
  * @param hostname string Media server host name (optional).
- * @param mediaServerIndex int Media server index primary / secondary (optional, enum: KalturaMediaServerIndex).
+ * @param mediaServerIndex string Media server index primary / secondary (optional, enum: KalturaEntryServerNodeType).
  * @param applicationName string the application to which entry is being broadcast (optional, default: null).
- * @param liveEntryStatus int the new status KalturaLiveEntryStatus::PLAYABLE | KalturaLiveEntryStatus::BROADCASTING (optional, enum: KalturaLiveEntryStatus, default: 1).
+ * @param liveEntryStatus int the status KalturaEntryServerNodeStatus::PLAYABLE | KalturaEntryServerNodeStatus::BROADCASTING (optional, enum: KalturaEntryServerNodeStatus, default: 1).
  * @return KalturaLiveEntry.
  */
 KalturaLiveChannelService.prototype.registerMediaServer = function(callback, entryId, hostname, mediaServerIndex, applicationName, liveEntryStatus){
@@ -3201,7 +3249,7 @@ KalturaLiveChannelService.prototype.registerMediaServer = function(callback, ent
  * Unregister media server from live entry.
  * @param entryId string Live entry id (optional).
  * @param hostname string Media server host name (optional).
- * @param mediaServerIndex int Media server index primary / secondary (optional, enum: KalturaMediaServerIndex).
+ * @param mediaServerIndex string Media server index primary / secondary (optional, enum: KalturaEntryServerNodeType).
  * @return KalturaLiveEntry.
  */
 KalturaLiveChannelService.prototype.unregisterMediaServer = function(callback, entryId, hostname, mediaServerIndex){
@@ -3582,7 +3630,7 @@ KalturaLiveStreamService.prototype.removeLiveStreamPushPublishConfiguration = fu
  * Append recorded video to live entry.
  * @param entryId string Live entry id (optional).
  * @param assetId string Live asset id (optional).
- * @param mediaServerIndex int  (optional, enum: KalturaMediaServerIndex).
+ * @param mediaServerIndex string  (optional, enum: KalturaEntryServerNodeType).
  * @param resource KalturaDataCenterContentResource  (optional).
  * @param duration float in seconds (optional).
  * @param isLastChunk bool Is this the last recorded chunk in the current session (i.e. following a stream stop event) (optional, default: false).
@@ -3608,9 +3656,9 @@ KalturaLiveStreamService.prototype.appendRecording = function(callback, entryId,
  * Register media server to live entry.
  * @param entryId string Live entry id (optional).
  * @param hostname string Media server host name (optional).
- * @param mediaServerIndex int Media server index primary / secondary (optional, enum: KalturaMediaServerIndex).
+ * @param mediaServerIndex string Media server index primary / secondary (optional, enum: KalturaEntryServerNodeType).
  * @param applicationName string the application to which entry is being broadcast (optional, default: null).
- * @param liveEntryStatus int the new status KalturaLiveEntryStatus::PLAYABLE | KalturaLiveEntryStatus::BROADCASTING (optional, enum: KalturaLiveEntryStatus, default: 1).
+ * @param liveEntryStatus int the status KalturaEntryServerNodeStatus::PLAYABLE | KalturaEntryServerNodeStatus::BROADCASTING (optional, enum: KalturaEntryServerNodeStatus, default: 1).
  * @return KalturaLiveEntry.
  */
 KalturaLiveStreamService.prototype.registerMediaServer = function(callback, entryId, hostname, mediaServerIndex, applicationName, liveEntryStatus){
@@ -3635,7 +3683,7 @@ KalturaLiveStreamService.prototype.registerMediaServer = function(callback, entr
  * Unregister media server from live entry.
  * @param entryId string Live entry id (optional).
  * @param hostname string Media server host name (optional).
- * @param mediaServerIndex int Media server index primary / secondary (optional, enum: KalturaMediaServerIndex).
+ * @param mediaServerIndex string Media server index primary / secondary (optional, enum: KalturaEntryServerNodeType).
  * @return KalturaLiveEntry.
  */
 KalturaLiveStreamService.prototype.unregisterMediaServer = function(callback, entryId, hostname, mediaServerIndex){

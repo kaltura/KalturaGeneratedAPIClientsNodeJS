@@ -6631,6 +6631,7 @@ util.inherits(KalturaCategoryUserProviderFilter, KalturaFilter);
  * @param fidelity string .
  * @param username string Api key for service provider (readOnly).
  * @param password string Api key for service provider (readOnly).
+ * @param baseUrl string Base url for service provider (readOnly).
  * @param spokenLanguage string Transcript content language.
  * @param replaceMediaContent bool should replace remote media content.
  */
@@ -6643,6 +6644,7 @@ function KalturaCielo24JobProviderData(){
 	this.fidelity = null;
 	this.username = null;
 	this.password = null;
+	this.baseUrl = null;
 	this.spokenLanguage = null;
 	this.replaceMediaContent = null;
 }
@@ -9207,7 +9209,6 @@ util.inherits(KalturaModifyCategoriesObjectTask, KalturaObjectTask);
  * @param lastMovedCategoryEntryPageIndex int Saves the last page index of the category entries filter pager
  * In case of crash the batch will restart from that point.
  * @param moveFromChildren bool All entries from all child categories will be moved as well.
- * @param copyOnly bool Entries won't be deleted from the source entry.
  * @param destCategoryFullIds string Destination categories fallback ids.
  */
 function KalturaMoveCategoryEntriesJobData(){
@@ -9218,7 +9219,6 @@ function KalturaMoveCategoryEntriesJobData(){
 	this.lastMovedCategoryPageIndex = null;
 	this.lastMovedCategoryEntryPageIndex = null;
 	this.moveFromChildren = null;
-	this.copyOnly = null;
 	this.destCategoryFullIds = null;
 }
 module.exports.KalturaMoveCategoryEntriesJobData = KalturaMoveCategoryEntriesJobData;

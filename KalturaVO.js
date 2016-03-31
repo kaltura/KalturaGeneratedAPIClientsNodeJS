@@ -2462,10 +2462,12 @@ util.inherits(KalturaFlavorAsset, KalturaAsset);
 
 /**
  * @param fileName string The name of the downloaded file.
+ * @param referrer string .
  */
 function KalturaFlavorAssetUrlOptions(){
 	KalturaFlavorAssetUrlOptions.super_.call(this);
 	this.fileName = null;
+	this.referrer = null;
 }
 module.exports.KalturaFlavorAssetUrlOptions = KalturaFlavorAssetUrlOptions;
 

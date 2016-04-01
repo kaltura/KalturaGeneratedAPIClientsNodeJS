@@ -8934,14 +8934,14 @@ KalturaSystemPartnerService.prototype.listAction = function(callback, filter, pa
 };
 /**
  * .
- * @param partnerId int  (optional).
+ * @param id int  (optional).
  * @param status int  (optional, enum: KalturaPartnerStatus).
  * @param reason string  (optional).
  * @return .
  */
-KalturaSystemPartnerService.prototype.updateStatus = function(callback, partnerId, status, reason){
+KalturaSystemPartnerService.prototype.updateStatus = function(callback, id, status, reason){
 	var kparams = {};
-	this.client.addParam(kparams, 'partnerId', partnerId);
+	this.client.addParam(kparams, 'id', id);
 	this.client.addParam(kparams, 'status', status);
 	this.client.addParam(kparams, 'reason', reason);
 	this.client.queueServiceActionCall('systempartner_systempartner', 'updateStatus', kparams);

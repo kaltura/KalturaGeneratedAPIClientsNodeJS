@@ -11694,6 +11694,7 @@ util.inherits(KalturaEntryResource, KalturaContentResource);
  * @param updatedAtLessThanOrEqual int .
  * @param updatedAtGreaterThanOrEqual int .
  * @param statusEqual int .
+ * @param statusIn int .
  * @param serverTypeEqual string .
  */
 function KalturaEntryServerNodeBaseFilter(){
@@ -11712,6 +11713,7 @@ function KalturaEntryServerNodeBaseFilter(){
 	this.updatedAtLessThanOrEqual = null;
 	this.updatedAtGreaterThanOrEqual = null;
 	this.statusEqual = null;
+	this.statusIn = null;
 	this.serverTypeEqual = null;
 }
 module.exports.KalturaEntryServerNodeBaseFilter = KalturaEntryServerNodeBaseFilter;

@@ -2308,16 +2308,21 @@ module.exports.KalturaEntryServerNodeService = KalturaEntryServerNodeService;
 
 /**
  * .
- * @param filter KalturaEntryServerNodeFilter  (optional).
+ * @param filter KalturaEntryServerNodeFilter  (optional, default: null).
  * @param pager KalturaFilterPager  (optional, default: null).
  * @return KalturaEntryServerNodeListResponse.
  */
 KalturaEntryServerNodeService.prototype.listAction = function(callback, filter, pager){
+	if(!filter){
+		filter = null;
+	}
 	if(!pager){
 		pager = null;
 	}
 	var kparams = {};
-	this.client.addParam(kparams, 'filter', kaltura.toParams(filter));
+	if (filter !== null){
+		this.client.addParam(kparams, 'filter', kaltura.toParams(filter));
+	}
 	if (pager !== null){
 		this.client.addParam(kparams, 'pager', kaltura.toParams(pager));
 	}

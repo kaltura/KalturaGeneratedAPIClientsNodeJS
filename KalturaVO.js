@@ -551,6 +551,7 @@ util.inherits(KalturaOperationAttributes, kaltura.KalturaObjectBase);
  * @param entitledUsersEdit string list of user ids that are entitled to edit the entry (no server enforcement) The difference between entitledUsersEdit and entitledUsersPublish is applicative only.
  * @param entitledUsersPublish string list of user ids that are entitled to publish the entry (no server enforcement) The difference between entitledUsersEdit and entitledUsersPublish is applicative only.
  * @param capabilities string Comma seperated string of the capabilities of the entry. Any capability needed can be added to this list (readOnly).
+ * @param templateEntryId string Template entry id (insertOnly).
  */
 function KalturaBaseEntry(){
 	KalturaBaseEntry.super_.call(this);
@@ -596,6 +597,7 @@ function KalturaBaseEntry(){
 	this.entitledUsersEdit = null;
 	this.entitledUsersPublish = null;
 	this.capabilities = null;
+	this.templateEntryId = null;
 }
 module.exports.KalturaBaseEntry = KalturaBaseEntry;
 
@@ -4233,6 +4235,173 @@ util.inherits(KalturaResponseProfileCacheRecalculateResults, kaltura.KalturaObje
 
 
 /**
+ * @param name string .
+ * @param frequency string .
+ * @param until int .
+ * @param count int .
+ * @param interval int .
+ * @param bySecond string Comma separated numbers between 0 to 59.
+ * @param byMinute string Comma separated numbers between 0 to 59.
+ * @param byHour string Comma separated numbers between 0 to 23.
+ * @param byDay string Comma separated of KalturaScheduleEventRecurrenceDay
+ * Each byDay value can also be preceded by a positive (+n) or negative (-n) integer.
+ * If present, this indicates the nth occurrence of the specific day within the MONTHLY or YEARLY RRULE.
+ * For example, within a MONTHLY rule, +1MO (or simply 1MO) represents the first Monday within the month, whereas -1MO represents the last Monday of the month.
+ * If an integer modifier is not present, it means all days of this type within the specified frequency.
+ * For example, within a MONTHLY rule, MO represents all Mondays within the month.
+ * @param byMonthDay string Comma separated of numbers between -31 to 31, excluding 0.
+ * For example, -10 represents the tenth to the last day of the month.
+ * @param byYearDay string Comma separated of numbers between -366 to 366, excluding 0.
+ * For example, -1 represents the last day of the year (December 31st) and -306 represents the 306th to the last day of the year (March 1st).
+ * @param byWeekNumber string Comma separated of numbers between -53 to 53, excluding 0.
+ * This corresponds to weeks according to week numbering.
+ * A week is defined as a seven day period, starting on the day of the week defined to be the week start.
+ * Week number one of the calendar year is the first week which contains at least four (4) days in that calendar year.
+ * This rule part is only valid for YEARLY frequency.
+ * For example, 3 represents the third week of the year.
+ * @param byMonth string Comma separated numbers between 1 to 12.
+ * @param byOffset string Comma separated of numbers between -366 to 366, excluding 0.
+ * Corresponds to the nth occurrence within the set of events specified by the rule.
+ * It must only be used in conjunction with another byrule part.
+ * For example "the last work day of the month" could be represented as: frequency=MONTHLY;byDay=MO,TU,WE,TH,FR;byOffset=-1
+ * Each byOffset value can include a positive (+n) or negative (-n) integer.
+ * If present, this indicates the nth occurrence of the specific occurrence within the set of events specified by the rule.
+ * @param weekStartDay string .
+ */
+function KalturaScheduleEventRecurrence(){
+	KalturaScheduleEventRecurrence.super_.call(this);
+	this.name = null;
+	this.frequency = null;
+	this.until = null;
+	this.count = null;
+	this.interval = null;
+	this.bySecond = null;
+	this.byMinute = null;
+	this.byHour = null;
+	this.byDay = null;
+	this.byMonthDay = null;
+	this.byYearDay = null;
+	this.byWeekNumber = null;
+	this.byMonth = null;
+	this.byOffset = null;
+	this.weekStartDay = null;
+}
+module.exports.KalturaScheduleEventRecurrence = KalturaScheduleEventRecurrence;
+
+util.inherits(KalturaScheduleEventRecurrence, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param id int Auto-generated unique identifier (readOnly).
+ * @param partnerId int  (readOnly).
+ * @param parentId int  (readOnly).
+ * @param summary string Defines a short summary or subject for the event.
+ * @param description string .
+ * @param status int  (readOnly).
+ * @param startDate int .
+ * @param endDate int .
+ * @param referenceId string .
+ * @param classificationType int .
+ * @param geoLatitude float Specifies the global position for the activity.
+ * @param geoLongitude float Specifies the global position for the activity.
+ * @param location string Defines the intended venue for the activity.
+ * @param organizer string .
+ * @param ownerId string .
+ * @param priority int The value for the priority field.
+ * @param sequence int Defines the revision sequence number.
+ * @param recurrenceType int  (insertOnly).
+ * @param duration int Duration in seconds.
+ * @param contact string Used to represent contact information or alternately a reference to contact information.
+ * @param comment string Specifies non-processing information intended to provide a comment to the calendar user.
+ * @param tags string .
+ * @param createdAt int Creation date as Unix timestamp (In seconds) (readOnly).
+ * @param updatedAt int Last update as Unix timestamp (In seconds) (readOnly).
+ * @param recurrence KalturaScheduleEventRecurrence .
+ */
+function KalturaScheduleEvent(){
+	KalturaScheduleEvent.super_.call(this);
+	this.id = null;
+	this.partnerId = null;
+	this.parentId = null;
+	this.summary = null;
+	this.description = null;
+	this.status = null;
+	this.startDate = null;
+	this.endDate = null;
+	this.referenceId = null;
+	this.classificationType = null;
+	this.geoLatitude = null;
+	this.geoLongitude = null;
+	this.location = null;
+	this.organizer = null;
+	this.ownerId = null;
+	this.priority = null;
+	this.sequence = null;
+	this.recurrenceType = null;
+	this.duration = null;
+	this.contact = null;
+	this.comment = null;
+	this.tags = null;
+	this.createdAt = null;
+	this.updatedAt = null;
+	this.recurrence = null;
+}
+module.exports.KalturaScheduleEvent = KalturaScheduleEvent;
+
+util.inherits(KalturaScheduleEvent, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param eventId int  (insertOnly).
+ * @param resourceId int  (insertOnly).
+ * @param partnerId int  (readOnly).
+ * @param createdAt int Creation date as Unix timestamp (In seconds) (readOnly).
+ * @param updatedAt int Last update as Unix timestamp (In seconds) (readOnly).
+ */
+function KalturaScheduleEventResource(){
+	KalturaScheduleEventResource.super_.call(this);
+	this.eventId = null;
+	this.resourceId = null;
+	this.partnerId = null;
+	this.createdAt = null;
+	this.updatedAt = null;
+}
+module.exports.KalturaScheduleEventResource = KalturaScheduleEventResource;
+
+util.inherits(KalturaScheduleEventResource, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param id int Auto-generated unique identifier (readOnly).
+ * @param parentId int .
+ * @param partnerId int  (readOnly).
+ * @param name string Defines a short name.
+ * @param systemName string Defines a unique system-name.
+ * @param description string .
+ * @param status int  (readOnly).
+ * @param tags string .
+ * @param createdAt int Creation date as Unix timestamp (In seconds) (readOnly).
+ * @param updatedAt int Last update as Unix timestamp (In seconds) (readOnly).
+ */
+function KalturaScheduleResource(){
+	KalturaScheduleResource.super_.call(this);
+	this.id = null;
+	this.parentId = null;
+	this.partnerId = null;
+	this.name = null;
+	this.systemName = null;
+	this.description = null;
+	this.status = null;
+	this.tags = null;
+	this.createdAt = null;
+	this.updatedAt = null;
+}
+module.exports.KalturaScheduleResource = KalturaScheduleResource;
+
+util.inherits(KalturaScheduleResource, kaltura.KalturaObjectBase);
+
+
+/**
  * @param id int  (readOnly).
  * @param partnerId int  (readOnly).
  * @param name string .
@@ -6369,6 +6538,8 @@ util.inherits(KalturaBulkUploadResultCategoryUser, KalturaBulkUploadResult);
  * @param entitledUsersEdit string .
  * @param entitledUsersPublish string .
  * @param ownerId string .
+ * @param referenceId string .
+ * @param templateEntryId string .
  */
 function KalturaBulkUploadResultEntry(){
 	KalturaBulkUploadResultEntry.super_.call(this);
@@ -6393,6 +6564,8 @@ function KalturaBulkUploadResultEntry(){
 	this.entitledUsersEdit = null;
 	this.entitledUsersPublish = null;
 	this.ownerId = null;
+	this.referenceId = null;
+	this.templateEntryId = null;
 }
 module.exports.KalturaBulkUploadResultEntry = KalturaBulkUploadResultEntry;
 
@@ -6443,6 +6616,18 @@ function KalturaBulkUploadUserData(){
 module.exports.KalturaBulkUploadUserData = KalturaBulkUploadUserData;
 
 util.inherits(KalturaBulkUploadUserData, KalturaBulkUploadObjectData);
+
+
+/**
+ * @param streamUrl string URL of the stream.
+ */
+function KalturaCameraScheduleResource(){
+	KalturaCameraScheduleResource.super_.call(this);
+	this.streamUrl = null;
+}
+module.exports.KalturaCameraScheduleResource = KalturaCameraScheduleResource;
+
+util.inherits(KalturaCameraScheduleResource, KalturaScheduleResource);
 
 
 /**
@@ -8098,6 +8283,22 @@ util.inherits(KalturaEntryLiveStats, KalturaLiveStats);
 
 
 /**
+ * @param templateEntryId string Entry to be used as template during content ingestion.
+ * @param entryIds string Entries that associated with this event.
+ * @param categoryIds string Categories that associated with this event.
+ */
+function KalturaEntryScheduleEvent(){
+	KalturaEntryScheduleEvent.super_.call(this);
+	this.templateEntryId = null;
+	this.entryIds = null;
+	this.categoryIds = null;
+}
+module.exports.KalturaEntryScheduleEvent = KalturaEntryScheduleEvent;
+
+util.inherits(KalturaEntryScheduleEvent, KalturaScheduleEvent);
+
+
+/**
  * @param objects array  (readOnly).
  */
 function KalturaEntryServerNodeListResponse(){
@@ -8908,6 +9109,18 @@ util.inherits(KalturaLiveChannelSegmentListResponse, KalturaListResponse);
 
 
 /**
+ * @param entryId string .
+ */
+function KalturaLiveEntryScheduleResource(){
+	KalturaLiveEntryScheduleResource.super_.call(this);
+	this.entryId = null;
+}
+module.exports.KalturaLiveEntryScheduleResource = KalturaLiveEntryScheduleResource;
+
+util.inherits(KalturaLiveEntryScheduleResource, KalturaScheduleResource);
+
+
+/**
  * @param streams array parameters of the stream we got.
  */
 function KalturaLiveEntryServerNode(){
@@ -8979,6 +9192,16 @@ function KalturaLiveStreamPushPublishRTMPConfiguration(){
 module.exports.KalturaLiveStreamPushPublishRTMPConfiguration = KalturaLiveStreamPushPublishRTMPConfiguration;
 
 util.inherits(KalturaLiveStreamPushPublishRTMPConfiguration, KalturaLiveStreamPushPublishConfiguration);
+
+
+/**
+ */
+function KalturaLocationScheduleResource(){
+	KalturaLocationScheduleResource.super_.call(this);
+}
+module.exports.KalturaLocationScheduleResource = KalturaLocationScheduleResource;
+
+util.inherits(KalturaLocationScheduleResource, KalturaScheduleResource);
 
 
 /**
@@ -9642,6 +9865,178 @@ function KalturaResponseProfileListResponse(){
 module.exports.KalturaResponseProfileListResponse = KalturaResponseProfileListResponse;
 
 util.inherits(KalturaResponseProfileListResponse, KalturaListResponse);
+
+
+/**
+ * @param idEqual int .
+ * @param idIn string .
+ * @param idNotIn string .
+ * @param parentIdEqual int .
+ * @param parentIdIn string .
+ * @param parentIdNotIn string .
+ * @param statusEqual int .
+ * @param statusIn string .
+ * @param startDateGreaterThanOrEqual int .
+ * @param startDateLessThanOrEqual int .
+ * @param endDateGreaterThanOrEqual int .
+ * @param endDateLessThanOrEqual int .
+ * @param referenceIdEqual string .
+ * @param referenceIdIn string .
+ * @param ownerIdEqual string .
+ * @param ownerIdIn string .
+ * @param priorityEqual int .
+ * @param priorityIn string .
+ * @param priorityGreaterThanOrEqual int .
+ * @param priorityLessThanOrEqual int .
+ * @param recurrenceTypeEqual int .
+ * @param recurrenceTypeIn string .
+ * @param tagsLike string .
+ * @param tagsMultiLikeOr string .
+ * @param tagsMultiLikeAnd string .
+ * @param createdAtGreaterThanOrEqual int .
+ * @param createdAtLessThanOrEqual int .
+ * @param updatedAtGreaterThanOrEqual int .
+ * @param updatedAtLessThanOrEqual int .
+ */
+function KalturaScheduleEventBaseFilter(){
+	KalturaScheduleEventBaseFilter.super_.call(this);
+	this.idEqual = null;
+	this.idIn = null;
+	this.idNotIn = null;
+	this.parentIdEqual = null;
+	this.parentIdIn = null;
+	this.parentIdNotIn = null;
+	this.statusEqual = null;
+	this.statusIn = null;
+	this.startDateGreaterThanOrEqual = null;
+	this.startDateLessThanOrEqual = null;
+	this.endDateGreaterThanOrEqual = null;
+	this.endDateLessThanOrEqual = null;
+	this.referenceIdEqual = null;
+	this.referenceIdIn = null;
+	this.ownerIdEqual = null;
+	this.ownerIdIn = null;
+	this.priorityEqual = null;
+	this.priorityIn = null;
+	this.priorityGreaterThanOrEqual = null;
+	this.priorityLessThanOrEqual = null;
+	this.recurrenceTypeEqual = null;
+	this.recurrenceTypeIn = null;
+	this.tagsLike = null;
+	this.tagsMultiLikeOr = null;
+	this.tagsMultiLikeAnd = null;
+	this.createdAtGreaterThanOrEqual = null;
+	this.createdAtLessThanOrEqual = null;
+	this.updatedAtGreaterThanOrEqual = null;
+	this.updatedAtLessThanOrEqual = null;
+}
+module.exports.KalturaScheduleEventBaseFilter = KalturaScheduleEventBaseFilter;
+
+util.inherits(KalturaScheduleEventBaseFilter, KalturaFilter);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaScheduleEventListResponse(){
+	KalturaScheduleEventListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaScheduleEventListResponse = KalturaScheduleEventListResponse;
+
+util.inherits(KalturaScheduleEventListResponse, KalturaListResponse);
+
+
+/**
+ * @param eventIdEqual int .
+ * @param eventIdIn string .
+ * @param resourceIdEqual int .
+ * @param resourceIdIn string .
+ * @param createdAtGreaterThanOrEqual int .
+ * @param createdAtLessThanOrEqual int .
+ * @param updatedAtGreaterThanOrEqual int .
+ * @param updatedAtLessThanOrEqual int .
+ */
+function KalturaScheduleEventResourceBaseFilter(){
+	KalturaScheduleEventResourceBaseFilter.super_.call(this);
+	this.eventIdEqual = null;
+	this.eventIdIn = null;
+	this.resourceIdEqual = null;
+	this.resourceIdIn = null;
+	this.createdAtGreaterThanOrEqual = null;
+	this.createdAtLessThanOrEqual = null;
+	this.updatedAtGreaterThanOrEqual = null;
+	this.updatedAtLessThanOrEqual = null;
+}
+module.exports.KalturaScheduleEventResourceBaseFilter = KalturaScheduleEventResourceBaseFilter;
+
+util.inherits(KalturaScheduleEventResourceBaseFilter, KalturaFilter);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaScheduleEventResourceListResponse(){
+	KalturaScheduleEventResourceListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaScheduleEventResourceListResponse = KalturaScheduleEventResourceListResponse;
+
+util.inherits(KalturaScheduleEventResourceListResponse, KalturaListResponse);
+
+
+/**
+ * @param idEqual int .
+ * @param idIn string .
+ * @param idNotIn string .
+ * @param parentIdEqual int .
+ * @param parentIdIn string .
+ * @param systemNameEqual string .
+ * @param systemNameIn string .
+ * @param statusEqual int .
+ * @param statusIn string .
+ * @param tagsLike string .
+ * @param tagsMultiLikeOr string .
+ * @param tagsMultiLikeAnd string .
+ * @param createdAtGreaterThanOrEqual int .
+ * @param createdAtLessThanOrEqual int .
+ * @param updatedAtGreaterThanOrEqual int .
+ * @param updatedAtLessThanOrEqual int .
+ */
+function KalturaScheduleResourceBaseFilter(){
+	KalturaScheduleResourceBaseFilter.super_.call(this);
+	this.idEqual = null;
+	this.idIn = null;
+	this.idNotIn = null;
+	this.parentIdEqual = null;
+	this.parentIdIn = null;
+	this.systemNameEqual = null;
+	this.systemNameIn = null;
+	this.statusEqual = null;
+	this.statusIn = null;
+	this.tagsLike = null;
+	this.tagsMultiLikeOr = null;
+	this.tagsMultiLikeAnd = null;
+	this.createdAtGreaterThanOrEqual = null;
+	this.createdAtLessThanOrEqual = null;
+	this.updatedAtGreaterThanOrEqual = null;
+	this.updatedAtLessThanOrEqual = null;
+}
+module.exports.KalturaScheduleResourceBaseFilter = KalturaScheduleResourceBaseFilter;
+
+util.inherits(KalturaScheduleResourceBaseFilter, KalturaFilter);
+
+
+/**
+ * @param objects array  (readOnly).
+ */
+function KalturaScheduleResourceListResponse(){
+	KalturaScheduleResourceListResponse.super_.call(this);
+	this.objects = null;
+}
+module.exports.KalturaScheduleResourceListResponse = KalturaScheduleResourceListResponse;
+
+util.inherits(KalturaScheduleResourceListResponse, KalturaListResponse);
 
 
 /**
@@ -12108,6 +12503,16 @@ util.inherits(KalturaLiveParams, KalturaFlavorParams);
 
 
 /**
+ */
+function KalturaLiveStreamScheduleEvent(){
+	KalturaLiveStreamScheduleEvent.super_.call(this);
+}
+module.exports.KalturaLiveStreamScheduleEvent = KalturaLiveStreamScheduleEvent;
+
+util.inherits(KalturaLiveStreamScheduleEvent, KalturaEntryScheduleEvent);
+
+
+/**
  * @param xPath string May contain the full xpath to the field in three formats
  * 1. Slashed xPath, e.g. /metadata/myElementName
  * 2. Using local-name function, e.g. /[local-name()='metadata']/[local-name()='myElementName']
@@ -12453,6 +12858,16 @@ util.inherits(KalturaRecalculateResponseProfileCacheJobData, KalturaRecalculateC
 
 /**
  */
+function KalturaRecordScheduleEvent(){
+	KalturaRecordScheduleEvent.super_.call(this);
+}
+module.exports.KalturaRecordScheduleEvent = KalturaRecordScheduleEvent;
+
+util.inherits(KalturaRecordScheduleEvent, KalturaEntryScheduleEvent);
+
+
+/**
+ */
 function KalturaRegexCondition(){
 	KalturaRegexCondition.super_.call(this);
 }
@@ -12491,6 +12906,48 @@ function KalturaResponseProfileFilter(){
 module.exports.KalturaResponseProfileFilter = KalturaResponseProfileFilter;
 
 util.inherits(KalturaResponseProfileFilter, KalturaResponseProfileBaseFilter);
+
+
+/**
+ * @param resourceIdsLike string .
+ * @param resourceIdsMultiLikeOr string .
+ * @param resourceIdsMultiLikeAnd string .
+ * @param parentResourceIdsLike string .
+ * @param parentResourceIdsMultiLikeOr string .
+ * @param parentResourceIdsMultiLikeAnd string .
+ */
+function KalturaScheduleEventFilter(){
+	KalturaScheduleEventFilter.super_.call(this);
+	this.resourceIdsLike = null;
+	this.resourceIdsMultiLikeOr = null;
+	this.resourceIdsMultiLikeAnd = null;
+	this.parentResourceIdsLike = null;
+	this.parentResourceIdsMultiLikeOr = null;
+	this.parentResourceIdsMultiLikeAnd = null;
+}
+module.exports.KalturaScheduleEventFilter = KalturaScheduleEventFilter;
+
+util.inherits(KalturaScheduleEventFilter, KalturaScheduleEventBaseFilter);
+
+
+/**
+ */
+function KalturaScheduleEventResourceFilter(){
+	KalturaScheduleEventResourceFilter.super_.call(this);
+}
+module.exports.KalturaScheduleEventResourceFilter = KalturaScheduleEventResourceFilter;
+
+util.inherits(KalturaScheduleEventResourceFilter, KalturaScheduleEventResourceBaseFilter);
+
+
+/**
+ */
+function KalturaScheduleResourceFilter(){
+	KalturaScheduleResourceFilter.super_.call(this);
+}
+module.exports.KalturaScheduleResourceFilter = KalturaScheduleResourceFilter;
+
+util.inherits(KalturaScheduleResourceFilter, KalturaScheduleResourceBaseFilter);
 
 
 /**
@@ -12921,6 +13378,16 @@ util.inherits(KalturaBatchJobFilterExt, KalturaBatchJobFilter);
 
 /**
  */
+function KalturaCameraScheduleResourceBaseFilter(){
+	KalturaCameraScheduleResourceBaseFilter.super_.call(this);
+}
+module.exports.KalturaCameraScheduleResourceBaseFilter = KalturaCameraScheduleResourceBaseFilter;
+
+util.inherits(KalturaCameraScheduleResourceBaseFilter, KalturaScheduleResourceFilter);
+
+
+/**
+ */
 function KalturaCategoryEntryFilter(){
 	KalturaCategoryEntryFilter.super_.call(this);
 }
@@ -13258,6 +13725,28 @@ util.inherits(KalturaEntryDistributionFilter, KalturaEntryDistributionBaseFilter
 
 
 /**
+ * @param entryIdsLike string .
+ * @param entryIdsMultiLikeOr string .
+ * @param entryIdsMultiLikeAnd string .
+ * @param categoryIdsLike string .
+ * @param categoryIdsMultiLikeOr string .
+ * @param categoryIdsMultiLikeAnd string .
+ */
+function KalturaEntryScheduleEventBaseFilter(){
+	KalturaEntryScheduleEventBaseFilter.super_.call(this);
+	this.entryIdsLike = null;
+	this.entryIdsMultiLikeOr = null;
+	this.entryIdsMultiLikeAnd = null;
+	this.categoryIdsLike = null;
+	this.categoryIdsMultiLikeOr = null;
+	this.categoryIdsMultiLikeAnd = null;
+}
+module.exports.KalturaEntryScheduleEventBaseFilter = KalturaEntryScheduleEventBaseFilter;
+
+util.inherits(KalturaEntryScheduleEventBaseFilter, KalturaScheduleEventFilter);
+
+
+/**
  */
 function KalturaEntryServerNodeFilter(){
 	KalturaEntryServerNodeFilter.super_.call(this);
@@ -13558,6 +14047,16 @@ util.inherits(KalturaLiveEntryMatchAttributeCondition, KalturaSearchMatchAttribu
 
 
 /**
+ */
+function KalturaLiveEntryScheduleResourceBaseFilter(){
+	KalturaLiveEntryScheduleResourceBaseFilter.super_.call(this);
+}
+module.exports.KalturaLiveEntryScheduleResourceBaseFilter = KalturaLiveEntryScheduleResourceBaseFilter;
+
+util.inherits(KalturaLiveEntryScheduleResourceBaseFilter, KalturaScheduleResourceFilter);
+
+
+/**
  * @param attribute string .
  */
 function KalturaLiveStreamAdminEntryCompareAttributeCondition(){
@@ -13603,6 +14102,16 @@ function KalturaLiveStreamEntryMatchAttributeCondition(){
 module.exports.KalturaLiveStreamEntryMatchAttributeCondition = KalturaLiveStreamEntryMatchAttributeCondition;
 
 util.inherits(KalturaLiveStreamEntryMatchAttributeCondition, KalturaSearchMatchAttributeCondition);
+
+
+/**
+ */
+function KalturaLocationScheduleResourceBaseFilter(){
+	KalturaLocationScheduleResourceBaseFilter.super_.call(this);
+}
+module.exports.KalturaLocationScheduleResourceBaseFilter = KalturaLocationScheduleResourceBaseFilter;
+
+util.inherits(KalturaLocationScheduleResourceBaseFilter, KalturaScheduleResourceFilter);
 
 
 /**
@@ -14180,6 +14689,16 @@ util.inherits(KalturaAttachmentAssetBaseFilter, KalturaAssetFilter);
 
 
 /**
+ */
+function KalturaCameraScheduleResourceFilter(){
+	KalturaCameraScheduleResourceFilter.super_.call(this);
+}
+module.exports.KalturaCameraScheduleResourceFilter = KalturaCameraScheduleResourceFilter;
+
+util.inherits(KalturaCameraScheduleResourceFilter, KalturaCameraScheduleResourceBaseFilter);
+
+
+/**
  * @param captionParamsIdEqual int .
  * @param captionParamsIdIn string .
  * @param formatEqual string .
@@ -14400,6 +14919,22 @@ util.inherits(KalturaEmailNotificationTemplateFilter, KalturaEmailNotificationTe
 
 
 /**
+ * @param parentCategoryIdsLike string .
+ * @param parentCategoryIdsMultiLikeOr string .
+ * @param parentCategoryIdsMultiLikeAnd string .
+ */
+function KalturaEntryScheduleEventFilter(){
+	KalturaEntryScheduleEventFilter.super_.call(this);
+	this.parentCategoryIdsLike = null;
+	this.parentCategoryIdsMultiLikeOr = null;
+	this.parentCategoryIdsMultiLikeAnd = null;
+}
+module.exports.KalturaEntryScheduleEventFilter = KalturaEntryScheduleEventFilter;
+
+util.inherits(KalturaEntryScheduleEventFilter, KalturaEntryScheduleEventBaseFilter);
+
+
+/**
  * @param eventTypeEqual string .
  * @param eventTypeIn string .
  */
@@ -14513,6 +15048,26 @@ function KalturaKontikiStorageProfileFilter(){
 module.exports.KalturaKontikiStorageProfileFilter = KalturaKontikiStorageProfileFilter;
 
 util.inherits(KalturaKontikiStorageProfileFilter, KalturaKontikiStorageProfileBaseFilter);
+
+
+/**
+ */
+function KalturaLiveEntryScheduleResourceFilter(){
+	KalturaLiveEntryScheduleResourceFilter.super_.call(this);
+}
+module.exports.KalturaLiveEntryScheduleResourceFilter = KalturaLiveEntryScheduleResourceFilter;
+
+util.inherits(KalturaLiveEntryScheduleResourceFilter, KalturaLiveEntryScheduleResourceBaseFilter);
+
+
+/**
+ */
+function KalturaLocationScheduleResourceFilter(){
+	KalturaLocationScheduleResourceFilter.super_.call(this);
+}
+module.exports.KalturaLocationScheduleResourceFilter = KalturaLocationScheduleResourceFilter;
+
+util.inherits(KalturaLocationScheduleResourceFilter, KalturaLocationScheduleResourceBaseFilter);
 
 
 /**
@@ -14871,6 +15426,16 @@ util.inherits(KalturaLiveStreamAdminEntry, KalturaLiveStreamEntry);
 
 /**
  */
+function KalturaLiveStreamScheduleEventBaseFilter(){
+	KalturaLiveStreamScheduleEventBaseFilter.super_.call(this);
+}
+module.exports.KalturaLiveStreamScheduleEventBaseFilter = KalturaLiveStreamScheduleEventBaseFilter;
+
+util.inherits(KalturaLiveStreamScheduleEventBaseFilter, KalturaEntryScheduleEventFilter);
+
+
+/**
+ */
 function KalturaMediaServerNodeBaseFilter(){
 	KalturaMediaServerNodeBaseFilter.super_.call(this);
 }
@@ -14897,6 +15462,16 @@ function KalturaQuestionCuePointFilter(){
 module.exports.KalturaQuestionCuePointFilter = KalturaQuestionCuePointFilter;
 
 util.inherits(KalturaQuestionCuePointFilter, KalturaQuestionCuePointBaseFilter);
+
+
+/**
+ */
+function KalturaRecordScheduleEventBaseFilter(){
+	KalturaRecordScheduleEventBaseFilter.super_.call(this);
+}
+module.exports.KalturaRecordScheduleEventBaseFilter = KalturaRecordScheduleEventBaseFilter;
+
+util.inherits(KalturaRecordScheduleEventBaseFilter, KalturaEntryScheduleEventFilter);
 
 
 /**
@@ -15079,6 +15654,16 @@ util.inherits(KalturaLiveParamsBaseFilter, KalturaFlavorParamsFilter);
 
 /**
  */
+function KalturaLiveStreamScheduleEventFilter(){
+	KalturaLiveStreamScheduleEventFilter.super_.call(this);
+}
+module.exports.KalturaLiveStreamScheduleEventFilter = KalturaLiveStreamScheduleEventFilter;
+
+util.inherits(KalturaLiveStreamScheduleEventFilter, KalturaLiveStreamScheduleEventBaseFilter);
+
+
+/**
+ */
 function KalturaMediaFlavorParamsBaseFilter(){
 	KalturaMediaFlavorParamsBaseFilter.super_.call(this);
 }
@@ -15115,6 +15700,16 @@ function KalturaPdfFlavorParamsBaseFilter(){
 module.exports.KalturaPdfFlavorParamsBaseFilter = KalturaPdfFlavorParamsBaseFilter;
 
 util.inherits(KalturaPdfFlavorParamsBaseFilter, KalturaFlavorParamsFilter);
+
+
+/**
+ */
+function KalturaRecordScheduleEventFilter(){
+	KalturaRecordScheduleEventFilter.super_.call(this);
+}
+module.exports.KalturaRecordScheduleEventFilter = KalturaRecordScheduleEventFilter;
+
+util.inherits(KalturaRecordScheduleEventFilter, KalturaRecordScheduleEventBaseFilter);
 
 
 /**

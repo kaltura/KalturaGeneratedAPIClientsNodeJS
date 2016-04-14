@@ -37,7 +37,7 @@ kaltura.enums = require('./KalturaTypes');
 
 function KalturaClient(config) {
 	this.setApiVersion('3.3.0');
-	this.setClientTag('node:16-04-12');
+	this.setClientTag('node:16-04-14');
 	this.init(config);
 }
 
@@ -508,6 +508,21 @@ KalturaClient.prototype.scheduledTaskProfile = null;
  */
 KalturaClient.prototype.integration = null;
 /**
+ * ScheduleEvent service lets you create and manage schedule events
+ * @param kaltura.services.KalturaScheduleEventService
+ */
+KalturaClient.prototype.scheduleEvent = null;
+/**
+ * ScheduleResource service lets you create and manage schedule events
+ * @param kaltura.services.KalturaScheduleResourceService
+ */
+KalturaClient.prototype.scheduleResource = null;
+/**
+ * ScheduleEventResource service lets you create and manage connections between events and resources
+ * @param kaltura.services.KalturaScheduleEventResourceService
+ */
+KalturaClient.prototype.scheduleEventResource = null;
+/**
  * The client constructor.
  * @param config the Kaltura configuration object holding partner credentials (type: KalturaConfiguration).
  */
@@ -606,6 +621,9 @@ KalturaClient.prototype.init = function(config){
 	this.liveConversionProfile = new kaltura.services.KalturaLiveConversionProfileService(this);
 	this.scheduledTaskProfile = new kaltura.services.KalturaScheduledTaskProfileService(this);
 	this.integration = new kaltura.services.KalturaIntegrationService(this);
+	this.scheduleEvent = new kaltura.services.KalturaScheduleEventService(this);
+	this.scheduleResource = new kaltura.services.KalturaScheduleResourceService(this);
+	this.scheduleEventResource = new kaltura.services.KalturaScheduleEventResourceService(this);
 };
 /**
  * @param string clientTag

@@ -678,6 +678,30 @@ RESPONSE_TYPE_MRSS : 8,
 RESPONSE_TYPE_JSONP : 9,
 };
 
+var KalturaScheduleEventClassificationType = module.exports.KalturaScheduleEventClassificationType = {
+PUBLIC_EVENT : 1,
+PRIVATE_EVENT : 2,
+CONFIDENTIAL_EVENT : 3,
+};
+
+var KalturaScheduleEventRecurrenceType = module.exports.KalturaScheduleEventRecurrenceType = {
+NONE : 0,
+RECURRING : 1,
+RECURRENCE : 2,
+};
+
+var KalturaScheduleEventStatus = module.exports.KalturaScheduleEventStatus = {
+CANCELLED : 1,
+ACTIVE : 2,
+DELETED : 3,
+};
+
+var KalturaScheduleResourceStatus = module.exports.KalturaScheduleResourceStatus = {
+DISABLED : 1,
+ACTIVE : 2,
+DELETED : 3,
+};
+
 var KalturaScheduledTaskAddOrRemoveType = module.exports.KalturaScheduledTaskAddOrRemoveType = {
 ADD : 1,
 REMOVE : 2,
@@ -1424,14 +1448,6 @@ CATEGORY_ENTRY : '5',
 var KalturaBulkUploadOrderBy = module.exports.KalturaBulkUploadOrderBy = {
 };
 
-var KalturaBulkUploadResultObjectType = module.exports.KalturaBulkUploadResultObjectType = {
-ENTRY : '1',
-CATEGORY : '2',
-USER : '3',
-CATEGORY_USER : '4',
-CATEGORY_ENTRY : '5',
-};
-
 var KalturaBulkUploadResultStatus = module.exports.KalturaBulkUploadResultStatus = {
 ERROR : '1',
 OK : '2',
@@ -1443,6 +1459,13 @@ CSV : 'bulkUploadCsv.CSV',
 FILTER : 'bulkUploadFilter.FILTER',
 XML : 'bulkUploadXml.XML',
 DROP_FOLDER_XML : 'dropFolderXmlBulkUpload.DROP_FOLDER_XML',
+};
+
+var KalturaCameraScheduleResourceOrderBy = module.exports.KalturaCameraScheduleResourceOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
 };
 
 var KalturaCaptionAssetOrderBy = module.exports.KalturaCaptionAssetOrderBy = {
@@ -2076,6 +2099,19 @@ APPROVED_BUT_NOT_READY : '1',
 READY_BUT_NOT_APPROVED : '2',
 NOT_READY_AND_NOT_APPROVED : '3',
 FAILED : '4',
+};
+
+var KalturaEntryScheduleEventOrderBy = module.exports.KalturaEntryScheduleEventOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+END_DATE_ASC : '+endDate',
+PRIORITY_ASC : '+priority',
+START_DATE_ASC : '+startDate',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+END_DATE_DESC : '-endDate',
+PRIORITY_DESC : '-priority',
+START_DATE_DESC : '-startDate',
+UPDATED_AT_DESC : '-updatedAt',
 };
 
 var KalturaEntryServerNodeOrderBy = module.exports.KalturaEntryServerNodeOrderBy = {
@@ -3079,6 +3115,13 @@ VIEWS_DESC : '-views',
 WEIGHT_DESC : '-weight',
 };
 
+var KalturaLiveEntryScheduleResourceOrderBy = module.exports.KalturaLiveEntryScheduleResourceOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
 var KalturaLiveParamsOrderBy = module.exports.KalturaLiveParamsOrderBy = {
 };
 
@@ -3255,6 +3298,26 @@ TOTAL_RANK_DESC : '-totalRank',
 UPDATED_AT_DESC : '-updatedAt',
 VIEWS_DESC : '-views',
 WEIGHT_DESC : '-weight',
+};
+
+var KalturaLiveStreamScheduleEventOrderBy = module.exports.KalturaLiveStreamScheduleEventOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+END_DATE_ASC : '+endDate',
+PRIORITY_ASC : '+priority',
+START_DATE_ASC : '+startDate',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+END_DATE_DESC : '-endDate',
+PRIORITY_DESC : '-priority',
+START_DATE_DESC : '-startDate',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+var KalturaLocationScheduleResourceOrderBy = module.exports.KalturaLocationScheduleResourceOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
 };
 
 var KalturaMailType = module.exports.KalturaMailType = {
@@ -3741,6 +3804,19 @@ CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
+var KalturaRecordScheduleEventOrderBy = module.exports.KalturaRecordScheduleEventOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+END_DATE_ASC : '+endDate',
+PRIORITY_ASC : '+priority',
+START_DATE_ASC : '+startDate',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+END_DATE_DESC : '-endDate',
+PRIORITY_DESC : '-priority',
+START_DATE_DESC : '-startDate',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
 var KalturaRemoteDropFolderOrderBy = module.exports.KalturaRemoteDropFolderOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 ID_ASC : '+id',
@@ -3808,6 +3884,53 @@ ADD_TO_STORAGE : '4',
 LIMIT_DELIVERY_PROFILES : '5',
 SERVE_FROM_REMOTE_SERVER : '6',
 REQUEST_HOST_REGEX : '7',
+};
+
+var KalturaScheduleEventOrderBy = module.exports.KalturaScheduleEventOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+END_DATE_ASC : '+endDate',
+PRIORITY_ASC : '+priority',
+START_DATE_ASC : '+startDate',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+END_DATE_DESC : '-endDate',
+PRIORITY_DESC : '-priority',
+START_DATE_DESC : '-startDate',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+var KalturaScheduleEventRecurrenceDay = module.exports.KalturaScheduleEventRecurrenceDay = {
+FRIDAY : 'FR',
+MONDAY : 'MO',
+SATURDAY : 'SA',
+SUNDAY : 'SU',
+THURSDAY : 'TH',
+TUESDAY : 'TU',
+WEDNESDAY : 'WE',
+};
+
+var KalturaScheduleEventRecurrenceFrequency = module.exports.KalturaScheduleEventRecurrenceFrequency = {
+DAILY : 'days',
+HOURLY : 'hours',
+MINUTELY : 'minutes',
+MONTHLY : 'months',
+SECONDLY : 'seconds',
+WEEKLY : 'weeks',
+YEARLY : 'years',
+};
+
+var KalturaScheduleEventResourceOrderBy = module.exports.KalturaScheduleEventResourceOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+var KalturaScheduleResourceOrderBy = module.exports.KalturaScheduleResourceOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
 };
 
 var KalturaScheduledTaskProfileOrderBy = module.exports.KalturaScheduledTaskProfileOrderBy = {

@@ -2858,10 +2858,14 @@ util.inherits(KalturaLiveStreamPushPublishConfiguration, kaltura.KalturaObjectBa
 
 /**
  * @param shouldCopyEntitlement int .
+ * @param shouldCopyScheduling int .
+ * @param shouldCopyThumbnail int .
  */
 function KalturaLiveEntryRecordingOptions(){
 	KalturaLiveEntryRecordingOptions.super_.call(this);
 	this.shouldCopyEntitlement = null;
+	this.shouldCopyScheduling = null;
+	this.shouldCopyThumbnail = null;
 }
 module.exports.KalturaLiveEntryRecordingOptions = KalturaLiveEntryRecordingOptions;
 

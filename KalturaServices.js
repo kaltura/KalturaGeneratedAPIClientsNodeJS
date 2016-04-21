@@ -3479,12 +3479,27 @@ KalturaLiveStreamService.prototype.get = function(callback, entryId, version){
  * Authenticate live-stream entry against stream token and partner limitations.
  * @param entryId string Live stream entry id (optional).
  * @param token string Live stream broadcasting token (optional).
+ * @param hostname string Media server host name (optional, default: null).
+ * @param mediaServerIndex string Media server index primary / secondary (optional, enum: KalturaEntryServerNodeType, default: null).
+ * @param applicationName string the application to which entry is being broadcast (optional, default: null).
  * @return KalturaLiveStreamEntry.
  */
-KalturaLiveStreamService.prototype.authenticate = function(callback, entryId, token){
+KalturaLiveStreamService.prototype.authenticate = function(callback, entryId, token, hostname, mediaServerIndex, applicationName){
+	if(!hostname){
+		hostname = null;
+	}
+	if(!mediaServerIndex){
+		mediaServerIndex = null;
+	}
+	if(!applicationName){
+		applicationName = null;
+	}
 	var kparams = {};
 	this.client.addParam(kparams, 'entryId', entryId);
 	this.client.addParam(kparams, 'token', token);
+	this.client.addParam(kparams, 'hostname', hostname);
+	this.client.addParam(kparams, 'mediaServerIndex', mediaServerIndex);
+	this.client.addParam(kparams, 'applicationName', applicationName);
 	this.client.queueServiceActionCall('livestream', 'authenticate', kparams);
 	if (!this.client.isMultiRequest()){
 		this.client.doQueue(callback);

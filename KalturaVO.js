@@ -2510,6 +2510,7 @@ util.inherits(KalturaFlavorAssetUrlOptions, kaltura.KalturaObjectBase);
  * @param videoConstantBitrate int .
  * @param videoBitrateTolerance int .
  * @param watermarkData string .
+ * @param subtitlesData string .
  * @param isEncrypted int .
  * @param clipOffset int .
  * @param clipDuration int .
@@ -2549,6 +2550,7 @@ function KalturaFlavorParams(){
 	this.videoConstantBitrate = null;
 	this.videoBitrateTolerance = null;
 	this.watermarkData = null;
+	this.subtitlesData = null;
 	this.isEncrypted = null;
 	this.clipOffset = null;
 	this.clipDuration = null;
@@ -4730,7 +4732,7 @@ util.inherits(KalturaSessionInfo, kaltura.KalturaObjectBase);
 
 
 /**
- * @param id int  (readOnly).
+ * @param id string  (readOnly).
  * @param createdAt int  (readOnly).
  * @param updatedAt int  (readOnly).
  * @param expiresAt int .
@@ -6579,6 +6581,44 @@ util.inherits(KalturaBulkUploadResultEntry, KalturaBulkUploadResult);
 
 
 /**
+ * @param referenceId string .
+ */
+function KalturaBulkUploadResultScheduleEvent(){
+	KalturaBulkUploadResultScheduleEvent.super_.call(this);
+	this.referenceId = null;
+}
+module.exports.KalturaBulkUploadResultScheduleEvent = KalturaBulkUploadResultScheduleEvent;
+
+util.inherits(KalturaBulkUploadResultScheduleEvent, KalturaBulkUploadResult);
+
+
+/**
+ * @param resourceId string .
+ * @param name string .
+ * @param type string .
+ * @param systemName string .
+ * @param description string .
+ * @param tags string .
+ * @param parentType string .
+ * @param parentSystemName string .
+ */
+function KalturaBulkUploadResultScheduleResource(){
+	KalturaBulkUploadResultScheduleResource.super_.call(this);
+	this.resourceId = null;
+	this.name = null;
+	this.type = null;
+	this.systemName = null;
+	this.description = null;
+	this.tags = null;
+	this.parentType = null;
+	this.parentSystemName = null;
+}
+module.exports.KalturaBulkUploadResultScheduleResource = KalturaBulkUploadResultScheduleResource;
+
+util.inherits(KalturaBulkUploadResultScheduleResource, KalturaBulkUploadResult);
+
+
+/**
  * @param userId string .
  * @param screenName string .
  * @param email string .
@@ -7858,6 +7898,18 @@ function KalturaDropFolderFileListResponse(){
 module.exports.KalturaDropFolderFileListResponse = KalturaDropFolderFileListResponse;
 
 util.inherits(KalturaDropFolderFileListResponse, KalturaListResponse);
+
+
+/**
+ * @param eventsType int The type of the events that ill be created by this upload.
+ */
+function KalturaDropFolderICalBulkUploadFileHandlerConfig(){
+	KalturaDropFolderICalBulkUploadFileHandlerConfig.super_.call(this);
+	this.eventsType = null;
+}
+module.exports.KalturaDropFolderICalBulkUploadFileHandlerConfig = KalturaDropFolderICalBulkUploadFileHandlerConfig;
+
+util.inherits(KalturaDropFolderICalBulkUploadFileHandlerConfig, KalturaDropFolderFileHandlerConfig);
 
 
 /**
@@ -11446,6 +11498,18 @@ util.inherits(KalturaBulkUploadFilterJobData, KalturaBulkUploadJobData);
 
 
 /**
+ * @param eventsType int The type of the events that ill be created by this upload.
+ */
+function KalturaBulkUploadICalJobData(){
+	KalturaBulkUploadICalJobData.super_.call(this);
+	this.eventsType = null;
+}
+module.exports.KalturaBulkUploadICalJobData = KalturaBulkUploadICalJobData;
+
+util.inherits(KalturaBulkUploadICalJobData, KalturaBulkUploadJobData);
+
+
+/**
  */
 function KalturaBulkUploadXmlJobData(){
 	KalturaBulkUploadXmlJobData.super_.call(this);
@@ -12436,6 +12500,7 @@ util.inherits(KalturaIpAddressCondition, KalturaMatchCondition);
 
 /**
  * @param entryIdEqual string .
+ * @param entryIdIn string .
  * @param userIdEqual string .
  * @param createdAtGreaterThanOrEqual int .
  * @param createdAtLessThanOrEqual int .
@@ -12443,6 +12508,7 @@ util.inherits(KalturaIpAddressCondition, KalturaMatchCondition);
 function KalturaLikeBaseFilter(){
 	KalturaLikeBaseFilter.super_.call(this);
 	this.entryIdEqual = null;
+	this.entryIdIn = null;
 	this.userIdEqual = null;
 	this.createdAtGreaterThanOrEqual = null;
 	this.createdAtLessThanOrEqual = null;

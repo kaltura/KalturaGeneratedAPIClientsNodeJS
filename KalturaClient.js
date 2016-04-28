@@ -37,7 +37,7 @@ kaltura.enums = require('./KalturaTypes');
 
 function KalturaClient(config) {
 	this.setApiVersion('3.3.0');
-	this.setClientTag('node:16-04-27');
+	this.setClientTag('node:16-04-28');
 	this.init(config);
 }
 
@@ -624,6 +624,8 @@ KalturaClient.prototype.init = function(config){
 	this.scheduleEvent = new kaltura.services.KalturaScheduleEventService(this);
 	this.scheduleResource = new kaltura.services.KalturaScheduleResourceService(this);
 	this.scheduleEventResource = new kaltura.services.KalturaScheduleEventResourceService(this);
+	this.clientConfiguration = {};
+	this.requestConfiguration = {};
 };
 /**
  * @param string clientTag

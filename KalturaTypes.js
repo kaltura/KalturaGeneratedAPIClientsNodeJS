@@ -696,6 +696,11 @@ ACTIVE : 2,
 DELETED : 3,
 };
 
+var KalturaScheduleEventType = module.exports.KalturaScheduleEventType = {
+RECORD : 1,
+LIVE_STREAM : 2,
+};
+
 var KalturaScheduleResourceStatus = module.exports.KalturaScheduleResourceStatus = {
 DISABLED : 1,
 ACTIVE : 2,

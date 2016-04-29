@@ -12195,6 +12195,361 @@ module.exports.KalturaLiveConversionProfileService = KalturaLiveConversionProfil
 
 
 /**
+ *Class definition for the Kaltura service: scheduleEvent.
+ * The available service actions:
+ * @action add Allows you to add a new KalturaScheduleEvent object.
+ * @action get Retrieve a KalturaScheduleEvent object by ID.
+ * @action update Update an existing KalturaScheduleEvent object.
+ * @action delete Mark the KalturaScheduleEvent object as deleted.
+ * @action cancel Mark the KalturaScheduleEvent object as cancelled.
+ * @action list List KalturaScheduleEvent objects.
+ * @action addFromBulkUpload Add new bulk upload batch job.
+ */
+function KalturaScheduleEventService(client){
+	KalturaScheduleEventService.super_.call(this);
+	this.init(client);
+}
+
+util.inherits(KalturaScheduleEventService, kaltura.KalturaServiceBase);
+module.exports.KalturaScheduleEventService = KalturaScheduleEventService;
+
+/**
+ * Allows you to add a new KalturaScheduleEvent object.
+ * @param scheduleEvent KalturaScheduleEvent  (optional).
+ * @return KalturaScheduleEvent.
+ */
+KalturaScheduleEventService.prototype.add = function(callback, scheduleEvent){
+	var kparams = {};
+	this.client.addParam(kparams, 'scheduleEvent', kaltura.toParams(scheduleEvent));
+	this.client.queueServiceActionCall('schedule_scheduleevent', 'add', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Retrieve a KalturaScheduleEvent object by ID.
+ * @param scheduleEventId int  (optional).
+ * @return KalturaScheduleEvent.
+ */
+KalturaScheduleEventService.prototype.get = function(callback, scheduleEventId){
+	var kparams = {};
+	this.client.addParam(kparams, 'scheduleEventId', scheduleEventId);
+	this.client.queueServiceActionCall('schedule_scheduleevent', 'get', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Update an existing KalturaScheduleEvent object.
+ * @param scheduleEventId int  (optional).
+ * @param scheduleEvent KalturaScheduleEvent Id (optional).
+ * @return KalturaScheduleEvent.
+ */
+KalturaScheduleEventService.prototype.update = function(callback, scheduleEventId, scheduleEvent){
+	var kparams = {};
+	this.client.addParam(kparams, 'scheduleEventId', scheduleEventId);
+	this.client.addParam(kparams, 'scheduleEvent', kaltura.toParams(scheduleEvent));
+	this.client.queueServiceActionCall('schedule_scheduleevent', 'update', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Mark the KalturaScheduleEvent object as deleted.
+ * @param scheduleEventId int  (optional).
+ * @return KalturaScheduleEvent.
+ */
+KalturaScheduleEventService.prototype.deleteAction = function(callback, scheduleEventId){
+	var kparams = {};
+	this.client.addParam(kparams, 'scheduleEventId', scheduleEventId);
+	this.client.queueServiceActionCall('schedule_scheduleevent', 'delete', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Mark the KalturaScheduleEvent object as cancelled.
+ * @param scheduleEventId int  (optional).
+ * @return KalturaScheduleEvent.
+ */
+KalturaScheduleEventService.prototype.cancel = function(callback, scheduleEventId){
+	var kparams = {};
+	this.client.addParam(kparams, 'scheduleEventId', scheduleEventId);
+	this.client.queueServiceActionCall('schedule_scheduleevent', 'cancel', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * List KalturaScheduleEvent objects.
+ * @param filter KalturaScheduleEventFilter  (optional, default: null).
+ * @param pager KalturaFilterPager  (optional, default: null).
+ * @return KalturaScheduleEventListResponse.
+ */
+KalturaScheduleEventService.prototype.listAction = function(callback, filter, pager){
+	if(!filter){
+		filter = null;
+	}
+	if(!pager){
+		pager = null;
+	}
+	var kparams = {};
+	if (filter !== null){
+		this.client.addParam(kparams, 'filter', kaltura.toParams(filter));
+	}
+	if (pager !== null){
+		this.client.addParam(kparams, 'pager', kaltura.toParams(pager));
+	}
+	this.client.queueServiceActionCall('schedule_scheduleevent', 'list', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Add new bulk upload batch job.
+ * @param fileData file  (optional).
+ * @param bulkUploadData KalturaBulkUploadICalJobData  (optional, default: null).
+ * @return KalturaBulkUpload.
+ */
+KalturaScheduleEventService.prototype.addFromBulkUpload = function(callback, fileData, bulkUploadData){
+	if(!bulkUploadData){
+		bulkUploadData = null;
+	}
+	var kparams = {};
+	var kfiles = {};
+	this.client.addParam(kfiles, 'fileData', fileData);
+	if (bulkUploadData !== null){
+		this.client.addParam(kparams, 'bulkUploadData', kaltura.toParams(bulkUploadData));
+	}
+	this.client.queueServiceActionCall('schedule_scheduleevent', 'addFromBulkUpload', kparams, kfiles);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+
+/**
+ *Class definition for the Kaltura service: scheduleResource.
+ * The available service actions:
+ * @action add Allows you to add a new KalturaScheduleResource object.
+ * @action get Retrieve a KalturaScheduleResource object by ID.
+ * @action update Update an existing KalturaScheduleResource object.
+ * @action delete Mark the KalturaScheduleResource object as deleted.
+ * @action list List KalturaScheduleResource objects.
+ * @action addFromBulkUpload Add new bulk upload batch job.
+ */
+function KalturaScheduleResourceService(client){
+	KalturaScheduleResourceService.super_.call(this);
+	this.init(client);
+}
+
+util.inherits(KalturaScheduleResourceService, kaltura.KalturaServiceBase);
+module.exports.KalturaScheduleResourceService = KalturaScheduleResourceService;
+
+/**
+ * Allows you to add a new KalturaScheduleResource object.
+ * @param scheduleResource KalturaScheduleResource  (optional).
+ * @return KalturaScheduleResource.
+ */
+KalturaScheduleResourceService.prototype.add = function(callback, scheduleResource){
+	var kparams = {};
+	this.client.addParam(kparams, 'scheduleResource', kaltura.toParams(scheduleResource));
+	this.client.queueServiceActionCall('schedule_scheduleresource', 'add', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Retrieve a KalturaScheduleResource object by ID.
+ * @param scheduleResourceId int  (optional).
+ * @return KalturaScheduleResource.
+ */
+KalturaScheduleResourceService.prototype.get = function(callback, scheduleResourceId){
+	var kparams = {};
+	this.client.addParam(kparams, 'scheduleResourceId', scheduleResourceId);
+	this.client.queueServiceActionCall('schedule_scheduleresource', 'get', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Update an existing KalturaScheduleResource object.
+ * @param scheduleResourceId int  (optional).
+ * @param scheduleResource KalturaScheduleResource Id (optional).
+ * @return KalturaScheduleResource.
+ */
+KalturaScheduleResourceService.prototype.update = function(callback, scheduleResourceId, scheduleResource){
+	var kparams = {};
+	this.client.addParam(kparams, 'scheduleResourceId', scheduleResourceId);
+	this.client.addParam(kparams, 'scheduleResource', kaltura.toParams(scheduleResource));
+	this.client.queueServiceActionCall('schedule_scheduleresource', 'update', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Mark the KalturaScheduleResource object as deleted.
+ * @param scheduleResourceId int  (optional).
+ * @return KalturaScheduleResource.
+ */
+KalturaScheduleResourceService.prototype.deleteAction = function(callback, scheduleResourceId){
+	var kparams = {};
+	this.client.addParam(kparams, 'scheduleResourceId', scheduleResourceId);
+	this.client.queueServiceActionCall('schedule_scheduleresource', 'delete', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * List KalturaScheduleResource objects.
+ * @param filter KalturaScheduleResourceFilter  (optional, default: null).
+ * @param pager KalturaFilterPager  (optional, default: null).
+ * @return KalturaScheduleResourceListResponse.
+ */
+KalturaScheduleResourceService.prototype.listAction = function(callback, filter, pager){
+	if(!filter){
+		filter = null;
+	}
+	if(!pager){
+		pager = null;
+	}
+	var kparams = {};
+	if (filter !== null){
+		this.client.addParam(kparams, 'filter', kaltura.toParams(filter));
+	}
+	if (pager !== null){
+		this.client.addParam(kparams, 'pager', kaltura.toParams(pager));
+	}
+	this.client.queueServiceActionCall('schedule_scheduleresource', 'list', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Add new bulk upload batch job.
+ * @param fileData file  (optional).
+ * @param bulkUploadData KalturaBulkUploadCsvJobData  (optional, default: null).
+ * @return KalturaBulkUpload.
+ */
+KalturaScheduleResourceService.prototype.addFromBulkUpload = function(callback, fileData, bulkUploadData){
+	if(!bulkUploadData){
+		bulkUploadData = null;
+	}
+	var kparams = {};
+	var kfiles = {};
+	this.client.addParam(kfiles, 'fileData', fileData);
+	if (bulkUploadData !== null){
+		this.client.addParam(kparams, 'bulkUploadData', kaltura.toParams(bulkUploadData));
+	}
+	this.client.queueServiceActionCall('schedule_scheduleresource', 'addFromBulkUpload', kparams, kfiles);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+
+/**
+ *Class definition for the Kaltura service: scheduleEventResource.
+ * The available service actions:
+ * @action add Allows you to add a new KalturaScheduleEventResource object.
+ * @action get Retrieve a KalturaScheduleEventResource object by ID.
+ * @action update Update an existing KalturaScheduleEventResource object.
+ * @action delete Mark the KalturaScheduleEventResource object as deleted.
+ * @action list List KalturaScheduleEventResource objects.
+ */
+function KalturaScheduleEventResourceService(client){
+	KalturaScheduleEventResourceService.super_.call(this);
+	this.init(client);
+}
+
+util.inherits(KalturaScheduleEventResourceService, kaltura.KalturaServiceBase);
+module.exports.KalturaScheduleEventResourceService = KalturaScheduleEventResourceService;
+
+/**
+ * Allows you to add a new KalturaScheduleEventResource object.
+ * @param scheduleEventResource KalturaScheduleEventResource  (optional).
+ * @return KalturaScheduleEventResource.
+ */
+KalturaScheduleEventResourceService.prototype.add = function(callback, scheduleEventResource){
+	var kparams = {};
+	this.client.addParam(kparams, 'scheduleEventResource', kaltura.toParams(scheduleEventResource));
+	this.client.queueServiceActionCall('schedule_scheduleeventresource', 'add', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Retrieve a KalturaScheduleEventResource object by ID.
+ * @param scheduleEventId int  (optional).
+ * @param scheduleResourceId int  (optional).
+ * @return KalturaScheduleEventResource.
+ */
+KalturaScheduleEventResourceService.prototype.get = function(callback, scheduleEventId, scheduleResourceId){
+	var kparams = {};
+	this.client.addParam(kparams, 'scheduleEventId', scheduleEventId);
+	this.client.addParam(kparams, 'scheduleResourceId', scheduleResourceId);
+	this.client.queueServiceActionCall('schedule_scheduleeventresource', 'get', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Update an existing KalturaScheduleEventResource object.
+ * @param scheduleEventId int  (optional).
+ * @param scheduleResourceId int  (optional).
+ * @param scheduleEventResource KalturaScheduleEventResource  (optional).
+ * @return KalturaScheduleEventResource.
+ */
+KalturaScheduleEventResourceService.prototype.update = function(callback, scheduleEventId, scheduleResourceId, scheduleEventResource){
+	var kparams = {};
+	this.client.addParam(kparams, 'scheduleEventId', scheduleEventId);
+	this.client.addParam(kparams, 'scheduleResourceId', scheduleResourceId);
+	this.client.addParam(kparams, 'scheduleEventResource', kaltura.toParams(scheduleEventResource));
+	this.client.queueServiceActionCall('schedule_scheduleeventresource', 'update', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Mark the KalturaScheduleEventResource object as deleted.
+ * @param scheduleEventId int  (optional).
+ * @param scheduleResourceId int  (optional).
+ * @return .
+ */
+KalturaScheduleEventResourceService.prototype.deleteAction = function(callback, scheduleEventId, scheduleResourceId){
+	var kparams = {};
+	this.client.addParam(kparams, 'scheduleEventId', scheduleEventId);
+	this.client.addParam(kparams, 'scheduleResourceId', scheduleResourceId);
+	this.client.queueServiceActionCall('schedule_scheduleeventresource', 'delete', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * List KalturaScheduleEventResource objects.
+ * @param filter KalturaScheduleEventResourceFilter  (optional, default: null).
+ * @param pager KalturaFilterPager  (optional, default: null).
+ * @return KalturaScheduleEventResourceListResponse.
+ */
+KalturaScheduleEventResourceService.prototype.listAction = function(callback, filter, pager){
+	if(!filter){
+		filter = null;
+	}
+	if(!pager){
+		pager = null;
+	}
+	var kparams = {};
+	if (filter !== null){
+		this.client.addParam(kparams, 'filter', kaltura.toParams(filter));
+	}
+	if (pager !== null){
+		this.client.addParam(kparams, 'pager', kaltura.toParams(pager));
+	}
+	this.client.queueServiceActionCall('schedule_scheduleeventresource', 'list', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+
+/**
  *Class definition for the Kaltura service: scheduledTaskProfile.
  * The available service actions:
  * @action add Add a new scheduled task profile.
@@ -12364,317 +12719,6 @@ KalturaIntegrationService.prototype.notify = function(callback, id){
 	var kparams = {};
 	this.client.addParam(kparams, 'id', id);
 	this.client.queueServiceActionCall('integration_integration', 'notify', kparams);
-	if (!this.client.isMultiRequest()){
-		this.client.doQueue(callback);
-	}
-};
-
-/**
- *Class definition for the Kaltura service: scheduleEvent.
- * The available service actions:
- * @action add Allows you to add a new KalturaScheduleEvent object.
- * @action get Retrieve a KalturaScheduleEvent object by ID.
- * @action update Update an existing KalturaScheduleEvent object.
- * @action delete Mark the KalturaScheduleEvent object as deleted.
- * @action cancel Mark the KalturaScheduleEvent object as cancelled.
- * @action list List KalturaScheduleEvent objects.
- */
-function KalturaScheduleEventService(client){
-	KalturaScheduleEventService.super_.call(this);
-	this.init(client);
-}
-
-util.inherits(KalturaScheduleEventService, kaltura.KalturaServiceBase);
-module.exports.KalturaScheduleEventService = KalturaScheduleEventService;
-
-/**
- * Allows you to add a new KalturaScheduleEvent object.
- * @param scheduleEvent KalturaScheduleEvent  (optional).
- * @return KalturaScheduleEvent.
- */
-KalturaScheduleEventService.prototype.add = function(callback, scheduleEvent){
-	var kparams = {};
-	this.client.addParam(kparams, 'scheduleEvent', kaltura.toParams(scheduleEvent));
-	this.client.queueServiceActionCall('schedule_scheduleevent', 'add', kparams);
-	if (!this.client.isMultiRequest()){
-		this.client.doQueue(callback);
-	}
-};
-/**
- * Retrieve a KalturaScheduleEvent object by ID.
- * @param scheduleEventId int  (optional).
- * @return KalturaScheduleEvent.
- */
-KalturaScheduleEventService.prototype.get = function(callback, scheduleEventId){
-	var kparams = {};
-	this.client.addParam(kparams, 'scheduleEventId', scheduleEventId);
-	this.client.queueServiceActionCall('schedule_scheduleevent', 'get', kparams);
-	if (!this.client.isMultiRequest()){
-		this.client.doQueue(callback);
-	}
-};
-/**
- * Update an existing KalturaScheduleEvent object.
- * @param scheduleEventId int  (optional).
- * @param scheduleEvent KalturaScheduleEvent Id (optional).
- * @return KalturaScheduleEvent.
- */
-KalturaScheduleEventService.prototype.update = function(callback, scheduleEventId, scheduleEvent){
-	var kparams = {};
-	this.client.addParam(kparams, 'scheduleEventId', scheduleEventId);
-	this.client.addParam(kparams, 'scheduleEvent', kaltura.toParams(scheduleEvent));
-	this.client.queueServiceActionCall('schedule_scheduleevent', 'update', kparams);
-	if (!this.client.isMultiRequest()){
-		this.client.doQueue(callback);
-	}
-};
-/**
- * Mark the KalturaScheduleEvent object as deleted.
- * @param scheduleEventId int  (optional).
- * @return KalturaScheduleEvent.
- */
-KalturaScheduleEventService.prototype.deleteAction = function(callback, scheduleEventId){
-	var kparams = {};
-	this.client.addParam(kparams, 'scheduleEventId', scheduleEventId);
-	this.client.queueServiceActionCall('schedule_scheduleevent', 'delete', kparams);
-	if (!this.client.isMultiRequest()){
-		this.client.doQueue(callback);
-	}
-};
-/**
- * Mark the KalturaScheduleEvent object as cancelled.
- * @param scheduleEventId int  (optional).
- * @return KalturaScheduleEvent.
- */
-KalturaScheduleEventService.prototype.cancel = function(callback, scheduleEventId){
-	var kparams = {};
-	this.client.addParam(kparams, 'scheduleEventId', scheduleEventId);
-	this.client.queueServiceActionCall('schedule_scheduleevent', 'cancel', kparams);
-	if (!this.client.isMultiRequest()){
-		this.client.doQueue(callback);
-	}
-};
-/**
- * List KalturaScheduleEvent objects.
- * @param filter KalturaScheduleEventFilter  (optional, default: null).
- * @param pager KalturaFilterPager  (optional, default: null).
- * @return KalturaScheduleEventListResponse.
- */
-KalturaScheduleEventService.prototype.listAction = function(callback, filter, pager){
-	if(!filter){
-		filter = null;
-	}
-	if(!pager){
-		pager = null;
-	}
-	var kparams = {};
-	if (filter !== null){
-		this.client.addParam(kparams, 'filter', kaltura.toParams(filter));
-	}
-	if (pager !== null){
-		this.client.addParam(kparams, 'pager', kaltura.toParams(pager));
-	}
-	this.client.queueServiceActionCall('schedule_scheduleevent', 'list', kparams);
-	if (!this.client.isMultiRequest()){
-		this.client.doQueue(callback);
-	}
-};
-
-/**
- *Class definition for the Kaltura service: scheduleResource.
- * The available service actions:
- * @action add Allows you to add a new KalturaScheduleResource object.
- * @action get Retrieve a KalturaScheduleResource object by ID.
- * @action update Update an existing KalturaScheduleResource object.
- * @action delete Mark the KalturaScheduleResource object as deleted.
- * @action list List KalturaScheduleResource objects.
- */
-function KalturaScheduleResourceService(client){
-	KalturaScheduleResourceService.super_.call(this);
-	this.init(client);
-}
-
-util.inherits(KalturaScheduleResourceService, kaltura.KalturaServiceBase);
-module.exports.KalturaScheduleResourceService = KalturaScheduleResourceService;
-
-/**
- * Allows you to add a new KalturaScheduleResource object.
- * @param scheduleResource KalturaScheduleResource  (optional).
- * @return KalturaScheduleResource.
- */
-KalturaScheduleResourceService.prototype.add = function(callback, scheduleResource){
-	var kparams = {};
-	this.client.addParam(kparams, 'scheduleResource', kaltura.toParams(scheduleResource));
-	this.client.queueServiceActionCall('schedule_scheduleresource', 'add', kparams);
-	if (!this.client.isMultiRequest()){
-		this.client.doQueue(callback);
-	}
-};
-/**
- * Retrieve a KalturaScheduleResource object by ID.
- * @param scheduleResourceId int  (optional).
- * @return KalturaScheduleResource.
- */
-KalturaScheduleResourceService.prototype.get = function(callback, scheduleResourceId){
-	var kparams = {};
-	this.client.addParam(kparams, 'scheduleResourceId', scheduleResourceId);
-	this.client.queueServiceActionCall('schedule_scheduleresource', 'get', kparams);
-	if (!this.client.isMultiRequest()){
-		this.client.doQueue(callback);
-	}
-};
-/**
- * Update an existing KalturaScheduleResource object.
- * @param scheduleResourceId int  (optional).
- * @param scheduleResource KalturaScheduleResource Id (optional).
- * @return KalturaScheduleResource.
- */
-KalturaScheduleResourceService.prototype.update = function(callback, scheduleResourceId, scheduleResource){
-	var kparams = {};
-	this.client.addParam(kparams, 'scheduleResourceId', scheduleResourceId);
-	this.client.addParam(kparams, 'scheduleResource', kaltura.toParams(scheduleResource));
-	this.client.queueServiceActionCall('schedule_scheduleresource', 'update', kparams);
-	if (!this.client.isMultiRequest()){
-		this.client.doQueue(callback);
-	}
-};
-/**
- * Mark the KalturaScheduleResource object as deleted.
- * @param scheduleResourceId int  (optional).
- * @return KalturaScheduleResource.
- */
-KalturaScheduleResourceService.prototype.deleteAction = function(callback, scheduleResourceId){
-	var kparams = {};
-	this.client.addParam(kparams, 'scheduleResourceId', scheduleResourceId);
-	this.client.queueServiceActionCall('schedule_scheduleresource', 'delete', kparams);
-	if (!this.client.isMultiRequest()){
-		this.client.doQueue(callback);
-	}
-};
-/**
- * List KalturaScheduleResource objects.
- * @param filter KalturaScheduleResourceFilter  (optional, default: null).
- * @param pager KalturaFilterPager  (optional, default: null).
- * @return KalturaScheduleResourceListResponse.
- */
-KalturaScheduleResourceService.prototype.listAction = function(callback, filter, pager){
-	if(!filter){
-		filter = null;
-	}
-	if(!pager){
-		pager = null;
-	}
-	var kparams = {};
-	if (filter !== null){
-		this.client.addParam(kparams, 'filter', kaltura.toParams(filter));
-	}
-	if (pager !== null){
-		this.client.addParam(kparams, 'pager', kaltura.toParams(pager));
-	}
-	this.client.queueServiceActionCall('schedule_scheduleresource', 'list', kparams);
-	if (!this.client.isMultiRequest()){
-		this.client.doQueue(callback);
-	}
-};
-
-/**
- *Class definition for the Kaltura service: scheduleEventResource.
- * The available service actions:
- * @action add Allows you to add a new KalturaScheduleEventResource object.
- * @action get Retrieve a KalturaScheduleEventResource object by ID.
- * @action update Update an existing KalturaScheduleEventResource object.
- * @action delete Mark the KalturaScheduleEventResource object as deleted.
- * @action list List KalturaScheduleEventResource objects.
- */
-function KalturaScheduleEventResourceService(client){
-	KalturaScheduleEventResourceService.super_.call(this);
-	this.init(client);
-}
-
-util.inherits(KalturaScheduleEventResourceService, kaltura.KalturaServiceBase);
-module.exports.KalturaScheduleEventResourceService = KalturaScheduleEventResourceService;
-
-/**
- * Allows you to add a new KalturaScheduleEventResource object.
- * @param scheduleEventResource KalturaScheduleEventResource  (optional).
- * @return KalturaScheduleEventResource.
- */
-KalturaScheduleEventResourceService.prototype.add = function(callback, scheduleEventResource){
-	var kparams = {};
-	this.client.addParam(kparams, 'scheduleEventResource', kaltura.toParams(scheduleEventResource));
-	this.client.queueServiceActionCall('schedule_scheduleeventresource', 'add', kparams);
-	if (!this.client.isMultiRequest()){
-		this.client.doQueue(callback);
-	}
-};
-/**
- * Retrieve a KalturaScheduleEventResource object by ID.
- * @param scheduleEventId int  (optional).
- * @param scheduleResourceId int  (optional).
- * @return KalturaScheduleEventResource.
- */
-KalturaScheduleEventResourceService.prototype.get = function(callback, scheduleEventId, scheduleResourceId){
-	var kparams = {};
-	this.client.addParam(kparams, 'scheduleEventId', scheduleEventId);
-	this.client.addParam(kparams, 'scheduleResourceId', scheduleResourceId);
-	this.client.queueServiceActionCall('schedule_scheduleeventresource', 'get', kparams);
-	if (!this.client.isMultiRequest()){
-		this.client.doQueue(callback);
-	}
-};
-/**
- * Update an existing KalturaScheduleEventResource object.
- * @param scheduleEventId int  (optional).
- * @param scheduleResourceId int  (optional).
- * @param scheduleEventResource KalturaScheduleEventResource  (optional).
- * @return KalturaScheduleEventResource.
- */
-KalturaScheduleEventResourceService.prototype.update = function(callback, scheduleEventId, scheduleResourceId, scheduleEventResource){
-	var kparams = {};
-	this.client.addParam(kparams, 'scheduleEventId', scheduleEventId);
-	this.client.addParam(kparams, 'scheduleResourceId', scheduleResourceId);
-	this.client.addParam(kparams, 'scheduleEventResource', kaltura.toParams(scheduleEventResource));
-	this.client.queueServiceActionCall('schedule_scheduleeventresource', 'update', kparams);
-	if (!this.client.isMultiRequest()){
-		this.client.doQueue(callback);
-	}
-};
-/**
- * Mark the KalturaScheduleEventResource object as deleted.
- * @param scheduleEventId int  (optional).
- * @param scheduleResourceId int  (optional).
- * @return .
- */
-KalturaScheduleEventResourceService.prototype.deleteAction = function(callback, scheduleEventId, scheduleResourceId){
-	var kparams = {};
-	this.client.addParam(kparams, 'scheduleEventId', scheduleEventId);
-	this.client.addParam(kparams, 'scheduleResourceId', scheduleResourceId);
-	this.client.queueServiceActionCall('schedule_scheduleeventresource', 'delete', kparams);
-	if (!this.client.isMultiRequest()){
-		this.client.doQueue(callback);
-	}
-};
-/**
- * List KalturaScheduleEventResource objects.
- * @param filter KalturaScheduleEventResourceFilter  (optional, default: null).
- * @param pager KalturaFilterPager  (optional, default: null).
- * @return KalturaScheduleEventResourceListResponse.
- */
-KalturaScheduleEventResourceService.prototype.listAction = function(callback, filter, pager){
-	if(!filter){
-		filter = null;
-	}
-	if(!pager){
-		pager = null;
-	}
-	var kparams = {};
-	if (filter !== null){
-		this.client.addParam(kparams, 'filter', kaltura.toParams(filter));
-	}
-	if (pager !== null){
-		this.client.addParam(kparams, 'pager', kaltura.toParams(pager));
-	}
-	this.client.queueServiceActionCall('schedule_scheduleeventresource', 'list', kparams);
 	if (!this.client.isMultiRequest()){
 		this.client.doQueue(callback);
 	}

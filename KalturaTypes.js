@@ -1434,6 +1434,7 @@ RECALCULATE_CACHE : '41',
 };
 
 var KalturaBulkUploadAction = module.exports.KalturaBulkUploadAction = {
+CANCEL : 'scheduleBulkUpload.CANCEL',
 ADD : '1',
 UPDATE : '2',
 DELETE : '3',
@@ -1443,6 +1444,8 @@ ADD_OR_UPDATE : '6',
 };
 
 var KalturaBulkUploadObjectType = module.exports.KalturaBulkUploadObjectType = {
+SCHEDULE_EVENT : 'scheduleBulkUpload.SCHEDULE_EVENT',
+SCHEDULE_RESOURCE : 'scheduleBulkUpload.SCHEDULE_RESOURCE',
 ENTRY : '1',
 CATEGORY : '2',
 USER : '3',
@@ -1464,6 +1467,8 @@ CSV : 'bulkUploadCsv.CSV',
 FILTER : 'bulkUploadFilter.FILTER',
 XML : 'bulkUploadXml.XML',
 DROP_FOLDER_XML : 'dropFolderXmlBulkUpload.DROP_FOLDER_XML',
+ICAL : 'scheduleBulkUpload.ICAL',
+DROP_FOLDER_ICAL : 'scheduleDropFolder.DROP_FOLDER_ICAL',
 };
 
 var KalturaCameraScheduleResourceOrderBy = module.exports.KalturaCameraScheduleResourceOrderBy = {
@@ -1999,6 +2004,7 @@ FILE_NO_MATCH : '13',
 
 var KalturaDropFolderFileHandlerType = module.exports.KalturaDropFolderFileHandlerType = {
 XML : 'dropFolderXmlBulkUpload.XML',
+ICAL : 'scheduleDropFolder.ICAL',
 CONTENT : '1',
 };
 

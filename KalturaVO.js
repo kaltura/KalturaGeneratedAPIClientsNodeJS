@@ -136,6 +136,7 @@ util.inherits(KalturaCondition, kaltura.KalturaObjectBase);
  * @param conditions array Conditions to validate the rule.
  * @param contexts array Indicates what contexts should be tested by this rule.
  * @param stopProcessing bool Indicates that this rule is enough and no need to continue checking the rest of the rules.
+ * @param forceAdminValidation int Indicates if we should force ks validation for admin ks users as well.
  */
 function KalturaRule(){
 	KalturaRule.super_.call(this);
@@ -146,6 +147,7 @@ function KalturaRule(){
 	this.conditions = null;
 	this.contexts = null;
 	this.stopProcessing = null;
+	this.forceAdminValidation = null;
 }
 module.exports.KalturaRule = KalturaRule;
 
@@ -216,6 +218,42 @@ function KalturaAccessControlScope(){
 module.exports.KalturaAccessControlScope = KalturaAccessControlScope;
 
 util.inherits(KalturaAccessControlScope, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param dimension string The dimension whose values should be filtered.
+ * @param values string The (comma separated) values to include in the filter.
+ */
+function KalturaReportFilter(){
+	KalturaReportFilter.super_.call(this);
+	this.dimension = null;
+	this.values = null;
+}
+module.exports.KalturaReportFilter = KalturaReportFilter;
+
+util.inherits(KalturaReportFilter, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param from_time string Query start time (in local time).
+ * @param to_time string Query end time (in local time).
+ * @param metrics string Comma separated metrics list.
+ * @param utcOffset float Timezone offset from UTC (in minutes).
+ * @param dimensions string Comma separated dimensions list.
+ * @param filters array Array of filters.
+ */
+function KalturaAnalyticsFilter(){
+	KalturaAnalyticsFilter.super_.call(this);
+	this.from_time = null;
+	this.to_time = null;
+	this.metrics = null;
+	this.utcOffset = null;
+	this.dimensions = null;
+	this.filters = null;
+}
+module.exports.KalturaAnalyticsFilter = KalturaAnalyticsFilter;
+
+util.inherits(KalturaAnalyticsFilter, kaltura.KalturaObjectBase);
 
 
 /**
@@ -10960,6 +10998,18 @@ util.inherits(KalturaUrlTokenizerVelocix, KalturaUrlTokenizer);
 
 
 /**
+ * @param tokenizationFormat int .
+ */
+function KalturaUrlTokenizerVnpt(){
+	KalturaUrlTokenizerVnpt.super_.call(this);
+	this.tokenizationFormat = null;
+}
+module.exports.KalturaUrlTokenizerVnpt = KalturaUrlTokenizerVnpt;
+
+util.inherits(KalturaUrlTokenizerVnpt, KalturaUrlTokenizer);
+
+
+/**
  * @param userAgentRestrictionType int User agent restriction type (Allow or deny).
  * @param userAgentRegexList string A comma seperated list of user agent regular expressions.
  */
@@ -12145,38 +12195,26 @@ util.inherits(KalturaEntryResource, KalturaContentResource);
 
 
 /**
- * @param idEqual int .
- * @param idIn string .
- * @param idNotIn string .
  * @param entryIdEqual string .
  * @param entryIdIn string .
- * @param entryIdNotIn string .
  * @param serverNodeIdEqual int .
- * @param serverNodeIdIn string .
- * @param serverNodeIdNotIn string .
- * @param createdAtLessThanOrEqual int .
  * @param createdAtGreaterThanOrEqual int .
- * @param updatedAtLessThanOrEqual int .
+ * @param createdAtLessThanOrEqual int .
  * @param updatedAtGreaterThanOrEqual int .
+ * @param updatedAtLessThanOrEqual int .
  * @param statusEqual int .
- * @param statusIn int .
+ * @param statusIn string .
  * @param serverTypeEqual string .
  */
 function KalturaEntryServerNodeBaseFilter(){
 	KalturaEntryServerNodeBaseFilter.super_.call(this);
-	this.idEqual = null;
-	this.idIn = null;
-	this.idNotIn = null;
 	this.entryIdEqual = null;
 	this.entryIdIn = null;
-	this.entryIdNotIn = null;
 	this.serverNodeIdEqual = null;
-	this.serverNodeIdIn = null;
-	this.serverNodeIdNotIn = null;
-	this.createdAtLessThanOrEqual = null;
 	this.createdAtGreaterThanOrEqual = null;
-	this.updatedAtLessThanOrEqual = null;
+	this.createdAtLessThanOrEqual = null;
 	this.updatedAtGreaterThanOrEqual = null;
+	this.updatedAtLessThanOrEqual = null;
 	this.statusEqual = null;
 	this.statusIn = null;
 	this.serverTypeEqual = null;
@@ -12958,16 +12996,6 @@ function KalturaRemoteStorageResources(){
 module.exports.KalturaRemoteStorageResources = KalturaRemoteStorageResources;
 
 util.inherits(KalturaRemoteStorageResources, KalturaContentResource);
-
-
-/**
- */
-function KalturaReportFilter(){
-	KalturaReportFilter.super_.call(this);
-}
-module.exports.KalturaReportFilter = KalturaReportFilter;
-
-util.inherits(KalturaReportFilter, KalturaReportBaseFilter);
 
 
 /**

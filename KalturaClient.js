@@ -37,7 +37,7 @@ kaltura.enums = require('./KalturaTypes');
 
 function KalturaClient(config) {
 	this.setApiVersion('3.3.0');
-	this.setClientTag('node:16-05-03');
+	this.setClientTag('node:16-05-04');
 	this.init(config);
 }
 
@@ -61,6 +61,11 @@ KalturaClient.prototype.accessControl = null;
  * @param kaltura.services.KalturaAdminUserService
  */
 KalturaClient.prototype.adminUser = null;
+/**
+ * api for getting analytics data
+ * @param kaltura.services.KalturaAnalyticsService
+ */
+KalturaClient.prototype.analytics = null;
 /**
  * Manage application authentication tokens
  * @param kaltura.services.KalturaAppTokenService
@@ -533,6 +538,7 @@ KalturaClient.prototype.init = function(config){
 	this.accessControlProfile = new kaltura.services.KalturaAccessControlProfileService(this);
 	this.accessControl = new kaltura.services.KalturaAccessControlService(this);
 	this.adminUser = new kaltura.services.KalturaAdminUserService(this);
+	this.analytics = new kaltura.services.KalturaAnalyticsService(this);
 	this.appToken = new kaltura.services.KalturaAppTokenService(this);
 	this.baseEntry = new kaltura.services.KalturaBaseEntryService(this);
 	this.bulkUpload = new kaltura.services.KalturaBulkUploadService(this);

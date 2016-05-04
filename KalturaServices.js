@@ -313,6 +313,33 @@ KalturaAdminUserService.prototype.setInitialPassword = function(callback, hashKe
 };
 
 /**
+ *Class definition for the Kaltura service: analytics.
+ * The available service actions:
+ * @action query report query action allows to get a analytics data for specific query dimensions, metrics and filters.
+ */
+function KalturaAnalyticsService(client){
+	KalturaAnalyticsService.super_.call(this);
+	this.init(client);
+}
+
+util.inherits(KalturaAnalyticsService, kaltura.KalturaServiceBase);
+module.exports.KalturaAnalyticsService = KalturaAnalyticsService;
+
+/**
+ * report query action allows to get a analytics data for specific query dimensions, metrics and filters.
+ * @param filter KalturaAnalyticsFilter the analytics query filter (optional).
+ * @return KalturaReportResponse.
+ */
+KalturaAnalyticsService.prototype.query = function(callback, filter){
+	var kparams = {};
+	this.client.addParam(kparams, 'filter', kaltura.toParams(filter));
+	this.client.queueServiceActionCall('analytics', 'query', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+
+/**
  *Class definition for the Kaltura service: appToken.
  * The available service actions:
  * @action add Add new application authentication token.

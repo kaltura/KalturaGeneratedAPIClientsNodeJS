@@ -48,15 +48,6 @@ INGEST : 1,
 CONVERT_WHEN_MISSING : 2,
 };
 
-var KalturaAssetStatus = module.exports.KalturaAssetStatus = {
-ERROR : -1,
-QUEUED : 0,
-READY : 2,
-DELETED : 3,
-IMPORTING : 7,
-EXPORTING : 9,
-};
-
 var KalturaAttachmentAssetStatus = module.exports.KalturaAttachmentAssetStatus = {
 ERROR : -1,
 QUEUED : 0,
@@ -908,13 +899,6 @@ AUTOMATIC : 2,
 MANUAL : 3,
 };
 
-var KalturaStorageServePriority = module.exports.KalturaStorageServePriority = {
-KALTURA_ONLY : 1,
-KALTURA_FIRST : 2,
-EXTERNAL_FIRST : 3,
-EXTERNAL_ONLY : 4,
-};
-
 var KalturaSyndicationFeedStatus = module.exports.KalturaSyndicationFeedStatus = {
 DELETED : -1,
 ACTIVE : 1,
@@ -1061,6 +1045,12 @@ DELETED : 3,
 var KalturaWidgetSecurityType = module.exports.KalturaWidgetSecurityType = {
 NONE : 1,
 TIMEHASH : 2,
+};
+
+var KalturaYouTubeApiDistributionCaptionAction = module.exports.KalturaYouTubeApiDistributionCaptionAction = {
+UPDATE_ACTION : 1,
+SUBMIT_ACTION : 2,
+DELETE_ACTION : 3,
 };
 
 var KalturaAccessControlOrderBy = module.exports.KalturaAccessControlOrderBy = {
@@ -2054,9 +2044,6 @@ NOT_AVAILABLE : 'notavailable',
 SHORT : 'short',
 };
 
-var KalturaDynamicEnum = module.exports.KalturaDynamicEnum = {
-};
-
 var KalturaEdgeServerNodeOrderBy = module.exports.KalturaEdgeServerNodeOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 HEARTBEAT_TIME_ASC : '+heartbeatTime',
@@ -2341,6 +2328,16 @@ INTERCALL : 'InterCall',
 YOUTUBE : 'YouTube',
 };
 
+var KalturaFacebookDistributionProfileOrderBy = module.exports.KalturaFacebookDistributionProfileOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+var KalturaFacebookDistributionProviderOrderBy = module.exports.KalturaFacebookDistributionProviderOrderBy = {
+};
+
 var KalturaFileAssetObjectType = module.exports.KalturaFileAssetObjectType = {
 UI_CONF : '2',
 };
@@ -2605,6 +2602,16 @@ NAME_DESC : '-name',
 PLAYLIST_ID_DESC : '-playlistId',
 TYPE_DESC : '-type',
 UPDATED_AT_DESC : '-updatedAt',
+};
+
+var KalturaIdeticDistributionProfileOrderBy = module.exports.KalturaIdeticDistributionProfileOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+var KalturaIdeticDistributionProviderOrderBy = module.exports.KalturaIdeticDistributionProviderOrderBy = {
 };
 
 var KalturaImageFlavorParamsOrderBy = module.exports.KalturaImageFlavorParamsOrderBy = {
@@ -4080,23 +4087,6 @@ CREATED_AT_DESC : '-createdAt',
 RECENT : 'recent',
 };
 
-var KalturaSystemPartnerLimitType = module.exports.KalturaSystemPartnerLimitType = {
-ACCESS_CONTROLS : 'ACCESS_CONTROLS',
-ADMIN_LOGIN_USERS : 'ADMIN_LOGIN_USERS',
-BULK_SIZE : 'BULK_SIZE',
-END_USERS : 'END_USERS',
-ENTRIES : 'ENTRIES',
-LIVE_STREAM_INPUTS : 'LIVE_STREAM_INPUTS',
-LIVE_STREAM_OUTPUTS : 'LIVE_STREAM_OUTPUTS',
-LOGIN_USERS : 'LOGIN_USERS',
-MONTHLY_BANDWIDTH : 'MONTHLY_BANDWIDTH',
-MONTHLY_STORAGE : 'MONTHLY_STORAGE',
-MONTHLY_STORAGE_AND_BANDWIDTH : 'MONTHLY_STORAGE_AND_BANDWIDTH',
-MONTHLY_STREAM_ENTRIES : 'MONTHLY_STREAM_ENTRIES',
-PUBLISHERS : 'PUBLISHERS',
-USER_LOGIN_ATTEMPTS : 'USER_LOGIN_ATTEMPTS',
-};
-
 var KalturaTaggedObjectType = module.exports.KalturaTaggedObjectType = {
 ENTRY : '1',
 CATEGORY : '2',
@@ -4333,4 +4323,14 @@ NAME_DESC : '-name',
 PLAYLIST_ID_DESC : '-playlistId',
 TYPE_DESC : '-type',
 UPDATED_AT_DESC : '-updatedAt',
+};
+
+var KalturaYoutubeApiDistributionProfileOrderBy = module.exports.KalturaYoutubeApiDistributionProfileOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+var KalturaYoutubeApiDistributionProviderOrderBy = module.exports.KalturaYoutubeApiDistributionProviderOrderBy = {
 };

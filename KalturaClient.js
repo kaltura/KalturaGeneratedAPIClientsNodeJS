@@ -37,7 +37,7 @@ kaltura.enums = require('./KalturaTypes');
 
 function KalturaClient(config) {
 	this.setApiVersion('3.3.0');
-	this.setClientTag('node:16-05-11');
+	this.setClientTag('node:16-05-20');
 	this.init(config);
 }
 
@@ -117,11 +117,6 @@ KalturaClient.prototype.data = null;
  * @param kaltura.services.KalturaDeliveryProfileService
  */
 KalturaClient.prototype.deliveryProfile = null;
-/**
- * Document service
- * @param kaltura.services.KalturaDocumentService
- */
-KalturaClient.prototype.document = null;
 /**
  * EmailIngestionProfile service lets you manage email ingestion profile records
  * @param kaltura.services.KalturaEmailIngestionProfileService
@@ -343,45 +338,10 @@ KalturaClient.prototype.metadata = null;
  */
 KalturaClient.prototype.metadataProfile = null;
 /**
- * 
- * @param kaltura.services.KalturaMetadataBatchService
- */
-KalturaClient.prototype.metadataBatch = null;
-/**
  * Document service lets you upload and manage document files
  * @param kaltura.services.KalturaDocumentsService
  */
 KalturaClient.prototype.documents = null;
-/**
- * System user service
- * @param kaltura.services.KalturaFileSyncService
- */
-KalturaClient.prototype.fileSync = null;
-/**
- * System partner service
- * @param kaltura.services.KalturaSystemPartnerService
- */
-KalturaClient.prototype.systemPartner = null;
-/**
- * Entry Admin service
- * @param kaltura.services.KalturaEntryAdminService
- */
-KalturaClient.prototype.entryAdmin = null;
-/**
- * UiConf Admin service
- * @param kaltura.services.KalturaUiConfAdminService
- */
-KalturaClient.prototype.uiConfAdmin = null;
-/**
- * 
- * @param kaltura.services.KalturaReportAdminService
- */
-KalturaClient.prototype.reportAdmin = null;
-/**
- * Internal Tools Service
- * @param kaltura.services.KalturaKalturaInternalToolsSystemHelperService
- */
-KalturaClient.prototype.kalturaInternalToolsSystemHelper = null;
 /**
  * Virus scan profile service
  * @param kaltura.services.KalturaVirusScanProfileService
@@ -412,11 +372,6 @@ KalturaClient.prototype.genericDistributionProvider = null;
  * @param kaltura.services.KalturaGenericDistributionProviderActionService
  */
 KalturaClient.prototype.genericDistributionProviderAction = null;
-/**
- * 
- * @param kaltura.services.KalturaContentDistributionBatchService
- */
-KalturaClient.prototype.contentDistributionBatch = null;
 /**
  * Cue Point service
  * @param kaltura.services.KalturaCuePointService
@@ -463,11 +418,6 @@ KalturaClient.prototype.captionAsset = null;
  */
 KalturaClient.prototype.captionParams = null;
 /**
- * Search caption asset items
- * @param kaltura.services.KalturaCaptionAssetItemService
- */
-KalturaClient.prototype.captionAssetItem = null;
-/**
  * Retrieve information and invoke actions on attachment Asset
  * @param kaltura.services.KalturaAttachmentAssetService
  */
@@ -497,11 +447,6 @@ KalturaClient.prototype.eventNotificationTemplate = null;
  * @param kaltura.services.KalturaExternalMediaService
  */
 KalturaClient.prototype.externalMedia = null;
-/**
- * Enable serving live conversion profile to the Wowza servers as XML
- * @param kaltura.services.KalturaLiveConversionProfileService
- */
-KalturaClient.prototype.liveConversionProfile = null;
 /**
  * ScheduleEvent service lets you create and manage schedule events
  * @param kaltura.services.KalturaScheduleEventService
@@ -549,7 +494,6 @@ KalturaClient.prototype.init = function(config){
 	this.conversionProfile = new kaltura.services.KalturaConversionProfileService(this);
 	this.data = new kaltura.services.KalturaDataService(this);
 	this.deliveryProfile = new kaltura.services.KalturaDeliveryProfileService(this);
-	this.document = new kaltura.services.KalturaDocumentService(this);
 	this.EmailIngestionProfile = new kaltura.services.KalturaEmailIngestionProfileService(this);
 	this.entryServerNode = new kaltura.services.KalturaEntryServerNodeService(this);
 	this.fileAsset = new kaltura.services.KalturaFileAssetService(this);
@@ -593,21 +537,13 @@ KalturaClient.prototype.init = function(config){
 	this.xInternal = new kaltura.services.KalturaXInternalService(this);
 	this.metadata = new kaltura.services.KalturaMetadataService(this);
 	this.metadataProfile = new kaltura.services.KalturaMetadataProfileService(this);
-	this.metadataBatch = new kaltura.services.KalturaMetadataBatchService(this);
 	this.documents = new kaltura.services.KalturaDocumentsService(this);
-	this.fileSync = new kaltura.services.KalturaFileSyncService(this);
-	this.systemPartner = new kaltura.services.KalturaSystemPartnerService(this);
-	this.entryAdmin = new kaltura.services.KalturaEntryAdminService(this);
-	this.uiConfAdmin = new kaltura.services.KalturaUiConfAdminService(this);
-	this.reportAdmin = new kaltura.services.KalturaReportAdminService(this);
-	this.kalturaInternalToolsSystemHelper = new kaltura.services.KalturaKalturaInternalToolsSystemHelperService(this);
 	this.virusScanProfile = new kaltura.services.KalturaVirusScanProfileService(this);
 	this.distributionProfile = new kaltura.services.KalturaDistributionProfileService(this);
 	this.entryDistribution = new kaltura.services.KalturaEntryDistributionService(this);
 	this.distributionProvider = new kaltura.services.KalturaDistributionProviderService(this);
 	this.genericDistributionProvider = new kaltura.services.KalturaGenericDistributionProviderService(this);
 	this.genericDistributionProviderAction = new kaltura.services.KalturaGenericDistributionProviderActionService(this);
-	this.contentDistributionBatch = new kaltura.services.KalturaContentDistributionBatchService(this);
 	this.cuePoint = new kaltura.services.KalturaCuePointService(this);
 	this.annotation = new kaltura.services.KalturaAnnotationService(this);
 	this.quiz = new kaltura.services.KalturaQuizService(this);
@@ -617,14 +553,12 @@ KalturaClient.prototype.init = function(config){
 	this.dropFolderFile = new kaltura.services.KalturaDropFolderFileService(this);
 	this.captionAsset = new kaltura.services.KalturaCaptionAssetService(this);
 	this.captionParams = new kaltura.services.KalturaCaptionParamsService(this);
-	this.captionAssetItem = new kaltura.services.KalturaCaptionAssetItemService(this);
 	this.attachmentAsset = new kaltura.services.KalturaAttachmentAssetService(this);
 	this.tag = new kaltura.services.KalturaTagService(this);
 	this.like = new kaltura.services.KalturaLikeService(this);
 	this.varConsole = new kaltura.services.KalturaVarConsoleService(this);
 	this.eventNotificationTemplate = new kaltura.services.KalturaEventNotificationTemplateService(this);
 	this.externalMedia = new kaltura.services.KalturaExternalMediaService(this);
-	this.liveConversionProfile = new kaltura.services.KalturaLiveConversionProfileService(this);
 	this.scheduleEvent = new kaltura.services.KalturaScheduleEventService(this);
 	this.scheduleResource = new kaltura.services.KalturaScheduleResourceService(this);
 	this.scheduleEventResource = new kaltura.services.KalturaScheduleEventResourceService(this);

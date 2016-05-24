@@ -1276,6 +1276,8 @@ util.inherits(KalturaCaptionParams, KalturaAssetParams);
  * @param directSubCategoriesCount int Number of direct children categories (readOnly).
  * @param moderation int Moderation to add entries to this category by users that are not of permission level Manager or Moderator.
  * @param pendingEntriesCount int Nunber of pending moderation entries (readOnly).
+ * @param isAggregationCategory int Flag indicating that the category is an aggregation category.
+ * @param aggregationCategories string List of aggregation channels the category belongs to.
  */
 function KalturaCategory(){
 	KalturaCategory.super_.call(this);
@@ -1312,6 +1314,8 @@ function KalturaCategory(){
 	this.directSubCategoriesCount = null;
 	this.moderation = null;
 	this.pendingEntriesCount = null;
+	this.isAggregationCategory = null;
+	this.aggregationCategories = null;
 }
 module.exports.KalturaCategory = KalturaCategory;
 
@@ -7087,22 +7091,6 @@ util.inherits(KalturaConvertProfileJobData, KalturaJobData);
 
 
 /**
- * @param filter KalturaFilter The filter should return the list of objects that need to be copied.
- * @param lastCopyId int Indicates the last id that copied, used when the batch crached, to re-run from the last crash point.
- * @param templateObject KalturaObjectBase Template object to overwrite attributes on the copied object.
- */
-function KalturaCopyJobData(){
-	KalturaCopyJobData.super_.call(this);
-	this.filter = null;
-	this.lastCopyId = null;
-	this.templateObject = null;
-}
-module.exports.KalturaCopyJobData = KalturaCopyJobData;
-
-util.inherits(KalturaCopyJobData, KalturaJobData);
-
-
-/**
  * @param fromPartnerId int Id of the partner to copy from.
  * @param toPartnerId int Id of the partner to copy to.
  */
@@ -11445,6 +11433,8 @@ util.inherits(KalturaBulkUploadXmlJobData, KalturaBulkUploadJobData);
  * @param inheritedParentIdIn string .
  * @param partnerSortValueGreaterThanOrEqual int .
  * @param partnerSortValueLessThanOrEqual int .
+ * @param aggregationCategoriesMultiLikeOr string .
+ * @param aggregationCategoriesMultiLikeAnd string .
  */
 function KalturaCategoryBaseFilter(){
 	KalturaCategoryBaseFilter.super_.call(this);
@@ -11485,6 +11475,8 @@ function KalturaCategoryBaseFilter(){
 	this.inheritedParentIdIn = null;
 	this.partnerSortValueGreaterThanOrEqual = null;
 	this.partnerSortValueLessThanOrEqual = null;
+	this.aggregationCategoriesMultiLikeOr = null;
+	this.aggregationCategoriesMultiLikeAnd = null;
 }
 module.exports.KalturaCategoryBaseFilter = KalturaCategoryBaseFilter;
 
@@ -14501,18 +14493,6 @@ util.inherits(KalturaUiConfAdminBaseFilter, KalturaUiConfFilter);
 
 
 /**
- * @param fileData file Represents the $_FILE.
- */
-function KalturaUploadedFileResource(){
-	KalturaUploadedFileResource.super_.call(this);
-	this.fileData = null;
-}
-module.exports.KalturaUploadedFileResource = KalturaUploadedFileResource;
-
-util.inherits(KalturaUploadedFileResource, KalturaDataCenterContentResource);
-
-
-/**
  * @param token string Token that returned from upload.upload action or uploadToken.add action.
  */
 function KalturaUploadedFileTokenResource(){
@@ -14572,22 +14552,6 @@ function KalturaUserRoleFilter(){
 module.exports.KalturaUserRoleFilter = KalturaUserRoleFilter;
 
 util.inherits(KalturaUserRoleFilter, KalturaUserRoleBaseFilter);
-
-
-/**
- * @param groupTypeEq int Eq filter for the partner's group type.
- * @param groupTypeIn string In filter for the partner's group type.
- * @param partnerPermissionsExist string Filter for partner permissions- filter contains comma-separated string of permission names which the returned partners should have.
- */
-function KalturaVarConsolePartnerFilter(){
-	KalturaVarConsolePartnerFilter.super_.call(this);
-	this.groupTypeEq = null;
-	this.groupTypeIn = null;
-	this.partnerPermissionsExist = null;
-}
-module.exports.KalturaVarConsolePartnerFilter = KalturaVarConsolePartnerFilter;
-
-util.inherits(KalturaVarConsolePartnerFilter, KalturaPartnerFilter);
 
 
 /**

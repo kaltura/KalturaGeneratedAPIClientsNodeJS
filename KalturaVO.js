@@ -1276,8 +1276,6 @@ util.inherits(KalturaCaptionParams, KalturaAssetParams);
  * @param directSubCategoriesCount int Number of direct children categories (readOnly).
  * @param moderation int Moderation to add entries to this category by users that are not of permission level Manager or Moderator.
  * @param pendingEntriesCount int Nunber of pending moderation entries (readOnly).
- * @param isAggregationCategory int Flag indicating that the category is an aggregation category.
- * @param aggregationCategories string List of aggregation channels the category belongs to.
  */
 function KalturaCategory(){
 	KalturaCategory.super_.call(this);
@@ -1314,8 +1312,6 @@ function KalturaCategory(){
 	this.directSubCategoriesCount = null;
 	this.moderation = null;
 	this.pendingEntriesCount = null;
-	this.isAggregationCategory = null;
-	this.aggregationCategories = null;
 }
 module.exports.KalturaCategory = KalturaCategory;
 
@@ -1370,6 +1366,20 @@ function KalturaCategoryUser(){
 module.exports.KalturaCategoryUser = KalturaCategoryUser;
 
 util.inherits(KalturaCategoryUser, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param clientTag string .
+ * @param apiVersion string .
+ */
+function KalturaClientConfiguration(){
+	KalturaClientConfiguration.super_.call(this);
+	this.clientTag = null;
+	this.apiVersion = null;
+}
+module.exports.KalturaClientConfiguration = KalturaClientConfiguration;
+
+util.inherits(KalturaClientConfiguration, kaltura.KalturaObjectBase);
 
 
 /**
@@ -1544,6 +1554,7 @@ util.inherits(KalturaConversionProfile, kaltura.KalturaObjectBase);
  * @param systemName string Asset params system name.
  * @param forceNoneComplied int Starts conversion even if the decision layer reduced the configuration to comply with the source.
  * @param deletePolicy int Specifies how to treat the flavor after conversion is finished.
+ * @param isEncrypted int .
  */
 function KalturaConversionProfileAssetParams(){
 	KalturaConversionProfileAssetParams.super_.call(this);
@@ -1554,6 +1565,7 @@ function KalturaConversionProfileAssetParams(){
 	this.systemName = null;
 	this.forceNoneComplied = null;
 	this.deletePolicy = null;
+	this.isEncrypted = null;
 }
 module.exports.KalturaConversionProfileAssetParams = KalturaConversionProfileAssetParams;
 
@@ -4512,6 +4524,22 @@ function KalturaReportTotal(){
 module.exports.KalturaReportTotal = KalturaReportTotal;
 
 util.inherits(KalturaReportTotal, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param partnerId int Impersonated partner id.
+ * @param ks string Kaltura API session.
+ * @param responseProfile KalturaBaseResponseProfile Response profile - this attribute will be automatically unset after every API call.
+ */
+function KalturaRequestConfiguration(){
+	KalturaRequestConfiguration.super_.call(this);
+	this.partnerId = null;
+	this.ks = null;
+	this.responseProfile = null;
+}
+module.exports.KalturaRequestConfiguration = KalturaRequestConfiguration;
+
+util.inherits(KalturaRequestConfiguration, kaltura.KalturaObjectBase);
 
 
 /**
@@ -11433,8 +11461,6 @@ util.inherits(KalturaBulkUploadXmlJobData, KalturaBulkUploadJobData);
  * @param inheritedParentIdIn string .
  * @param partnerSortValueGreaterThanOrEqual int .
  * @param partnerSortValueLessThanOrEqual int .
- * @param aggregationCategoriesMultiLikeOr string .
- * @param aggregationCategoriesMultiLikeAnd string .
  */
 function KalturaCategoryBaseFilter(){
 	KalturaCategoryBaseFilter.super_.call(this);
@@ -11475,8 +11501,6 @@ function KalturaCategoryBaseFilter(){
 	this.inheritedParentIdIn = null;
 	this.partnerSortValueGreaterThanOrEqual = null;
 	this.partnerSortValueLessThanOrEqual = null;
-	this.aggregationCategoriesMultiLikeOr = null;
-	this.aggregationCategoriesMultiLikeAnd = null;
 }
 module.exports.KalturaCategoryBaseFilter = KalturaCategoryBaseFilter;
 

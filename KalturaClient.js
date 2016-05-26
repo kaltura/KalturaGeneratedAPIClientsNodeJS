@@ -37,7 +37,7 @@ kaltura.enums = require('./KalturaTypes');
 
 function KalturaClient(config) {
 	this.setApiVersion('3.3.0');
-	this.setClientTag('node:16-05-24');
+	this.setClientTag('node:16-05-26');
 	this.init(config);
 }
 
@@ -418,6 +418,11 @@ KalturaClient.prototype.captionAsset = null;
  */
 KalturaClient.prototype.captionParams = null;
 /**
+ * Search caption asset items
+ * @param kaltura.services.KalturaCaptionAssetItemService
+ */
+KalturaClient.prototype.captionAssetItem = null;
+/**
  * Retrieve information and invoke actions on attachment Asset
  * @param kaltura.services.KalturaAttachmentAssetService
  */
@@ -553,6 +558,7 @@ KalturaClient.prototype.init = function(config){
 	this.dropFolderFile = new kaltura.services.KalturaDropFolderFileService(this);
 	this.captionAsset = new kaltura.services.KalturaCaptionAssetService(this);
 	this.captionParams = new kaltura.services.KalturaCaptionParamsService(this);
+	this.captionAssetItem = new kaltura.services.KalturaCaptionAssetItemService(this);
 	this.attachmentAsset = new kaltura.services.KalturaAttachmentAssetService(this);
 	this.tag = new kaltura.services.KalturaTagService(this);
 	this.like = new kaltura.services.KalturaLikeService(this);

@@ -2061,6 +2061,7 @@ KalturaEmailIngestionProfileService.prototype.addMediaEntry = function(callback,
 /**
  *Class definition for the Kaltura service: entryServerNode.
  * The available service actions:
+ * @action update .
  * @action list .
  * @action get .
  */
@@ -2072,6 +2073,21 @@ function KalturaEntryServerNodeService(client){
 util.inherits(KalturaEntryServerNodeService, kaltura.KalturaServiceBase);
 module.exports.KalturaEntryServerNodeService = KalturaEntryServerNodeService;
 
+/**
+ * .
+ * @param id int  (optional).
+ * @param entryServerNode KalturaEntryServerNode  (optional).
+ * @return KalturaEntryServerNode.
+ */
+KalturaEntryServerNodeService.prototype.update = function(callback, id, entryServerNode){
+	var kparams = {};
+	this.client.addParam(kparams, 'id', id);
+	this.client.addParam(kparams, 'entryServerNode', kaltura.toParams(entryServerNode));
+	this.client.queueServiceActionCall('entryservernode', 'update', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
 /**
  * .
  * @param filter KalturaEntryServerNodeFilter  (optional, default: null).
@@ -10379,6 +10395,99 @@ KalturaCaptionParamsService.prototype.listAction = function(callback, filter, pa
 		this.client.addParam(kparams, 'pager', kaltura.toParams(pager));
 	}
 	this.client.queueServiceActionCall('caption_captionparams', 'list', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+
+/**
+ *Class definition for the Kaltura service: captionAssetItem.
+ * The available service actions:
+ * @action parse Parse content of caption asset and index it.
+ * @action search Search caption asset items by filter, pager and free text.
+ * @action searchEntries Search caption asset items by filter, pager and free text.
+ */
+function KalturaCaptionAssetItemService(client){
+	KalturaCaptionAssetItemService.super_.call(this);
+	this.init(client);
+}
+
+util.inherits(KalturaCaptionAssetItemService, kaltura.KalturaServiceBase);
+module.exports.KalturaCaptionAssetItemService = KalturaCaptionAssetItemService;
+
+/**
+ * Parse content of caption asset and index it.
+ * @param captionAssetId string  (optional).
+ * @return .
+ */
+KalturaCaptionAssetItemService.prototype.parse = function(callback, captionAssetId){
+	var kparams = {};
+	this.client.addParam(kparams, 'captionAssetId', captionAssetId);
+	this.client.queueServiceActionCall('captionsearch_captionassetitem', 'parse', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Search caption asset items by filter, pager and free text.
+ * @param entryFilter KalturaBaseEntryFilter  (optional, default: null).
+ * @param captionAssetItemFilter KalturaCaptionAssetItemFilter  (optional, default: null).
+ * @param captionAssetItemPager KalturaFilterPager  (optional, default: null).
+ * @return KalturaCaptionAssetItemListResponse.
+ */
+KalturaCaptionAssetItemService.prototype.search = function(callback, entryFilter, captionAssetItemFilter, captionAssetItemPager){
+	if(!entryFilter){
+		entryFilter = null;
+	}
+	if(!captionAssetItemFilter){
+		captionAssetItemFilter = null;
+	}
+	if(!captionAssetItemPager){
+		captionAssetItemPager = null;
+	}
+	var kparams = {};
+	if (entryFilter !== null){
+		this.client.addParam(kparams, 'entryFilter', kaltura.toParams(entryFilter));
+	}
+	if (captionAssetItemFilter !== null){
+		this.client.addParam(kparams, 'captionAssetItemFilter', kaltura.toParams(captionAssetItemFilter));
+	}
+	if (captionAssetItemPager !== null){
+		this.client.addParam(kparams, 'captionAssetItemPager', kaltura.toParams(captionAssetItemPager));
+	}
+	this.client.queueServiceActionCall('captionsearch_captionassetitem', 'search', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Search caption asset items by filter, pager and free text.
+ * @param entryFilter KalturaBaseEntryFilter  (optional, default: null).
+ * @param captionAssetItemFilter KalturaCaptionAssetItemFilter  (optional, default: null).
+ * @param captionAssetItemPager KalturaFilterPager  (optional, default: null).
+ * @return KalturaBaseEntryListResponse.
+ */
+KalturaCaptionAssetItemService.prototype.searchEntries = function(callback, entryFilter, captionAssetItemFilter, captionAssetItemPager){
+	if(!entryFilter){
+		entryFilter = null;
+	}
+	if(!captionAssetItemFilter){
+		captionAssetItemFilter = null;
+	}
+	if(!captionAssetItemPager){
+		captionAssetItemPager = null;
+	}
+	var kparams = {};
+	if (entryFilter !== null){
+		this.client.addParam(kparams, 'entryFilter', kaltura.toParams(entryFilter));
+	}
+	if (captionAssetItemFilter !== null){
+		this.client.addParam(kparams, 'captionAssetItemFilter', kaltura.toParams(captionAssetItemFilter));
+	}
+	if (captionAssetItemPager !== null){
+		this.client.addParam(kparams, 'captionAssetItemPager', kaltura.toParams(captionAssetItemPager));
+	}
+	this.client.queueServiceActionCall('captionsearch_captionassetitem', 'searchEntries', kparams);
 	if (!this.client.isMultiRequest()){
 		this.client.doQueue(callback);
 	}

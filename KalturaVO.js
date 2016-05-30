@@ -10725,10 +10725,12 @@ util.inherits(KalturaUrlTokenizerVelocix, KalturaUrlTokenizer);
 
 /**
  * @param tokenizationFormat int .
+ * @param shouldIncludeClientIp bool .
  */
 function KalturaUrlTokenizerVnpt(){
 	KalturaUrlTokenizerVnpt.super_.call(this);
 	this.tokenizationFormat = null;
+	this.shouldIncludeClientIp = null;
 }
 module.exports.KalturaUrlTokenizerVnpt = KalturaUrlTokenizerVnpt;
 

@@ -14293,6 +14293,12 @@ util.inherits(KalturaRemoteDropFolderBaseFilter, KalturaDropFolderFilter);
  * @param parentResourceIdsLike string .
  * @param parentResourceIdsMultiLikeOr string .
  * @param parentResourceIdsMultiLikeAnd string .
+ * @param templateEntryCategoriesIdsMultiLikeAnd string .
+ * @param templateEntryCategoriesIdsMultiLikeOr string .
+ * @param templateEntryCategoriesIdsLike string .
+ * @param systemNamesMultiLikeOr string .
+ * @param systemNamesMultiLikeAnd string .
+ * @param systemNamesLike string .
  */
 function KalturaScheduleEventFilter(){
 	KalturaScheduleEventFilter.super_.call(this);
@@ -14302,6 +14308,12 @@ function KalturaScheduleEventFilter(){
 	this.parentResourceIdsLike = null;
 	this.parentResourceIdsMultiLikeOr = null;
 	this.parentResourceIdsMultiLikeAnd = null;
+	this.templateEntryCategoriesIdsMultiLikeAnd = null;
+	this.templateEntryCategoriesIdsMultiLikeOr = null;
+	this.templateEntryCategoriesIdsLike = null;
+	this.systemNamesMultiLikeOr = null;
+	this.systemNamesMultiLikeAnd = null;
+	this.systemNamesLike = null;
 }
 module.exports.KalturaScheduleEventFilter = KalturaScheduleEventFilter;
 

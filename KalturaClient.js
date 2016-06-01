@@ -37,7 +37,7 @@ kaltura.enums = require('./KalturaTypes');
 
 function KalturaClient(config) {
 	this.setApiVersion('3.3.0');
-	this.setClientTag('node:16-05-31');
+	this.setClientTag('node:16-06-01');
 	this.init(config);
 }
 
@@ -323,11 +323,6 @@ KalturaClient.prototype.user = null;
  */
 KalturaClient.prototype.widget = null;
 /**
- * Internal Service is used for actions that are used internally in Kaltura applications and might be changed in the future without any notice
- * @param kaltura.services.KalturaXInternalService
- */
-KalturaClient.prototype.xInternal = null;
-/**
  * Metadata service
  * @param kaltura.services.KalturaMetadataService
  */
@@ -539,7 +534,6 @@ KalturaClient.prototype.init = function(config){
 	this.userRole = new kaltura.services.KalturaUserRoleService(this);
 	this.user = new kaltura.services.KalturaUserService(this);
 	this.widget = new kaltura.services.KalturaWidgetService(this);
-	this.xInternal = new kaltura.services.KalturaXInternalService(this);
 	this.metadata = new kaltura.services.KalturaMetadataService(this);
 	this.metadataProfile = new kaltura.services.KalturaMetadataProfileService(this);
 	this.documents = new kaltura.services.KalturaDocumentsService(this);

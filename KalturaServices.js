@@ -7762,54 +7762,6 @@ KalturaWidgetService.prototype.listAction = function(callback, filter, pager){
 };
 
 /**
- *Class definition for the Kaltura service: xInternal.
- * The available service actions:
- * @action xAddBulkDownload Creates new download job for multiple entry ids (comma separated), an email will be sent when the job is done
- * This sevice support the following entries:
- * - MediaEntry
- * - Video will be converted using the flavor params id
- * - Audio will be downloaded as MP3
- * - Image will be downloaded as Jpeg
- * - MixEntry will be flattened using the flavor params id
- * - Other entry types are not supported
- * Returns the admin email that the email message will be sent to.
- */
-function KalturaXInternalService(client){
-	KalturaXInternalService.super_.call(this);
-	this.init(client);
-}
-
-util.inherits(KalturaXInternalService, kaltura.KalturaServiceBase);
-module.exports.KalturaXInternalService = KalturaXInternalService;
-
-/**
- * Creates new download job for multiple entry ids (comma separated), an email will be sent when the job is done
- * This sevice support the following entries:
- * - MediaEntry
- * - Video will be converted using the flavor params id
- * - Audio will be downloaded as MP3
- * - Image will be downloaded as Jpeg
- * - MixEntry will be flattened using the flavor params id
- * - Other entry types are not supported
- * Returns the admin email that the email message will be sent to.
- * @param entryIds string Comma separated list of entry ids (optional).
- * @param flavorParamsId string  (optional).
- * @return string.
- */
-KalturaXInternalService.prototype.xAddBulkDownload = function(callback, entryIds, flavorParamsId){
-	if(!flavorParamsId){
-		flavorParamsId = '';
-	}
-	var kparams = {};
-	this.client.addParam(kparams, 'entryIds', entryIds);
-	this.client.addParam(kparams, 'flavorParamsId', flavorParamsId);
-	this.client.queueServiceActionCall('xinternal', 'xAddBulkDownload', kparams);
-	if (!this.client.isMultiRequest()){
-		this.client.doQueue(callback);
-	}
-};
-
-/**
  *Class definition for the Kaltura service: metadata.
  * The available service actions:
  * @action add Allows you to add a metadata object and metadata content associated with Kaltura object.

@@ -2064,6 +2064,7 @@ KalturaEmailIngestionProfileService.prototype.addMediaEntry = function(callback,
  * @action update .
  * @action list .
  * @action get .
+ * @action validateRegisteredEntryServerNode Validates server node still registered on entry.
  */
 function KalturaEntryServerNodeService(client){
 	KalturaEntryServerNodeService.super_.call(this);
@@ -2122,6 +2123,19 @@ KalturaEntryServerNodeService.prototype.get = function(callback, id){
 	var kparams = {};
 	this.client.addParam(kparams, 'id', id);
 	this.client.queueServiceActionCall('entryservernode', 'get', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Validates server node still registered on entry.
+ * @param id int entry server node id (optional).
+ * @return .
+ */
+KalturaEntryServerNodeService.prototype.validateRegisteredEntryServerNode = function(callback, id){
+	var kparams = {};
+	this.client.addParam(kparams, 'id', id);
+	this.client.queueServiceActionCall('entryservernode', 'validateRegisteredEntryServerNode', kparams);
 	if (!this.client.isMultiRequest()){
 		this.client.doQueue(callback);
 	}

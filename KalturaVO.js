@@ -14295,10 +14295,11 @@ util.inherits(KalturaRemoteDropFolderBaseFilter, KalturaDropFolderFilter);
  * @param parentResourceIdsMultiLikeAnd string .
  * @param templateEntryCategoriesIdsMultiLikeAnd string .
  * @param templateEntryCategoriesIdsMultiLikeOr string .
+ * @param resourceSystemNamesMultiLikeOr string .
  * @param templateEntryCategoriesIdsLike string .
- * @param systemNamesMultiLikeOr string .
- * @param systemNamesMultiLikeAnd string .
- * @param systemNamesLike string .
+ * @param resourceSystemNamesMultiLikeAnd string .
+ * @param resourceSystemNamesLike string .
+ * @param templateEntryIdEqual string .
  */
 function KalturaScheduleEventFilter(){
 	KalturaScheduleEventFilter.super_.call(this);
@@ -14310,10 +14311,11 @@ function KalturaScheduleEventFilter(){
 	this.parentResourceIdsMultiLikeAnd = null;
 	this.templateEntryCategoriesIdsMultiLikeAnd = null;
 	this.templateEntryCategoriesIdsMultiLikeOr = null;
+	this.resourceSystemNamesMultiLikeOr = null;
 	this.templateEntryCategoriesIdsLike = null;
-	this.systemNamesMultiLikeOr = null;
-	this.systemNamesMultiLikeAnd = null;
-	this.systemNamesLike = null;
+	this.resourceSystemNamesMultiLikeAnd = null;
+	this.resourceSystemNamesLike = null;
+	this.templateEntryIdEqual = null;
 }
 module.exports.KalturaScheduleEventFilter = KalturaScheduleEventFilter;
 
@@ -14975,6 +14977,7 @@ util.inherits(KalturaEmailNotificationTemplateFilter, KalturaEmailNotificationTe
 
 
 /**
+ * @param templateEntryIdEqual string .
  * @param entryIdsLike string .
  * @param entryIdsMultiLikeOr string .
  * @param entryIdsMultiLikeAnd string .
@@ -14984,6 +14987,7 @@ util.inherits(KalturaEmailNotificationTemplateFilter, KalturaEmailNotificationTe
  */
 function KalturaEntryScheduleEventBaseFilter(){
 	KalturaEntryScheduleEventBaseFilter.super_.call(this);
+	this.templateEntryIdEqual = null;
 	this.entryIdsLike = null;
 	this.entryIdsMultiLikeOr = null;
 	this.entryIdsMultiLikeAnd = null;

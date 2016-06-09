@@ -6342,6 +6342,7 @@ KalturaSystemService.prototype.getVersion = function(callback){
  * @action delete .
  * @action getUrl Get download URL for the asset.
  * @action getRemotePaths Get remote storage existing paths for the asset.
+ * @action export manually export an asset.
  */
 function KalturaThumbAssetService(client){
 	KalturaThumbAssetService.super_.call(this);
@@ -6587,6 +6588,21 @@ KalturaThumbAssetService.prototype.getRemotePaths = function(callback, id){
 	var kparams = {};
 	this.client.addParam(kparams, 'id', id);
 	this.client.queueServiceActionCall('thumbasset', 'getRemotePaths', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * manually export an asset.
+ * @param assetId string  (optional).
+ * @param storageProfileId int  (optional).
+ * @return KalturaFlavorAsset.
+ */
+KalturaThumbAssetService.prototype.exportAction = function(callback, assetId, storageProfileId){
+	var kparams = {};
+	this.client.addParam(kparams, 'assetId', assetId);
+	this.client.addParam(kparams, 'storageProfileId', storageProfileId);
+	this.client.queueServiceActionCall('thumbasset', 'export', kparams);
 	if (!this.client.isMultiRequest()){
 		this.client.doQueue(callback);
 	}

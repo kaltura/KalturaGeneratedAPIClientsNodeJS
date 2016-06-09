@@ -5988,11 +5988,15 @@ util.inherits(KalturaAdminUser, KalturaUser);
 /**
  * @param filesPermissionInS3 string .
  * @param s3Region string .
+ * @param sseType string .
+ * @param sseKmsKeyId string .
  */
 function KalturaAmazonS3StorageProfile(){
 	KalturaAmazonS3StorageProfile.super_.call(this);
 	this.filesPermissionInS3 = null;
 	this.s3Region = null;
+	this.sseType = null;
+	this.sseKmsKeyId = null;
 }
 module.exports.KalturaAmazonS3StorageProfile = KalturaAmazonS3StorageProfile;
 
@@ -13335,11 +13339,15 @@ util.inherits(KalturaAccessControlProfileFilter, KalturaAccessControlProfileBase
 /**
  * @param filesPermissionInS3 string .
  * @param s3Region string .
+ * @param sseType string .
+ * @param sseKmsKeyId string .
  */
 function KalturaAmazonS3StorageExportJobData(){
 	KalturaAmazonS3StorageExportJobData.super_.call(this);
 	this.filesPermissionInS3 = null;
 	this.s3Region = null;
+	this.sseType = null;
+	this.sseKmsKeyId = null;
 }
 module.exports.KalturaAmazonS3StorageExportJobData = KalturaAmazonS3StorageExportJobData;
 

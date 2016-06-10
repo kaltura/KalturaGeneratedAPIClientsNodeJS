@@ -1559,6 +1559,8 @@ util.inherits(KalturaConversionProfile, kaltura.KalturaObjectBase);
  * @param forceNoneComplied int Starts conversion even if the decision layer reduced the configuration to comply with the source.
  * @param deletePolicy int Specifies how to treat the flavor after conversion is finished.
  * @param isEncrypted int .
+ * @param contentAwareness float .
+ * @param twoPass int .
  */
 function KalturaConversionProfileAssetParams(){
 	KalturaConversionProfileAssetParams.super_.call(this);
@@ -1570,6 +1572,8 @@ function KalturaConversionProfileAssetParams(){
 	this.forceNoneComplied = null;
 	this.deletePolicy = null;
 	this.isEncrypted = null;
+	this.contentAwareness = null;
+	this.twoPass = null;
 }
 module.exports.KalturaConversionProfileAssetParams = KalturaConversionProfileAssetParams;
 
@@ -2730,6 +2734,7 @@ util.inherits(KalturaFlavorAssetUrlOptions, kaltura.KalturaObjectBase);
  * @param watermarkData string .
  * @param subtitlesData string .
  * @param isEncrypted int .
+ * @param contentAwareness float .
  * @param clipOffset int .
  * @param clipDuration int .
  */
@@ -2770,6 +2775,7 @@ function KalturaFlavorParams(){
 	this.watermarkData = null;
 	this.subtitlesData = null;
 	this.isEncrypted = null;
+	this.contentAwareness = null;
 	this.clipOffset = null;
 	this.clipDuration = null;
 }
@@ -3210,6 +3216,7 @@ util.inherits(KalturaBatchJobListResponse, KalturaListResponse);
  * @param multiStream string .
  * @param isFastStart int .
  * @param contentStreams string .
+ * @param complexityValue int .
  */
 function KalturaMediaInfo(){
 	KalturaMediaInfo.super_.call(this);
@@ -3246,6 +3253,7 @@ function KalturaMediaInfo(){
 	this.multiStream = null;
 	this.isFastStart = null;
 	this.contentStreams = null;
+	this.complexityValue = null;
 }
 module.exports.KalturaMediaInfo = KalturaMediaInfo;
 

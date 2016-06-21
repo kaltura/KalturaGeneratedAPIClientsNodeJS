@@ -8978,10 +8978,12 @@ util.inherits(KalturaImportMetadataJobData, KalturaJobData);
 
 /**
  * @param indexIdGreaterThan int .
+ * @param depthGreaterThanEqual int .
  */
 function KalturaIndexAdvancedFilter(){
 	KalturaIndexAdvancedFilter.super_.call(this);
 	this.indexIdGreaterThan = null;
+	this.depthGreaterThanEqual = null;
 }
 module.exports.KalturaIndexAdvancedFilter = KalturaIndexAdvancedFilter;
 
@@ -8991,12 +8993,14 @@ util.inherits(KalturaIndexAdvancedFilter, KalturaSearchItem);
 /**
  * @param filter KalturaFilter The filter should return the list of objects that need to be reindexed.
  * @param lastIndexId int Indicates the last id that reindexed, used when the batch crached, to re-run from the last crash point.
+ * @param lastIndexDepth int Indicates the last depth that reindexed, used when the batch crached, to re-run from the last crash point.
  * @param shouldUpdate bool Indicates that the object columns and attributes values should be recalculated before reindexed.
  */
 function KalturaIndexJobData(){
 	KalturaIndexJobData.super_.call(this);
 	this.filter = null;
 	this.lastIndexId = null;
+	this.lastIndexDepth = null;
 	this.shouldUpdate = null;
 }
 module.exports.KalturaIndexJobData = KalturaIndexJobData;

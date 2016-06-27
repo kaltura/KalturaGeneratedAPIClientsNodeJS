@@ -5900,6 +5900,16 @@ util.inherits(KalturaAccessControlLimitFlavorsAction, KalturaRuleAction);
 
 
 /**
+ */
+function KalturaAccessControlLimitThumbnailCaptureAction(){
+	KalturaAccessControlLimitThumbnailCaptureAction.super_.call(this);
+}
+module.exports.KalturaAccessControlLimitThumbnailCaptureAction = KalturaAccessControlLimitThumbnailCaptureAction;
+
+util.inherits(KalturaAccessControlLimitThumbnailCaptureAction, KalturaRuleAction);
+
+
+/**
  * @param objects array  (readOnly).
  */
 function KalturaAccessControlListResponse(){
@@ -14319,7 +14329,6 @@ util.inherits(KalturaRemoteDropFolderBaseFilter, KalturaDropFolderFilter);
  * @param templateEntryCategoriesIdsLike string .
  * @param resourceSystemNamesMultiLikeAnd string .
  * @param resourceSystemNamesLike string .
- * @param templateEntryIdEqual string .
  */
 function KalturaScheduleEventFilter(){
 	KalturaScheduleEventFilter.super_.call(this);
@@ -14335,7 +14344,6 @@ function KalturaScheduleEventFilter(){
 	this.templateEntryCategoriesIdsLike = null;
 	this.resourceSystemNamesMultiLikeAnd = null;
 	this.resourceSystemNamesLike = null;
-	this.templateEntryIdEqual = null;
 }
 module.exports.KalturaScheduleEventFilter = KalturaScheduleEventFilter;
 

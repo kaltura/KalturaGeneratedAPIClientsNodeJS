@@ -6010,6 +6010,8 @@ util.inherits(KalturaAdminUser, KalturaUser);
  * @param s3Region string .
  * @param sseType string .
  * @param sseKmsKeyId string .
+ * @param signatureType string .
+ * @param endPoint string .
  */
 function KalturaAmazonS3StorageProfile(){
 	KalturaAmazonS3StorageProfile.super_.call(this);
@@ -6017,6 +6019,8 @@ function KalturaAmazonS3StorageProfile(){
 	this.s3Region = null;
 	this.sseType = null;
 	this.sseKmsKeyId = null;
+	this.signatureType = null;
+	this.endPoint = null;
 }
 module.exports.KalturaAmazonS3StorageProfile = KalturaAmazonS3StorageProfile;
 
@@ -13365,6 +13369,8 @@ util.inherits(KalturaAccessControlProfileFilter, KalturaAccessControlProfileBase
  * @param s3Region string .
  * @param sseType string .
  * @param sseKmsKeyId string .
+ * @param signatureType string .
+ * @param endPoint string .
  */
 function KalturaAmazonS3StorageExportJobData(){
 	KalturaAmazonS3StorageExportJobData.super_.call(this);
@@ -13372,6 +13378,8 @@ function KalturaAmazonS3StorageExportJobData(){
 	this.s3Region = null;
 	this.sseType = null;
 	this.sseKmsKeyId = null;
+	this.signatureType = null;
+	this.endPoint = null;
 }
 module.exports.KalturaAmazonS3StorageExportJobData = KalturaAmazonS3StorageExportJobData;
 
@@ -13848,26 +13856,6 @@ function KalturaFacebookDistributionProviderBaseFilter(){
 module.exports.KalturaFacebookDistributionProviderBaseFilter = KalturaFacebookDistributionProviderBaseFilter;
 
 util.inherits(KalturaFacebookDistributionProviderBaseFilter, KalturaDistributionProviderFilter);
-
-
-/**
- */
-function KalturaFeedDropFolderBaseFilter(){
-	KalturaFeedDropFolderBaseFilter.super_.call(this);
-}
-module.exports.KalturaFeedDropFolderBaseFilter = KalturaFeedDropFolderBaseFilter;
-
-util.inherits(KalturaFeedDropFolderBaseFilter, KalturaDropFolderFilter);
-
-
-/**
- */
-function KalturaFeedDropFolderFileBaseFilter(){
-	KalturaFeedDropFolderFileBaseFilter.super_.call(this);
-}
-module.exports.KalturaFeedDropFolderFileBaseFilter = KalturaFeedDropFolderFileBaseFilter;
-
-util.inherits(KalturaFeedDropFolderFileBaseFilter, KalturaDropFolderFileFilter);
 
 
 /**
@@ -15075,26 +15063,6 @@ util.inherits(KalturaFacebookDistributionProviderFilter, KalturaFacebookDistribu
 
 
 /**
- */
-function KalturaFeedDropFolderFileFilter(){
-	KalturaFeedDropFolderFileFilter.super_.call(this);
-}
-module.exports.KalturaFeedDropFolderFileFilter = KalturaFeedDropFolderFileFilter;
-
-util.inherits(KalturaFeedDropFolderFileFilter, KalturaFeedDropFolderFileBaseFilter);
-
-
-/**
- */
-function KalturaFeedDropFolderFilter(){
-	KalturaFeedDropFolderFilter.super_.call(this);
-}
-module.exports.KalturaFeedDropFolderFilter = KalturaFeedDropFolderFilter;
-
-util.inherits(KalturaFeedDropFolderFilter, KalturaFeedDropFolderBaseFilter);
-
-
-/**
  * @param flavorParamsIdEqual int .
  * @param flavorParamsIdIn string .
  * @param statusEqual int .
@@ -15280,16 +15248,6 @@ function KalturaSyndicationDistributionProfileFilter(){
 module.exports.KalturaSyndicationDistributionProfileFilter = KalturaSyndicationDistributionProfileFilter;
 
 util.inherits(KalturaSyndicationDistributionProfileFilter, KalturaSyndicationDistributionProfileBaseFilter);
-
-
-/**
- */
-function KalturaSyndicationDistributionProviderFilter(){
-	KalturaSyndicationDistributionProviderFilter.super_.call(this);
-}
-module.exports.KalturaSyndicationDistributionProviderFilter = KalturaSyndicationDistributionProviderFilter;
-
-util.inherits(KalturaSyndicationDistributionProviderFilter, KalturaSyndicationDistributionProviderBaseFilter);
 
 
 /**

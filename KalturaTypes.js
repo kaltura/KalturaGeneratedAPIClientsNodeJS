@@ -2338,6 +2338,36 @@ UPDATED_AT_DESC : '-updatedAt',
 var KalturaFacebookDistributionProviderOrderBy = module.exports.KalturaFacebookDistributionProviderOrderBy = {
 };
 
+var KalturaFeedDropFolderFileOrderBy = module.exports.KalturaFeedDropFolderFileOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+FILE_NAME_ASC : '+fileName',
+FILE_SIZE_ASC : '+fileSize',
+FILE_SIZE_LAST_SET_AT_ASC : '+fileSizeLastSetAt',
+ID_ASC : '+id',
+PARSED_FLAVOR_ASC : '+parsedFlavor',
+PARSED_SLUG_ASC : '+parsedSlug',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+FILE_NAME_DESC : '-fileName',
+FILE_SIZE_DESC : '-fileSize',
+FILE_SIZE_LAST_SET_AT_DESC : '-fileSizeLastSetAt',
+ID_DESC : '-id',
+PARSED_FLAVOR_DESC : '-parsedFlavor',
+PARSED_SLUG_DESC : '-parsedSlug',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+var KalturaFeedDropFolderOrderBy = module.exports.KalturaFeedDropFolderOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+ID_ASC : '+id',
+NAME_ASC : '+name',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+ID_DESC : '-id',
+NAME_DESC : '-name',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
 var KalturaFileAssetObjectType = module.exports.KalturaFileAssetObjectType = {
 UI_CONF : '2',
 };
@@ -4081,6 +4111,9 @@ CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
+};
+
+var KalturaSyndicationDistributionProviderOrderBy = module.exports.KalturaSyndicationDistributionProviderOrderBy = {
 };
 
 var KalturaSyndicationFeedEntriesOrderBy = module.exports.KalturaSyndicationFeedEntriesOrderBy = {

@@ -1663,80 +1663,6 @@ util.inherits(KalturaUrlTokenizer, kaltura.KalturaObjectBase);
 
 
 /**
- * @param id int The id of the Delivery (readOnly).
- * @param partnerId int  (readOnly).
- * @param name string The name of the Delivery.
- * @param type string Delivery type.
- * @param systemName string System name of the delivery.
- * @param description string The description of the Delivery.
- * @param createdAt int Creation time as Unix timestamp (In seconds) (readOnly).
- * @param updatedAt int Update time as Unix timestamp (In seconds) (readOnly).
- * @param streamerType string .
- * @param url string .
- * @param hostName string the host part of the url (readOnly).
- * @param status int .
- * @param recognizer KalturaUrlRecognizer .
- * @param tokenizer KalturaUrlTokenizer .
- * @param isDefault int True if this is the systemwide default for the protocol (readOnly).
- * @param parentId int the object from which this object was cloned (or 0) (readOnly).
- * @param mediaProtocols string Comma separated list of supported media protocols. f.i. rtmpe.
- * @param priority int priority used for ordering similar delivery profiles.
- * @param extraParams string Extra query string parameters that should be added to the url.
- */
-function KalturaDeliveryProfile(){
-	KalturaDeliveryProfile.super_.call(this);
-	this.id = null;
-	this.partnerId = null;
-	this.name = null;
-	this.type = null;
-	this.systemName = null;
-	this.description = null;
-	this.createdAt = null;
-	this.updatedAt = null;
-	this.streamerType = null;
-	this.url = null;
-	this.hostName = null;
-	this.status = null;
-	this.recognizer = null;
-	this.tokenizer = null;
-	this.isDefault = null;
-	this.parentId = null;
-	this.mediaProtocols = null;
-	this.priority = null;
-	this.extraParams = null;
-}
-module.exports.KalturaDeliveryProfile = KalturaDeliveryProfile;
-
-util.inherits(KalturaDeliveryProfile, kaltura.KalturaObjectBase);
-
-
-/**
- * @param fileSyncLocalPath string .
- * @param fileSyncRemoteUrl string The translated path as used by the scheduler.
- * @param fileSyncObjectSubType int .
- */
-function KalturaFileSyncDescriptor(){
-	KalturaFileSyncDescriptor.super_.call(this);
-	this.fileSyncLocalPath = null;
-	this.fileSyncRemoteUrl = null;
-	this.fileSyncObjectSubType = null;
-}
-module.exports.KalturaFileSyncDescriptor = KalturaFileSyncDescriptor;
-
-util.inherits(KalturaFileSyncDescriptor, kaltura.KalturaObjectBase);
-
-
-/**
- */
-function KalturaDestFileSyncDescriptor(){
-	KalturaDestFileSyncDescriptor.super_.call(this);
-}
-module.exports.KalturaDestFileSyncDescriptor = KalturaDestFileSyncDescriptor;
-
-util.inherits(KalturaDestFileSyncDescriptor, KalturaFileSyncDescriptor);
-
-
-/**
  */
 function KalturaSearchItem(){
 	KalturaSearchItem.super_.call(this);
@@ -1768,6 +1694,136 @@ function KalturaRelatedFilter(){
 module.exports.KalturaRelatedFilter = KalturaRelatedFilter;
 
 util.inherits(KalturaRelatedFilter, KalturaFilter);
+
+
+/**
+ * @param idEqual string .
+ * @param idIn string .
+ * @param entryIdEqual string .
+ * @param entryIdIn string .
+ * @param partnerIdEqual int .
+ * @param partnerIdIn string .
+ * @param sizeGreaterThanOrEqual int .
+ * @param sizeLessThanOrEqual int .
+ * @param tagsLike string .
+ * @param tagsMultiLikeOr string .
+ * @param tagsMultiLikeAnd string .
+ * @param createdAtGreaterThanOrEqual int .
+ * @param createdAtLessThanOrEqual int .
+ * @param updatedAtGreaterThanOrEqual int .
+ * @param updatedAtLessThanOrEqual int .
+ * @param deletedAtGreaterThanOrEqual int .
+ * @param deletedAtLessThanOrEqual int .
+ */
+function KalturaAssetBaseFilter(){
+	KalturaAssetBaseFilter.super_.call(this);
+	this.idEqual = null;
+	this.idIn = null;
+	this.entryIdEqual = null;
+	this.entryIdIn = null;
+	this.partnerIdEqual = null;
+	this.partnerIdIn = null;
+	this.sizeGreaterThanOrEqual = null;
+	this.sizeLessThanOrEqual = null;
+	this.tagsLike = null;
+	this.tagsMultiLikeOr = null;
+	this.tagsMultiLikeAnd = null;
+	this.createdAtGreaterThanOrEqual = null;
+	this.createdAtLessThanOrEqual = null;
+	this.updatedAtGreaterThanOrEqual = null;
+	this.updatedAtLessThanOrEqual = null;
+	this.deletedAtGreaterThanOrEqual = null;
+	this.deletedAtLessThanOrEqual = null;
+}
+module.exports.KalturaAssetBaseFilter = KalturaAssetBaseFilter;
+
+util.inherits(KalturaAssetBaseFilter, KalturaRelatedFilter);
+
+
+/**
+ */
+function KalturaAssetFilter(){
+	KalturaAssetFilter.super_.call(this);
+}
+module.exports.KalturaAssetFilter = KalturaAssetFilter;
+
+util.inherits(KalturaAssetFilter, KalturaAssetBaseFilter);
+
+
+/**
+ * @param id int The id of the Delivery (readOnly).
+ * @param partnerId int  (readOnly).
+ * @param name string The name of the Delivery.
+ * @param type string Delivery type.
+ * @param systemName string System name of the delivery.
+ * @param description string The description of the Delivery.
+ * @param createdAt int Creation time as Unix timestamp (In seconds) (readOnly).
+ * @param updatedAt int Update time as Unix timestamp (In seconds) (readOnly).
+ * @param streamerType string .
+ * @param url string .
+ * @param hostName string the host part of the url (readOnly).
+ * @param status int .
+ * @param recognizer KalturaUrlRecognizer .
+ * @param tokenizer KalturaUrlTokenizer .
+ * @param isDefault int True if this is the systemwide default for the protocol (readOnly).
+ * @param parentId int the object from which this object was cloned (or 0) (readOnly).
+ * @param mediaProtocols string Comma separated list of supported media protocols. f.i. rtmpe.
+ * @param priority int priority used for ordering similar delivery profiles.
+ * @param extraParams string Extra query string parameters that should be added to the url.
+ * @param supplementaryAssetsFilter KalturaAssetFilter A filter that can be used to include additional assets in the URL (e.g. captions).
+ */
+function KalturaDeliveryProfile(){
+	KalturaDeliveryProfile.super_.call(this);
+	this.id = null;
+	this.partnerId = null;
+	this.name = null;
+	this.type = null;
+	this.systemName = null;
+	this.description = null;
+	this.createdAt = null;
+	this.updatedAt = null;
+	this.streamerType = null;
+	this.url = null;
+	this.hostName = null;
+	this.status = null;
+	this.recognizer = null;
+	this.tokenizer = null;
+	this.isDefault = null;
+	this.parentId = null;
+	this.mediaProtocols = null;
+	this.priority = null;
+	this.extraParams = null;
+	this.supplementaryAssetsFilter = null;
+}
+module.exports.KalturaDeliveryProfile = KalturaDeliveryProfile;
+
+util.inherits(KalturaDeliveryProfile, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param fileSyncLocalPath string .
+ * @param fileSyncRemoteUrl string The translated path as used by the scheduler.
+ * @param fileSyncObjectSubType int .
+ */
+function KalturaFileSyncDescriptor(){
+	KalturaFileSyncDescriptor.super_.call(this);
+	this.fileSyncLocalPath = null;
+	this.fileSyncRemoteUrl = null;
+	this.fileSyncObjectSubType = null;
+}
+module.exports.KalturaFileSyncDescriptor = KalturaFileSyncDescriptor;
+
+util.inherits(KalturaFileSyncDescriptor, kaltura.KalturaObjectBase);
+
+
+/**
+ */
+function KalturaDestFileSyncDescriptor(){
+	KalturaDestFileSyncDescriptor.super_.call(this);
+}
+module.exports.KalturaDestFileSyncDescriptor = KalturaDestFileSyncDescriptor;
+
+util.inherits(KalturaDestFileSyncDescriptor, KalturaFileSyncDescriptor);
 
 
 /**
@@ -11148,50 +11204,6 @@ util.inherits(KalturaAppTokenFilter, KalturaAppTokenBaseFilter);
 
 
 /**
- * @param idEqual string .
- * @param idIn string .
- * @param entryIdEqual string .
- * @param entryIdIn string .
- * @param partnerIdEqual int .
- * @param partnerIdIn string .
- * @param sizeGreaterThanOrEqual int .
- * @param sizeLessThanOrEqual int .
- * @param tagsLike string .
- * @param tagsMultiLikeOr string .
- * @param tagsMultiLikeAnd string .
- * @param createdAtGreaterThanOrEqual int .
- * @param createdAtLessThanOrEqual int .
- * @param updatedAtGreaterThanOrEqual int .
- * @param updatedAtLessThanOrEqual int .
- * @param deletedAtGreaterThanOrEqual int .
- * @param deletedAtLessThanOrEqual int .
- */
-function KalturaAssetBaseFilter(){
-	KalturaAssetBaseFilter.super_.call(this);
-	this.idEqual = null;
-	this.idIn = null;
-	this.entryIdEqual = null;
-	this.entryIdIn = null;
-	this.partnerIdEqual = null;
-	this.partnerIdIn = null;
-	this.sizeGreaterThanOrEqual = null;
-	this.sizeLessThanOrEqual = null;
-	this.tagsLike = null;
-	this.tagsMultiLikeOr = null;
-	this.tagsMultiLikeAnd = null;
-	this.createdAtGreaterThanOrEqual = null;
-	this.createdAtLessThanOrEqual = null;
-	this.updatedAtGreaterThanOrEqual = null;
-	this.updatedAtLessThanOrEqual = null;
-	this.deletedAtGreaterThanOrEqual = null;
-	this.deletedAtLessThanOrEqual = null;
-}
-module.exports.KalturaAssetBaseFilter = KalturaAssetBaseFilter;
-
-util.inherits(KalturaAssetBaseFilter, KalturaRelatedFilter);
-
-
-/**
  * @param systemNameEqual string .
  * @param systemNameIn string .
  * @param isSystemDefaultEqual int .
@@ -13396,16 +13408,6 @@ function KalturaAmazonS3StorageProfileBaseFilter(){
 module.exports.KalturaAmazonS3StorageProfileBaseFilter = KalturaAmazonS3StorageProfileBaseFilter;
 
 util.inherits(KalturaAmazonS3StorageProfileBaseFilter, KalturaStorageProfileFilter);
-
-
-/**
- */
-function KalturaAssetFilter(){
-	KalturaAssetFilter.super_.call(this);
-}
-module.exports.KalturaAssetFilter = KalturaAssetFilter;
-
-util.inherits(KalturaAssetFilter, KalturaAssetBaseFilter);
 
 
 /**

@@ -1741,9 +1741,11 @@ util.inherits(KalturaAssetBaseFilter, KalturaRelatedFilter);
 
 
 /**
+ * @param typeIn string .
  */
 function KalturaAssetFilter(){
 	KalturaAssetFilter.super_.call(this);
+	this.typeIn = null;
 }
 module.exports.KalturaAssetFilter = KalturaAssetFilter;
 
@@ -2357,11 +2359,23 @@ util.inherits(KalturaEntryDistribution, kaltura.KalturaObjectBase);
 
 
 /**
+ */
+function KalturaPluginReplacementOptionsItem(){
+	KalturaPluginReplacementOptionsItem.super_.call(this);
+}
+module.exports.KalturaPluginReplacementOptionsItem = KalturaPluginReplacementOptionsItem;
+
+util.inherits(KalturaPluginReplacementOptionsItem, kaltura.KalturaObjectBase);
+
+
+/**
  * @param keepManualThumbnails int If true manually created thumbnails will not be deleted on entry replacement.
+ * @param pluginOptionItems array Array of plugin replacement options.
  */
 function KalturaEntryReplacementOptions(){
 	KalturaEntryReplacementOptions.super_.call(this);
 	this.keepManualThumbnails = null;
+	this.pluginOptionItems = null;
 }
 module.exports.KalturaEntryReplacementOptions = KalturaEntryReplacementOptions;
 
@@ -9281,6 +9295,26 @@ util.inherits(KalturaLiveStreamPushPublishRTMPConfiguration, KalturaLiveStreamPu
 
 
 /**
+ * @param vodEntryId string $vod Entry Id.
+ * @param liveEntryId string live Entry Id.
+ * @param totalVodDuration float total VOD Duration.
+ * @param lastSegmentDuration float last Segment Duration.
+ * @param amfArray string amf Array File Path.
+ */
+function KalturaLiveToVodJobData(){
+	KalturaLiveToVodJobData.super_.call(this);
+	this.vodEntryId = null;
+	this.liveEntryId = null;
+	this.totalVodDuration = null;
+	this.lastSegmentDuration = null;
+	this.amfArray = null;
+}
+module.exports.KalturaLiveToVodJobData = KalturaLiveToVodJobData;
+
+util.inherits(KalturaLiveToVodJobData, KalturaJobData);
+
+
+/**
  */
 function KalturaLocationScheduleResource(){
 	KalturaLocationScheduleResource.super_.call(this);
@@ -9448,6 +9482,18 @@ function KalturaMetadataProfileListResponse(){
 module.exports.KalturaMetadataProfileListResponse = KalturaMetadataProfileListResponse;
 
 util.inherits(KalturaMetadataProfileListResponse, KalturaListResponse);
+
+
+/**
+ * @param shouldCopyMetadata bool If true custom-metadata transferred to temp entry on entry replacement.
+ */
+function KalturaMetadataReplacementOptionsItem(){
+	KalturaMetadataReplacementOptionsItem.super_.call(this);
+	this.shouldCopyMetadata = null;
+}
+module.exports.KalturaMetadataReplacementOptionsItem = KalturaMetadataReplacementOptionsItem;
+
+util.inherits(KalturaMetadataReplacementOptionsItem, KalturaPluginReplacementOptionsItem);
 
 
 /**
@@ -15729,11 +15775,9 @@ util.inherits(KalturaSshDropFolderBaseFilter, KalturaRemoteDropFolderFilter);
 
 
 /**
- * @param typeIn string .
  */
 function KalturaThumbAssetFilter(){
 	KalturaThumbAssetFilter.super_.call(this);
-	this.typeIn = null;
 }
 module.exports.KalturaThumbAssetFilter = KalturaThumbAssetFilter;
 

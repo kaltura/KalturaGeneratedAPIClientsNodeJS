@@ -2269,6 +2269,7 @@ KalturaFileAssetService.prototype.listAction = function(callback, filter, pager)
  * @action export manually export an asset.
  * @action setAsSource Set a given flavor as the original flavor.
  * @action deleteLocalContent delete all local file syncs for this asset.
+ * @action serveAdStitchCmd serve cmd line to transcode the ad.
  */
 function KalturaFlavorAssetService(client){
 	KalturaFlavorAssetService.super_.call(this);
@@ -2544,6 +2545,21 @@ KalturaFlavorAssetService.prototype.deleteLocalContent = function(callback, asse
 	var kparams = {};
 	this.client.addParam(kparams, 'assetId', assetId);
 	this.client.queueServiceActionCall('flavorasset', 'deleteLocalContent', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * serve cmd line to transcode the ad.
+ * @param assetId string  (optional).
+ * @param mediaInfoJson string  (optional).
+ * @return .
+ */
+KalturaFlavorAssetService.prototype.serveAdStitchCmd = function(callback, assetId, mediaInfoJson){
+	var kparams = {};
+	this.client.addParam(kparams, 'assetId', assetId);
+	this.client.addParam(kparams, 'mediaInfoJson', mediaInfoJson);
+	this.client.queueServiceActionCall('flavorasset', 'serveAdStitchCmd', kparams);
 	if (!this.client.isMultiRequest()){
 		this.client.doQueue(callback);
 	}

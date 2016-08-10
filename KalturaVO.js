@@ -9295,26 +9295,6 @@ util.inherits(KalturaLiveStreamPushPublishRTMPConfiguration, KalturaLiveStreamPu
 
 
 /**
- * @param vodEntryId string $vod Entry Id.
- * @param liveEntryId string live Entry Id.
- * @param totalVodDuration float total VOD Duration.
- * @param lastSegmentDuration float last Segment Duration.
- * @param amfArray string amf Array File Path.
- */
-function KalturaLiveToVodJobData(){
-	KalturaLiveToVodJobData.super_.call(this);
-	this.vodEntryId = null;
-	this.liveEntryId = null;
-	this.totalVodDuration = null;
-	this.lastSegmentDuration = null;
-	this.amfArray = null;
-}
-module.exports.KalturaLiveToVodJobData = KalturaLiveToVodJobData;
-
-util.inherits(KalturaLiveToVodJobData, KalturaJobData);
-
-
-/**
  */
 function KalturaLocationScheduleResource(){
 	KalturaLocationScheduleResource.super_.call(this);

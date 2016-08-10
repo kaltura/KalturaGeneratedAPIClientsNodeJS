@@ -1421,7 +1421,6 @@ VALIDATE_LIVE_MEDIA_SERVERS : '38',
 SYNC_CATEGORY_PRIVACY_CONTEXT : '39',
 LIVE_REPORT_EXPORT : '40',
 RECALCULATE_CACHE : '41',
-LIVE_TO_VOD : '42',
 };
 
 var KalturaBulkUploadAction = module.exports.KalturaBulkUploadAction = {

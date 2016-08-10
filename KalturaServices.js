@@ -2552,13 +2552,21 @@ KalturaFlavorAssetService.prototype.deleteLocalContent = function(callback, asse
 /**
  * serve cmd line to transcode the ad.
  * @param assetId string  (optional).
- * @param mediaInfoJson string  (optional).
+ * @param ffprobeJson string  (optional, default: null).
+ * @param duration string  (optional, default: null).
  * @return .
  */
-KalturaFlavorAssetService.prototype.serveAdStitchCmd = function(callback, assetId, mediaInfoJson){
+KalturaFlavorAssetService.prototype.serveAdStitchCmd = function(callback, assetId, ffprobeJson, duration){
+	if(!ffprobeJson){
+		ffprobeJson = null;
+	}
+	if(!duration){
+		duration = null;
+	}
 	var kparams = {};
 	this.client.addParam(kparams, 'assetId', assetId);
-	this.client.addParam(kparams, 'mediaInfoJson', mediaInfoJson);
+	this.client.addParam(kparams, 'ffprobeJson', ffprobeJson);
+	this.client.addParam(kparams, 'duration', duration);
 	this.client.queueServiceActionCall('flavorasset', 'serveAdStitchCmd', kparams);
 	if (!this.client.isMultiRequest()){
 		this.client.doQueue(callback);

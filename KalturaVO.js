@@ -1651,11 +1651,13 @@ util.inherits(KalturaUrlRecognizer, kaltura.KalturaObjectBase);
 /**
  * @param window int Window.
  * @param key string key.
+ * @param limitIpAddress bool .
  */
 function KalturaUrlTokenizer(){
 	KalturaUrlTokenizer.super_.call(this);
 	this.window = null;
 	this.key = null;
+	this.limitIpAddress = null;
 }
 module.exports.KalturaUrlTokenizer = KalturaUrlTokenizer;
 
@@ -10784,13 +10786,11 @@ util.inherits(KalturaUrlTokenizerBitGravity, KalturaUrlTokenizer);
 /**
  * @param keyPairId string .
  * @param rootDir string .
- * @param limitIpAddress bool .
  */
 function KalturaUrlTokenizerCloudFront(){
 	KalturaUrlTokenizerCloudFront.super_.call(this);
 	this.keyPairId = null;
 	this.rootDir = null;
-	this.limitIpAddress = null;
 }
 module.exports.KalturaUrlTokenizerCloudFront = KalturaUrlTokenizerCloudFront;
 

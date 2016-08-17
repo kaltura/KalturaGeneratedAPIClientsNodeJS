@@ -689,6 +689,7 @@ util.inherits(KalturaBaseResponseProfile, kaltura.KalturaObjectBase);
  * @param privacyContext string Set privacy context for search entries that assiged to private and public categories within a category privacy context.
  * @param updatedAt int Update date as Unix timestamp (In seconds) (readOnly).
  * @param useCategoryEntries bool .
+ * @param feedContentTypeHeader string Feed content-type header value.
  */
 function KalturaBaseSyndicationFeed(){
 	KalturaBaseSyndicationFeed.super_.call(this);
@@ -713,6 +714,7 @@ function KalturaBaseSyndicationFeed(){
 	this.privacyContext = null;
 	this.updatedAt = null;
 	this.useCategoryEntries = null;
+	this.feedContentTypeHeader = null;
 }
 module.exports.KalturaBaseSyndicationFeed = KalturaBaseSyndicationFeed;
 
@@ -4763,7 +4765,7 @@ util.inherits(KalturaScheduleEventRecurrence, kaltura.KalturaObjectBase);
  * @param ownerId string .
  * @param priority int The value for the priority field.
  * @param sequence int Defines the revision sequence number.
- * @param recurrenceType int  (insertOnly).
+ * @param recurrenceType int .
  * @param duration int Duration in seconds.
  * @param contact string Used to represent contact information or alternately a reference to contact information.
  * @param comment string Specifies non-processing information intended to provide a comment to the calendar user.

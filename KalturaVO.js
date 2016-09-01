@@ -7519,11 +7519,11 @@ util.inherits(KalturaDeliveryProfileRtmp, KalturaDeliveryProfile);
 
 
 /**
- * @param playbackDomain string Delivery server playback Domain.
+ * @param deliveryProfileIds array Delivery profile ids.
  */
 function KalturaDeliveryServerNode(){
 	KalturaDeliveryServerNode.super_.call(this);
-	this.playbackDomain = null;
+	this.deliveryProfileIds = null;
 }
 module.exports.KalturaDeliveryServerNode = KalturaDeliveryServerNode;
 
@@ -11675,9 +11675,11 @@ util.inherits(KalturaCuePointBaseFilter, KalturaRelatedFilter);
 
 
 /**
+ * @param isLive int .
  */
 function KalturaDeliveryProfileFilter(){
 	KalturaDeliveryProfileFilter.super_.call(this);
+	this.isLive = null;
 }
 module.exports.KalturaDeliveryProfileFilter = KalturaDeliveryProfileFilter;
 
@@ -11821,12 +11823,12 @@ util.inherits(KalturaDynamicObjectSearchItem, KalturaSearchOperator);
 
 
 /**
- * @param deliveryProfileIds array Delivery profile ids.
+ * @param playbackDomain string Delivery server playback Domain.
  * @param config string Overdie edge server default configuration - json format.
  */
 function KalturaEdgeServerNode(){
 	KalturaEdgeServerNode.super_.call(this);
-	this.deliveryProfileIds = null;
+	this.playbackDomain = null;
 	this.config = null;
 }
 module.exports.KalturaEdgeServerNode = KalturaEdgeServerNode;

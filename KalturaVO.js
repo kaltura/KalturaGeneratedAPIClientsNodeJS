@@ -590,6 +590,7 @@ util.inherits(KalturaOperationAttributes, kaltura.KalturaObjectBase);
  * @param entitledUsersPublish string list of user ids that are entitled to publish the entry (no server enforcement) The difference between entitledUsersEdit and entitledUsersPublish is applicative only.
  * @param capabilities string Comma seperated string of the capabilities of the entry. Any capability needed can be added to this list (readOnly).
  * @param templateEntryId string Template entry id (insertOnly).
+ * @param displayInSearch int should we display this entry in search.
  */
 function KalturaBaseEntry(){
 	KalturaBaseEntry.super_.call(this);
@@ -636,6 +637,7 @@ function KalturaBaseEntry(){
 	this.entitledUsersPublish = null;
 	this.capabilities = null;
 	this.templateEntryId = null;
+	this.displayInSearch = null;
 }
 module.exports.KalturaBaseEntry = KalturaBaseEntry;
 
@@ -3552,12 +3554,14 @@ util.inherits(KalturaLiveStreamPushPublishConfiguration, kaltura.KalturaObjectBa
  * @param shouldCopyEntitlement int .
  * @param shouldCopyScheduling int .
  * @param shouldCopyThumbnail int .
+ * @param shouldMakeHidden int .
  */
 function KalturaLiveEntryRecordingOptions(){
 	KalturaLiveEntryRecordingOptions.super_.call(this);
 	this.shouldCopyEntitlement = null;
 	this.shouldCopyScheduling = null;
 	this.shouldCopyThumbnail = null;
+	this.shouldMakeHidden = null;
 }
 module.exports.KalturaLiveEntryRecordingOptions = KalturaLiveEntryRecordingOptions;
 
@@ -9299,6 +9303,26 @@ util.inherits(KalturaLiveStreamPushPublishRTMPConfiguration, KalturaLiveStreamPu
 
 
 /**
+ * @param vodEntryId string $vod Entry Id.
+ * @param liveEntryId string live Entry Id.
+ * @param totalVodDuration float total VOD Duration.
+ * @param lastSegmentDuration float last Segment Duration.
+ * @param amfArray string amf Array File Path.
+ */
+function KalturaLiveToVodJobData(){
+	KalturaLiveToVodJobData.super_.call(this);
+	this.vodEntryId = null;
+	this.liveEntryId = null;
+	this.totalVodDuration = null;
+	this.lastSegmentDuration = null;
+	this.amfArray = null;
+}
+module.exports.KalturaLiveToVodJobData = KalturaLiveToVodJobData;
+
+util.inherits(KalturaLiveToVodJobData, KalturaJobData);
+
+
+/**
  */
 function KalturaLocationScheduleResource(){
 	KalturaLocationScheduleResource.super_.call(this);
@@ -14415,9 +14439,11 @@ util.inherits(KalturaScheduleEventFilter, KalturaScheduleEventBaseFilter);
 
 
 /**
+ * @param eventIdOrItsParentIdEqual int Find event-resource objects that associated with the event, if none found, find by its parent event.
  */
 function KalturaScheduleEventResourceFilter(){
 	KalturaScheduleEventResourceFilter.super_.call(this);
+	this.eventIdOrItsParentIdEqual = null;
 }
 module.exports.KalturaScheduleEventResourceFilter = KalturaScheduleEventResourceFilter;
 

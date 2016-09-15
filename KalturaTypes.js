@@ -306,6 +306,13 @@ NORMAL : 3,
 LOW : 5,
 };
 
+var KalturaEntryDisplayInSearchType = module.exports.KalturaEntryDisplayInSearchType = {
+SYSTEM : -1,
+NONE : 0,
+PARTNER_ONLY : 1,
+KALTURA_NETWORK : 2,
+};
+
 var KalturaEntryDistributionFlag = module.exports.KalturaEntryDistributionFlag = {
 NONE : 0,
 SUBMIT_REQUIRED : 1,
@@ -1421,6 +1428,7 @@ VALIDATE_LIVE_MEDIA_SERVERS : '38',
 SYNC_CATEGORY_PRIVACY_CONTEXT : '39',
 LIVE_REPORT_EXPORT : '40',
 RECALCULATE_CACHE : '41',
+LIVE_TO_VOD : '42',
 };
 
 var KalturaBulkUploadAction = module.exports.KalturaBulkUploadAction = {

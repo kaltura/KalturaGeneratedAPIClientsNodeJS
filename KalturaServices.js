@@ -9375,6 +9375,7 @@ KalturaGenericDistributionProviderActionService.prototype.listAction = function(
  * @action update Update cue point by id.
  * @action delete delete cue point by id, and delete all children cue points.
  * @action updateStatus Update cuePoint status by id.
+ * @action clone Clone cuePoint with id to given entry.
  */
 function KalturaCuePointService(client){
 	KalturaCuePointService.super_.call(this);
@@ -9510,6 +9511,21 @@ KalturaCuePointService.prototype.updateStatus = function(callback, id, status){
 		this.client.doQueue(callback);
 	}
 };
+/**
+ * Clone cuePoint with id to given entry.
+ * @param id string  (optional).
+ * @param entryId string  (optional).
+ * @return KalturaCuePoint.
+ */
+KalturaCuePointService.prototype.cloneAction = function(callback, id, entryId){
+	var kparams = {};
+	this.client.addParam(kparams, 'id', id);
+	this.client.addParam(kparams, 'entryId', entryId);
+	this.client.queueServiceActionCall('cuepoint_cuepoint', 'clone', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
 
 /**
  *Class definition for the Kaltura service: annotation.
@@ -9522,6 +9538,7 @@ KalturaCuePointService.prototype.updateStatus = function(callback, id, status){
  * @action count count cue point objects by filter.
  * @action delete delete cue point by id, and delete all children cue points.
  * @action updateStatus Update cuePoint status by id.
+ * @action clone Clone cuePoint with id to given entry.
  */
 function KalturaAnnotationService(client){
 	KalturaAnnotationService.super_.call(this);
@@ -9653,6 +9670,21 @@ KalturaAnnotationService.prototype.updateStatus = function(callback, id, status)
 	this.client.addParam(kparams, 'id', id);
 	this.client.addParam(kparams, 'status', status);
 	this.client.queueServiceActionCall('annotation_annotation', 'updateStatus', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Clone cuePoint with id to given entry.
+ * @param id string  (optional).
+ * @param entryId string  (optional).
+ * @return KalturaCuePoint.
+ */
+KalturaAnnotationService.prototype.cloneAction = function(callback, id, entryId){
+	var kparams = {};
+	this.client.addParam(kparams, 'id', id);
+	this.client.addParam(kparams, 'entryId', entryId);
+	this.client.queueServiceActionCall('annotation_annotation', 'clone', kparams);
 	if (!this.client.isMultiRequest()){
 		this.client.doQueue(callback);
 	}

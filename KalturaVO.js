@@ -6682,6 +6682,7 @@ util.inherits(KalturaBulkUploadResultScheduleResource, KalturaBulkUploadResult);
  * @param gender int .
  * @param firstName string .
  * @param lastName string .
+ * @param group string .
  */
 function KalturaBulkUploadResultUser(){
 	KalturaBulkUploadResultUser.super_.call(this);
@@ -6698,6 +6699,7 @@ function KalturaBulkUploadResultUser(){
 	this.gender = null;
 	this.firstName = null;
 	this.lastName = null;
+	this.group = null;
 }
 module.exports.KalturaBulkUploadResultUser = KalturaBulkUploadResultUser;
 

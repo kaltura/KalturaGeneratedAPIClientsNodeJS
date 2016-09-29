@@ -7525,6 +7525,18 @@ util.inherits(KalturaDeliveryProfileRtmp, KalturaDeliveryProfile);
 
 
 /**
+ * @param allowFairplayOffline bool .
+ */
+function KalturaDeliveryProfileVodPackagerHls(){
+	KalturaDeliveryProfileVodPackagerHls.super_.call(this);
+	this.allowFairplayOffline = null;
+}
+module.exports.KalturaDeliveryProfileVodPackagerHls = KalturaDeliveryProfileVodPackagerHls;
+
+util.inherits(KalturaDeliveryProfileVodPackagerHls, KalturaDeliveryProfile);
+
+
+/**
  * @param deliveryProfileIds array Delivery profile ids.
  */
 function KalturaDeliveryServerNode(){

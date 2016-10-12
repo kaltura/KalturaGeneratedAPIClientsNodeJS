@@ -3244,6 +3244,7 @@ KalturaLiveStatsService.prototype.collect = function(callback, event){
  * @action isLive Delivering the status of a live stream (on-air/offline) if it is possible.
  * @action addLiveStreamPushPublishConfiguration Add new pushPublish configuration to entry.
  * @action removeLiveStreamPushPublishConfiguration Remove push publish configuration from entry.
+ * @action regenrateSecureToken Regenerate new secure token for liveStream.
  * @action appendRecording Append recorded video to live entry.
  * @action registerMediaServer Register media server to live entry.
  * @action unregisterMediaServer Unregister media server from live entry.
@@ -3462,6 +3463,19 @@ KalturaLiveStreamService.prototype.removeLiveStreamPushPublishConfiguration = fu
 	this.client.addParam(kparams, 'entryId', entryId);
 	this.client.addParam(kparams, 'protocol', protocol);
 	this.client.queueServiceActionCall('livestream', 'removeLiveStreamPushPublishConfiguration', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Regenerate new secure token for liveStream.
+ * @param entryId string Live stream entry id to regenerate secure token for (optional).
+ * @return .
+ */
+KalturaLiveStreamService.prototype.regenrateSecureToken = function(callback, entryId){
+	var kparams = {};
+	this.client.addParam(kparams, 'entryId', entryId);
+	this.client.queueServiceActionCall('livestream', 'regenrateSecureToken', kparams);
 	if (!this.client.isMultiRequest()){
 		this.client.doQueue(callback);
 	}

@@ -7540,9 +7540,10 @@ KalturaUserService.prototype.login = function(callback, partnerId, userId, passw
  * @param partnerId int The identifier of the partner account (optional, default: null).
  * @param expiry int The requested time (in seconds) before the generated KS expires (By default, a KS expires after 24 hours) (optional, default: 86400).
  * @param privileges string Special privileges (optional, default: *).
+ * @param otp string the user's one-time password (optional, default: null).
  * @return string.
  */
-KalturaUserService.prototype.loginByLoginId = function(callback, loginId, password, partnerId, expiry, privileges){
+KalturaUserService.prototype.loginByLoginId = function(callback, loginId, password, partnerId, expiry, privileges, otp){
 	if(!partnerId){
 		partnerId = null;
 	}
@@ -7552,12 +7553,16 @@ KalturaUserService.prototype.loginByLoginId = function(callback, loginId, passwo
 	if(!privileges){
 		privileges = '*';
 	}
+	if(!otp){
+		otp = null;
+	}
 	var kparams = {};
 	this.client.addParam(kparams, 'loginId', loginId);
 	this.client.addParam(kparams, 'password', password);
 	this.client.addParam(kparams, 'partnerId', partnerId);
 	this.client.addParam(kparams, 'expiry', expiry);
 	this.client.addParam(kparams, 'privileges', privileges);
+	this.client.addParam(kparams, 'otp', otp);
 	this.client.queueServiceActionCall('user', 'loginByLoginId', kparams);
 	if (!this.client.isMultiRequest()){
 		this.client.doQueue(callback);

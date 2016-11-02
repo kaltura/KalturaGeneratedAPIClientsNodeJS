@@ -2554,7 +2554,7 @@ KalturaFlavorAssetService.prototype.deleteLocalContent = function(callback, asse
  * @param assetId string  (optional).
  * @param ffprobeJson string  (optional, default: null).
  * @param duration string  (optional, default: null).
- * @return .
+ * @return string.
  */
 KalturaFlavorAssetService.prototype.serveAdStitchCmd = function(callback, assetId, ffprobeJson, duration){
 	if(!ffprobeJson){
@@ -2916,6 +2916,7 @@ KalturaLiveChannelSegmentService.prototype.listAction = function(callback, filte
  * @action registerMediaServer Register media server to live entry.
  * @action unregisterMediaServer Unregister media server from live entry.
  * @action validateRegisteredMediaServers Validates all registered media servers.
+ * @action setRecordedContent Sey recorded video to live entry.
  */
 function KalturaLiveChannelService(client){
 	KalturaLiveChannelService.super_.call(this);
@@ -3100,6 +3101,25 @@ KalturaLiveChannelService.prototype.validateRegisteredMediaServers = function(ca
 		this.client.doQueue(callback);
 	}
 };
+/**
+ * Sey recorded video to live entry.
+ * @param entryId string Live entry id (optional).
+ * @param mediaServerIndex string  (optional, enum: KalturaEntryServerNodeType).
+ * @param resource KalturaDataCenterContentResource  (optional).
+ * @param duration float in seconds (optional).
+ * @return KalturaLiveEntry.
+ */
+KalturaLiveChannelService.prototype.setRecordedContent = function(callback, entryId, mediaServerIndex, resource, duration){
+	var kparams = {};
+	this.client.addParam(kparams, 'entryId', entryId);
+	this.client.addParam(kparams, 'mediaServerIndex', mediaServerIndex);
+	this.client.addParam(kparams, 'resource', kaltura.toParams(resource));
+	this.client.addParam(kparams, 'duration', duration);
+	this.client.queueServiceActionCall('livechannel', 'setRecordedContent', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
 
 /**
  *Class definition for the Kaltura service: liveReports.
@@ -3249,6 +3269,7 @@ KalturaLiveStatsService.prototype.collect = function(callback, event){
  * @action registerMediaServer Register media server to live entry.
  * @action unregisterMediaServer Unregister media server from live entry.
  * @action validateRegisteredMediaServers Validates all registered media servers.
+ * @action setRecordedContent Sey recorded video to live entry.
  * @action createPeriodicSyncPoints Creates perioding metadata sync-point events on a live stream.
  */
 function KalturaLiveStreamService(client){
@@ -3559,6 +3580,25 @@ KalturaLiveStreamService.prototype.validateRegisteredMediaServers = function(cal
 	var kparams = {};
 	this.client.addParam(kparams, 'entryId', entryId);
 	this.client.queueServiceActionCall('livestream', 'validateRegisteredMediaServers', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * Sey recorded video to live entry.
+ * @param entryId string Live entry id (optional).
+ * @param mediaServerIndex string  (optional, enum: KalturaEntryServerNodeType).
+ * @param resource KalturaDataCenterContentResource  (optional).
+ * @param duration float in seconds (optional).
+ * @return KalturaLiveEntry.
+ */
+KalturaLiveStreamService.prototype.setRecordedContent = function(callback, entryId, mediaServerIndex, resource, duration){
+	var kparams = {};
+	this.client.addParam(kparams, 'entryId', entryId);
+	this.client.addParam(kparams, 'mediaServerIndex', mediaServerIndex);
+	this.client.addParam(kparams, 'resource', kaltura.toParams(resource));
+	this.client.addParam(kparams, 'duration', duration);
+	this.client.queueServiceActionCall('livestream', 'setRecordedContent', kparams);
 	if (!this.client.isMultiRequest()){
 		this.client.doQueue(callback);
 	}

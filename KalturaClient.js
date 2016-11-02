@@ -37,7 +37,7 @@ kaltura.enums = require('./KalturaTypes');
 
 function KalturaClient(config) {
 	this.setApiVersion('3.3.0');
-	this.setClientTag('node:16-11-01');
+	this.setClientTag('node:16-11-02');
 	this.init(config);
 }
 
@@ -448,17 +448,17 @@ KalturaClient.prototype.eventNotificationTemplate = null;
  */
 KalturaClient.prototype.externalMedia = null;
 /**
- * ScheduleEvent service lets you create and manage schedule events
+ * The ScheduleEvent service enables you to create and manage (update, delete, retrieve, etc.) scheduled recording events
  * @param kaltura.services.KalturaScheduleEventService
  */
 KalturaClient.prototype.scheduleEvent = null;
 /**
- * ScheduleResource service lets you create and manage schedule events
+ * The ScheduleResource service enables you to create and manage (update, delete, retrieve, etc.) the resources required for scheduled events (cameras, capture devices, etc.)
  * @param kaltura.services.KalturaScheduleResourceService
  */
 KalturaClient.prototype.scheduleResource = null;
 /**
- * ScheduleEventResource service lets you create and manage connections between events and resources
+ * The ScheduleEventResource service enables you create and manage (update, delete, retrieve, etc.) the connections between recording events and the resources required for these events (cameras, capture devices, etc.)
  * @param kaltura.services.KalturaScheduleEventResourceService
  */
 KalturaClient.prototype.scheduleEventResource = null;

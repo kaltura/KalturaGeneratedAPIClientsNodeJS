@@ -2527,6 +2527,28 @@ util.inherits(KalturaPlayableEntry, KalturaBaseEntry);
 
 
 /**
+ * @param type string .
+ * @param trackIndex int .
+ * @param language string .
+ * @param channelIndex int .
+ * @param label string .
+ * @param channelLayout string .
+ */
+function KalturaStreamContainer(){
+	KalturaStreamContainer.super_.call(this);
+	this.type = null;
+	this.trackIndex = null;
+	this.language = null;
+	this.channelIndex = null;
+	this.label = null;
+	this.channelLayout = null;
+}
+module.exports.KalturaStreamContainer = KalturaStreamContainer;
+
+util.inherits(KalturaStreamContainer, kaltura.KalturaObjectBase);
+
+
+/**
  * @param mediaType int The media type of the entry (insertOnly).
  * @param conversionQuality string Override the default conversion quality (insertOnly).
  * @param sourceType string The source type of the entry (insertOnly).
@@ -2538,6 +2560,7 @@ util.inherits(KalturaPlayableEntry, KalturaBaseEntry);
  * @param dataUrl string The URL used for playback. This is not the download URL (readOnly).
  * @param flavorParamsIds string Comma separated flavor params ids that exists for this media entry (readOnly).
  * @param isTrimDisabled int True if trim action is disabled for this entry (readOnly).
+ * @param streams array Array of streams that exists on the entry.
  */
 function KalturaMediaEntry(){
 	KalturaMediaEntry.super_.call(this);
@@ -2552,6 +2575,7 @@ function KalturaMediaEntry(){
 	this.dataUrl = null;
 	this.flavorParamsIds = null;
 	this.isTrimDisabled = null;
+	this.streams = null;
 }
 module.exports.KalturaMediaEntry = KalturaMediaEntry;
 
@@ -2740,6 +2764,7 @@ util.inherits(KalturaFileSync, kaltura.KalturaObjectBase);
  * @param videoCodecId string The video codec (readOnly).
  * @param status int The status of the Flavor Asset (readOnly).
  * @param language string The language of the flavor asset.
+ * @param label string The label of the flavor asset (readOnly).
  */
 function KalturaFlavorAsset(){
 	KalturaFlavorAsset.super_.call(this);
@@ -2754,6 +2779,7 @@ function KalturaFlavorAsset(){
 	this.videoCodecId = null;
 	this.status = null;
 	this.language = null;
+	this.label = null;
 }
 module.exports.KalturaFlavorAsset = KalturaFlavorAsset;
 
@@ -4698,6 +4724,7 @@ util.inherits(KalturaResponseProfileCacheRecalculateResults, kaltura.KalturaObje
  * @param name string .
  * @param frequency string .
  * @param until int .
+ * @param timeZone string TimeZone String.
  * @param count int .
  * @param interval int .
  * @param bySecond string Comma separated numbers between 0 to 59.
@@ -4733,6 +4760,7 @@ function KalturaScheduleEventRecurrence(){
 	this.name = null;
 	this.frequency = null;
 	this.until = null;
+	this.timeZone = null;
 	this.count = null;
 	this.interval = null;
 	this.bySecond = null;
@@ -7525,15 +7553,15 @@ util.inherits(KalturaDeliveryProfileRtmp, KalturaDeliveryProfile);
 
 
 /**
- * @param allowFairplayOffline bool .
+ * @param adStitchingEnabled bool .
  */
-function KalturaDeliveryProfileVodPackagerHls(){
-	KalturaDeliveryProfileVodPackagerHls.super_.call(this);
-	this.allowFairplayOffline = null;
+function KalturaDeliveryProfileVodPackagerPlayServer(){
+	KalturaDeliveryProfileVodPackagerPlayServer.super_.call(this);
+	this.adStitchingEnabled = null;
 }
-module.exports.KalturaDeliveryProfileVodPackagerHls = KalturaDeliveryProfileVodPackagerHls;
+module.exports.KalturaDeliveryProfileVodPackagerPlayServer = KalturaDeliveryProfileVodPackagerPlayServer;
 
-util.inherits(KalturaDeliveryProfileVodPackagerHls, KalturaDeliveryProfile);
+util.inherits(KalturaDeliveryProfileVodPackagerPlayServer, KalturaDeliveryProfile);
 
 
 /**
@@ -11736,6 +11764,18 @@ function KalturaDeliveryProfileGenericRtmp(){
 module.exports.KalturaDeliveryProfileGenericRtmp = KalturaDeliveryProfileGenericRtmp;
 
 util.inherits(KalturaDeliveryProfileGenericRtmp, KalturaDeliveryProfileRtmp);
+
+
+/**
+ * @param allowFairplayOffline bool .
+ */
+function KalturaDeliveryProfileVodPackagerHls(){
+	KalturaDeliveryProfileVodPackagerHls.super_.call(this);
+	this.allowFairplayOffline = null;
+}
+module.exports.KalturaDeliveryProfileVodPackagerHls = KalturaDeliveryProfileVodPackagerHls;
+
+util.inherits(KalturaDeliveryProfileVodPackagerHls, KalturaDeliveryProfileVodPackagerPlayServer);
 
 
 /**

@@ -62,6 +62,7 @@ KalturaAccessControlProfileService.prototype.add = function(callback, accessCont
  * Get access control profile by id.
  * @param id int  (optional).
  * @return KalturaAccessControlProfile.
+ * @return .
  */
 KalturaAccessControlProfileService.prototype.get = function(callback, id){
 	var kparams = {};
@@ -76,6 +77,7 @@ KalturaAccessControlProfileService.prototype.get = function(callback, id){
  * @param id int  (optional).
  * @param accessControlProfile KalturaAccessControlProfile  (optional).
  * @return KalturaAccessControlProfile.
+ * @return .
  */
 KalturaAccessControlProfileService.prototype.update = function(callback, id, accessControlProfile){
 	var kparams = {};
@@ -89,6 +91,8 @@ KalturaAccessControlProfileService.prototype.update = function(callback, id, acc
 /**
  * Delete access control profile by id.
  * @param id int  (optional).
+ * @return .
+ * @return .
  * @return .
  */
 KalturaAccessControlProfileService.prototype.deleteAction = function(callback, id){
@@ -173,6 +177,8 @@ KalturaAccessControlService.prototype.get = function(callback, id){
  * @param id int  (optional).
  * @param accessControl KalturaAccessControl  (optional).
  * @return KalturaAccessControl.
+ * @return .
+ * @return .
  */
 KalturaAccessControlService.prototype.update = function(callback, id, accessControl){
 	var kparams = {};
@@ -245,6 +251,13 @@ module.exports.KalturaAdminUserService = KalturaAdminUserService;
  * @param newEmail string Optional, provide only when you want to update the email (optional).
  * @param newPassword string  (optional).
  * @return KalturaAdminUser.
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaAdminUserService.prototype.updatePassword = function(callback, email, password, newEmail, newPassword){
 	if(!newEmail){
@@ -267,6 +280,11 @@ KalturaAdminUserService.prototype.updatePassword = function(callback, email, pas
  * Reset admin user password and send it to the users email address.
  * @param email string  (optional).
  * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaAdminUserService.prototype.resetPassword = function(callback, email){
 	var kparams = {};
@@ -282,6 +300,7 @@ KalturaAdminUserService.prototype.resetPassword = function(callback, email){
  * @param password string  (optional).
  * @param partnerId int  (optional, default: null).
  * @return string.
+ * @return .
  */
 KalturaAdminUserService.prototype.login = function(callback, email, password, partnerId){
 	if(!partnerId){
@@ -300,6 +319,12 @@ KalturaAdminUserService.prototype.login = function(callback, email, password, pa
  * Set initial users password.
  * @param hashKey string  (optional).
  * @param newPassword string new password to set (optional).
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  * @return .
  */
 KalturaAdminUserService.prototype.setInitialPassword = function(callback, hashKey, newPassword){
@@ -374,6 +399,7 @@ KalturaAppTokenService.prototype.add = function(callback, appToken){
  * Get application authentication token by id.
  * @param id string  (optional).
  * @return KalturaAppToken.
+ * @return .
  */
 KalturaAppTokenService.prototype.get = function(callback, id){
 	var kparams = {};
@@ -388,6 +414,7 @@ KalturaAppTokenService.prototype.get = function(callback, id){
  * @param id string  (optional).
  * @param appToken KalturaAppToken  (optional).
  * @return KalturaAppToken.
+ * @return .
  */
 KalturaAppTokenService.prototype.update = function(callback, id, appToken){
 	var kparams = {};
@@ -401,6 +428,7 @@ KalturaAppTokenService.prototype.update = function(callback, id, appToken){
 /**
  * Delete application authentication token by id.
  * @param id string  (optional).
+ * @return .
  * @return .
  */
 KalturaAppTokenService.prototype.deleteAction = function(callback, id){
@@ -444,6 +472,7 @@ KalturaAppTokenService.prototype.listAction = function(callback, filter, pager){
  * @param type int session type, will be ignored if a different session type already defined on the application token (optional, enum: KalturaSessionType, default: null).
  * @param expiry int session expiry (in seconds), could be overwritten by shorter expiry of the application token and the session-expiry that defined on the application token (optional, default: null).
  * @return KalturaSessionInfo.
+ * @return .
  */
 KalturaAppTokenService.prototype.startSession = function(callback, id, tokenHash, userId, type, expiry){
 	if(!userId){
@@ -509,6 +538,7 @@ module.exports.KalturaBaseEntryService = KalturaBaseEntryService;
  * @param entry KalturaBaseEntry  (optional).
  * @param type string  (optional, enum: KalturaEntryType, default: null).
  * @return KalturaBaseEntry.
+ * @return .
  */
 KalturaBaseEntryService.prototype.add = function(callback, entry, type){
 	if(!type){
@@ -527,6 +557,7 @@ KalturaBaseEntryService.prototype.add = function(callback, entry, type){
  * @param entryId string  (optional).
  * @param resource KalturaResource  (optional).
  * @return KalturaBaseEntry.
+ * @return .
  */
 KalturaBaseEntryService.prototype.addContent = function(callback, entryId, resource){
 	var kparams = {};
@@ -579,6 +610,8 @@ KalturaBaseEntryService.prototype.get = function(callback, entryId, version){
  * Get remote storage existing paths for the asset.
  * @param entryId string  (optional).
  * @return KalturaRemotePathListResponse.
+ * @return .
+ * @return .
  */
 KalturaBaseEntryService.prototype.getRemotePaths = function(callback, entryId){
 	var kparams = {};
@@ -593,6 +626,7 @@ KalturaBaseEntryService.prototype.getRemotePaths = function(callback, entryId){
  * @param entryId string Entry id to update (optional).
  * @param baseEntry KalturaBaseEntry Base entry metadata to update (optional).
  * @return KalturaBaseEntry.
+ * @return .
  */
 KalturaBaseEntryService.prototype.update = function(callback, entryId, baseEntry){
 	var kparams = {};
@@ -610,6 +644,7 @@ KalturaBaseEntryService.prototype.update = function(callback, entryId, baseEntry
  * @param conversionProfileId int The conversion profile id to be used on the entry (optional, default: null).
  * @param advancedOptions KalturaEntryReplacementOptions Additional update content options (optional, default: null).
  * @return KalturaBaseEntry.
+ * @return .
  */
 KalturaBaseEntryService.prototype.updateContent = function(callback, entryId, resource, conversionProfileId, advancedOptions){
 	if(!conversionProfileId){
@@ -686,6 +721,7 @@ KalturaBaseEntryService.prototype.listAction = function(callback, filter, pager)
  * @param refId string Entry Reference ID (optional).
  * @param pager KalturaFilterPager Pager (optional, default: null).
  * @return KalturaBaseEntryListResponse.
+ * @return .
  */
 KalturaBaseEntryService.prototype.listByReferenceId = function(callback, refId, pager){
 	if(!pager){
@@ -738,6 +774,8 @@ KalturaBaseEntryService.prototype.upload = function(callback, fileData){
  * @param entryId string Media entry id (optional).
  * @param fileData file Jpeg file data (optional).
  * @return KalturaBaseEntry.
+ * @return .
+ * @return .
  */
 KalturaBaseEntryService.prototype.updateThumbnailJpeg = function(callback, entryId, fileData){
 	var kparams = {};
@@ -754,6 +792,8 @@ KalturaBaseEntryService.prototype.updateThumbnailJpeg = function(callback, entry
  * @param entryId string Media entry id (optional).
  * @param url string file url (optional).
  * @return KalturaBaseEntry.
+ * @return .
+ * @return .
  */
 KalturaBaseEntryService.prototype.updateThumbnailFromUrl = function(callback, entryId, url){
 	var kparams = {};
@@ -770,6 +810,8 @@ KalturaBaseEntryService.prototype.updateThumbnailFromUrl = function(callback, en
  * @param sourceEntryId string Media entry id (optional).
  * @param timeOffset int Time offset (in seconds) (optional).
  * @return KalturaBaseEntry.
+ * @return .
+ * @return .
  */
 KalturaBaseEntryService.prototype.updateThumbnailFromSourceEntry = function(callback, entryId, sourceEntryId, timeOffset){
 	var kparams = {};
@@ -785,6 +827,7 @@ KalturaBaseEntryService.prototype.updateThumbnailFromSourceEntry = function(call
  * Flag inappropriate entry for moderation.
  * @param moderationFlag KalturaModerationFlag  (optional).
  * @return .
+ * @return .
  */
 KalturaBaseEntryService.prototype.flag = function(callback, moderationFlag){
 	var kparams = {};
@@ -798,6 +841,7 @@ KalturaBaseEntryService.prototype.flag = function(callback, moderationFlag){
  * Reject the entry and mark the pending flags (if any) as moderated (this will make the entry non-playable).
  * @param entryId string  (optional).
  * @return .
+ * @return .
  */
 KalturaBaseEntryService.prototype.reject = function(callback, entryId){
 	var kparams = {};
@@ -810,6 +854,7 @@ KalturaBaseEntryService.prototype.reject = function(callback, entryId){
 /**
  * Approve the entry and mark the pending flags (if any) as moderated (this will make the entry playable).
  * @param entryId string  (optional).
+ * @return .
  * @return .
  */
 KalturaBaseEntryService.prototype.approve = function(callback, entryId){
@@ -875,6 +920,8 @@ KalturaBaseEntryService.prototype.getContextData = function(callback, entryId, c
  * @param entryId string  (optional).
  * @param storageProfileId int  (optional).
  * @return KalturaBaseEntry.
+ * @return .
+ * @return .
  */
 KalturaBaseEntryService.prototype.exportAction = function(callback, entryId, storageProfileId){
 	var kparams = {};
@@ -908,6 +955,7 @@ KalturaBaseEntryService.prototype.index = function(callback, id, shouldUpdate){
  * @param entryId string Id of entry to clone (optional).
  * @param cloneOptions array  (optional, default: null).
  * @return KalturaBaseEntry.
+ * @return .
  */
 KalturaBaseEntryService.prototype.cloneAction = function(callback, entryId, cloneOptions){
 	if(!cloneOptions){
@@ -1048,6 +1096,10 @@ module.exports.KalturaCategoryEntryService = KalturaCategoryEntryService;
  * Add new CategoryEntry.
  * @param categoryEntry KalturaCategoryEntry  (optional).
  * @return KalturaCategoryEntry.
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaCategoryEntryService.prototype.add = function(callback, categoryEntry){
 	var kparams = {};
@@ -1061,6 +1113,10 @@ KalturaCategoryEntryService.prototype.add = function(callback, categoryEntry){
  * Delete CategoryEntry.
  * @param entryId string  (optional).
  * @param categoryId int  (optional).
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  * @return .
  */
 KalturaCategoryEntryService.prototype.deleteAction = function(callback, entryId, categoryId){
@@ -1077,6 +1133,8 @@ KalturaCategoryEntryService.prototype.deleteAction = function(callback, entryId,
  * @param filter KalturaCategoryEntryFilter  (optional, default: null).
  * @param pager KalturaFilterPager  (optional, default: null).
  * @return KalturaCategoryEntryListResponse.
+ * @return .
+ * @return .
  */
 KalturaCategoryEntryService.prototype.listAction = function(callback, filter, pager){
 	if(!filter){
@@ -1103,6 +1161,7 @@ KalturaCategoryEntryService.prototype.listAction = function(callback, filter, pa
  * @param categoryId int  (optional).
  * @param shouldUpdate bool  (optional, default: true).
  * @return int.
+ * @return .
  */
 KalturaCategoryEntryService.prototype.index = function(callback, entryId, categoryId, shouldUpdate){
 	if(!shouldUpdate){
@@ -1122,6 +1181,10 @@ KalturaCategoryEntryService.prototype.index = function(callback, entryId, catego
  * @param entryId string  (optional).
  * @param categoryId int  (optional).
  * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaCategoryEntryService.prototype.activate = function(callback, entryId, categoryId){
 	var kparams = {};
@@ -1137,6 +1200,10 @@ KalturaCategoryEntryService.prototype.activate = function(callback, entryId, cat
  * @param entryId string  (optional).
  * @param categoryId int  (optional).
  * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaCategoryEntryService.prototype.reject = function(callback, entryId, categoryId){
 	var kparams = {};
@@ -1151,6 +1218,9 @@ KalturaCategoryEntryService.prototype.reject = function(callback, entryId, categ
  * update privacy context from the category.
  * @param entryId string  (optional).
  * @param categoryId int  (optional).
+ * @return .
+ * @return .
+ * @return .
  * @return .
  */
 KalturaCategoryEntryService.prototype.syncPrivacyContext = function(callback, entryId, categoryId){
@@ -1483,6 +1553,7 @@ KalturaCategoryUserService.prototype.deactivate = function(callback, categoryId,
  * @param filter KalturaCategoryUserFilter  (optional, default: null).
  * @param pager KalturaFilterPager  (optional, default: null).
  * @return KalturaCategoryUserListResponse.
+ * @return .
  */
 KalturaCategoryUserService.prototype.listAction = function(callback, filter, pager){
 	if(!filter){
@@ -1522,6 +1593,7 @@ KalturaCategoryUserService.prototype.copyFromCategory = function(callback, categ
  * @param categoryId int  (optional).
  * @param shouldUpdate bool  (optional, default: true).
  * @return int.
+ * @return .
  */
 KalturaCategoryUserService.prototype.index = function(callback, userId, categoryId, shouldUpdate){
 	if(!shouldUpdate){
@@ -1645,6 +1717,7 @@ module.exports.KalturaConversionProfileService = KalturaConversionProfileService
  * Set Conversion Profile to be the partner default.
  * @param id int  (optional).
  * @return KalturaConversionProfile.
+ * @return .
  */
 KalturaConversionProfileService.prototype.setAsDefault = function(callback, id){
 	var kparams = {};
@@ -1674,6 +1747,7 @@ KalturaConversionProfileService.prototype.getDefault = function(callback, type){
  * Add new Conversion Profile.
  * @param conversionProfile KalturaConversionProfile  (optional).
  * @return KalturaConversionProfile.
+ * @return .
  */
 KalturaConversionProfileService.prototype.add = function(callback, conversionProfile){
 	var kparams = {};
@@ -1687,6 +1761,7 @@ KalturaConversionProfileService.prototype.add = function(callback, conversionPro
  * Get Conversion Profile by ID.
  * @param id int  (optional).
  * @return KalturaConversionProfile.
+ * @return .
  */
 KalturaConversionProfileService.prototype.get = function(callback, id){
 	var kparams = {};
@@ -1701,6 +1776,8 @@ KalturaConversionProfileService.prototype.get = function(callback, id){
  * @param id int  (optional).
  * @param conversionProfile KalturaConversionProfile  (optional).
  * @return KalturaConversionProfile.
+ * @return .
+ * @return .
  */
 KalturaConversionProfileService.prototype.update = function(callback, id, conversionProfile){
 	var kparams = {};
@@ -1714,6 +1791,8 @@ KalturaConversionProfileService.prototype.update = function(callback, id, conver
 /**
  * Delete Conversion Profile by ID.
  * @param id int  (optional).
+ * @return .
+ * @return .
  * @return .
  */
 KalturaConversionProfileService.prototype.deleteAction = function(callback, id){
@@ -1785,6 +1864,7 @@ KalturaDataService.prototype.add = function(callback, dataEntry){
  * @param entryId string Data entry id (optional).
  * @param version int Desired version of the data (optional, default: -1).
  * @return KalturaDataEntry.
+ * @return .
  */
 KalturaDataService.prototype.get = function(callback, entryId, version){
 	if(!version){
@@ -1803,6 +1883,7 @@ KalturaDataService.prototype.get = function(callback, entryId, version){
  * @param entryId string Data entry id to update (optional).
  * @param documentEntry KalturaDataEntry Data entry metadata to update (optional).
  * @return KalturaDataEntry.
+ * @return .
  */
 KalturaDataService.prototype.update = function(callback, entryId, documentEntry){
 	var kparams = {};
@@ -1816,6 +1897,7 @@ KalturaDataService.prototype.update = function(callback, entryId, documentEntry)
 /**
  * Delete a data entry.
  * @param entryId string Data entry id to delete (optional).
+ * @return .
  * @return .
  */
 KalturaDataService.prototype.deleteAction = function(callback, entryId){
@@ -1973,6 +2055,7 @@ module.exports.KalturaEmailIngestionProfileService = KalturaEmailIngestionProfil
  * EmailIngestionProfile Add action allows you to add a EmailIngestionProfile to Kaltura DB.
  * @param EmailIP KalturaEmailIngestionProfile Mandatory input parameter of type KalturaEmailIngestionProfile (optional).
  * @return KalturaEmailIngestionProfile.
+ * @return .
  */
 KalturaEmailIngestionProfileService.prototype.add = function(callback, EmailIP){
 	var kparams = {};
@@ -1986,6 +2069,7 @@ KalturaEmailIngestionProfileService.prototype.add = function(callback, EmailIP){
  * Retrieve a EmailIngestionProfile by email address.
  * @param emailAddress string  (optional).
  * @return KalturaEmailIngestionProfile.
+ * @return .
  */
 KalturaEmailIngestionProfileService.prototype.getByEmailAddress = function(callback, emailAddress){
 	var kparams = {};
@@ -1999,6 +2083,7 @@ KalturaEmailIngestionProfileService.prototype.getByEmailAddress = function(callb
  * Retrieve a EmailIngestionProfile by id.
  * @param id int  (optional).
  * @return KalturaEmailIngestionProfile.
+ * @return .
  */
 KalturaEmailIngestionProfileService.prototype.get = function(callback, id){
 	var kparams = {};
@@ -2013,6 +2098,7 @@ KalturaEmailIngestionProfileService.prototype.get = function(callback, id){
  * @param id int  (optional).
  * @param EmailIP KalturaEmailIngestionProfile  (optional).
  * @return KalturaEmailIngestionProfile.
+ * @return .
  */
 KalturaEmailIngestionProfileService.prototype.update = function(callback, id, EmailIP){
 	var kparams = {};
@@ -2026,6 +2112,7 @@ KalturaEmailIngestionProfileService.prototype.update = function(callback, id, Em
 /**
  * Delete an existing EmailIngestionProfile.
  * @param id int  (optional).
+ * @return .
  * @return .
  */
 KalturaEmailIngestionProfileService.prototype.deleteAction = function(callback, id){
@@ -2044,6 +2131,8 @@ KalturaEmailIngestionProfileService.prototype.deleteAction = function(callback, 
  * @param fromAddress string  (optional).
  * @param emailMsgId string  (optional).
  * @return KalturaMediaEntry.
+ * @return .
+ * @return .
  */
 KalturaEmailIngestionProfileService.prototype.addMediaEntry = function(callback, mediaEntry, uploadTokenId, emailProfId, fromAddress, emailMsgId){
 	var kparams = {};
@@ -2176,6 +2265,7 @@ KalturaFileAssetService.prototype.add = function(callback, fileAsset){
  * Get file asset by id.
  * @param id int  (optional).
  * @return KalturaFileAsset.
+ * @return .
  */
 KalturaFileAssetService.prototype.get = function(callback, id){
 	var kparams = {};
@@ -2190,6 +2280,7 @@ KalturaFileAssetService.prototype.get = function(callback, id){
  * @param id int  (optional).
  * @param fileAsset KalturaFileAsset  (optional).
  * @return KalturaFileAsset.
+ * @return .
  */
 KalturaFileAssetService.prototype.update = function(callback, id, fileAsset){
 	var kparams = {};
@@ -2203,6 +2294,7 @@ KalturaFileAssetService.prototype.update = function(callback, id, fileAsset){
 /**
  * Delete file asset by id.
  * @param id int  (optional).
+ * @return .
  * @return .
  */
 KalturaFileAssetService.prototype.deleteAction = function(callback, id){
@@ -2218,6 +2310,10 @@ KalturaFileAssetService.prototype.deleteAction = function(callback, id){
  * @param id string  (optional).
  * @param contentResource KalturaContentResource  (optional).
  * @return KalturaFileAsset.
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaFileAssetService.prototype.setContent = function(callback, id, contentResource){
 	var kparams = {};
@@ -2284,6 +2380,8 @@ module.exports.KalturaFlavorAssetService = KalturaFlavorAssetService;
  * @param entryId string  (optional).
  * @param flavorAsset KalturaFlavorAsset  (optional).
  * @return KalturaFlavorAsset.
+ * @return .
+ * @return .
  */
 KalturaFlavorAssetService.prototype.add = function(callback, entryId, flavorAsset){
 	var kparams = {};
@@ -2299,6 +2397,7 @@ KalturaFlavorAssetService.prototype.add = function(callback, entryId, flavorAsse
  * @param id string  (optional).
  * @param flavorAsset KalturaFlavorAsset  (optional).
  * @return KalturaFlavorAsset.
+ * @return .
  */
 KalturaFlavorAssetService.prototype.update = function(callback, id, flavorAsset){
 	var kparams = {};
@@ -2314,6 +2413,13 @@ KalturaFlavorAssetService.prototype.update = function(callback, id, flavorAsset)
  * @param id string  (optional).
  * @param contentResource KalturaContentResource  (optional).
  * @return KalturaFlavorAsset.
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaFlavorAssetService.prototype.setContent = function(callback, id, contentResource){
 	var kparams = {};
@@ -2441,6 +2547,8 @@ KalturaFlavorAssetService.prototype.deleteAction = function(callback, id){
  * @param forceProxy bool  (optional, default: false).
  * @param options KalturaFlavorAssetUrlOptions  (optional, default: null).
  * @return string.
+ * @return .
+ * @return .
  */
 KalturaFlavorAssetService.prototype.getUrl = function(callback, id, storageId, forceProxy, options){
 	if(!storageId){
@@ -2468,6 +2576,8 @@ KalturaFlavorAssetService.prototype.getUrl = function(callback, id, storageId, f
  * Get remote storage existing paths for the asset.
  * @param id string  (optional).
  * @return KalturaRemotePathListResponse.
+ * @return .
+ * @return .
  */
 KalturaFlavorAssetService.prototype.getRemotePaths = function(callback, id){
 	var kparams = {};
@@ -2513,6 +2623,9 @@ KalturaFlavorAssetService.prototype.getFlavorAssetsWithParams = function(callbac
  * @param assetId string  (optional).
  * @param storageProfileId int  (optional).
  * @return KalturaFlavorAsset.
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaFlavorAssetService.prototype.exportAction = function(callback, assetId, storageProfileId){
 	var kparams = {};
@@ -2526,6 +2639,7 @@ KalturaFlavorAssetService.prototype.exportAction = function(callback, assetId, s
 /**
  * Set a given flavor as the original flavor.
  * @param assetId string  (optional).
+ * @return .
  * @return .
  */
 KalturaFlavorAssetService.prototype.setAsSource = function(callback, assetId){
@@ -2591,6 +2705,7 @@ module.exports.KalturaFlavorParamsOutputService = KalturaFlavorParamsOutputServi
  * Get flavor params output object by ID.
  * @param id int  (optional).
  * @return KalturaFlavorParamsOutput.
+ * @return .
  */
 KalturaFlavorParamsOutputService.prototype.get = function(callback, id){
 	var kparams = {};
@@ -2840,6 +2955,7 @@ KalturaLiveChannelSegmentService.prototype.add = function(callback, liveChannelS
  * Get live channel segment by id.
  * @param id int  (optional).
  * @return KalturaLiveChannelSegment.
+ * @return .
  */
 KalturaLiveChannelSegmentService.prototype.get = function(callback, id){
 	var kparams = {};
@@ -2854,6 +2970,7 @@ KalturaLiveChannelSegmentService.prototype.get = function(callback, id){
  * @param id int  (optional).
  * @param liveChannelSegment KalturaLiveChannelSegment  (optional).
  * @return KalturaLiveChannelSegment.
+ * @return .
  */
 KalturaLiveChannelSegmentService.prototype.update = function(callback, id, liveChannelSegment){
 	var kparams = {};
@@ -2867,6 +2984,7 @@ KalturaLiveChannelSegmentService.prototype.update = function(callback, id, liveC
 /**
  * Delete live channel segment by id.
  * @param id int  (optional).
+ * @return .
  * @return .
  */
 KalturaLiveChannelSegmentService.prototype.deleteAction = function(callback, id){
@@ -2943,6 +3061,7 @@ KalturaLiveChannelService.prototype.add = function(callback, liveChannel){
  * Get live channel by ID.
  * @param id string Live channel id (optional).
  * @return KalturaLiveChannel.
+ * @return .
  */
 KalturaLiveChannelService.prototype.get = function(callback, id){
 	var kparams = {};
@@ -2957,6 +3076,7 @@ KalturaLiveChannelService.prototype.get = function(callback, id){
  * @param id string Live channel id to update (optional).
  * @param liveChannel KalturaLiveChannel Live channel metadata to update (optional).
  * @return KalturaLiveChannel.
+ * @return .
  */
 KalturaLiveChannelService.prototype.update = function(callback, id, liveChannel){
 	var kparams = {};
@@ -2970,6 +3090,7 @@ KalturaLiveChannelService.prototype.update = function(callback, id, liveChannel)
 /**
  * Delete a live channel.
  * @param id string Live channel id to delete (optional).
+ * @return .
  * @return .
  */
 KalturaLiveChannelService.prototype.deleteAction = function(callback, id){
@@ -3009,6 +3130,7 @@ KalturaLiveChannelService.prototype.listAction = function(callback, filter, page
  * Delivering the status of a live channel (on-air/offline).
  * @param id string ID of the live channel (optional).
  * @return bool.
+ * @return .
  */
 KalturaLiveChannelService.prototype.isLive = function(callback, id){
 	var kparams = {};
@@ -3027,6 +3149,7 @@ KalturaLiveChannelService.prototype.isLive = function(callback, id){
  * @param duration float in seconds (optional).
  * @param isLastChunk bool Is this the last recorded chunk in the current session (i.e. following a stream stop event) (optional, default: false).
  * @return KalturaLiveEntry.
+ * @return .
  */
 KalturaLiveChannelService.prototype.appendRecording = function(callback, entryId, assetId, mediaServerIndex, resource, duration, isLastChunk){
 	if(!isLastChunk){
@@ -3052,6 +3175,9 @@ KalturaLiveChannelService.prototype.appendRecording = function(callback, entryId
  * @param applicationName string the application to which entry is being broadcast (optional, default: null).
  * @param liveEntryStatus int the status KalturaEntryServerNodeStatus::PLAYABLE | KalturaEntryServerNodeStatus::BROADCASTING (optional, enum: KalturaEntryServerNodeStatus, default: 1).
  * @return KalturaLiveEntry.
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaLiveChannelService.prototype.registerMediaServer = function(callback, entryId, hostname, mediaServerIndex, applicationName, liveEntryStatus){
 	if(!applicationName){
@@ -3077,6 +3203,9 @@ KalturaLiveChannelService.prototype.registerMediaServer = function(callback, ent
  * @param hostname string Media server host name (optional).
  * @param mediaServerIndex string Media server index primary / secondary (optional, enum: KalturaEntryServerNodeType).
  * @return KalturaLiveEntry.
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaLiveChannelService.prototype.unregisterMediaServer = function(callback, entryId, hostname, mediaServerIndex){
 	var kparams = {};
@@ -3108,6 +3237,7 @@ KalturaLiveChannelService.prototype.validateRegisteredMediaServers = function(ca
  * @param resource KalturaDataCenterContentResource  (optional).
  * @param duration float in seconds (optional).
  * @return KalturaLiveEntry.
+ * @return .
  */
 KalturaLiveChannelService.prototype.setRecordedContent = function(callback, entryId, mediaServerIndex, resource, duration){
 	var kparams = {};
@@ -3286,6 +3416,7 @@ module.exports.KalturaLiveStreamService = KalturaLiveStreamService;
  * @param liveStreamEntry KalturaLiveStreamEntry Live stream entry metadata (optional).
  * @param sourceType string Live stream source type (optional, enum: KalturaSourceType, default: null).
  * @return KalturaLiveStreamEntry.
+ * @return .
  */
 KalturaLiveStreamService.prototype.add = function(callback, liveStreamEntry, sourceType){
 	if(!sourceType){
@@ -3304,6 +3435,7 @@ KalturaLiveStreamService.prototype.add = function(callback, liveStreamEntry, sou
  * @param entryId string Live stream entry id (optional).
  * @param version int Desired version of the data (optional, default: -1).
  * @return KalturaLiveStreamEntry.
+ * @return .
  */
 KalturaLiveStreamService.prototype.get = function(callback, entryId, version){
 	if(!version){
@@ -3325,6 +3457,8 @@ KalturaLiveStreamService.prototype.get = function(callback, entryId, version){
  * @param mediaServerIndex string Media server index primary / secondary (optional, enum: KalturaEntryServerNodeType, default: null).
  * @param applicationName string the application to which entry is being broadcast (optional, default: null).
  * @return KalturaLiveStreamEntry.
+ * @return .
+ * @return .
  */
 KalturaLiveStreamService.prototype.authenticate = function(callback, entryId, token, hostname, mediaServerIndex, applicationName){
 	if(!hostname){
@@ -3352,6 +3486,7 @@ KalturaLiveStreamService.prototype.authenticate = function(callback, entryId, to
  * @param entryId string Live stream entry id to update (optional).
  * @param liveStreamEntry KalturaLiveStreamEntry Live stream entry metadata to update (optional).
  * @return KalturaLiveStreamEntry.
+ * @return .
  */
 KalturaLiveStreamService.prototype.update = function(callback, entryId, liveStreamEntry){
 	var kparams = {};
@@ -3365,6 +3500,7 @@ KalturaLiveStreamService.prototype.update = function(callback, entryId, liveStre
 /**
  * Delete a live stream entry.
  * @param entryId string Live stream entry id to delete (optional).
+ * @return .
  * @return .
  */
 KalturaLiveStreamService.prototype.deleteAction = function(callback, entryId){
@@ -3405,6 +3541,8 @@ KalturaLiveStreamService.prototype.listAction = function(callback, filter, pager
  * @param entryId string live stream entry id (optional).
  * @param fileData file Jpeg file data (optional).
  * @return KalturaLiveStreamEntry.
+ * @return .
+ * @return .
  */
 KalturaLiveStreamService.prototype.updateOfflineThumbnailJpeg = function(callback, entryId, fileData){
 	var kparams = {};
@@ -3421,6 +3559,8 @@ KalturaLiveStreamService.prototype.updateOfflineThumbnailJpeg = function(callbac
  * @param entryId string live stream entry id (optional).
  * @param url string file url (optional).
  * @return KalturaLiveStreamEntry.
+ * @return .
+ * @return .
  */
 KalturaLiveStreamService.prototype.updateOfflineThumbnailFromUrl = function(callback, entryId, url){
 	var kparams = {};
@@ -3436,6 +3576,8 @@ KalturaLiveStreamService.prototype.updateOfflineThumbnailFromUrl = function(call
  * @param id string ID of the live stream (optional).
  * @param protocol string protocol of the stream to test (optional, enum: KalturaPlaybackProtocol).
  * @return bool.
+ * @return .
+ * @return .
  */
 KalturaLiveStreamService.prototype.isLive = function(callback, id, protocol){
 	var kparams = {};
@@ -3453,6 +3595,7 @@ KalturaLiveStreamService.prototype.isLive = function(callback, id, protocol){
  * @param url string  (optional, default: null).
  * @param liveStreamConfiguration KalturaLiveStreamConfiguration  (optional, default: null).
  * @return KalturaLiveStreamEntry.
+ * @return .
  */
 KalturaLiveStreamService.prototype.addLiveStreamPushPublishConfiguration = function(callback, entryId, protocol, url, liveStreamConfiguration){
 	if(!url){
@@ -3478,6 +3621,7 @@ KalturaLiveStreamService.prototype.addLiveStreamPushPublishConfiguration = funct
  * @param entryId string  (optional).
  * @param protocol string  (optional, enum: KalturaPlaybackProtocol).
  * @return KalturaLiveStreamEntry.
+ * @return .
  */
 KalturaLiveStreamService.prototype.removeLiveStreamPushPublishConfiguration = function(callback, entryId, protocol){
 	var kparams = {};
@@ -3491,6 +3635,7 @@ KalturaLiveStreamService.prototype.removeLiveStreamPushPublishConfiguration = fu
 /**
  * Regenerate new secure token for liveStream.
  * @param entryId string Live stream entry id to regenerate secure token for (optional).
+ * @return .
  * @return .
  */
 KalturaLiveStreamService.prototype.regenerateStreamToken = function(callback, entryId){
@@ -3510,6 +3655,7 @@ KalturaLiveStreamService.prototype.regenerateStreamToken = function(callback, en
  * @param duration float in seconds (optional).
  * @param isLastChunk bool Is this the last recorded chunk in the current session (i.e. following a stream stop event) (optional, default: false).
  * @return KalturaLiveEntry.
+ * @return .
  */
 KalturaLiveStreamService.prototype.appendRecording = function(callback, entryId, assetId, mediaServerIndex, resource, duration, isLastChunk){
 	if(!isLastChunk){
@@ -3535,6 +3681,9 @@ KalturaLiveStreamService.prototype.appendRecording = function(callback, entryId,
  * @param applicationName string the application to which entry is being broadcast (optional, default: null).
  * @param liveEntryStatus int the status KalturaEntryServerNodeStatus::PLAYABLE | KalturaEntryServerNodeStatus::BROADCASTING (optional, enum: KalturaEntryServerNodeStatus, default: 1).
  * @return KalturaLiveEntry.
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaLiveStreamService.prototype.registerMediaServer = function(callback, entryId, hostname, mediaServerIndex, applicationName, liveEntryStatus){
 	if(!applicationName){
@@ -3560,6 +3709,9 @@ KalturaLiveStreamService.prototype.registerMediaServer = function(callback, entr
  * @param hostname string Media server host name (optional).
  * @param mediaServerIndex string Media server index primary / secondary (optional, enum: KalturaEntryServerNodeType).
  * @return KalturaLiveEntry.
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaLiveStreamService.prototype.unregisterMediaServer = function(callback, entryId, hostname, mediaServerIndex){
 	var kparams = {};
@@ -3591,6 +3743,7 @@ KalturaLiveStreamService.prototype.validateRegisteredMediaServers = function(cal
  * @param resource KalturaDataCenterContentResource  (optional).
  * @param duration float in seconds (optional).
  * @return KalturaLiveEntry.
+ * @return .
  */
 KalturaLiveStreamService.prototype.setRecordedContent = function(callback, entryId, mediaServerIndex, resource, duration){
 	var kparams = {};
@@ -3608,6 +3761,9 @@ KalturaLiveStreamService.prototype.setRecordedContent = function(callback, entry
  * @param entryId string Kaltura live-stream entry id (optional).
  * @param interval int Events interval in seconds (optional).
  * @param duration int Duration in seconds (optional).
+ * @return .
+ * @return .
+ * @return .
  * @return .
  */
 KalturaLiveStreamService.prototype.createPeriodicSyncPoints = function(callback, entryId, interval, duration){
@@ -3732,6 +3888,8 @@ KalturaMediaService.prototype.add = function(callback, entry){
  * @param entryId string  (optional).
  * @param resource KalturaResource  (optional, default: null).
  * @return KalturaMediaEntry.
+ * @return .
+ * @return .
  */
 KalturaMediaService.prototype.addContent = function(callback, entryId, resource){
 	if(!resource){
@@ -3755,6 +3913,8 @@ KalturaMediaService.prototype.addContent = function(callback, entryId, resource)
  * @param url string An HTTP or FTP URL (optional).
  * @param bulkUploadId int The id of the bulk upload job (optional).
  * @return KalturaMediaEntry.
+ * @return .
+ * @return .
  */
 KalturaMediaService.prototype.addFromBulk = function(callback, mediaEntry, url, bulkUploadId){
 	var kparams = {};
@@ -3772,6 +3932,8 @@ KalturaMediaService.prototype.addFromBulk = function(callback, mediaEntry, url, 
  * @param mediaEntry KalturaMediaEntry Media entry metadata (optional).
  * @param url string An HTTP or FTP URL (optional).
  * @return KalturaMediaEntry.
+ * @return .
+ * @return .
  */
 KalturaMediaService.prototype.addFromUrl = function(callback, mediaEntry, url){
 	var kparams = {};
@@ -3788,6 +3950,8 @@ KalturaMediaService.prototype.addFromUrl = function(callback, mediaEntry, url){
  * @param mediaEntry KalturaMediaEntry Media entry metadata (optional, default: null).
  * @param searchResult KalturaSearchResult Result object from search service (optional, default: null).
  * @return KalturaMediaEntry.
+ * @return .
+ * @return .
  */
 KalturaMediaService.prototype.addFromSearchResult = function(callback, mediaEntry, searchResult){
 	if(!mediaEntry){
@@ -3813,6 +3977,9 @@ KalturaMediaService.prototype.addFromSearchResult = function(callback, mediaEntr
  * @param mediaEntry KalturaMediaEntry Media entry metadata (optional).
  * @param uploadTokenId string Upload token id (optional).
  * @return KalturaMediaEntry.
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaMediaService.prototype.addFromUploadedFile = function(callback, mediaEntry, uploadTokenId){
 	var kparams = {};
@@ -3828,6 +3995,9 @@ KalturaMediaService.prototype.addFromUploadedFile = function(callback, mediaEntr
  * @param mediaEntry KalturaMediaEntry Media entry metadata (optional).
  * @param webcamTokenId string Token id for the recored webcam file (optional).
  * @return KalturaMediaEntry.
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaMediaService.prototype.addFromRecordedWebcam = function(callback, mediaEntry, webcamTokenId){
 	var kparams = {};
@@ -3844,6 +4014,10 @@ KalturaMediaService.prototype.addFromRecordedWebcam = function(callback, mediaEn
  * @param mediaEntry KalturaMediaEntry Media entry metadata (optional, default: null).
  * @param sourceFlavorParamsId int The flavor to be used as the new entry source, source flavor will be used if not specified (optional, default: null).
  * @return KalturaMediaEntry.
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaMediaService.prototype.addFromEntry = function(callback, sourceEntryId, mediaEntry, sourceFlavorParamsId){
 	if(!mediaEntry){
@@ -3868,6 +4042,9 @@ KalturaMediaService.prototype.addFromEntry = function(callback, sourceEntryId, m
  * @param sourceFlavorAssetId string Flavor asset id to be used as the new entry source (optional).
  * @param mediaEntry KalturaMediaEntry Media entry metadata (optional, default: null).
  * @return KalturaMediaEntry.
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaMediaService.prototype.addFromFlavorAsset = function(callback, sourceFlavorAssetId, mediaEntry){
 	if(!mediaEntry){
@@ -3889,6 +4066,9 @@ KalturaMediaService.prototype.addFromFlavorAsset = function(callback, sourceFlav
  * @param conversionProfileId int  (optional, default: null).
  * @param dynamicConversionAttributes array  (optional, default: null).
  * @return bigint.
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaMediaService.prototype.convert = function(callback, entryId, conversionProfileId, dynamicConversionAttributes){
 	if(!conversionProfileId){
@@ -3917,6 +4097,7 @@ KalturaMediaService.prototype.convert = function(callback, entryId, conversionPr
  * @param entryId string Media entry id (optional).
  * @param version int Desired version of the data (optional, default: -1).
  * @return KalturaMediaEntry.
+ * @return .
  */
 KalturaMediaService.prototype.get = function(callback, entryId, version){
 	if(!version){
@@ -3937,6 +4118,7 @@ KalturaMediaService.prototype.get = function(callback, entryId, version){
  * @param extendingItemsArray array  (optional, default: null).
  * @param features string  (optional, default: null).
  * @return string.
+ * @return .
  */
 KalturaMediaService.prototype.getMrss = function(callback, entryId, extendingItemsArray, features){
 	if(!extendingItemsArray){
@@ -3965,6 +4147,7 @@ KalturaMediaService.prototype.getMrss = function(callback, entryId, extendingIte
  * @param entryId string Media entry id to update (optional).
  * @param mediaEntry KalturaMediaEntry Media entry metadata to update (optional).
  * @return KalturaMediaEntry.
+ * @return .
  */
 KalturaMediaService.prototype.update = function(callback, entryId, mediaEntry){
 	var kparams = {};
@@ -3982,6 +4165,9 @@ KalturaMediaService.prototype.update = function(callback, entryId, mediaEntry){
  * @param conversionProfileId int The conversion profile id to be used on the entry (optional, default: null).
  * @param advancedOptions KalturaEntryReplacementOptions Additional update content options (optional, default: null).
  * @return KalturaMediaEntry.
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaMediaService.prototype.updateContent = function(callback, entryId, resource, conversionProfileId, advancedOptions){
 	if(!conversionProfileId){
@@ -4006,6 +4192,7 @@ KalturaMediaService.prototype.updateContent = function(callback, entryId, resour
  * Delete a media entry.
  * @param entryId string Media entry id to delete (optional).
  * @return .
+ * @return .
  */
 KalturaMediaService.prototype.deleteAction = function(callback, entryId){
 	var kparams = {};
@@ -4019,6 +4206,7 @@ KalturaMediaService.prototype.deleteAction = function(callback, entryId){
  * Approves media replacement.
  * @param entryId string Media entry id to replace (optional).
  * @return KalturaMediaEntry.
+ * @return .
  */
 KalturaMediaService.prototype.approveReplace = function(callback, entryId){
 	var kparams = {};
@@ -4032,6 +4220,7 @@ KalturaMediaService.prototype.approveReplace = function(callback, entryId){
  * Cancels media replacement.
  * @param entryId string Media entry id to cancel (optional).
  * @return KalturaMediaEntry.
+ * @return .
  */
 KalturaMediaService.prototype.cancelReplace = function(callback, entryId){
 	var kparams = {};
@@ -4105,6 +4294,8 @@ KalturaMediaService.prototype.upload = function(callback, fileData){
  * @param timeOffset int Time offset (in seconds) (optional).
  * @param flavorParamsId int The flavor params id to be used (optional, default: null).
  * @return KalturaMediaEntry.
+ * @return .
+ * @return .
  */
 KalturaMediaService.prototype.updateThumbnail = function(callback, entryId, timeOffset, flavorParamsId){
 	if(!flavorParamsId){
@@ -4127,6 +4318,8 @@ KalturaMediaService.prototype.updateThumbnail = function(callback, entryId, time
  * @param timeOffset int Time offset (in seconds) (optional).
  * @param flavorParamsId int The flavor params id to be used (optional, default: null).
  * @return KalturaMediaEntry.
+ * @return .
+ * @return .
  */
 KalturaMediaService.prototype.updateThumbnailFromSourceEntry = function(callback, entryId, sourceEntryId, timeOffset, flavorParamsId){
 	if(!flavorParamsId){
@@ -4147,6 +4340,8 @@ KalturaMediaService.prototype.updateThumbnailFromSourceEntry = function(callback
  * @param entryId string Media entry id (optional).
  * @param fileData file Jpeg file data (optional).
  * @return KalturaMediaEntry.
+ * @return .
+ * @return .
  */
 KalturaMediaService.prototype.updateThumbnailJpeg = function(callback, entryId, fileData){
 	var kparams = {};
@@ -4163,6 +4358,8 @@ KalturaMediaService.prototype.updateThumbnailJpeg = function(callback, entryId, 
  * @param entryId string Media entry id (optional).
  * @param url string file url (optional).
  * @return KalturaBaseEntry.
+ * @return .
+ * @return .
  */
 KalturaMediaService.prototype.updateThumbnailFromUrl = function(callback, entryId, url){
 	var kparams = {};
@@ -4178,6 +4375,7 @@ KalturaMediaService.prototype.updateThumbnailFromUrl = function(callback, entryI
  * @param entryId string Media entry id (optional).
  * @param fileFormat string Format to convert (optional).
  * @return int.
+ * @return .
  */
 KalturaMediaService.prototype.requestConversion = function(callback, entryId, fileFormat){
 	var kparams = {};
@@ -4192,6 +4390,7 @@ KalturaMediaService.prototype.requestConversion = function(callback, entryId, fi
  * Flag inappropriate media entry for moderation.
  * @param moderationFlag KalturaModerationFlag  (optional).
  * @return .
+ * @return .
  */
 KalturaMediaService.prototype.flag = function(callback, moderationFlag){
 	var kparams = {};
@@ -4205,6 +4404,7 @@ KalturaMediaService.prototype.flag = function(callback, moderationFlag){
  * Reject the media entry and mark the pending flags (if any) as moderated (this will make the entry non playable).
  * @param entryId string  (optional).
  * @return .
+ * @return .
  */
 KalturaMediaService.prototype.reject = function(callback, entryId){
 	var kparams = {};
@@ -4217,6 +4417,7 @@ KalturaMediaService.prototype.reject = function(callback, entryId){
 /**
  * Approve the media entry and mark the pending flags (if any) as moderated (this will make the entry playable).
  * @param entryId string  (optional).
+ * @return .
  * @return .
  */
 KalturaMediaService.prototype.approve = function(callback, entryId){
@@ -4563,6 +4764,7 @@ module.exports.KalturaPartnerService = KalturaPartnerService;
  * @param templatePartnerId int  (optional, default: null).
  * @param silent bool  (optional, default: false).
  * @return KalturaPartner.
+ * @return .
  */
 KalturaPartnerService.prototype.register = function(callback, partner, cmsPassword, templatePartnerId, silent){
 	if(!cmsPassword){
@@ -4589,6 +4791,7 @@ KalturaPartnerService.prototype.register = function(callback, partner, cmsPasswo
  * @param partner KalturaPartner  (optional).
  * @param allowEmpty bool  (optional, default: false).
  * @return KalturaPartner.
+ * @return .
  */
 KalturaPartnerService.prototype.update = function(callback, partner, allowEmpty){
 	if(!allowEmpty){
@@ -4606,6 +4809,7 @@ KalturaPartnerService.prototype.update = function(callback, partner, allowEmpty)
  * Retrieve partner object by Id.
  * @param id int  (optional, default: null).
  * @return KalturaPartner.
+ * @return .
  */
 KalturaPartnerService.prototype.get = function(callback, id){
 	if(!id){
@@ -4624,6 +4828,7 @@ KalturaPartnerService.prototype.get = function(callback, id){
  * @param adminEmail string  (optional).
  * @param cmsPassword string  (optional).
  * @return KalturaPartner.
+ * @return .
  */
 KalturaPartnerService.prototype.getSecrets = function(callback, partnerId, adminEmail, cmsPassword){
 	var kparams = {};
@@ -4639,6 +4844,7 @@ KalturaPartnerService.prototype.getSecrets = function(callback, partnerId, admin
  * Retrieve all info attributed to the partner
  * This action expects no parameters. It returns information for the current KS partnerId.
  * @return KalturaPartner.
+ * @return .
  */
 KalturaPartnerService.prototype.getInfo = function(callback){
 	var kparams = {};
@@ -4656,6 +4862,7 @@ KalturaPartnerService.prototype.getInfo = function(callback){
  * @param month int  (optional, default: 1).
  * @param resolution string  (optional, enum: KalturaReportInterval, default: null).
  * @return KalturaPartnerUsage.
+ * @return .
  */
 KalturaPartnerService.prototype.getUsage = function(callback, year, month, resolution){
 	if(!year){
@@ -4680,6 +4887,7 @@ KalturaPartnerService.prototype.getUsage = function(callback, year, month, resol
  * Get usage statistics for a partner
  * Calculation is done according to partner's package.
  * @return KalturaPartnerStatistics.
+ * @return .
  */
 KalturaPartnerService.prototype.getStatistics = function(callback){
 	var kparams = {};
@@ -4693,6 +4901,7 @@ KalturaPartnerService.prototype.getStatistics = function(callback){
  * @param partnerFilter KalturaPartnerFilter  (optional, default: null).
  * @param pager KalturaFilterPager  (optional, default: null).
  * @return KalturaPartnerListResponse.
+ * @return .
  */
 KalturaPartnerService.prototype.listPartnersForUser = function(callback, partnerFilter, pager){
 	if(!partnerFilter){
@@ -4743,6 +4952,7 @@ KalturaPartnerService.prototype.listAction = function(callback, filter, pager){
 /**
  * List partner's current processes' statuses.
  * @return KalturaFeatureStatusListResponse.
+ * @return .
  */
 KalturaPartnerService.prototype.listFeatureStatus = function(callback){
 	var kparams = {};
@@ -4795,6 +5005,8 @@ module.exports.KalturaPermissionItemService = KalturaPermissionItemService;
  * This action is available only to Kaltura system administrators.
  * @param permissionItem KalturaPermissionItem The new permission item (optional).
  * @return KalturaPermissionItem.
+ * @return .
+ * @return .
  */
 KalturaPermissionItemService.prototype.add = function(callback, permissionItem){
 	var kparams = {};
@@ -4808,6 +5020,7 @@ KalturaPermissionItemService.prototype.add = function(callback, permissionItem){
  * Retrieves a permission item object using its ID.
  * @param permissionItemId int The permission item's unique identifier (optional).
  * @return KalturaPermissionItem.
+ * @return .
  */
 KalturaPermissionItemService.prototype.get = function(callback, permissionItemId){
 	var kparams = {};
@@ -4823,6 +5036,7 @@ KalturaPermissionItemService.prototype.get = function(callback, permissionItemId
  * @param permissionItemId int The permission item's unique identifier (optional).
  * @param permissionItem KalturaPermissionItem Id The permission item's unique identifier (optional).
  * @return KalturaPermissionItem.
+ * @return .
  */
 KalturaPermissionItemService.prototype.update = function(callback, permissionItemId, permissionItem){
 	var kparams = {};
@@ -4838,6 +5052,7 @@ KalturaPermissionItemService.prototype.update = function(callback, permissionIte
  * This action is available only to Kaltura system administrators.
  * @param permissionItemId int The permission item's unique identifier (optional).
  * @return KalturaPermissionItem.
+ * @return .
  */
 KalturaPermissionItemService.prototype.deleteAction = function(callback, permissionItemId){
 	var kparams = {};
@@ -4897,6 +5112,8 @@ module.exports.KalturaPermissionService = KalturaPermissionService;
  * Adds a new permission object to the account.
  * @param permission KalturaPermission The new permission (optional).
  * @return KalturaPermission.
+ * @return .
+ * @return .
  */
 KalturaPermissionService.prototype.add = function(callback, permission){
 	var kparams = {};
@@ -4910,6 +5127,7 @@ KalturaPermissionService.prototype.add = function(callback, permission){
  * Retrieves a permission object using its ID.
  * @param permissionName string The name assigned to the permission (optional).
  * @return KalturaPermission.
+ * @return .
  */
 KalturaPermissionService.prototype.get = function(callback, permissionName){
 	var kparams = {};
@@ -4924,6 +5142,7 @@ KalturaPermissionService.prototype.get = function(callback, permissionName){
  * @param permissionName string The name assigned to the permission (optional).
  * @param permission KalturaPermission Name The name assigned to the permission (optional).
  * @return KalturaPermission.
+ * @return .
  */
 KalturaPermissionService.prototype.update = function(callback, permissionName, permission){
 	var kparams = {};
@@ -4938,6 +5157,7 @@ KalturaPermissionService.prototype.update = function(callback, permissionName, p
  * Deletes an existing permission object.
  * @param permissionName string The name assigned to the permission (optional).
  * @return KalturaPermission.
+ * @return .
  */
 KalturaPermissionService.prototype.deleteAction = function(callback, permissionName){
 	var kparams = {};
@@ -5034,6 +5254,8 @@ KalturaPlaylistService.prototype.add = function(callback, playlist, updateStats)
  * @param id string  (optional).
  * @param version int Desired version of the data (optional, default: -1).
  * @return KalturaPlaylist.
+ * @return .
+ * @return .
  */
 KalturaPlaylistService.prototype.get = function(callback, id, version){
 	if(!version){
@@ -5054,6 +5276,8 @@ KalturaPlaylistService.prototype.get = function(callback, id, version){
  * @param playlist KalturaPlaylist  (optional).
  * @param updateStats bool  (optional, default: false).
  * @return KalturaPlaylist.
+ * @return .
+ * @return .
  */
 KalturaPlaylistService.prototype.update = function(callback, id, playlist, updateStats){
 	if(!updateStats){
@@ -5072,6 +5296,8 @@ KalturaPlaylistService.prototype.update = function(callback, id, playlist, updat
  * Delete existing playlist.
  * @param id string  (optional).
  * @return .
+ * @return .
+ * @return .
  */
 KalturaPlaylistService.prototype.deleteAction = function(callback, id){
 	var kparams = {};
@@ -5086,6 +5312,8 @@ KalturaPlaylistService.prototype.deleteAction = function(callback, id){
  * @param id string Id of the playlist to clone (optional).
  * @param newPlaylist KalturaPlaylist Parameters defined here will override the ones in the cloned playlist (optional, default: null).
  * @return KalturaPlaylist.
+ * @return .
+ * @return .
  */
 KalturaPlaylistService.prototype.cloneAction = function(callback, id, newPlaylist){
 	if(!newPlaylist){
@@ -5468,6 +5696,7 @@ KalturaResponseProfileService.prototype.add = function(callback, addResponseProf
  * Get response profile by id.
  * @param id int  (optional).
  * @return KalturaResponseProfile.
+ * @return .
  */
 KalturaResponseProfileService.prototype.get = function(callback, id){
 	var kparams = {};
@@ -5482,6 +5711,7 @@ KalturaResponseProfileService.prototype.get = function(callback, id){
  * @param id int  (optional).
  * @param updateResponseProfile KalturaResponseProfile  (optional).
  * @return KalturaResponseProfile.
+ * @return .
  */
 KalturaResponseProfileService.prototype.update = function(callback, id, updateResponseProfile){
 	var kparams = {};
@@ -5497,6 +5727,7 @@ KalturaResponseProfileService.prototype.update = function(callback, id, updateRe
  * @param id int  (optional).
  * @param status int  (optional, enum: KalturaResponseProfileStatus).
  * @return KalturaResponseProfile.
+ * @return .
  */
 KalturaResponseProfileService.prototype.updateStatus = function(callback, id, status){
 	var kparams = {};
@@ -5510,6 +5741,7 @@ KalturaResponseProfileService.prototype.updateStatus = function(callback, id, st
 /**
  * Delete response profile by id.
  * @param id int  (optional).
+ * @return .
  * @return .
  */
 KalturaResponseProfileService.prototype.deleteAction = function(callback, id){
@@ -5563,6 +5795,8 @@ KalturaResponseProfileService.prototype.recalculate = function(callback, options
  * @param id int  (optional).
  * @param profile KalturaResponseProfile  (optional).
  * @return KalturaResponseProfile.
+ * @return .
+ * @return .
  */
 KalturaResponseProfileService.prototype.cloneAction = function(callback, id, profile){
 	var kparams = {};
@@ -5611,6 +5845,8 @@ module.exports.KalturaSearchService = KalturaSearchService;
  * @param search KalturaSearch A KalturaSearch object contains the search keywords, media provider and media type (optional).
  * @param pager KalturaFilterPager  (optional, default: null).
  * @return KalturaSearchResultResponse.
+ * @return .
+ * @return .
  */
 KalturaSearchService.prototype.search = function(callback, search, pager){
 	if(!pager){
@@ -5631,6 +5867,8 @@ KalturaSearchService.prototype.search = function(callback, search, pager){
  * Some providers return only part of the fields needed to create entry from, use this action to get the rest of the fields.
  * @param searchResult KalturaSearchResult KalturaSearchResult object extends KalturaSearch and has all fields required for media:add (optional).
  * @return KalturaSearchResult.
+ * @return .
+ * @return .
  */
 KalturaSearchService.prototype.getMediaInfo = function(callback, searchResult){
 	var kparams = {};
@@ -5647,6 +5885,7 @@ KalturaSearchService.prototype.getMediaInfo = function(callback, searchResult){
  * @param mediaType int  (optional, enum: KalturaMediaType).
  * @param url string  (optional).
  * @return KalturaSearchResult.
+ * @return .
  */
 KalturaSearchService.prototype.searchUrl = function(callback, mediaType, url){
 	var kparams = {};
@@ -5712,6 +5951,7 @@ KalturaServerNodeService.prototype.add = function(callback, serverNode){
  * Get server node by id.
  * @param serverNodeId int  (optional).
  * @return KalturaServerNode.
+ * @return .
  */
 KalturaServerNodeService.prototype.get = function(callback, serverNodeId){
 	var kparams = {};
@@ -5740,6 +5980,7 @@ KalturaServerNodeService.prototype.update = function(callback, serverNodeId, ser
  * delete server node by id.
  * @param serverNodeId string  (optional).
  * @return .
+ * @return .
  */
 KalturaServerNodeService.prototype.deleteAction = function(callback, serverNodeId){
 	var kparams = {};
@@ -5753,6 +5994,7 @@ KalturaServerNodeService.prototype.deleteAction = function(callback, serverNodeI
  * Disable server node by id.
  * @param serverNodeId string  (optional).
  * @return KalturaServerNode.
+ * @return .
  */
 KalturaServerNodeService.prototype.disable = function(callback, serverNodeId){
 	var kparams = {};
@@ -5766,6 +6008,7 @@ KalturaServerNodeService.prototype.disable = function(callback, serverNodeId){
  * Enable server node by id.
  * @param serverNodeId string  (optional).
  * @return KalturaServerNode.
+ * @return .
  */
 KalturaServerNodeService.prototype.enable = function(callback, serverNodeId){
 	var kparams = {};
@@ -5853,6 +6096,7 @@ module.exports.KalturaSessionService = KalturaSessionService;
  * @param expiry int KS expiry time in seconds (optional, default: 86400).
  * @param privileges string  (optional, default: null).
  * @return string.
+ * @return .
  */
 KalturaSessionService.prototype.start = function(callback, secret, userId, type, partnerId, expiry, privileges){
 	if(!userId){
@@ -5904,6 +6148,7 @@ KalturaSessionService.prototype.end = function(callback){
  * @param expiry int KS expiry time in seconds (optional, default: 86400).
  * @param privileges string  (optional, default: null).
  * @return string.
+ * @return .
  */
 KalturaSessionService.prototype.impersonate = function(callback, secret, impersonatedPartnerId, userId, type, partnerId, expiry, privileges){
 	if(!userId){
@@ -5943,6 +6188,7 @@ KalturaSessionService.prototype.impersonate = function(callback, secret, imperso
  * @param expiry int Expiry time in seconds of the new KS (optional, default: null).
  * @param privileges string Privileges of the new KS (optional, default: null).
  * @return KalturaSessionInfo.
+ * @return .
  */
 KalturaSessionService.prototype.impersonateByKs = function(callback, session, type, expiry, privileges){
 	if(!type){
@@ -5968,6 +6214,7 @@ KalturaSessionService.prototype.impersonateByKs = function(callback, session, ty
  * Parse session key and return its info.
  * @param session string The KS to be parsed, keep it empty to use current session (optional, default: null).
  * @return KalturaSessionInfo.
+ * @return .
  */
 KalturaSessionService.prototype.get = function(callback, session){
 	if(!session){
@@ -5985,6 +6232,10 @@ KalturaSessionService.prototype.get = function(callback, session){
  * @param widgetId string  (optional).
  * @param expiry int  (optional, default: 86400).
  * @return KalturaStartWidgetSessionResponse.
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaSessionService.prototype.startWidgetSession = function(callback, widgetId, expiry){
 	if(!expiry){
@@ -6250,6 +6501,7 @@ KalturaSyndicationFeedService.prototype.add = function(callback, syndicationFeed
  * Get Syndication Feed by ID.
  * @param id string  (optional).
  * @return KalturaBaseSyndicationFeed.
+ * @return .
  */
 KalturaSyndicationFeedService.prototype.get = function(callback, id){
 	var kparams = {};
@@ -6264,6 +6516,7 @@ KalturaSyndicationFeedService.prototype.get = function(callback, id){
  * @param id string  (optional).
  * @param syndicationFeed KalturaBaseSyndicationFeed  (optional).
  * @return KalturaBaseSyndicationFeed.
+ * @return .
  */
 KalturaSyndicationFeedService.prototype.update = function(callback, id, syndicationFeed){
 	var kparams = {};
@@ -6277,6 +6530,7 @@ KalturaSyndicationFeedService.prototype.update = function(callback, id, syndicat
 /**
  * Delete Syndication Feed by ID.
  * @param id string  (optional).
+ * @return .
  * @return .
  */
 KalturaSyndicationFeedService.prototype.deleteAction = function(callback, id){
@@ -6316,6 +6570,7 @@ KalturaSyndicationFeedService.prototype.listAction = function(callback, filter, 
  * get entry count for a syndication feed.
  * @param feedId string  (optional).
  * @return KalturaSyndicationFeedEntryCount.
+ * @return .
  */
 KalturaSyndicationFeedService.prototype.getEntryCount = function(callback, feedId){
 	var kparams = {};
@@ -6330,6 +6585,7 @@ KalturaSyndicationFeedService.prototype.getEntryCount = function(callback, feedI
  * returns a comma-separated ids of conversion jobs.
  * @param feedId string  (optional).
  * @return string.
+ * @return .
  */
 KalturaSyndicationFeedService.prototype.requestConversion = function(callback, feedId){
 	var kparams = {};
@@ -6435,6 +6691,14 @@ module.exports.KalturaThumbAssetService = KalturaThumbAssetService;
  * @param entryId string  (optional).
  * @param thumbAsset KalturaThumbAsset  (optional).
  * @return KalturaThumbAsset.
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaThumbAssetService.prototype.add = function(callback, entryId, thumbAsset){
 	var kparams = {};
@@ -6450,6 +6714,13 @@ KalturaThumbAssetService.prototype.add = function(callback, entryId, thumbAsset)
  * @param id string  (optional).
  * @param contentResource KalturaContentResource  (optional).
  * @return KalturaThumbAsset.
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaThumbAssetService.prototype.setContent = function(callback, id, contentResource){
 	var kparams = {};
@@ -6465,6 +6736,7 @@ KalturaThumbAssetService.prototype.setContent = function(callback, id, contentRe
  * @param id string  (optional).
  * @param thumbAsset KalturaThumbAsset  (optional).
  * @return KalturaThumbAsset.
+ * @return .
  */
 KalturaThumbAssetService.prototype.update = function(callback, id, thumbAsset){
 	var kparams = {};
@@ -6480,6 +6752,7 @@ KalturaThumbAssetService.prototype.update = function(callback, id, thumbAsset){
  * Create a new file sync link on the entry thumbnail that points to the thumbnail asset file sync.
  * @param thumbAssetId string  (optional).
  * @return .
+ * @return .
  */
 KalturaThumbAssetService.prototype.setAsDefault = function(callback, thumbAssetId){
 	var kparams = {};
@@ -6494,6 +6767,12 @@ KalturaThumbAssetService.prototype.setAsDefault = function(callback, thumbAssetI
  * @param entryId string  (optional).
  * @param destThumbParamsId int indicate the id of the ThumbParams to be generate this thumbnail by (optional).
  * @return KalturaThumbAsset.
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaThumbAssetService.prototype.generateByEntryId = function(callback, entryId, destThumbParamsId){
 	var kparams = {};
@@ -6510,6 +6789,12 @@ KalturaThumbAssetService.prototype.generateByEntryId = function(callback, entryI
  * @param thumbParams KalturaThumbParams  (optional).
  * @param sourceAssetId string id of the source asset (flavor or thumbnail) to be used as source for the thumbnail generation (optional, default: null).
  * @return KalturaThumbAsset.
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaThumbAssetService.prototype.generate = function(callback, entryId, thumbParams, sourceAssetId){
 	if(!sourceAssetId){
@@ -6528,6 +6813,11 @@ KalturaThumbAssetService.prototype.generate = function(callback, entryId, thumbP
  * .
  * @param thumbAssetId string  (optional).
  * @return KalturaThumbAsset.
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaThumbAssetService.prototype.regenerate = function(callback, thumbAssetId){
 	var kparams = {};
@@ -6541,6 +6831,7 @@ KalturaThumbAssetService.prototype.regenerate = function(callback, thumbAssetId)
  * .
  * @param thumbAssetId string  (optional).
  * @return KalturaThumbAsset.
+ * @return .
  */
 KalturaThumbAssetService.prototype.get = function(callback, thumbAssetId){
 	var kparams = {};
@@ -6554,6 +6845,7 @@ KalturaThumbAssetService.prototype.get = function(callback, thumbAssetId){
  * .
  * @param entryId string  (optional).
  * @return array.
+ * @return .
  */
 KalturaThumbAssetService.prototype.getByEntryId = function(callback, entryId){
 	var kparams = {};
@@ -6608,6 +6900,7 @@ KalturaThumbAssetService.prototype.addFromUrl = function(callback, entryId, url)
  * @param entryId string  (optional).
  * @param fileData file  (optional).
  * @return KalturaThumbAsset.
+ * @return .
  */
 KalturaThumbAssetService.prototype.addFromImage = function(callback, entryId, fileData){
 	var kparams = {};
@@ -6622,6 +6915,7 @@ KalturaThumbAssetService.prototype.addFromImage = function(callback, entryId, fi
 /**
  * .
  * @param thumbAssetId string  (optional).
+ * @return .
  * @return .
  */
 KalturaThumbAssetService.prototype.deleteAction = function(callback, thumbAssetId){
@@ -6638,6 +6932,8 @@ KalturaThumbAssetService.prototype.deleteAction = function(callback, thumbAssetI
  * @param storageId int  (optional, default: null).
  * @param thumbParams KalturaThumbParams  (optional, default: null).
  * @return string.
+ * @return .
+ * @return .
  */
 KalturaThumbAssetService.prototype.getUrl = function(callback, id, storageId, thumbParams){
 	if(!storageId){
@@ -6661,6 +6957,8 @@ KalturaThumbAssetService.prototype.getUrl = function(callback, id, storageId, th
  * Get remote storage existing paths for the asset.
  * @param id string  (optional).
  * @return KalturaRemotePathListResponse.
+ * @return .
+ * @return .
  */
 KalturaThumbAssetService.prototype.getRemotePaths = function(callback, id){
 	var kparams = {};
@@ -6675,6 +6973,9 @@ KalturaThumbAssetService.prototype.getRemotePaths = function(callback, id){
  * @param assetId string  (optional).
  * @param storageProfileId int  (optional).
  * @return KalturaFlavorAsset.
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaThumbAssetService.prototype.exportAction = function(callback, assetId, storageProfileId){
 	var kparams = {};
@@ -6704,6 +7005,7 @@ module.exports.KalturaThumbParamsOutputService = KalturaThumbParamsOutputService
  * Get thumb params output object by ID.
  * @param id int  (optional).
  * @return KalturaThumbParamsOutput.
+ * @return .
  */
 KalturaThumbParamsOutputService.prototype.get = function(callback, id){
 	var kparams = {};
@@ -6888,6 +7190,7 @@ KalturaUiConfService.prototype.add = function(callback, uiConf){
  * @param id int  (optional).
  * @param uiConf KalturaUiConf  (optional).
  * @return KalturaUiConf.
+ * @return .
  */
 KalturaUiConfService.prototype.update = function(callback, id, uiConf){
 	var kparams = {};
@@ -6902,6 +7205,7 @@ KalturaUiConfService.prototype.update = function(callback, id, uiConf){
  * Retrieve a UIConf by id.
  * @param id int  (optional).
  * @return KalturaUiConf.
+ * @return .
  */
 KalturaUiConfService.prototype.get = function(callback, id){
 	var kparams = {};
@@ -6914,6 +7218,7 @@ KalturaUiConfService.prototype.get = function(callback, id){
 /**
  * Delete an existing UIConf.
  * @param id int  (optional).
+ * @return .
  * @return .
  */
 KalturaUiConfService.prototype.deleteAction = function(callback, id){
@@ -6928,6 +7233,7 @@ KalturaUiConfService.prototype.deleteAction = function(callback, id){
  * Clone an existing UIConf.
  * @param id int  (optional).
  * @return KalturaUiConf.
+ * @return .
  */
 KalturaUiConfService.prototype.cloneAction = function(callback, id){
 	var kparams = {};
@@ -7307,6 +7613,9 @@ module.exports.KalturaUserRoleService = KalturaUserRoleService;
  * Adds a new user role object to the account.
  * @param userRole KalturaUserRole A new role (optional).
  * @return KalturaUserRole.
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaUserRoleService.prototype.add = function(callback, userRole){
 	var kparams = {};
@@ -7320,6 +7629,7 @@ KalturaUserRoleService.prototype.add = function(callback, userRole){
  * Retrieves a user role object using its ID.
  * @param userRoleId int The user role's unique identifier (optional).
  * @return KalturaUserRole.
+ * @return .
  */
 KalturaUserRoleService.prototype.get = function(callback, userRoleId){
 	var kparams = {};
@@ -7334,6 +7644,8 @@ KalturaUserRoleService.prototype.get = function(callback, userRoleId){
  * @param userRoleId int The user role's unique identifier (optional).
  * @param userRole KalturaUserRole Id The user role's unique identifier (optional).
  * @return KalturaUserRole.
+ * @return .
+ * @return .
  */
 KalturaUserRoleService.prototype.update = function(callback, userRoleId, userRole){
 	var kparams = {};
@@ -7348,6 +7660,8 @@ KalturaUserRoleService.prototype.update = function(callback, userRoleId, userRol
  * Deletes an existing user role object.
  * @param userRoleId int The user role's unique identifier (optional).
  * @return KalturaUserRole.
+ * @return .
+ * @return .
  */
 KalturaUserRoleService.prototype.deleteAction = function(callback, userRoleId){
 	var kparams = {};
@@ -7388,6 +7702,7 @@ KalturaUserRoleService.prototype.listAction = function(callback, filter, pager){
  * Creates a new user role object that is a duplicate of an existing role.
  * @param userRoleId int The user role's unique identifier (optional).
  * @return KalturaUserRole.
+ * @return .
  */
 KalturaUserRoleService.prototype.cloneAction = function(callback, userRoleId){
 	var kparams = {};
@@ -7438,6 +7753,14 @@ module.exports.KalturaUserService = KalturaUserService;
  * Input param $id is the unique identifier in the partner's system.
  * @param user KalturaUser The new user (optional).
  * @return KalturaUser.
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaUserService.prototype.add = function(callback, user){
 	var kparams = {};
@@ -7453,6 +7776,10 @@ KalturaUserService.prototype.add = function(callback, user){
  * @param userId string The user's unique identifier in the partner's system (optional).
  * @param user KalturaUser Id The user's unique identifier in the partner's system (optional).
  * @return KalturaUser.
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaUserService.prototype.update = function(callback, userId, user){
 	var kparams = {};
@@ -7467,6 +7794,7 @@ KalturaUserService.prototype.update = function(callback, userId, user){
  * Retrieves a user object for a specified user ID.
  * @param userId string The user's unique identifier in the partner's system (optional, default: null).
  * @return KalturaUser.
+ * @return .
  */
 KalturaUserService.prototype.get = function(callback, userId){
 	if(!userId){
@@ -7484,6 +7812,8 @@ KalturaUserService.prototype.get = function(callback, userId){
  * A login ID is the email address used by a user to log into the system.
  * @param loginId string The user's email address that identifies the user for login (optional).
  * @return KalturaUser.
+ * @return .
+ * @return .
  */
 KalturaUserService.prototype.getByLoginId = function(callback, loginId){
 	var kparams = {};
@@ -7497,6 +7827,7 @@ KalturaUserService.prototype.getByLoginId = function(callback, loginId){
  * Deletes a user from a partner account.
  * @param userId string The user's unique identifier in the partner's system (optional).
  * @return KalturaUser.
+ * @return .
  */
 KalturaUserService.prototype.deleteAction = function(callback, userId){
 	var kparams = {};
@@ -7537,6 +7868,7 @@ KalturaUserService.prototype.listAction = function(callback, filter, pager){
  * Notifies that a user is banned from an account.
  * @param userId string The user's unique identifier in the partner's system (optional).
  * @return .
+ * @return .
  */
 KalturaUserService.prototype.notifyBan = function(callback, userId){
 	var kparams = {};
@@ -7554,6 +7886,13 @@ KalturaUserService.prototype.notifyBan = function(callback, userId){
  * @param expiry int The requested time (in seconds) before the generated KS expires (By default, a KS expires after 24 hours) (optional, default: 86400).
  * @param privileges string Special privileges (optional, default: *).
  * @return string.
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaUserService.prototype.login = function(callback, partnerId, userId, password, expiry, privileges){
 	if(!expiry){
@@ -7582,6 +7921,13 @@ KalturaUserService.prototype.login = function(callback, partnerId, userId, passw
  * @param privileges string Special privileges (optional, default: *).
  * @param otp string the user's one-time password (optional, default: null).
  * @return string.
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaUserService.prototype.loginByLoginId = function(callback, loginId, password, partnerId, expiry, privileges, otp){
 	if(!partnerId){
@@ -7617,6 +7963,12 @@ KalturaUserService.prototype.loginByLoginId = function(callback, loginId, passwo
  * @param newFirstName string Optional, The user's new first name (optional, default: null).
  * @param newLastName string Optional, The user's new last name (optional, default: null).
  * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaUserService.prototype.updateLoginData = function(callback, oldLoginId, password, newLoginId, newPassword, newFirstName, newLastName){
 	if(!newLoginId){
@@ -7647,6 +7999,11 @@ KalturaUserService.prototype.updateLoginData = function(callback, oldLoginId, pa
  * Reset user's password and send the user an email to generate a new one.
  * @param email string The user's email address (login email) (optional).
  * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaUserService.prototype.resetPassword = function(callback, email){
 	var kparams = {};
@@ -7660,6 +8017,12 @@ KalturaUserService.prototype.resetPassword = function(callback, email){
  * Set initial users password.
  * @param hashKey string The hash key used to identify the user (retrieved by email) (optional).
  * @param newPassword string The new password to set for the user (optional).
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  * @return .
  */
 KalturaUserService.prototype.setInitialPassword = function(callback, hashKey, newPassword){
@@ -7677,6 +8040,11 @@ KalturaUserService.prototype.setInitialPassword = function(callback, hashKey, ne
  * @param loginId string The user's email address that identifies the user for login (optional).
  * @param password string The user's password (optional, default: null).
  * @return KalturaUser.
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaUserService.prototype.enableLogin = function(callback, userId, loginId, password){
 	if(!password){
@@ -7697,6 +8065,10 @@ KalturaUserService.prototype.enableLogin = function(callback, userId, loginId, p
  * @param userId string The user's unique identifier in the partner's system (optional, default: null).
  * @param loginId string The user's email address that identifies the user for login (optional, default: null).
  * @return KalturaUser.
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaUserService.prototype.disableLogin = function(callback, userId, loginId){
 	if(!userId){
@@ -7718,6 +8090,7 @@ KalturaUserService.prototype.disableLogin = function(callback, userId, loginId){
  * @param id string  (optional).
  * @param shouldUpdate bool  (optional, default: true).
  * @return string.
+ * @return .
  */
 KalturaUserService.prototype.index = function(callback, id, shouldUpdate){
 	if(!shouldUpdate){
@@ -7907,6 +8280,10 @@ module.exports.KalturaMetadataService = KalturaMetadataService;
  * @param objectId string  (optional).
  * @param xmlData string XML metadata (optional).
  * @return KalturaMetadata.
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaMetadataService.prototype.add = function(callback, metadataProfileId, objectType, objectId, xmlData){
 	var kparams = {};
@@ -7926,6 +8303,9 @@ KalturaMetadataService.prototype.add = function(callback, metadataProfileId, obj
  * @param objectId string  (optional).
  * @param xmlFile file XML metadata (optional).
  * @return KalturaMetadata.
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaMetadataService.prototype.addFromFile = function(callback, metadataProfileId, objectType, objectId, xmlFile){
 	var kparams = {};
@@ -7982,6 +8362,7 @@ KalturaMetadataService.prototype.addFromBulk = function(callback, metadataProfil
  * Retrieve a metadata object by id.
  * @param id int  (optional).
  * @return KalturaMetadata.
+ * @return .
  */
 KalturaMetadataService.prototype.get = function(callback, id){
 	var kparams = {};
@@ -7997,6 +8378,10 @@ KalturaMetadataService.prototype.get = function(callback, id){
  * @param xmlData string XML metadata (optional, default: null).
  * @param version int Enable update only if the metadata object version did not change by other process (optional, default: null).
  * @return KalturaMetadata.
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaMetadataService.prototype.update = function(callback, id, xmlData, version){
 	if(!xmlData){
@@ -8019,6 +8404,9 @@ KalturaMetadataService.prototype.update = function(callback, id, xmlData, versio
  * @param id int  (optional).
  * @param xmlFile file XML metadata (optional, default: null).
  * @return KalturaMetadata.
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaMetadataService.prototype.updateFromFile = function(callback, id, xmlFile){
 	if(!xmlFile){
@@ -8062,6 +8450,7 @@ KalturaMetadataService.prototype.listAction = function(callback, filter, pager){
  * Delete an existing metadata.
  * @param id int  (optional).
  * @return .
+ * @return .
  */
 KalturaMetadataService.prototype.deleteAction = function(callback, id){
 	var kparams = {};
@@ -8076,6 +8465,8 @@ KalturaMetadataService.prototype.deleteAction = function(callback, id){
  * Used by batch metadata transform.
  * @param id int  (optional).
  * @param version int Enable update only if the metadata object version did not change by other process (optional, default: null).
+ * @return .
+ * @return .
  * @return .
  */
 KalturaMetadataService.prototype.invalidate = function(callback, id, version){
@@ -8110,6 +8501,9 @@ KalturaMetadataService.prototype.index = function(callback, id, shouldUpdate){
  * @param id int  (optional).
  * @param xslFile file  (optional).
  * @return KalturaMetadata.
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaMetadataService.prototype.updateFromXSL = function(callback, id, xslFile){
 	var kparams = {};
@@ -8171,6 +8565,7 @@ KalturaMetadataProfileService.prototype.add = function(callback, metadataProfile
  * @param xsdFile file XSD metadata definition (optional).
  * @param viewsFile file UI views definition (optional, default: null).
  * @return KalturaMetadataProfile.
+ * @return .
  */
 KalturaMetadataProfileService.prototype.addFromFile = function(callback, metadataProfile, xsdFile, viewsFile){
 	if(!viewsFile){
@@ -8190,6 +8585,7 @@ KalturaMetadataProfileService.prototype.addFromFile = function(callback, metadat
  * Retrieve a metadata profile object by id.
  * @param id int  (optional).
  * @return KalturaMetadataProfile.
+ * @return .
  */
 KalturaMetadataProfileService.prototype.get = function(callback, id){
 	var kparams = {};
@@ -8206,6 +8602,10 @@ KalturaMetadataProfileService.prototype.get = function(callback, id){
  * @param xsdData string XSD metadata definition (optional, default: null).
  * @param viewsData string UI views definition (optional, default: null).
  * @return KalturaMetadataProfile.
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaMetadataProfileService.prototype.update = function(callback, id, metadataProfile, xsdData, viewsData){
 	if(!xsdData){
@@ -8266,6 +8666,7 @@ KalturaMetadataProfileService.prototype.listFields = function(callback, metadata
  * Delete an existing metadata profile.
  * @param id int  (optional).
  * @return .
+ * @return .
  */
 KalturaMetadataProfileService.prototype.deleteAction = function(callback, id){
 	var kparams = {};
@@ -8280,6 +8681,9 @@ KalturaMetadataProfileService.prototype.deleteAction = function(callback, id){
  * @param id int  (optional).
  * @param toVersion int  (optional).
  * @return KalturaMetadataProfile.
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaMetadataProfileService.prototype.revert = function(callback, id, toVersion){
 	var kparams = {};
@@ -8295,6 +8699,9 @@ KalturaMetadataProfileService.prototype.revert = function(callback, id, toVersio
  * @param id int  (optional).
  * @param xsdFile file XSD metadata definition (optional).
  * @return KalturaMetadataProfile.
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaMetadataProfileService.prototype.updateDefinitionFromFile = function(callback, id, xsdFile){
 	var kparams = {};
@@ -8311,6 +8718,8 @@ KalturaMetadataProfileService.prototype.updateDefinitionFromFile = function(call
  * @param id int  (optional).
  * @param viewsFile file UI views file (optional).
  * @return KalturaMetadataProfile.
+ * @return .
+ * @return .
  */
 KalturaMetadataProfileService.prototype.updateViewsFromFile = function(callback, id, viewsFile){
 	var kparams = {};
@@ -8327,6 +8736,8 @@ KalturaMetadataProfileService.prototype.updateViewsFromFile = function(callback,
  * @param id int  (optional).
  * @param xsltFile file XSLT file, will be executed on every metadata add/update (optional).
  * @return KalturaMetadataProfile.
+ * @return .
+ * @return .
  */
 KalturaMetadataProfileService.prototype.updateTransformationFromFile = function(callback, id, xsltFile){
 	var kparams = {};
@@ -8370,6 +8781,9 @@ module.exports.KalturaDocumentsService = KalturaDocumentsService;
  * @param documentEntry KalturaDocumentEntry Document entry metadata (optional).
  * @param uploadTokenId string Upload token id (optional).
  * @return KalturaDocumentEntry.
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaDocumentsService.prototype.addFromUploadedFile = function(callback, documentEntry, uploadTokenId){
 	var kparams = {};
@@ -8386,6 +8800,10 @@ KalturaDocumentsService.prototype.addFromUploadedFile = function(callback, docum
  * @param documentEntry KalturaDocumentEntry Document entry metadata (optional, default: null).
  * @param sourceFlavorParamsId int The flavor to be used as the new entry source, source flavor will be used if not specified (optional, default: null).
  * @return KalturaDocumentEntry.
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaDocumentsService.prototype.addFromEntry = function(callback, sourceEntryId, documentEntry, sourceFlavorParamsId){
 	if(!documentEntry){
@@ -8410,6 +8828,9 @@ KalturaDocumentsService.prototype.addFromEntry = function(callback, sourceEntryI
  * @param sourceFlavorAssetId string Flavor asset id to be used as the new entry source (optional).
  * @param documentEntry KalturaDocumentEntry Document entry metadata (optional, default: null).
  * @return KalturaDocumentEntry.
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaDocumentsService.prototype.addFromFlavorAsset = function(callback, sourceFlavorAssetId, documentEntry){
 	if(!documentEntry){
@@ -8431,6 +8852,9 @@ KalturaDocumentsService.prototype.addFromFlavorAsset = function(callback, source
  * @param conversionProfileId int  (optional, default: null).
  * @param dynamicConversionAttributes array  (optional, default: null).
  * @return bigint.
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaDocumentsService.prototype.convert = function(callback, entryId, conversionProfileId, dynamicConversionAttributes){
 	if(!conversionProfileId){
@@ -8459,6 +8883,7 @@ KalturaDocumentsService.prototype.convert = function(callback, entryId, conversi
  * @param entryId string Document entry id (optional).
  * @param version int Desired version of the data (optional, default: -1).
  * @return KalturaDocumentEntry.
+ * @return .
  */
 KalturaDocumentsService.prototype.get = function(callback, entryId, version){
 	if(!version){
@@ -8477,6 +8902,7 @@ KalturaDocumentsService.prototype.get = function(callback, entryId, version){
  * @param entryId string Document entry id to update (optional).
  * @param documentEntry KalturaDocumentEntry Document entry metadata to update (optional).
  * @return KalturaDocumentEntry.
+ * @return .
  */
 KalturaDocumentsService.prototype.update = function(callback, entryId, documentEntry){
 	var kparams = {};
@@ -8490,6 +8916,7 @@ KalturaDocumentsService.prototype.update = function(callback, entryId, documentE
 /**
  * Delete a document entry.
  * @param entryId string Document entry id to delete (optional).
+ * @return .
  * @return .
  */
 KalturaDocumentsService.prototype.deleteAction = function(callback, entryId){
@@ -8559,6 +8986,9 @@ KalturaDocumentsService.prototype.convertPptToSwf = function(callback, entryId){
  * @param resource KalturaResource Resource to be used to replace entry doc content (optional).
  * @param conversionProfileId int The conversion profile id to be used on the entry (optional, default: null).
  * @return KalturaDocumentEntry.
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaDocumentsService.prototype.updateContent = function(callback, entryId, resource, conversionProfileId){
 	if(!conversionProfileId){
@@ -8577,6 +9007,7 @@ KalturaDocumentsService.prototype.updateContent = function(callback, entryId, re
  * Approves document replacement.
  * @param entryId string document entry id to replace (optional).
  * @return KalturaDocumentEntry.
+ * @return .
  */
 KalturaDocumentsService.prototype.approveReplace = function(callback, entryId){
 	var kparams = {};
@@ -8590,6 +9021,7 @@ KalturaDocumentsService.prototype.approveReplace = function(callback, entryId){
  * Cancels document replacement.
  * @param entryId string Document entry id to cancel (optional).
  * @return KalturaDocumentEntry.
+ * @return .
  */
 KalturaDocumentsService.prototype.cancelReplace = function(callback, entryId){
 	var kparams = {};
@@ -8660,6 +9092,7 @@ KalturaVirusScanProfileService.prototype.add = function(callback, virusScanProfi
  * Retrieve an virus scan profile object by id.
  * @param virusScanProfileId int  (optional).
  * @return KalturaVirusScanProfile.
+ * @return .
  */
 KalturaVirusScanProfileService.prototype.get = function(callback, virusScanProfileId){
 	var kparams = {};
@@ -8674,6 +9107,7 @@ KalturaVirusScanProfileService.prototype.get = function(callback, virusScanProfi
  * @param virusScanProfileId int  (optional).
  * @param virusScanProfile KalturaVirusScanProfile Id (optional).
  * @return KalturaVirusScanProfile.
+ * @return .
  */
 KalturaVirusScanProfileService.prototype.update = function(callback, virusScanProfileId, virusScanProfile){
 	var kparams = {};
@@ -8688,6 +9122,7 @@ KalturaVirusScanProfileService.prototype.update = function(callback, virusScanPr
  * Mark the virus scan profile as deleted.
  * @param virusScanProfileId int  (optional).
  * @return KalturaVirusScanProfile.
+ * @return .
  */
 KalturaVirusScanProfileService.prototype.deleteAction = function(callback, virusScanProfileId){
 	var kparams = {};
@@ -8702,6 +9137,9 @@ KalturaVirusScanProfileService.prototype.deleteAction = function(callback, virus
  * @param flavorAssetId string  (optional).
  * @param virusScanProfileId int  (optional, default: null).
  * @return int.
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaVirusScanProfileService.prototype.scan = function(callback, flavorAssetId, virusScanProfileId){
 	if(!virusScanProfileId){
@@ -8739,6 +9177,7 @@ module.exports.KalturaDistributionProfileService = KalturaDistributionProfileSer
  * Add new Distribution Profile.
  * @param distributionProfile KalturaDistributionProfile  (optional).
  * @return KalturaDistributionProfile.
+ * @return .
  */
 KalturaDistributionProfileService.prototype.add = function(callback, distributionProfile){
 	var kparams = {};
@@ -8752,6 +9191,7 @@ KalturaDistributionProfileService.prototype.add = function(callback, distributio
  * Get Distribution Profile by id.
  * @param id int  (optional).
  * @return KalturaDistributionProfile.
+ * @return .
  */
 KalturaDistributionProfileService.prototype.get = function(callback, id){
 	var kparams = {};
@@ -8766,6 +9206,7 @@ KalturaDistributionProfileService.prototype.get = function(callback, id){
  * @param id int  (optional).
  * @param distributionProfile KalturaDistributionProfile  (optional).
  * @return KalturaDistributionProfile.
+ * @return .
  */
 KalturaDistributionProfileService.prototype.update = function(callback, id, distributionProfile){
 	var kparams = {};
@@ -8781,6 +9222,7 @@ KalturaDistributionProfileService.prototype.update = function(callback, id, dist
  * @param id int  (optional).
  * @param status int  (optional, enum: KalturaDistributionProfileStatus).
  * @return KalturaDistributionProfile.
+ * @return .
  */
 KalturaDistributionProfileService.prototype.updateStatus = function(callback, id, status){
 	var kparams = {};
@@ -8794,6 +9236,7 @@ KalturaDistributionProfileService.prototype.updateStatus = function(callback, id
 /**
  * Delete Distribution Profile by id.
  * @param id int  (optional).
+ * @return .
  * @return .
  */
 KalturaDistributionProfileService.prototype.deleteAction = function(callback, id){
@@ -8882,6 +9325,9 @@ module.exports.KalturaEntryDistributionService = KalturaEntryDistributionService
  * Add new Entry Distribution.
  * @param entryDistribution KalturaEntryDistribution  (optional).
  * @return KalturaEntryDistribution.
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaEntryDistributionService.prototype.add = function(callback, entryDistribution){
 	var kparams = {};
@@ -8895,6 +9341,7 @@ KalturaEntryDistributionService.prototype.add = function(callback, entryDistribu
  * Get Entry Distribution by id.
  * @param id int  (optional).
  * @return KalturaEntryDistribution.
+ * @return .
  */
 KalturaEntryDistributionService.prototype.get = function(callback, id){
 	var kparams = {};
@@ -8908,6 +9355,9 @@ KalturaEntryDistributionService.prototype.get = function(callback, id){
  * Validates Entry Distribution by id for submission.
  * @param id int  (optional).
  * @return KalturaEntryDistribution.
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaEntryDistributionService.prototype.validate = function(callback, id){
 	var kparams = {};
@@ -8922,6 +9372,7 @@ KalturaEntryDistributionService.prototype.validate = function(callback, id){
  * @param id int  (optional).
  * @param entryDistribution KalturaEntryDistribution  (optional).
  * @return KalturaEntryDistribution.
+ * @return .
  */
 KalturaEntryDistributionService.prototype.update = function(callback, id, entryDistribution){
 	var kparams = {};
@@ -8935,6 +9386,7 @@ KalturaEntryDistributionService.prototype.update = function(callback, id, entryD
 /**
  * Delete Entry Distribution by id.
  * @param id int  (optional).
+ * @return .
  * @return .
  */
 KalturaEntryDistributionService.prototype.deleteAction = function(callback, id){
@@ -8975,6 +9427,10 @@ KalturaEntryDistributionService.prototype.listAction = function(callback, filter
  * @param id int  (optional).
  * @param submitWhenReady bool  (optional, default: false).
  * @return KalturaEntryDistribution.
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaEntryDistributionService.prototype.submitAdd = function(callback, id, submitWhenReady){
 	if(!submitWhenReady){
@@ -8992,6 +9448,10 @@ KalturaEntryDistributionService.prototype.submitAdd = function(callback, id, sub
  * Submits Entry Distribution changes to the remote destination.
  * @param id int  (optional).
  * @return KalturaEntryDistribution.
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaEntryDistributionService.prototype.submitUpdate = function(callback, id){
 	var kparams = {};
@@ -9005,6 +9465,10 @@ KalturaEntryDistributionService.prototype.submitUpdate = function(callback, id){
  * Submits Entry Distribution report request.
  * @param id int  (optional).
  * @return KalturaEntryDistribution.
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaEntryDistributionService.prototype.submitFetchReport = function(callback, id){
 	var kparams = {};
@@ -9018,6 +9482,10 @@ KalturaEntryDistributionService.prototype.submitFetchReport = function(callback,
  * Deletes Entry Distribution from the remote destination.
  * @param id int  (optional).
  * @return KalturaEntryDistribution.
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaEntryDistributionService.prototype.submitDelete = function(callback, id){
 	var kparams = {};
@@ -9031,6 +9499,9 @@ KalturaEntryDistributionService.prototype.submitDelete = function(callback, id){
  * Retries last submit action.
  * @param id int  (optional).
  * @return KalturaEntryDistribution.
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaEntryDistributionService.prototype.retrySubmit = function(callback, id){
 	var kparams = {};
@@ -9114,6 +9585,7 @@ KalturaGenericDistributionProviderService.prototype.add = function(callback, gen
  * Get Generic Distribution Provider by id.
  * @param id int  (optional).
  * @return KalturaGenericDistributionProvider.
+ * @return .
  */
 KalturaGenericDistributionProviderService.prototype.get = function(callback, id){
 	var kparams = {};
@@ -9128,6 +9600,7 @@ KalturaGenericDistributionProviderService.prototype.get = function(callback, id)
  * @param id int  (optional).
  * @param genericDistributionProvider KalturaGenericDistributionProvider  (optional).
  * @return KalturaGenericDistributionProvider.
+ * @return .
  */
 KalturaGenericDistributionProviderService.prototype.update = function(callback, id, genericDistributionProvider){
 	var kparams = {};
@@ -9141,6 +9614,8 @@ KalturaGenericDistributionProviderService.prototype.update = function(callback, 
 /**
  * Delete Generic Distribution Provider by id.
  * @param id int  (optional).
+ * @return .
+ * @return .
  * @return .
  */
 KalturaGenericDistributionProviderService.prototype.deleteAction = function(callback, id){
@@ -9207,6 +9682,7 @@ module.exports.KalturaGenericDistributionProviderActionService = KalturaGenericD
  * Add new Generic Distribution Provider Action.
  * @param genericDistributionProviderAction KalturaGenericDistributionProviderAction  (optional).
  * @return KalturaGenericDistributionProviderAction.
+ * @return .
  */
 KalturaGenericDistributionProviderActionService.prototype.add = function(callback, genericDistributionProviderAction){
 	var kparams = {};
@@ -9221,6 +9697,7 @@ KalturaGenericDistributionProviderActionService.prototype.add = function(callbac
  * @param id int the id of the generic distribution provider action (optional).
  * @param xslData string XSL MRSS transformation data (optional).
  * @return KalturaGenericDistributionProviderAction.
+ * @return .
  */
 KalturaGenericDistributionProviderActionService.prototype.addMrssTransform = function(callback, id, xslData){
 	var kparams = {};
@@ -9236,6 +9713,8 @@ KalturaGenericDistributionProviderActionService.prototype.addMrssTransform = fun
  * @param id int the id of the generic distribution provider action (optional).
  * @param xslFile file XSL MRSS transformation file (optional).
  * @return KalturaGenericDistributionProviderAction.
+ * @return .
+ * @return .
  */
 KalturaGenericDistributionProviderActionService.prototype.addMrssTransformFromFile = function(callback, id, xslFile){
 	var kparams = {};
@@ -9252,6 +9731,7 @@ KalturaGenericDistributionProviderActionService.prototype.addMrssTransformFromFi
  * @param id int the id of the generic distribution provider action (optional).
  * @param xsdData string XSD MRSS validatation data (optional).
  * @return KalturaGenericDistributionProviderAction.
+ * @return .
  */
 KalturaGenericDistributionProviderActionService.prototype.addMrssValidate = function(callback, id, xsdData){
 	var kparams = {};
@@ -9267,6 +9747,8 @@ KalturaGenericDistributionProviderActionService.prototype.addMrssValidate = func
  * @param id int the id of the generic distribution provider action (optional).
  * @param xsdFile file XSD MRSS validatation file (optional).
  * @return KalturaGenericDistributionProviderAction.
+ * @return .
+ * @return .
  */
 KalturaGenericDistributionProviderActionService.prototype.addMrssValidateFromFile = function(callback, id, xsdFile){
 	var kparams = {};
@@ -9283,6 +9765,7 @@ KalturaGenericDistributionProviderActionService.prototype.addMrssValidateFromFil
  * @param id int the id of the generic distribution provider action (optional).
  * @param transformData string transformation data xsl, xPath or regex (optional).
  * @return KalturaGenericDistributionProviderAction.
+ * @return .
  */
 KalturaGenericDistributionProviderActionService.prototype.addResultsTransform = function(callback, id, transformData){
 	var kparams = {};
@@ -9298,6 +9781,8 @@ KalturaGenericDistributionProviderActionService.prototype.addResultsTransform = 
  * @param id int the id of the generic distribution provider action (optional).
  * @param transformFile file transformation file xsl, xPath or regex (optional).
  * @return KalturaGenericDistributionProviderAction.
+ * @return .
+ * @return .
  */
 KalturaGenericDistributionProviderActionService.prototype.addResultsTransformFromFile = function(callback, id, transformFile){
 	var kparams = {};
@@ -9313,6 +9798,7 @@ KalturaGenericDistributionProviderActionService.prototype.addResultsTransformFro
  * Get Generic Distribution Provider Action by id.
  * @param id int  (optional).
  * @return KalturaGenericDistributionProviderAction.
+ * @return .
  */
 KalturaGenericDistributionProviderActionService.prototype.get = function(callback, id){
 	var kparams = {};
@@ -9327,6 +9813,7 @@ KalturaGenericDistributionProviderActionService.prototype.get = function(callbac
  * @param genericDistributionProviderId int  (optional).
  * @param actionType int  (optional, enum: KalturaDistributionAction).
  * @return KalturaGenericDistributionProviderAction.
+ * @return .
  */
 KalturaGenericDistributionProviderActionService.prototype.getByProviderId = function(callback, genericDistributionProviderId, actionType){
 	var kparams = {};
@@ -9343,6 +9830,7 @@ KalturaGenericDistributionProviderActionService.prototype.getByProviderId = func
  * @param actionType int  (optional, enum: KalturaDistributionAction).
  * @param genericDistributionProviderAction KalturaGenericDistributionProviderAction  (optional).
  * @return KalturaGenericDistributionProviderAction.
+ * @return .
  */
 KalturaGenericDistributionProviderActionService.prototype.updateByProviderId = function(callback, genericDistributionProviderId, actionType, genericDistributionProviderAction){
 	var kparams = {};
@@ -9359,6 +9847,7 @@ KalturaGenericDistributionProviderActionService.prototype.updateByProviderId = f
  * @param id int  (optional).
  * @param genericDistributionProviderAction KalturaGenericDistributionProviderAction  (optional).
  * @return KalturaGenericDistributionProviderAction.
+ * @return .
  */
 KalturaGenericDistributionProviderActionService.prototype.update = function(callback, id, genericDistributionProviderAction){
 	var kparams = {};
@@ -9373,6 +9862,7 @@ KalturaGenericDistributionProviderActionService.prototype.update = function(call
  * Delete Generic Distribution Provider Action by id.
  * @param id int  (optional).
  * @return .
+ * @return .
  */
 KalturaGenericDistributionProviderActionService.prototype.deleteAction = function(callback, id){
 	var kparams = {};
@@ -9386,6 +9876,7 @@ KalturaGenericDistributionProviderActionService.prototype.deleteAction = functio
  * Delete Generic Distribution Provider Action by provider id.
  * @param genericDistributionProviderId int  (optional).
  * @param actionType int  (optional, enum: KalturaDistributionAction).
+ * @return .
  * @return .
  */
 KalturaGenericDistributionProviderActionService.prototype.deleteByProviderId = function(callback, genericDistributionProviderId, actionType){
@@ -9461,6 +9952,8 @@ KalturaCuePointService.prototype.add = function(callback, cuePoint){
  * Allows you to add multiple cue points objects by uploading XML that contains multiple cue point definitions.
  * @param fileData file  (optional).
  * @return KalturaCuePointListResponse.
+ * @return .
+ * @return .
  */
 KalturaCuePointService.prototype.addFromBulk = function(callback, fileData){
 	var kparams = {};
@@ -9475,6 +9968,7 @@ KalturaCuePointService.prototype.addFromBulk = function(callback, fileData){
  * Retrieve an CuePoint object by id.
  * @param id string  (optional).
  * @return KalturaCuePoint.
+ * @return .
  */
 KalturaCuePointService.prototype.get = function(callback, id){
 	var kparams = {};
@@ -9532,6 +10026,7 @@ KalturaCuePointService.prototype.count = function(callback, filter){
  * @param id string  (optional).
  * @param cuePoint KalturaCuePoint  (optional).
  * @return KalturaCuePoint.
+ * @return .
  */
 KalturaCuePointService.prototype.update = function(callback, id, cuePoint){
 	var kparams = {};
@@ -9546,6 +10041,7 @@ KalturaCuePointService.prototype.update = function(callback, id, cuePoint){
  * delete cue point by id, and delete all children cue points.
  * @param id string  (optional).
  * @return .
+ * @return .
  */
 KalturaCuePointService.prototype.deleteAction = function(callback, id){
 	var kparams = {};
@@ -9559,6 +10055,7 @@ KalturaCuePointService.prototype.deleteAction = function(callback, id){
  * Update cuePoint status by id.
  * @param id string  (optional).
  * @param status int  (optional, enum: KalturaCuePointStatus).
+ * @return .
  * @return .
  */
 KalturaCuePointService.prototype.updateStatus = function(callback, id, status){
@@ -9575,6 +10072,8 @@ KalturaCuePointService.prototype.updateStatus = function(callback, id, status){
  * @param id string  (optional).
  * @param entryId string  (optional).
  * @return KalturaCuePoint.
+ * @return .
+ * @return .
  */
 KalturaCuePointService.prototype.cloneAction = function(callback, id, entryId){
 	var kparams = {};
@@ -9625,6 +10124,7 @@ KalturaAnnotationService.prototype.add = function(callback, annotation){
  * @param id string  (optional).
  * @param annotation KalturaCuePoint  (optional).
  * @return KalturaAnnotation.
+ * @return .
  */
 KalturaAnnotationService.prototype.update = function(callback, id, annotation){
 	var kparams = {};
@@ -9664,6 +10164,8 @@ KalturaAnnotationService.prototype.listAction = function(callback, filter, pager
  * Allows you to add multiple cue points objects by uploading XML that contains multiple cue point definitions.
  * @param fileData file  (optional).
  * @return KalturaCuePointListResponse.
+ * @return .
+ * @return .
  */
 KalturaAnnotationService.prototype.addFromBulk = function(callback, fileData){
 	var kparams = {};
@@ -9678,6 +10180,7 @@ KalturaAnnotationService.prototype.addFromBulk = function(callback, fileData){
  * Retrieve an CuePoint object by id.
  * @param id string  (optional).
  * @return KalturaCuePoint.
+ * @return .
  */
 KalturaAnnotationService.prototype.get = function(callback, id){
 	var kparams = {};
@@ -9709,6 +10212,7 @@ KalturaAnnotationService.prototype.count = function(callback, filter){
  * delete cue point by id, and delete all children cue points.
  * @param id string  (optional).
  * @return .
+ * @return .
  */
 KalturaAnnotationService.prototype.deleteAction = function(callback, id){
 	var kparams = {};
@@ -9722,6 +10226,7 @@ KalturaAnnotationService.prototype.deleteAction = function(callback, id){
  * Update cuePoint status by id.
  * @param id string  (optional).
  * @param status int  (optional, enum: KalturaCuePointStatus).
+ * @return .
  * @return .
  */
 KalturaAnnotationService.prototype.updateStatus = function(callback, id, status){
@@ -9738,6 +10243,8 @@ KalturaAnnotationService.prototype.updateStatus = function(callback, id, status)
  * @param id string  (optional).
  * @param entryId string  (optional).
  * @return KalturaCuePoint.
+ * @return .
+ * @return .
  */
 KalturaAnnotationService.prototype.cloneAction = function(callback, id, entryId){
 	var kparams = {};
@@ -9771,6 +10278,9 @@ module.exports.KalturaQuizService = KalturaQuizService;
  * @param entryId string  (optional).
  * @param quiz KalturaQuiz  (optional).
  * @return KalturaQuiz.
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaQuizService.prototype.add = function(callback, entryId, quiz){
 	var kparams = {};
@@ -9786,6 +10296,9 @@ KalturaQuizService.prototype.add = function(callback, entryId, quiz){
  * @param entryId string  (optional).
  * @param quiz KalturaQuiz  (optional).
  * @return KalturaQuiz.
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaQuizService.prototype.update = function(callback, entryId, quiz){
 	var kparams = {};
@@ -9800,6 +10313,7 @@ KalturaQuizService.prototype.update = function(callback, entryId, quiz){
  * Allows to get a quiz.
  * @param entryId string  (optional).
  * @return KalturaQuiz.
+ * @return .
  */
 KalturaQuizService.prototype.get = function(callback, entryId){
 	var kparams = {};
@@ -9839,6 +10353,9 @@ KalturaQuizService.prototype.listAction = function(callback, filter, pager){
  * @param entryId string  (optional).
  * @param quizOutputType int  (optional, enum: KalturaQuizOutputType).
  * @return string.
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaQuizService.prototype.getUrl = function(callback, entryId, quizOutputType){
 	var kparams = {};
@@ -9909,6 +10426,7 @@ KalturaShortLinkService.prototype.add = function(callback, shortLink){
  * Retrieve an short link object by id.
  * @param id string  (optional).
  * @return KalturaShortLink.
+ * @return .
  */
 KalturaShortLinkService.prototype.get = function(callback, id){
 	var kparams = {};
@@ -9923,6 +10441,7 @@ KalturaShortLinkService.prototype.get = function(callback, id){
  * @param id string  (optional).
  * @param shortLink KalturaShortLink  (optional).
  * @return KalturaShortLink.
+ * @return .
  */
 KalturaShortLinkService.prototype.update = function(callback, id, shortLink){
 	var kparams = {};
@@ -9937,6 +10456,7 @@ KalturaShortLinkService.prototype.update = function(callback, id, shortLink){
  * Mark the short link as deleted.
  * @param id string  (optional).
  * @return KalturaShortLink.
+ * @return .
  */
 KalturaShortLinkService.prototype.deleteAction = function(callback, id){
 	var kparams = {};
@@ -10035,6 +10555,10 @@ module.exports.KalturaDropFolderService = KalturaDropFolderService;
  * Allows you to add a new KalturaDropFolder object.
  * @param dropFolder KalturaDropFolder  (optional).
  * @return KalturaDropFolder.
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaDropFolderService.prototype.add = function(callback, dropFolder){
 	var kparams = {};
@@ -10048,6 +10572,7 @@ KalturaDropFolderService.prototype.add = function(callback, dropFolder){
  * Retrieve a KalturaDropFolder object by ID.
  * @param dropFolderId int  (optional).
  * @return KalturaDropFolder.
+ * @return .
  */
 KalturaDropFolderService.prototype.get = function(callback, dropFolderId){
 	var kparams = {};
@@ -10062,6 +10587,9 @@ KalturaDropFolderService.prototype.get = function(callback, dropFolderId){
  * @param dropFolderId int  (optional).
  * @param dropFolder KalturaDropFolder Id (optional).
  * @return KalturaDropFolder.
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaDropFolderService.prototype.update = function(callback, dropFolderId, dropFolder){
 	var kparams = {};
@@ -10076,6 +10604,7 @@ KalturaDropFolderService.prototype.update = function(callback, dropFolderId, dro
  * Mark the KalturaDropFolder object as deleted.
  * @param dropFolderId int  (optional).
  * @return KalturaDropFolder.
+ * @return .
  */
 KalturaDropFolderService.prototype.deleteAction = function(callback, dropFolderId){
 	var kparams = {};
@@ -10134,6 +10663,8 @@ module.exports.KalturaDropFolderFileService = KalturaDropFolderFileService;
  * Allows you to add a new KalturaDropFolderFile object.
  * @param dropFolderFile KalturaDropFolderFile  (optional).
  * @return KalturaDropFolderFile.
+ * @return .
+ * @return .
  */
 KalturaDropFolderFileService.prototype.add = function(callback, dropFolderFile){
 	var kparams = {};
@@ -10147,6 +10678,7 @@ KalturaDropFolderFileService.prototype.add = function(callback, dropFolderFile){
  * Retrieve a KalturaDropFolderFile object by ID.
  * @param dropFolderFileId int  (optional).
  * @return KalturaDropFolderFile.
+ * @return .
  */
 KalturaDropFolderFileService.prototype.get = function(callback, dropFolderFileId){
 	var kparams = {};
@@ -10161,6 +10693,7 @@ KalturaDropFolderFileService.prototype.get = function(callback, dropFolderFileId
  * @param dropFolderFileId int  (optional).
  * @param dropFolderFile KalturaDropFolderFile Id (optional).
  * @return KalturaDropFolderFile.
+ * @return .
  */
 KalturaDropFolderFileService.prototype.update = function(callback, dropFolderFileId, dropFolderFile){
 	var kparams = {};
@@ -10176,6 +10709,7 @@ KalturaDropFolderFileService.prototype.update = function(callback, dropFolderFil
  * @param dropFolderFileId int  (optional).
  * @param status int  (optional, enum: KalturaDropFolderFileStatus).
  * @return KalturaDropFolderFile.
+ * @return .
  */
 KalturaDropFolderFileService.prototype.updateStatus = function(callback, dropFolderFileId, status){
 	var kparams = {};
@@ -10190,6 +10724,7 @@ KalturaDropFolderFileService.prototype.updateStatus = function(callback, dropFol
  * Mark the KalturaDropFolderFile object as deleted.
  * @param dropFolderFileId int  (optional).
  * @return KalturaDropFolderFile.
+ * @return .
  */
 KalturaDropFolderFileService.prototype.deleteAction = function(callback, dropFolderFileId){
 	var kparams = {};
@@ -10228,6 +10763,7 @@ KalturaDropFolderFileService.prototype.listAction = function(callback, filter, p
  * Set the KalturaDropFolderFile status to ignore (KalturaDropFolderFileStatus::IGNORE).
  * @param dropFolderFileId int  (optional).
  * @return KalturaDropFolderFile.
+ * @return .
  */
 KalturaDropFolderFileService.prototype.ignore = function(callback, dropFolderFileId){
 	var kparams = {};
@@ -10264,6 +10800,14 @@ module.exports.KalturaCaptionAssetService = KalturaCaptionAssetService;
  * @param entryId string  (optional).
  * @param captionAsset KalturaCaptionAsset  (optional).
  * @return KalturaCaptionAsset.
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaCaptionAssetService.prototype.add = function(callback, entryId, captionAsset){
 	var kparams = {};
@@ -10279,6 +10823,13 @@ KalturaCaptionAssetService.prototype.add = function(callback, entryId, captionAs
  * @param id string  (optional).
  * @param contentResource KalturaContentResource  (optional).
  * @return KalturaCaptionAsset.
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaCaptionAssetService.prototype.setContent = function(callback, id, contentResource){
 	var kparams = {};
@@ -10294,6 +10845,7 @@ KalturaCaptionAssetService.prototype.setContent = function(callback, id, content
  * @param id string  (optional).
  * @param captionAsset KalturaCaptionAsset  (optional).
  * @return KalturaCaptionAsset.
+ * @return .
  */
 KalturaCaptionAssetService.prototype.update = function(callback, id, captionAsset){
 	var kparams = {};
@@ -10309,6 +10861,8 @@ KalturaCaptionAssetService.prototype.update = function(callback, id, captionAsse
  * @param id string  (optional).
  * @param storageId int  (optional, default: null).
  * @return string.
+ * @return .
+ * @return .
  */
 KalturaCaptionAssetService.prototype.getUrl = function(callback, id, storageId){
 	if(!storageId){
@@ -10326,6 +10880,8 @@ KalturaCaptionAssetService.prototype.getUrl = function(callback, id, storageId){
  * Get remote storage existing paths for the asset.
  * @param id string  (optional).
  * @return KalturaRemotePathListResponse.
+ * @return .
+ * @return .
  */
 KalturaCaptionAssetService.prototype.getRemotePaths = function(callback, id){
 	var kparams = {};
@@ -10338,6 +10894,7 @@ KalturaCaptionAssetService.prototype.getRemotePaths = function(callback, id){
 /**
  * Markss the caption as default and removes that mark from all other caption assets of the entry.
  * @param captionAssetId string  (optional).
+ * @return .
  * @return .
  */
 KalturaCaptionAssetService.prototype.setAsDefault = function(callback, captionAssetId){
@@ -10352,6 +10909,7 @@ KalturaCaptionAssetService.prototype.setAsDefault = function(callback, captionAs
  * .
  * @param captionAssetId string  (optional).
  * @return KalturaCaptionAsset.
+ * @return .
  */
 KalturaCaptionAssetService.prototype.get = function(callback, captionAssetId){
 	var kparams = {};
@@ -10389,6 +10947,7 @@ KalturaCaptionAssetService.prototype.listAction = function(callback, filter, pag
 /**
  * .
  * @param captionAssetId string  (optional).
+ * @return .
  * @return .
  */
 KalturaCaptionAssetService.prototype.deleteAction = function(callback, captionAssetId){
@@ -10516,6 +11075,7 @@ module.exports.KalturaCaptionAssetItemService = KalturaCaptionAssetItemService;
  * Parse content of caption asset and index it.
  * @param captionAssetId string  (optional).
  * @return .
+ * @return .
  */
 KalturaCaptionAssetItemService.prototype.parse = function(callback, captionAssetId){
 	var kparams = {};
@@ -10615,6 +11175,13 @@ module.exports.KalturaAttachmentAssetService = KalturaAttachmentAssetService;
  * @param entryId string  (optional).
  * @param attachmentAsset KalturaAttachmentAsset  (optional).
  * @return KalturaAttachmentAsset.
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaAttachmentAssetService.prototype.add = function(callback, entryId, attachmentAsset){
 	var kparams = {};
@@ -10630,6 +11197,13 @@ KalturaAttachmentAssetService.prototype.add = function(callback, entryId, attach
  * @param id string  (optional).
  * @param contentResource KalturaContentResource  (optional).
  * @return KalturaAttachmentAsset.
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaAttachmentAssetService.prototype.setContent = function(callback, id, contentResource){
 	var kparams = {};
@@ -10645,6 +11219,7 @@ KalturaAttachmentAssetService.prototype.setContent = function(callback, id, cont
  * @param id string  (optional).
  * @param attachmentAsset KalturaAttachmentAsset  (optional).
  * @return KalturaAttachmentAsset.
+ * @return .
  */
 KalturaAttachmentAssetService.prototype.update = function(callback, id, attachmentAsset){
 	var kparams = {};
@@ -10660,6 +11235,8 @@ KalturaAttachmentAssetService.prototype.update = function(callback, id, attachme
  * @param id string  (optional).
  * @param storageId int  (optional, default: null).
  * @return string.
+ * @return .
+ * @return .
  */
 KalturaAttachmentAssetService.prototype.getUrl = function(callback, id, storageId){
 	if(!storageId){
@@ -10677,6 +11254,8 @@ KalturaAttachmentAssetService.prototype.getUrl = function(callback, id, storageI
  * Get remote storage existing paths for the asset.
  * @param id string  (optional).
  * @return KalturaRemotePathListResponse.
+ * @return .
+ * @return .
  */
 KalturaAttachmentAssetService.prototype.getRemotePaths = function(callback, id){
 	var kparams = {};
@@ -10690,6 +11269,7 @@ KalturaAttachmentAssetService.prototype.getRemotePaths = function(callback, id){
  * .
  * @param attachmentAssetId string  (optional).
  * @return KalturaAttachmentAsset.
+ * @return .
  */
 KalturaAttachmentAssetService.prototype.get = function(callback, attachmentAssetId){
 	var kparams = {};
@@ -10727,6 +11307,7 @@ KalturaAttachmentAssetService.prototype.listAction = function(callback, filter, 
 /**
  * .
  * @param attachmentAssetId string  (optional).
+ * @return .
  * @return .
  */
 KalturaAttachmentAssetService.prototype.deleteAction = function(callback, attachmentAssetId){
@@ -10822,6 +11403,8 @@ module.exports.KalturaLikeService = KalturaLikeService;
  * .
  * @param entryId string  (optional).
  * @return bool.
+ * @return .
+ * @return .
  */
 KalturaLikeService.prototype.like = function(callback, entryId){
 	var kparams = {};
@@ -10908,6 +11491,7 @@ module.exports.KalturaVarConsoleService = KalturaVarConsoleService;
  * @param usageFilter KalturaReportInputFilter  (optional, default: null).
  * @param pager KalturaFilterPager  (optional, default: null).
  * @return KalturaPartnerUsageListResponse.
+ * @return .
  */
 KalturaVarConsoleService.prototype.getPartnerUsage = function(callback, partnerFilter, usageFilter, pager){
 	if(!partnerFilter){
@@ -10938,6 +11522,7 @@ KalturaVarConsoleService.prototype.getPartnerUsage = function(callback, partnerF
  * Function to change a sub-publisher's status.
  * @param id int  (optional).
  * @param status int  (optional, enum: KalturaPartnerStatus).
+ * @return .
  * @return .
  */
 KalturaVarConsoleService.prototype.updateStatus = function(callback, id, status){
@@ -10990,6 +11575,9 @@ KalturaEventNotificationTemplateService.prototype.add = function(callback, event
  * @param id int source template to clone (optional).
  * @param eventNotificationTemplate KalturaEventNotificationTemplate overwrite configuration object (optional, default: null).
  * @return KalturaEventNotificationTemplate.
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaEventNotificationTemplateService.prototype.cloneAction = function(callback, id, eventNotificationTemplate){
 	if(!eventNotificationTemplate){
@@ -11009,6 +11597,7 @@ KalturaEventNotificationTemplateService.prototype.cloneAction = function(callbac
  * Retrieve an event notification template object by id.
  * @param id int  (optional).
  * @return KalturaEventNotificationTemplate.
+ * @return .
  */
 KalturaEventNotificationTemplateService.prototype.get = function(callback, id){
 	var kparams = {};
@@ -11023,6 +11612,7 @@ KalturaEventNotificationTemplateService.prototype.get = function(callback, id){
  * @param id int  (optional).
  * @param eventNotificationTemplate KalturaEventNotificationTemplate  (optional).
  * @return KalturaEventNotificationTemplate.
+ * @return .
  */
 KalturaEventNotificationTemplateService.prototype.update = function(callback, id, eventNotificationTemplate){
 	var kparams = {};
@@ -11038,6 +11628,7 @@ KalturaEventNotificationTemplateService.prototype.update = function(callback, id
  * @param id int  (optional).
  * @param status int  (optional, enum: KalturaEventNotificationTemplateStatus).
  * @return KalturaEventNotificationTemplate.
+ * @return .
  */
 KalturaEventNotificationTemplateService.prototype.updateStatus = function(callback, id, status){
 	var kparams = {};
@@ -11051,6 +11642,7 @@ KalturaEventNotificationTemplateService.prototype.updateStatus = function(callba
 /**
  * Delete an event notification template object.
  * @param id int  (optional).
+ * @return .
  * @return .
  */
 KalturaEventNotificationTemplateService.prototype.deleteAction = function(callback, id){
@@ -11116,6 +11708,9 @@ KalturaEventNotificationTemplateService.prototype.listByPartner = function(callb
  * @param id int  (optional).
  * @param scope KalturaEventNotificationScope  (optional).
  * @return int.
+ * @return .
+ * @return .
+ * @return .
  */
 KalturaEventNotificationTemplateService.prototype.dispatch = function(callback, id, scope){
 	var kparams = {};
@@ -11187,6 +11782,7 @@ KalturaExternalMediaService.prototype.add = function(callback, entry){
  * Get external media entry by ID.
  * @param id string External media entry id (optional).
  * @return KalturaExternalMediaEntry.
+ * @return .
  */
 KalturaExternalMediaService.prototype.get = function(callback, id){
 	var kparams = {};
@@ -11201,6 +11797,7 @@ KalturaExternalMediaService.prototype.get = function(callback, id){
  * @param id string External media entry id to update (optional).
  * @param entry KalturaExternalMediaEntry External media entry object to update (optional).
  * @return KalturaExternalMediaEntry.
+ * @return .
  */
 KalturaExternalMediaService.prototype.update = function(callback, id, entry){
 	var kparams = {};
@@ -11214,6 +11811,7 @@ KalturaExternalMediaService.prototype.update = function(callback, id, entry){
 /**
  * Delete a external media entry.
  * @param id string External media entry id to delete (optional).
+ * @return .
  * @return .
  */
 KalturaExternalMediaService.prototype.deleteAction = function(callback, id){
@@ -11304,6 +11902,7 @@ KalturaScheduleEventService.prototype.add = function(callback, scheduleEvent){
  * Retrieve a KalturaScheduleEvent object by ID.
  * @param scheduleEventId int  (optional).
  * @return KalturaScheduleEvent.
+ * @return .
  */
 KalturaScheduleEventService.prototype.get = function(callback, scheduleEventId){
 	var kparams = {};
@@ -11318,6 +11917,7 @@ KalturaScheduleEventService.prototype.get = function(callback, scheduleEventId){
  * @param scheduleEventId int  (optional).
  * @param scheduleEvent KalturaScheduleEvent Id (optional).
  * @return KalturaScheduleEvent.
+ * @return .
  */
 KalturaScheduleEventService.prototype.update = function(callback, scheduleEventId, scheduleEvent){
 	var kparams = {};
@@ -11332,6 +11932,8 @@ KalturaScheduleEventService.prototype.update = function(callback, scheduleEventI
  * Mark the KalturaScheduleEvent object as deleted.
  * @param scheduleEventId int  (optional).
  * @return KalturaScheduleEvent.
+ * @return .
+ * @return .
  */
 KalturaScheduleEventService.prototype.deleteAction = function(callback, scheduleEventId){
 	var kparams = {};
@@ -11345,6 +11947,7 @@ KalturaScheduleEventService.prototype.deleteAction = function(callback, schedule
  * Mark the KalturaScheduleEvent object as cancelled.
  * @param scheduleEventId int  (optional).
  * @return KalturaScheduleEvent.
+ * @return .
  */
 KalturaScheduleEventService.prototype.cancel = function(callback, scheduleEventId){
 	var kparams = {};
@@ -11436,6 +12039,7 @@ KalturaScheduleResourceService.prototype.add = function(callback, scheduleResour
  * Retrieve a KalturaScheduleResource object by ID.
  * @param scheduleResourceId int  (optional).
  * @return KalturaScheduleResource.
+ * @return .
  */
 KalturaScheduleResourceService.prototype.get = function(callback, scheduleResourceId){
 	var kparams = {};
@@ -11450,6 +12054,7 @@ KalturaScheduleResourceService.prototype.get = function(callback, scheduleResour
  * @param scheduleResourceId int  (optional).
  * @param scheduleResource KalturaScheduleResource Id (optional).
  * @return KalturaScheduleResource.
+ * @return .
  */
 KalturaScheduleResourceService.prototype.update = function(callback, scheduleResourceId, scheduleResource){
 	var kparams = {};
@@ -11464,6 +12069,7 @@ KalturaScheduleResourceService.prototype.update = function(callback, scheduleRes
  * Mark the KalturaScheduleResource object as deleted.
  * @param scheduleResourceId int  (optional).
  * @return KalturaScheduleResource.
+ * @return .
  */
 KalturaScheduleResourceService.prototype.deleteAction = function(callback, scheduleResourceId){
 	var kparams = {};
@@ -11555,6 +12161,7 @@ KalturaScheduleEventResourceService.prototype.add = function(callback, scheduleE
  * @param scheduleEventId int  (optional).
  * @param scheduleResourceId int  (optional).
  * @return KalturaScheduleEventResource.
+ * @return .
  */
 KalturaScheduleEventResourceService.prototype.get = function(callback, scheduleEventId, scheduleResourceId){
 	var kparams = {};
@@ -11571,6 +12178,7 @@ KalturaScheduleEventResourceService.prototype.get = function(callback, scheduleE
  * @param scheduleResourceId int  (optional).
  * @param scheduleEventResource KalturaScheduleEventResource  (optional).
  * @return KalturaScheduleEventResource.
+ * @return .
  */
 KalturaScheduleEventResourceService.prototype.update = function(callback, scheduleEventId, scheduleResourceId, scheduleEventResource){
 	var kparams = {};
@@ -11586,6 +12194,7 @@ KalturaScheduleEventResourceService.prototype.update = function(callback, schedu
  * Mark the KalturaScheduleEventResource object as deleted.
  * @param scheduleEventId int  (optional).
  * @param scheduleResourceId int  (optional).
+ * @return .
  * @return .
  */
 KalturaScheduleEventResourceService.prototype.deleteAction = function(callback, scheduleEventId, scheduleResourceId){
@@ -11659,6 +12268,7 @@ KalturaScheduledTaskProfileService.prototype.add = function(callback, scheduledT
  * Retrieve a scheduled task profile by id.
  * @param id int  (optional).
  * @return KalturaScheduledTaskProfile.
+ * @return .
  */
 KalturaScheduledTaskProfileService.prototype.get = function(callback, id){
 	var kparams = {};
@@ -11673,6 +12283,7 @@ KalturaScheduledTaskProfileService.prototype.get = function(callback, id){
  * @param id int  (optional).
  * @param scheduledTaskProfile KalturaScheduledTaskProfile  (optional).
  * @return KalturaScheduledTaskProfile.
+ * @return .
  */
 KalturaScheduledTaskProfileService.prototype.update = function(callback, id, scheduledTaskProfile){
 	var kparams = {};
@@ -11686,6 +12297,7 @@ KalturaScheduledTaskProfileService.prototype.update = function(callback, id, sch
 /**
  * Delete a scheduled task profile.
  * @param id int  (optional).
+ * @return .
  * @return .
  */
 KalturaScheduledTaskProfileService.prototype.deleteAction = function(callback, id){
@@ -11726,6 +12338,7 @@ KalturaScheduledTaskProfileService.prototype.listAction = function(callback, fil
  * @param scheduledTaskProfileId int  (optional).
  * @param maxResults int  (optional, default: 500).
  * @return int.
+ * @return .
  */
 KalturaScheduledTaskProfileService.prototype.requestDryRun = function(callback, scheduledTaskProfileId, maxResults){
 	if(!maxResults){
@@ -11743,6 +12356,7 @@ KalturaScheduledTaskProfileService.prototype.requestDryRun = function(callback, 
  * .
  * @param requestId int  (optional).
  * @return KalturaObjectListResponse.
+ * @return .
  */
 KalturaScheduledTaskProfileService.prototype.getDryRunResults = function(callback, requestId){
 	var kparams = {};
@@ -11773,6 +12387,7 @@ module.exports.KalturaIntegrationService = KalturaIntegrationService;
  * @param objectType string  (optional, enum: KalturaBatchJobObjectType).
  * @param objectId string  (optional).
  * @return int.
+ * @return .
  */
 KalturaIntegrationService.prototype.dispatch = function(callback, data, objectType, objectId){
 	var kparams = {};

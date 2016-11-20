@@ -3888,6 +3888,7 @@ util.inherits(KalturaLiveStreamParams, kaltura.KalturaObjectBase);
  * @param partnerIdIn string This filter should be in use for retrieving only entries within Kaltura network which were uploaded by/assigned to users of few Kaltura Partners  (string should include comma separated list of PartnerIDs).
  * @param userIdEqual string This filter parameter should be in use for retrieving only entries, uploaded by/assigned to a specific user (identified by user Id).
  * @param userIdIn string .
+ * @param userIdNotIn string .
  * @param creatorIdEqual string .
  * @param tagsLike string This filter should be in use for retrieving specific entries. It should include only one string to search for in entry tags (no wildcards, spaces are treated as part of the string).
  * @param tagsMultiLikeOr string This filter should be in use for retrieving specific entries. It could include few (comma separated) strings for searching in entry tags, while applying an OR logic to retrieve entries that contain at least one input string (no wildcards, spaces are treated as part of the string).
@@ -3969,6 +3970,7 @@ function KalturaBaseEntryBaseFilter(){
 	this.partnerIdIn = null;
 	this.userIdEqual = null;
 	this.userIdIn = null;
+	this.userIdNotIn = null;
 	this.creatorIdEqual = null;
 	this.tagsLike = null;
 	this.tagsMultiLikeOr = null;

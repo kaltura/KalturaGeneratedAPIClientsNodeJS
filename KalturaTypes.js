@@ -3655,6 +3655,7 @@ DELETE_ENTRY_FLAVORS : '3',
 CONVERT_ENTRY_FLAVORS : '4',
 DELETE_LOCAL_CONTENT : '5',
 STORAGE_EXPORT : '6',
+MODIFY_ENTRY : '7',
 };
 
 var KalturaPartnerOrderBy = module.exports.KalturaPartnerOrderBy = {

@@ -1332,6 +1332,7 @@ util.inherits(KalturaCategory, kaltura.KalturaObjectBase);
  * @param createdAt int Creation date as Unix timestamp (In seconds) (readOnly).
  * @param categoryFullIds string The full ids of the Category (readOnly).
  * @param status int CategroyEntry status (readOnly).
+ * @param creatorUserId string CategroyEntry creator puser ID (readOnly).
  */
 function KalturaCategoryEntry(){
 	KalturaCategoryEntry.super_.call(this);
@@ -1340,6 +1341,7 @@ function KalturaCategoryEntry(){
 	this.createdAt = null;
 	this.categoryFullIds = null;
 	this.status = null;
+	this.creatorUserId = null;
 }
 module.exports.KalturaCategoryEntry = KalturaCategoryEntry;
 
@@ -3862,6 +3864,8 @@ util.inherits(KalturaLiveStreamEntry, KalturaLiveEntry);
  * @param width int Stream's width.
  * @param height int Stream's height.
  * @param codec string Live stream's codec.
+ * @param frameRate int Live stream's farme rate.
+ * @param keyFrameInterval float Live stream's key frame interval.
  */
 function KalturaLiveStreamParams(){
 	KalturaLiveStreamParams.super_.call(this);
@@ -3870,6 +3874,8 @@ function KalturaLiveStreamParams(){
 	this.width = null;
 	this.height = null;
 	this.codec = null;
+	this.frameRate = null;
+	this.keyFrameInterval = null;
 }
 module.exports.KalturaLiveStreamParams = KalturaLiveStreamParams;
 
@@ -9597,6 +9603,30 @@ util.inherits(KalturaModifyCategoriesObjectTask, KalturaObjectTask);
 
 
 /**
+ * @param inputMetadataProfileId int The input metadata profile id.
+ * @param inputMetadata array array of {input metadata xpath location,entry field} objects.
+ * @param outputMetadataProfileId int The output metadata profile id.
+ * @param outputMetadata array array of {output metadata xpath location,entry field} objects.
+ * @param inputUserId string The input user id to set on the entry.
+ * @param inputEntitledUsersEdit string The input entitled users edit to set on the entry.
+ * @param inputEntitledUsersPublish string The input entitled users publish to set on the entry.
+ */
+function KalturaModifyEntryObjectTask(){
+	KalturaModifyEntryObjectTask.super_.call(this);
+	this.inputMetadataProfileId = null;
+	this.inputMetadata = null;
+	this.outputMetadataProfileId = null;
+	this.outputMetadata = null;
+	this.inputUserId = null;
+	this.inputEntitledUsersEdit = null;
+	this.inputEntitledUsersPublish = null;
+}
+module.exports.KalturaModifyEntryObjectTask = KalturaModifyEntryObjectTask;
+
+util.inherits(KalturaModifyEntryObjectTask, KalturaObjectTask);
+
+
+/**
  * @param srcCategoryId int Source category id.
  * @param destCategoryId int Destination category id.
  * @param lastMovedCategoryId int Saves the last category id that its entries moved completely
@@ -11499,6 +11529,8 @@ util.inherits(KalturaCategoryBaseFilter, KalturaRelatedFilter);
  * @param categoryFullIdsStartsWith string .
  * @param statusEqual int .
  * @param statusIn string .
+ * @param creatorUserIdEqual string .
+ * @param creatorUserIdIn string .
  */
 function KalturaCategoryEntryBaseFilter(){
 	KalturaCategoryEntryBaseFilter.super_.call(this);
@@ -11511,6 +11543,8 @@ function KalturaCategoryEntryBaseFilter(){
 	this.categoryFullIdsStartsWith = null;
 	this.statusEqual = null;
 	this.statusIn = null;
+	this.creatorUserIdEqual = null;
+	this.creatorUserIdIn = null;
 }
 module.exports.KalturaCategoryEntryBaseFilter = KalturaCategoryEntryBaseFilter;
 

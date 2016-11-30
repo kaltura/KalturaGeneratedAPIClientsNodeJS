@@ -235,12 +235,13 @@ util.inherits(KalturaReportFilter, kaltura.KalturaObjectBase);
 
 
 /**
- * @param from_time string Query start time (in local time).
- * @param to_time string Query end time (in local time).
+ * @param from_time string Query start time (in local time) MM/dd/yyyy HH:mi.
+ * @param to_time string Query end time (in local time) MM/dd/yyyy HH:mi.
  * @param metrics string Comma separated metrics list.
  * @param utcOffset float Timezone offset from UTC (in minutes).
  * @param dimensions string Comma separated dimensions list.
  * @param filters array Array of filters.
+ * @param orderBy string Query order by metric/dimension.
  */
 function KalturaAnalyticsFilter(){
 	KalturaAnalyticsFilter.super_.call(this);
@@ -250,6 +251,7 @@ function KalturaAnalyticsFilter(){
 	this.utcOffset = null;
 	this.dimensions = null;
 	this.filters = null;
+	this.orderBy = null;
 }
 module.exports.KalturaAnalyticsFilter = KalturaAnalyticsFilter;
 
@@ -1528,6 +1530,7 @@ util.inherits(KalturaCropDimensions, kaltura.KalturaObjectBase);
  * @param xslTransformation string XSL to transform ingestion MRSS XML.
  * @param storageProfileId int ID of default storage profile to be used for linked net-storage file syncs.
  * @param mediaParserType string Media parser type to be used for extract media.
+ * @param calculateComplexity int Should calculate file conversion complexity.
  */
 function KalturaConversionProfile(){
 	KalturaConversionProfile.super_.call(this);
@@ -1550,6 +1553,7 @@ function KalturaConversionProfile(){
 	this.xslTransformation = null;
 	this.storageProfileId = null;
 	this.mediaParserType = null;
+	this.calculateComplexity = null;
 }
 module.exports.KalturaConversionProfile = KalturaConversionProfile;
 
@@ -9358,6 +9362,8 @@ util.inherits(KalturaLiveStreamPushPublishRTMPConfiguration, KalturaLiveStreamPu
  * @param totalVodDuration float total VOD Duration.
  * @param lastSegmentDuration float last Segment Duration.
  * @param amfArray string amf Array File Path.
+ * @param lastCuePointSyncTime int last live to vod sync time.
+ * @param lastSegmentDrift int last segment drift.
  */
 function KalturaLiveToVodJobData(){
 	KalturaLiveToVodJobData.super_.call(this);
@@ -9366,6 +9372,8 @@ function KalturaLiveToVodJobData(){
 	this.totalVodDuration = null;
 	this.lastSegmentDuration = null;
 	this.amfArray = null;
+	this.lastCuePointSyncTime = null;
+	this.lastSegmentDrift = null;
 }
 module.exports.KalturaLiveToVodJobData = KalturaLiveToVodJobData;
 
@@ -12120,10 +12128,16 @@ util.inherits(KalturaEventNotificationTemplateFilter, KalturaEventNotificationTe
 
 /**
  * @param flavorAssetId string .
+ * @param calculateComplexity bool .
+ * @param extractId3Tags bool .
+ * @param destDataFilePath string The data output file.
  */
 function KalturaExtractMediaJobData(){
 	KalturaExtractMediaJobData.super_.call(this);
 	this.flavorAssetId = null;
+	this.calculateComplexity = null;
+	this.extractId3Tags = null;
+	this.destDataFilePath = null;
 }
 module.exports.KalturaExtractMediaJobData = KalturaExtractMediaJobData;
 

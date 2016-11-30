@@ -353,11 +353,18 @@ module.exports.KalturaAnalyticsService = KalturaAnalyticsService;
 /**
  * report query action allows to get a analytics data for specific query dimensions, metrics and filters.
  * @param filter KalturaAnalyticsFilter the analytics query filter (optional).
+ * @param pager KalturaFilterPager the analytics query result pager (optional, default: null).
  * @return KalturaReportResponse.
  */
-KalturaAnalyticsService.prototype.query = function(callback, filter){
+KalturaAnalyticsService.prototype.query = function(callback, filter, pager){
+	if(!pager){
+		pager = null;
+	}
 	var kparams = {};
 	this.client.addParam(kparams, 'filter', kaltura.toParams(filter));
+	if (pager !== null){
+		this.client.addParam(kparams, 'pager', kaltura.toParams(pager));
+	}
 	this.client.queueServiceActionCall('analytics', 'query', kparams);
 	if (!this.client.isMultiRequest()){
 		this.client.doQueue(callback);

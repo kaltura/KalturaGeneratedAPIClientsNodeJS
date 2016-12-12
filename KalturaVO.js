@@ -132,6 +132,7 @@ util.inherits(KalturaCondition, kaltura.KalturaObjectBase);
  * @param description string Short Rule Description.
  * @param ruleData string Rule Custom Data to allow saving rule specific information.
  * @param message string Message to be thrown to the player in case the rule is fulfilled.
+ * @param code string Code to be thrown to the player in case the rule is fulfilled.
  * @param actions array Actions to be performed by the player in case the rule is fulfilled.
  * @param conditions array Conditions to validate the rule.
  * @param contexts array Indicates what contexts should be tested by this rule.
@@ -143,6 +144,7 @@ function KalturaRule(){
 	this.description = null;
 	this.ruleData = null;
 	this.message = null;
+	this.code = null;
 	this.actions = null;
 	this.conditions = null;
 	this.contexts = null;
@@ -4434,6 +4436,88 @@ util.inherits(KalturaPermissionItem, kaltura.KalturaObjectBase);
 
 
 /**
+ */
+function KalturaPluginData(){
+	KalturaPluginData.super_.call(this);
+}
+module.exports.KalturaPluginData = KalturaPluginData;
+
+util.inherits(KalturaPluginData, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param scheme string .
+ * @param licenseURL string .
+ */
+function KalturaDrmEntryPlayingPluginData(){
+	KalturaDrmEntryPlayingPluginData.super_.call(this);
+	this.scheme = null;
+	this.licenseURL = null;
+}
+module.exports.KalturaDrmEntryPlayingPluginData = KalturaDrmEntryPlayingPluginData;
+
+util.inherits(KalturaDrmEntryPlayingPluginData, KalturaPluginData);
+
+
+/**
+ * @param deliveryProfileId string .
+ * @param format string .
+ * @param priority string .
+ * @param protocols array .
+ * @param flavors array .
+ * @param url string .
+ * @param drm array .
+ */
+function KalturaPlaybackSource(){
+	KalturaPlaybackSource.super_.call(this);
+	this.deliveryProfileId = null;
+	this.format = null;
+	this.priority = null;
+	this.protocols = null;
+	this.flavors = null;
+	this.url = null;
+	this.drm = null;
+}
+module.exports.KalturaPlaybackSource = KalturaPlaybackSource;
+
+util.inherits(KalturaPlaybackSource, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param message string .
+ * @param code string .
+ */
+function KalturaPlaybackRestriction(){
+	KalturaPlaybackRestriction.super_.call(this);
+	this.message = null;
+	this.code = null;
+}
+module.exports.KalturaPlaybackRestriction = KalturaPlaybackRestriction;
+
+util.inherits(KalturaPlaybackRestriction, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param sources array .
+ * @param flavorAssets array .
+ * @param messages array Array of messages as received from the rules that invalidated.
+ * @param actions array Array of actions as received from the rules that invalidated.
+ * @param restrictions array Array of actions as received from the rules that invalidated.
+ */
+function KalturaPlaybackContextResult(){
+	KalturaPlaybackContextResult.super_.call(this);
+	this.sources = null;
+	this.flavorAssets = null;
+	this.messages = null;
+	this.actions = null;
+	this.restrictions = null;
+}
+module.exports.KalturaPlaybackContextResult = KalturaPlaybackContextResult;
+
+util.inherits(KalturaPlaybackContextResult, kaltura.KalturaObjectBase);
+
+
+/**
  * @param playlistContent string Content of the playlist -
  * XML if the playlistType is dynamic
  * text if the playlistType is static
@@ -4460,16 +4544,6 @@ function KalturaPlaylist(){
 module.exports.KalturaPlaylist = KalturaPlaylist;
 
 util.inherits(KalturaPlaylist, KalturaBaseEntry);
-
-
-/**
- */
-function KalturaPluginData(){
-	KalturaPluginData.super_.call(this);
-}
-module.exports.KalturaPluginData = KalturaPluginData;
-
-util.inherits(KalturaPluginData, kaltura.KalturaObjectBase);
 
 
 /**
@@ -10892,6 +10966,16 @@ util.inherits(KalturaUrlTokenizerBitGravity, KalturaUrlTokenizer);
 
 
 /**
+ */
+function KalturaUrlTokenizerCht(){
+	KalturaUrlTokenizerCht.super_.call(this);
+}
+module.exports.KalturaUrlTokenizerCht = KalturaUrlTokenizerCht;
+
+util.inherits(KalturaUrlTokenizerCht, KalturaUrlTokenizer);
+
+
+/**
  * @param keyPairId string .
  * @param rootDir string .
  */
@@ -12182,6 +12266,18 @@ function KalturaFacebookDistributionProfile(){
 module.exports.KalturaFacebookDistributionProfile = KalturaFacebookDistributionProfile;
 
 util.inherits(KalturaFacebookDistributionProfile, KalturaConfigurableDistributionProfile);
+
+
+/**
+ * @param certificate string .
+ */
+function KalturaFairPlayEntryPlayingPluginData(){
+	KalturaFairPlayEntryPlayingPluginData.super_.call(this);
+	this.certificate = null;
+}
+module.exports.KalturaFairPlayEntryPlayingPluginData = KalturaFairPlayEntryPlayingPluginData;
+
+util.inherits(KalturaFairPlayEntryPlayingPluginData, KalturaDrmEntryPlayingPluginData);
 
 
 /**
@@ -14022,26 +14118,6 @@ util.inherits(KalturaFacebookDistributionProviderBaseFilter, KalturaDistribution
 
 /**
  */
-function KalturaFeedDropFolderBaseFilter(){
-	KalturaFeedDropFolderBaseFilter.super_.call(this);
-}
-module.exports.KalturaFeedDropFolderBaseFilter = KalturaFeedDropFolderBaseFilter;
-
-util.inherits(KalturaFeedDropFolderBaseFilter, KalturaDropFolderFilter);
-
-
-/**
- */
-function KalturaFeedDropFolderFileBaseFilter(){
-	KalturaFeedDropFolderFileBaseFilter.super_.call(this);
-}
-module.exports.KalturaFeedDropFolderFileBaseFilter = KalturaFeedDropFolderFileBaseFilter;
-
-util.inherits(KalturaFeedDropFolderFileBaseFilter, KalturaDropFolderFileFilter);
-
-
-/**
- */
 function KalturaFileAssetFilter(){
 	KalturaFileAssetFilter.super_.call(this);
 }
@@ -15247,26 +15323,6 @@ util.inherits(KalturaFacebookDistributionProviderFilter, KalturaFacebookDistribu
 
 
 /**
- */
-function KalturaFeedDropFolderFileFilter(){
-	KalturaFeedDropFolderFileFilter.super_.call(this);
-}
-module.exports.KalturaFeedDropFolderFileFilter = KalturaFeedDropFolderFileFilter;
-
-util.inherits(KalturaFeedDropFolderFileFilter, KalturaFeedDropFolderFileBaseFilter);
-
-
-/**
- */
-function KalturaFeedDropFolderFilter(){
-	KalturaFeedDropFolderFilter.super_.call(this);
-}
-module.exports.KalturaFeedDropFolderFilter = KalturaFeedDropFolderFilter;
-
-util.inherits(KalturaFeedDropFolderFilter, KalturaFeedDropFolderBaseFilter);
-
-
-/**
  * @param flavorParamsIdEqual int .
  * @param flavorParamsIdIn string .
  * @param statusEqual int .
@@ -15452,16 +15508,6 @@ function KalturaSyndicationDistributionProfileFilter(){
 module.exports.KalturaSyndicationDistributionProfileFilter = KalturaSyndicationDistributionProfileFilter;
 
 util.inherits(KalturaSyndicationDistributionProfileFilter, KalturaSyndicationDistributionProfileBaseFilter);
-
-
-/**
- */
-function KalturaSyndicationDistributionProviderFilter(){
-	KalturaSyndicationDistributionProviderFilter.super_.call(this);
-}
-module.exports.KalturaSyndicationDistributionProviderFilter = KalturaSyndicationDistributionProviderFilter;
-
-util.inherits(KalturaSyndicationDistributionProviderFilter, KalturaSyndicationDistributionProviderBaseFilter);
 
 
 /**

@@ -531,6 +531,7 @@ KalturaAppTokenService.prototype.startSession = function(callback, id, tokenHash
  * @action export .
  * @action index Index an entry by id.
  * @action clone Clone an entry with optional attributes to apply to the clone.
+ * @action getPlaybackContext This action delivers all data relevant for player.
  */
 function KalturaBaseEntryService(client){
 	KalturaBaseEntryService.super_.call(this);
@@ -978,6 +979,22 @@ KalturaBaseEntryService.prototype.cloneAction = function(callback, entryId, clon
 	}
 	}
 	this.client.queueServiceActionCall('baseentry', 'clone', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * This action delivers all data relevant for player.
+ * @param entryId string  (optional).
+ * @param contextDataParams KalturaEntryContextDataParams  (optional).
+ * @return KalturaPlaybackContextResult.
+ * @return .
+ */
+KalturaBaseEntryService.prototype.getPlaybackContext = function(callback, entryId, contextDataParams){
+	var kparams = {};
+	this.client.addParam(kparams, 'entryId', entryId);
+	this.client.addParam(kparams, 'contextDataParams', kaltura.toParams(contextDataParams));
+	this.client.queueServiceActionCall('baseentry', 'getPlaybackContext', kparams);
 	if (!this.client.isMultiRequest()){
 		this.client.doQueue(callback);
 	}
@@ -3243,15 +3260,20 @@ KalturaLiveChannelService.prototype.validateRegisteredMediaServers = function(ca
  * @param mediaServerIndex string  (optional, enum: KalturaEntryServerNodeType).
  * @param resource KalturaDataCenterContentResource  (optional).
  * @param duration float in seconds (optional).
+ * @param recordedEntryId string Recorded entry Id (optional, default: null).
  * @return KalturaLiveEntry.
  * @return .
  */
-KalturaLiveChannelService.prototype.setRecordedContent = function(callback, entryId, mediaServerIndex, resource, duration){
+KalturaLiveChannelService.prototype.setRecordedContent = function(callback, entryId, mediaServerIndex, resource, duration, recordedEntryId){
+	if(!recordedEntryId){
+		recordedEntryId = null;
+	}
 	var kparams = {};
 	this.client.addParam(kparams, 'entryId', entryId);
 	this.client.addParam(kparams, 'mediaServerIndex', mediaServerIndex);
 	this.client.addParam(kparams, 'resource', kaltura.toParams(resource));
 	this.client.addParam(kparams, 'duration', duration);
+	this.client.addParam(kparams, 'recordedEntryId', recordedEntryId);
 	this.client.queueServiceActionCall('livechannel', 'setRecordedContent', kparams);
 	if (!this.client.isMultiRequest()){
 		this.client.doQueue(callback);
@@ -3749,15 +3771,20 @@ KalturaLiveStreamService.prototype.validateRegisteredMediaServers = function(cal
  * @param mediaServerIndex string  (optional, enum: KalturaEntryServerNodeType).
  * @param resource KalturaDataCenterContentResource  (optional).
  * @param duration float in seconds (optional).
+ * @param recordedEntryId string Recorded entry Id (optional, default: null).
  * @return KalturaLiveEntry.
  * @return .
  */
-KalturaLiveStreamService.prototype.setRecordedContent = function(callback, entryId, mediaServerIndex, resource, duration){
+KalturaLiveStreamService.prototype.setRecordedContent = function(callback, entryId, mediaServerIndex, resource, duration, recordedEntryId){
+	if(!recordedEntryId){
+		recordedEntryId = null;
+	}
 	var kparams = {};
 	this.client.addParam(kparams, 'entryId', entryId);
 	this.client.addParam(kparams, 'mediaServerIndex', mediaServerIndex);
 	this.client.addParam(kparams, 'resource', kaltura.toParams(resource));
 	this.client.addParam(kparams, 'duration', duration);
+	this.client.addParam(kparams, 'recordedEntryId', recordedEntryId);
 	this.client.queueServiceActionCall('livestream', 'setRecordedContent', kparams);
 	if (!this.client.isMultiRequest()){
 		this.client.doQueue(callback);

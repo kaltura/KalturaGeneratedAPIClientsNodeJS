@@ -4449,72 +4449,14 @@ util.inherits(KalturaPluginData, kaltura.KalturaObjectBase);
  * @param scheme string .
  * @param licenseURL string .
  */
-function KalturaDrmEntryPlayingPluginData(){
-	KalturaDrmEntryPlayingPluginData.super_.call(this);
+function KalturaDrmPlaybackPluginData(){
+	KalturaDrmPlaybackPluginData.super_.call(this);
 	this.scheme = null;
 	this.licenseURL = null;
 }
-module.exports.KalturaDrmEntryPlayingPluginData = KalturaDrmEntryPlayingPluginData;
+module.exports.KalturaDrmPlaybackPluginData = KalturaDrmPlaybackPluginData;
 
-util.inherits(KalturaDrmEntryPlayingPluginData, KalturaPluginData);
-
-
-/**
- * @param deliveryProfileId string .
- * @param format string .
- * @param priority string .
- * @param protocols array .
- * @param flavors array .
- * @param url string .
- * @param drm array .
- */
-function KalturaPlaybackSource(){
-	KalturaPlaybackSource.super_.call(this);
-	this.deliveryProfileId = null;
-	this.format = null;
-	this.priority = null;
-	this.protocols = null;
-	this.flavors = null;
-	this.url = null;
-	this.drm = null;
-}
-module.exports.KalturaPlaybackSource = KalturaPlaybackSource;
-
-util.inherits(KalturaPlaybackSource, kaltura.KalturaObjectBase);
-
-
-/**
- * @param message string .
- * @param code string .
- */
-function KalturaPlaybackRestriction(){
-	KalturaPlaybackRestriction.super_.call(this);
-	this.message = null;
-	this.code = null;
-}
-module.exports.KalturaPlaybackRestriction = KalturaPlaybackRestriction;
-
-util.inherits(KalturaPlaybackRestriction, kaltura.KalturaObjectBase);
-
-
-/**
- * @param sources array .
- * @param flavorAssets array .
- * @param messages array Array of messages as received from the rules that invalidated.
- * @param actions array Array of actions as received from the rules that invalidated.
- * @param restrictions array Array of actions as received from the rules that invalidated.
- */
-function KalturaPlaybackContextResult(){
-	KalturaPlaybackContextResult.super_.call(this);
-	this.sources = null;
-	this.flavorAssets = null;
-	this.messages = null;
-	this.actions = null;
-	this.restrictions = null;
-}
-module.exports.KalturaPlaybackContextResult = KalturaPlaybackContextResult;
-
-util.inherits(KalturaPlaybackContextResult, kaltura.KalturaObjectBase);
+util.inherits(KalturaDrmPlaybackPluginData, KalturaPluginData);
 
 
 /**
@@ -12271,13 +12213,13 @@ util.inherits(KalturaFacebookDistributionProfile, KalturaConfigurableDistributio
 /**
  * @param certificate string .
  */
-function KalturaFairPlayEntryPlayingPluginData(){
-	KalturaFairPlayEntryPlayingPluginData.super_.call(this);
+function KalturaFairPlayPlaybackPluginData(){
+	KalturaFairPlayPlaybackPluginData.super_.call(this);
 	this.certificate = null;
 }
-module.exports.KalturaFairPlayEntryPlayingPluginData = KalturaFairPlayEntryPlayingPluginData;
+module.exports.KalturaFairPlayPlaybackPluginData = KalturaFairPlayPlaybackPluginData;
 
-util.inherits(KalturaFairPlayEntryPlayingPluginData, KalturaDrmEntryPlayingPluginData);
+util.inherits(KalturaFairPlayPlaybackPluginData, KalturaDrmPlaybackPluginData);
 
 
 /**
@@ -12956,6 +12898,16 @@ function KalturaPermissionItemBaseFilter(){
 module.exports.KalturaPermissionItemBaseFilter = KalturaPermissionItemBaseFilter;
 
 util.inherits(KalturaPermissionItemBaseFilter, KalturaRelatedFilter);
+
+
+/**
+ */
+function KalturaPlaybackContextOptions(){
+	KalturaPlaybackContextOptions.super_.call(this);
+}
+module.exports.KalturaPlaybackContextOptions = KalturaPlaybackContextOptions;
+
+util.inherits(KalturaPlaybackContextOptions, KalturaEntryContextDataParams);
 
 
 /**

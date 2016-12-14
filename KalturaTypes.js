@@ -3791,6 +3791,7 @@ MULTICAST_SL : 'multicast_silverlight',
 RTMP : 'rtmp',
 RTSP : 'rtsp',
 SILVER_LIGHT : 'sl',
+URL : 'url',
 };
 
 var KalturaPlaylistCompareAttribute = module.exports.KalturaPlaylistCompareAttribute = {

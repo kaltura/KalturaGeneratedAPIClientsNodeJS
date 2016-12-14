@@ -986,8 +986,8 @@ KalturaBaseEntryService.prototype.cloneAction = function(callback, entryId, clon
 /**
  * This action delivers all data relevant for player.
  * @param entryId string  (optional).
- * @param contextDataParams KalturaEntryContextDataParams  (optional).
- * @return KalturaPlaybackContextResult.
+ * @param contextDataParams KalturaPlaybackContextOptions  (optional).
+ * @return KalturaPlaybackContextOptions.
  * @return .
  */
 KalturaBaseEntryService.prototype.getPlaybackContext = function(callback, entryId, contextDataParams){

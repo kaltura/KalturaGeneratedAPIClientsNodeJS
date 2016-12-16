@@ -10932,6 +10932,18 @@ util.inherits(KalturaUrlTokenizerCloudFront, KalturaUrlTokenizer);
 
 
 /**
+ * @param usePath bool .
+ */
+function KalturaUrlTokenizerKs(){
+	KalturaUrlTokenizerKs.super_.call(this);
+	this.usePath = null;
+}
+module.exports.KalturaUrlTokenizerKs = KalturaUrlTokenizerKs;
+
+util.inherits(KalturaUrlTokenizerKs, KalturaUrlTokenizer);
+
+
+/**
  * @param paramName string paramName.
  * @param expiryName string expiryName.
  * @param gen string gen.
@@ -14070,26 +14082,6 @@ util.inherits(KalturaFacebookDistributionProviderBaseFilter, KalturaDistribution
 
 /**
  */
-function KalturaFeedDropFolderBaseFilter(){
-	KalturaFeedDropFolderBaseFilter.super_.call(this);
-}
-module.exports.KalturaFeedDropFolderBaseFilter = KalturaFeedDropFolderBaseFilter;
-
-util.inherits(KalturaFeedDropFolderBaseFilter, KalturaDropFolderFilter);
-
-
-/**
- */
-function KalturaFeedDropFolderFileBaseFilter(){
-	KalturaFeedDropFolderFileBaseFilter.super_.call(this);
-}
-module.exports.KalturaFeedDropFolderFileBaseFilter = KalturaFeedDropFolderFileBaseFilter;
-
-util.inherits(KalturaFeedDropFolderFileBaseFilter, KalturaDropFolderFileFilter);
-
-
-/**
- */
 function KalturaFileAssetFilter(){
 	KalturaFileAssetFilter.super_.call(this);
 }
@@ -14420,6 +14412,25 @@ function KalturaMediaFlavorParamsOutput(){
 module.exports.KalturaMediaFlavorParamsOutput = KalturaMediaFlavorParamsOutput;
 
 util.inherits(KalturaMediaFlavorParamsOutput, KalturaFlavorParamsOutput);
+
+
+/**
+ * @param xPath string May contain the full xpath to the field in three formats
+ * 1. Slashed xPath, e.g. /metadata/myElementName
+ * 2. Using local-name function, e.g. /[local-name()='metadata']/[local-name()='myElementName']
+ * 3. Using only the field name, e.g. myElementName, it will be searched as //myElementName.
+ * @param profileId int Metadata profile id.
+ * @param profileSystemName string Metadata profile system name.
+ */
+function KalturaMetadataField(){
+	KalturaMetadataField.super_.call(this);
+	this.xPath = null;
+	this.profileId = null;
+	this.profileSystemName = null;
+}
+module.exports.KalturaMetadataField = KalturaMetadataField;
+
+util.inherits(KalturaMetadataField, KalturaStringField);
 
 
 /**
@@ -15295,26 +15306,6 @@ util.inherits(KalturaFacebookDistributionProviderFilter, KalturaFacebookDistribu
 
 
 /**
- */
-function KalturaFeedDropFolderFileFilter(){
-	KalturaFeedDropFolderFileFilter.super_.call(this);
-}
-module.exports.KalturaFeedDropFolderFileFilter = KalturaFeedDropFolderFileFilter;
-
-util.inherits(KalturaFeedDropFolderFileFilter, KalturaFeedDropFolderFileBaseFilter);
-
-
-/**
- */
-function KalturaFeedDropFolderFilter(){
-	KalturaFeedDropFolderFilter.super_.call(this);
-}
-module.exports.KalturaFeedDropFolderFilter = KalturaFeedDropFolderFilter;
-
-util.inherits(KalturaFeedDropFolderFilter, KalturaFeedDropFolderBaseFilter);
-
-
-/**
  * @param flavorParamsIdEqual int .
  * @param flavorParamsIdIn string .
  * @param statusEqual int .
@@ -15500,16 +15491,6 @@ function KalturaSyndicationDistributionProfileFilter(){
 module.exports.KalturaSyndicationDistributionProfileFilter = KalturaSyndicationDistributionProfileFilter;
 
 util.inherits(KalturaSyndicationDistributionProfileFilter, KalturaSyndicationDistributionProfileBaseFilter);
-
-
-/**
- */
-function KalturaSyndicationDistributionProviderFilter(){
-	KalturaSyndicationDistributionProviderFilter.super_.call(this);
-}
-module.exports.KalturaSyndicationDistributionProviderFilter = KalturaSyndicationDistributionProviderFilter;
-
-util.inherits(KalturaSyndicationDistributionProviderFilter, KalturaSyndicationDistributionProviderBaseFilter);
 
 
 /**

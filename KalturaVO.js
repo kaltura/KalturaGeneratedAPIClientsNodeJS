@@ -14082,6 +14082,26 @@ util.inherits(KalturaFacebookDistributionProviderBaseFilter, KalturaDistribution
 
 /**
  */
+function KalturaFeedDropFolderBaseFilter(){
+	KalturaFeedDropFolderBaseFilter.super_.call(this);
+}
+module.exports.KalturaFeedDropFolderBaseFilter = KalturaFeedDropFolderBaseFilter;
+
+util.inherits(KalturaFeedDropFolderBaseFilter, KalturaDropFolderFilter);
+
+
+/**
+ */
+function KalturaFeedDropFolderFileBaseFilter(){
+	KalturaFeedDropFolderFileBaseFilter.super_.call(this);
+}
+module.exports.KalturaFeedDropFolderFileBaseFilter = KalturaFeedDropFolderFileBaseFilter;
+
+util.inherits(KalturaFeedDropFolderFileBaseFilter, KalturaDropFolderFileFilter);
+
+
+/**
+ */
 function KalturaFileAssetFilter(){
 	KalturaFileAssetFilter.super_.call(this);
 }
@@ -15306,6 +15326,26 @@ util.inherits(KalturaFacebookDistributionProviderFilter, KalturaFacebookDistribu
 
 
 /**
+ */
+function KalturaFeedDropFolderFileFilter(){
+	KalturaFeedDropFolderFileFilter.super_.call(this);
+}
+module.exports.KalturaFeedDropFolderFileFilter = KalturaFeedDropFolderFileFilter;
+
+util.inherits(KalturaFeedDropFolderFileFilter, KalturaFeedDropFolderFileBaseFilter);
+
+
+/**
+ */
+function KalturaFeedDropFolderFilter(){
+	KalturaFeedDropFolderFilter.super_.call(this);
+}
+module.exports.KalturaFeedDropFolderFilter = KalturaFeedDropFolderFilter;
+
+util.inherits(KalturaFeedDropFolderFilter, KalturaFeedDropFolderBaseFilter);
+
+
+/**
  * @param flavorParamsIdEqual int .
  * @param flavorParamsIdIn string .
  * @param statusEqual int .
@@ -15491,6 +15531,16 @@ function KalturaSyndicationDistributionProfileFilter(){
 module.exports.KalturaSyndicationDistributionProfileFilter = KalturaSyndicationDistributionProfileFilter;
 
 util.inherits(KalturaSyndicationDistributionProfileFilter, KalturaSyndicationDistributionProfileBaseFilter);
+
+
+/**
+ */
+function KalturaSyndicationDistributionProviderFilter(){
+	KalturaSyndicationDistributionProviderFilter.super_.call(this);
+}
+module.exports.KalturaSyndicationDistributionProviderFilter = KalturaSyndicationDistributionProviderFilter;
+
+util.inherits(KalturaSyndicationDistributionProviderFilter, KalturaSyndicationDistributionProviderBaseFilter);
 
 
 /**

@@ -101,6 +101,20 @@ util.inherits(KalturaAccessControlContextTypeHolder, KalturaContextTypeHolder);
 
 
 /**
+ * @param message string .
+ * @param code string .
+ */
+function KalturaAccessControlMessage(){
+	KalturaAccessControlMessage.super_.call(this);
+	this.message = null;
+	this.code = null;
+}
+module.exports.KalturaAccessControlMessage = KalturaAccessControlMessage;
+
+util.inherits(KalturaAccessControlMessage, kaltura.KalturaObjectBase);
+
+
+/**
  * @param type string The type of the action (readOnly).
  */
 function KalturaRuleAction(){
@@ -1533,6 +1547,8 @@ util.inherits(KalturaCropDimensions, kaltura.KalturaObjectBase);
  * @param storageProfileId int ID of default storage profile to be used for linked net-storage file syncs.
  * @param mediaParserType string Media parser type to be used for extract media.
  * @param calculateComplexity int Should calculate file conversion complexity.
+ * @param collectionTags string Defines the tags that should be used to define 'collective'/group/multi-flavor processing,
+ * like 'mbr' or 'ism'.
  */
 function KalturaConversionProfile(){
 	KalturaConversionProfile.super_.call(this);
@@ -1556,6 +1572,7 @@ function KalturaConversionProfile(){
 	this.storageProfileId = null;
 	this.mediaParserType = null;
 	this.calculateComplexity = null;
+	this.collectionTags = null;
 }
 module.exports.KalturaConversionProfile = KalturaConversionProfile;
 
@@ -1573,6 +1590,7 @@ util.inherits(KalturaConversionProfile, kaltura.KalturaObjectBase);
  * @param isEncrypted int .
  * @param contentAwareness float .
  * @param twoPass int .
+ * @param tags string .
  */
 function KalturaConversionProfileAssetParams(){
 	KalturaConversionProfileAssetParams.super_.call(this);
@@ -1586,6 +1604,7 @@ function KalturaConversionProfileAssetParams(){
 	this.isEncrypted = null;
 	this.contentAwareness = null;
 	this.twoPass = null;
+	this.tags = null;
 }
 module.exports.KalturaConversionProfileAssetParams = KalturaConversionProfileAssetParams;
 
@@ -4457,6 +4476,46 @@ function KalturaDrmPlaybackPluginData(){
 module.exports.KalturaDrmPlaybackPluginData = KalturaDrmPlaybackPluginData;
 
 util.inherits(KalturaDrmPlaybackPluginData, KalturaPluginData);
+
+
+/**
+ * @param deliveryProfileId string .
+ * @param format string source format according to delivery profile streamer type (applehttp, mpegdash etc.).
+ * @param protocols string comma separated string according to deliveryProfile media protocols ('http,https' etc.).
+ * @param flavorIds string comma separated string of flavor ids.
+ * @param url string .
+ * @param drm array drm data object containing relevant license url ,scheme name and certificate.
+ */
+function KalturaPlaybackSource(){
+	KalturaPlaybackSource.super_.call(this);
+	this.deliveryProfileId = null;
+	this.format = null;
+	this.protocols = null;
+	this.flavorIds = null;
+	this.url = null;
+	this.drm = null;
+}
+module.exports.KalturaPlaybackSource = KalturaPlaybackSource;
+
+util.inherits(KalturaPlaybackSource, kaltura.KalturaObjectBase);
+
+
+/**
+ * @param sources array .
+ * @param flavorAssets array .
+ * @param actions array Array of actions as received from the rules that invalidated.
+ * @param messages array Array of actions as received from the rules that invalidated.
+ */
+function KalturaPlaybackContext(){
+	KalturaPlaybackContext.super_.call(this);
+	this.sources = null;
+	this.flavorAssets = null;
+	this.actions = null;
+	this.messages = null;
+}
+module.exports.KalturaPlaybackContext = KalturaPlaybackContext;
+
+util.inherits(KalturaPlaybackContext, kaltura.KalturaObjectBase);
 
 
 /**

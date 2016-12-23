@@ -4393,3 +4393,6 @@ UPDATED_AT_DESC : '-updatedAt',
 
 var KalturaYoutubeApiDistributionProviderOrderBy = module.exports.KalturaYoutubeApiDistributionProviderOrderBy = {
 };
+
+var KalturaDrmSchemeName = module.exports.KalturaDrmSchemeName = {
+};

@@ -987,7 +987,7 @@ KalturaBaseEntryService.prototype.cloneAction = function(callback, entryId, clon
  * This action delivers all data relevant for player.
  * @param entryId string  (optional).
  * @param contextDataParams KalturaPlaybackContextOptions  (optional).
- * @return KalturaPlaybackContextOptions.
+ * @return KalturaPlaybackContext.
  * @return .
  */
 KalturaBaseEntryService.prototype.getPlaybackContext = function(callback, entryId, contextDataParams){
@@ -11909,6 +11909,7 @@ KalturaExternalMediaService.prototype.count = function(callback, filter){
  * @action delete Mark the KalturaScheduleEvent object as deleted.
  * @action cancel Mark the KalturaScheduleEvent object as cancelled.
  * @action list List KalturaScheduleEvent objects.
+ * @action getConflicts List conflicting events for resourcesIds by event's dates.
  * @action addFromBulkUpload Add new bulk upload batch job.
  */
 function KalturaScheduleEventService(client){
@@ -12012,6 +12013,21 @@ KalturaScheduleEventService.prototype.listAction = function(callback, filter, pa
 		this.client.addParam(kparams, 'pager', kaltura.toParams(pager));
 	}
 	this.client.queueServiceActionCall('schedule_scheduleevent', 'list', kparams);
+	if (!this.client.isMultiRequest()){
+		this.client.doQueue(callback);
+	}
+};
+/**
+ * List conflicting events for resourcesIds by event's dates.
+ * @param resourceIds string  (optional).
+ * @param scheduleEvent KalturaScheduleEvent  (optional).
+ * @return array.
+ */
+KalturaScheduleEventService.prototype.getConflicts = function(callback, resourceIds, scheduleEvent){
+	var kparams = {};
+	this.client.addParam(kparams, 'resourceIds', resourceIds);
+	this.client.addParam(kparams, 'scheduleEvent', kaltura.toParams(scheduleEvent));
+	this.client.queueServiceActionCall('schedule_scheduleevent', 'getConflicts', kparams);
 	if (!this.client.isMultiRequest()){
 		this.client.doQueue(callback);
 	}

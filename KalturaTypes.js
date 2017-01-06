@@ -26,29 +26,29 @@
 // @ignore
 // ===================================================================================================
 
-var KalturaAppTokenStatus = module.exports.KalturaAppTokenStatus = {
+module.exports.AppTokenStatus = {
 DISABLED : 1,
 ACTIVE : 2,
 DELETED : 3,
 };
 
-var KalturaAppearInListType = module.exports.KalturaAppearInListType = {
+module.exports.AppearInListType = {
 PARTNER_ONLY : 1,
 CATEGORY_MEMBERS_ONLY : 3,
 };
 
-var KalturaAssetParamsDeletePolicy = module.exports.KalturaAssetParamsDeletePolicy = {
+module.exports.AssetParamsDeletePolicy = {
 KEEP : 0,
 DELETE : 1,
 };
 
-var KalturaAssetParamsOrigin = module.exports.KalturaAssetParamsOrigin = {
+module.exports.AssetParamsOrigin = {
 CONVERT : 0,
 INGEST : 1,
 CONVERT_WHEN_MISSING : 2,
 };
 
-var KalturaAttachmentAssetStatus = module.exports.KalturaAttachmentAssetStatus = {
+module.exports.AttachmentAssetStatus = {
 ERROR : -1,
 QUEUED : 0,
 READY : 2,
@@ -57,7 +57,7 @@ IMPORTING : 7,
 EXPORTING : 9,
 };
 
-var KalturaBatchJobErrorTypes = module.exports.KalturaBatchJobErrorTypes = {
+module.exports.BatchJobErrorTypes = {
 APP : 0,
 RUNTIME : 1,
 HTTP : 2,
@@ -66,7 +66,7 @@ KALTURA_API : 4,
 KALTURA_CLIENT : 5,
 };
 
-var KalturaBatchJobStatus = module.exports.KalturaBatchJobStatus = {
+module.exports.BatchJobStatus = {
 PENDING : 0,
 QUEUED : 1,
 PROCESSING : 2,
@@ -82,18 +82,18 @@ DONT_PROCESS : 11,
 FINISHED_PARTIALLY : 12,
 };
 
-var KalturaBitRateMode = module.exports.KalturaBitRateMode = {
+module.exports.BitRateMode = {
 CBR : 1,
 VBR : 2,
 };
 
-var KalturaBulkUploadCsvVersion = module.exports.KalturaBulkUploadCsvVersion = {
+module.exports.BulkUploadCsvVersion = {
 V1 : 1,
 V2 : 2,
 V3 : 3,
 };
 
-var KalturaCaptionAssetStatus = module.exports.KalturaCaptionAssetStatus = {
+module.exports.CaptionAssetStatus = {
 ERROR : -1,
 QUEUED : 0,
 READY : 2,
@@ -102,21 +102,21 @@ IMPORTING : 7,
 EXPORTING : 9,
 };
 
-var KalturaCategoryEntryStatus = module.exports.KalturaCategoryEntryStatus = {
+module.exports.CategoryEntryStatus = {
 PENDING : 1,
 ACTIVE : 2,
 DELETED : 3,
 REJECTED : 4,
 };
 
-var KalturaCategoryStatus = module.exports.KalturaCategoryStatus = {
+module.exports.CategoryStatus = {
 UPDATING : 1,
 ACTIVE : 2,
 DELETED : 3,
 PURGED : 4,
 };
 
-var KalturaCategoryUserPermissionLevel = module.exports.KalturaCategoryUserPermissionLevel = {
+module.exports.CategoryUserPermissionLevel = {
 MANAGER : 0,
 MODERATOR : 1,
 CONTRIBUTOR : 2,
@@ -124,31 +124,31 @@ MEMBER : 3,
 NONE : 4,
 };
 
-var KalturaCategoryUserStatus = module.exports.KalturaCategoryUserStatus = {
+module.exports.CategoryUserStatus = {
 ACTIVE : 1,
 PENDING : 2,
 NOT_ACTIVE : 3,
 DELETED : 4,
 };
 
-var KalturaCommercialUseType = module.exports.KalturaCommercialUseType = {
+module.exports.CommercialUseType = {
 NON_COMMERCIAL_USE : 0,
 COMMERCIAL_USE : 1,
 };
 
-var KalturaContributionPolicyType = module.exports.KalturaContributionPolicyType = {
+module.exports.ContributionPolicyType = {
 ALL : 1,
 MEMBERS_WITH_CONTRIBUTION_PERMISSION : 2,
 };
 
-var KalturaControlPanelCommandStatus = module.exports.KalturaControlPanelCommandStatus = {
+module.exports.ControlPanelCommandStatus = {
 PENDING : 1,
 HANDLED : 2,
 DONE : 3,
 FAILED : 4,
 };
 
-var KalturaControlPanelCommandTargetType = module.exports.KalturaControlPanelCommandTargetType = {
+module.exports.ControlPanelCommandTargetType = {
 DATA_CENTER : 1,
 SCHEDULER : 2,
 JOB_TYPE : 3,
@@ -156,53 +156,53 @@ JOB : 4,
 BATCH : 5,
 };
 
-var KalturaControlPanelCommandType = module.exports.KalturaControlPanelCommandType = {
+module.exports.ControlPanelCommandType = {
 KILL : 4,
 };
 
-var KalturaCountryRestrictionType = module.exports.KalturaCountryRestrictionType = {
+module.exports.CountryRestrictionType = {
 RESTRICT_COUNTRY_LIST : 0,
 ALLOW_COUNTRY_LIST : 1,
 };
 
-var KalturaCuePointStatus = module.exports.KalturaCuePointStatus = {
+module.exports.CuePointStatus = {
 READY : 1,
 DELETED : 2,
 HANDLED : 3,
 PENDING : 4,
 };
 
-var KalturaDVRStatus = module.exports.KalturaDVRStatus = {
+module.exports.DVRStatus = {
 DISABLED : 0,
 ENABLED : 1,
 };
 
-var KalturaDeleteFlavorsLogicType = module.exports.KalturaDeleteFlavorsLogicType = {
+module.exports.DeleteFlavorsLogicType = {
 KEEP_LIST_DELETE_OTHERS : 1,
 DELETE_LIST : 2,
 DELETE_KEEP_SMALLEST : 3,
 };
 
-var KalturaDeliveryStatus = module.exports.KalturaDeliveryStatus = {
+module.exports.DeliveryStatus = {
 ACTIVE : 0,
 DELETED : 1,
 STAGING_IN : 2,
 STAGING_OUT : 3,
 };
 
-var KalturaDirectoryRestrictionType = module.exports.KalturaDirectoryRestrictionType = {
+module.exports.DirectoryRestrictionType = {
 DONT_DISPLAY : 0,
 DISPLAY_WITH_LINK : 1,
 };
 
-var KalturaDistributionAction = module.exports.KalturaDistributionAction = {
+module.exports.DistributionAction = {
 SUBMIT : 1,
 UPDATE : 2,
 DELETE : 3,
 FETCH_REPORT : 4,
 };
 
-var KalturaDistributionErrorType = module.exports.KalturaDistributionErrorType = {
+module.exports.DistributionErrorType = {
 MISSING_FLAVOR : 1,
 MISSING_THUMBNAIL : 2,
 MISSING_METADATA : 3,
@@ -211,26 +211,26 @@ MISSING_ASSET : 5,
 CONDITION_NOT_MET : 6,
 };
 
-var KalturaDistributionFieldRequiredStatus = module.exports.KalturaDistributionFieldRequiredStatus = {
+module.exports.DistributionFieldRequiredStatus = {
 NOT_REQUIRED : 0,
 REQUIRED_BY_PROVIDER : 1,
 REQUIRED_BY_PARTNER : 2,
 REQUIRED_FOR_AUTOMATIC_DISTRIBUTION : 3,
 };
 
-var KalturaDistributionProfileActionStatus = module.exports.KalturaDistributionProfileActionStatus = {
+module.exports.DistributionProfileActionStatus = {
 DISABLED : 1,
 AUTOMATIC : 2,
 MANUAL : 3,
 };
 
-var KalturaDistributionProfileStatus = module.exports.KalturaDistributionProfileStatus = {
+module.exports.DistributionProfileStatus = {
 DISABLED : 1,
 ENABLED : 2,
 DELETED : 3,
 };
 
-var KalturaDistributionProtocol = module.exports.KalturaDistributionProtocol = {
+module.exports.DistributionProtocol = {
 FTP : 1,
 SCP : 2,
 SFTP : 3,
@@ -239,7 +239,7 @@ HTTPS : 5,
 ASPERA : 10,
 };
 
-var KalturaDistributionValidationErrorType = module.exports.KalturaDistributionValidationErrorType = {
+module.exports.DistributionValidationErrorType = {
 CUSTOM_ERROR : 0,
 STRING_EMPTY : 1,
 STRING_TOO_LONG : 2,
@@ -247,25 +247,25 @@ STRING_TOO_SHORT : 3,
 INVALID_FORMAT : 4,
 };
 
-var KalturaDocumentType = module.exports.KalturaDocumentType = {
+module.exports.DocumentType = {
 DOCUMENT : 11,
 SWF : 12,
 PDF : 13,
 };
 
-var KalturaDropFolderContentFileHandlerMatchPolicy = module.exports.KalturaDropFolderContentFileHandlerMatchPolicy = {
+module.exports.DropFolderContentFileHandlerMatchPolicy = {
 ADD_AS_NEW : 1,
 MATCH_EXISTING_OR_ADD_AS_NEW : 2,
 MATCH_EXISTING_OR_KEEP_IN_FOLDER : 3,
 };
 
-var KalturaDropFolderFileDeletePolicy = module.exports.KalturaDropFolderFileDeletePolicy = {
+module.exports.DropFolderFileDeletePolicy = {
 MANUAL_DELETE : 1,
 AUTO_DELETE : 2,
 AUTO_DELETE_WHEN_ENTRY_IS_READY : 3,
 };
 
-var KalturaDropFolderFileStatus = module.exports.KalturaDropFolderFileStatus = {
+module.exports.DropFolderFileStatus = {
 UPLOADING : 1,
 PENDING : 2,
 WAITING : 3,
@@ -283,37 +283,37 @@ PARSED : 14,
 DETECTED : 15,
 };
 
-var KalturaDropFolderStatus = module.exports.KalturaDropFolderStatus = {
+module.exports.DropFolderStatus = {
 DISABLED : 0,
 ENABLED : 1,
 DELETED : 2,
 ERROR : 3,
 };
 
-var KalturaEditorType = module.exports.KalturaEditorType = {
+module.exports.EditorType = {
 SIMPLE : 1,
 ADVANCED : 2,
 };
 
-var KalturaEmailIngestionProfileStatus = module.exports.KalturaEmailIngestionProfileStatus = {
+module.exports.EmailIngestionProfileStatus = {
 INACTIVE : 0,
 ACTIVE : 1,
 };
 
-var KalturaEmailNotificationTemplatePriority = module.exports.KalturaEmailNotificationTemplatePriority = {
+module.exports.EmailNotificationTemplatePriority = {
 HIGH : 1,
 NORMAL : 3,
 LOW : 5,
 };
 
-var KalturaEntryDisplayInSearchType = module.exports.KalturaEntryDisplayInSearchType = {
+module.exports.EntryDisplayInSearchType = {
 SYSTEM : -1,
 NONE : 0,
 PARTNER_ONLY : 1,
 KALTURA_NETWORK : 2,
 };
 
-var KalturaEntryDistributionFlag = module.exports.KalturaEntryDistributionFlag = {
+module.exports.EntryDistributionFlag = {
 NONE : 0,
 SUBMIT_REQUIRED : 1,
 DELETE_REQUIRED : 2,
@@ -322,7 +322,7 @@ ENABLE_REQUIRED : 4,
 DISABLE_REQUIRED : 5,
 };
 
-var KalturaEntryDistributionStatus = module.exports.KalturaEntryDistributionStatus = {
+module.exports.EntryDistributionStatus = {
 PENDING : 0,
 QUEUED : 1,
 READY : 2,
@@ -338,13 +338,13 @@ IMPORT_SUBMITTING : 11,
 IMPORT_UPDATING : 12,
 };
 
-var KalturaEntryDistributionSunStatus = module.exports.KalturaEntryDistributionSunStatus = {
+module.exports.EntryDistributionSunStatus = {
 BEFORE_SUNRISE : 1,
 AFTER_SUNRISE : 2,
 AFTER_SUNSET : 3,
 };
 
-var KalturaEntryModerationStatus = module.exports.KalturaEntryModerationStatus = {
+module.exports.EntryModerationStatus = {
 PENDING_MODERATION : 1,
 APPROVED : 2,
 REJECTED : 3,
@@ -352,7 +352,7 @@ FLAGGED_FOR_REVIEW : 5,
 AUTO_APPROVED : 6,
 };
 
-var KalturaEntryServerNodeStatus = module.exports.KalturaEntryServerNodeStatus = {
+module.exports.EntryServerNodeStatus = {
 STOPPED : 0,
 PLAYABLE : 1,
 BROADCASTING : 2,
@@ -360,13 +360,13 @@ AUTHENTICATED : 3,
 MARKED_FOR_DELETION : 4,
 };
 
-var KalturaEventNotificationTemplateStatus = module.exports.KalturaEventNotificationTemplateStatus = {
+module.exports.EventNotificationTemplateStatus = {
 DISABLED : 1,
 ACTIVE : 2,
 DELETED : 3,
 };
 
-var KalturaFeatureStatusType = module.exports.KalturaFeatureStatusType = {
+module.exports.FeatureStatusType = {
 LOCK_CATEGORY : 1,
 CATEGORY : 2,
 CATEGORY_ENTRY : 3,
@@ -375,7 +375,7 @@ CATEGORY_USER : 5,
 USER : 6,
 };
 
-var KalturaFileSyncStatus = module.exports.KalturaFileSyncStatus = {
+module.exports.FileSyncStatus = {
 ERROR : -1,
 PENDING : 1,
 READY : 2,
@@ -383,13 +383,13 @@ DELETED : 3,
 PURGED : 4,
 };
 
-var KalturaFileSyncType = module.exports.KalturaFileSyncType = {
+module.exports.FileSyncType = {
 FILE : 1,
 LINK : 2,
 URL : 3,
 };
 
-var KalturaFlavorAssetStatus = module.exports.KalturaFlavorAssetStatus = {
+module.exports.FlavorAssetStatus = {
 ERROR : -1,
 QUEUED : 0,
 CONVERTING : 1,
@@ -403,36 +403,36 @@ VALIDATING : 8,
 EXPORTING : 9,
 };
 
-var KalturaFlavorReadyBehaviorType = module.exports.KalturaFlavorReadyBehaviorType = {
+module.exports.FlavorReadyBehaviorType = {
 NO_IMPACT : 0,
 INHERIT_FLAVOR_PARAMS : 0,
 REQUIRED : 1,
 OPTIONAL : 2,
 };
 
-var KalturaGender = module.exports.KalturaGender = {
+module.exports.Gender = {
 UNKNOWN : 0,
 MALE : 1,
 FEMALE : 2,
 };
 
-var KalturaGenericDistributionProviderParser = module.exports.KalturaGenericDistributionProviderParser = {
+module.exports.GenericDistributionProviderParser = {
 XSL : 1,
 XPATH : 2,
 REGEX : 3,
 };
 
-var KalturaGenericDistributionProviderStatus = module.exports.KalturaGenericDistributionProviderStatus = {
+module.exports.GenericDistributionProviderStatus = {
 ACTIVE : 2,
 DELETED : 3,
 };
 
-var KalturaGroupUserStatus = module.exports.KalturaGroupUserStatus = {
+module.exports.GroupUserStatus = {
 ACTIVE : 0,
 DELETED : 1,
 };
 
-var KalturaHttpNotificationAuthenticationMethod = module.exports.KalturaHttpNotificationAuthenticationMethod = {
+module.exports.HttpNotificationAuthenticationMethod = {
 ANYSAFE : -18,
 ANY : -17,
 BASIC : 1,
@@ -441,29 +441,29 @@ GSSNEGOTIATE : 4,
 NTLM : 8,
 };
 
-var KalturaHttpNotificationMethod = module.exports.KalturaHttpNotificationMethod = {
+module.exports.HttpNotificationMethod = {
 GET : 1,
 POST : 2,
 PUT : 3,
 DELETE : 4,
 };
 
-var KalturaHttpNotificationSslVersion = module.exports.KalturaHttpNotificationSslVersion = {
+module.exports.HttpNotificationSslVersion = {
 V2 : 2,
 V3 : 3,
 };
 
-var KalturaInheritanceType = module.exports.KalturaInheritanceType = {
+module.exports.InheritanceType = {
 INHERIT : 1,
 MANUAL : 2,
 };
 
-var KalturaIpAddressRestrictionType = module.exports.KalturaIpAddressRestrictionType = {
+module.exports.IpAddressRestrictionType = {
 RESTRICT_LIST : 0,
 ALLOW_LIST : 1,
 };
 
-var KalturaLicenseType = module.exports.KalturaLicenseType = {
+module.exports.LicenseType = {
 UNKNOWN : -1,
 NONE : 0,
 COPYRIGHTED : 1,
@@ -483,17 +483,17 @@ APACHE : 14,
 MOZILLA : 15,
 };
 
-var KalturaLimitFlavorsRestrictionType = module.exports.KalturaLimitFlavorsRestrictionType = {
+module.exports.LimitFlavorsRestrictionType = {
 RESTRICT_LIST : 0,
 ALLOW_LIST : 1,
 };
 
-var KalturaLivePublishStatus = module.exports.KalturaLivePublishStatus = {
+module.exports.LivePublishStatus = {
 DISABLED : 0,
 ENABLED : 1,
 };
 
-var KalturaLiveReportExportType = module.exports.KalturaLiveReportExportType = {
+module.exports.LiveReportExportType = {
 PARTNER_TOTAL_ALL : 1,
 PARTNER_TOTAL_LIVE : 2,
 ENTRY_TIME_LINE_ALL : 11,
@@ -504,19 +504,19 @@ SYNDICATION_ALL : 31,
 SYNDICATION_LIVE : 32,
 };
 
-var KalturaLiveStatsEventType = module.exports.KalturaLiveStatsEventType = {
+module.exports.LiveStatsEventType = {
 LIVE : 1,
 DVR : 2,
 };
 
-var KalturaMailJobStatus = module.exports.KalturaMailJobStatus = {
+module.exports.MailJobStatus = {
 PENDING : 1,
 SENT : 2,
 ERROR : 3,
 QUEUED : 4,
 };
 
-var KalturaMediaType = module.exports.KalturaMediaType = {
+module.exports.MediaType = {
 VIDEO : 1,
 IMAGE : 2,
 AUDIO : 5,
@@ -526,25 +526,25 @@ LIVE_STREAM_REAL_MEDIA : 203,
 LIVE_STREAM_QUICKTIME : 204,
 };
 
-var KalturaMetadataProfileCreateMode = module.exports.KalturaMetadataProfileCreateMode = {
+module.exports.MetadataProfileCreateMode = {
 API : 1,
 KMC : 2,
 APP : 3,
 };
 
-var KalturaMetadataProfileStatus = module.exports.KalturaMetadataProfileStatus = {
+module.exports.MetadataProfileStatus = {
 ACTIVE : 1,
 DEPRECATED : 2,
 TRANSFORMING : 3,
 };
 
-var KalturaMetadataStatus = module.exports.KalturaMetadataStatus = {
+module.exports.MetadataStatus = {
 VALID : 1,
 INVALID : 2,
 DELETED : 3,
 };
 
-var KalturaModerationFlagType = module.exports.KalturaModerationFlagType = {
+module.exports.ModerationFlagType = {
 SEXUAL_CONTENT : 1,
 VIOLENT_REPULSIVE : 2,
 HARMFUL_DANGEROUS : 3,
@@ -553,19 +553,19 @@ COPYRIGHT : 5,
 TERMS_OF_USE_VIOLATION : 6,
 };
 
-var KalturaMrssExtensionMode = module.exports.KalturaMrssExtensionMode = {
+module.exports.MrssExtensionMode = {
 APPEND : 1,
 REPLACE : 2,
 };
 
-var KalturaNotificationObjectType = module.exports.KalturaNotificationObjectType = {
+module.exports.NotificationObjectType = {
 ENTRY : 1,
 KSHOW : 2,
 USER : 3,
 BATCH_JOB : 4,
 };
 
-var KalturaNotificationStatus = module.exports.KalturaNotificationStatus = {
+module.exports.NotificationStatus = {
 PENDING : 1,
 SENT : 2,
 ERROR : 3,
@@ -575,7 +575,7 @@ SENT_SYNCH : 6,
 QUEUED : 7,
 };
 
-var KalturaNotificationType = module.exports.KalturaNotificationType = {
+module.exports.NotificationType = {
 ENTRY_ADD : 1,
 ENTR_UPDATE_PERMISSIONS : 2,
 ENTRY_DELETE : 3,
@@ -587,27 +587,27 @@ USER_ADD : 21,
 USER_BANNED : 26,
 };
 
-var KalturaNullableBoolean = module.exports.KalturaNullableBoolean = {
+module.exports.NullableBoolean = {
 NULL_VALUE : -1,
 FALSE_VALUE : 0,
 TRUE_VALUE : 1,
 };
 
-var KalturaPartnerGroupType = module.exports.KalturaPartnerGroupType = {
+module.exports.PartnerGroupType = {
 PUBLISHER : 1,
 VAR_GROUP : 2,
 GROUP : 3,
 TEMPLATE : 4,
 };
 
-var KalturaPartnerStatus = module.exports.KalturaPartnerStatus = {
+module.exports.PartnerStatus = {
 DELETED : 0,
 ACTIVE : 1,
 BLOCKED : 2,
 FULL_BLOCK : 3,
 };
 
-var KalturaPartnerType = module.exports.KalturaPartnerType = {
+module.exports.PartnerType = {
 KMC : 1,
 WIKI : 100,
 WORDPRESS : 101,
@@ -621,53 +621,53 @@ SAKAI : 108,
 ADMIN_CONSOLE : 109,
 };
 
-var KalturaPermissionStatus = module.exports.KalturaPermissionStatus = {
+module.exports.PermissionStatus = {
 ACTIVE : 1,
 BLOCKED : 2,
 DELETED : 3,
 };
 
-var KalturaPermissionType = module.exports.KalturaPermissionType = {
+module.exports.PermissionType = {
 NORMAL : 1,
 SPECIAL_FEATURE : 2,
 PLUGIN : 3,
 PARTNER_GROUP : 4,
 };
 
-var KalturaPlaylistType = module.exports.KalturaPlaylistType = {
+module.exports.PlaylistType = {
 STATIC_LIST : 3,
 DYNAMIC : 10,
 EXTERNAL : 101,
 };
 
-var KalturaPrivacyType = module.exports.KalturaPrivacyType = {
+module.exports.PrivacyType = {
 ALL : 1,
 AUTHENTICATED_USERS : 2,
 MEMBERS_ONLY : 3,
 };
 
-var KalturaQuizOutputType = module.exports.KalturaQuizOutputType = {
+module.exports.QuizOutputType = {
 PDF : 1,
 };
 
-var KalturaRecordStatus = module.exports.KalturaRecordStatus = {
+module.exports.RecordStatus = {
 DISABLED : 0,
 APPENDED : 1,
 PER_SESSION : 2,
 };
 
-var KalturaResponseProfileStatus = module.exports.KalturaResponseProfileStatus = {
+module.exports.ResponseProfileStatus = {
 DISABLED : 1,
 ENABLED : 2,
 DELETED : 3,
 };
 
-var KalturaResponseProfileType = module.exports.KalturaResponseProfileType = {
+module.exports.ResponseProfileType = {
 INCLUDE_FIELDS : 1,
 EXCLUDE_FIELDS : 2,
 };
 
-var KalturaResponseType = module.exports.KalturaResponseType = {
+module.exports.ResponseType = {
 RESPONSE_TYPE_JSON : 1,
 RESPONSE_TYPE_XML : 2,
 RESPONSE_TYPE_PHP : 3,
@@ -677,41 +677,41 @@ RESPONSE_TYPE_MRSS : 8,
 RESPONSE_TYPE_JSONP : 9,
 };
 
-var KalturaScheduleEventClassificationType = module.exports.KalturaScheduleEventClassificationType = {
+module.exports.ScheduleEventClassificationType = {
 PUBLIC_EVENT : 1,
 PRIVATE_EVENT : 2,
 CONFIDENTIAL_EVENT : 3,
 };
 
-var KalturaScheduleEventRecurrenceType = module.exports.KalturaScheduleEventRecurrenceType = {
+module.exports.ScheduleEventRecurrenceType = {
 NONE : 0,
 RECURRING : 1,
 RECURRENCE : 2,
 };
 
-var KalturaScheduleEventStatus = module.exports.KalturaScheduleEventStatus = {
+module.exports.ScheduleEventStatus = {
 CANCELLED : 1,
 ACTIVE : 2,
 DELETED : 3,
 };
 
-var KalturaScheduleEventType = module.exports.KalturaScheduleEventType = {
+module.exports.ScheduleEventType = {
 RECORD : 1,
 LIVE_STREAM : 2,
 };
 
-var KalturaScheduleResourceStatus = module.exports.KalturaScheduleResourceStatus = {
+module.exports.ScheduleResourceStatus = {
 DISABLED : 1,
 ACTIVE : 2,
 DELETED : 3,
 };
 
-var KalturaScheduledTaskAddOrRemoveType = module.exports.KalturaScheduledTaskAddOrRemoveType = {
+module.exports.ScheduledTaskAddOrRemoveType = {
 ADD : 1,
 REMOVE : 2,
 };
 
-var KalturaScheduledTaskProfileStatus = module.exports.KalturaScheduledTaskProfileStatus = {
+module.exports.ScheduledTaskProfileStatus = {
 DISABLED : 1,
 ACTIVE : 2,
 DELETED : 3,
@@ -719,7 +719,7 @@ SUSPENDED : 4,
 DRY_RUN_ONLY : 5,
 };
 
-var KalturaSchedulerStatusType = module.exports.KalturaSchedulerStatusType = {
+module.exports.SchedulerStatusType = {
 RUNNING_BATCHES_COUNT : 1,
 RUNNING_BATCHES_CPU : 2,
 RUNNING_BATCHES_MEMORY : 3,
@@ -729,12 +729,12 @@ RUNNING_BATCHES_DISC_SPACE : 6,
 RUNNING_BATCHES_IS_RUNNING : 7,
 };
 
-var KalturaSearchOperatorType = module.exports.KalturaSearchOperatorType = {
+module.exports.SearchOperatorType = {
 SEARCH_AND : 1,
 SEARCH_OR : 2,
 };
 
-var KalturaSearchProviderType = module.exports.KalturaSearchProviderType = {
+module.exports.SearchProviderType = {
 FLICKR : 3,
 YOUTUBE : 4,
 MYSPACE : 7,
@@ -753,30 +753,30 @@ SEARCH_PROXY : 28,
 PARTNER_SPECIFIC : 100,
 };
 
-var KalturaServerNodeStatus = module.exports.KalturaServerNodeStatus = {
+module.exports.ServerNodeStatus = {
 ACTIVE : 1,
 DISABLED : 2,
 DELETED : 3,
 NOT_REGISTERED : 4,
 };
 
-var KalturaSessionType = module.exports.KalturaSessionType = {
+module.exports.SessionType = {
 USER : 0,
 ADMIN : 2,
 };
 
-var KalturaShortLinkStatus = module.exports.KalturaShortLinkStatus = {
+module.exports.ShortLinkStatus = {
 DISABLED : 1,
 ENABLED : 2,
 DELETED : 3,
 };
 
-var KalturaSiteRestrictionType = module.exports.KalturaSiteRestrictionType = {
+module.exports.SiteRestrictionType = {
 RESTRICT_SITE_LIST : 0,
 ALLOW_SITE_LIST : 1,
 };
 
-var KalturaStatsEventType = module.exports.KalturaStatsEventType = {
+module.exports.StatsEventType = {
 WIDGET_LOADED : 1,
 MEDIA_LOADED : 2,
 PLAY : 3,
@@ -819,12 +819,12 @@ POSTROLL_50 : 39,
 POSTROLL_75 : 40,
 };
 
-var KalturaStatsFeatureType = module.exports.KalturaStatsFeatureType = {
+module.exports.StatsFeatureType = {
 NONE : 0,
 RELATED : 1,
 };
 
-var KalturaStatsKmcEventType = module.exports.KalturaStatsKmcEventType = {
+module.exports.StatsKmcEventType = {
 CONTENT_PAGE_VIEW : 1001,
 CONTENT_ADD_PLAYLIST : 1010,
 CONTENT_EDIT_PLAYLIST : 1011,
@@ -891,28 +891,28 @@ CONTENT_ENTRY_DRILLDOWN : 1088,
 CONTENT_OPEN_PREVIEW_AND_EMBED : 1089,
 };
 
-var KalturaStorageProfileDeliveryStatus = module.exports.KalturaStorageProfileDeliveryStatus = {
+module.exports.StorageProfileDeliveryStatus = {
 ACTIVE : 1,
 BLOCKED : 2,
 };
 
-var KalturaStorageProfileReadyBehavior = module.exports.KalturaStorageProfileReadyBehavior = {
+module.exports.StorageProfileReadyBehavior = {
 NO_IMPACT : 0,
 REQUIRED : 1,
 };
 
-var KalturaStorageProfileStatus = module.exports.KalturaStorageProfileStatus = {
+module.exports.StorageProfileStatus = {
 DISABLED : 1,
 AUTOMATIC : 2,
 MANUAL : 3,
 };
 
-var KalturaSyndicationFeedStatus = module.exports.KalturaSyndicationFeedStatus = {
+module.exports.SyndicationFeedStatus = {
 DELETED : -1,
 ACTIVE : 1,
 };
 
-var KalturaSyndicationFeedType = module.exports.KalturaSyndicationFeedType = {
+module.exports.SyndicationFeedType = {
 GOOGLE_VIDEO : 1,
 YAHOO : 2,
 ITUNES : 3,
@@ -921,7 +921,7 @@ KALTURA : 5,
 KALTURA_XSLT : 6,
 };
 
-var KalturaThumbAssetStatus = module.exports.KalturaThumbAssetStatus = {
+module.exports.ThumbAssetStatus = {
 ERROR : -1,
 QUEUED : 0,
 CAPTURING : 1,
@@ -931,7 +931,7 @@ IMPORTING : 7,
 EXPORTING : 9,
 };
 
-var KalturaThumbCropType = module.exports.KalturaThumbCropType = {
+module.exports.ThumbCropType = {
 RESIZE : 1,
 RESIZE_WITH_PADDING : 2,
 CROP : 3,
@@ -939,12 +939,12 @@ CROP_FROM_TOP : 4,
 RESIZE_WITH_FORCE : 5,
 };
 
-var KalturaThumbCuePointSubType = module.exports.KalturaThumbCuePointSubType = {
+module.exports.ThumbCuePointSubType = {
 SLIDE : 1,
 CHAPTER : 2,
 };
 
-var KalturaTrackEntryEventType = module.exports.KalturaTrackEntryEventType = {
+module.exports.TrackEntryEventType = {
 UPLOADED_FILE : 1,
 WEBCAM_COMPLETED : 2,
 IMPORT_STARTED : 3,
@@ -953,12 +953,12 @@ UPDATE_ENTRY : 5,
 DELETED_ENTRY : 6,
 };
 
-var KalturaUiConfCreationMode = module.exports.KalturaUiConfCreationMode = {
+module.exports.UiConfCreationMode = {
 WIZARD : 2,
 ADVANCED : 3,
 };
 
-var KalturaUiConfObjType = module.exports.KalturaUiConfObjType = {
+module.exports.UiConfObjType = {
 PLAYER : 1,
 CONTRIBUTION_WIZARD : 2,
 SIMPLE_EDITOR : 3,
@@ -982,18 +982,18 @@ KUPLOAD : 20,
 WEBCASTING : 21,
 };
 
-var KalturaUpdateMethodType = module.exports.KalturaUpdateMethodType = {
+module.exports.UpdateMethodType = {
 MANUAL : 0,
 AUTOMATIC : 1,
 };
 
-var KalturaUploadErrorCode = module.exports.KalturaUploadErrorCode = {
+module.exports.UploadErrorCode = {
 NO_ERROR : 0,
 GENERAL_ERROR : 1,
 PARTIAL_UPLOAD : 2,
 };
 
-var KalturaUploadTokenStatus = module.exports.KalturaUploadTokenStatus = {
+module.exports.UploadTokenStatus = {
 PENDING : 0,
 PARTIAL_UPLOAD : 1,
 FULL_UPLOAD : 2,
@@ -1002,78 +1002,78 @@ TIMED_OUT : 4,
 DELETED : 5,
 };
 
-var KalturaUserAgentRestrictionType = module.exports.KalturaUserAgentRestrictionType = {
+module.exports.UserAgentRestrictionType = {
 RESTRICT_LIST : 0,
 ALLOW_LIST : 1,
 };
 
-var KalturaUserJoinPolicyType = module.exports.KalturaUserJoinPolicyType = {
+module.exports.UserJoinPolicyType = {
 AUTO_JOIN : 1,
 REQUEST_TO_JOIN : 2,
 NOT_ALLOWED : 3,
 };
 
-var KalturaUserRoleStatus = module.exports.KalturaUserRoleStatus = {
+module.exports.UserRoleStatus = {
 ACTIVE : 1,
 BLOCKED : 2,
 DELETED : 3,
 };
 
-var KalturaUserStatus = module.exports.KalturaUserStatus = {
+module.exports.UserStatus = {
 BLOCKED : 0,
 ACTIVE : 1,
 DELETED : 2,
 };
 
-var KalturaUserType = module.exports.KalturaUserType = {
+module.exports.UserType = {
 USER : 0,
 GROUP : 1,
 };
 
-var KalturaVirusFoundAction = module.exports.KalturaVirusFoundAction = {
+module.exports.VirusFoundAction = {
 NONE : 0,
 DELETE : 1,
 CLEAN_NONE : 2,
 CLEAN_DELETE : 3,
 };
 
-var KalturaVirusScanJobResult = module.exports.KalturaVirusScanJobResult = {
+module.exports.VirusScanJobResult = {
 SCAN_ERROR : 1,
 FILE_IS_CLEAN : 2,
 FILE_WAS_CLEANED : 3,
 FILE_INFECTED : 4,
 };
 
-var KalturaVirusScanProfileStatus = module.exports.KalturaVirusScanProfileStatus = {
+module.exports.VirusScanProfileStatus = {
 DISABLED : 1,
 ENABLED : 2,
 DELETED : 3,
 };
 
-var KalturaWidgetSecurityType = module.exports.KalturaWidgetSecurityType = {
+module.exports.WidgetSecurityType = {
 NONE : 1,
 TIMEHASH : 2,
 };
 
-var KalturaYouTubeApiDistributionCaptionAction = module.exports.KalturaYouTubeApiDistributionCaptionAction = {
+module.exports.YouTubeApiDistributionCaptionAction = {
 UPDATE_ACTION : 1,
 SUBMIT_ACTION : 2,
 DELETE_ACTION : 3,
 };
 
-var KalturaAccessControlOrderBy = module.exports.KalturaAccessControlOrderBy = {
+module.exports.AccessControlOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 CREATED_AT_DESC : '-createdAt',
 };
 
-var KalturaAccessControlProfileOrderBy = module.exports.KalturaAccessControlProfileOrderBy = {
+module.exports.AccessControlProfileOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaAdCuePointOrderBy = module.exports.KalturaAdCuePointOrderBy = {
+module.exports.AdCuePointOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 DURATION_ASC : '+duration',
 END_TIME_ASC : '+endTime',
@@ -1090,45 +1090,45 @@ TRIGGERED_AT_DESC : '-triggeredAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaAdProtocolType = module.exports.KalturaAdProtocolType = {
+module.exports.AdProtocolType = {
 CUSTOM : '0',
 VAST : '1',
 VAST_2_0 : '2',
 VPAID : '3',
 };
 
-var KalturaAdType = module.exports.KalturaAdType = {
+module.exports.AdType = {
 VIDEO : '1',
 OVERLAY : '2',
 };
 
-var KalturaAdminUserOrderBy = module.exports.KalturaAdminUserOrderBy = {
+module.exports.AdminUserOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 ID_ASC : '+id',
 CREATED_AT_DESC : '-createdAt',
 ID_DESC : '-id',
 };
 
-var KalturaAkamaiUniversalStreamType = module.exports.KalturaAkamaiUniversalStreamType = {
+module.exports.AkamaiUniversalStreamType = {
 HD_IPHONE_IPAD_LIVE : 'HD iPhone/iPad Live',
 UNIVERSAL_STREAMING_LIVE : 'Universal Streaming Live',
 };
 
-var KalturaAmazonS3StorageProfileFilesPermissionLevel = module.exports.KalturaAmazonS3StorageProfileFilesPermissionLevel = {
+module.exports.AmazonS3StorageProfileFilesPermissionLevel = {
 ACL_AUTHENTICATED_READ : 'authenticated-read',
 ACL_PRIVATE : 'private',
 ACL_PUBLIC_READ : 'public-read',
 ACL_PUBLIC_READ_WRITE : 'public-read-write',
 };
 
-var KalturaAmazonS3StorageProfileOrderBy = module.exports.KalturaAmazonS3StorageProfileOrderBy = {
+module.exports.AmazonS3StorageProfileOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaAnnotationOrderBy = module.exports.KalturaAnnotationOrderBy = {
+module.exports.AnnotationOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 DURATION_ASC : '+duration',
 END_TIME_ASC : '+endTime',
@@ -1145,7 +1145,7 @@ TRIGGERED_AT_DESC : '-triggeredAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaAnswerCuePointOrderBy = module.exports.KalturaAnswerCuePointOrderBy = {
+module.exports.AnswerCuePointOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 PARTNER_SORT_VALUE_ASC : '+partnerSortValue',
 START_TIME_ASC : '+startTime',
@@ -1158,7 +1158,7 @@ TRIGGERED_AT_DESC : '-triggeredAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaApiActionPermissionItemOrderBy = module.exports.KalturaApiActionPermissionItemOrderBy = {
+module.exports.ApiActionPermissionItemOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 ID_ASC : '+id',
 UPDATED_AT_ASC : '+updatedAt',
@@ -1167,14 +1167,14 @@ ID_DESC : '-id',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaApiParameterPermissionItemAction = module.exports.KalturaApiParameterPermissionItemAction = {
+module.exports.ApiParameterPermissionItemAction = {
 USAGE : 'all',
 INSERT : 'insert',
 READ : 'read',
 UPDATE : 'update',
 };
 
-var KalturaApiParameterPermissionItemOrderBy = module.exports.KalturaApiParameterPermissionItemOrderBy = {
+module.exports.ApiParameterPermissionItemOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 ID_ASC : '+id',
 UPDATED_AT_ASC : '+updatedAt',
@@ -1183,21 +1183,21 @@ ID_DESC : '-id',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaAppTokenHashType = module.exports.KalturaAppTokenHashType = {
+module.exports.AppTokenHashType = {
 MD5 : 'MD5',
 SHA1 : 'SHA1',
 SHA256 : 'SHA256',
 SHA512 : 'SHA512',
 };
 
-var KalturaAppTokenOrderBy = module.exports.KalturaAppTokenOrderBy = {
+module.exports.AppTokenOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaAssetOrderBy = module.exports.KalturaAssetOrderBy = {
+module.exports.AssetOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 DELETED_AT_ASC : '+deletedAt',
 SIZE_ASC : '+size',
@@ -1208,13 +1208,13 @@ SIZE_DESC : '-size',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaAssetParamsOrderBy = module.exports.KalturaAssetParamsOrderBy = {
+module.exports.AssetParamsOrderBy = {
 };
 
-var KalturaAssetParamsOutputOrderBy = module.exports.KalturaAssetParamsOutputOrderBy = {
+module.exports.AssetParamsOutputOrderBy = {
 };
 
-var KalturaAssetType = module.exports.KalturaAssetType = {
+module.exports.AssetType = {
 ATTACHMENT : 'attachment.Attachment',
 CAPTION : 'caption.Caption',
 DOCUMENT : 'document.Document',
@@ -1228,7 +1228,7 @@ THUMBNAIL : '2',
 LIVE : '3',
 };
 
-var KalturaAttachmentAssetOrderBy = module.exports.KalturaAttachmentAssetOrderBy = {
+module.exports.AttachmentAssetOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 DELETED_AT_ASC : '+deletedAt',
 SIZE_ASC : '+size',
@@ -1239,13 +1239,13 @@ SIZE_DESC : '-size',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaAttachmentType = module.exports.KalturaAttachmentType = {
+module.exports.AttachmentType = {
 TEXT : '1',
 MEDIA : '2',
 DOCUMENT : '3',
 };
 
-var KalturaAudioCodec = module.exports.KalturaAudioCodec = {
+module.exports.AudioCodec = {
 NONE : '',
 AAC : 'aac',
 AACHE : 'aache',
@@ -1260,7 +1260,7 @@ WMA : 'wma',
 WMAPRO : 'wmapro',
 };
 
-var KalturaBaseEntryCloneOptions = module.exports.KalturaBaseEntryCloneOptions = {
+module.exports.BaseEntryCloneOptions = {
 AD_CUE_POINTS : 'adCuePoint.AD_CUE_POINTS',
 ANNOTATION_CUE_POINTS : 'annotation.ANNOTATION_CUE_POINTS',
 CODE_CUE_POINTS : 'codeCuePoint.CODE_CUE_POINTS',
@@ -1269,7 +1269,7 @@ USERS : '1',
 CATEGORIES : '2',
 };
 
-var KalturaBaseEntryCompareAttribute = module.exports.KalturaBaseEntryCompareAttribute = {
+module.exports.BaseEntryCompareAttribute = {
 ACCESS_CONTROL_ID : 'accessControlId',
 CREATED_AT : 'createdAt',
 END_DATE : 'endDate',
@@ -1286,7 +1286,7 @@ TYPE : 'type',
 UPDATED_AT : 'updatedAt',
 };
 
-var KalturaBaseEntryMatchAttribute = module.exports.KalturaBaseEntryMatchAttribute = {
+module.exports.BaseEntryMatchAttribute = {
 ADMIN_TAGS : 'adminTags',
 CATEGORIES_IDS : 'categoriesIds',
 CREATOR_ID : 'creatorId',
@@ -1302,7 +1302,7 @@ TAGS : 'tags',
 USER_ID : 'userId',
 };
 
-var KalturaBaseEntryOrderBy = module.exports.KalturaBaseEntryOrderBy = {
+module.exports.BaseEntryOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 END_DATE_ASC : '+endDate',
 MODERATION_COUNT_ASC : '+moderationCount',
@@ -1327,7 +1327,7 @@ UPDATED_AT_DESC : '-updatedAt',
 WEIGHT_DESC : '-weight',
 };
 
-var KalturaBaseSyndicationFeedOrderBy = module.exports.KalturaBaseSyndicationFeedOrderBy = {
+module.exports.BaseSyndicationFeedOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 NAME_ASC : '+name',
 PLAYLIST_ID_ASC : '+playlistId',
@@ -1340,7 +1340,7 @@ TYPE_DESC : '-type',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaBatchJobObjectType = module.exports.KalturaBatchJobObjectType = {
+module.exports.BatchJobObjectType = {
 ENTRY_DISTRIBUTION : 'contentDistribution.EntryDistribution',
 DROP_FOLDER_FILE : 'dropFolderXmlBulkUpload.DropFolderFile',
 METADATA : 'metadata.Metadata',
@@ -1352,7 +1352,7 @@ FILE_SYNC : '3',
 ASSET : '4',
 };
 
-var KalturaBatchJobOrderBy = module.exports.KalturaBatchJobOrderBy = {
+module.exports.BatchJobOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 ESTIMATED_EFFORT_ASC : '+estimatedEffort',
 EXECUTION_ATTEMPTS_ASC : '+executionAttempts',
@@ -1373,7 +1373,7 @@ STATUS_DESC : '-status',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaBatchJobType = module.exports.KalturaBatchJobType = {
+module.exports.BatchJobType = {
 CONVERT : '0',
 PARSE_MULTI_LANGUAGE_CAPTION_ASSET : 'caption.parsemultilanguagecaptionasset',
 PARSE_CAPTION_ASSET : 'captionSearch.parseCaptionAsset',
@@ -1432,7 +1432,7 @@ RECALCULATE_CACHE : '41',
 LIVE_TO_VOD : '42',
 };
 
-var KalturaBulkUploadAction = module.exports.KalturaBulkUploadAction = {
+module.exports.BulkUploadAction = {
 CANCEL : 'scheduleBulkUpload.CANCEL',
 ADD : '1',
 UPDATE : '2',
@@ -1442,7 +1442,7 @@ TRANSFORM_XSLT : '5',
 ADD_OR_UPDATE : '6',
 };
 
-var KalturaBulkUploadObjectType = module.exports.KalturaBulkUploadObjectType = {
+module.exports.BulkUploadObjectType = {
 SCHEDULE_EVENT : 'scheduleBulkUpload.SCHEDULE_EVENT',
 SCHEDULE_RESOURCE : 'scheduleBulkUpload.SCHEDULE_RESOURCE',
 ENTRY : '1',
@@ -1452,16 +1452,16 @@ CATEGORY_USER : '4',
 CATEGORY_ENTRY : '5',
 };
 
-var KalturaBulkUploadOrderBy = module.exports.KalturaBulkUploadOrderBy = {
+module.exports.BulkUploadOrderBy = {
 };
 
-var KalturaBulkUploadResultStatus = module.exports.KalturaBulkUploadResultStatus = {
+module.exports.BulkUploadResultStatus = {
 ERROR : '1',
 OK : '2',
 IN_PROGRESS : '3',
 };
 
-var KalturaBulkUploadType = module.exports.KalturaBulkUploadType = {
+module.exports.BulkUploadType = {
 CSV : 'bulkUploadCsv.CSV',
 FILTER : 'bulkUploadFilter.FILTER',
 XML : 'bulkUploadXml.XML',
@@ -1470,14 +1470,14 @@ ICAL : 'scheduleBulkUpload.ICAL',
 DROP_FOLDER_ICAL : 'scheduleDropFolder.DROP_FOLDER_ICAL',
 };
 
-var KalturaCameraScheduleResourceOrderBy = module.exports.KalturaCameraScheduleResourceOrderBy = {
+module.exports.CameraScheduleResourceOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaCaptionAssetOrderBy = module.exports.KalturaCaptionAssetOrderBy = {
+module.exports.CaptionAssetOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 DELETED_AT_ASC : '+deletedAt',
 SIZE_ASC : '+size',
@@ -1488,32 +1488,32 @@ SIZE_DESC : '-size',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaCaptionParamsOrderBy = module.exports.KalturaCaptionParamsOrderBy = {
+module.exports.CaptionParamsOrderBy = {
 };
 
-var KalturaCaptionType = module.exports.KalturaCaptionType = {
+module.exports.CaptionType = {
 SRT : '1',
 DFXP : '2',
 WEBVTT : '3',
 };
 
-var KalturaCategoryEntryAdvancedOrderBy = module.exports.KalturaCategoryEntryAdvancedOrderBy = {
+module.exports.CategoryEntryAdvancedOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 CREATED_AT_DESC : '-createdAt',
 };
 
-var KalturaCategoryEntryOrderBy = module.exports.KalturaCategoryEntryOrderBy = {
+module.exports.CategoryEntryOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 CREATED_AT_DESC : '-createdAt',
 };
 
-var KalturaCategoryIdentifierField = module.exports.KalturaCategoryIdentifierField = {
+module.exports.CategoryIdentifierField = {
 FULL_NAME : 'fullName',
 ID : 'id',
 REFERENCE_ID : 'referenceId',
 };
 
-var KalturaCategoryOrderBy = module.exports.KalturaCategoryOrderBy = {
+module.exports.CategoryOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 DEPTH_ASC : '+depth',
 DIRECT_ENTRIES_COUNT_ASC : '+directEntriesCount',
@@ -1536,30 +1536,30 @@ PARTNER_SORT_VALUE_DESC : '-partnerSortValue',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaCategoryUserOrderBy = module.exports.KalturaCategoryUserOrderBy = {
+module.exports.CategoryUserOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaCielo24Fidelity = module.exports.KalturaCielo24Fidelity = {
+module.exports.Cielo24Fidelity = {
 MECHANICAL : 'MECHANICAL',
 PREMIUM : 'PREMIUM',
 PROFESSIONAL : 'PROFESSIONAL',
 };
 
-var KalturaCielo24Priority = module.exports.KalturaCielo24Priority = {
+module.exports.Cielo24Priority = {
 PRIORITY : 'PRIORITY',
 STANDARD : 'STANDARD',
 };
 
-var KalturaCloneComponentSelectorType = module.exports.KalturaCloneComponentSelectorType = {
+module.exports.CloneComponentSelectorType = {
 INCLUDE_COMPONENT : '0',
 EXCLUDE_COMPONENT : '1',
 };
 
-var KalturaCodeCuePointOrderBy = module.exports.KalturaCodeCuePointOrderBy = {
+module.exports.CodeCuePointOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 DURATION_ASC : '+duration',
 END_TIME_ASC : '+endTime',
@@ -1576,7 +1576,7 @@ TRIGGERED_AT_DESC : '-triggeredAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaConditionType = module.exports.KalturaConditionType = {
+module.exports.ConditionType = {
 EVENT_NOTIFICATION_FIELD : 'eventNotification.BooleanField',
 EVENT_NOTIFICATION_OBJECT_CHANGED : 'eventNotification.ObjectChanged',
 METADATA_FIELD_CHANGED : 'metadata.FieldChanged',
@@ -1598,14 +1598,14 @@ DELIVERY_PROFILE : '13',
 ACTIVE_EDGE_VALIDATE : '14',
 };
 
-var KalturaConfigurableDistributionProfileOrderBy = module.exports.KalturaConfigurableDistributionProfileOrderBy = {
+module.exports.ConfigurableDistributionProfileOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaContainerFormat = module.exports.KalturaContainerFormat = {
+module.exports.ContainerFormat = {
 _3GP : '3gp',
 APPLEHTTP : 'applehttp',
 AVI : 'avi',
@@ -1637,7 +1637,7 @@ WMV : 'wmv',
 WVM : 'wvm',
 };
 
-var KalturaContextType = module.exports.KalturaContextType = {
+module.exports.ContextType = {
 PLAY : '1',
 DOWNLOAD : '2',
 THUMBNAIL : '3',
@@ -1646,33 +1646,33 @@ EXPORT : '5',
 SERVE : '6',
 };
 
-var KalturaControlPanelCommandOrderBy = module.exports.KalturaControlPanelCommandOrderBy = {
+module.exports.ControlPanelCommandOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaConversionProfileAssetParamsOrderBy = module.exports.KalturaConversionProfileAssetParamsOrderBy = {
+module.exports.ConversionProfileAssetParamsOrderBy = {
 };
 
-var KalturaConversionProfileOrderBy = module.exports.KalturaConversionProfileOrderBy = {
+module.exports.ConversionProfileOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 CREATED_AT_DESC : '-createdAt',
 };
 
-var KalturaConversionProfileStatus = module.exports.KalturaConversionProfileStatus = {
+module.exports.ConversionProfileStatus = {
 DISABLED : '1',
 ENABLED : '2',
 DELETED : '3',
 };
 
-var KalturaConversionProfileType = module.exports.KalturaConversionProfileType = {
+module.exports.ConversionProfileType = {
 MEDIA : '1',
 LIVE_STREAM : '2',
 };
 
-var KalturaCuePointOrderBy = module.exports.KalturaCuePointOrderBy = {
+module.exports.CuePointOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 PARTNER_SORT_VALUE_ASC : '+partnerSortValue',
 START_TIME_ASC : '+startTime',
@@ -1685,7 +1685,7 @@ TRIGGERED_AT_DESC : '-triggeredAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaCuePointType = module.exports.KalturaCuePointType = {
+module.exports.CuePointType = {
 AD : 'adCuePoint.Ad',
 ANNOTATION : 'annotation.Annotation',
 CODE : 'codeCuePoint.Code',
@@ -1695,7 +1695,7 @@ QUIZ_QUESTION : 'quiz.QUIZ_QUESTION',
 THUMB : 'thumbCuePoint.Thumb',
 };
 
-var KalturaDataEntryCompareAttribute = module.exports.KalturaDataEntryCompareAttribute = {
+module.exports.DataEntryCompareAttribute = {
 ACCESS_CONTROL_ID : 'accessControlId',
 CREATED_AT : 'createdAt',
 END_DATE : 'endDate',
@@ -1712,7 +1712,7 @@ TYPE : 'type',
 UPDATED_AT : 'updatedAt',
 };
 
-var KalturaDataEntryMatchAttribute = module.exports.KalturaDataEntryMatchAttribute = {
+module.exports.DataEntryMatchAttribute = {
 ADMIN_TAGS : 'adminTags',
 CATEGORIES_IDS : 'categoriesIds',
 CREATOR_ID : 'creatorId',
@@ -1728,7 +1728,7 @@ TAGS : 'tags',
 USER_ID : 'userId',
 };
 
-var KalturaDataEntryOrderBy = module.exports.KalturaDataEntryOrderBy = {
+module.exports.DataEntryOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 END_DATE_ASC : '+endDate',
 MODERATION_COUNT_ASC : '+moderationCount',
@@ -1753,84 +1753,84 @@ UPDATED_AT_DESC : '-updatedAt',
 WEIGHT_DESC : '-weight',
 };
 
-var KalturaDeliveryProfileAkamaiAppleHttpManifestOrderBy = module.exports.KalturaDeliveryProfileAkamaiAppleHttpManifestOrderBy = {
+module.exports.DeliveryProfileAkamaiAppleHttpManifestOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaDeliveryProfileAkamaiHdsOrderBy = module.exports.KalturaDeliveryProfileAkamaiHdsOrderBy = {
+module.exports.DeliveryProfileAkamaiHdsOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaDeliveryProfileAkamaiHttpOrderBy = module.exports.KalturaDeliveryProfileAkamaiHttpOrderBy = {
+module.exports.DeliveryProfileAkamaiHttpOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaDeliveryProfileGenericAppleHttpOrderBy = module.exports.KalturaDeliveryProfileGenericAppleHttpOrderBy = {
+module.exports.DeliveryProfileGenericAppleHttpOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaDeliveryProfileGenericHdsOrderBy = module.exports.KalturaDeliveryProfileGenericHdsOrderBy = {
+module.exports.DeliveryProfileGenericHdsOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaDeliveryProfileGenericHttpOrderBy = module.exports.KalturaDeliveryProfileGenericHttpOrderBy = {
+module.exports.DeliveryProfileGenericHttpOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaDeliveryProfileGenericRtmpOrderBy = module.exports.KalturaDeliveryProfileGenericRtmpOrderBy = {
+module.exports.DeliveryProfileGenericRtmpOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaDeliveryProfileGenericSilverLightOrderBy = module.exports.KalturaDeliveryProfileGenericSilverLightOrderBy = {
+module.exports.DeliveryProfileGenericSilverLightOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaDeliveryProfileLiveAppleHttpOrderBy = module.exports.KalturaDeliveryProfileLiveAppleHttpOrderBy = {
+module.exports.DeliveryProfileLiveAppleHttpOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaDeliveryProfileOrderBy = module.exports.KalturaDeliveryProfileOrderBy = {
+module.exports.DeliveryProfileOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaDeliveryProfileRtmpOrderBy = module.exports.KalturaDeliveryProfileRtmpOrderBy = {
+module.exports.DeliveryProfileRtmpOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaDeliveryProfileType = module.exports.KalturaDeliveryProfileType = {
+module.exports.DeliveryProfileType = {
 EDGE_CAST_HTTP : 'edgeCast.EDGE_CAST_HTTP',
 EDGE_CAST_RTMP : 'edgeCast.EDGE_CAST_RTMP',
 KONTIKI_HTTP : 'kontiki.KONTIKI_HTTP',
@@ -1882,7 +1882,7 @@ LIVE_PACKAGER_MSS : '1010',
 LIVE_AKAMAI_HDS : '1013',
 };
 
-var KalturaDeliveryServerNodeOrderBy = module.exports.KalturaDeliveryServerNodeOrderBy = {
+module.exports.DeliveryServerNodeOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 HEARTBEAT_TIME_ASC : '+heartbeatTime',
 UPDATED_AT_ASC : '+updatedAt',
@@ -1891,17 +1891,17 @@ HEARTBEAT_TIME_DESC : '-heartbeatTime',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaDistributionProfileOrderBy = module.exports.KalturaDistributionProfileOrderBy = {
+module.exports.DistributionProfileOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaDistributionProviderOrderBy = module.exports.KalturaDistributionProviderOrderBy = {
+module.exports.DistributionProviderOrderBy = {
 };
 
-var KalturaDistributionProviderType = module.exports.KalturaDistributionProviderType = {
+module.exports.DistributionProviderType = {
 FACEBOOK : 'facebookDistribution.FACEBOOK',
 IDETIC : 'ideticDistribution.IDETIC',
 YOUTUBE_API : 'youtubeApiDistribution.YOUTUBE_API',
@@ -1909,7 +1909,7 @@ GENERIC : '1',
 SYNDICATION : '2',
 };
 
-var KalturaDocumentEntryCompareAttribute = module.exports.KalturaDocumentEntryCompareAttribute = {
+module.exports.DocumentEntryCompareAttribute = {
 ACCESS_CONTROL_ID : 'accessControlId',
 CREATED_AT : 'createdAt',
 END_DATE : 'endDate',
@@ -1926,7 +1926,7 @@ TYPE : 'type',
 UPDATED_AT : 'updatedAt',
 };
 
-var KalturaDocumentEntryMatchAttribute = module.exports.KalturaDocumentEntryMatchAttribute = {
+module.exports.DocumentEntryMatchAttribute = {
 ADMIN_TAGS : 'adminTags',
 CATEGORIES_IDS : 'categoriesIds',
 CREATOR_ID : 'creatorId',
@@ -1942,7 +1942,7 @@ TAGS : 'tags',
 USER_ID : 'userId',
 };
 
-var KalturaDocumentEntryOrderBy = module.exports.KalturaDocumentEntryOrderBy = {
+module.exports.DocumentEntryOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 END_DATE_ASC : '+endDate',
 MODERATION_COUNT_ASC : '+moderationCount',
@@ -1967,13 +1967,13 @@ UPDATED_AT_DESC : '-updatedAt',
 WEIGHT_DESC : '-weight',
 };
 
-var KalturaDocumentFlavorParamsOrderBy = module.exports.KalturaDocumentFlavorParamsOrderBy = {
+module.exports.DocumentFlavorParamsOrderBy = {
 };
 
-var KalturaDocumentFlavorParamsOutputOrderBy = module.exports.KalturaDocumentFlavorParamsOutputOrderBy = {
+module.exports.DocumentFlavorParamsOutputOrderBy = {
 };
 
-var KalturaDropFolderErrorCode = module.exports.KalturaDropFolderErrorCode = {
+module.exports.DropFolderErrorCode = {
 ERROR_CONNECT : '1',
 ERROR_AUTENTICATE : '2',
 ERROR_GET_PHISICAL_FILE_LIST : '3',
@@ -1982,7 +1982,7 @@ DROP_FOLDER_APP_ERROR : '5',
 CONTENT_MATCH_POLICY_UNDEFINED : '6',
 };
 
-var KalturaDropFolderFileErrorCode = module.exports.KalturaDropFolderFileErrorCode = {
+module.exports.DropFolderFileErrorCode = {
 ERROR_ADDING_BULK_UPLOAD : 'dropFolderXmlBulkUpload.ERROR_ADDING_BULK_UPLOAD',
 ERROR_ADD_CONTENT_RESOURCE : 'dropFolderXmlBulkUpload.ERROR_ADD_CONTENT_RESOURCE',
 ERROR_IN_BULK_UPLOAD : 'dropFolderXmlBulkUpload.ERROR_IN_BULK_UPLOAD',
@@ -2005,13 +2005,13 @@ ERROR_DELETING_FILE : '12',
 FILE_NO_MATCH : '13',
 };
 
-var KalturaDropFolderFileHandlerType = module.exports.KalturaDropFolderFileHandlerType = {
+module.exports.DropFolderFileHandlerType = {
 XML : 'dropFolderXmlBulkUpload.XML',
 ICAL : 'scheduleDropFolder.ICAL',
 CONTENT : '1',
 };
 
-var KalturaDropFolderFileOrderBy = module.exports.KalturaDropFolderFileOrderBy = {
+module.exports.DropFolderFileOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 FILE_NAME_ASC : '+fileName',
 FILE_SIZE_ASC : '+fileSize',
@@ -2030,7 +2030,7 @@ PARSED_SLUG_DESC : '-parsedSlug',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaDropFolderOrderBy = module.exports.KalturaDropFolderOrderBy = {
+module.exports.DropFolderOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 ID_ASC : '+id',
 NAME_ASC : '+name',
@@ -2041,7 +2041,7 @@ NAME_DESC : '-name',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaDropFolderType = module.exports.KalturaDropFolderType = {
+module.exports.DropFolderType = {
 FEED : 'FeedDropFolder.FEED',
 LOCAL : '1',
 FTP : '2',
@@ -2050,14 +2050,14 @@ SFTP : '4',
 S3 : '6',
 };
 
-var KalturaDurationType = module.exports.KalturaDurationType = {
+module.exports.DurationType = {
 LONG : 'long',
 MEDIUM : 'medium',
 NOT_AVAILABLE : 'notavailable',
 SHORT : 'short',
 };
 
-var KalturaEdgeServerNodeOrderBy = module.exports.KalturaEdgeServerNodeOrderBy = {
+module.exports.EdgeServerNodeOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 HEARTBEAT_TIME_ASC : '+heartbeatTime',
 UPDATED_AT_ASC : '+updatedAt',
@@ -2066,18 +2066,18 @@ HEARTBEAT_TIME_DESC : '-heartbeatTime',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaEmailNotificationFormat = module.exports.KalturaEmailNotificationFormat = {
+module.exports.EmailNotificationFormat = {
 HTML : '1',
 TEXT : '2',
 };
 
-var KalturaEmailNotificationRecipientProviderType = module.exports.KalturaEmailNotificationRecipientProviderType = {
+module.exports.EmailNotificationRecipientProviderType = {
 STATIC_LIST : '1',
 CATEGORY : '2',
 USER : '3',
 };
 
-var KalturaEmailNotificationTemplateOrderBy = module.exports.KalturaEmailNotificationTemplateOrderBy = {
+module.exports.EmailNotificationTemplateOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 ID_ASC : '+id',
 UPDATED_AT_ASC : '+updatedAt',
@@ -2086,7 +2086,7 @@ ID_DESC : '-id',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaEntryDistributionOrderBy = module.exports.KalturaEntryDistributionOrderBy = {
+module.exports.EntryDistributionOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 SUBMITTED_AT_ASC : '+submittedAt',
 SUNRISE_ASC : '+sunrise',
@@ -2099,12 +2099,12 @@ SUNSET_DESC : '-sunset',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaEntryIdentifierField = module.exports.KalturaEntryIdentifierField = {
+module.exports.EntryIdentifierField = {
 ID : 'id',
 REFERENCE_ID : 'referenceId',
 };
 
-var KalturaEntryReplacementStatus = module.exports.KalturaEntryReplacementStatus = {
+module.exports.EntryReplacementStatus = {
 NONE : '0',
 APPROVED_BUT_NOT_READY : '1',
 READY_BUT_NOT_APPROVED : '2',
@@ -2112,7 +2112,7 @@ NOT_READY_AND_NOT_APPROVED : '3',
 FAILED : '4',
 };
 
-var KalturaEntryScheduleEventOrderBy = module.exports.KalturaEntryScheduleEventOrderBy = {
+module.exports.EntryScheduleEventOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 END_DATE_ASC : '+endDate',
 PRIORITY_ASC : '+priority',
@@ -2127,19 +2127,19 @@ SUMMARY_DESC : '-summary',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaEntryServerNodeOrderBy = module.exports.KalturaEntryServerNodeOrderBy = {
+module.exports.EntryServerNodeOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaEntryServerNodeType = module.exports.KalturaEntryServerNodeType = {
+module.exports.EntryServerNodeType = {
 LIVE_PRIMARY : '0',
 LIVE_BACKUP : '1',
 };
 
-var KalturaEntryStatus = module.exports.KalturaEntryStatus = {
+module.exports.EntryStatus = {
 ERROR_IMPORTING : '-2',
 ERROR_CONVERTING : '-1',
 SCAN_FAILURE : 'virusScan.ScanFailure',
@@ -2154,7 +2154,7 @@ BLOCKED : '6',
 NO_CONTENT : '7',
 };
 
-var KalturaEntryType = module.exports.KalturaEntryType = {
+module.exports.EntryType = {
 AUTOMATIC : '-1',
 EXTERNAL_MEDIA : 'externalMedia.externalMedia',
 MEDIA_CLIP : '1',
@@ -2166,7 +2166,7 @@ LIVE_CHANNEL : '8',
 DOCUMENT : '10',
 };
 
-var KalturaEventCuePointOrderBy = module.exports.KalturaEventCuePointOrderBy = {
+module.exports.EventCuePointOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 PARTNER_SORT_VALUE_ASC : '+partnerSortValue',
 START_TIME_ASC : '+startTime',
@@ -2179,7 +2179,7 @@ TRIGGERED_AT_DESC : '-triggeredAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaEventNotificationEventObjectType = module.exports.KalturaEventNotificationEventObjectType = {
+module.exports.EventNotificationEventObjectType = {
 AD_CUE_POINT : 'adCuePointEventNotifications.AdCuePoint',
 ANNOTATION : 'annotationEventNotifications.Annotation',
 ATTACHMENT_ASSET : 'attachmentAssetEventNotifications.AttachmentAsset',
@@ -2227,7 +2227,7 @@ WIDGET : '36',
 CATEGORYENTRY : '37',
 };
 
-var KalturaEventNotificationEventType = module.exports.KalturaEventNotificationEventType = {
+module.exports.EventNotificationEventType = {
 BATCH_JOB_STATUS : '1',
 OBJECT_ADDED : '2',
 OBJECT_CHANGED : '3',
@@ -2243,7 +2243,7 @@ OBJECT_REPLACED : '12',
 OBJECT_READY_FOR_INDEX : '13',
 };
 
-var KalturaEventNotificationTemplateOrderBy = module.exports.KalturaEventNotificationTemplateOrderBy = {
+module.exports.EventNotificationTemplateOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 ID_ASC : '+id',
 UPDATED_AT_ASC : '+updatedAt',
@@ -2252,17 +2252,17 @@ ID_DESC : '-id',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaEventNotificationTemplateType = module.exports.KalturaEventNotificationTemplateType = {
+module.exports.EventNotificationTemplateType = {
 EMAIL : 'emailNotification.Email',
 HTTP : 'httpNotification.Http',
 };
 
-var KalturaEventType = module.exports.KalturaEventType = {
+module.exports.EventType = {
 BROADCAST_START : '1',
 BROADCAST_END : '2',
 };
 
-var KalturaExternalMediaEntryCompareAttribute = module.exports.KalturaExternalMediaEntryCompareAttribute = {
+module.exports.ExternalMediaEntryCompareAttribute = {
 ACCESS_CONTROL_ID : 'accessControlId',
 CREATED_AT : 'createdAt',
 END_DATE : 'endDate',
@@ -2285,7 +2285,7 @@ UPDATED_AT : 'updatedAt',
 VIEWS : 'views',
 };
 
-var KalturaExternalMediaEntryMatchAttribute = module.exports.KalturaExternalMediaEntryMatchAttribute = {
+module.exports.ExternalMediaEntryMatchAttribute = {
 ADMIN_TAGS : 'adminTags',
 CATEGORIES_IDS : 'categoriesIds',
 CREATOR_ID : 'creatorId',
@@ -2303,7 +2303,7 @@ TAGS : 'tags',
 USER_ID : 'userId',
 };
 
-var KalturaExternalMediaEntryOrderBy = module.exports.KalturaExternalMediaEntryOrderBy = {
+module.exports.ExternalMediaEntryOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 DURATION_ASC : '+duration',
 END_DATE_ASC : '+endDate',
@@ -2338,22 +2338,22 @@ VIEWS_DESC : '-views',
 WEIGHT_DESC : '-weight',
 };
 
-var KalturaExternalMediaSourceType = module.exports.KalturaExternalMediaSourceType = {
+module.exports.ExternalMediaSourceType = {
 INTERCALL : 'InterCall',
 YOUTUBE : 'YouTube',
 };
 
-var KalturaFacebookDistributionProfileOrderBy = module.exports.KalturaFacebookDistributionProfileOrderBy = {
+module.exports.FacebookDistributionProfileOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaFacebookDistributionProviderOrderBy = module.exports.KalturaFacebookDistributionProviderOrderBy = {
+module.exports.FacebookDistributionProviderOrderBy = {
 };
 
-var KalturaFeedDropFolderFileOrderBy = module.exports.KalturaFeedDropFolderFileOrderBy = {
+module.exports.FeedDropFolderFileOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 FILE_NAME_ASC : '+fileName',
 FILE_SIZE_ASC : '+fileSize',
@@ -2372,7 +2372,7 @@ PARSED_SLUG_DESC : '-parsedSlug',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaFeedDropFolderOrderBy = module.exports.KalturaFeedDropFolderOrderBy = {
+module.exports.FeedDropFolderOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 ID_ASC : '+id',
 NAME_ASC : '+name',
@@ -2383,18 +2383,18 @@ NAME_DESC : '-name',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaFileAssetObjectType = module.exports.KalturaFileAssetObjectType = {
+module.exports.FileAssetObjectType = {
 UI_CONF : '2',
 };
 
-var KalturaFileAssetOrderBy = module.exports.KalturaFileAssetOrderBy = {
+module.exports.FileAssetOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaFileAssetStatus = module.exports.KalturaFileAssetStatus = {
+module.exports.FileAssetStatus = {
 PENDING : '0',
 UPLOADING : '1',
 READY : '2',
@@ -2402,7 +2402,7 @@ DELETED : '3',
 ERROR : '4',
 };
 
-var KalturaFileSyncObjectType = module.exports.KalturaFileSyncObjectType = {
+module.exports.FileSyncObjectType = {
 DISTRIBUTION_PROFILE : 'contentDistribution.DistributionProfile',
 ENTRY_DISTRIBUTION : 'contentDistribution.EntryDistribution',
 GENERIC_DISTRIBUTION_ACTION : 'contentDistribution.GenericDistributionAction',
@@ -2420,7 +2420,7 @@ CONVERSION_PROFILE : '8',
 FILE_ASSET : '9',
 };
 
-var KalturaFileSyncOrderBy = module.exports.KalturaFileSyncOrderBy = {
+module.exports.FileSyncOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 FILE_SIZE_ASC : '+fileSize',
 READY_AT_ASC : '+readyAt',
@@ -2435,7 +2435,7 @@ UPDATED_AT_DESC : '-updatedAt',
 VERSION_DESC : '-version',
 };
 
-var KalturaFlavorAssetOrderBy = module.exports.KalturaFlavorAssetOrderBy = {
+module.exports.FlavorAssetOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 DELETED_AT_ASC : '+deletedAt',
 SIZE_ASC : '+size',
@@ -2446,13 +2446,13 @@ SIZE_DESC : '-size',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaFlavorParamsOrderBy = module.exports.KalturaFlavorParamsOrderBy = {
+module.exports.FlavorParamsOrderBy = {
 };
 
-var KalturaFlavorParamsOutputOrderBy = module.exports.KalturaFlavorParamsOutputOrderBy = {
+module.exports.FlavorParamsOutputOrderBy = {
 };
 
-var KalturaFtpDropFolderOrderBy = module.exports.KalturaFtpDropFolderOrderBy = {
+module.exports.FtpDropFolderOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 ID_ASC : '+id',
 NAME_ASC : '+name',
@@ -2463,41 +2463,28 @@ NAME_DESC : '-name',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaGenericDistributionProfileOrderBy = module.exports.KalturaGenericDistributionProfileOrderBy = {
+module.exports.GenericDistributionProfileOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaGenericDistributionProviderActionOrderBy = module.exports.KalturaGenericDistributionProviderActionOrderBy = {
+module.exports.GenericDistributionProviderActionOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaGenericDistributionProviderOrderBy = module.exports.KalturaGenericDistributionProviderOrderBy = {
+module.exports.GenericDistributionProviderOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaGenericSyndicationFeedOrderBy = module.exports.KalturaGenericSyndicationFeedOrderBy = {
-CREATED_AT_ASC : '+createdAt',
-NAME_ASC : '+name',
-PLAYLIST_ID_ASC : '+playlistId',
-TYPE_ASC : '+type',
-UPDATED_AT_ASC : '+updatedAt',
-CREATED_AT_DESC : '-createdAt',
-NAME_DESC : '-name',
-PLAYLIST_ID_DESC : '-playlistId',
-TYPE_DESC : '-type',
-UPDATED_AT_DESC : '-updatedAt',
-};
-
-var KalturaGenericXsltSyndicationFeedOrderBy = module.exports.KalturaGenericXsltSyndicationFeedOrderBy = {
+module.exports.GenericSyndicationFeedOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 NAME_ASC : '+name',
 PLAYLIST_ID_ASC : '+playlistId',
@@ -2510,16 +2497,29 @@ TYPE_DESC : '-type',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaGeoCoderType = module.exports.KalturaGeoCoderType = {
+module.exports.GenericXsltSyndicationFeedOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+NAME_ASC : '+name',
+PLAYLIST_ID_ASC : '+playlistId',
+TYPE_ASC : '+type',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+NAME_DESC : '-name',
+PLAYLIST_ID_DESC : '-playlistId',
+TYPE_DESC : '-type',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.GeoCoderType = {
 KALTURA : '1',
 };
 
-var KalturaGoogleSyndicationFeedAdultValues = module.exports.KalturaGoogleSyndicationFeedAdultValues = {
+module.exports.GoogleSyndicationFeedAdultValues = {
 NO : 'No',
 YES : 'Yes',
 };
 
-var KalturaGoogleVideoSyndicationFeedOrderBy = module.exports.KalturaGoogleVideoSyndicationFeedOrderBy = {
+module.exports.GoogleVideoSyndicationFeedOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 NAME_ASC : '+name',
 PLAYLIST_ID_ASC : '+playlistId',
@@ -2532,26 +2532,26 @@ TYPE_DESC : '-type',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaGroupUserOrderBy = module.exports.KalturaGroupUserOrderBy = {
+module.exports.GroupUserOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaHttpNotificationCertificateType = module.exports.KalturaHttpNotificationCertificateType = {
+module.exports.HttpNotificationCertificateType = {
 DER : 'DER',
 ENG : 'ENG',
 PEM : 'PEM',
 };
 
-var KalturaHttpNotificationSslKeyType = module.exports.KalturaHttpNotificationSslKeyType = {
+module.exports.HttpNotificationSslKeyType = {
 DER : 'DER',
 ENG : 'ENG',
 PEM : 'PEM',
 };
 
-var KalturaHttpNotificationTemplateOrderBy = module.exports.KalturaHttpNotificationTemplateOrderBy = {
+module.exports.HttpNotificationTemplateOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 ID_ASC : '+id',
 UPDATED_AT_ASC : '+updatedAt',
@@ -2560,13 +2560,13 @@ ID_DESC : '-id',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaITunesSyndicationFeedAdultValues = module.exports.KalturaITunesSyndicationFeedAdultValues = {
+module.exports.ITunesSyndicationFeedAdultValues = {
 CLEAN : 'clean',
 NO : 'no',
 YES : 'yes',
 };
 
-var KalturaITunesSyndicationFeedCategories = module.exports.KalturaITunesSyndicationFeedCategories = {
+module.exports.ITunesSyndicationFeedCategories = {
 ARTS : 'Arts',
 ARTS_DESIGN : 'Arts/Design',
 ARTS_FASHION_BEAUTY : 'Arts/Fashion &amp; Beauty',
@@ -2636,7 +2636,7 @@ TECHNOLOGY_SOFTWARE_HOW_TO : 'Technology/Software How-To',
 TECHNOLOGY_TECH_NEWS : 'Technology/Tech News',
 };
 
-var KalturaITunesSyndicationFeedOrderBy = module.exports.KalturaITunesSyndicationFeedOrderBy = {
+module.exports.ITunesSyndicationFeedOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 NAME_ASC : '+name',
 PLAYLIST_ID_ASC : '+playlistId',
@@ -2649,39 +2649,39 @@ TYPE_DESC : '-type',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaIdeticDistributionProfileOrderBy = module.exports.KalturaIdeticDistributionProfileOrderBy = {
+module.exports.IdeticDistributionProfileOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaIdeticDistributionProviderOrderBy = module.exports.KalturaIdeticDistributionProviderOrderBy = {
+module.exports.IdeticDistributionProviderOrderBy = {
 };
 
-var KalturaImageFlavorParamsOrderBy = module.exports.KalturaImageFlavorParamsOrderBy = {
+module.exports.ImageFlavorParamsOrderBy = {
 };
 
-var KalturaImageFlavorParamsOutputOrderBy = module.exports.KalturaImageFlavorParamsOutputOrderBy = {
+module.exports.ImageFlavorParamsOutputOrderBy = {
 };
 
-var KalturaIntegrationProviderType = module.exports.KalturaIntegrationProviderType = {
+module.exports.IntegrationProviderType = {
 CIELO24 : 'cielo24.Cielo24',
 VOICEBASE : 'voicebase.Voicebase',
 };
 
-var KalturaIntegrationTriggerType = module.exports.KalturaIntegrationTriggerType = {
+module.exports.IntegrationTriggerType = {
 MANUAL : '1',
 };
 
-var KalturaKontikiStorageProfileOrderBy = module.exports.KalturaKontikiStorageProfileOrderBy = {
+module.exports.KontikiStorageProfileOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaLanguage = module.exports.KalturaLanguage = {
+module.exports.Language = {
 AB : 'Abkhazian',
 AA : 'Afar',
 AF : 'Afrikaans',
@@ -2831,7 +2831,7 @@ YO : 'Yoruba',
 ZU : 'Zulu',
 };
 
-var KalturaLanguageCode = module.exports.KalturaLanguageCode = {
+module.exports.LanguageCode = {
 AA : 'aa',
 AB : 'ab',
 AF : 'af',
@@ -2980,10 +2980,10 @@ ZH : 'zh',
 ZU : 'zu',
 };
 
-var KalturaLikeOrderBy = module.exports.KalturaLikeOrderBy = {
+module.exports.LikeOrderBy = {
 };
 
-var KalturaLiveAssetOrderBy = module.exports.KalturaLiveAssetOrderBy = {
+module.exports.LiveAssetOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 DELETED_AT_ASC : '+deletedAt',
 SIZE_ASC : '+size',
@@ -2994,7 +2994,7 @@ SIZE_DESC : '-size',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaLiveChannelCompareAttribute = module.exports.KalturaLiveChannelCompareAttribute = {
+module.exports.LiveChannelCompareAttribute = {
 ACCESS_CONTROL_ID : 'accessControlId',
 CREATED_AT : 'createdAt',
 END_DATE : 'endDate',
@@ -3017,7 +3017,7 @@ UPDATED_AT : 'updatedAt',
 VIEWS : 'views',
 };
 
-var KalturaLiveChannelMatchAttribute = module.exports.KalturaLiveChannelMatchAttribute = {
+module.exports.LiveChannelMatchAttribute = {
 ADMIN_TAGS : 'adminTags',
 CATEGORIES_IDS : 'categoriesIds',
 CREATOR_ID : 'creatorId',
@@ -3035,7 +3035,7 @@ TAGS : 'tags',
 USER_ID : 'userId',
 };
 
-var KalturaLiveChannelOrderBy = module.exports.KalturaLiveChannelOrderBy = {
+module.exports.LiveChannelOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 DURATION_ASC : '+duration',
 END_DATE_ASC : '+endDate',
@@ -3074,7 +3074,7 @@ VIEWS_DESC : '-views',
 WEIGHT_DESC : '-weight',
 };
 
-var KalturaLiveChannelSegmentOrderBy = module.exports.KalturaLiveChannelSegmentOrderBy = {
+module.exports.LiveChannelSegmentOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 START_TIME_ASC : '+startTime',
 UPDATED_AT_ASC : '+updatedAt',
@@ -3083,23 +3083,23 @@ START_TIME_DESC : '-startTime',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaLiveChannelSegmentStatus = module.exports.KalturaLiveChannelSegmentStatus = {
+module.exports.LiveChannelSegmentStatus = {
 ACTIVE : '2',
 DELETED : '3',
 };
 
-var KalturaLiveChannelSegmentTriggerType = module.exports.KalturaLiveChannelSegmentTriggerType = {
+module.exports.LiveChannelSegmentTriggerType = {
 CHANNEL_RELATIVE : '1',
 ABSOLUTE_TIME : '2',
 SEGMENT_START_RELATIVE : '3',
 SEGMENT_END_RELATIVE : '4',
 };
 
-var KalturaLiveChannelSegmentType = module.exports.KalturaLiveChannelSegmentType = {
+module.exports.LiveChannelSegmentType = {
 VIDEO_AND_AUDIO : '1',
 };
 
-var KalturaLiveEntryCompareAttribute = module.exports.KalturaLiveEntryCompareAttribute = {
+module.exports.LiveEntryCompareAttribute = {
 ACCESS_CONTROL_ID : 'accessControlId',
 CREATED_AT : 'createdAt',
 END_DATE : 'endDate',
@@ -3122,7 +3122,7 @@ UPDATED_AT : 'updatedAt',
 VIEWS : 'views',
 };
 
-var KalturaLiveEntryMatchAttribute = module.exports.KalturaLiveEntryMatchAttribute = {
+module.exports.LiveEntryMatchAttribute = {
 ADMIN_TAGS : 'adminTags',
 CATEGORIES_IDS : 'categoriesIds',
 CREATOR_ID : 'creatorId',
@@ -3140,7 +3140,7 @@ TAGS : 'tags',
 USER_ID : 'userId',
 };
 
-var KalturaLiveEntryOrderBy = module.exports.KalturaLiveEntryOrderBy = {
+module.exports.LiveEntryOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 DURATION_ASC : '+duration',
 END_DATE_ASC : '+endDate',
@@ -3179,24 +3179,24 @@ VIEWS_DESC : '-views',
 WEIGHT_DESC : '-weight',
 };
 
-var KalturaLiveEntryScheduleResourceOrderBy = module.exports.KalturaLiveEntryScheduleResourceOrderBy = {
+module.exports.LiveEntryScheduleResourceOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaLiveParamsOrderBy = module.exports.KalturaLiveParamsOrderBy = {
+module.exports.LiveParamsOrderBy = {
 };
 
-var KalturaLiveReportOrderBy = module.exports.KalturaLiveReportOrderBy = {
+module.exports.LiveReportOrderBy = {
 NAME_ASC : '+name',
 AUDIENCE_DESC : '-audience',
 EVENT_TIME_DESC : '-eventTime',
 PLAYS_DESC : '-plays',
 };
 
-var KalturaLiveReportType = module.exports.KalturaLiveReportType = {
+module.exports.LiveReportType = {
 ENTRY_GEO_TIME_LINE : 'ENTRY_GEO_TIME_LINE',
 ENTRY_SYNDICATION_TOTAL : 'ENTRY_SYNDICATION_TOTAL',
 ENTRY_TIME_LINE : 'ENTRY_TIME_LINE',
@@ -3204,7 +3204,7 @@ ENTRY_TOTAL : 'ENTRY_TOTAL',
 PARTNER_TOTAL : 'PARTNER_TOTAL',
 };
 
-var KalturaLiveStreamAdminEntryCompareAttribute = module.exports.KalturaLiveStreamAdminEntryCompareAttribute = {
+module.exports.LiveStreamAdminEntryCompareAttribute = {
 ACCESS_CONTROL_ID : 'accessControlId',
 CREATED_AT : 'createdAt',
 END_DATE : 'endDate',
@@ -3227,7 +3227,7 @@ UPDATED_AT : 'updatedAt',
 VIEWS : 'views',
 };
 
-var KalturaLiveStreamAdminEntryMatchAttribute = module.exports.KalturaLiveStreamAdminEntryMatchAttribute = {
+module.exports.LiveStreamAdminEntryMatchAttribute = {
 ADMIN_TAGS : 'adminTags',
 CATEGORIES_IDS : 'categoriesIds',
 CREATOR_ID : 'creatorId',
@@ -3245,7 +3245,7 @@ TAGS : 'tags',
 USER_ID : 'userId',
 };
 
-var KalturaLiveStreamAdminEntryOrderBy = module.exports.KalturaLiveStreamAdminEntryOrderBy = {
+module.exports.LiveStreamAdminEntryOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 DURATION_ASC : '+duration',
 END_DATE_ASC : '+endDate',
@@ -3284,7 +3284,7 @@ VIEWS_DESC : '-views',
 WEIGHT_DESC : '-weight',
 };
 
-var KalturaLiveStreamEntryCompareAttribute = module.exports.KalturaLiveStreamEntryCompareAttribute = {
+module.exports.LiveStreamEntryCompareAttribute = {
 ACCESS_CONTROL_ID : 'accessControlId',
 CREATED_AT : 'createdAt',
 END_DATE : 'endDate',
@@ -3307,7 +3307,7 @@ UPDATED_AT : 'updatedAt',
 VIEWS : 'views',
 };
 
-var KalturaLiveStreamEntryMatchAttribute = module.exports.KalturaLiveStreamEntryMatchAttribute = {
+module.exports.LiveStreamEntryMatchAttribute = {
 ADMIN_TAGS : 'adminTags',
 CATEGORIES_IDS : 'categoriesIds',
 CREATOR_ID : 'creatorId',
@@ -3325,7 +3325,7 @@ TAGS : 'tags',
 USER_ID : 'userId',
 };
 
-var KalturaLiveStreamEntryOrderBy = module.exports.KalturaLiveStreamEntryOrderBy = {
+module.exports.LiveStreamEntryOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 DURATION_ASC : '+duration',
 END_DATE_ASC : '+endDate',
@@ -3364,7 +3364,7 @@ VIEWS_DESC : '-views',
 WEIGHT_DESC : '-weight',
 };
 
-var KalturaLiveStreamScheduleEventOrderBy = module.exports.KalturaLiveStreamScheduleEventOrderBy = {
+module.exports.LiveStreamScheduleEventOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 END_DATE_ASC : '+endDate',
 PRIORITY_ASC : '+priority',
@@ -3379,14 +3379,14 @@ SUMMARY_DESC : '-summary',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaLocationScheduleResourceOrderBy = module.exports.KalturaLocationScheduleResourceOrderBy = {
+module.exports.LocationScheduleResourceOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaMailType = module.exports.KalturaMailType = {
+module.exports.MailType = {
 MAIL_TYPE_KALTURA_NEWSLETTER : '10',
 MAIL_TYPE_ADDED_TO_FAVORITES : '11',
 MAIL_TYPE_ADDED_TO_CLIP_FAVORITES : '12',
@@ -3431,7 +3431,7 @@ MAIL_TYPE_LIVE_REPORT_EXPORT_FAILURE : '131',
 MAIL_TYPE_LIVE_REPORT_EXPORT_ABORT : '132',
 };
 
-var KalturaMediaEntryCompareAttribute = module.exports.KalturaMediaEntryCompareAttribute = {
+module.exports.MediaEntryCompareAttribute = {
 ACCESS_CONTROL_ID : 'accessControlId',
 CREATED_AT : 'createdAt',
 END_DATE : 'endDate',
@@ -3454,7 +3454,7 @@ UPDATED_AT : 'updatedAt',
 VIEWS : 'views',
 };
 
-var KalturaMediaEntryMatchAttribute = module.exports.KalturaMediaEntryMatchAttribute = {
+module.exports.MediaEntryMatchAttribute = {
 ADMIN_TAGS : 'adminTags',
 CATEGORIES_IDS : 'categoriesIds',
 CREATOR_ID : 'creatorId',
@@ -3472,7 +3472,7 @@ TAGS : 'tags',
 USER_ID : 'userId',
 };
 
-var KalturaMediaEntryOrderBy = module.exports.KalturaMediaEntryOrderBy = {
+module.exports.MediaEntryOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 DURATION_ASC : '+duration',
 END_DATE_ASC : '+endDate',
@@ -3507,21 +3507,21 @@ VIEWS_DESC : '-views',
 WEIGHT_DESC : '-weight',
 };
 
-var KalturaMediaFlavorParamsOrderBy = module.exports.KalturaMediaFlavorParamsOrderBy = {
+module.exports.MediaFlavorParamsOrderBy = {
 };
 
-var KalturaMediaFlavorParamsOutputOrderBy = module.exports.KalturaMediaFlavorParamsOutputOrderBy = {
+module.exports.MediaFlavorParamsOutputOrderBy = {
 };
 
-var KalturaMediaInfoOrderBy = module.exports.KalturaMediaInfoOrderBy = {
+module.exports.MediaInfoOrderBy = {
 };
 
-var KalturaMediaParserType = module.exports.KalturaMediaParserType = {
+module.exports.MediaParserType = {
 MEDIAINFO : '0',
 FFMPEG : '1',
 };
 
-var KalturaMediaServerNodeOrderBy = module.exports.KalturaMediaServerNodeOrderBy = {
+module.exports.MediaServerNodeOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 HEARTBEAT_TIME_ASC : '+heartbeatTime',
 UPDATED_AT_ASC : '+updatedAt',
@@ -3530,7 +3530,7 @@ HEARTBEAT_TIME_DESC : '-heartbeatTime',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaMetadataObjectType = module.exports.KalturaMetadataObjectType = {
+module.exports.MetadataObjectType = {
 AD_CUE_POINT : 'adCuePointMetadata.AdCuePoint',
 ANNOTATION : 'annotationMetadata.Annotation',
 CODE_CUE_POINT : 'codeCuePointMetadata.CodeCuePoint',
@@ -3542,7 +3542,7 @@ PARTNER : '4',
 DYNAMIC_OBJECT : '5',
 };
 
-var KalturaMetadataOrderBy = module.exports.KalturaMetadataOrderBy = {
+module.exports.MetadataOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 METADATA_PROFILE_VERSION_ASC : '+metadataProfileVersion',
 UPDATED_AT_ASC : '+updatedAt',
@@ -3553,14 +3553,14 @@ UPDATED_AT_DESC : '-updatedAt',
 VERSION_DESC : '-version',
 };
 
-var KalturaMetadataProfileOrderBy = module.exports.KalturaMetadataProfileOrderBy = {
+module.exports.MetadataProfileOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaMixEntryCompareAttribute = module.exports.KalturaMixEntryCompareAttribute = {
+module.exports.MixEntryCompareAttribute = {
 ACCESS_CONTROL_ID : 'accessControlId',
 CREATED_AT : 'createdAt',
 END_DATE : 'endDate',
@@ -3581,7 +3581,7 @@ UPDATED_AT : 'updatedAt',
 VIEWS : 'views',
 };
 
-var KalturaMixEntryMatchAttribute = module.exports.KalturaMixEntryMatchAttribute = {
+module.exports.MixEntryMatchAttribute = {
 ADMIN_TAGS : 'adminTags',
 CATEGORIES_IDS : 'categoriesIds',
 CREATOR_ID : 'creatorId',
@@ -3598,7 +3598,7 @@ TAGS : 'tags',
 USER_ID : 'userId',
 };
 
-var KalturaMixEntryOrderBy = module.exports.KalturaMixEntryOrderBy = {
+module.exports.MixEntryOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 DURATION_ASC : '+duration',
 END_DATE_ASC : '+endDate',
@@ -3631,21 +3631,21 @@ VIEWS_DESC : '-views',
 WEIGHT_DESC : '-weight',
 };
 
-var KalturaModerationFlagStatus = module.exports.KalturaModerationFlagStatus = {
+module.exports.ModerationFlagStatus = {
 PENDING : '1',
 MODERATED : '2',
 };
 
-var KalturaModerationObjectType = module.exports.KalturaModerationObjectType = {
+module.exports.ModerationObjectType = {
 ENTRY : '2',
 USER : '3',
 };
 
-var KalturaObjectFilterEngineType = module.exports.KalturaObjectFilterEngineType = {
+module.exports.ObjectFilterEngineType = {
 ENTRY : '1',
 };
 
-var KalturaObjectTaskType = module.exports.KalturaObjectTaskType = {
+module.exports.ObjectTaskType = {
 DISTRIBUTE : 'scheduledTaskContentDistribution.Distribute',
 DISPATCH_EVENT_NOTIFICATION : 'scheduledTaskEventNotification.DispatchEventNotification',
 EXECUTE_METADATA_XSLT : 'scheduledTaskMetadata.ExecuteMetadataXslt',
@@ -3658,7 +3658,7 @@ STORAGE_EXPORT : '6',
 MODIFY_ENTRY : '7',
 };
 
-var KalturaPartnerOrderBy = module.exports.KalturaPartnerOrderBy = {
+module.exports.PartnerOrderBy = {
 ADMIN_EMAIL_ASC : '+adminEmail',
 ADMIN_NAME_ASC : '+adminName',
 CREATED_AT_ASC : '+createdAt',
@@ -3675,13 +3675,13 @@ STATUS_DESC : '-status',
 WEBSITE_DESC : '-website',
 };
 
-var KalturaPdfFlavorParamsOrderBy = module.exports.KalturaPdfFlavorParamsOrderBy = {
+module.exports.PdfFlavorParamsOrderBy = {
 };
 
-var KalturaPdfFlavorParamsOutputOrderBy = module.exports.KalturaPdfFlavorParamsOutputOrderBy = {
+module.exports.PdfFlavorParamsOutputOrderBy = {
 };
 
-var KalturaPermissionItemOrderBy = module.exports.KalturaPermissionItemOrderBy = {
+module.exports.PermissionItemOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 ID_ASC : '+id',
 UPDATED_AT_ASC : '+updatedAt',
@@ -3690,12 +3690,12 @@ ID_DESC : '-id',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaPermissionItemType = module.exports.KalturaPermissionItemType = {
+module.exports.PermissionItemType = {
 API_ACTION_ITEM : 'kApiActionPermissionItem',
 API_PARAMETER_ITEM : 'kApiParameterPermissionItem',
 };
 
-var KalturaPermissionOrderBy = module.exports.KalturaPermissionOrderBy = {
+module.exports.PermissionOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 ID_ASC : '+id',
 NAME_ASC : '+name',
@@ -3706,7 +3706,7 @@ NAME_DESC : '-name',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaPlayableEntryCompareAttribute = module.exports.KalturaPlayableEntryCompareAttribute = {
+module.exports.PlayableEntryCompareAttribute = {
 ACCESS_CONTROL_ID : 'accessControlId',
 CREATED_AT : 'createdAt',
 END_DATE : 'endDate',
@@ -3727,7 +3727,7 @@ UPDATED_AT : 'updatedAt',
 VIEWS : 'views',
 };
 
-var KalturaPlayableEntryMatchAttribute = module.exports.KalturaPlayableEntryMatchAttribute = {
+module.exports.PlayableEntryMatchAttribute = {
 ADMIN_TAGS : 'adminTags',
 CATEGORIES_IDS : 'categoriesIds',
 CREATOR_ID : 'creatorId',
@@ -3744,7 +3744,7 @@ TAGS : 'tags',
 USER_ID : 'userId',
 };
 
-var KalturaPlayableEntryOrderBy = module.exports.KalturaPlayableEntryOrderBy = {
+module.exports.PlayableEntryOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 DURATION_ASC : '+duration',
 END_DATE_ASC : '+endDate',
@@ -3777,7 +3777,7 @@ VIEWS_DESC : '-views',
 WEIGHT_DESC : '-weight',
 };
 
-var KalturaPlaybackProtocol = module.exports.KalturaPlaybackProtocol = {
+module.exports.PlaybackProtocol = {
 APPLE_HTTP : 'applehttp',
 APPLE_HTTP_TO_MC : 'applehttp_to_mc',
 AUTO : 'auto',
@@ -3794,7 +3794,7 @@ SILVER_LIGHT : 'sl',
 URL : 'url',
 };
 
-var KalturaPlaylistCompareAttribute = module.exports.KalturaPlaylistCompareAttribute = {
+module.exports.PlaylistCompareAttribute = {
 ACCESS_CONTROL_ID : 'accessControlId',
 CREATED_AT : 'createdAt',
 END_DATE : 'endDate',
@@ -3811,7 +3811,7 @@ TYPE : 'type',
 UPDATED_AT : 'updatedAt',
 };
 
-var KalturaPlaylistMatchAttribute = module.exports.KalturaPlaylistMatchAttribute = {
+module.exports.PlaylistMatchAttribute = {
 ADMIN_TAGS : 'adminTags',
 CATEGORIES_IDS : 'categoriesIds',
 CREATOR_ID : 'creatorId',
@@ -3827,7 +3827,7 @@ TAGS : 'tags',
 USER_ID : 'userId',
 };
 
-var KalturaPlaylistOrderBy = module.exports.KalturaPlaylistOrderBy = {
+module.exports.PlaylistOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 END_DATE_ASC : '+endDate',
 MODERATION_COUNT_ASC : '+moderationCount',
@@ -3852,7 +3852,7 @@ UPDATED_AT_DESC : '-updatedAt',
 WEIGHT_DESC : '-weight',
 };
 
-var KalturaQuestionCuePointOrderBy = module.exports.KalturaQuestionCuePointOrderBy = {
+module.exports.QuestionCuePointOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 PARTNER_SORT_VALUE_ASC : '+partnerSortValue',
 START_TIME_ASC : '+startTime',
@@ -3865,14 +3865,14 @@ TRIGGERED_AT_DESC : '-triggeredAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaQuizUserEntryOrderBy = module.exports.KalturaQuizUserEntryOrderBy = {
+module.exports.QuizUserEntryOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaRecordScheduleEventOrderBy = module.exports.KalturaRecordScheduleEventOrderBy = {
+module.exports.RecordScheduleEventOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 END_DATE_ASC : '+endDate',
 PRIORITY_ASC : '+priority',
@@ -3887,7 +3887,7 @@ SUMMARY_DESC : '-summary',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaRemoteDropFolderOrderBy = module.exports.KalturaRemoteDropFolderOrderBy = {
+module.exports.RemoteDropFolderOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 ID_ASC : '+id',
 NAME_ASC : '+name',
@@ -3898,17 +3898,17 @@ NAME_DESC : '-name',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaReportInterval = module.exports.KalturaReportInterval = {
+module.exports.ReportInterval = {
 DAYS : 'days',
 MONTHS : 'months',
 };
 
-var KalturaReportOrderBy = module.exports.KalturaReportOrderBy = {
+module.exports.ReportOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 CREATED_AT_DESC : '-createdAt',
 };
 
-var KalturaReportType = module.exports.KalturaReportType = {
+module.exports.ReportType = {
 QUIZ : 'quiz.QUIZ',
 QUIZ_AGGREGATE_BY_QUESTION : 'quiz.QUIZ_AGGREGATE_BY_QUESTION',
 QUIZ_USER_AGGREGATE_BY_QUESTION : 'quiz.QUIZ_USER_AGGREGATE_BY_QUESTION',
@@ -3939,14 +3939,14 @@ VPAAS_USAGE : '26',
 PARTNER_USAGE : '201',
 };
 
-var KalturaResponseProfileOrderBy = module.exports.KalturaResponseProfileOrderBy = {
+module.exports.ResponseProfileOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaRuleActionType = module.exports.KalturaRuleActionType = {
+module.exports.RuleActionType = {
 BLOCK : '1',
 PREVIEW : '2',
 LIMIT_FLAVORS : '3',
@@ -3957,7 +3957,7 @@ REQUEST_HOST_REGEX : '7',
 LIMIT_THUMBNAIL_CAPTURE : '8',
 };
 
-var KalturaScheduleEventOrderBy = module.exports.KalturaScheduleEventOrderBy = {
+module.exports.ScheduleEventOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 END_DATE_ASC : '+endDate',
 PRIORITY_ASC : '+priority',
@@ -3972,7 +3972,7 @@ SUMMARY_DESC : '-summary',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaScheduleEventRecurrenceDay = module.exports.KalturaScheduleEventRecurrenceDay = {
+module.exports.ScheduleEventRecurrenceDay = {
 FRIDAY : 'FR',
 MONDAY : 'MO',
 SATURDAY : 'SA',
@@ -3982,7 +3982,7 @@ TUESDAY : 'TU',
 WEDNESDAY : 'WE',
 };
 
-var KalturaScheduleEventRecurrenceFrequency = module.exports.KalturaScheduleEventRecurrenceFrequency = {
+module.exports.ScheduleEventRecurrenceFrequency = {
 DAILY : 'days',
 HOURLY : 'hours',
 MINUTELY : 'minutes',
@@ -3992,21 +3992,21 @@ WEEKLY : 'weeks',
 YEARLY : 'years',
 };
 
-var KalturaScheduleEventResourceOrderBy = module.exports.KalturaScheduleEventResourceOrderBy = {
+module.exports.ScheduleEventResourceOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaScheduleResourceOrderBy = module.exports.KalturaScheduleResourceOrderBy = {
+module.exports.ScheduleResourceOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaScheduledTaskProfileOrderBy = module.exports.KalturaScheduledTaskProfileOrderBy = {
+module.exports.ScheduledTaskProfileOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 ID_ASC : '+id',
 LAST_EXECUTION_STARTED_AT_ASC : '+lastExecutionStartedAt',
@@ -4017,7 +4017,7 @@ LAST_EXECUTION_STARTED_AT_DESC : '-lastExecutionStartedAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaSchemaType = module.exports.KalturaSchemaType = {
+module.exports.SchemaType = {
 BULK_UPLOAD_RESULT_XML : 'bulkUploadXml.bulkUploadResultXML',
 BULK_UPLOAD_XML : 'bulkUploadXml.bulkUploadXML',
 INGEST_API : 'cuePoint.ingestAPI',
@@ -4026,7 +4026,7 @@ DROP_FOLDER_XML : 'dropFolderXmlBulkUpload.dropFolderXml',
 SYNDICATION : 'syndication',
 };
 
-var KalturaScpDropFolderOrderBy = module.exports.KalturaScpDropFolderOrderBy = {
+module.exports.ScpDropFolderOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 ID_ASC : '+id',
 NAME_ASC : '+name',
@@ -4037,7 +4037,7 @@ NAME_DESC : '-name',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaSearchConditionComparison = module.exports.KalturaSearchConditionComparison = {
+module.exports.SearchConditionComparison = {
 EQUAL : '1',
 GREATER_THAN : '2',
 GREATER_THAN_OR_EQUAL : '3',
@@ -4046,7 +4046,7 @@ LESS_THAN_OR_EQUAL : '5',
 NOT_EQUAL : '6',
 };
 
-var KalturaServerNodeOrderBy = module.exports.KalturaServerNodeOrderBy = {
+module.exports.ServerNodeOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 HEARTBEAT_TIME_ASC : '+heartbeatTime',
 UPDATED_AT_ASC : '+updatedAt',
@@ -4055,12 +4055,12 @@ HEARTBEAT_TIME_DESC : '-heartbeatTime',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaServerNodeType = module.exports.KalturaServerNodeType = {
+module.exports.ServerNodeType = {
 WOWZA_MEDIA_SERVER : 'wowza.WOWZA_MEDIA_SERVER',
 EDGE : '1',
 };
 
-var KalturaSftpDropFolderOrderBy = module.exports.KalturaSftpDropFolderOrderBy = {
+module.exports.SftpDropFolderOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 ID_ASC : '+id',
 NAME_ASC : '+name',
@@ -4071,7 +4071,7 @@ NAME_DESC : '-name',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaShortLinkOrderBy = module.exports.KalturaShortLinkOrderBy = {
+module.exports.ShortLinkOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 EXPIRES_AT_ASC : '+expiresAt',
 UPDATED_AT_ASC : '+updatedAt',
@@ -4080,7 +4080,7 @@ EXPIRES_AT_DESC : '-expiresAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaSourceType = module.exports.KalturaSourceType = {
+module.exports.SourceType = {
 VELOCIX_LIVE : 'velocix.VELOCIX_LIVE',
 FILE : '1',
 WEBCAM : '2',
@@ -4097,7 +4097,7 @@ KALTURA_RECORDED_LIVE : '36',
 LIVE_STREAM_ONTEXTDATA_CAPTIONS : '42',
 };
 
-var KalturaSshDropFolderOrderBy = module.exports.KalturaSshDropFolderOrderBy = {
+module.exports.SshDropFolderOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 ID_ASC : '+id',
 NAME_ASC : '+name',
@@ -4108,14 +4108,14 @@ NAME_DESC : '-name',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaStorageProfileOrderBy = module.exports.KalturaStorageProfileOrderBy = {
+module.exports.StorageProfileOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaStorageProfileProtocol = module.exports.KalturaStorageProfileProtocol = {
+module.exports.StorageProfileProtocol = {
 KONTIKI : 'kontiki.KONTIKI',
 KALTURA_DC : '0',
 FTP : '1',
@@ -4125,33 +4125,33 @@ S3 : '6',
 LOCAL : '7',
 };
 
-var KalturaSwfFlavorParamsOrderBy = module.exports.KalturaSwfFlavorParamsOrderBy = {
+module.exports.SwfFlavorParamsOrderBy = {
 };
 
-var KalturaSwfFlavorParamsOutputOrderBy = module.exports.KalturaSwfFlavorParamsOutputOrderBy = {
+module.exports.SwfFlavorParamsOutputOrderBy = {
 };
 
-var KalturaSyndicationDistributionProfileOrderBy = module.exports.KalturaSyndicationDistributionProfileOrderBy = {
+module.exports.SyndicationDistributionProfileOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaSyndicationDistributionProviderOrderBy = module.exports.KalturaSyndicationDistributionProviderOrderBy = {
+module.exports.SyndicationDistributionProviderOrderBy = {
 };
 
-var KalturaSyndicationFeedEntriesOrderBy = module.exports.KalturaSyndicationFeedEntriesOrderBy = {
+module.exports.SyndicationFeedEntriesOrderBy = {
 CREATED_AT_DESC : '-createdAt',
 RECENT : 'recent',
 };
 
-var KalturaTaggedObjectType = module.exports.KalturaTaggedObjectType = {
+module.exports.TaggedObjectType = {
 ENTRY : '1',
 CATEGORY : '2',
 };
 
-var KalturaThumbAssetOrderBy = module.exports.KalturaThumbAssetOrderBy = {
+module.exports.ThumbAssetOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 DELETED_AT_ASC : '+deletedAt',
 SIZE_ASC : '+size',
@@ -4162,7 +4162,7 @@ SIZE_DESC : '-size',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaThumbCuePointOrderBy = module.exports.KalturaThumbCuePointOrderBy = {
+module.exports.ThumbCuePointOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 PARTNER_SORT_VALUE_ASC : '+partnerSortValue',
 START_TIME_ASC : '+startTime',
@@ -4175,13 +4175,13 @@ TRIGGERED_AT_DESC : '-triggeredAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaThumbParamsOrderBy = module.exports.KalturaThumbParamsOrderBy = {
+module.exports.ThumbParamsOrderBy = {
 };
 
-var KalturaThumbParamsOutputOrderBy = module.exports.KalturaThumbParamsOutputOrderBy = {
+module.exports.ThumbParamsOutputOrderBy = {
 };
 
-var KalturaTimedThumbAssetOrderBy = module.exports.KalturaTimedThumbAssetOrderBy = {
+module.exports.TimedThumbAssetOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 DELETED_AT_ASC : '+deletedAt',
 SIZE_ASC : '+size',
@@ -4192,7 +4192,7 @@ SIZE_DESC : '-size',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaTranscriptAssetOrderBy = module.exports.KalturaTranscriptAssetOrderBy = {
+module.exports.TranscriptAssetOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 DELETED_AT_ASC : '+deletedAt',
 SIZE_ASC : '+size',
@@ -4203,7 +4203,7 @@ SIZE_DESC : '-size',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaTubeMogulSyndicationFeedCategories = module.exports.KalturaTubeMogulSyndicationFeedCategories = {
+module.exports.TubeMogulSyndicationFeedCategories = {
 ANIMALS_AND_PETS : 'Animals &amp; Pets',
 ARTS_AND_ANIMATION : 'Arts &amp; Animation',
 AUTOS : 'Autos',
@@ -4221,7 +4221,7 @@ VIDEO_GAMES : 'Video Games',
 VLOGS_PEOPLE : 'Vlogs &amp; People',
 };
 
-var KalturaTubeMogulSyndicationFeedOrderBy = module.exports.KalturaTubeMogulSyndicationFeedOrderBy = {
+module.exports.TubeMogulSyndicationFeedOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 NAME_ASC : '+name',
 PLAYLIST_ID_ASC : '+playlistId',
@@ -4234,53 +4234,53 @@ TYPE_DESC : '-type',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaUiConfAdminOrderBy = module.exports.KalturaUiConfAdminOrderBy = {
+module.exports.UiConfAdminOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaUiConfOrderBy = module.exports.KalturaUiConfOrderBy = {
+module.exports.UiConfOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaUploadTokenOrderBy = module.exports.KalturaUploadTokenOrderBy = {
+module.exports.UploadTokenOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 CREATED_AT_DESC : '-createdAt',
 };
 
-var KalturaUserEntryOrderBy = module.exports.KalturaUserEntryOrderBy = {
+module.exports.UserEntryOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaUserEntryStatus = module.exports.KalturaUserEntryStatus = {
+module.exports.UserEntryStatus = {
 QUIZ_SUBMITTED : 'quiz.3',
 ACTIVE : '1',
 DELETED : '2',
 };
 
-var KalturaUserEntryType = module.exports.KalturaUserEntryType = {
+module.exports.UserEntryType = {
 QUIZ : 'quiz.QUIZ',
 };
 
-var KalturaUserLoginDataOrderBy = module.exports.KalturaUserLoginDataOrderBy = {
+module.exports.UserLoginDataOrderBy = {
 };
 
-var KalturaUserOrderBy = module.exports.KalturaUserOrderBy = {
+module.exports.UserOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 ID_ASC : '+id',
 CREATED_AT_DESC : '-createdAt',
 ID_DESC : '-id',
 };
 
-var KalturaUserRoleOrderBy = module.exports.KalturaUserRoleOrderBy = {
+module.exports.UserRoleOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 ID_ASC : '+id',
 NAME_ASC : '+name',
@@ -4291,7 +4291,7 @@ NAME_DESC : '-name',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaVideoCodec = module.exports.KalturaVideoCodec = {
+module.exports.VideoCodec = {
 NONE : '',
 APCH : 'apch',
 APCN : 'apcn',
@@ -4318,23 +4318,23 @@ WMV3 : 'wmv3',
 WVC1A : 'wvc1a',
 };
 
-var KalturaVirusScanEngineType = module.exports.KalturaVirusScanEngineType = {
+module.exports.VirusScanEngineType = {
 CLAMAV_SCAN_ENGINE : 'clamAVScanEngine.ClamAV',
 };
 
-var KalturaVirusScanProfileOrderBy = module.exports.KalturaVirusScanProfileOrderBy = {
+module.exports.VirusScanProfileOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaWidgetOrderBy = module.exports.KalturaWidgetOrderBy = {
+module.exports.WidgetOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 CREATED_AT_DESC : '-createdAt',
 };
 
-var KalturaWowzaMediaServerNodeOrderBy = module.exports.KalturaWowzaMediaServerNodeOrderBy = {
+module.exports.WowzaMediaServerNodeOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 HEARTBEAT_TIME_ASC : '+heartbeatTime',
 UPDATED_AT_ASC : '+updatedAt',
@@ -4343,12 +4343,12 @@ HEARTBEAT_TIME_DESC : '-heartbeatTime',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaYahooSyndicationFeedAdultValues = module.exports.KalturaYahooSyndicationFeedAdultValues = {
+module.exports.YahooSyndicationFeedAdultValues = {
 ADULT : 'adult',
 NON_ADULT : 'nonadult',
 };
 
-var KalturaYahooSyndicationFeedCategories = module.exports.KalturaYahooSyndicationFeedCategories = {
+module.exports.YahooSyndicationFeedCategories = {
 ACTION : 'Action',
 ANIMALS : 'Animals',
 ART_AND_ANIMATION : 'Art &amp; Animation',
@@ -4371,7 +4371,7 @@ TRANSPORTATION : 'Transportation',
 TRAVEL : 'Travel',
 };
 
-var KalturaYahooSyndicationFeedOrderBy = module.exports.KalturaYahooSyndicationFeedOrderBy = {
+module.exports.YahooSyndicationFeedOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 NAME_ASC : '+name',
 PLAYLIST_ID_ASC : '+playlistId',
@@ -4384,15 +4384,15 @@ TYPE_DESC : '-type',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaYoutubeApiDistributionProfileOrderBy = module.exports.KalturaYoutubeApiDistributionProfileOrderBy = {
+module.exports.YoutubeApiDistributionProfileOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-var KalturaYoutubeApiDistributionProviderOrderBy = module.exports.KalturaYoutubeApiDistributionProviderOrderBy = {
+module.exports.YoutubeApiDistributionProviderOrderBy = {
 };
 
-var KalturaDrmSchemeName = module.exports.KalturaDrmSchemeName = {
+module.exports.DrmSchemeName = {
 };

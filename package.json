@@ -24,10 +24,8 @@
     "url": "https://github.com/kaltura/server/issues"
   },
   "dependencies": {
-    "crypto": "*",
+    "md5": "*",
     "http": "*",
-    "path": "*",
-    "url": "*",
-    "utils": "*"
+    "url": "*"
   }
 }

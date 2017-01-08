@@ -3,7 +3,12 @@ node_js:
       - "6"
       - "5"
       - "4"
+<<<<<<< HEAD
 script: npm test
+=======
+#before_install: npm install --dev
+script: npm test 
+>>>>>>> 80d760ec9e82130bea8114dc9ffa74a74ecf590a
 notifications:
   email:
     recipients:

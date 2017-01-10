@@ -13,4 +13,6 @@ npm install kaltura
 ####Instead, please submit pulls to:
 
 https://github.com/kaltura/clients-generator
-code is under sources/node
+code is under sources/node2
+
+[![Build Status](https://travis-ci.org/kaltura/KalturaGeneratedAPIClientsNodeJS.svg?branch=master)](https://travis-ci.org/kaltura/KalturaGeneratedAPIClientsNodeJS)

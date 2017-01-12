@@ -8500,7 +8500,7 @@ class scheduleEvent{
 	
 	/**
 	 * List conflicting events for resourcesIds by event's dates.
-	 * @param resourceIds string 
+	 * @param resourceIds string comma separated
 	 * @param scheduleEvent ScheduleEvent 
 	 * @return array
 	 */

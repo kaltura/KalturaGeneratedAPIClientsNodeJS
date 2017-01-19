@@ -24395,6 +24395,21 @@ class TranscriptAsset extends AttachmentAsset{
 	 setLanguage(language) {
 	 	this.language = language;
 	 }
+	
+	/**
+	 * The provider of the transcript
+	 * @return string
+	 */
+	 getProviderType() {
+	 	return this.providerType;
+	 }
+	
+	/**
+	 * @param providerType string The provider of the transcript
+	 */
+	 setProviderType(providerType) {
+	 	this.providerType = providerType;
+	 }
 }
 module.exports.TranscriptAsset = TranscriptAsset;
 

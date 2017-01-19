@@ -1243,6 +1243,7 @@ module.exports.AttachmentType = {
 TEXT : '1',
 MEDIA : '2',
 DOCUMENT : '3',
+JSON : '4',
 };
 
 module.exports.AudioCodec = {
@@ -4168,6 +4169,11 @@ CREATED_AT_DESC : '-createdAt',
 DELETED_AT_DESC : '-deletedAt',
 SIZE_DESC : '-size',
 UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.TranscriptProviderType = {
+CIELO24 : 'cielo24.Cielo24',
+VOICEBASE : 'voicebase.Voicebase',
 };
 
 module.exports.TubeMogulSyndicationFeedCategories = {

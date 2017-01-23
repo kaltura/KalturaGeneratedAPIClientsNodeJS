@@ -1268,6 +1268,7 @@ CODE_CUE_POINTS : 'codeCuePoint.CODE_CUE_POINTS',
 THUMB_CUE_POINTS : 'thumbCuePoint.THUMB_CUE_POINTS',
 USERS : '1',
 CATEGORIES : '2',
+CHILD_ENTRIES : '3',
 };
 
 module.exports.BaseEntryCompareAttribute = {
@@ -2352,36 +2353,6 @@ UPDATED_AT_DESC : '-updatedAt',
 };
 
 module.exports.FacebookDistributionProviderOrderBy = {
-};
-
-module.exports.FeedDropFolderFileOrderBy = {
-CREATED_AT_ASC : '+createdAt',
-FILE_NAME_ASC : '+fileName',
-FILE_SIZE_ASC : '+fileSize',
-FILE_SIZE_LAST_SET_AT_ASC : '+fileSizeLastSetAt',
-ID_ASC : '+id',
-PARSED_FLAVOR_ASC : '+parsedFlavor',
-PARSED_SLUG_ASC : '+parsedSlug',
-UPDATED_AT_ASC : '+updatedAt',
-CREATED_AT_DESC : '-createdAt',
-FILE_NAME_DESC : '-fileName',
-FILE_SIZE_DESC : '-fileSize',
-FILE_SIZE_LAST_SET_AT_DESC : '-fileSizeLastSetAt',
-ID_DESC : '-id',
-PARSED_FLAVOR_DESC : '-parsedFlavor',
-PARSED_SLUG_DESC : '-parsedSlug',
-UPDATED_AT_DESC : '-updatedAt',
-};
-
-module.exports.FeedDropFolderOrderBy = {
-CREATED_AT_ASC : '+createdAt',
-ID_ASC : '+id',
-NAME_ASC : '+name',
-UPDATED_AT_ASC : '+updatedAt',
-CREATED_AT_DESC : '-createdAt',
-ID_DESC : '-id',
-NAME_DESC : '-name',
-UPDATED_AT_DESC : '-updatedAt',
 };
 
 module.exports.FileAssetObjectType = {
@@ -4137,9 +4108,6 @@ CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
-};
-
-module.exports.SyndicationDistributionProviderOrderBy = {
 };
 
 module.exports.SyndicationFeedEntriesOrderBy = {

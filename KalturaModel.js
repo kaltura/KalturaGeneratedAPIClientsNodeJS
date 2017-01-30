@@ -1922,6 +1922,48 @@ module.exports.AssetParamsResourceContainer = AssetParamsResourceContainer;
 /**
  *
  */
+class AssetServeOptions extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaAssetServeOptions';
+	}
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getDownload() {
+	 	return this.download;
+	 }
+	
+	/**
+	 * @param download bool 
+	 */
+	 setDownload(download) {
+	 	this.download = download;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getReferrer() {
+	 	return this.referrer;
+	 }
+	
+	/**
+	 * @param referrer string 
+	 */
+	 setReferrer(referrer) {
+	 	this.referrer = referrer;
+	 }
+}
+module.exports.AssetServeOptions = AssetServeOptions;
+
+/**
+ *
+ */
 class AttachmentAsset extends Asset{
 	
 	constructor(object = null) {
@@ -24302,48 +24344,6 @@ module.exports.Tag = Tag;
 /**
  *
  */
-class ThumbnailServeOptions extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaThumbnailServeOptions';
-	}
-	
-	/**
-	 * 
-	 * @return bool
-	 */
-	 getDownload() {
-	 	return this.download;
-	 }
-	
-	/**
-	 * @param download bool 
-	 */
-	 setDownload(download) {
-	 	this.download = download;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getReferrer() {
-	 	return this.referrer;
-	 }
-	
-	/**
-	 * @param referrer string 
-	 */
-	 setReferrer(referrer) {
-	 	this.referrer = referrer;
-	 }
-}
-module.exports.ThumbnailServeOptions = ThumbnailServeOptions;
-
-/**
- *
- */
 class TranscriptAsset extends AttachmentAsset{
 	
 	constructor(object = null) {
@@ -28301,6 +28301,18 @@ class AttachmentAssetListResponse extends ListResponse{
 	 }
 }
 module.exports.AttachmentAssetListResponse = AttachmentAssetListResponse;
+
+/**
+ *
+ */
+class AttachmentServeOptions extends AssetServeOptions{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaAttachmentServeOptions';
+	}
+}
+module.exports.AttachmentServeOptions = AttachmentServeOptions;
 
 /**
  *
@@ -44271,6 +44283,18 @@ module.exports.ThumbParamsListResponse = ThumbParamsListResponse;
 /**
  *
  */
+class ThumbnailServeOptions extends AssetServeOptions{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaThumbnailServeOptions';
+	}
+}
+module.exports.ThumbnailServeOptions = ThumbnailServeOptions;
+
+/**
+ *
+ */
 class TrackEntryListResponse extends ListResponse{
 	
 	constructor(object = null) {
@@ -56991,6 +57015,30 @@ module.exports.FacebookDistributionProviderBaseFilter = FacebookDistributionProv
 /**
  *
  */
+class FeedDropFolderBaseFilter extends DropFolderFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaFeedDropFolderBaseFilter';
+	}
+}
+module.exports.FeedDropFolderBaseFilter = FeedDropFolderBaseFilter;
+
+/**
+ *
+ */
+class FeedDropFolderFileBaseFilter extends DropFolderFileFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaFeedDropFolderFileBaseFilter';
+	}
+}
+module.exports.FeedDropFolderFileBaseFilter = FeedDropFolderFileBaseFilter;
+
+/**
+ *
+ */
 class FileAssetFilter extends FileAssetBaseFilter{
 	
 	constructor(object = null) {
@@ -60177,6 +60225,30 @@ module.exports.FacebookDistributionProviderFilter = FacebookDistributionProvider
 /**
  *
  */
+class FeedDropFolderFileFilter extends FeedDropFolderFileBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaFeedDropFolderFileFilter';
+	}
+}
+module.exports.FeedDropFolderFileFilter = FeedDropFolderFileFilter;
+
+/**
+ *
+ */
+class FeedDropFolderFilter extends FeedDropFolderBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaFeedDropFolderFilter';
+	}
+}
+module.exports.FeedDropFolderFilter = FeedDropFolderFilter;
+
+/**
+ *
+ */
 class FlavorAssetBaseFilter extends AssetFilter{
 	
 	constructor(object = null) {
@@ -60512,6 +60584,18 @@ class SyndicationDistributionProfileFilter extends SyndicationDistributionProfil
 	}
 }
 module.exports.SyndicationDistributionProfileFilter = SyndicationDistributionProfileFilter;
+
+/**
+ *
+ */
+class SyndicationDistributionProviderFilter extends SyndicationDistributionProviderBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaSyndicationDistributionProviderFilter';
+	}
+}
+module.exports.SyndicationDistributionProviderFilter = SyndicationDistributionProviderFilter;
 
 /**
  *

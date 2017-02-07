@@ -16126,6 +16126,21 @@ class LiveEntry extends MediaEntry{
 	 getLiveStatus() {
 	 	return this.liveStatus;
 	 }
+	
+	/**
+	 * The chunk duration value in milliseconds
+	 * @return int
+	 */
+	 getSegmentDuration() {
+	 	return this.segmentDuration;
+	 }
+	
+	/**
+	 * @param segmentDuration int The chunk duration value in milliseconds
+	 */
+	 setSegmentDuration(segmentDuration) {
+	 	this.segmentDuration = segmentDuration;
+	 }
 }
 module.exports.LiveEntry = LiveEntry;
 
@@ -30801,6 +30816,21 @@ class Cielo24JobProviderData extends IntegrationJobProviderData{
 	 */
 	 setReplaceMediaContent(replaceMediaContent) {
 	 	this.replaceMediaContent = replaceMediaContent;
+	 }
+	
+	/**
+	 * additional parameters to send to Cielo24
+	 * @return string
+	 */
+	 getAdditionalParameters() {
+	 	return this.additionalParameters;
+	 }
+	
+	/**
+	 * @param additionalParameters string additional parameters to send to Cielo24
+	 */
+	 setAdditionalParameters(additionalParameters) {
+	 	this.additionalParameters = additionalParameters;
 	 }
 }
 module.exports.Cielo24JobProviderData = Cielo24JobProviderData;
@@ -57015,30 +57045,6 @@ module.exports.FacebookDistributionProviderBaseFilter = FacebookDistributionProv
 /**
  *
  */
-class FeedDropFolderBaseFilter extends DropFolderFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFeedDropFolderBaseFilter';
-	}
-}
-module.exports.FeedDropFolderBaseFilter = FeedDropFolderBaseFilter;
-
-/**
- *
- */
-class FeedDropFolderFileBaseFilter extends DropFolderFileFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFeedDropFolderFileBaseFilter';
-	}
-}
-module.exports.FeedDropFolderFileBaseFilter = FeedDropFolderFileBaseFilter;
-
-/**
- *
- */
 class FileAssetFilter extends FileAssetBaseFilter{
 	
 	constructor(object = null) {
@@ -60225,30 +60231,6 @@ module.exports.FacebookDistributionProviderFilter = FacebookDistributionProvider
 /**
  *
  */
-class FeedDropFolderFileFilter extends FeedDropFolderFileBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFeedDropFolderFileFilter';
-	}
-}
-module.exports.FeedDropFolderFileFilter = FeedDropFolderFileFilter;
-
-/**
- *
- */
-class FeedDropFolderFilter extends FeedDropFolderBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFeedDropFolderFilter';
-	}
-}
-module.exports.FeedDropFolderFilter = FeedDropFolderFilter;
-
-/**
- *
- */
 class FlavorAssetBaseFilter extends AssetFilter{
 	
 	constructor(object = null) {
@@ -60584,18 +60566,6 @@ class SyndicationDistributionProfileFilter extends SyndicationDistributionProfil
 	}
 }
 module.exports.SyndicationDistributionProfileFilter = SyndicationDistributionProfileFilter;
-
-/**
- *
- */
-class SyndicationDistributionProviderFilter extends SyndicationDistributionProviderBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaSyndicationDistributionProviderFilter';
-	}
-}
-module.exports.SyndicationDistributionProviderFilter = SyndicationDistributionProviderFilter;
 
 /**
  *

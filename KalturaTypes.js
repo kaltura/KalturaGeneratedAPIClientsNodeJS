@@ -1269,6 +1269,7 @@ THUMB_CUE_POINTS : 'thumbCuePoint.THUMB_CUE_POINTS',
 USERS : '1',
 CATEGORIES : '2',
 CHILD_ENTRIES : '3',
+ACCESS_CONTROL : '4',
 };
 
 module.exports.BaseEntryCompareAttribute = {

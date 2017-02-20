@@ -7511,7 +7511,9 @@ module.exports.bulk = bulk;
  * The available service actions:
  * @action add Allows you to add a new KalturaDropFolder object.
  * @action delete Mark the KalturaDropFolder object as deleted.
+ * @action freeExclusiveDropFolder freeExclusive KalturaDropFolder object.
  * @action get Retrieve a KalturaDropFolder object by ID.
+ * @action getExclusiveDropFolder getExclusive KalturaDropFolder object.
  * @action list List KalturaDropFolder objects.
  * @action update Update an existing KalturaDropFolder object.
  */
@@ -7540,6 +7542,23 @@ class dropFolder{
 	};
 	
 	/**
+	 * freeExclusive KalturaDropFolder object.
+	 * @param dropFolderId int 
+	 * @param status int 
+	 * @param errorCode string  (optional, default: null)
+	 * @param errorDescription string  (optional, default: null)
+	 * @return KalturaDropFolder
+	 */
+	static freeExclusiveDropFolder(dropFolderId, status, errorCode = null, errorDescription = null){
+		let kparams = {};
+		kparams.dropFolderId = dropFolderId;
+		kparams.status = status;
+		kparams.errorCode = errorCode;
+		kparams.errorDescription = errorDescription;
+		return new kaltura.RequestBuilder('dropfolder_dropfolder', 'freeExclusiveDropFolder', kparams);
+	};
+	
+	/**
 	 * Retrieve a KalturaDropFolder object by ID.
 	 * @param dropFolderId int 
 	 * @return KalturaDropFolder
@@ -7548,6 +7567,19 @@ class dropFolder{
 		let kparams = {};
 		kparams.dropFolderId = dropFolderId;
 		return new kaltura.RequestBuilder('dropfolder_dropfolder', 'get', kparams);
+	};
+	
+	/**
+	 * getExclusive KalturaDropFolder object.
+	 * @param tag string 
+	 * @param maxTime int 
+	 * @return KalturaDropFolder
+	 */
+	static getExclusiveDropFolder(tag, maxTime){
+		let kparams = {};
+		kparams.tag = tag;
+		kparams.maxTime = maxTime;
+		return new kaltura.RequestBuilder('dropfolder_dropfolder', 'getExclusiveDropFolder', kparams);
 	};
 	
 	/**

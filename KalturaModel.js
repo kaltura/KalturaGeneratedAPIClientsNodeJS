@@ -6928,6 +6928,36 @@ class ConversionProfile extends kaltura.BaseObject{
 	 setCollectionTags(collectionTags) {
 	 	this.collectionTags = collectionTags;
 	 }
+	
+	/**
+	 * JSON string with array of "condition,profile-id" pairs
+	 * @return string
+	 */
+	 getConditionalProfiles() {
+	 	return this.conditionalProfiles;
+	 }
+	
+	/**
+	 * @param conditionalProfiles string JSON string with array of "condition,profile-id" pairs
+	 */
+	 setConditionalProfiles(conditionalProfiles) {
+	 	this.conditionalProfiles = conditionalProfiles;
+	 }
+	
+	/**
+	 * When set, the ExtractMedia job should detect the source file GOP using this value as the max calculated period
+	 * @return int
+	 */
+	 getDetectGOP() {
+	 	return this.detectGOP;
+	 }
+	
+	/**
+	 * @param detectGOP int When set, the ExtractMedia job should detect the source file GOP using this value as the max calculated period
+	 */
+	 setDetectGOP(detectGOP) {
+	 	this.detectGOP = detectGOP;
+	 }
 }
 module.exports.ConversionProfile = ConversionProfile;
 
@@ -12611,6 +12641,21 @@ class FlavorParams extends AssetParams{
 	 * 
 	 * @return int
 	 */
+	 getForcedKeyFramesMode() {
+	 	return this.forcedKeyFramesMode;
+	 }
+	
+	/**
+	 * @param forcedKeyFramesMode int 
+	 */
+	 setForcedKeyFramesMode(forcedKeyFramesMode) {
+	 	this.forcedKeyFramesMode = forcedKeyFramesMode;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
 	 getIsCropIMX() {
 	 	return this.isCropIMX;
 	 }
@@ -14919,6 +14964,21 @@ class MediaInfo extends kaltura.BaseObject{
 	 */
 	 setComplexityValue(complexityValue) {
 	 	this.complexityValue = complexityValue;
+	 }
+	
+	/**
+	 * 
+	 * @return float
+	 */
+	 getMaxGOP() {
+	 	return this.maxGOP;
+	 }
+	
+	/**
+	 * @param maxGOP float 
+	 */
+	 setMaxGOP(maxGOP) {
+	 	this.maxGOP = maxGOP;
 	 }
 }
 module.exports.MediaInfo = MediaInfo;
@@ -20213,6 +20273,33 @@ class Playlist extends BaseEntry{
 	 }
 }
 module.exports.Playlist = Playlist;
+
+/**
+ *
+ */
+class PushEventNotificationParameter extends EventNotificationParameter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaPushEventNotificationParameter';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getQueueKeyToken() {
+	 	return this.queueKeyToken;
+	 }
+	
+	/**
+	 * @param queueKeyToken string 
+	 */
+	 setQueueKeyToken(queueKeyToken) {
+	 	this.queueKeyToken = queueKeyToken;
+	 }
+}
+module.exports.PushEventNotificationParameter = PushEventNotificationParameter;
 
 /**
  *
@@ -50407,6 +50494,21 @@ class ExtractMediaJobData extends ConvartableJobData{
 	 */
 	 setDestDataFilePath(destDataFilePath) {
 	 	this.destDataFilePath = destDataFilePath;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getDetectGOP() {
+	 	return this.detectGOP;
+	 }
+	
+	/**
+	 * @param detectGOP int 
+	 */
+	 setDetectGOP(detectGOP) {
+	 	this.detectGOP = detectGOP;
 	 }
 }
 module.exports.ExtractMediaJobData = ExtractMediaJobData;

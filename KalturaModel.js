@@ -45465,6 +45465,21 @@ class UrlTokenizerKs extends UrlTokenizer{
 	 setUsePath(usePath) {
 	 	this.usePath = usePath;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getAdditionalUris() {
+	 	return this.additionalUris;
+	 }
+	
+	/**
+	 * @param additionalUris string 
+	 */
+	 setAdditionalUris(additionalUris) {
+	 	this.additionalUris = additionalUris;
+	 }
 }
 module.exports.UrlTokenizerKs = UrlTokenizerKs;
 

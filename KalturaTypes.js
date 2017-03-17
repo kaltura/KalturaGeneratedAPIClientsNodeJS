@@ -1498,6 +1498,7 @@ module.exports.CaptionType = {
 SRT : '1',
 DFXP : '2',
 WEBVTT : '3',
+CAP : '4',
 };
 
 module.exports.CategoryEntryAdvancedOrderBy = {

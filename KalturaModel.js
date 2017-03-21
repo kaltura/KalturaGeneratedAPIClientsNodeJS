@@ -4355,6 +4355,13 @@ class Partner extends kaltura.BaseObject{
 	 }
 	
 	/**
+	 * @param partnerParentId int 
+	 */
+	 setPartnerParentId(partnerParentId) {
+	 	this.partnerParentId = partnerParentId;
+	 }
+	
+	/**
 	 * 
 	 * @return string
 	 */
@@ -38211,6 +38218,36 @@ class GenericSyndicationFeed extends BaseSyndicationFeed{
 	 */
 	 setFeedLandingPage(feedLandingPage) {
 	 	this.feedLandingPage = feedLandingPage;
+	 }
+	
+	/**
+	 * entry filter
+	 * @return BaseEntryFilter
+	 */
+	 getEntryFilter() {
+	 	return this.entryFilter;
+	 }
+	
+	/**
+	 * @param entryFilter BaseEntryFilter entry filter
+	 */
+	 setEntryFilter(entryFilter) {
+	 	this.entryFilter = entryFilter;
+	 }
+	
+	/**
+	 * page size
+	 * @return int
+	 */
+	 getPageSize() {
+	 	return this.pageSize;
+	 }
+	
+	/**
+	 * @param pageSize int page size
+	 */
+	 setPageSize(pageSize) {
+	 	this.pageSize = pageSize;
 	 }
 }
 module.exports.GenericSyndicationFeed = GenericSyndicationFeed;

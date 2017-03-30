@@ -56515,6 +56515,18 @@ module.exports.ConfigurableDistributionProfileBaseFilter = ConfigurableDistribut
 /**
  *
  */
+class ConstantXsltSyndicationFeed extends GenericXsltSyndicationFeed{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaConstantXsltSyndicationFeed';
+	}
+}
+module.exports.ConstantXsltSyndicationFeed = ConstantXsltSyndicationFeed;
+
+/**
+ *
+ */
 class ConversionProfileFilter extends ConversionProfileBaseFilter{
 	
 	constructor(object = null) {
@@ -58579,6 +58591,21 @@ class ServerFileResource extends DataCenterContentResource{
 	 setLocalFilePath(localFilePath) {
 	 	this.localFilePath = localFilePath;
 	 }
+	
+	/**
+	 * Should keep original file (false = mv, true = cp)
+	 * @return bool
+	 */
+	 getKeepOriginalFile() {
+	 	return this.keepOriginalFile;
+	 }
+	
+	/**
+	 * @param keepOriginalFile bool Should keep original file (false = mv, true = cp)
+	 */
+	 setKeepOriginalFile(keepOriginalFile) {
+	 	this.keepOriginalFile = keepOriginalFile;
+	 }
 }
 module.exports.ServerFileResource = ServerFileResource;
 
@@ -60619,6 +60646,18 @@ module.exports.LocationScheduleResourceBaseFilter = LocationScheduleResourceBase
 /**
  *
  */
+class OperaSyndicationFeed extends ConstantXsltSyndicationFeed{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaOperaSyndicationFeed';
+	}
+}
+module.exports.OperaSyndicationFeed = OperaSyndicationFeed;
+
+/**
+ *
+ */
 class PlaylistBaseFilter extends BaseEntryFilter{
 	
 	constructor(object = null) {
@@ -60708,6 +60747,18 @@ class RemoteDropFolderFilter extends RemoteDropFolderBaseFilter{
 	}
 }
 module.exports.RemoteDropFolderFilter = RemoteDropFolderFilter;
+
+/**
+ *
+ */
+class RokuSyndicationFeed extends ConstantXsltSyndicationFeed{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaRokuSyndicationFeed';
+	}
+}
+module.exports.RokuSyndicationFeed = RokuSyndicationFeed;
 
 /**
  *

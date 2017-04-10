@@ -47127,6 +47127,36 @@ class AssetParamsBaseFilter extends RelatedFilter{
 	
 	/**
 	 * 
+	 * @return int
+	 */
+	 getIdEqual() {
+	 	return this.idEqual;
+	 }
+	
+	/**
+	 * @param idEqual int 
+	 */
+	 setIdEqual(idEqual) {
+	 	this.idEqual = idEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getIdIn() {
+	 	return this.idIn;
+	 }
+	
+	/**
+	 * @param idIn string 
+	 */
+	 setIdIn(idIn) {
+	 	this.idIn = idIn;
+	 }
+	
+	/**
+	 * 
 	 * @return string
 	 */
 	 getSystemNameEqual() {
@@ -57211,30 +57241,6 @@ module.exports.FacebookDistributionProviderBaseFilter = FacebookDistributionProv
 /**
  *
  */
-class FeedDropFolderBaseFilter extends DropFolderFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFeedDropFolderBaseFilter';
-	}
-}
-module.exports.FeedDropFolderBaseFilter = FeedDropFolderBaseFilter;
-
-/**
- *
- */
-class FeedDropFolderFileBaseFilter extends DropFolderFileFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFeedDropFolderFileBaseFilter';
-	}
-}
-module.exports.FeedDropFolderFileBaseFilter = FeedDropFolderFileBaseFilter;
-
-/**
- *
- */
 class FileAssetFilter extends FileAssetBaseFilter{
 	
 	constructor(object = null) {
@@ -60436,30 +60442,6 @@ module.exports.FacebookDistributionProviderFilter = FacebookDistributionProvider
 /**
  *
  */
-class FeedDropFolderFileFilter extends FeedDropFolderFileBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFeedDropFolderFileFilter';
-	}
-}
-module.exports.FeedDropFolderFileFilter = FeedDropFolderFileFilter;
-
-/**
- *
- */
-class FeedDropFolderFilter extends FeedDropFolderBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFeedDropFolderFilter';
-	}
-}
-module.exports.FeedDropFolderFilter = FeedDropFolderFilter;
-
-/**
- *
- */
 class FlavorAssetBaseFilter extends AssetFilter{
 	
 	constructor(object = null) {
@@ -60819,18 +60801,6 @@ class SyndicationDistributionProfileFilter extends SyndicationDistributionProfil
 	}
 }
 module.exports.SyndicationDistributionProfileFilter = SyndicationDistributionProfileFilter;
-
-/**
- *
- */
-class SyndicationDistributionProviderFilter extends SyndicationDistributionProviderBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaSyndicationDistributionProviderFilter';
-	}
-}
-module.exports.SyndicationDistributionProviderFilter = SyndicationDistributionProviderFilter;
 
 /**
  *

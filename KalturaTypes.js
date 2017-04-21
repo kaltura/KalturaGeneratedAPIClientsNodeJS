@@ -8,7 +8,7 @@
 // to do with audio, video, and animation what Wiki platfroms allow them to do with
 // text.
 //
-// Copyright (C) 2006-2016  Kaltura Inc.
+// Copyright (C) 2006-2017  Kaltura Inc.
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as
@@ -129,6 +129,11 @@ ACTIVE : 1,
 PENDING : 2,
 NOT_ACTIVE : 3,
 DELETED : 4,
+};
+
+module.exports.ChinaCacheAlgorithmType = {
+SHA1 : 1,
+SHA256 : 2,
 };
 
 module.exports.CommercialUseType = {
@@ -1255,6 +1260,7 @@ AACHE : 'aache',
 AC3 : 'ac3',
 AMRNB : 'amrnb',
 COPY : 'copy',
+EAC3 : 'eac3',
 MP3 : 'mp3',
 MPEG2 : 'mpeg2',
 PCM : 'pcm',

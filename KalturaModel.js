@@ -8,7 +8,7 @@
 // to do with audio, video, and animation what Wiki platfroms allow them to do with
 // text.
 //
-// Copyright (C) 2006-2016  Kaltura Inc.
+// Copyright (C) 2006-2017  Kaltura Inc.
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as
@@ -4103,6 +4103,13 @@ class Partner extends kaltura.BaseObject{
 	 */
 	 getPartnerPackage() {
 	 	return this.partnerPackage;
+	 }
+	
+	/**
+	 * @param partnerPackage int 
+	 */
+	 setPartnerPackage(partnerPackage) {
+	 	this.partnerPackage = partnerPackage;
 	 }
 	
 	/**
@@ -45423,6 +45430,48 @@ class UrlTokenizerBitGravity extends UrlTokenizer{
 	 }
 }
 module.exports.UrlTokenizerBitGravity = UrlTokenizerBitGravity;
+
+/**
+ *
+ */
+class UrlTokenizerChinaCache extends UrlTokenizer{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaUrlTokenizerChinaCache';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getAlgorithmId() {
+	 	return this.algorithmId;
+	 }
+	
+	/**
+	 * @param algorithmId int 
+	 */
+	 setAlgorithmId(algorithmId) {
+	 	this.algorithmId = algorithmId;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getKeyId() {
+	 	return this.keyId;
+	 }
+	
+	/**
+	 * @param keyId int 
+	 */
+	 setKeyId(keyId) {
+	 	this.keyId = keyId;
+	 }
+}
+module.exports.UrlTokenizerChinaCache = UrlTokenizerChinaCache;
 
 /**
  *

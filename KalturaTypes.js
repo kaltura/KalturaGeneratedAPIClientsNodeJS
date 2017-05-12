@@ -353,6 +353,7 @@ module.exports.EntryModerationStatus = {
 PENDING_MODERATION : 1,
 APPROVED : 2,
 REJECTED : 3,
+DELETED : 4,
 FLAGGED_FOR_REVIEW : 5,
 AUTO_APPROVED : 6,
 };
@@ -1608,6 +1609,7 @@ OR_OPERATOR : '11',
 HASH : '12',
 DELIVERY_PROFILE : '13',
 ACTIVE_EDGE_VALIDATE : '14',
+ANONYMOUS_IP : '15',
 };
 
 module.exports.ConfigurableDistributionProfileOrderBy = {
@@ -2494,6 +2496,7 @@ UPDATED_AT_DESC : '-updatedAt',
 
 module.exports.GeoCoderType = {
 KALTURA : '1',
+MAX_MIND : '2',
 };
 
 module.exports.GoogleSyndicationFeedAdultValues = {
@@ -3413,6 +3416,11 @@ MAIL_TYPE_LIVE_REPORT_EXPORT_FAILURE : '131',
 MAIL_TYPE_LIVE_REPORT_EXPORT_ABORT : '132',
 };
 
+module.exports.MatchConditionType = {
+MATCH_ANY : '1',
+MATCH_ALL : '2',
+};
+
 module.exports.MediaEntryCompareAttribute = {
 ACCESS_CONTROL_ID : 'accessControlId',
 CREATED_AT : 'createdAt',
@@ -3638,6 +3646,7 @@ CONVERT_ENTRY_FLAVORS : '4',
 DELETE_LOCAL_CONTENT : '5',
 STORAGE_EXPORT : '6',
 MODIFY_ENTRY : '7',
+MAIL_NOTIFICATION : '8',
 };
 
 module.exports.PartnerOrderBy = {
@@ -4238,6 +4247,12 @@ CREATED_AT_ASC : '+createdAt',
 CREATED_AT_DESC : '-createdAt',
 };
 
+module.exports.UserEntryExtendedStatus = {
+PLAYBACK_COMPLETE : 'viewHistory.PLAYBACK_COMPLETE',
+PLAYBACK_STARTED : 'viewHistory.PLAYBACK_STARTED',
+VIEWED : 'viewHistory.VIEWED',
+};
+
 module.exports.UserEntryOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
@@ -4253,6 +4268,7 @@ DELETED : '2',
 
 module.exports.UserEntryType = {
 QUIZ : 'quiz.QUIZ',
+VIEW_HISTORY : 'viewHistory.VIEW_HISTORY',
 };
 
 module.exports.UserLoginDataOrderBy = {

@@ -2307,15 +2307,17 @@ class liveChannel{
 	 * @param resource DataCenterContentResource 
 	 * @param duration float in seconds
 	 * @param recordedEntryId string Recorded entry Id (optional, default: null)
+	 * @param flavorParamsId int Recorded entry Id (optional, default: null)
 	 * @return KalturaLiveEntry
 	 */
-	static setRecordedContent(entryId, mediaServerIndex, resource, duration, recordedEntryId = null){
+	static setRecordedContent(entryId, mediaServerIndex, resource, duration, recordedEntryId = null, flavorParamsId = null){
 		let kparams = {};
 		kparams.entryId = entryId;
 		kparams.mediaServerIndex = mediaServerIndex;
 		kparams.resource = resource;
 		kparams.duration = duration;
 		kparams.recordedEntryId = recordedEntryId;
+		kparams.flavorParamsId = flavorParamsId;
 		return new kaltura.RequestBuilder('livechannel', 'setRecordedContent', kparams);
 	};
 	
@@ -2658,15 +2660,17 @@ class liveStream{
 	 * @param resource DataCenterContentResource 
 	 * @param duration float in seconds
 	 * @param recordedEntryId string Recorded entry Id (optional, default: null)
+	 * @param flavorParamsId int Recorded entry Id (optional, default: null)
 	 * @return KalturaLiveEntry
 	 */
-	static setRecordedContent(entryId, mediaServerIndex, resource, duration, recordedEntryId = null){
+	static setRecordedContent(entryId, mediaServerIndex, resource, duration, recordedEntryId = null, flavorParamsId = null){
 		let kparams = {};
 		kparams.entryId = entryId;
 		kparams.mediaServerIndex = mediaServerIndex;
 		kparams.resource = resource;
 		kparams.duration = duration;
 		kparams.recordedEntryId = recordedEntryId;
+		kparams.flavorParamsId = flavorParamsId;
 		return new kaltura.RequestBuilder('livestream', 'setRecordedContent', kparams);
 	};
 	
@@ -5364,6 +5368,7 @@ module.exports.uploadToken = uploadToken;
  *Class definition for the Kaltura service: userEntry.
  * The available service actions:
  * @action add Adds a user_entry to the Kaltura DB.
+ * @action bulkDelete .
  * @action delete .
  * @action get .
  * @action list .
@@ -5381,6 +5386,17 @@ class userEntry{
 		let kparams = {};
 		kparams.userEntry = userEntry;
 		return new kaltura.RequestBuilder('userentry', 'add', kparams);
+	};
+	
+	/**
+	 * .
+	 * @param filter UserEntryFilter 
+	 * @return int
+	 */
+	static bulkDelete(filter){
+		let kparams = {};
+		kparams.filter = filter;
+		return new kaltura.RequestBuilder('userentry', 'bulkDelete', kparams);
 	};
 	
 	/**
@@ -8522,7 +8538,7 @@ class scheduleEvent{
 	 * List conflicting events for resourcesIds by event's dates.
 	 * @param resourceIds string comma separated
 	 * @param scheduleEvent ScheduleEvent 
-	 * @return array
+	 * @return KalturaScheduleEventListResponse
 	 */
 	static getConflicts(resourceIds, scheduleEvent){
 		let kparams = {};

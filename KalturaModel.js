@@ -17382,6 +17382,21 @@ class LiveStreamParams extends kaltura.BaseObject{
 	 setKeyFrameInterval(keyFrameInterval) {
 	 	this.keyFrameInterval = keyFrameInterval;
 	 }
+	
+	/**
+	 * Live stream's language
+	 * @return string
+	 */
+	 getLanguage() {
+	 	return this.language;
+	 }
+	
+	/**
+	 * @param language string Live stream's language
+	 */
+	 setLanguage(language) {
+	 	this.language = language;
+	 }
 }
 module.exports.LiveStreamParams = LiveStreamParams;
 
@@ -25704,6 +25719,21 @@ class UserEntry extends kaltura.BaseObject{
 	 */
 	 getType() {
 	 	return this.type;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getExtendedStatus() {
+	 	return this.extendedStatus;
+	 }
+	
+	/**
+	 * @param extendedStatus string 
+	 */
+	 setExtendedStatus(extendedStatus) {
+	 	this.extendedStatus = extendedStatus;
 	 }
 }
 module.exports.UserEntry = UserEntry;
@@ -40107,6 +40137,63 @@ module.exports.MailJobData = MailJobData;
 /**
  *
  */
+class MailNotificationObjectTask extends ObjectTask{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaMailNotificationObjectTask';
+	}
+	
+	/**
+	 * The mail to send the notification to
+	 * @return string
+	 */
+	 getMailAddress() {
+	 	return this.mailAddress;
+	 }
+	
+	/**
+	 * @param mailAddress string The mail to send the notification to
+	 */
+	 setMailAddress(mailAddress) {
+	 	this.mailAddress = mailAddress;
+	 }
+	
+	/**
+	 * The message to send in the notification mail
+	 * @return string
+	 */
+	 getMessage() {
+	 	return this.message;
+	 }
+	
+	/**
+	 * @param message string The message to send in the notification mail
+	 */
+	 setMessage(message) {
+	 	this.message = message;
+	 }
+	
+	/**
+	 * Send the mail to each user
+	 * @return bool
+	 */
+	 getSendToUsers() {
+	 	return this.sendToUsers;
+	 }
+	
+	/**
+	 * @param sendToUsers bool Send the mail to each user
+	 */
+	 setSendToUsers(sendToUsers) {
+	 	this.sendToUsers = sendToUsers;
+	 }
+}
+module.exports.MailNotificationObjectTask = MailNotificationObjectTask;
+
+/**
+ *
+ */
 class MatchCondition extends Condition{
 	
 	constructor(object = null) {
@@ -40127,6 +40214,21 @@ class MatchCondition extends Condition{
 	 */
 	 setValues(values) {
 	 	this.values = values;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getMatchType() {
+	 	return this.matchType;
+	 }
+	
+	/**
+	 * @param matchType string 
+	 */
+	 setMatchType(matchType) {
+	 	this.matchType = matchType;
 	 }
 }
 module.exports.MatchCondition = MatchCondition;
@@ -45928,6 +46030,180 @@ module.exports.VarPartnerUsageTotalItem = VarPartnerUsageTotalItem;
 /**
  *
  */
+class ViewHistoryUserEntry extends UserEntry{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaViewHistoryUserEntry';
+	}
+	
+	/**
+	 * Playback context
+	 * @return string
+	 */
+	 getPlaybackContext() {
+	 	return this.playbackContext;
+	 }
+	
+	/**
+	 * @param playbackContext string Playback context
+	 */
+	 setPlaybackContext(playbackContext) {
+	 	this.playbackContext = playbackContext;
+	 }
+	
+	/**
+	 * Last playback time reached by user
+	 * @return int
+	 */
+	 getLastTimeReached() {
+	 	return this.lastTimeReached;
+	 }
+	
+	/**
+	 * @param lastTimeReached int Last playback time reached by user
+	 */
+	 setLastTimeReached(lastTimeReached) {
+	 	this.lastTimeReached = lastTimeReached;
+	 }
+}
+module.exports.ViewHistoryUserEntry = ViewHistoryUserEntry;
+
+/**
+ *
+ */
+class ViewHistoryUserEntryAdvancedFilter extends SearchItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaViewHistoryUserEntryAdvancedFilter';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getIdEqual() {
+	 	return this.idEqual;
+	 }
+	
+	/**
+	 * @param idEqual string 
+	 */
+	 setIdEqual(idEqual) {
+	 	this.idEqual = idEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getIdIn() {
+	 	return this.idIn;
+	 }
+	
+	/**
+	 * @param idIn string 
+	 */
+	 setIdIn(idIn) {
+	 	this.idIn = idIn;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getUserIdEqual() {
+	 	return this.userIdEqual;
+	 }
+	
+	/**
+	 * @param userIdEqual string 
+	 */
+	 setUserIdEqual(userIdEqual) {
+	 	this.userIdEqual = userIdEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getUserIdIn() {
+	 	return this.userIdIn;
+	 }
+	
+	/**
+	 * @param userIdIn string 
+	 */
+	 setUserIdIn(userIdIn) {
+	 	this.userIdIn = userIdIn;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getUpdatedAtGreaterThanOrEqual() {
+	 	return this.updatedAtGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * @param updatedAtGreaterThanOrEqual string 
+	 */
+	 setUpdatedAtGreaterThanOrEqual(updatedAtGreaterThanOrEqual) {
+	 	this.updatedAtGreaterThanOrEqual = updatedAtGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getUpdatedAtLessThanOrEqual() {
+	 	return this.updatedAtLessThanOrEqual;
+	 }
+	
+	/**
+	 * @param updatedAtLessThanOrEqual string 
+	 */
+	 setUpdatedAtLessThanOrEqual(updatedAtLessThanOrEqual) {
+	 	this.updatedAtLessThanOrEqual = updatedAtLessThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getExtendedStatusEqual() {
+	 	return this.extendedStatusEqual;
+	 }
+	
+	/**
+	 * @param extendedStatusEqual string 
+	 */
+	 setExtendedStatusEqual(extendedStatusEqual) {
+	 	this.extendedStatusEqual = extendedStatusEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getExtendedStatusIn() {
+	 	return this.extendedStatusIn;
+	 }
+	
+	/**
+	 * @param extendedStatusIn string 
+	 */
+	 setExtendedStatusIn(extendedStatusIn) {
+	 	this.extendedStatusIn = extendedStatusIn;
+	 }
+}
+module.exports.ViewHistoryUserEntryAdvancedFilter = ViewHistoryUserEntryAdvancedFilter;
+
+/**
+ *
+ */
 class VirusScanJobData extends JobData{
 	
 	constructor(object = null) {
@@ -47151,6 +47427,33 @@ class AkamaiUniversalProvisionJobData extends ProvisionJobData{
 	 }
 }
 module.exports.AkamaiUniversalProvisionJobData = AkamaiUniversalProvisionJobData;
+
+/**
+ *
+ */
+class AnonymousIPCondition extends MatchCondition{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaAnonymousIPCondition';
+	}
+	
+	/**
+	 * The ip geo coder engine to be used
+	 * @return string
+	 */
+	 getGeoCoderType() {
+	 	return this.geoCoderType;
+	 }
+	
+	/**
+	 * @param geoCoderType string The ip geo coder engine to be used
+	 */
+	 setGeoCoderType(geoCoderType) {
+	 	this.geoCoderType = geoCoderType;
+	 }
+}
+module.exports.AnonymousIPCondition = AnonymousIPCondition;
 
 /**
  *
@@ -55577,6 +55880,51 @@ class UserEntryBaseFilter extends RelatedFilter{
 	 setTypeEqual(typeEqual) {
 	 	this.typeEqual = typeEqual;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getExtendedStatusEqual() {
+	 	return this.extendedStatusEqual;
+	 }
+	
+	/**
+	 * @param extendedStatusEqual string 
+	 */
+	 setExtendedStatusEqual(extendedStatusEqual) {
+	 	this.extendedStatusEqual = extendedStatusEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getExtendedStatusIn() {
+	 	return this.extendedStatusIn;
+	 }
+	
+	/**
+	 * @param extendedStatusIn string 
+	 */
+	 setExtendedStatusIn(extendedStatusIn) {
+	 	this.extendedStatusIn = extendedStatusIn;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getExtendedStatusNotIn() {
+	 	return this.extendedStatusNotIn;
+	 }
+	
+	/**
+	 * @param extendedStatusNotIn string 
+	 */
+	 setExtendedStatusNotIn(extendedStatusNotIn) {
+	 	this.extendedStatusNotIn = extendedStatusNotIn;
+	 }
 }
 module.exports.UserEntryBaseFilter = UserEntryBaseFilter;
 
@@ -56341,6 +56689,33 @@ class AmazonS3StorageProfileBaseFilter extends StorageProfileFilter{
 	}
 }
 module.exports.AmazonS3StorageProfileBaseFilter = AmazonS3StorageProfileBaseFilter;
+
+/**
+ *
+ */
+class AnonymousIPContextField extends StringField{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaAnonymousIPContextField';
+	}
+	
+	/**
+	 * The ip geo coder engine to be used
+	 * @return string
+	 */
+	 getGeoCoderType() {
+	 	return this.geoCoderType;
+	 }
+	
+	/**
+	 * @param geoCoderType string The ip geo coder engine to be used
+	 */
+	 setGeoCoderType(geoCoderType) {
+	 	this.geoCoderType = geoCoderType;
+	 }
+}
+module.exports.AnonymousIPContextField = AnonymousIPContextField;
 
 /**
  *
@@ -59018,6 +59393,36 @@ class UserEntryFilter extends UserEntryBaseFilter{
 	 setIsAnonymous(isAnonymous) {
 	 	this.isAnonymous = isAnonymous;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getPrivacyContextEqual() {
+	 	return this.privacyContextEqual;
+	 }
+	
+	/**
+	 * @param privacyContextEqual string 
+	 */
+	 setPrivacyContextEqual(privacyContextEqual) {
+	 	this.privacyContextEqual = privacyContextEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getPrivacyContextIn() {
+	 	return this.privacyContextIn;
+	 }
+	
+	/**
+	 * @param privacyContextIn string 
+	 */
+	 setPrivacyContextIn(privacyContextIn) {
+	 	this.privacyContextIn = privacyContextIn;
+	 }
 }
 module.exports.UserEntryFilter = UserEntryFilter;
 
@@ -61120,6 +61525,18 @@ class UiConfAdminFilter extends UiConfAdminBaseFilter{
 	}
 }
 module.exports.UiConfAdminFilter = UiConfAdminFilter;
+
+/**
+ *
+ */
+class ViewHistoryUserEntryFilter extends UserEntryFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaViewHistoryUserEntryFilter';
+	}
+}
+module.exports.ViewHistoryUserEntryFilter = ViewHistoryUserEntryFilter;
 
 /**
  *

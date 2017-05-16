@@ -2029,349 +2029,6 @@ module.exports.AttachmentAsset = AttachmentAsset;
 /**
  *
  */
-class AuditTrailInfo extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaAuditTrailInfo';
-	}
-}
-module.exports.AuditTrailInfo = AuditTrailInfo;
-
-/**
- *
- */
-class AuditTrail extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaAuditTrail';
-	}
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getId() {
-	 	return this.id;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getCreatedAt() {
-	 	return this.createdAt;
-	 }
-	
-	/**
-	 * Indicates when the data was parsed
-	 * @return int
-	 */
-	 getParsedAt() {
-	 	return this.parsedAt;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getStatus() {
-	 	return this.status;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getAuditObjectType() {
-	 	return this.auditObjectType;
-	 }
-	
-	/**
-	 * @param auditObjectType string 
-	 */
-	 setAuditObjectType(auditObjectType) {
-	 	this.auditObjectType = auditObjectType;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getObjectId() {
-	 	return this.objectId;
-	 }
-	
-	/**
-	 * @param objectId string 
-	 */
-	 setObjectId(objectId) {
-	 	this.objectId = objectId;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getRelatedObjectId() {
-	 	return this.relatedObjectId;
-	 }
-	
-	/**
-	 * @param relatedObjectId string 
-	 */
-	 setRelatedObjectId(relatedObjectId) {
-	 	this.relatedObjectId = relatedObjectId;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getRelatedObjectType() {
-	 	return this.relatedObjectType;
-	 }
-	
-	/**
-	 * @param relatedObjectType string 
-	 */
-	 setRelatedObjectType(relatedObjectType) {
-	 	this.relatedObjectType = relatedObjectType;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getEntryId() {
-	 	return this.entryId;
-	 }
-	
-	/**
-	 * @param entryId string 
-	 */
-	 setEntryId(entryId) {
-	 	this.entryId = entryId;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getMasterPartnerId() {
-	 	return this.masterPartnerId;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getPartnerId() {
-	 	return this.partnerId;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getRequestId() {
-	 	return this.requestId;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getUserId() {
-	 	return this.userId;
-	 }
-	
-	/**
-	 * @param userId string 
-	 */
-	 setUserId(userId) {
-	 	this.userId = userId;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getAction() {
-	 	return this.action;
-	 }
-	
-	/**
-	 * @param action string 
-	 */
-	 setAction(action) {
-	 	this.action = action;
-	 }
-	
-	/**
-	 * 
-	 * @return AuditTrailInfo
-	 */
-	 getData() {
-	 	return this.data;
-	 }
-	
-	/**
-	 * @param data AuditTrailInfo 
-	 */
-	 setData(data) {
-	 	this.data = data;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getKs() {
-	 	return this.ks;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getContext() {
-	 	return this.context;
-	 }
-	
-	/**
-	 * The API service and action that called and caused this audit
-	 * @return string
-	 */
-	 getEntryPoint() {
-	 	return this.entryPoint;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getServerName() {
-	 	return this.serverName;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getIpAddress() {
-	 	return this.ipAddress;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getUserAgent() {
-	 	return this.userAgent;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getClientTag() {
-	 	return this.clientTag;
-	 }
-	
-	/**
-	 * @param clientTag string 
-	 */
-	 setClientTag(clientTag) {
-	 	this.clientTag = clientTag;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getDescription() {
-	 	return this.description;
-	 }
-	
-	/**
-	 * @param description string 
-	 */
-	 setDescription(description) {
-	 	this.description = description;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getErrorDescription() {
-	 	return this.errorDescription;
-	 }
-}
-module.exports.AuditTrail = AuditTrail;
-
-/**
- *
- */
-class AuditTrailChangeItem extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaAuditTrailChangeItem';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getDescriptor() {
-	 	return this.descriptor;
-	 }
-	
-	/**
-	 * @param descriptor string 
-	 */
-	 setDescriptor(descriptor) {
-	 	this.descriptor = descriptor;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getOldValue() {
-	 	return this.oldValue;
-	 }
-	
-	/**
-	 * @param oldValue string 
-	 */
-	 setOldValue(oldValue) {
-	 	this.oldValue = oldValue;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getNewValue() {
-	 	return this.newValue;
-	 }
-	
-	/**
-	 * @param newValue string 
-	 */
-	 setNewValue(newValue) {
-	 	this.newValue = newValue;
-	 }
-}
-module.exports.AuditTrailChangeItem = AuditTrailChangeItem;
-
-/**
- *
- */
 class OperationAttributes extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -5394,213 +5051,6 @@ module.exports.BulkUploadObjectData = BulkUploadObjectData;
 /**
  *
  */
-class BusinessProcessCase extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaBusinessProcessCase';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getId() {
-	 	return this.id;
-	 }
-	
-	/**
-	 * @param id string 
-	 */
-	 setId(id) {
-	 	this.id = id;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getBusinessProcessId() {
-	 	return this.businessProcessId;
-	 }
-	
-	/**
-	 * @param businessProcessId string 
-	 */
-	 setBusinessProcessId(businessProcessId) {
-	 	this.businessProcessId = businessProcessId;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getBusinessProcessStartNotificationTemplateId() {
-	 	return this.businessProcessStartNotificationTemplateId;
-	 }
-	
-	/**
-	 * @param businessProcessStartNotificationTemplateId int 
-	 */
-	 setBusinessProcessStartNotificationTemplateId(businessProcessStartNotificationTemplateId) {
-	 	this.businessProcessStartNotificationTemplateId = businessProcessStartNotificationTemplateId;
-	 }
-	
-	/**
-	 * 
-	 * @return bool
-	 */
-	 getSuspended() {
-	 	return this.suspended;
-	 }
-	
-	/**
-	 * @param suspended bool 
-	 */
-	 setSuspended(suspended) {
-	 	this.suspended = suspended;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getActivityId() {
-	 	return this.activityId;
-	 }
-	
-	/**
-	 * @param activityId string 
-	 */
-	 setActivityId(activityId) {
-	 	this.activityId = activityId;
-	 }
-}
-module.exports.BusinessProcessCase = BusinessProcessCase;
-
-/**
- *
- */
-class BusinessProcessServer extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaBusinessProcessServer';
-	}
-	
-	/**
-	 * Auto generated identifier
-	 * @return int
-	 */
-	 getId() {
-	 	return this.id;
-	 }
-	
-	/**
-	 * Server creation date as Unix timestamp (In seconds)
-	 * @return int
-	 */
-	 getCreatedAt() {
-	 	return this.createdAt;
-	 }
-	
-	/**
-	 * Server update date as Unix timestamp (In seconds)
-	 * @return int
-	 */
-	 getUpdatedAt() {
-	 	return this.updatedAt;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getPartnerId() {
-	 	return this.partnerId;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getName() {
-	 	return this.name;
-	 }
-	
-	/**
-	 * @param name string 
-	 */
-	 setName(name) {
-	 	this.name = name;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSystemName() {
-	 	return this.systemName;
-	 }
-	
-	/**
-	 * @param systemName string 
-	 */
-	 setSystemName(systemName) {
-	 	this.systemName = systemName;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getDescription() {
-	 	return this.description;
-	 }
-	
-	/**
-	 * @param description string 
-	 */
-	 setDescription(description) {
-	 	this.description = description;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getStatus() {
-	 	return this.status;
-	 }
-	
-	/**
-	 * The type of the server, this is auto filled by the derived server object
-	 * @return string
-	 */
-	 getType() {
-	 	return this.type;
-	 }
-	
-	/**
-	 * The dc of the server
-	 * @return int
-	 */
-	 getDc() {
-	 	return this.dc;
-	 }
-	
-	/**
-	 * @param dc int The dc of the server
-	 */
-	 setDc(dc) {
-	 	this.dc = dc;
-	 }
-}
-module.exports.BusinessProcessServer = BusinessProcessServer;
-
-/**
- *
- */
 class CEError extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -7865,123 +7315,6 @@ module.exports.Coordinate = Coordinate;
 /**
  *
  */
-class DailymotionDistributionCaptionInfo extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaDailymotionDistributionCaptionInfo';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getLanguage() {
-	 	return this.language;
-	 }
-	
-	/**
-	 * @param language string 
-	 */
-	 setLanguage(language) {
-	 	this.language = language;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFilePath() {
-	 	return this.filePath;
-	 }
-	
-	/**
-	 * @param filePath string 
-	 */
-	 setFilePath(filePath) {
-	 	this.filePath = filePath;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getRemoteId() {
-	 	return this.remoteId;
-	 }
-	
-	/**
-	 * @param remoteId string 
-	 */
-	 setRemoteId(remoteId) {
-	 	this.remoteId = remoteId;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getAction() {
-	 	return this.action;
-	 }
-	
-	/**
-	 * @param action int 
-	 */
-	 setAction(action) {
-	 	this.action = action;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getVersion() {
-	 	return this.version;
-	 }
-	
-	/**
-	 * @param version string 
-	 */
-	 setVersion(version) {
-	 	this.version = version;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getAssetId() {
-	 	return this.assetId;
-	 }
-	
-	/**
-	 * @param assetId string 
-	 */
-	 setAssetId(assetId) {
-	 	this.assetId = assetId;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getFormat() {
-	 	return this.format;
-	 }
-	
-	/**
-	 * @param format int 
-	 */
-	 setFormat(format) {
-	 	this.format = format;
-	 }
-}
-module.exports.DailymotionDistributionCaptionInfo = DailymotionDistributionCaptionInfo;
-
-/**
- *
- */
 class DataEntry extends BaseEntry{
 	
 	constructor(object = null) {
@@ -9843,489 +9176,6 @@ class DocumentEntry extends BaseEntry{
 	 }
 }
 module.exports.DocumentEntry = DocumentEntry;
-
-/**
- *
- */
-class DrmLicenseAccessDetails extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaDrmLicenseAccessDetails';
-	}
-	
-	/**
-	 * Drm policy name
-	 * @return string
-	 */
-	 getPolicy() {
-	 	return this.policy;
-	 }
-	
-	/**
-	 * @param policy string Drm policy name
-	 */
-	 setPolicy(policy) {
-	 	this.policy = policy;
-	 }
-	
-	/**
-	 * movie duration in seconds
-	 * @return int
-	 */
-	 getDuration() {
-	 	return this.duration;
-	 }
-	
-	/**
-	 * @param duration int movie duration in seconds
-	 */
-	 setDuration(duration) {
-	 	this.duration = duration;
-	 }
-	
-	/**
-	 * playback window in seconds
-	 * @return int
-	 */
-	 getAbsolute_duration() {
-	 	return this.absolute_duration;
-	 }
-	
-	/**
-	 * @param absolute_duration int playback window in seconds
-	 */
-	 setAbsolute_duration(absolute_duration) {
-	 	this.absolute_duration = absolute_duration;
-	 }
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getLicenseParams() {
-	 	return this.licenseParams;
-	 }
-	
-	/**
-	 * @param licenseParams array 
-	 */
-	 setLicenseParams(licenseParams) {
-	 	this.licenseParams = licenseParams;
-	 }
-}
-module.exports.DrmLicenseAccessDetails = DrmLicenseAccessDetails;
-
-/**
- *
- */
-class PluginData extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaPluginData';
-	}
-}
-module.exports.PluginData = PluginData;
-
-/**
- *
- */
-class DrmPlaybackPluginData extends PluginData{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaDrmPlaybackPluginData';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getScheme() {
-	 	return this.scheme;
-	 }
-	
-	/**
-	 * @param scheme string 
-	 */
-	 setScheme(scheme) {
-	 	this.scheme = scheme;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getLicenseURL() {
-	 	return this.licenseURL;
-	 }
-	
-	/**
-	 * @param licenseURL string 
-	 */
-	 setLicenseURL(licenseURL) {
-	 	this.licenseURL = licenseURL;
-	 }
-}
-module.exports.DrmPlaybackPluginData = DrmPlaybackPluginData;
-
-/**
- *
- */
-class DrmPolicy extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaDrmPolicy';
-	}
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getId() {
-	 	return this.id;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getPartnerId() {
-	 	return this.partnerId;
-	 }
-	
-	/**
-	 * @param partnerId int 
-	 */
-	 setPartnerId(partnerId) {
-	 	this.partnerId = partnerId;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getName() {
-	 	return this.name;
-	 }
-	
-	/**
-	 * @param name string 
-	 */
-	 setName(name) {
-	 	this.name = name;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSystemName() {
-	 	return this.systemName;
-	 }
-	
-	/**
-	 * @param systemName string 
-	 */
-	 setSystemName(systemName) {
-	 	this.systemName = systemName;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getDescription() {
-	 	return this.description;
-	 }
-	
-	/**
-	 * @param description string 
-	 */
-	 setDescription(description) {
-	 	this.description = description;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getProvider() {
-	 	return this.provider;
-	 }
-	
-	/**
-	 * @param provider string 
-	 */
-	 setProvider(provider) {
-	 	this.provider = provider;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getStatus() {
-	 	return this.status;
-	 }
-	
-	/**
-	 * @param status int 
-	 */
-	 setStatus(status) {
-	 	this.status = status;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getScenario() {
-	 	return this.scenario;
-	 }
-	
-	/**
-	 * @param scenario string 
-	 */
-	 setScenario(scenario) {
-	 	this.scenario = scenario;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getLicenseType() {
-	 	return this.licenseType;
-	 }
-	
-	/**
-	 * @param licenseType string 
-	 */
-	 setLicenseType(licenseType) {
-	 	this.licenseType = licenseType;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getLicenseExpirationPolicy() {
-	 	return this.licenseExpirationPolicy;
-	 }
-	
-	/**
-	 * @param licenseExpirationPolicy int 
-	 */
-	 setLicenseExpirationPolicy(licenseExpirationPolicy) {
-	 	this.licenseExpirationPolicy = licenseExpirationPolicy;
-	 }
-	
-	/**
-	 * Duration in days the license is effective
-	 * @return int
-	 */
-	 getDuration() {
-	 	return this.duration;
-	 }
-	
-	/**
-	 * @param duration int Duration in days the license is effective
-	 */
-	 setDuration(duration) {
-	 	this.duration = duration;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getCreatedAt() {
-	 	return this.createdAt;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getUpdatedAt() {
-	 	return this.updatedAt;
-	 }
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getLicenseParams() {
-	 	return this.licenseParams;
-	 }
-	
-	/**
-	 * @param licenseParams array 
-	 */
-	 setLicenseParams(licenseParams) {
-	 	this.licenseParams = licenseParams;
-	 }
-}
-module.exports.DrmPolicy = DrmPolicy;
-
-/**
- *
- */
-class DrmProfile extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaDrmProfile';
-	}
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getId() {
-	 	return this.id;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getPartnerId() {
-	 	return this.partnerId;
-	 }
-	
-	/**
-	 * @param partnerId int 
-	 */
-	 setPartnerId(partnerId) {
-	 	this.partnerId = partnerId;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getName() {
-	 	return this.name;
-	 }
-	
-	/**
-	 * @param name string 
-	 */
-	 setName(name) {
-	 	this.name = name;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getDescription() {
-	 	return this.description;
-	 }
-	
-	/**
-	 * @param description string 
-	 */
-	 setDescription(description) {
-	 	this.description = description;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getProvider() {
-	 	return this.provider;
-	 }
-	
-	/**
-	 * @param provider string 
-	 */
-	 setProvider(provider) {
-	 	this.provider = provider;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getStatus() {
-	 	return this.status;
-	 }
-	
-	/**
-	 * @param status int 
-	 */
-	 setStatus(status) {
-	 	this.status = status;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getLicenseServerUrl() {
-	 	return this.licenseServerUrl;
-	 }
-	
-	/**
-	 * @param licenseServerUrl string 
-	 */
-	 setLicenseServerUrl(licenseServerUrl) {
-	 	this.licenseServerUrl = licenseServerUrl;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getDefaultPolicy() {
-	 	return this.defaultPolicy;
-	 }
-	
-	/**
-	 * @param defaultPolicy string 
-	 */
-	 setDefaultPolicy(defaultPolicy) {
-	 	this.defaultPolicy = defaultPolicy;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getCreatedAt() {
-	 	return this.createdAt;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getUpdatedAt() {
-	 	return this.updatedAt;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSigningKey() {
-	 	return this.signingKey;
-	 }
-	
-	/**
-	 * @param signingKey string 
-	 */
-	 setSigningKey(signingKey) {
-	 	this.signingKey = signingKey;
-	 }
-}
-module.exports.DrmProfile = DrmProfile;
 
 /**
  *
@@ -14145,135 +12995,6 @@ module.exports.FlavorParamsOutput = FlavorParamsOutput;
 /**
  *
  */
-class FreewheelDistributionAssetPath extends DistributionJobProviderData{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFreewheelDistributionAssetPath';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getPath() {
-	 	return this.path;
-	 }
-	
-	/**
-	 * @param path string 
-	 */
-	 setPath(path) {
-	 	this.path = path;
-	 }
-}
-module.exports.FreewheelDistributionAssetPath = FreewheelDistributionAssetPath;
-
-/**
- *
- */
-class FtpDistributionFile extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFtpDistributionFile';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getAssetId() {
-	 	return this.assetId;
-	 }
-	
-	/**
-	 * @param assetId string 
-	 */
-	 setAssetId(assetId) {
-	 	this.assetId = assetId;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFilename() {
-	 	return this.filename;
-	 }
-	
-	/**
-	 * @param filename string 
-	 */
-	 setFilename(filename) {
-	 	this.filename = filename;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getContents() {
-	 	return this.contents;
-	 }
-	
-	/**
-	 * @param contents string 
-	 */
-	 setContents(contents) {
-	 	this.contents = contents;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getLocalFilePath() {
-	 	return this.localFilePath;
-	 }
-	
-	/**
-	 * @param localFilePath string 
-	 */
-	 setLocalFilePath(localFilePath) {
-	 	this.localFilePath = localFilePath;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getVersion() {
-	 	return this.version;
-	 }
-	
-	/**
-	 * @param version string 
-	 */
-	 setVersion(version) {
-	 	this.version = version;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getHash() {
-	 	return this.hash;
-	 }
-	
-	/**
-	 * @param hash string 
-	 */
-	 setHash(hash) {
-	 	this.hash = hash;
-	 }
-}
-module.exports.FtpDistributionFile = FtpDistributionFile;
-
-/**
- *
- */
 class SchedulerStatus extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -15705,6 +14426,1308 @@ class IntegrationJobTriggerData extends kaltura.BaseObject{
 	}
 }
 module.exports.IntegrationJobTriggerData = IntegrationJobTriggerData;
+
+/**
+ *
+ */
+class FileSyncListResponse extends ListResponse{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaFileSyncListResponse';
+	}
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getObjects() {
+	 	return this.objects;
+	 }
+}
+module.exports.FileSyncListResponse = FileSyncListResponse;
+
+/**
+ *
+ */
+class BatchJobListResponse extends ListResponse{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaBatchJobListResponse';
+	}
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getObjects() {
+	 	return this.objects;
+	 }
+}
+module.exports.BatchJobListResponse = BatchJobListResponse;
+
+/**
+ *
+ */
+class MediaInfo extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaMediaInfo';
+	}
+	
+	/**
+	 * The id of the media info
+	 * @return int
+	 */
+	 getId() {
+	 	return this.id;
+	 }
+	
+	/**
+	 * The id of the related flavor asset
+	 * @return string
+	 */
+	 getFlavorAssetId() {
+	 	return this.flavorAssetId;
+	 }
+	
+	/**
+	 * @param flavorAssetId string The id of the related flavor asset
+	 */
+	 setFlavorAssetId(flavorAssetId) {
+	 	this.flavorAssetId = flavorAssetId;
+	 }
+	
+	/**
+	 * The file size
+	 * @return int
+	 */
+	 getFileSize() {
+	 	return this.fileSize;
+	 }
+	
+	/**
+	 * @param fileSize int The file size
+	 */
+	 setFileSize(fileSize) {
+	 	this.fileSize = fileSize;
+	 }
+	
+	/**
+	 * The container format
+	 * @return string
+	 */
+	 getContainerFormat() {
+	 	return this.containerFormat;
+	 }
+	
+	/**
+	 * @param containerFormat string The container format
+	 */
+	 setContainerFormat(containerFormat) {
+	 	this.containerFormat = containerFormat;
+	 }
+	
+	/**
+	 * The container id
+	 * @return string
+	 */
+	 getContainerId() {
+	 	return this.containerId;
+	 }
+	
+	/**
+	 * @param containerId string The container id
+	 */
+	 setContainerId(containerId) {
+	 	this.containerId = containerId;
+	 }
+	
+	/**
+	 * The container profile
+	 * @return string
+	 */
+	 getContainerProfile() {
+	 	return this.containerProfile;
+	 }
+	
+	/**
+	 * @param containerProfile string The container profile
+	 */
+	 setContainerProfile(containerProfile) {
+	 	this.containerProfile = containerProfile;
+	 }
+	
+	/**
+	 * The container duration
+	 * @return int
+	 */
+	 getContainerDuration() {
+	 	return this.containerDuration;
+	 }
+	
+	/**
+	 * @param containerDuration int The container duration
+	 */
+	 setContainerDuration(containerDuration) {
+	 	this.containerDuration = containerDuration;
+	 }
+	
+	/**
+	 * The container bit rate
+	 * @return int
+	 */
+	 getContainerBitRate() {
+	 	return this.containerBitRate;
+	 }
+	
+	/**
+	 * @param containerBitRate int The container bit rate
+	 */
+	 setContainerBitRate(containerBitRate) {
+	 	this.containerBitRate = containerBitRate;
+	 }
+	
+	/**
+	 * The video format
+	 * @return string
+	 */
+	 getVideoFormat() {
+	 	return this.videoFormat;
+	 }
+	
+	/**
+	 * @param videoFormat string The video format
+	 */
+	 setVideoFormat(videoFormat) {
+	 	this.videoFormat = videoFormat;
+	 }
+	
+	/**
+	 * The video codec id
+	 * @return string
+	 */
+	 getVideoCodecId() {
+	 	return this.videoCodecId;
+	 }
+	
+	/**
+	 * @param videoCodecId string The video codec id
+	 */
+	 setVideoCodecId(videoCodecId) {
+	 	this.videoCodecId = videoCodecId;
+	 }
+	
+	/**
+	 * The video duration
+	 * @return int
+	 */
+	 getVideoDuration() {
+	 	return this.videoDuration;
+	 }
+	
+	/**
+	 * @param videoDuration int The video duration
+	 */
+	 setVideoDuration(videoDuration) {
+	 	this.videoDuration = videoDuration;
+	 }
+	
+	/**
+	 * The video bit rate
+	 * @return int
+	 */
+	 getVideoBitRate() {
+	 	return this.videoBitRate;
+	 }
+	
+	/**
+	 * @param videoBitRate int The video bit rate
+	 */
+	 setVideoBitRate(videoBitRate) {
+	 	this.videoBitRate = videoBitRate;
+	 }
+	
+	/**
+	 * The video bit rate mode
+	 * @return int
+	 */
+	 getVideoBitRateMode() {
+	 	return this.videoBitRateMode;
+	 }
+	
+	/**
+	 * @param videoBitRateMode int The video bit rate mode
+	 */
+	 setVideoBitRateMode(videoBitRateMode) {
+	 	this.videoBitRateMode = videoBitRateMode;
+	 }
+	
+	/**
+	 * The video width
+	 * @return int
+	 */
+	 getVideoWidth() {
+	 	return this.videoWidth;
+	 }
+	
+	/**
+	 * @param videoWidth int The video width
+	 */
+	 setVideoWidth(videoWidth) {
+	 	this.videoWidth = videoWidth;
+	 }
+	
+	/**
+	 * The video height
+	 * @return int
+	 */
+	 getVideoHeight() {
+	 	return this.videoHeight;
+	 }
+	
+	/**
+	 * @param videoHeight int The video height
+	 */
+	 setVideoHeight(videoHeight) {
+	 	this.videoHeight = videoHeight;
+	 }
+	
+	/**
+	 * The video frame rate
+	 * @return float
+	 */
+	 getVideoFrameRate() {
+	 	return this.videoFrameRate;
+	 }
+	
+	/**
+	 * @param videoFrameRate float The video frame rate
+	 */
+	 setVideoFrameRate(videoFrameRate) {
+	 	this.videoFrameRate = videoFrameRate;
+	 }
+	
+	/**
+	 * The video display aspect ratio (dar)
+	 * @return float
+	 */
+	 getVideoDar() {
+	 	return this.videoDar;
+	 }
+	
+	/**
+	 * @param videoDar float The video display aspect ratio (dar)
+	 */
+	 setVideoDar(videoDar) {
+	 	this.videoDar = videoDar;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getVideoRotation() {
+	 	return this.videoRotation;
+	 }
+	
+	/**
+	 * @param videoRotation int 
+	 */
+	 setVideoRotation(videoRotation) {
+	 	this.videoRotation = videoRotation;
+	 }
+	
+	/**
+	 * The audio format
+	 * @return string
+	 */
+	 getAudioFormat() {
+	 	return this.audioFormat;
+	 }
+	
+	/**
+	 * @param audioFormat string The audio format
+	 */
+	 setAudioFormat(audioFormat) {
+	 	this.audioFormat = audioFormat;
+	 }
+	
+	/**
+	 * The audio codec id
+	 * @return string
+	 */
+	 getAudioCodecId() {
+	 	return this.audioCodecId;
+	 }
+	
+	/**
+	 * @param audioCodecId string The audio codec id
+	 */
+	 setAudioCodecId(audioCodecId) {
+	 	this.audioCodecId = audioCodecId;
+	 }
+	
+	/**
+	 * The audio duration
+	 * @return int
+	 */
+	 getAudioDuration() {
+	 	return this.audioDuration;
+	 }
+	
+	/**
+	 * @param audioDuration int The audio duration
+	 */
+	 setAudioDuration(audioDuration) {
+	 	this.audioDuration = audioDuration;
+	 }
+	
+	/**
+	 * The audio bit rate
+	 * @return int
+	 */
+	 getAudioBitRate() {
+	 	return this.audioBitRate;
+	 }
+	
+	/**
+	 * @param audioBitRate int The audio bit rate
+	 */
+	 setAudioBitRate(audioBitRate) {
+	 	this.audioBitRate = audioBitRate;
+	 }
+	
+	/**
+	 * The audio bit rate mode
+	 * @return int
+	 */
+	 getAudioBitRateMode() {
+	 	return this.audioBitRateMode;
+	 }
+	
+	/**
+	 * @param audioBitRateMode int The audio bit rate mode
+	 */
+	 setAudioBitRateMode(audioBitRateMode) {
+	 	this.audioBitRateMode = audioBitRateMode;
+	 }
+	
+	/**
+	 * The number of audio channels
+	 * @return int
+	 */
+	 getAudioChannels() {
+	 	return this.audioChannels;
+	 }
+	
+	/**
+	 * @param audioChannels int The number of audio channels
+	 */
+	 setAudioChannels(audioChannels) {
+	 	this.audioChannels = audioChannels;
+	 }
+	
+	/**
+	 * The audio sampling rate
+	 * @return int
+	 */
+	 getAudioSamplingRate() {
+	 	return this.audioSamplingRate;
+	 }
+	
+	/**
+	 * @param audioSamplingRate int The audio sampling rate
+	 */
+	 setAudioSamplingRate(audioSamplingRate) {
+	 	this.audioSamplingRate = audioSamplingRate;
+	 }
+	
+	/**
+	 * The audio resolution
+	 * @return int
+	 */
+	 getAudioResolution() {
+	 	return this.audioResolution;
+	 }
+	
+	/**
+	 * @param audioResolution int The audio resolution
+	 */
+	 setAudioResolution(audioResolution) {
+	 	this.audioResolution = audioResolution;
+	 }
+	
+	/**
+	 * The writing library
+	 * @return string
+	 */
+	 getWritingLib() {
+	 	return this.writingLib;
+	 }
+	
+	/**
+	 * @param writingLib string The writing library
+	 */
+	 setWritingLib(writingLib) {
+	 	this.writingLib = writingLib;
+	 }
+	
+	/**
+	 * The data as returned by the mediainfo command line
+	 * @return string
+	 */
+	 getRawData() {
+	 	return this.rawData;
+	 }
+	
+	/**
+	 * @param rawData string The data as returned by the mediainfo command line
+	 */
+	 setRawData(rawData) {
+	 	this.rawData = rawData;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getMultiStreamInfo() {
+	 	return this.multiStreamInfo;
+	 }
+	
+	/**
+	 * @param multiStreamInfo string 
+	 */
+	 setMultiStreamInfo(multiStreamInfo) {
+	 	this.multiStreamInfo = multiStreamInfo;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getScanType() {
+	 	return this.scanType;
+	 }
+	
+	/**
+	 * @param scanType int 
+	 */
+	 setScanType(scanType) {
+	 	this.scanType = scanType;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getMultiStream() {
+	 	return this.multiStream;
+	 }
+	
+	/**
+	 * @param multiStream string 
+	 */
+	 setMultiStream(multiStream) {
+	 	this.multiStream = multiStream;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getIsFastStart() {
+	 	return this.isFastStart;
+	 }
+	
+	/**
+	 * @param isFastStart int 
+	 */
+	 setIsFastStart(isFastStart) {
+	 	this.isFastStart = isFastStart;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getContentStreams() {
+	 	return this.contentStreams;
+	 }
+	
+	/**
+	 * @param contentStreams string 
+	 */
+	 setContentStreams(contentStreams) {
+	 	this.contentStreams = contentStreams;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getComplexityValue() {
+	 	return this.complexityValue;
+	 }
+	
+	/**
+	 * @param complexityValue int 
+	 */
+	 setComplexityValue(complexityValue) {
+	 	this.complexityValue = complexityValue;
+	 }
+	
+	/**
+	 * 
+	 * @return float
+	 */
+	 getMaxGOP() {
+	 	return this.maxGOP;
+	 }
+	
+	/**
+	 * @param maxGOP float 
+	 */
+	 setMaxGOP(maxGOP) {
+	 	this.maxGOP = maxGOP;
+	 }
+}
+module.exports.MediaInfo = MediaInfo;
+
+/**
+ *
+ */
+class MediaInfoListResponse extends ListResponse{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaMediaInfoListResponse';
+	}
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getObjects() {
+	 	return this.objects;
+	 }
+}
+module.exports.MediaInfoListResponse = MediaInfoListResponse;
+
+/**
+ *
+ */
+class FlavorParamsOutputListResponse extends ListResponse{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaFlavorParamsOutputListResponse';
+	}
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getObjects() {
+	 	return this.objects;
+	 }
+}
+module.exports.FlavorParamsOutputListResponse = FlavorParamsOutputListResponse;
+
+/**
+ *
+ */
+class ThumbAsset extends Asset{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaThumbAsset';
+	}
+	
+	/**
+	 * The Flavor Params used to create this Flavor Asset
+	 * @return int
+	 */
+	 getThumbParamsId() {
+	 	return this.thumbParamsId;
+	 }
+	
+	/**
+	 * @param thumbParamsId int The Flavor Params used to create this Flavor Asset
+	 */
+	 setThumbParamsId(thumbParamsId) {
+	 	this.thumbParamsId = thumbParamsId;
+	 }
+	
+	/**
+	 * The width of the Flavor Asset
+	 * @return int
+	 */
+	 getWidth() {
+	 	return this.width;
+	 }
+	
+	/**
+	 * The height of the Flavor Asset
+	 * @return int
+	 */
+	 getHeight() {
+	 	return this.height;
+	 }
+	
+	/**
+	 * The status of the asset
+	 * @return int
+	 */
+	 getStatus() {
+	 	return this.status;
+	 }
+}
+module.exports.ThumbAsset = ThumbAsset;
+
+/**
+ *
+ */
+class ThumbParams extends AssetParams{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaThumbParams';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getCropType() {
+	 	return this.cropType;
+	 }
+	
+	/**
+	 * @param cropType int 
+	 */
+	 setCropType(cropType) {
+	 	this.cropType = cropType;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getQuality() {
+	 	return this.quality;
+	 }
+	
+	/**
+	 * @param quality int 
+	 */
+	 setQuality(quality) {
+	 	this.quality = quality;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getCropX() {
+	 	return this.cropX;
+	 }
+	
+	/**
+	 * @param cropX int 
+	 */
+	 setCropX(cropX) {
+	 	this.cropX = cropX;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getCropY() {
+	 	return this.cropY;
+	 }
+	
+	/**
+	 * @param cropY int 
+	 */
+	 setCropY(cropY) {
+	 	this.cropY = cropY;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getCropWidth() {
+	 	return this.cropWidth;
+	 }
+	
+	/**
+	 * @param cropWidth int 
+	 */
+	 setCropWidth(cropWidth) {
+	 	this.cropWidth = cropWidth;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getCropHeight() {
+	 	return this.cropHeight;
+	 }
+	
+	/**
+	 * @param cropHeight int 
+	 */
+	 setCropHeight(cropHeight) {
+	 	this.cropHeight = cropHeight;
+	 }
+	
+	/**
+	 * 
+	 * @return float
+	 */
+	 getVideoOffset() {
+	 	return this.videoOffset;
+	 }
+	
+	/**
+	 * @param videoOffset float 
+	 */
+	 setVideoOffset(videoOffset) {
+	 	this.videoOffset = videoOffset;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getWidth() {
+	 	return this.width;
+	 }
+	
+	/**
+	 * @param width int 
+	 */
+	 setWidth(width) {
+	 	this.width = width;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getHeight() {
+	 	return this.height;
+	 }
+	
+	/**
+	 * @param height int 
+	 */
+	 setHeight(height) {
+	 	this.height = height;
+	 }
+	
+	/**
+	 * 
+	 * @return float
+	 */
+	 getScaleWidth() {
+	 	return this.scaleWidth;
+	 }
+	
+	/**
+	 * @param scaleWidth float 
+	 */
+	 setScaleWidth(scaleWidth) {
+	 	this.scaleWidth = scaleWidth;
+	 }
+	
+	/**
+	 * 
+	 * @return float
+	 */
+	 getScaleHeight() {
+	 	return this.scaleHeight;
+	 }
+	
+	/**
+	 * @param scaleHeight float 
+	 */
+	 setScaleHeight(scaleHeight) {
+	 	this.scaleHeight = scaleHeight;
+	 }
+	
+	/**
+	 * Hexadecimal value
+	 * @return string
+	 */
+	 getBackgroundColor() {
+	 	return this.backgroundColor;
+	 }
+	
+	/**
+	 * @param backgroundColor string Hexadecimal value
+	 */
+	 setBackgroundColor(backgroundColor) {
+	 	this.backgroundColor = backgroundColor;
+	 }
+	
+	/**
+	 * Id of the flavor params or the thumbnail params to be used as source for the thumbnail creation
+	 * @return int
+	 */
+	 getSourceParamsId() {
+	 	return this.sourceParamsId;
+	 }
+	
+	/**
+	 * @param sourceParamsId int Id of the flavor params or the thumbnail params to be used as source for the thumbnail creation
+	 */
+	 setSourceParamsId(sourceParamsId) {
+	 	this.sourceParamsId = sourceParamsId;
+	 }
+	
+	/**
+	 * The container format of the Flavor Params
+	 * @return string
+	 */
+	 getFormat() {
+	 	return this.format;
+	 }
+	
+	/**
+	 * @param format string The container format of the Flavor Params
+	 */
+	 setFormat(format) {
+	 	this.format = format;
+	 }
+	
+	/**
+	 * The image density (dpi) for example: 72 or 96
+	 * @return int
+	 */
+	 getDensity() {
+	 	return this.density;
+	 }
+	
+	/**
+	 * @param density int The image density (dpi) for example: 72 or 96
+	 */
+	 setDensity(density) {
+	 	this.density = density;
+	 }
+	
+	/**
+	 * Strip profiles and comments
+	 * @return bool
+	 */
+	 getStripProfiles() {
+	 	return this.stripProfiles;
+	 }
+	
+	/**
+	 * @param stripProfiles bool Strip profiles and comments
+	 */
+	 setStripProfiles(stripProfiles) {
+	 	this.stripProfiles = stripProfiles;
+	 }
+	
+	/**
+	 * Create thumbnail from the videoLengthpercentage second
+	 * @return int
+	 */
+	 getVideoOffsetInPercentage() {
+	 	return this.videoOffsetInPercentage;
+	 }
+	
+	/**
+	 * @param videoOffsetInPercentage int Create thumbnail from the videoLengthpercentage second
+	 */
+	 setVideoOffsetInPercentage(videoOffsetInPercentage) {
+	 	this.videoOffsetInPercentage = videoOffsetInPercentage;
+	 }
+}
+module.exports.ThumbParams = ThumbParams;
+
+/**
+ *
+ */
+class ThumbParamsOutput extends ThumbParams{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaThumbParamsOutput';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getThumbParamsId() {
+	 	return this.thumbParamsId;
+	 }
+	
+	/**
+	 * @param thumbParamsId int 
+	 */
+	 setThumbParamsId(thumbParamsId) {
+	 	this.thumbParamsId = thumbParamsId;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getThumbParamsVersion() {
+	 	return this.thumbParamsVersion;
+	 }
+	
+	/**
+	 * @param thumbParamsVersion string 
+	 */
+	 setThumbParamsVersion(thumbParamsVersion) {
+	 	this.thumbParamsVersion = thumbParamsVersion;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getThumbAssetId() {
+	 	return this.thumbAssetId;
+	 }
+	
+	/**
+	 * @param thumbAssetId string 
+	 */
+	 setThumbAssetId(thumbAssetId) {
+	 	this.thumbAssetId = thumbAssetId;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getThumbAssetVersion() {
+	 	return this.thumbAssetVersion;
+	 }
+	
+	/**
+	 * @param thumbAssetVersion string 
+	 */
+	 setThumbAssetVersion(thumbAssetVersion) {
+	 	this.thumbAssetVersion = thumbAssetVersion;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getRotate() {
+	 	return this.rotate;
+	 }
+	
+	/**
+	 * @param rotate int 
+	 */
+	 setRotate(rotate) {
+	 	this.rotate = rotate;
+	 }
+}
+module.exports.ThumbParamsOutput = ThumbParamsOutput;
+
+/**
+ *
+ */
+class ThumbParamsOutputListResponse extends ListResponse{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaThumbParamsOutputListResponse';
+	}
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getObjects() {
+	 	return this.objects;
+	 }
+}
+module.exports.ThumbParamsOutputListResponse = ThumbParamsOutputListResponse;
+
+/**
+ *
+ */
+class TrackEntry extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaTrackEntry';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getId() {
+	 	return this.id;
+	 }
+	
+	/**
+	 * @param id int 
+	 */
+	 setId(id) {
+	 	this.id = id;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getTrackEventType() {
+	 	return this.trackEventType;
+	 }
+	
+	/**
+	 * @param trackEventType int 
+	 */
+	 setTrackEventType(trackEventType) {
+	 	this.trackEventType = trackEventType;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getPsVersion() {
+	 	return this.psVersion;
+	 }
+	
+	/**
+	 * @param psVersion string 
+	 */
+	 setPsVersion(psVersion) {
+	 	this.psVersion = psVersion;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getContext() {
+	 	return this.context;
+	 }
+	
+	/**
+	 * @param context string 
+	 */
+	 setContext(context) {
+	 	this.context = context;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getPartnerId() {
+	 	return this.partnerId;
+	 }
+	
+	/**
+	 * @param partnerId int 
+	 */
+	 setPartnerId(partnerId) {
+	 	this.partnerId = partnerId;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getEntryId() {
+	 	return this.entryId;
+	 }
+	
+	/**
+	 * @param entryId string 
+	 */
+	 setEntryId(entryId) {
+	 	this.entryId = entryId;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getHostName() {
+	 	return this.hostName;
+	 }
+	
+	/**
+	 * @param hostName string 
+	 */
+	 setHostName(hostName) {
+	 	this.hostName = hostName;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getUserId() {
+	 	return this.userId;
+	 }
+	
+	/**
+	 * @param userId string 
+	 */
+	 setUserId(userId) {
+	 	this.userId = userId;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getChangedProperties() {
+	 	return this.changedProperties;
+	 }
+	
+	/**
+	 * @param changedProperties string 
+	 */
+	 setChangedProperties(changedProperties) {
+	 	this.changedProperties = changedProperties;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getParamStr1() {
+	 	return this.paramStr1;
+	 }
+	
+	/**
+	 * @param paramStr1 string 
+	 */
+	 setParamStr1(paramStr1) {
+	 	this.paramStr1 = paramStr1;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getParamStr2() {
+	 	return this.paramStr2;
+	 }
+	
+	/**
+	 * @param paramStr2 string 
+	 */
+	 setParamStr2(paramStr2) {
+	 	this.paramStr2 = paramStr2;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getParamStr3() {
+	 	return this.paramStr3;
+	 }
+	
+	/**
+	 * @param paramStr3 string 
+	 */
+	 setParamStr3(paramStr3) {
+	 	this.paramStr3 = paramStr3;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getKs() {
+	 	return this.ks;
+	 }
+	
+	/**
+	 * @param ks string 
+	 */
+	 setKs(ks) {
+	 	this.ks = ks;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getDescription() {
+	 	return this.description;
+	 }
+	
+	/**
+	 * @param description string 
+	 */
+	 setDescription(description) {
+	 	this.description = description;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getCreatedAt() {
+	 	return this.createdAt;
+	 }
+	
+	/**
+	 * @param createdAt int 
+	 */
+	 setCreatedAt(createdAt) {
+	 	this.createdAt = createdAt;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getUpdatedAt() {
+	 	return this.updatedAt;
+	 }
+	
+	/**
+	 * @param updatedAt int 
+	 */
+	 setUpdatedAt(updatedAt) {
+	 	this.updatedAt = updatedAt;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getUserIp() {
+	 	return this.userIp;
+	 }
+	
+	/**
+	 * @param userIp string 
+	 */
+	 setUserIp(userIp) {
+	 	this.userIp = userIp;
+	 }
+}
+module.exports.TrackEntry = TrackEntry;
 
 /**
  *
@@ -18981,536 +19004,6 @@ module.exports.MediaEntryFilterForPlaylist = MediaEntryFilterForPlaylist;
 /**
  *
  */
-class MediaInfo extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaMediaInfo';
-	}
-	
-	/**
-	 * The id of the media info
-	 * @return int
-	 */
-	 getId() {
-	 	return this.id;
-	 }
-	
-	/**
-	 * The id of the related flavor asset
-	 * @return string
-	 */
-	 getFlavorAssetId() {
-	 	return this.flavorAssetId;
-	 }
-	
-	/**
-	 * @param flavorAssetId string The id of the related flavor asset
-	 */
-	 setFlavorAssetId(flavorAssetId) {
-	 	this.flavorAssetId = flavorAssetId;
-	 }
-	
-	/**
-	 * The file size
-	 * @return int
-	 */
-	 getFileSize() {
-	 	return this.fileSize;
-	 }
-	
-	/**
-	 * @param fileSize int The file size
-	 */
-	 setFileSize(fileSize) {
-	 	this.fileSize = fileSize;
-	 }
-	
-	/**
-	 * The container format
-	 * @return string
-	 */
-	 getContainerFormat() {
-	 	return this.containerFormat;
-	 }
-	
-	/**
-	 * @param containerFormat string The container format
-	 */
-	 setContainerFormat(containerFormat) {
-	 	this.containerFormat = containerFormat;
-	 }
-	
-	/**
-	 * The container id
-	 * @return string
-	 */
-	 getContainerId() {
-	 	return this.containerId;
-	 }
-	
-	/**
-	 * @param containerId string The container id
-	 */
-	 setContainerId(containerId) {
-	 	this.containerId = containerId;
-	 }
-	
-	/**
-	 * The container profile
-	 * @return string
-	 */
-	 getContainerProfile() {
-	 	return this.containerProfile;
-	 }
-	
-	/**
-	 * @param containerProfile string The container profile
-	 */
-	 setContainerProfile(containerProfile) {
-	 	this.containerProfile = containerProfile;
-	 }
-	
-	/**
-	 * The container duration
-	 * @return int
-	 */
-	 getContainerDuration() {
-	 	return this.containerDuration;
-	 }
-	
-	/**
-	 * @param containerDuration int The container duration
-	 */
-	 setContainerDuration(containerDuration) {
-	 	this.containerDuration = containerDuration;
-	 }
-	
-	/**
-	 * The container bit rate
-	 * @return int
-	 */
-	 getContainerBitRate() {
-	 	return this.containerBitRate;
-	 }
-	
-	/**
-	 * @param containerBitRate int The container bit rate
-	 */
-	 setContainerBitRate(containerBitRate) {
-	 	this.containerBitRate = containerBitRate;
-	 }
-	
-	/**
-	 * The video format
-	 * @return string
-	 */
-	 getVideoFormat() {
-	 	return this.videoFormat;
-	 }
-	
-	/**
-	 * @param videoFormat string The video format
-	 */
-	 setVideoFormat(videoFormat) {
-	 	this.videoFormat = videoFormat;
-	 }
-	
-	/**
-	 * The video codec id
-	 * @return string
-	 */
-	 getVideoCodecId() {
-	 	return this.videoCodecId;
-	 }
-	
-	/**
-	 * @param videoCodecId string The video codec id
-	 */
-	 setVideoCodecId(videoCodecId) {
-	 	this.videoCodecId = videoCodecId;
-	 }
-	
-	/**
-	 * The video duration
-	 * @return int
-	 */
-	 getVideoDuration() {
-	 	return this.videoDuration;
-	 }
-	
-	/**
-	 * @param videoDuration int The video duration
-	 */
-	 setVideoDuration(videoDuration) {
-	 	this.videoDuration = videoDuration;
-	 }
-	
-	/**
-	 * The video bit rate
-	 * @return int
-	 */
-	 getVideoBitRate() {
-	 	return this.videoBitRate;
-	 }
-	
-	/**
-	 * @param videoBitRate int The video bit rate
-	 */
-	 setVideoBitRate(videoBitRate) {
-	 	this.videoBitRate = videoBitRate;
-	 }
-	
-	/**
-	 * The video bit rate mode
-	 * @return int
-	 */
-	 getVideoBitRateMode() {
-	 	return this.videoBitRateMode;
-	 }
-	
-	/**
-	 * @param videoBitRateMode int The video bit rate mode
-	 */
-	 setVideoBitRateMode(videoBitRateMode) {
-	 	this.videoBitRateMode = videoBitRateMode;
-	 }
-	
-	/**
-	 * The video width
-	 * @return int
-	 */
-	 getVideoWidth() {
-	 	return this.videoWidth;
-	 }
-	
-	/**
-	 * @param videoWidth int The video width
-	 */
-	 setVideoWidth(videoWidth) {
-	 	this.videoWidth = videoWidth;
-	 }
-	
-	/**
-	 * The video height
-	 * @return int
-	 */
-	 getVideoHeight() {
-	 	return this.videoHeight;
-	 }
-	
-	/**
-	 * @param videoHeight int The video height
-	 */
-	 setVideoHeight(videoHeight) {
-	 	this.videoHeight = videoHeight;
-	 }
-	
-	/**
-	 * The video frame rate
-	 * @return float
-	 */
-	 getVideoFrameRate() {
-	 	return this.videoFrameRate;
-	 }
-	
-	/**
-	 * @param videoFrameRate float The video frame rate
-	 */
-	 setVideoFrameRate(videoFrameRate) {
-	 	this.videoFrameRate = videoFrameRate;
-	 }
-	
-	/**
-	 * The video display aspect ratio (dar)
-	 * @return float
-	 */
-	 getVideoDar() {
-	 	return this.videoDar;
-	 }
-	
-	/**
-	 * @param videoDar float The video display aspect ratio (dar)
-	 */
-	 setVideoDar(videoDar) {
-	 	this.videoDar = videoDar;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getVideoRotation() {
-	 	return this.videoRotation;
-	 }
-	
-	/**
-	 * @param videoRotation int 
-	 */
-	 setVideoRotation(videoRotation) {
-	 	this.videoRotation = videoRotation;
-	 }
-	
-	/**
-	 * The audio format
-	 * @return string
-	 */
-	 getAudioFormat() {
-	 	return this.audioFormat;
-	 }
-	
-	/**
-	 * @param audioFormat string The audio format
-	 */
-	 setAudioFormat(audioFormat) {
-	 	this.audioFormat = audioFormat;
-	 }
-	
-	/**
-	 * The audio codec id
-	 * @return string
-	 */
-	 getAudioCodecId() {
-	 	return this.audioCodecId;
-	 }
-	
-	/**
-	 * @param audioCodecId string The audio codec id
-	 */
-	 setAudioCodecId(audioCodecId) {
-	 	this.audioCodecId = audioCodecId;
-	 }
-	
-	/**
-	 * The audio duration
-	 * @return int
-	 */
-	 getAudioDuration() {
-	 	return this.audioDuration;
-	 }
-	
-	/**
-	 * @param audioDuration int The audio duration
-	 */
-	 setAudioDuration(audioDuration) {
-	 	this.audioDuration = audioDuration;
-	 }
-	
-	/**
-	 * The audio bit rate
-	 * @return int
-	 */
-	 getAudioBitRate() {
-	 	return this.audioBitRate;
-	 }
-	
-	/**
-	 * @param audioBitRate int The audio bit rate
-	 */
-	 setAudioBitRate(audioBitRate) {
-	 	this.audioBitRate = audioBitRate;
-	 }
-	
-	/**
-	 * The audio bit rate mode
-	 * @return int
-	 */
-	 getAudioBitRateMode() {
-	 	return this.audioBitRateMode;
-	 }
-	
-	/**
-	 * @param audioBitRateMode int The audio bit rate mode
-	 */
-	 setAudioBitRateMode(audioBitRateMode) {
-	 	this.audioBitRateMode = audioBitRateMode;
-	 }
-	
-	/**
-	 * The number of audio channels
-	 * @return int
-	 */
-	 getAudioChannels() {
-	 	return this.audioChannels;
-	 }
-	
-	/**
-	 * @param audioChannels int The number of audio channels
-	 */
-	 setAudioChannels(audioChannels) {
-	 	this.audioChannels = audioChannels;
-	 }
-	
-	/**
-	 * The audio sampling rate
-	 * @return int
-	 */
-	 getAudioSamplingRate() {
-	 	return this.audioSamplingRate;
-	 }
-	
-	/**
-	 * @param audioSamplingRate int The audio sampling rate
-	 */
-	 setAudioSamplingRate(audioSamplingRate) {
-	 	this.audioSamplingRate = audioSamplingRate;
-	 }
-	
-	/**
-	 * The audio resolution
-	 * @return int
-	 */
-	 getAudioResolution() {
-	 	return this.audioResolution;
-	 }
-	
-	/**
-	 * @param audioResolution int The audio resolution
-	 */
-	 setAudioResolution(audioResolution) {
-	 	this.audioResolution = audioResolution;
-	 }
-	
-	/**
-	 * The writing library
-	 * @return string
-	 */
-	 getWritingLib() {
-	 	return this.writingLib;
-	 }
-	
-	/**
-	 * @param writingLib string The writing library
-	 */
-	 setWritingLib(writingLib) {
-	 	this.writingLib = writingLib;
-	 }
-	
-	/**
-	 * The data as returned by the mediainfo command line
-	 * @return string
-	 */
-	 getRawData() {
-	 	return this.rawData;
-	 }
-	
-	/**
-	 * @param rawData string The data as returned by the mediainfo command line
-	 */
-	 setRawData(rawData) {
-	 	this.rawData = rawData;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getMultiStreamInfo() {
-	 	return this.multiStreamInfo;
-	 }
-	
-	/**
-	 * @param multiStreamInfo string 
-	 */
-	 setMultiStreamInfo(multiStreamInfo) {
-	 	this.multiStreamInfo = multiStreamInfo;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getScanType() {
-	 	return this.scanType;
-	 }
-	
-	/**
-	 * @param scanType int 
-	 */
-	 setScanType(scanType) {
-	 	this.scanType = scanType;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getMultiStream() {
-	 	return this.multiStream;
-	 }
-	
-	/**
-	 * @param multiStream string 
-	 */
-	 setMultiStream(multiStream) {
-	 	this.multiStream = multiStream;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getIsFastStart() {
-	 	return this.isFastStart;
-	 }
-	
-	/**
-	 * @param isFastStart int 
-	 */
-	 setIsFastStart(isFastStart) {
-	 	this.isFastStart = isFastStart;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getContentStreams() {
-	 	return this.contentStreams;
-	 }
-	
-	/**
-	 * @param contentStreams string 
-	 */
-	 setContentStreams(contentStreams) {
-	 	this.contentStreams = contentStreams;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getComplexityValue() {
-	 	return this.complexityValue;
-	 }
-	
-	/**
-	 * @param complexityValue int 
-	 */
-	 setComplexityValue(complexityValue) {
-	 	this.complexityValue = complexityValue;
-	 }
-	
-	/**
-	 * 
-	 * @return float
-	 */
-	 getMaxGOP() {
-	 	return this.maxGOP;
-	 }
-	
-	/**
-	 * @param maxGOP float 
-	 */
-	 setMaxGOP(maxGOP) {
-	 	this.maxGOP = maxGOP;
-	 }
-}
-module.exports.MediaInfo = MediaInfo;
-
-/**
- *
- */
 class Metadata extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -20475,323 +19968,56 @@ module.exports.PermissionItem = PermissionItem;
 /**
  *
  */
-class PlayReadyAnalogVideoOPIdHolder extends kaltura.BaseObject{
+class PluginData extends kaltura.BaseObject{
 	
 	constructor(object = null) {
 		super(object);
-		this.objectType = 'KalturaPlayReadyAnalogVideoOPIdHolder';
+		this.objectType = 'KalturaPluginData';
 	}
-	
-	/**
-	 * The type of the play enabler
-	 * @return string
-	 */
-	 getType() {
-	 	return this.type;
-	 }
-	
-	/**
-	 * @param type string The type of the play enabler
-	 */
-	 setType(type) {
-	 	this.type = type;
-	 }
 }
-module.exports.PlayReadyAnalogVideoOPIdHolder = PlayReadyAnalogVideoOPIdHolder;
+module.exports.PluginData = PluginData;
 
 /**
  *
  */
-class PlayReadyContentKey extends kaltura.BaseObject{
+class DrmPlaybackPluginData extends PluginData{
 	
 	constructor(object = null) {
 		super(object);
-		this.objectType = 'KalturaPlayReadyContentKey';
-	}
-	
-	/**
-	 * Guid - key id of the specific content
-	 * @return string
-	 */
-	 getKeyId() {
-	 	return this.keyId;
-	 }
-	
-	/**
-	 * @param keyId string Guid - key id of the specific content
-	 */
-	 setKeyId(keyId) {
-	 	this.keyId = keyId;
-	 }
-	
-	/**
-	 * License content key 64 bit encoded
-	 * @return string
-	 */
-	 getContentKey() {
-	 	return this.contentKey;
-	 }
-	
-	/**
-	 * @param contentKey string License content key 64 bit encoded
-	 */
-	 setContentKey(contentKey) {
-	 	this.contentKey = contentKey;
-	 }
-}
-module.exports.PlayReadyContentKey = PlayReadyContentKey;
-
-/**
- *
- */
-class PlayReadyCopyEnablerHolder extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaPlayReadyCopyEnablerHolder';
-	}
-	
-	/**
-	 * The type of the copy enabler
-	 * @return string
-	 */
-	 getType() {
-	 	return this.type;
-	 }
-	
-	/**
-	 * @param type string The type of the copy enabler
-	 */
-	 setType(type) {
-	 	this.type = type;
-	 }
-}
-module.exports.PlayReadyCopyEnablerHolder = PlayReadyCopyEnablerHolder;
-
-/**
- *
- */
-class PlayReadyDigitalAudioOPIdHolder extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaPlayReadyDigitalAudioOPIdHolder';
-	}
-	
-	/**
-	 * The type of the play enabler
-	 * @return string
-	 */
-	 getType() {
-	 	return this.type;
-	 }
-	
-	/**
-	 * @param type string The type of the play enabler
-	 */
-	 setType(type) {
-	 	this.type = type;
-	 }
-}
-module.exports.PlayReadyDigitalAudioOPIdHolder = PlayReadyDigitalAudioOPIdHolder;
-
-/**
- *
- */
-class PlayReadyRight extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaPlayReadyRight';
-	}
-}
-module.exports.PlayReadyRight = PlayReadyRight;
-
-/**
- *
- */
-class PlayReadyPolicy extends DrmPolicy{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaPlayReadyPolicy';
+		this.objectType = 'KalturaDrmPlaybackPluginData';
 	}
 	
 	/**
 	 * 
-	 * @return int
-	 */
-	 getGracePeriod() {
-	 	return this.gracePeriod;
-	 }
-	
-	/**
-	 * @param gracePeriod int 
-	 */
-	 setGracePeriod(gracePeriod) {
-	 	this.gracePeriod = gracePeriod;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getLicenseRemovalPolicy() {
-	 	return this.licenseRemovalPolicy;
-	 }
-	
-	/**
-	 * @param licenseRemovalPolicy int 
-	 */
-	 setLicenseRemovalPolicy(licenseRemovalPolicy) {
-	 	this.licenseRemovalPolicy = licenseRemovalPolicy;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getLicenseRemovalDuration() {
-	 	return this.licenseRemovalDuration;
-	 }
-	
-	/**
-	 * @param licenseRemovalDuration int 
-	 */
-	 setLicenseRemovalDuration(licenseRemovalDuration) {
-	 	this.licenseRemovalDuration = licenseRemovalDuration;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getMinSecurityLevel() {
-	 	return this.minSecurityLevel;
-	 }
-	
-	/**
-	 * @param minSecurityLevel int 
-	 */
-	 setMinSecurityLevel(minSecurityLevel) {
-	 	this.minSecurityLevel = minSecurityLevel;
-	 }
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getRights() {
-	 	return this.rights;
-	 }
-	
-	/**
-	 * @param rights array 
-	 */
-	 setRights(rights) {
-	 	this.rights = rights;
-	 }
-}
-module.exports.PlayReadyPolicy = PlayReadyPolicy;
-
-/**
- *
- */
-class PlayReadyLicenseDetails extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaPlayReadyLicenseDetails';
-	}
-	
-	/**
-	 * PlayReady policy object
-	 * @return PlayReadyPolicy
-	 */
-	 getPolicy() {
-	 	return this.policy;
-	 }
-	
-	/**
-	 * @param policy PlayReadyPolicy PlayReady policy object
-	 */
-	 setPolicy(policy) {
-	 	this.policy = policy;
-	 }
-	
-	/**
-	 * License begin date
-	 * @return int
-	 */
-	 getBeginDate() {
-	 	return this.beginDate;
-	 }
-	
-	/**
-	 * @param beginDate int License begin date
-	 */
-	 setBeginDate(beginDate) {
-	 	this.beginDate = beginDate;
-	 }
-	
-	/**
-	 * License expiration date
-	 * @return int
-	 */
-	 getExpirationDate() {
-	 	return this.expirationDate;
-	 }
-	
-	/**
-	 * @param expirationDate int License expiration date
-	 */
-	 setExpirationDate(expirationDate) {
-	 	this.expirationDate = expirationDate;
-	 }
-	
-	/**
-	 * License removal date
-	 * @return int
-	 */
-	 getRemovalDate() {
-	 	return this.removalDate;
-	 }
-	
-	/**
-	 * @param removalDate int License removal date
-	 */
-	 setRemovalDate(removalDate) {
-	 	this.removalDate = removalDate;
-	 }
-}
-module.exports.PlayReadyLicenseDetails = PlayReadyLicenseDetails;
-
-/**
- *
- */
-class PlayReadyPlayEnablerHolder extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaPlayReadyPlayEnablerHolder';
-	}
-	
-	/**
-	 * The type of the play enabler
 	 * @return string
 	 */
-	 getType() {
-	 	return this.type;
+	 getScheme() {
+	 	return this.scheme;
 	 }
 	
 	/**
-	 * @param type string The type of the play enabler
+	 * @param scheme string 
 	 */
-	 setType(type) {
-	 	this.type = type;
+	 setScheme(scheme) {
+	 	this.scheme = scheme;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getLicenseURL() {
+	 	return this.licenseURL;
+	 }
+	
+	/**
+	 * @param licenseURL string 
+	 */
+	 setLicenseURL(licenseURL) {
+	 	this.licenseURL = licenseURL;
 	 }
 }
-module.exports.PlayReadyPlayEnablerHolder = PlayReadyPlayEnablerHolder;
+module.exports.DrmPlaybackPluginData = DrmPlaybackPluginData;
 
 /**
  *
@@ -21103,69 +20329,6 @@ class PushEventNotificationParameter extends EventNotificationParameter{
 	 }
 }
 module.exports.PushEventNotificationParameter = PushEventNotificationParameter;
-
-/**
- *
- */
-class PushNotificationData extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaPushNotificationData';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getQueueName() {
-	 	return this.queueName;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getQueueKey() {
-	 	return this.queueKey;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getUrl() {
-	 	return this.url;
-	 }
-}
-module.exports.PushNotificationData = PushNotificationData;
-
-/**
- *
- */
-class PushNotificationParams extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaPushNotificationParams';
-	}
-	
-	/**
-	 * User params
-	 * @return array
-	 */
-	 getUserParams() {
-	 	return this.userParams;
-	 }
-	
-	/**
-	 * @param userParams array User params
-	 */
-	 setUserParams(userParams) {
-	 	this.userParams = userParams;
-	 }
-}
-module.exports.PushNotificationParams = PushNotificationParams;
 
 /**
  *
@@ -24917,6 +24080,333 @@ module.exports.SyndicationFeedEntryCount = SyndicationFeedEntryCount;
 /**
  *
  */
+class SystemPartnerUsageItem extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaSystemPartnerUsageItem';
+	}
+	
+	/**
+	 * Partner ID
+	 * @return int
+	 */
+	 getPartnerId() {
+	 	return this.partnerId;
+	 }
+	
+	/**
+	 * @param partnerId int Partner ID
+	 */
+	 setPartnerId(partnerId) {
+	 	this.partnerId = partnerId;
+	 }
+	
+	/**
+	 * Partner name
+	 * @return string
+	 */
+	 getPartnerName() {
+	 	return this.partnerName;
+	 }
+	
+	/**
+	 * @param partnerName string Partner name
+	 */
+	 setPartnerName(partnerName) {
+	 	this.partnerName = partnerName;
+	 }
+	
+	/**
+	 * Partner status
+	 * @return int
+	 */
+	 getPartnerStatus() {
+	 	return this.partnerStatus;
+	 }
+	
+	/**
+	 * @param partnerStatus int Partner status
+	 */
+	 setPartnerStatus(partnerStatus) {
+	 	this.partnerStatus = partnerStatus;
+	 }
+	
+	/**
+	 * Partner package
+	 * @return int
+	 */
+	 getPartnerPackage() {
+	 	return this.partnerPackage;
+	 }
+	
+	/**
+	 * @param partnerPackage int Partner package
+	 */
+	 setPartnerPackage(partnerPackage) {
+	 	this.partnerPackage = partnerPackage;
+	 }
+	
+	/**
+	 * Partner creation date (Unix timestamp)
+	 * @return int
+	 */
+	 getPartnerCreatedAt() {
+	 	return this.partnerCreatedAt;
+	 }
+	
+	/**
+	 * @param partnerCreatedAt int Partner creation date (Unix timestamp)
+	 */
+	 setPartnerCreatedAt(partnerCreatedAt) {
+	 	this.partnerCreatedAt = partnerCreatedAt;
+	 }
+	
+	/**
+	 * Number of player loads in the specific date range
+	 * @return int
+	 */
+	 getViews() {
+	 	return this.views;
+	 }
+	
+	/**
+	 * @param views int Number of player loads in the specific date range
+	 */
+	 setViews(views) {
+	 	this.views = views;
+	 }
+	
+	/**
+	 * Number of plays in the specific date range
+	 * @return int
+	 */
+	 getPlays() {
+	 	return this.plays;
+	 }
+	
+	/**
+	 * @param plays int Number of plays in the specific date range
+	 */
+	 setPlays(plays) {
+	 	this.plays = plays;
+	 }
+	
+	/**
+	 * Number of new entries created during specific date range
+	 * @return int
+	 */
+	 getEntriesCount() {
+	 	return this.entriesCount;
+	 }
+	
+	/**
+	 * @param entriesCount int Number of new entries created during specific date range
+	 */
+	 setEntriesCount(entriesCount) {
+	 	this.entriesCount = entriesCount;
+	 }
+	
+	/**
+	 * Total number of entries
+	 * @return int
+	 */
+	 getTotalEntriesCount() {
+	 	return this.totalEntriesCount;
+	 }
+	
+	/**
+	 * @param totalEntriesCount int Total number of entries
+	 */
+	 setTotalEntriesCount(totalEntriesCount) {
+	 	this.totalEntriesCount = totalEntriesCount;
+	 }
+	
+	/**
+	 * Number of new video entries created during specific date range
+	 * @return int
+	 */
+	 getVideoEntriesCount() {
+	 	return this.videoEntriesCount;
+	 }
+	
+	/**
+	 * @param videoEntriesCount int Number of new video entries created during specific date range
+	 */
+	 setVideoEntriesCount(videoEntriesCount) {
+	 	this.videoEntriesCount = videoEntriesCount;
+	 }
+	
+	/**
+	 * Number of new image entries created during specific date range
+	 * @return int
+	 */
+	 getImageEntriesCount() {
+	 	return this.imageEntriesCount;
+	 }
+	
+	/**
+	 * @param imageEntriesCount int Number of new image entries created during specific date range
+	 */
+	 setImageEntriesCount(imageEntriesCount) {
+	 	this.imageEntriesCount = imageEntriesCount;
+	 }
+	
+	/**
+	 * Number of new audio entries created during specific date range
+	 * @return int
+	 */
+	 getAudioEntriesCount() {
+	 	return this.audioEntriesCount;
+	 }
+	
+	/**
+	 * @param audioEntriesCount int Number of new audio entries created during specific date range
+	 */
+	 setAudioEntriesCount(audioEntriesCount) {
+	 	this.audioEntriesCount = audioEntriesCount;
+	 }
+	
+	/**
+	 * Number of new mix entries created during specific date range
+	 * @return int
+	 */
+	 getMixEntriesCount() {
+	 	return this.mixEntriesCount;
+	 }
+	
+	/**
+	 * @param mixEntriesCount int Number of new mix entries created during specific date range
+	 */
+	 setMixEntriesCount(mixEntriesCount) {
+	 	this.mixEntriesCount = mixEntriesCount;
+	 }
+	
+	/**
+	 * The total bandwidth usage during the given date range (in MB)
+	 * @return float
+	 */
+	 getBandwidth() {
+	 	return this.bandwidth;
+	 }
+	
+	/**
+	 * @param bandwidth float The total bandwidth usage during the given date range (in MB)
+	 */
+	 setBandwidth(bandwidth) {
+	 	this.bandwidth = bandwidth;
+	 }
+	
+	/**
+	 * The total storage consumption (in MB)
+	 * @return float
+	 */
+	 getTotalStorage() {
+	 	return this.totalStorage;
+	 }
+	
+	/**
+	 * @param totalStorage float The total storage consumption (in MB)
+	 */
+	 setTotalStorage(totalStorage) {
+	 	this.totalStorage = totalStorage;
+	 }
+	
+	/**
+	 * The change in storage consumption (new uploads) during the given date range (in MB)
+	 * @return float
+	 */
+	 getStorage() {
+	 	return this.storage;
+	 }
+	
+	/**
+	 * @param storage float The change in storage consumption (new uploads) during the given date range (in MB)
+	 */
+	 setStorage(storage) {
+	 	this.storage = storage;
+	 }
+	
+	/**
+	 * The peak amount of storage consumption during the given date range for the specific publisher
+	 * @return float
+	 */
+	 getPeakStorage() {
+	 	return this.peakStorage;
+	 }
+	
+	/**
+	 * @param peakStorage float The peak amount of storage consumption during the given date range for the specific publisher
+	 */
+	 setPeakStorage(peakStorage) {
+	 	this.peakStorage = peakStorage;
+	 }
+	
+	/**
+	 * The average amount of storage consumption during the given date range for the specific publisher
+	 * @return float
+	 */
+	 getAvgStorage() {
+	 	return this.avgStorage;
+	 }
+	
+	/**
+	 * @param avgStorage float The average amount of storage consumption during the given date range for the specific publisher
+	 */
+	 setAvgStorage(avgStorage) {
+	 	this.avgStorage = avgStorage;
+	 }
+	
+	/**
+	 * The combined amount of bandwidth and storage consumed during the given date range for the specific publisher
+	 * @return float
+	 */
+	 getCombinedBandwidthStorage() {
+	 	return this.combinedBandwidthStorage;
+	 }
+	
+	/**
+	 * @param combinedBandwidthStorage float The combined amount of bandwidth and storage consumed during the given date range for the specific publisher
+	 */
+	 setCombinedBandwidthStorage(combinedBandwidthStorage) {
+	 	this.combinedBandwidthStorage = combinedBandwidthStorage;
+	 }
+	
+	/**
+	 * Amount of deleted storage in MB
+	 * @return float
+	 */
+	 getDeletedStorage() {
+	 	return this.deletedStorage;
+	 }
+	
+	/**
+	 * @param deletedStorage float Amount of deleted storage in MB
+	 */
+	 setDeletedStorage(deletedStorage) {
+	 	this.deletedStorage = deletedStorage;
+	 }
+	
+	/**
+	 * Amount of transcoding usage in MB
+	 * @return float
+	 */
+	 getTranscodingUsage() {
+	 	return this.transcodingUsage;
+	 }
+	
+	/**
+	 * @param transcodingUsage float Amount of transcoding usage in MB
+	 */
+	 setTranscodingUsage(transcodingUsage) {
+	 	this.transcodingUsage = transcodingUsage;
+	 }
+}
+module.exports.SystemPartnerUsageItem = SystemPartnerUsageItem;
+
+/**
+ *
+ */
 class Tag extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -24981,411 +24471,6 @@ class Tag extends kaltura.BaseObject{
 	 }
 }
 module.exports.Tag = Tag;
-
-/**
- *
- */
-class ThumbAsset extends Asset{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaThumbAsset';
-	}
-	
-	/**
-	 * The Flavor Params used to create this Flavor Asset
-	 * @return int
-	 */
-	 getThumbParamsId() {
-	 	return this.thumbParamsId;
-	 }
-	
-	/**
-	 * @param thumbParamsId int The Flavor Params used to create this Flavor Asset
-	 */
-	 setThumbParamsId(thumbParamsId) {
-	 	this.thumbParamsId = thumbParamsId;
-	 }
-	
-	/**
-	 * The width of the Flavor Asset
-	 * @return int
-	 */
-	 getWidth() {
-	 	return this.width;
-	 }
-	
-	/**
-	 * The height of the Flavor Asset
-	 * @return int
-	 */
-	 getHeight() {
-	 	return this.height;
-	 }
-	
-	/**
-	 * The status of the asset
-	 * @return int
-	 */
-	 getStatus() {
-	 	return this.status;
-	 }
-}
-module.exports.ThumbAsset = ThumbAsset;
-
-/**
- *
- */
-class ThumbParams extends AssetParams{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaThumbParams';
-	}
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getCropType() {
-	 	return this.cropType;
-	 }
-	
-	/**
-	 * @param cropType int 
-	 */
-	 setCropType(cropType) {
-	 	this.cropType = cropType;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getQuality() {
-	 	return this.quality;
-	 }
-	
-	/**
-	 * @param quality int 
-	 */
-	 setQuality(quality) {
-	 	this.quality = quality;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getCropX() {
-	 	return this.cropX;
-	 }
-	
-	/**
-	 * @param cropX int 
-	 */
-	 setCropX(cropX) {
-	 	this.cropX = cropX;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getCropY() {
-	 	return this.cropY;
-	 }
-	
-	/**
-	 * @param cropY int 
-	 */
-	 setCropY(cropY) {
-	 	this.cropY = cropY;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getCropWidth() {
-	 	return this.cropWidth;
-	 }
-	
-	/**
-	 * @param cropWidth int 
-	 */
-	 setCropWidth(cropWidth) {
-	 	this.cropWidth = cropWidth;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getCropHeight() {
-	 	return this.cropHeight;
-	 }
-	
-	/**
-	 * @param cropHeight int 
-	 */
-	 setCropHeight(cropHeight) {
-	 	this.cropHeight = cropHeight;
-	 }
-	
-	/**
-	 * 
-	 * @return float
-	 */
-	 getVideoOffset() {
-	 	return this.videoOffset;
-	 }
-	
-	/**
-	 * @param videoOffset float 
-	 */
-	 setVideoOffset(videoOffset) {
-	 	this.videoOffset = videoOffset;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getWidth() {
-	 	return this.width;
-	 }
-	
-	/**
-	 * @param width int 
-	 */
-	 setWidth(width) {
-	 	this.width = width;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getHeight() {
-	 	return this.height;
-	 }
-	
-	/**
-	 * @param height int 
-	 */
-	 setHeight(height) {
-	 	this.height = height;
-	 }
-	
-	/**
-	 * 
-	 * @return float
-	 */
-	 getScaleWidth() {
-	 	return this.scaleWidth;
-	 }
-	
-	/**
-	 * @param scaleWidth float 
-	 */
-	 setScaleWidth(scaleWidth) {
-	 	this.scaleWidth = scaleWidth;
-	 }
-	
-	/**
-	 * 
-	 * @return float
-	 */
-	 getScaleHeight() {
-	 	return this.scaleHeight;
-	 }
-	
-	/**
-	 * @param scaleHeight float 
-	 */
-	 setScaleHeight(scaleHeight) {
-	 	this.scaleHeight = scaleHeight;
-	 }
-	
-	/**
-	 * Hexadecimal value
-	 * @return string
-	 */
-	 getBackgroundColor() {
-	 	return this.backgroundColor;
-	 }
-	
-	/**
-	 * @param backgroundColor string Hexadecimal value
-	 */
-	 setBackgroundColor(backgroundColor) {
-	 	this.backgroundColor = backgroundColor;
-	 }
-	
-	/**
-	 * Id of the flavor params or the thumbnail params to be used as source for the thumbnail creation
-	 * @return int
-	 */
-	 getSourceParamsId() {
-	 	return this.sourceParamsId;
-	 }
-	
-	/**
-	 * @param sourceParamsId int Id of the flavor params or the thumbnail params to be used as source for the thumbnail creation
-	 */
-	 setSourceParamsId(sourceParamsId) {
-	 	this.sourceParamsId = sourceParamsId;
-	 }
-	
-	/**
-	 * The container format of the Flavor Params
-	 * @return string
-	 */
-	 getFormat() {
-	 	return this.format;
-	 }
-	
-	/**
-	 * @param format string The container format of the Flavor Params
-	 */
-	 setFormat(format) {
-	 	this.format = format;
-	 }
-	
-	/**
-	 * The image density (dpi) for example: 72 or 96
-	 * @return int
-	 */
-	 getDensity() {
-	 	return this.density;
-	 }
-	
-	/**
-	 * @param density int The image density (dpi) for example: 72 or 96
-	 */
-	 setDensity(density) {
-	 	this.density = density;
-	 }
-	
-	/**
-	 * Strip profiles and comments
-	 * @return bool
-	 */
-	 getStripProfiles() {
-	 	return this.stripProfiles;
-	 }
-	
-	/**
-	 * @param stripProfiles bool Strip profiles and comments
-	 */
-	 setStripProfiles(stripProfiles) {
-	 	this.stripProfiles = stripProfiles;
-	 }
-	
-	/**
-	 * Create thumbnail from the videoLengthpercentage second
-	 * @return int
-	 */
-	 getVideoOffsetInPercentage() {
-	 	return this.videoOffsetInPercentage;
-	 }
-	
-	/**
-	 * @param videoOffsetInPercentage int Create thumbnail from the videoLengthpercentage second
-	 */
-	 setVideoOffsetInPercentage(videoOffsetInPercentage) {
-	 	this.videoOffsetInPercentage = videoOffsetInPercentage;
-	 }
-}
-module.exports.ThumbParams = ThumbParams;
-
-/**
- *
- */
-class ThumbParamsOutput extends ThumbParams{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaThumbParamsOutput';
-	}
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getThumbParamsId() {
-	 	return this.thumbParamsId;
-	 }
-	
-	/**
-	 * @param thumbParamsId int 
-	 */
-	 setThumbParamsId(thumbParamsId) {
-	 	this.thumbParamsId = thumbParamsId;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getThumbParamsVersion() {
-	 	return this.thumbParamsVersion;
-	 }
-	
-	/**
-	 * @param thumbParamsVersion string 
-	 */
-	 setThumbParamsVersion(thumbParamsVersion) {
-	 	this.thumbParamsVersion = thumbParamsVersion;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getThumbAssetId() {
-	 	return this.thumbAssetId;
-	 }
-	
-	/**
-	 * @param thumbAssetId string 
-	 */
-	 setThumbAssetId(thumbAssetId) {
-	 	this.thumbAssetId = thumbAssetId;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getThumbAssetVersion() {
-	 	return this.thumbAssetVersion;
-	 }
-	
-	/**
-	 * @param thumbAssetVersion string 
-	 */
-	 setThumbAssetVersion(thumbAssetVersion) {
-	 	this.thumbAssetVersion = thumbAssetVersion;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getRotate() {
-	 	return this.rotate;
-	 }
-	
-	/**
-	 * @param rotate int 
-	 */
-	 setRotate(rotate) {
-	 	this.rotate = rotate;
-	 }
-}
-module.exports.ThumbParamsOutput = ThumbParamsOutput;
 
 /**
  *
@@ -25458,108 +24543,6 @@ class TranscriptAsset extends AttachmentAsset{
 	 }
 }
 module.exports.TranscriptAsset = TranscriptAsset;
-
-/**
- *
- */
-class TvinciDistributionTag extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaTvinciDistributionTag';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getTagname() {
-	 	return this.tagname;
-	 }
-	
-	/**
-	 * @param tagname string 
-	 */
-	 setTagname(tagname) {
-	 	this.tagname = tagname;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getExtension() {
-	 	return this.extension;
-	 }
-	
-	/**
-	 * @param extension string 
-	 */
-	 setExtension(extension) {
-	 	this.extension = extension;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getProtocol() {
-	 	return this.protocol;
-	 }
-	
-	/**
-	 * @param protocol string 
-	 */
-	 setProtocol(protocol) {
-	 	this.protocol = protocol;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFormat() {
-	 	return this.format;
-	 }
-	
-	/**
-	 * @param format string 
-	 */
-	 setFormat(format) {
-	 	this.format = format;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFilename() {
-	 	return this.filename;
-	 }
-	
-	/**
-	 * @param filename string 
-	 */
-	 setFilename(filename) {
-	 	this.filename = filename;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getPpvmodule() {
-	 	return this.ppvmodule;
-	 }
-	
-	/**
-	 * @param ppvmodule string 
-	 */
-	 setPpvmodule(ppvmodule) {
-	 	this.ppvmodule = ppvmodule;
-	 }
-}
-module.exports.TvinciDistributionTag = TvinciDistributionTag;
 
 /**
  *
@@ -25883,6 +24866,33 @@ class UiConf extends kaltura.BaseObject{
 	 }
 }
 module.exports.UiConf = UiConf;
+
+/**
+ *
+ */
+class UiConfAdmin extends UiConf{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaUiConfAdmin';
+	}
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getIsPublic() {
+	 	return this.isPublic;
+	 }
+	
+	/**
+	 * @param isPublic bool 
+	 */
+	 setIsPublic(isPublic) {
+	 	this.isPublic = isPublic;
+	 }
+}
+module.exports.UiConfAdmin = UiConfAdmin;
 
 /**
  *
@@ -28406,33 +27416,6 @@ module.exports.AccessControlBlockAction = AccessControlBlockAction;
 /**
  *
  */
-class AccessControlDrmPolicyAction extends RuleAction{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaAccessControlDrmPolicyAction';
-	}
-	
-	/**
-	 * Drm policy id
-	 * @return int
-	 */
-	 getPolicyId() {
-	 	return this.policyId;
-	 }
-	
-	/**
-	 * @param policyId int Drm policy id
-	 */
-	 setPolicyId(policyId) {
-	 	this.policyId = policyId;
-	 }
-}
-module.exports.AccessControlDrmPolicyAction = AccessControlDrmPolicyAction;
-
-/**
- *
- */
 class AccessControlLimitDeliveryProfilesAction extends RuleAction{
 	
 	constructor(object = null) {
@@ -28676,93 +27659,6 @@ class AccessControlServeRemoteEdgeServerAction extends RuleAction{
 	 }
 }
 module.exports.AccessControlServeRemoteEdgeServerAction = AccessControlServeRemoteEdgeServerAction;
-
-/**
- *
- */
-class ActivitiBusinessProcessServer extends BusinessProcessServer{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaActivitiBusinessProcessServer';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getHost() {
-	 	return this.host;
-	 }
-	
-	/**
-	 * @param host string 
-	 */
-	 setHost(host) {
-	 	this.host = host;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getPort() {
-	 	return this.port;
-	 }
-	
-	/**
-	 * @param port int 
-	 */
-	 setPort(port) {
-	 	this.port = port;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getProtocol() {
-	 	return this.protocol;
-	 }
-	
-	/**
-	 * @param protocol string 
-	 */
-	 setProtocol(protocol) {
-	 	this.protocol = protocol;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getUsername() {
-	 	return this.username;
-	 }
-	
-	/**
-	 * @param username string 
-	 */
-	 setUsername(username) {
-	 	this.username = username;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getPassword() {
-	 	return this.password;
-	 }
-	
-	/**
-	 * @param password string 
-	 */
-	 setPassword(password) {
-	 	this.password = password;
-	 }
-}
-module.exports.ActivitiBusinessProcessServer = ActivitiBusinessProcessServer;
 
 /**
  *
@@ -29594,194 +28490,6 @@ module.exports.AttributeCondition = AttributeCondition;
 /**
  *
  */
-class AuditTrailChangeInfo extends AuditTrailInfo{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaAuditTrailChangeInfo';
-	}
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getChangedItems() {
-	 	return this.changedItems;
-	 }
-	
-	/**
-	 * @param changedItems array 
-	 */
-	 setChangedItems(changedItems) {
-	 	this.changedItems = changedItems;
-	 }
-}
-module.exports.AuditTrailChangeInfo = AuditTrailChangeInfo;
-
-/**
- *
- */
-class AuditTrailChangeXmlNode extends AuditTrailChangeItem{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaAuditTrailChangeXmlNode';
-	}
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getType() {
-	 	return this.type;
-	 }
-	
-	/**
-	 * @param type int 
-	 */
-	 setType(type) {
-	 	this.type = type;
-	 }
-}
-module.exports.AuditTrailChangeXmlNode = AuditTrailChangeXmlNode;
-
-/**
- *
- */
-class AuditTrailFileSyncCreateInfo extends AuditTrailInfo{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaAuditTrailFileSyncCreateInfo';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getVersion() {
-	 	return this.version;
-	 }
-	
-	/**
-	 * @param version string 
-	 */
-	 setVersion(version) {
-	 	this.version = version;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getObjectSubType() {
-	 	return this.objectSubType;
-	 }
-	
-	/**
-	 * @param objectSubType int 
-	 */
-	 setObjectSubType(objectSubType) {
-	 	this.objectSubType = objectSubType;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getDc() {
-	 	return this.dc;
-	 }
-	
-	/**
-	 * @param dc int 
-	 */
-	 setDc(dc) {
-	 	this.dc = dc;
-	 }
-	
-	/**
-	 * 
-	 * @return bool
-	 */
-	 getOriginal() {
-	 	return this.original;
-	 }
-	
-	/**
-	 * @param original bool 
-	 */
-	 setOriginal(original) {
-	 	this.original = original;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getFileType() {
-	 	return this.fileType;
-	 }
-	
-	/**
-	 * @param fileType int 
-	 */
-	 setFileType(fileType) {
-	 	this.fileType = fileType;
-	 }
-}
-module.exports.AuditTrailFileSyncCreateInfo = AuditTrailFileSyncCreateInfo;
-
-/**
- *
- */
-class AuditTrailListResponse extends ListResponse{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaAuditTrailListResponse';
-	}
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getObjects() {
-	 	return this.objects;
-	 }
-}
-module.exports.AuditTrailListResponse = AuditTrailListResponse;
-
-/**
- *
- */
-class AuditTrailTextInfo extends AuditTrailInfo{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaAuditTrailTextInfo';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getInfo() {
-	 	return this.info;
-	 }
-	
-	/**
-	 * @param info string 
-	 */
-	 setInfo(info) {
-	 	this.info = info;
-	 }
-}
-module.exports.AuditTrailTextInfo = AuditTrailTextInfo;
-
-/**
- *
- */
 class AuthenticatedCondition extends Condition{
 	
 	constructor(object = null) {
@@ -29899,83 +28607,6 @@ class BaseSyndicationFeedListResponse extends ListResponse{
 	 }
 }
 module.exports.BaseSyndicationFeedListResponse = BaseSyndicationFeedListResponse;
-
-/**
- *
- */
-class BatchJobListResponse extends ListResponse{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaBatchJobListResponse';
-	}
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getObjects() {
-	 	return this.objects;
-	 }
-}
-module.exports.BatchJobListResponse = BatchJobListResponse;
-
-/**
- *
- */
-class BpmEventNotificationIntegrationJobTriggerData extends IntegrationJobTriggerData{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaBpmEventNotificationIntegrationJobTriggerData';
-	}
-	
-	/**
-	 * KalturaBusinessProcessNotificationTemplate id
-	 * @return int
-	 */
-	 getTemplateId() {
-	 	return this.templateId;
-	 }
-	
-	/**
-	 * @param templateId int KalturaBusinessProcessNotificationTemplate id
-	 */
-	 setTemplateId(templateId) {
-	 	this.templateId = templateId;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getBusinessProcessId() {
-	 	return this.businessProcessId;
-	 }
-	
-	/**
-	 * @param businessProcessId string 
-	 */
-	 setBusinessProcessId(businessProcessId) {
-	 	this.businessProcessId = businessProcessId;
-	 }
-	
-	/**
-	 * Execution unique id
-	 * @return string
-	 */
-	 getCaseId() {
-	 	return this.caseId;
-	 }
-	
-	/**
-	 * @param caseId string Execution unique id
-	 */
-	 setCaseId(caseId) {
-	 	this.caseId = caseId;
-	 }
-}
-module.exports.BpmEventNotificationIntegrationJobTriggerData = BpmEventNotificationIntegrationJobTriggerData;
 
 /**
  *
@@ -31540,350 +30171,6 @@ module.exports.BulkUploadUserData = BulkUploadUserData;
 /**
  *
  */
-class BusinessProcessNotificationTemplate extends EventNotificationTemplate{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaBusinessProcessNotificationTemplate';
-	}
-	
-	/**
-	 * Define the integrated BPM server id
-	 * @return int
-	 */
-	 getServerId() {
-	 	return this.serverId;
-	 }
-	
-	/**
-	 * @param serverId int Define the integrated BPM server id
-	 */
-	 setServerId(serverId) {
-	 	this.serverId = serverId;
-	 }
-	
-	/**
-	 * Define the integrated BPM process id
-	 * @return string
-	 */
-	 getProcessId() {
-	 	return this.processId;
-	 }
-	
-	/**
-	 * @param processId string Define the integrated BPM process id
-	 */
-	 setProcessId(processId) {
-	 	this.processId = processId;
-	 }
-	
-	/**
-	 * Code to load the main triggering object
-	 * @return string
-	 */
-	 getMainObjectCode() {
-	 	return this.mainObjectCode;
-	 }
-	
-	/**
-	 * @param mainObjectCode string Code to load the main triggering object
-	 */
-	 setMainObjectCode(mainObjectCode) {
-	 	this.mainObjectCode = mainObjectCode;
-	 }
-}
-module.exports.BusinessProcessNotificationTemplate = BusinessProcessNotificationTemplate;
-
-/**
- *
- */
-class BusinessProcessServerBaseFilter extends Filter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaBusinessProcessServerBaseFilter';
-	}
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getIdEqual() {
-	 	return this.idEqual;
-	 }
-	
-	/**
-	 * @param idEqual int 
-	 */
-	 setIdEqual(idEqual) {
-	 	this.idEqual = idEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getIdIn() {
-	 	return this.idIn;
-	 }
-	
-	/**
-	 * @param idIn string 
-	 */
-	 setIdIn(idIn) {
-	 	this.idIn = idIn;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getIdNotIn() {
-	 	return this.idNotIn;
-	 }
-	
-	/**
-	 * @param idNotIn string 
-	 */
-	 setIdNotIn(idNotIn) {
-	 	this.idNotIn = idNotIn;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getCreatedAtGreaterThanOrEqual() {
-	 	return this.createdAtGreaterThanOrEqual;
-	 }
-	
-	/**
-	 * @param createdAtGreaterThanOrEqual int 
-	 */
-	 setCreatedAtGreaterThanOrEqual(createdAtGreaterThanOrEqual) {
-	 	this.createdAtGreaterThanOrEqual = createdAtGreaterThanOrEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getCreatedAtLessThanOrEqual() {
-	 	return this.createdAtLessThanOrEqual;
-	 }
-	
-	/**
-	 * @param createdAtLessThanOrEqual int 
-	 */
-	 setCreatedAtLessThanOrEqual(createdAtLessThanOrEqual) {
-	 	this.createdAtLessThanOrEqual = createdAtLessThanOrEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getUpdatedAtGreaterThanOrEqual() {
-	 	return this.updatedAtGreaterThanOrEqual;
-	 }
-	
-	/**
-	 * @param updatedAtGreaterThanOrEqual int 
-	 */
-	 setUpdatedAtGreaterThanOrEqual(updatedAtGreaterThanOrEqual) {
-	 	this.updatedAtGreaterThanOrEqual = updatedAtGreaterThanOrEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getUpdatedAtLessThanOrEqual() {
-	 	return this.updatedAtLessThanOrEqual;
-	 }
-	
-	/**
-	 * @param updatedAtLessThanOrEqual int 
-	 */
-	 setUpdatedAtLessThanOrEqual(updatedAtLessThanOrEqual) {
-	 	this.updatedAtLessThanOrEqual = updatedAtLessThanOrEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getPartnerIdEqual() {
-	 	return this.partnerIdEqual;
-	 }
-	
-	/**
-	 * @param partnerIdEqual int 
-	 */
-	 setPartnerIdEqual(partnerIdEqual) {
-	 	this.partnerIdEqual = partnerIdEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getPartnerIdIn() {
-	 	return this.partnerIdIn;
-	 }
-	
-	/**
-	 * @param partnerIdIn string 
-	 */
-	 setPartnerIdIn(partnerIdIn) {
-	 	this.partnerIdIn = partnerIdIn;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getStatusEqual() {
-	 	return this.statusEqual;
-	 }
-	
-	/**
-	 * @param statusEqual string 
-	 */
-	 setStatusEqual(statusEqual) {
-	 	this.statusEqual = statusEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getStatusNotEqual() {
-	 	return this.statusNotEqual;
-	 }
-	
-	/**
-	 * @param statusNotEqual string 
-	 */
-	 setStatusNotEqual(statusNotEqual) {
-	 	this.statusNotEqual = statusNotEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getStatusIn() {
-	 	return this.statusIn;
-	 }
-	
-	/**
-	 * @param statusIn string 
-	 */
-	 setStatusIn(statusIn) {
-	 	this.statusIn = statusIn;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getStatusNotIn() {
-	 	return this.statusNotIn;
-	 }
-	
-	/**
-	 * @param statusNotIn string 
-	 */
-	 setStatusNotIn(statusNotIn) {
-	 	this.statusNotIn = statusNotIn;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getTypeEqual() {
-	 	return this.typeEqual;
-	 }
-	
-	/**
-	 * @param typeEqual string 
-	 */
-	 setTypeEqual(typeEqual) {
-	 	this.typeEqual = typeEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getTypeIn() {
-	 	return this.typeIn;
-	 }
-	
-	/**
-	 * @param typeIn string 
-	 */
-	 setTypeIn(typeIn) {
-	 	this.typeIn = typeIn;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getDcEqual() {
-	 	return this.dcEqual;
-	 }
-	
-	/**
-	 * @param dcEqual int 
-	 */
-	 setDcEqual(dcEqual) {
-	 	this.dcEqual = dcEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getDcEqOrNull() {
-	 	return this.dcEqOrNull;
-	 }
-	
-	/**
-	 * @param dcEqOrNull int 
-	 */
-	 setDcEqOrNull(dcEqOrNull) {
-	 	this.dcEqOrNull = dcEqOrNull;
-	 }
-}
-module.exports.BusinessProcessServerBaseFilter = BusinessProcessServerBaseFilter;
-
-/**
- *
- */
-class BusinessProcessServerListResponse extends ListResponse{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaBusinessProcessServerListResponse';
-	}
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getObjects() {
-	 	return this.objects;
-	 }
-}
-module.exports.BusinessProcessServerListResponse = BusinessProcessServerListResponse;
-
-/**
- *
- */
 class CameraScheduleResource extends ScheduleResource{
 	
 	constructor(object = null) {
@@ -32785,18 +31072,6 @@ class CodeCuePoint extends CuePoint{
 	 }
 }
 module.exports.CodeCuePoint = CodeCuePoint;
-
-/**
- *
- */
-class ComcastMrssDistributionProvider extends DistributionProvider{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaComcastMrssDistributionProvider';
-	}
-}
-module.exports.ComcastMrssDistributionProvider = ComcastMrssDistributionProvider;
 
 /**
  *
@@ -33914,18 +32189,6 @@ module.exports.CountryRestriction = CountryRestriction;
 /**
  *
  */
-class CrossKalturaDistributionProvider extends DistributionProvider{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaCrossKalturaDistributionProvider';
-	}
-}
-module.exports.CrossKalturaDistributionProvider = CrossKalturaDistributionProvider;
-
-/**
- *
- */
 class CuePointListResponse extends ListResponse{
 	
 	constructor(object = null) {
@@ -33942,18 +32205,6 @@ class CuePointListResponse extends ListResponse{
 	 }
 }
 module.exports.CuePointListResponse = CuePointListResponse;
-
-/**
- *
- */
-class DailymotionDistributionProvider extends DistributionProvider{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaDailymotionDistributionProvider';
-	}
-}
-module.exports.DailymotionDistributionProvider = DailymotionDistributionProvider;
 
 /**
  *
@@ -35397,30 +33648,6 @@ module.exports.DocumentListResponse = DocumentListResponse;
 /**
  *
  */
-class DoubleClickDistributionJobProviderData extends DistributionJobProviderData{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaDoubleClickDistributionJobProviderData';
-	}
-}
-module.exports.DoubleClickDistributionJobProviderData = DoubleClickDistributionJobProviderData;
-
-/**
- *
- */
-class DoubleClickDistributionProvider extends DistributionProvider{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaDoubleClickDistributionProvider';
-	}
-}
-module.exports.DoubleClickDistributionProvider = DoubleClickDistributionProvider;
-
-/**
- *
- */
 class DrmEntryContextPluginData extends PluginData{
 	
 	constructor(object = null) {
@@ -35446,355 +33673,6 @@ class DrmEntryContextPluginData extends PluginData{
 	 }
 }
 module.exports.DrmEntryContextPluginData = DrmEntryContextPluginData;
-
-/**
- *
- */
-class DrmPolicyBaseFilter extends Filter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaDrmPolicyBaseFilter';
-	}
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getPartnerIdEqual() {
-	 	return this.partnerIdEqual;
-	 }
-	
-	/**
-	 * @param partnerIdEqual int 
-	 */
-	 setPartnerIdEqual(partnerIdEqual) {
-	 	this.partnerIdEqual = partnerIdEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getPartnerIdIn() {
-	 	return this.partnerIdIn;
-	 }
-	
-	/**
-	 * @param partnerIdIn string 
-	 */
-	 setPartnerIdIn(partnerIdIn) {
-	 	this.partnerIdIn = partnerIdIn;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getNameLike() {
-	 	return this.nameLike;
-	 }
-	
-	/**
-	 * @param nameLike string 
-	 */
-	 setNameLike(nameLike) {
-	 	this.nameLike = nameLike;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSystemNameLike() {
-	 	return this.systemNameLike;
-	 }
-	
-	/**
-	 * @param systemNameLike string 
-	 */
-	 setSystemNameLike(systemNameLike) {
-	 	this.systemNameLike = systemNameLike;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getProviderEqual() {
-	 	return this.providerEqual;
-	 }
-	
-	/**
-	 * @param providerEqual string 
-	 */
-	 setProviderEqual(providerEqual) {
-	 	this.providerEqual = providerEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getProviderIn() {
-	 	return this.providerIn;
-	 }
-	
-	/**
-	 * @param providerIn string 
-	 */
-	 setProviderIn(providerIn) {
-	 	this.providerIn = providerIn;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getStatusEqual() {
-	 	return this.statusEqual;
-	 }
-	
-	/**
-	 * @param statusEqual int 
-	 */
-	 setStatusEqual(statusEqual) {
-	 	this.statusEqual = statusEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getStatusIn() {
-	 	return this.statusIn;
-	 }
-	
-	/**
-	 * @param statusIn string 
-	 */
-	 setStatusIn(statusIn) {
-	 	this.statusIn = statusIn;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getScenarioEqual() {
-	 	return this.scenarioEqual;
-	 }
-	
-	/**
-	 * @param scenarioEqual string 
-	 */
-	 setScenarioEqual(scenarioEqual) {
-	 	this.scenarioEqual = scenarioEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getScenarioIn() {
-	 	return this.scenarioIn;
-	 }
-	
-	/**
-	 * @param scenarioIn string 
-	 */
-	 setScenarioIn(scenarioIn) {
-	 	this.scenarioIn = scenarioIn;
-	 }
-}
-module.exports.DrmPolicyBaseFilter = DrmPolicyBaseFilter;
-
-/**
- *
- */
-class DrmPolicyListResponse extends ListResponse{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaDrmPolicyListResponse';
-	}
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getObjects() {
-	 	return this.objects;
-	 }
-}
-module.exports.DrmPolicyListResponse = DrmPolicyListResponse;
-
-/**
- *
- */
-class DrmProfileBaseFilter extends Filter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaDrmProfileBaseFilter';
-	}
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getIdEqual() {
-	 	return this.idEqual;
-	 }
-	
-	/**
-	 * @param idEqual int 
-	 */
-	 setIdEqual(idEqual) {
-	 	this.idEqual = idEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getIdIn() {
-	 	return this.idIn;
-	 }
-	
-	/**
-	 * @param idIn string 
-	 */
-	 setIdIn(idIn) {
-	 	this.idIn = idIn;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getPartnerIdEqual() {
-	 	return this.partnerIdEqual;
-	 }
-	
-	/**
-	 * @param partnerIdEqual int 
-	 */
-	 setPartnerIdEqual(partnerIdEqual) {
-	 	this.partnerIdEqual = partnerIdEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getPartnerIdIn() {
-	 	return this.partnerIdIn;
-	 }
-	
-	/**
-	 * @param partnerIdIn string 
-	 */
-	 setPartnerIdIn(partnerIdIn) {
-	 	this.partnerIdIn = partnerIdIn;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getNameLike() {
-	 	return this.nameLike;
-	 }
-	
-	/**
-	 * @param nameLike string 
-	 */
-	 setNameLike(nameLike) {
-	 	this.nameLike = nameLike;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getProviderEqual() {
-	 	return this.providerEqual;
-	 }
-	
-	/**
-	 * @param providerEqual string 
-	 */
-	 setProviderEqual(providerEqual) {
-	 	this.providerEqual = providerEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getProviderIn() {
-	 	return this.providerIn;
-	 }
-	
-	/**
-	 * @param providerIn string 
-	 */
-	 setProviderIn(providerIn) {
-	 	this.providerIn = providerIn;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getStatusEqual() {
-	 	return this.statusEqual;
-	 }
-	
-	/**
-	 * @param statusEqual int 
-	 */
-	 setStatusEqual(statusEqual) {
-	 	this.statusEqual = statusEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getStatusIn() {
-	 	return this.statusIn;
-	 }
-	
-	/**
-	 * @param statusIn string 
-	 */
-	 setStatusIn(statusIn) {
-	 	this.statusIn = statusIn;
-	 }
-}
-module.exports.DrmProfileBaseFilter = DrmProfileBaseFilter;
-
-/**
- *
- */
-class DrmProfileListResponse extends ListResponse{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaDrmProfileListResponse';
-	}
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getObjects() {
-	 	return this.objects;
-	 }
-}
-module.exports.DrmProfileListResponse = DrmProfileListResponse;
 
 /**
  *
@@ -39254,33 +37132,6 @@ module.exports.EventObjectChangedCondition = EventObjectChangedCondition;
 /**
  *
  */
-class ExampleIntegrationJobProviderData extends IntegrationJobProviderData{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaExampleIntegrationJobProviderData';
-	}
-	
-	/**
-	 * Just an example
-	 * @return string
-	 */
-	 getExampleUrl() {
-	 	return this.exampleUrl;
-	 }
-	
-	/**
-	 * @param exampleUrl string Just an example
-	 */
-	 setExampleUrl(exampleUrl) {
-	 	this.exampleUrl = exampleUrl;
-	 }
-}
-module.exports.ExampleIntegrationJobProviderData = ExampleIntegrationJobProviderData;
-
-/**
- *
- */
 class ExecuteMetadataXsltObjectTask extends ObjectTask{
 	
 	constructor(object = null) {
@@ -39366,62 +37217,6 @@ class FacebookDistributionProvider extends DistributionProvider{
 	}
 }
 module.exports.FacebookDistributionProvider = FacebookDistributionProvider;
-
-/**
- *
- */
-class FairplayDrmProfile extends DrmProfile{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFairplayDrmProfile';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getPublicCertificate() {
-	 	return this.publicCertificate;
-	 }
-	
-	/**
-	 * @param publicCertificate string 
-	 */
-	 setPublicCertificate(publicCertificate) {
-	 	this.publicCertificate = publicCertificate;
-	 }
-}
-module.exports.FairplayDrmProfile = FairplayDrmProfile;
-
-/**
- *
- */
-class FairplayEntryContextPluginData extends PluginData{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFairplayEntryContextPluginData';
-	}
-	
-	/**
-	 * For fairplay (and maybe in the future other drm providers) we need to return a public certificate to encrypt
- * the request from the player to the server
-	 * @return string
-	 */
-	 getPublicCertificate() {
-	 	return this.publicCertificate;
-	 }
-	
-	/**
-	 * @param publicCertificate string For fairplay (and maybe in the future other drm providers) we need to return a public certificate to encrypt
- * the request from the player to the server
-	 */
-	 setPublicCertificate(publicCertificate) {
-	 	this.publicCertificate = publicCertificate;
-	 }
-}
-module.exports.FairplayEntryContextPluginData = FairplayEntryContextPluginData;
 
 /**
  *
@@ -39997,26 +37792,6 @@ module.exports.FileSyncBaseFilter = FileSyncBaseFilter;
 /**
  *
  */
-class FileSyncListResponse extends ListResponse{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFileSyncListResponse';
-	}
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getObjects() {
-	 	return this.objects;
-	 }
-}
-module.exports.FileSyncListResponse = FileSyncListResponse;
-
-/**
- *
- */
 class FlattenJobData extends JobData{
 	
 	constructor(object = null) {
@@ -40065,206 +37840,6 @@ class FlavorParamsListResponse extends ListResponse{
 	 }
 }
 module.exports.FlavorParamsListResponse = FlavorParamsListResponse;
-
-/**
- *
- */
-class FlavorParamsOutputListResponse extends ListResponse{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFlavorParamsOutputListResponse';
-	}
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getObjects() {
-	 	return this.objects;
-	 }
-}
-module.exports.FlavorParamsOutputListResponse = FlavorParamsOutputListResponse;
-
-/**
- *
- */
-class FreewheelDistributionJobProviderData extends DistributionJobProviderData{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFreewheelDistributionJobProviderData';
-	}
-	
-	/**
-	 * Demonstrate passing array of paths to the job
-	 * @return array
-	 */
-	 getVideoAssetFilePaths() {
-	 	return this.videoAssetFilePaths;
-	 }
-	
-	/**
-	 * @param videoAssetFilePaths array Demonstrate passing array of paths to the job
-	 */
-	 setVideoAssetFilePaths(videoAssetFilePaths) {
-	 	this.videoAssetFilePaths = videoAssetFilePaths;
-	 }
-	
-	/**
-	 * Demonstrate passing single path to the job
-	 * @return string
-	 */
-	 getThumbAssetFilePath() {
-	 	return this.thumbAssetFilePath;
-	 }
-	
-	/**
-	 * @param thumbAssetFilePath string Demonstrate passing single path to the job
-	 */
-	 setThumbAssetFilePath(thumbAssetFilePath) {
-	 	this.thumbAssetFilePath = thumbAssetFilePath;
-	 }
-}
-module.exports.FreewheelDistributionJobProviderData = FreewheelDistributionJobProviderData;
-
-/**
- *
- */
-class FreewheelDistributionProfile extends DistributionProfile{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFreewheelDistributionProfile';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getApikey() {
-	 	return this.apikey;
-	 }
-	
-	/**
-	 * @param apikey string 
-	 */
-	 setApikey(apikey) {
-	 	this.apikey = apikey;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getEmail() {
-	 	return this.email;
-	 }
-	
-	/**
-	 * @param email string 
-	 */
-	 setEmail(email) {
-	 	this.email = email;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSftpPass() {
-	 	return this.sftpPass;
-	 }
-	
-	/**
-	 * @param sftpPass string 
-	 */
-	 setSftpPass(sftpPass) {
-	 	this.sftpPass = sftpPass;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSftpLogin() {
-	 	return this.sftpLogin;
-	 }
-	
-	/**
-	 * @param sftpLogin string 
-	 */
-	 setSftpLogin(sftpLogin) {
-	 	this.sftpLogin = sftpLogin;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getAccountId() {
-	 	return this.accountId;
-	 }
-	
-	/**
-	 * @param accountId string 
-	 */
-	 setAccountId(accountId) {
-	 	this.accountId = accountId;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getMetadataProfileId() {
-	 	return this.metadataProfileId;
-	 }
-	
-	/**
-	 * @param metadataProfileId int 
-	 */
-	 setMetadataProfileId(metadataProfileId) {
-	 	this.metadataProfileId = metadataProfileId;
-	 }
-}
-module.exports.FreewheelDistributionProfile = FreewheelDistributionProfile;
-
-/**
- *
- */
-class FreewheelDistributionProvider extends DistributionProvider{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFreewheelDistributionProvider';
-	}
-}
-module.exports.FreewheelDistributionProvider = FreewheelDistributionProvider;
-
-/**
- *
- */
-class FreewheelGenericDistributionProvider extends DistributionProvider{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFreewheelGenericDistributionProvider';
-	}
-}
-module.exports.FreewheelGenericDistributionProvider = FreewheelGenericDistributionProvider;
-
-/**
- *
- */
-class FtpDistributionProvider extends DistributionProvider{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFtpDistributionProvider';
-	}
-}
-module.exports.FtpDistributionProvider = FtpDistributionProvider;
 
 /**
  *
@@ -41199,18 +38774,6 @@ class HttpNotificationTemplate extends EventNotificationTemplate{
 	 }
 }
 module.exports.HttpNotificationTemplate = HttpNotificationTemplate;
-
-/**
- *
- */
-class HuluDistributionProvider extends DistributionProvider{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaHuluDistributionProvider';
-	}
-}
-module.exports.HuluDistributionProvider = HuluDistributionProvider;
 
 /**
  *
@@ -42700,26 +40263,6 @@ module.exports.MediaInfoBaseFilter = MediaInfoBaseFilter;
 /**
  *
  */
-class MediaInfoListResponse extends ListResponse{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaMediaInfoListResponse';
-	}
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getObjects() {
-	 	return this.objects;
-	 }
-}
-module.exports.MediaInfoListResponse = MediaInfoListResponse;
-
-/**
- *
- */
 class MediaListResponse extends ListResponse{
 	
 	constructor(object = null) {
@@ -43121,18 +40664,6 @@ module.exports.MetadataResponseProfileMapping = MetadataResponseProfileMapping;
 /**
  *
  */
-class MetroPcsDistributionProvider extends DistributionProvider{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaMetroPcsDistributionProvider';
-	}
-}
-module.exports.MetroPcsDistributionProvider = MetroPcsDistributionProvider;
-
-/**
- *
- */
 class MixListResponse extends ListResponse{
 	
 	constructor(object = null) {
@@ -43451,30 +40982,6 @@ class MoveCategoryEntriesJobData extends JobData{
 	 }
 }
 module.exports.MoveCategoryEntriesJobData = MoveCategoryEntriesJobData;
-
-/**
- *
- */
-class MsnDistributionProvider extends DistributionProvider{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaMsnDistributionProvider';
-	}
-}
-module.exports.MsnDistributionProvider = MsnDistributionProvider;
-
-/**
- *
- */
-class NdnDistributionProvider extends DistributionProvider{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaNdnDistributionProvider';
-	}
-}
-module.exports.NdnDistributionProvider = NdnDistributionProvider;
 
 /**
  *
@@ -44096,222 +41603,6 @@ module.exports.PermissionListResponse = PermissionListResponse;
 /**
  *
  */
-class PlayReadyCopyRight extends PlayReadyRight{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaPlayReadyCopyRight';
-	}
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getCopyCount() {
-	 	return this.copyCount;
-	 }
-	
-	/**
-	 * @param copyCount int 
-	 */
-	 setCopyCount(copyCount) {
-	 	this.copyCount = copyCount;
-	 }
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getCopyEnablers() {
-	 	return this.copyEnablers;
-	 }
-	
-	/**
-	 * @param copyEnablers array 
-	 */
-	 setCopyEnablers(copyEnablers) {
-	 	this.copyEnablers = copyEnablers;
-	 }
-}
-module.exports.PlayReadyCopyRight = PlayReadyCopyRight;
-
-/**
- *
- */
-class PlayReadyPlayRight extends PlayReadyRight{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaPlayReadyPlayRight';
-	}
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getAnalogVideoOPL() {
-	 	return this.analogVideoOPL;
-	 }
-	
-	/**
-	 * @param analogVideoOPL int 
-	 */
-	 setAnalogVideoOPL(analogVideoOPL) {
-	 	this.analogVideoOPL = analogVideoOPL;
-	 }
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getAnalogVideoOutputProtectionList() {
-	 	return this.analogVideoOutputProtectionList;
-	 }
-	
-	/**
-	 * @param analogVideoOutputProtectionList array 
-	 */
-	 setAnalogVideoOutputProtectionList(analogVideoOutputProtectionList) {
-	 	this.analogVideoOutputProtectionList = analogVideoOutputProtectionList;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getCompressedDigitalAudioOPL() {
-	 	return this.compressedDigitalAudioOPL;
-	 }
-	
-	/**
-	 * @param compressedDigitalAudioOPL int 
-	 */
-	 setCompressedDigitalAudioOPL(compressedDigitalAudioOPL) {
-	 	this.compressedDigitalAudioOPL = compressedDigitalAudioOPL;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getCompressedDigitalVideoOPL() {
-	 	return this.compressedDigitalVideoOPL;
-	 }
-	
-	/**
-	 * @param compressedDigitalVideoOPL int 
-	 */
-	 setCompressedDigitalVideoOPL(compressedDigitalVideoOPL) {
-	 	this.compressedDigitalVideoOPL = compressedDigitalVideoOPL;
-	 }
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getDigitalAudioOutputProtectionList() {
-	 	return this.digitalAudioOutputProtectionList;
-	 }
-	
-	/**
-	 * @param digitalAudioOutputProtectionList array 
-	 */
-	 setDigitalAudioOutputProtectionList(digitalAudioOutputProtectionList) {
-	 	this.digitalAudioOutputProtectionList = digitalAudioOutputProtectionList;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getUncompressedDigitalAudioOPL() {
-	 	return this.uncompressedDigitalAudioOPL;
-	 }
-	
-	/**
-	 * @param uncompressedDigitalAudioOPL int 
-	 */
-	 setUncompressedDigitalAudioOPL(uncompressedDigitalAudioOPL) {
-	 	this.uncompressedDigitalAudioOPL = uncompressedDigitalAudioOPL;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getUncompressedDigitalVideoOPL() {
-	 	return this.uncompressedDigitalVideoOPL;
-	 }
-	
-	/**
-	 * @param uncompressedDigitalVideoOPL int 
-	 */
-	 setUncompressedDigitalVideoOPL(uncompressedDigitalVideoOPL) {
-	 	this.uncompressedDigitalVideoOPL = uncompressedDigitalVideoOPL;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getFirstPlayExpiration() {
-	 	return this.firstPlayExpiration;
-	 }
-	
-	/**
-	 * @param firstPlayExpiration int 
-	 */
-	 setFirstPlayExpiration(firstPlayExpiration) {
-	 	this.firstPlayExpiration = firstPlayExpiration;
-	 }
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getPlayEnablers() {
-	 	return this.playEnablers;
-	 }
-	
-	/**
-	 * @param playEnablers array 
-	 */
-	 setPlayEnablers(playEnablers) {
-	 	this.playEnablers = playEnablers;
-	 }
-}
-module.exports.PlayReadyPlayRight = PlayReadyPlayRight;
-
-/**
- *
- */
-class PlayReadyProfile extends DrmProfile{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaPlayReadyProfile';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getKeySeed() {
-	 	return this.keySeed;
-	 }
-	
-	/**
-	 * @param keySeed string 
-	 */
-	 setKeySeed(keySeed) {
-	 	this.keySeed = keySeed;
-	 }
-}
-module.exports.PlayReadyProfile = PlayReadyProfile;
-
-/**
- *
- */
 class PlaylistListResponse extends ListResponse{
 	
 	constructor(object = null) {
@@ -44328,125 +41619,6 @@ class PlaylistListResponse extends ListResponse{
 	 }
 }
 module.exports.PlaylistListResponse = PlaylistListResponse;
-
-/**
- *
- */
-class PodcastDistributionJobProviderData extends DistributionJobProviderData{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaPodcastDistributionJobProviderData';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getXml() {
-	 	return this.xml;
-	 }
-	
-	/**
-	 * @param xml string 
-	 */
-	 setXml(xml) {
-	 	this.xml = xml;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getMetadataProfileId() {
-	 	return this.metadataProfileId;
-	 }
-	
-	/**
-	 * @param metadataProfileId int 
-	 */
-	 setMetadataProfileId(metadataProfileId) {
-	 	this.metadataProfileId = metadataProfileId;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getDistributionProfileId() {
-	 	return this.distributionProfileId;
-	 }
-	
-	/**
-	 * @param distributionProfileId int 
-	 */
-	 setDistributionProfileId(distributionProfileId) {
-	 	this.distributionProfileId = distributionProfileId;
-	 }
-}
-module.exports.PodcastDistributionJobProviderData = PodcastDistributionJobProviderData;
-
-/**
- *
- */
-class PodcastDistributionProfile extends DistributionProfile{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaPodcastDistributionProfile';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getXsl() {
-	 	return this.xsl;
-	 }
-	
-	/**
-	 * @param xsl string 
-	 */
-	 setXsl(xsl) {
-	 	this.xsl = xsl;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFeedId() {
-	 	return this.feedId;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getMetadataProfileId() {
-	 	return this.metadataProfileId;
-	 }
-	
-	/**
-	 * @param metadataProfileId int 
-	 */
-	 setMetadataProfileId(metadataProfileId) {
-	 	this.metadataProfileId = metadataProfileId;
-	 }
-}
-module.exports.PodcastDistributionProfile = PodcastDistributionProfile;
-
-/**
- *
- */
-class PodcastDistributionProvider extends DistributionProvider{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaPodcastDistributionProvider';
-	}
-}
-module.exports.PodcastDistributionProvider = PodcastDistributionProvider;
 
 /**
  *
@@ -44658,93 +41830,6 @@ module.exports.ProvisionJobData = ProvisionJobData;
 /**
  *
  */
-class PushNotificationTemplate extends EventNotificationTemplate{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaPushNotificationTemplate';
-	}
-	
-	/**
-	 * Define the content dynamic parameters
-	 * @return array
-	 */
-	 getQueueNameParameters() {
-	 	return this.queueNameParameters;
-	 }
-	
-	/**
-	 * @param queueNameParameters array Define the content dynamic parameters
-	 */
-	 setQueueNameParameters(queueNameParameters) {
-	 	this.queueNameParameters = queueNameParameters;
-	 }
-	
-	/**
-	 * Define the content dynamic parameters
-	 * @return array
-	 */
-	 getQueueKeyParameters() {
-	 	return this.queueKeyParameters;
-	 }
-	
-	/**
-	 * @param queueKeyParameters array Define the content dynamic parameters
-	 */
-	 setQueueKeyParameters(queueKeyParameters) {
-	 	this.queueKeyParameters = queueKeyParameters;
-	 }
-	
-	/**
-	 * Kaltura API object type
-	 * @return string
-	 */
-	 getApiObjectType() {
-	 	return this.apiObjectType;
-	 }
-	
-	/**
-	 * @param apiObjectType string Kaltura API object type
-	 */
-	 setApiObjectType(apiObjectType) {
-	 	this.apiObjectType = apiObjectType;
-	 }
-	
-	/**
-	 * Kaltura Object format
-	 * @return int
-	 */
-	 getObjectFormat() {
-	 	return this.objectFormat;
-	 }
-	
-	/**
-	 * @param objectFormat int Kaltura Object format
-	 */
-	 setObjectFormat(objectFormat) {
-	 	this.objectFormat = objectFormat;
-	 }
-	
-	/**
-	 * Kaltura response-profile id
-	 * @return int
-	 */
-	 getResponseProfileId() {
-	 	return this.responseProfileId;
-	 }
-	
-	/**
-	 * @param responseProfileId int Kaltura response-profile id
-	 */
-	 setResponseProfileId(responseProfileId) {
-	 	this.responseProfileId = responseProfileId;
-	 }
-}
-module.exports.PushNotificationTemplate = PushNotificationTemplate;
-
-/**
- *
- */
 class QuestionCuePoint extends CuePoint{
 	
 	constructor(object = null) {
@@ -44813,18 +41898,6 @@ class QuestionCuePoint extends CuePoint{
 	 }
 }
 module.exports.QuestionCuePoint = QuestionCuePoint;
-
-/**
- *
- */
-class QuickPlayDistributionProvider extends DistributionProvider{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaQuickPlayDistributionProvider';
-	}
-}
-module.exports.QuickPlayDistributionProvider = QuickPlayDistributionProvider;
 
 /**
  *
@@ -47062,18 +44135,6 @@ module.exports.StorageProfileListResponse = StorageProfileListResponse;
 /**
  *
  */
-class SynacorHboDistributionProvider extends DistributionProvider{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaSynacorHboDistributionProvider';
-	}
-}
-module.exports.SynacorHboDistributionProvider = SynacorHboDistributionProvider;
-
-/**
- *
- */
 class SyncCategoryPrivacyContextJobData extends JobData{
 	
 	constructor(object = null) {
@@ -47182,14 +44243,86 @@ module.exports.SyndicationDistributionProvider = SyndicationDistributionProvider
 /**
  *
  */
-class TVComDistributionProvider extends DistributionProvider{
+class SystemPartnerUsageFilter extends Filter{
 	
 	constructor(object = null) {
 		super(object);
-		this.objectType = 'KalturaTVComDistributionProvider';
+		this.objectType = 'KalturaSystemPartnerUsageFilter';
 	}
+	
+	/**
+	 * Date range from
+	 * @return int
+	 */
+	 getFromDate() {
+	 	return this.fromDate;
+	 }
+	
+	/**
+	 * @param fromDate int Date range from
+	 */
+	 setFromDate(fromDate) {
+	 	this.fromDate = fromDate;
+	 }
+	
+	/**
+	 * Date range to
+	 * @return int
+	 */
+	 getToDate() {
+	 	return this.toDate;
+	 }
+	
+	/**
+	 * @param toDate int Date range to
+	 */
+	 setToDate(toDate) {
+	 	this.toDate = toDate;
+	 }
+	
+	/**
+	 * Time zone offset
+	 * @return int
+	 */
+	 getTimezoneOffset() {
+	 	return this.timezoneOffset;
+	 }
+	
+	/**
+	 * @param timezoneOffset int Time zone offset
+	 */
+	 setTimezoneOffset(timezoneOffset) {
+	 	this.timezoneOffset = timezoneOffset;
+	 }
 }
-module.exports.TVComDistributionProvider = TVComDistributionProvider;
+module.exports.SystemPartnerUsageFilter = SystemPartnerUsageFilter;
+
+/**
+ *
+ */
+class SystemPartnerUsageListResponse extends ListResponse{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaSystemPartnerUsageListResponse';
+	}
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getObjects() {
+	 	return this.objects;
+	 }
+	
+	/**
+	 * @param objects array 
+	 */
+	 setObjects(objects) {
+	 	this.objects = objects;
+	 }
+}
+module.exports.SystemPartnerUsageListResponse = SystemPartnerUsageListResponse;
 
 /**
  *
@@ -47413,26 +44546,6 @@ module.exports.ThumbParamsListResponse = ThumbParamsListResponse;
 /**
  *
  */
-class ThumbParamsOutputListResponse extends ListResponse{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaThumbParamsOutputListResponse';
-	}
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getObjects() {
-	 	return this.objects;
-	 }
-}
-module.exports.ThumbParamsOutputListResponse = ThumbParamsOutputListResponse;
-
-/**
- *
- */
 class ThumbnailServeOptions extends AssetServeOptions{
 	
 	constructor(object = null) {
@@ -47445,14 +44558,22 @@ module.exports.ThumbnailServeOptions = ThumbnailServeOptions;
 /**
  *
  */
-class TimeWarnerDistributionProvider extends DistributionProvider{
+class TrackEntryListResponse extends ListResponse{
 	
 	constructor(object = null) {
 		super(object);
-		this.objectType = 'KalturaTimeWarnerDistributionProvider';
+		this.objectType = 'KalturaTrackEntryListResponse';
 	}
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getObjects() {
+	 	return this.objects;
+	 }
 }
-module.exports.TimeWarnerDistributionProvider = TimeWarnerDistributionProvider;
+module.exports.TrackEntryListResponse = TrackEntryListResponse;
 
 /**
  *
@@ -47584,14 +44705,22 @@ module.exports.TubeMogulSyndicationFeed = TubeMogulSyndicationFeed;
 /**
  *
  */
-class TvinciDistributionProvider extends DistributionProvider{
+class UiConfAdminListResponse extends ListResponse{
 	
 	constructor(object = null) {
 		super(object);
-		this.objectType = 'KalturaTvinciDistributionProvider';
+		this.objectType = 'KalturaUiConfAdminListResponse';
 	}
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getObjects() {
+	 	return this.objects;
+	 }
 }
-module.exports.TvinciDistributionProvider = TvinciDistributionProvider;
+module.exports.UiConfAdminListResponse = UiConfAdminListResponse;
 
 /**
  *
@@ -47924,18 +45053,6 @@ class UiConfListResponse extends ListResponse{
 	 }
 }
 module.exports.UiConfListResponse = UiConfListResponse;
-
-/**
- *
- */
-class UnicornDistributionProvider extends DistributionProvider{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaUnicornDistributionProvider';
-	}
-}
-module.exports.UnicornDistributionProvider = UnicornDistributionProvider;
 
 /**
  *
@@ -49527,369 +46644,6 @@ module.exports.VoicebaseJobProviderData = VoicebaseJobProviderData;
 /**
  *
  */
-class WebexDropFolder extends DropFolder{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaWebexDropFolder';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getWebexUserId() {
-	 	return this.webexUserId;
-	 }
-	
-	/**
-	 * @param webexUserId string 
-	 */
-	 setWebexUserId(webexUserId) {
-	 	this.webexUserId = webexUserId;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getWebexPassword() {
-	 	return this.webexPassword;
-	 }
-	
-	/**
-	 * @param webexPassword string 
-	 */
-	 setWebexPassword(webexPassword) {
-	 	this.webexPassword = webexPassword;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getWebexSiteId() {
-	 	return this.webexSiteId;
-	 }
-	
-	/**
-	 * @param webexSiteId int 
-	 */
-	 setWebexSiteId(webexSiteId) {
-	 	this.webexSiteId = webexSiteId;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getWebexPartnerId() {
-	 	return this.webexPartnerId;
-	 }
-	
-	/**
-	 * @param webexPartnerId string 
-	 */
-	 setWebexPartnerId(webexPartnerId) {
-	 	this.webexPartnerId = webexPartnerId;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getWebexServiceUrl() {
-	 	return this.webexServiceUrl;
-	 }
-	
-	/**
-	 * @param webexServiceUrl string 
-	 */
-	 setWebexServiceUrl(webexServiceUrl) {
-	 	this.webexServiceUrl = webexServiceUrl;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getWebexHostIdMetadataFieldName() {
-	 	return this.webexHostIdMetadataFieldName;
-	 }
-	
-	/**
-	 * @param webexHostIdMetadataFieldName string 
-	 */
-	 setWebexHostIdMetadataFieldName(webexHostIdMetadataFieldName) {
-	 	this.webexHostIdMetadataFieldName = webexHostIdMetadataFieldName;
-	 }
-}
-module.exports.WebexDropFolder = WebexDropFolder;
-
-/**
- *
- */
-class WebexDropFolderFile extends DropFolderFile{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaWebexDropFolderFile';
-	}
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getRecordingId() {
-	 	return this.recordingId;
-	 }
-	
-	/**
-	 * @param recordingId int 
-	 */
-	 setRecordingId(recordingId) {
-	 	this.recordingId = recordingId;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getWebexHostId() {
-	 	return this.webexHostId;
-	 }
-	
-	/**
-	 * @param webexHostId string 
-	 */
-	 setWebexHostId(webexHostId) {
-	 	this.webexHostId = webexHostId;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getDescription() {
-	 	return this.description;
-	 }
-	
-	/**
-	 * @param description string 
-	 */
-	 setDescription(description) {
-	 	this.description = description;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getConfId() {
-	 	return this.confId;
-	 }
-	
-	/**
-	 * @param confId string 
-	 */
-	 setConfId(confId) {
-	 	this.confId = confId;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getContentUrl() {
-	 	return this.contentUrl;
-	 }
-	
-	/**
-	 * @param contentUrl string 
-	 */
-	 setContentUrl(contentUrl) {
-	 	this.contentUrl = contentUrl;
-	 }
-}
-module.exports.WebexDropFolderFile = WebexDropFolderFile;
-
-/**
- *
- */
-class WidevineProfile extends DrmProfile{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaWidevineProfile';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getKey() {
-	 	return this.key;
-	 }
-	
-	/**
-	 * @param key string 
-	 */
-	 setKey(key) {
-	 	this.key = key;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getIv() {
-	 	return this.iv;
-	 }
-	
-	/**
-	 * @param iv string 
-	 */
-	 setIv(iv) {
-	 	this.iv = iv;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getOwner() {
-	 	return this.owner;
-	 }
-	
-	/**
-	 * @param owner string 
-	 */
-	 setOwner(owner) {
-	 	this.owner = owner;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getPortal() {
-	 	return this.portal;
-	 }
-	
-	/**
-	 * @param portal string 
-	 */
-	 setPortal(portal) {
-	 	this.portal = portal;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getMaxGop() {
-	 	return this.maxGop;
-	 }
-	
-	/**
-	 * @param maxGop int 
-	 */
-	 setMaxGop(maxGop) {
-	 	this.maxGop = maxGop;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getRegServerHost() {
-	 	return this.regServerHost;
-	 }
-	
-	/**
-	 * @param regServerHost string 
-	 */
-	 setRegServerHost(regServerHost) {
-	 	this.regServerHost = regServerHost;
-	 }
-}
-module.exports.WidevineProfile = WidevineProfile;
-
-/**
- *
- */
-class WidevineRepositorySyncJobData extends JobData{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaWidevineRepositorySyncJobData';
-	}
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getSyncMode() {
-	 	return this.syncMode;
-	 }
-	
-	/**
-	 * @param syncMode int 
-	 */
-	 setSyncMode(syncMode) {
-	 	this.syncMode = syncMode;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getWvAssetIds() {
-	 	return this.wvAssetIds;
-	 }
-	
-	/**
-	 * @param wvAssetIds string 
-	 */
-	 setWvAssetIds(wvAssetIds) {
-	 	this.wvAssetIds = wvAssetIds;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getModifiedAttributes() {
-	 	return this.modifiedAttributes;
-	 }
-	
-	/**
-	 * @param modifiedAttributes string 
-	 */
-	 setModifiedAttributes(modifiedAttributes) {
-	 	this.modifiedAttributes = modifiedAttributes;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getMonitorSyncCompletion() {
-	 	return this.monitorSyncCompletion;
-	 }
-	
-	/**
-	 * @param monitorSyncCompletion int 
-	 */
-	 setMonitorSyncCompletion(monitorSyncCompletion) {
-	 	this.monitorSyncCompletion = monitorSyncCompletion;
-	 }
-}
-module.exports.WidevineRepositorySyncJobData = WidevineRepositorySyncJobData;
-
-/**
- *
- */
 class WidgetBaseFilter extends Filter{
 	
 	constructor(object = null) {
@@ -50102,18 +46856,6 @@ module.exports.WidgetListResponse = WidgetListResponse;
 /**
  *
  */
-class YahooDistributionProvider extends DistributionProvider{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaYahooDistributionProvider';
-	}
-}
-module.exports.YahooDistributionProvider = YahooDistributionProvider;
-
-/**
- *
- */
 class YahooSyndicationFeed extends BaseSyndicationFeed{
 	
 	constructor(object = null) {
@@ -50175,18 +46917,6 @@ class YahooSyndicationFeed extends BaseSyndicationFeed{
 	 }
 }
 module.exports.YahooSyndicationFeed = YahooSyndicationFeed;
-
-/**
- *
- */
-class YouTubeDistributionProvider extends DistributionProvider{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaYouTubeDistributionProvider';
-	}
-}
-module.exports.YouTubeDistributionProvider = YouTubeDistributionProvider;
 
 /**
  *
@@ -50869,573 +47599,6 @@ module.exports.AssetResource = AssetResource;
 /**
  *
  */
-class AuditTrailBaseFilter extends RelatedFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaAuditTrailBaseFilter';
-	}
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getIdEqual() {
-	 	return this.idEqual;
-	 }
-	
-	/**
-	 * @param idEqual int 
-	 */
-	 setIdEqual(idEqual) {
-	 	this.idEqual = idEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getCreatedAtGreaterThanOrEqual() {
-	 	return this.createdAtGreaterThanOrEqual;
-	 }
-	
-	/**
-	 * @param createdAtGreaterThanOrEqual int 
-	 */
-	 setCreatedAtGreaterThanOrEqual(createdAtGreaterThanOrEqual) {
-	 	this.createdAtGreaterThanOrEqual = createdAtGreaterThanOrEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getCreatedAtLessThanOrEqual() {
-	 	return this.createdAtLessThanOrEqual;
-	 }
-	
-	/**
-	 * @param createdAtLessThanOrEqual int 
-	 */
-	 setCreatedAtLessThanOrEqual(createdAtLessThanOrEqual) {
-	 	this.createdAtLessThanOrEqual = createdAtLessThanOrEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getParsedAtGreaterThanOrEqual() {
-	 	return this.parsedAtGreaterThanOrEqual;
-	 }
-	
-	/**
-	 * @param parsedAtGreaterThanOrEqual int 
-	 */
-	 setParsedAtGreaterThanOrEqual(parsedAtGreaterThanOrEqual) {
-	 	this.parsedAtGreaterThanOrEqual = parsedAtGreaterThanOrEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getParsedAtLessThanOrEqual() {
-	 	return this.parsedAtLessThanOrEqual;
-	 }
-	
-	/**
-	 * @param parsedAtLessThanOrEqual int 
-	 */
-	 setParsedAtLessThanOrEqual(parsedAtLessThanOrEqual) {
-	 	this.parsedAtLessThanOrEqual = parsedAtLessThanOrEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getStatusEqual() {
-	 	return this.statusEqual;
-	 }
-	
-	/**
-	 * @param statusEqual int 
-	 */
-	 setStatusEqual(statusEqual) {
-	 	this.statusEqual = statusEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getStatusIn() {
-	 	return this.statusIn;
-	 }
-	
-	/**
-	 * @param statusIn string 
-	 */
-	 setStatusIn(statusIn) {
-	 	this.statusIn = statusIn;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getAuditObjectTypeEqual() {
-	 	return this.auditObjectTypeEqual;
-	 }
-	
-	/**
-	 * @param auditObjectTypeEqual string 
-	 */
-	 setAuditObjectTypeEqual(auditObjectTypeEqual) {
-	 	this.auditObjectTypeEqual = auditObjectTypeEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getAuditObjectTypeIn() {
-	 	return this.auditObjectTypeIn;
-	 }
-	
-	/**
-	 * @param auditObjectTypeIn string 
-	 */
-	 setAuditObjectTypeIn(auditObjectTypeIn) {
-	 	this.auditObjectTypeIn = auditObjectTypeIn;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getObjectIdEqual() {
-	 	return this.objectIdEqual;
-	 }
-	
-	/**
-	 * @param objectIdEqual string 
-	 */
-	 setObjectIdEqual(objectIdEqual) {
-	 	this.objectIdEqual = objectIdEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getObjectIdIn() {
-	 	return this.objectIdIn;
-	 }
-	
-	/**
-	 * @param objectIdIn string 
-	 */
-	 setObjectIdIn(objectIdIn) {
-	 	this.objectIdIn = objectIdIn;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getRelatedObjectIdEqual() {
-	 	return this.relatedObjectIdEqual;
-	 }
-	
-	/**
-	 * @param relatedObjectIdEqual string 
-	 */
-	 setRelatedObjectIdEqual(relatedObjectIdEqual) {
-	 	this.relatedObjectIdEqual = relatedObjectIdEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getRelatedObjectIdIn() {
-	 	return this.relatedObjectIdIn;
-	 }
-	
-	/**
-	 * @param relatedObjectIdIn string 
-	 */
-	 setRelatedObjectIdIn(relatedObjectIdIn) {
-	 	this.relatedObjectIdIn = relatedObjectIdIn;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getRelatedObjectTypeEqual() {
-	 	return this.relatedObjectTypeEqual;
-	 }
-	
-	/**
-	 * @param relatedObjectTypeEqual string 
-	 */
-	 setRelatedObjectTypeEqual(relatedObjectTypeEqual) {
-	 	this.relatedObjectTypeEqual = relatedObjectTypeEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getRelatedObjectTypeIn() {
-	 	return this.relatedObjectTypeIn;
-	 }
-	
-	/**
-	 * @param relatedObjectTypeIn string 
-	 */
-	 setRelatedObjectTypeIn(relatedObjectTypeIn) {
-	 	this.relatedObjectTypeIn = relatedObjectTypeIn;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getEntryIdEqual() {
-	 	return this.entryIdEqual;
-	 }
-	
-	/**
-	 * @param entryIdEqual string 
-	 */
-	 setEntryIdEqual(entryIdEqual) {
-	 	this.entryIdEqual = entryIdEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getEntryIdIn() {
-	 	return this.entryIdIn;
-	 }
-	
-	/**
-	 * @param entryIdIn string 
-	 */
-	 setEntryIdIn(entryIdIn) {
-	 	this.entryIdIn = entryIdIn;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getMasterPartnerIdEqual() {
-	 	return this.masterPartnerIdEqual;
-	 }
-	
-	/**
-	 * @param masterPartnerIdEqual int 
-	 */
-	 setMasterPartnerIdEqual(masterPartnerIdEqual) {
-	 	this.masterPartnerIdEqual = masterPartnerIdEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getMasterPartnerIdIn() {
-	 	return this.masterPartnerIdIn;
-	 }
-	
-	/**
-	 * @param masterPartnerIdIn string 
-	 */
-	 setMasterPartnerIdIn(masterPartnerIdIn) {
-	 	this.masterPartnerIdIn = masterPartnerIdIn;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getPartnerIdEqual() {
-	 	return this.partnerIdEqual;
-	 }
-	
-	/**
-	 * @param partnerIdEqual int 
-	 */
-	 setPartnerIdEqual(partnerIdEqual) {
-	 	this.partnerIdEqual = partnerIdEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getPartnerIdIn() {
-	 	return this.partnerIdIn;
-	 }
-	
-	/**
-	 * @param partnerIdIn string 
-	 */
-	 setPartnerIdIn(partnerIdIn) {
-	 	this.partnerIdIn = partnerIdIn;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getRequestIdEqual() {
-	 	return this.requestIdEqual;
-	 }
-	
-	/**
-	 * @param requestIdEqual string 
-	 */
-	 setRequestIdEqual(requestIdEqual) {
-	 	this.requestIdEqual = requestIdEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getRequestIdIn() {
-	 	return this.requestIdIn;
-	 }
-	
-	/**
-	 * @param requestIdIn string 
-	 */
-	 setRequestIdIn(requestIdIn) {
-	 	this.requestIdIn = requestIdIn;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getUserIdEqual() {
-	 	return this.userIdEqual;
-	 }
-	
-	/**
-	 * @param userIdEqual string 
-	 */
-	 setUserIdEqual(userIdEqual) {
-	 	this.userIdEqual = userIdEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getUserIdIn() {
-	 	return this.userIdIn;
-	 }
-	
-	/**
-	 * @param userIdIn string 
-	 */
-	 setUserIdIn(userIdIn) {
-	 	this.userIdIn = userIdIn;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getActionEqual() {
-	 	return this.actionEqual;
-	 }
-	
-	/**
-	 * @param actionEqual string 
-	 */
-	 setActionEqual(actionEqual) {
-	 	this.actionEqual = actionEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getActionIn() {
-	 	return this.actionIn;
-	 }
-	
-	/**
-	 * @param actionIn string 
-	 */
-	 setActionIn(actionIn) {
-	 	this.actionIn = actionIn;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getKsEqual() {
-	 	return this.ksEqual;
-	 }
-	
-	/**
-	 * @param ksEqual string 
-	 */
-	 setKsEqual(ksEqual) {
-	 	this.ksEqual = ksEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getContextEqual() {
-	 	return this.contextEqual;
-	 }
-	
-	/**
-	 * @param contextEqual int 
-	 */
-	 setContextEqual(contextEqual) {
-	 	this.contextEqual = contextEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getContextIn() {
-	 	return this.contextIn;
-	 }
-	
-	/**
-	 * @param contextIn string 
-	 */
-	 setContextIn(contextIn) {
-	 	this.contextIn = contextIn;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getEntryPointEqual() {
-	 	return this.entryPointEqual;
-	 }
-	
-	/**
-	 * @param entryPointEqual string 
-	 */
-	 setEntryPointEqual(entryPointEqual) {
-	 	this.entryPointEqual = entryPointEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getEntryPointIn() {
-	 	return this.entryPointIn;
-	 }
-	
-	/**
-	 * @param entryPointIn string 
-	 */
-	 setEntryPointIn(entryPointIn) {
-	 	this.entryPointIn = entryPointIn;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getServerNameEqual() {
-	 	return this.serverNameEqual;
-	 }
-	
-	/**
-	 * @param serverNameEqual string 
-	 */
-	 setServerNameEqual(serverNameEqual) {
-	 	this.serverNameEqual = serverNameEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getServerNameIn() {
-	 	return this.serverNameIn;
-	 }
-	
-	/**
-	 * @param serverNameIn string 
-	 */
-	 setServerNameIn(serverNameIn) {
-	 	this.serverNameIn = serverNameIn;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getIpAddressEqual() {
-	 	return this.ipAddressEqual;
-	 }
-	
-	/**
-	 * @param ipAddressEqual string 
-	 */
-	 setIpAddressEqual(ipAddressEqual) {
-	 	this.ipAddressEqual = ipAddressEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getIpAddressIn() {
-	 	return this.ipAddressIn;
-	 }
-	
-	/**
-	 * @param ipAddressIn string 
-	 */
-	 setIpAddressIn(ipAddressIn) {
-	 	this.ipAddressIn = ipAddressIn;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getClientTagEqual() {
-	 	return this.clientTagEqual;
-	 }
-	
-	/**
-	 * @param clientTagEqual string 
-	 */
-	 setClientTagEqual(clientTagEqual) {
-	 	this.clientTagEqual = clientTagEqual;
-	 }
-}
-module.exports.AuditTrailBaseFilter = AuditTrailBaseFilter;
-
-/**
- *
- */
 class BaseSyndicationFeedFilter extends BaseSyndicationFeedBaseFilter{
 	
 	constructor(object = null) {
@@ -51572,171 +47735,6 @@ class BulkUploadXmlJobData extends BulkUploadJobData{
 	}
 }
 module.exports.BulkUploadXmlJobData = BulkUploadXmlJobData;
-
-/**
- *
- */
-class BusinessProcessAbortNotificationTemplate extends BusinessProcessNotificationTemplate{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaBusinessProcessAbortNotificationTemplate';
-	}
-}
-module.exports.BusinessProcessAbortNotificationTemplate = BusinessProcessAbortNotificationTemplate;
-
-/**
- *
- */
-class BusinessProcessNotificationDispatchJobData extends EventNotificationDispatchJobData{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaBusinessProcessNotificationDispatchJobData';
-	}
-	
-	/**
-	 * 
-	 * @return BusinessProcessServer
-	 */
-	 getServer() {
-	 	return this.server;
-	 }
-	
-	/**
-	 * @param server BusinessProcessServer 
-	 */
-	 setServer(server) {
-	 	this.server = server;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getCaseId() {
-	 	return this.caseId;
-	 }
-	
-	/**
-	 * @param caseId string 
-	 */
-	 setCaseId(caseId) {
-	 	this.caseId = caseId;
-	 }
-}
-module.exports.BusinessProcessNotificationDispatchJobData = BusinessProcessNotificationDispatchJobData;
-
-/**
- *
- */
-class BusinessProcessServerFilter extends BusinessProcessServerBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaBusinessProcessServerFilter';
-	}
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getCurrentDcOrExternal() {
-	 	return this.currentDcOrExternal;
-	 }
-	
-	/**
-	 * @param currentDcOrExternal int 
-	 */
-	 setCurrentDcOrExternal(currentDcOrExternal) {
-	 	this.currentDcOrExternal = currentDcOrExternal;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getCurrentDc() {
-	 	return this.currentDc;
-	 }
-	
-	/**
-	 * @param currentDc int 
-	 */
-	 setCurrentDc(currentDc) {
-	 	this.currentDc = currentDc;
-	 }
-}
-module.exports.BusinessProcessServerFilter = BusinessProcessServerFilter;
-
-/**
- *
- */
-class BusinessProcessSignalNotificationTemplate extends BusinessProcessNotificationTemplate{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaBusinessProcessSignalNotificationTemplate';
-	}
-	
-	/**
-	 * Define the message to be sent
-	 * @return string
-	 */
-	 getMessage() {
-	 	return this.message;
-	 }
-	
-	/**
-	 * @param message string Define the message to be sent
-	 */
-	 setMessage(message) {
-	 	this.message = message;
-	 }
-	
-	/**
-	 * Define the event that waiting to the signal
-	 * @return string
-	 */
-	 getEventId() {
-	 	return this.eventId;
-	 }
-	
-	/**
-	 * @param eventId string Define the event that waiting to the signal
-	 */
-	 setEventId(eventId) {
-	 	this.eventId = eventId;
-	 }
-}
-module.exports.BusinessProcessSignalNotificationTemplate = BusinessProcessSignalNotificationTemplate;
-
-/**
- *
- */
-class BusinessProcessStartNotificationTemplate extends BusinessProcessNotificationTemplate{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaBusinessProcessStartNotificationTemplate';
-	}
-	
-	/**
-	 * Abort the process automatically if the triggering object deleted
-	 * @return bool
-	 */
-	 getAbortOnDeletion() {
-	 	return this.abortOnDeletion;
-	 }
-	
-	/**
-	 * @param abortOnDeletion bool Abort the process automatically if the triggering object deleted
-	 */
-	 setAbortOnDeletion(abortOnDeletion) {
-	 	this.abortOnDeletion = abortOnDeletion;
-	 }
-}
-module.exports.BusinessProcessStartNotificationTemplate = BusinessProcessStartNotificationTemplate;
 
 /**
  *
@@ -52530,191 +48528,6 @@ module.exports.CategoryEntryBaseFilter = CategoryEntryBaseFilter;
 /**
  *
  */
-class ComcastMrssDistributionProfile extends ConfigurableDistributionProfile{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaComcastMrssDistributionProfile';
-	}
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getMetadataProfileId() {
-	 	return this.metadataProfileId;
-	 }
-	
-	/**
-	 * @param metadataProfileId int 
-	 */
-	 setMetadataProfileId(metadataProfileId) {
-	 	this.metadataProfileId = metadataProfileId;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFeedUrl() {
-	 	return this.feedUrl;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFeedTitle() {
-	 	return this.feedTitle;
-	 }
-	
-	/**
-	 * @param feedTitle string 
-	 */
-	 setFeedTitle(feedTitle) {
-	 	this.feedTitle = feedTitle;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFeedLink() {
-	 	return this.feedLink;
-	 }
-	
-	/**
-	 * @param feedLink string 
-	 */
-	 setFeedLink(feedLink) {
-	 	this.feedLink = feedLink;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFeedDescription() {
-	 	return this.feedDescription;
-	 }
-	
-	/**
-	 * @param feedDescription string 
-	 */
-	 setFeedDescription(feedDescription) {
-	 	this.feedDescription = feedDescription;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFeedLastBuildDate() {
-	 	return this.feedLastBuildDate;
-	 }
-	
-	/**
-	 * @param feedLastBuildDate string 
-	 */
-	 setFeedLastBuildDate(feedLastBuildDate) {
-	 	this.feedLastBuildDate = feedLastBuildDate;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getItemLink() {
-	 	return this.itemLink;
-	 }
-	
-	/**
-	 * @param itemLink string 
-	 */
-	 setItemLink(itemLink) {
-	 	this.itemLink = itemLink;
-	 }
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getCPlatformTvSeries() {
-	 	return this.cPlatformTvSeries;
-	 }
-	
-	/**
-	 * @param cPlatformTvSeries array 
-	 */
-	 setCPlatformTvSeries(cPlatformTvSeries) {
-	 	this.cPlatformTvSeries = cPlatformTvSeries;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getCPlatformTvSeriesField() {
-	 	return this.cPlatformTvSeriesField;
-	 }
-	
-	/**
-	 * @param cPlatformTvSeriesField string 
-	 */
-	 setCPlatformTvSeriesField(cPlatformTvSeriesField) {
-	 	this.cPlatformTvSeriesField = cPlatformTvSeriesField;
-	 }
-	
-	/**
-	 * 
-	 * @return bool
-	 */
-	 getShouldIncludeCuePoints() {
-	 	return this.shouldIncludeCuePoints;
-	 }
-	
-	/**
-	 * @param shouldIncludeCuePoints bool 
-	 */
-	 setShouldIncludeCuePoints(shouldIncludeCuePoints) {
-	 	this.shouldIncludeCuePoints = shouldIncludeCuePoints;
-	 }
-	
-	/**
-	 * 
-	 * @return bool
-	 */
-	 getShouldIncludeCaptions() {
-	 	return this.shouldIncludeCaptions;
-	 }
-	
-	/**
-	 * @param shouldIncludeCaptions bool 
-	 */
-	 setShouldIncludeCaptions(shouldIncludeCaptions) {
-	 	this.shouldIncludeCaptions = shouldIncludeCaptions;
-	 }
-	
-	/**
-	 * 
-	 * @return bool
-	 */
-	 getShouldAddThumbExtension() {
-	 	return this.shouldAddThumbExtension;
-	 }
-	
-	/**
-	 * @param shouldAddThumbExtension bool 
-	 */
-	 setShouldAddThumbExtension(shouldAddThumbExtension) {
-	 	this.shouldAddThumbExtension = shouldAddThumbExtension;
-	 }
-}
-module.exports.ComcastMrssDistributionProfile = ComcastMrssDistributionProfile;
-
-/**
- *
- */
 class CompareMetadataCondition extends CompareCondition{
 	
 	constructor(object = null) {
@@ -53450,375 +49263,6 @@ module.exports.CountryCondition = CountryCondition;
 /**
  *
  */
-class CrossKalturaDistributionJobProviderData extends ConfigurableDistributionJobProviderData{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaCrossKalturaDistributionJobProviderData';
-	}
-	
-	/**
-	 * Key-value array where the keys are IDs of distributed flavor assets in the source account and the values are the matching IDs in the target account
-	 * @return string
-	 */
-	 getDistributedFlavorAssets() {
-	 	return this.distributedFlavorAssets;
-	 }
-	
-	/**
-	 * @param distributedFlavorAssets string Key-value array where the keys are IDs of distributed flavor assets in the source account and the values are the matching IDs in the target account
-	 */
-	 setDistributedFlavorAssets(distributedFlavorAssets) {
-	 	this.distributedFlavorAssets = distributedFlavorAssets;
-	 }
-	
-	/**
-	 * Key-value array where the keys are IDs of distributed thumb assets in the source account and the values are the matching IDs in the target account
-	 * @return string
-	 */
-	 getDistributedThumbAssets() {
-	 	return this.distributedThumbAssets;
-	 }
-	
-	/**
-	 * @param distributedThumbAssets string Key-value array where the keys are IDs of distributed thumb assets in the source account and the values are the matching IDs in the target account
-	 */
-	 setDistributedThumbAssets(distributedThumbAssets) {
-	 	this.distributedThumbAssets = distributedThumbAssets;
-	 }
-	
-	/**
-	 * Key-value array where the keys are IDs of distributed metadata objects in the source account and the values are the matching IDs in the target account
-	 * @return string
-	 */
-	 getDistributedMetadata() {
-	 	return this.distributedMetadata;
-	 }
-	
-	/**
-	 * @param distributedMetadata string Key-value array where the keys are IDs of distributed metadata objects in the source account and the values are the matching IDs in the target account
-	 */
-	 setDistributedMetadata(distributedMetadata) {
-	 	this.distributedMetadata = distributedMetadata;
-	 }
-	
-	/**
-	 * Key-value array where the keys are IDs of distributed caption assets in the source account and the values are the matching IDs in the target account
-	 * @return string
-	 */
-	 getDistributedCaptionAssets() {
-	 	return this.distributedCaptionAssets;
-	 }
-	
-	/**
-	 * @param distributedCaptionAssets string Key-value array where the keys are IDs of distributed caption assets in the source account and the values are the matching IDs in the target account
-	 */
-	 setDistributedCaptionAssets(distributedCaptionAssets) {
-	 	this.distributedCaptionAssets = distributedCaptionAssets;
-	 }
-	
-	/**
-	 * Key-value array where the keys are IDs of distributed cue points in the source account and the values are the matching IDs in the target account
-	 * @return string
-	 */
-	 getDistributedCuePoints() {
-	 	return this.distributedCuePoints;
-	 }
-	
-	/**
-	 * @param distributedCuePoints string Key-value array where the keys are IDs of distributed cue points in the source account and the values are the matching IDs in the target account
-	 */
-	 setDistributedCuePoints(distributedCuePoints) {
-	 	this.distributedCuePoints = distributedCuePoints;
-	 }
-}
-module.exports.CrossKalturaDistributionJobProviderData = CrossKalturaDistributionJobProviderData;
-
-/**
- *
- */
-class CrossKalturaDistributionProfile extends ConfigurableDistributionProfile{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaCrossKalturaDistributionProfile';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getTargetServiceUrl() {
-	 	return this.targetServiceUrl;
-	 }
-	
-	/**
-	 * @param targetServiceUrl string 
-	 */
-	 setTargetServiceUrl(targetServiceUrl) {
-	 	this.targetServiceUrl = targetServiceUrl;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getTargetAccountId() {
-	 	return this.targetAccountId;
-	 }
-	
-	/**
-	 * @param targetAccountId int 
-	 */
-	 setTargetAccountId(targetAccountId) {
-	 	this.targetAccountId = targetAccountId;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getTargetLoginId() {
-	 	return this.targetLoginId;
-	 }
-	
-	/**
-	 * @param targetLoginId string 
-	 */
-	 setTargetLoginId(targetLoginId) {
-	 	this.targetLoginId = targetLoginId;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getTargetLoginPassword() {
-	 	return this.targetLoginPassword;
-	 }
-	
-	/**
-	 * @param targetLoginPassword string 
-	 */
-	 setTargetLoginPassword(targetLoginPassword) {
-	 	this.targetLoginPassword = targetLoginPassword;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getMetadataXslt() {
-	 	return this.metadataXslt;
-	 }
-	
-	/**
-	 * @param metadataXslt string 
-	 */
-	 setMetadataXslt(metadataXslt) {
-	 	this.metadataXslt = metadataXslt;
-	 }
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getMetadataXpathsTriggerUpdate() {
-	 	return this.metadataXpathsTriggerUpdate;
-	 }
-	
-	/**
-	 * @param metadataXpathsTriggerUpdate array 
-	 */
-	 setMetadataXpathsTriggerUpdate(metadataXpathsTriggerUpdate) {
-	 	this.metadataXpathsTriggerUpdate = metadataXpathsTriggerUpdate;
-	 }
-	
-	/**
-	 * 
-	 * @return bool
-	 */
-	 getDistributeCaptions() {
-	 	return this.distributeCaptions;
-	 }
-	
-	/**
-	 * @param distributeCaptions bool 
-	 */
-	 setDistributeCaptions(distributeCaptions) {
-	 	this.distributeCaptions = distributeCaptions;
-	 }
-	
-	/**
-	 * 
-	 * @return bool
-	 */
-	 getDistributeCuePoints() {
-	 	return this.distributeCuePoints;
-	 }
-	
-	/**
-	 * @param distributeCuePoints bool 
-	 */
-	 setDistributeCuePoints(distributeCuePoints) {
-	 	this.distributeCuePoints = distributeCuePoints;
-	 }
-	
-	/**
-	 * 
-	 * @return bool
-	 */
-	 getDistributeRemoteFlavorAssetContent() {
-	 	return this.distributeRemoteFlavorAssetContent;
-	 }
-	
-	/**
-	 * @param distributeRemoteFlavorAssetContent bool 
-	 */
-	 setDistributeRemoteFlavorAssetContent(distributeRemoteFlavorAssetContent) {
-	 	this.distributeRemoteFlavorAssetContent = distributeRemoteFlavorAssetContent;
-	 }
-	
-	/**
-	 * 
-	 * @return bool
-	 */
-	 getDistributeRemoteThumbAssetContent() {
-	 	return this.distributeRemoteThumbAssetContent;
-	 }
-	
-	/**
-	 * @param distributeRemoteThumbAssetContent bool 
-	 */
-	 setDistributeRemoteThumbAssetContent(distributeRemoteThumbAssetContent) {
-	 	this.distributeRemoteThumbAssetContent = distributeRemoteThumbAssetContent;
-	 }
-	
-	/**
-	 * 
-	 * @return bool
-	 */
-	 getDistributeRemoteCaptionAssetContent() {
-	 	return this.distributeRemoteCaptionAssetContent;
-	 }
-	
-	/**
-	 * @param distributeRemoteCaptionAssetContent bool 
-	 */
-	 setDistributeRemoteCaptionAssetContent(distributeRemoteCaptionAssetContent) {
-	 	this.distributeRemoteCaptionAssetContent = distributeRemoteCaptionAssetContent;
-	 }
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getMapAccessControlProfileIds() {
-	 	return this.mapAccessControlProfileIds;
-	 }
-	
-	/**
-	 * @param mapAccessControlProfileIds array 
-	 */
-	 setMapAccessControlProfileIds(mapAccessControlProfileIds) {
-	 	this.mapAccessControlProfileIds = mapAccessControlProfileIds;
-	 }
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getMapConversionProfileIds() {
-	 	return this.mapConversionProfileIds;
-	 }
-	
-	/**
-	 * @param mapConversionProfileIds array 
-	 */
-	 setMapConversionProfileIds(mapConversionProfileIds) {
-	 	this.mapConversionProfileIds = mapConversionProfileIds;
-	 }
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getMapMetadataProfileIds() {
-	 	return this.mapMetadataProfileIds;
-	 }
-	
-	/**
-	 * @param mapMetadataProfileIds array 
-	 */
-	 setMapMetadataProfileIds(mapMetadataProfileIds) {
-	 	this.mapMetadataProfileIds = mapMetadataProfileIds;
-	 }
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getMapStorageProfileIds() {
-	 	return this.mapStorageProfileIds;
-	 }
-	
-	/**
-	 * @param mapStorageProfileIds array 
-	 */
-	 setMapStorageProfileIds(mapStorageProfileIds) {
-	 	this.mapStorageProfileIds = mapStorageProfileIds;
-	 }
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getMapFlavorParamsIds() {
-	 	return this.mapFlavorParamsIds;
-	 }
-	
-	/**
-	 * @param mapFlavorParamsIds array 
-	 */
-	 setMapFlavorParamsIds(mapFlavorParamsIds) {
-	 	this.mapFlavorParamsIds = mapFlavorParamsIds;
-	 }
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getMapThumbParamsIds() {
-	 	return this.mapThumbParamsIds;
-	 }
-	
-	/**
-	 * @param mapThumbParamsIds array 
-	 */
-	 setMapThumbParamsIds(mapThumbParamsIds) {
-	 	this.mapThumbParamsIds = mapThumbParamsIds;
-	 }
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getMapCaptionParamsIds() {
-	 	return this.mapCaptionParamsIds;
-	 }
-	
-	/**
-	 * @param mapCaptionParamsIds array 
-	 */
-	 setMapCaptionParamsIds(mapCaptionParamsIds) {
-	 	this.mapCaptionParamsIds = mapCaptionParamsIds;
-	 }
-}
-module.exports.CrossKalturaDistributionProfile = CrossKalturaDistributionProfile;
-
-/**
- *
- */
 class CuePointBaseFilter extends RelatedFilter{
 	
 	constructor(object = null) {
@@ -54251,135 +49695,6 @@ module.exports.CuePointBaseFilter = CuePointBaseFilter;
 /**
  *
  */
-class DailymotionDistributionJobProviderData extends ConfigurableDistributionJobProviderData{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaDailymotionDistributionJobProviderData';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getVideoAssetFilePath() {
-	 	return this.videoAssetFilePath;
-	 }
-	
-	/**
-	 * @param videoAssetFilePath string 
-	 */
-	 setVideoAssetFilePath(videoAssetFilePath) {
-	 	this.videoAssetFilePath = videoAssetFilePath;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getAccessControlGeoBlockingOperation() {
-	 	return this.accessControlGeoBlockingOperation;
-	 }
-	
-	/**
-	 * @param accessControlGeoBlockingOperation string 
-	 */
-	 setAccessControlGeoBlockingOperation(accessControlGeoBlockingOperation) {
-	 	this.accessControlGeoBlockingOperation = accessControlGeoBlockingOperation;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getAccessControlGeoBlockingCountryList() {
-	 	return this.accessControlGeoBlockingCountryList;
-	 }
-	
-	/**
-	 * @param accessControlGeoBlockingCountryList string 
-	 */
-	 setAccessControlGeoBlockingCountryList(accessControlGeoBlockingCountryList) {
-	 	this.accessControlGeoBlockingCountryList = accessControlGeoBlockingCountryList;
-	 }
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getCaptionsInfo() {
-	 	return this.captionsInfo;
-	 }
-	
-	/**
-	 * @param captionsInfo array 
-	 */
-	 setCaptionsInfo(captionsInfo) {
-	 	this.captionsInfo = captionsInfo;
-	 }
-}
-module.exports.DailymotionDistributionJobProviderData = DailymotionDistributionJobProviderData;
-
-/**
- *
- */
-class DailymotionDistributionProfile extends ConfigurableDistributionProfile{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaDailymotionDistributionProfile';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getUser() {
-	 	return this.user;
-	 }
-	
-	/**
-	 * @param user string 
-	 */
-	 setUser(user) {
-	 	this.user = user;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getPassword() {
-	 	return this.password;
-	 }
-	
-	/**
-	 * @param password string 
-	 */
-	 setPassword(password) {
-	 	this.password = password;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getGeoBlockingMapping() {
-	 	return this.geoBlockingMapping;
-	 }
-	
-	/**
-	 * @param geoBlockingMapping int 
-	 */
-	 setGeoBlockingMapping(geoBlockingMapping) {
-	 	this.geoBlockingMapping = geoBlockingMapping;
-	 }
-}
-module.exports.DailymotionDistributionProfile = DailymotionDistributionProfile;
-
-/**
- *
- */
 class DeliveryProfileFilter extends DeliveryProfileBaseFilter{
 	
 	constructor(object = null) {
@@ -54628,140 +49943,6 @@ class DocumentFlavorParams extends FlavorParams{
 	}
 }
 module.exports.DocumentFlavorParams = DocumentFlavorParams;
-
-/**
- *
- */
-class DoubleClickDistributionProfile extends ConfigurableDistributionProfile{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaDoubleClickDistributionProfile';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getChannelTitle() {
-	 	return this.channelTitle;
-	 }
-	
-	/**
-	 * @param channelTitle string 
-	 */
-	 setChannelTitle(channelTitle) {
-	 	this.channelTitle = channelTitle;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getChannelLink() {
-	 	return this.channelLink;
-	 }
-	
-	/**
-	 * @param channelLink string 
-	 */
-	 setChannelLink(channelLink) {
-	 	this.channelLink = channelLink;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getChannelDescription() {
-	 	return this.channelDescription;
-	 }
-	
-	/**
-	 * @param channelDescription string 
-	 */
-	 setChannelDescription(channelDescription) {
-	 	this.channelDescription = channelDescription;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFeedUrl() {
-	 	return this.feedUrl;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getCuePointsProvider() {
-	 	return this.cuePointsProvider;
-	 }
-	
-	/**
-	 * @param cuePointsProvider string 
-	 */
-	 setCuePointsProvider(cuePointsProvider) {
-	 	this.cuePointsProvider = cuePointsProvider;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getItemsPerPage() {
-	 	return this.itemsPerPage;
-	 }
-	
-	/**
-	 * @param itemsPerPage string 
-	 */
-	 setItemsPerPage(itemsPerPage) {
-	 	this.itemsPerPage = itemsPerPage;
-	 }
-	
-	/**
-	 * 
-	 * @return bool
-	 */
-	 getIgnoreSchedulingInFeed() {
-	 	return this.ignoreSchedulingInFeed;
-	 }
-	
-	/**
-	 * @param ignoreSchedulingInFeed bool 
-	 */
-	 setIgnoreSchedulingInFeed(ignoreSchedulingInFeed) {
-	 	this.ignoreSchedulingInFeed = ignoreSchedulingInFeed;
-	 }
-}
-module.exports.DoubleClickDistributionProfile = DoubleClickDistributionProfile;
-
-/**
- *
- */
-class DrmPolicyFilter extends DrmPolicyBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaDrmPolicyFilter';
-	}
-}
-module.exports.DrmPolicyFilter = DrmPolicyFilter;
-
-/**
- *
- */
-class DrmProfileFilter extends DrmProfileBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaDrmProfileFilter';
-	}
-}
-module.exports.DrmProfileFilter = DrmProfileFilter;
 
 /**
  *
@@ -56339,549 +51520,6 @@ module.exports.FileSyncResource = FileSyncResource;
 /**
  *
  */
-class FreewheelGenericDistributionJobProviderData extends ConfigurableDistributionJobProviderData{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFreewheelGenericDistributionJobProviderData';
-	}
-	
-	/**
-	 * Demonstrate passing array of paths to the job
-	 * @return array
-	 */
-	 getVideoAssetFilePaths() {
-	 	return this.videoAssetFilePaths;
-	 }
-	
-	/**
-	 * @param videoAssetFilePaths array Demonstrate passing array of paths to the job
-	 */
-	 setVideoAssetFilePaths(videoAssetFilePaths) {
-	 	this.videoAssetFilePaths = videoAssetFilePaths;
-	 }
-	
-	/**
-	 * Demonstrate passing single path to the job
-	 * @return string
-	 */
-	 getThumbAssetFilePath() {
-	 	return this.thumbAssetFilePath;
-	 }
-	
-	/**
-	 * @param thumbAssetFilePath string Demonstrate passing single path to the job
-	 */
-	 setThumbAssetFilePath(thumbAssetFilePath) {
-	 	this.thumbAssetFilePath = thumbAssetFilePath;
-	 }
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getCuePoints() {
-	 	return this.cuePoints;
-	 }
-	
-	/**
-	 * @param cuePoints array 
-	 */
-	 setCuePoints(cuePoints) {
-	 	this.cuePoints = cuePoints;
-	 }
-}
-module.exports.FreewheelGenericDistributionJobProviderData = FreewheelGenericDistributionJobProviderData;
-
-/**
- *
- */
-class FreewheelGenericDistributionProfile extends ConfigurableDistributionProfile{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFreewheelGenericDistributionProfile';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getApikey() {
-	 	return this.apikey;
-	 }
-	
-	/**
-	 * @param apikey string 
-	 */
-	 setApikey(apikey) {
-	 	this.apikey = apikey;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getEmail() {
-	 	return this.email;
-	 }
-	
-	/**
-	 * @param email string 
-	 */
-	 setEmail(email) {
-	 	this.email = email;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSftpPass() {
-	 	return this.sftpPass;
-	 }
-	
-	/**
-	 * @param sftpPass string 
-	 */
-	 setSftpPass(sftpPass) {
-	 	this.sftpPass = sftpPass;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSftpLogin() {
-	 	return this.sftpLogin;
-	 }
-	
-	/**
-	 * @param sftpLogin string 
-	 */
-	 setSftpLogin(sftpLogin) {
-	 	this.sftpLogin = sftpLogin;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getContentOwner() {
-	 	return this.contentOwner;
-	 }
-	
-	/**
-	 * @param contentOwner string 
-	 */
-	 setContentOwner(contentOwner) {
-	 	this.contentOwner = contentOwner;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getUpstreamVideoId() {
-	 	return this.upstreamVideoId;
-	 }
-	
-	/**
-	 * @param upstreamVideoId string 
-	 */
-	 setUpstreamVideoId(upstreamVideoId) {
-	 	this.upstreamVideoId = upstreamVideoId;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getUpstreamNetworkName() {
-	 	return this.upstreamNetworkName;
-	 }
-	
-	/**
-	 * @param upstreamNetworkName string 
-	 */
-	 setUpstreamNetworkName(upstreamNetworkName) {
-	 	this.upstreamNetworkName = upstreamNetworkName;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getUpstreamNetworkId() {
-	 	return this.upstreamNetworkId;
-	 }
-	
-	/**
-	 * @param upstreamNetworkId string 
-	 */
-	 setUpstreamNetworkId(upstreamNetworkId) {
-	 	this.upstreamNetworkId = upstreamNetworkId;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getCategoryId() {
-	 	return this.categoryId;
-	 }
-	
-	/**
-	 * @param categoryId string 
-	 */
-	 setCategoryId(categoryId) {
-	 	this.categoryId = categoryId;
-	 }
-	
-	/**
-	 * 
-	 * @return bool
-	 */
-	 getReplaceGroup() {
-	 	return this.replaceGroup;
-	 }
-	
-	/**
-	 * @param replaceGroup bool 
-	 */
-	 setReplaceGroup(replaceGroup) {
-	 	this.replaceGroup = replaceGroup;
-	 }
-	
-	/**
-	 * 
-	 * @return bool
-	 */
-	 getReplaceAirDates() {
-	 	return this.replaceAirDates;
-	 }
-	
-	/**
-	 * @param replaceAirDates bool 
-	 */
-	 setReplaceAirDates(replaceAirDates) {
-	 	this.replaceAirDates = replaceAirDates;
-	 }
-}
-module.exports.FreewheelGenericDistributionProfile = FreewheelGenericDistributionProfile;
-
-/**
- *
- */
-class FtpDistributionJobProviderData extends ConfigurableDistributionJobProviderData{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFtpDistributionJobProviderData';
-	}
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getFilesForDistribution() {
-	 	return this.filesForDistribution;
-	 }
-	
-	/**
-	 * @param filesForDistribution array 
-	 */
-	 setFilesForDistribution(filesForDistribution) {
-	 	this.filesForDistribution = filesForDistribution;
-	 }
-}
-module.exports.FtpDistributionJobProviderData = FtpDistributionJobProviderData;
-
-/**
- *
- */
-class FtpDistributionProfile extends ConfigurableDistributionProfile{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFtpDistributionProfile';
-	}
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getProtocol() {
-	 	return this.protocol;
-	 }
-	
-	/**
-	 * @param protocol int 
-	 */
-	 setProtocol(protocol) {
-	 	this.protocol = protocol;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getHost() {
-	 	return this.host;
-	 }
-	
-	/**
-	 * @param host string 
-	 */
-	 setHost(host) {
-	 	this.host = host;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getPort() {
-	 	return this.port;
-	 }
-	
-	/**
-	 * @param port int 
-	 */
-	 setPort(port) {
-	 	this.port = port;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getBasePath() {
-	 	return this.basePath;
-	 }
-	
-	/**
-	 * @param basePath string 
-	 */
-	 setBasePath(basePath) {
-	 	this.basePath = basePath;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getUsername() {
-	 	return this.username;
-	 }
-	
-	/**
-	 * @param username string 
-	 */
-	 setUsername(username) {
-	 	this.username = username;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getPassword() {
-	 	return this.password;
-	 }
-	
-	/**
-	 * @param password string 
-	 */
-	 setPassword(password) {
-	 	this.password = password;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getPassphrase() {
-	 	return this.passphrase;
-	 }
-	
-	/**
-	 * @param passphrase string 
-	 */
-	 setPassphrase(passphrase) {
-	 	this.passphrase = passphrase;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSftpPublicKey() {
-	 	return this.sftpPublicKey;
-	 }
-	
-	/**
-	 * @param sftpPublicKey string 
-	 */
-	 setSftpPublicKey(sftpPublicKey) {
-	 	this.sftpPublicKey = sftpPublicKey;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSftpPrivateKey() {
-	 	return this.sftpPrivateKey;
-	 }
-	
-	/**
-	 * @param sftpPrivateKey string 
-	 */
-	 setSftpPrivateKey(sftpPrivateKey) {
-	 	this.sftpPrivateKey = sftpPrivateKey;
-	 }
-	
-	/**
-	 * 
-	 * @return bool
-	 */
-	 getDisableMetadata() {
-	 	return this.disableMetadata;
-	 }
-	
-	/**
-	 * @param disableMetadata bool 
-	 */
-	 setDisableMetadata(disableMetadata) {
-	 	this.disableMetadata = disableMetadata;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getMetadataXslt() {
-	 	return this.metadataXslt;
-	 }
-	
-	/**
-	 * @param metadataXslt string 
-	 */
-	 setMetadataXslt(metadataXslt) {
-	 	this.metadataXslt = metadataXslt;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getMetadataFilenameXslt() {
-	 	return this.metadataFilenameXslt;
-	 }
-	
-	/**
-	 * @param metadataFilenameXslt string 
-	 */
-	 setMetadataFilenameXslt(metadataFilenameXslt) {
-	 	this.metadataFilenameXslt = metadataFilenameXslt;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFlavorAssetFilenameXslt() {
-	 	return this.flavorAssetFilenameXslt;
-	 }
-	
-	/**
-	 * @param flavorAssetFilenameXslt string 
-	 */
-	 setFlavorAssetFilenameXslt(flavorAssetFilenameXslt) {
-	 	this.flavorAssetFilenameXslt = flavorAssetFilenameXslt;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getThumbnailAssetFilenameXslt() {
-	 	return this.thumbnailAssetFilenameXslt;
-	 }
-	
-	/**
-	 * @param thumbnailAssetFilenameXslt string 
-	 */
-	 setThumbnailAssetFilenameXslt(thumbnailAssetFilenameXslt) {
-	 	this.thumbnailAssetFilenameXslt = thumbnailAssetFilenameXslt;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getAssetFilenameXslt() {
-	 	return this.assetFilenameXslt;
-	 }
-	
-	/**
-	 * @param assetFilenameXslt string 
-	 */
-	 setAssetFilenameXslt(assetFilenameXslt) {
-	 	this.assetFilenameXslt = assetFilenameXslt;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getAsperaPublicKey() {
-	 	return this.asperaPublicKey;
-	 }
-	
-	/**
-	 * @param asperaPublicKey string 
-	 */
-	 setAsperaPublicKey(asperaPublicKey) {
-	 	this.asperaPublicKey = asperaPublicKey;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getAsperaPrivateKey() {
-	 	return this.asperaPrivateKey;
-	 }
-	
-	/**
-	 * @param asperaPrivateKey string 
-	 */
-	 setAsperaPrivateKey(asperaPrivateKey) {
-	 	this.asperaPrivateKey = asperaPrivateKey;
-	 }
-	
-	/**
-	 * 
-	 * @return bool
-	 */
-	 getSendMetadataAfterAssets() {
-	 	return this.sendMetadataAfterAssets;
-	 }
-	
-	/**
-	 * @param sendMetadataAfterAssets bool 
-	 */
-	 setSendMetadataAfterAssets(sendMetadataAfterAssets) {
-	 	this.sendMetadataAfterAssets = sendMetadataAfterAssets;
-	 }
-}
-module.exports.FtpDistributionProfile = FtpDistributionProfile;
-
-/**
- *
- */
 class FtpDropFolder extends RemoteDropFolder{
 	
 	constructor(object = null) {
@@ -56950,18 +51588,6 @@ class FtpDropFolder extends RemoteDropFolder{
 	 }
 }
 module.exports.FtpDropFolder = FtpDropFolder;
-
-/**
- *
- */
-class FtpScheduledDistributionProvider extends FtpDistributionProvider{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFtpScheduledDistributionProvider';
-	}
-}
-module.exports.FtpScheduledDistributionProvider = FtpScheduledDistributionProvider;
 
 /**
  *
@@ -57548,390 +52174,6 @@ class HttpNotificationDispatchJobData extends EventNotificationDispatchJobData{
 	 }
 }
 module.exports.HttpNotificationDispatchJobData = HttpNotificationDispatchJobData;
-
-/**
- *
- */
-class HuluDistributionJobProviderData extends ConfigurableDistributionJobProviderData{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaHuluDistributionJobProviderData';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getVideoAssetFilePath() {
-	 	return this.videoAssetFilePath;
-	 }
-	
-	/**
-	 * @param videoAssetFilePath string 
-	 */
-	 setVideoAssetFilePath(videoAssetFilePath) {
-	 	this.videoAssetFilePath = videoAssetFilePath;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getThumbAssetFilePath() {
-	 	return this.thumbAssetFilePath;
-	 }
-	
-	/**
-	 * @param thumbAssetFilePath string 
-	 */
-	 setThumbAssetFilePath(thumbAssetFilePath) {
-	 	this.thumbAssetFilePath = thumbAssetFilePath;
-	 }
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getCuePoints() {
-	 	return this.cuePoints;
-	 }
-	
-	/**
-	 * @param cuePoints array 
-	 */
-	 setCuePoints(cuePoints) {
-	 	this.cuePoints = cuePoints;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFileBaseName() {
-	 	return this.fileBaseName;
-	 }
-	
-	/**
-	 * @param fileBaseName string 
-	 */
-	 setFileBaseName(fileBaseName) {
-	 	this.fileBaseName = fileBaseName;
-	 }
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getCaptionLocalPaths() {
-	 	return this.captionLocalPaths;
-	 }
-	
-	/**
-	 * @param captionLocalPaths array 
-	 */
-	 setCaptionLocalPaths(captionLocalPaths) {
-	 	this.captionLocalPaths = captionLocalPaths;
-	 }
-}
-module.exports.HuluDistributionJobProviderData = HuluDistributionJobProviderData;
-
-/**
- *
- */
-class HuluDistributionProfile extends ConfigurableDistributionProfile{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaHuluDistributionProfile';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSftpHost() {
-	 	return this.sftpHost;
-	 }
-	
-	/**
-	 * @param sftpHost string 
-	 */
-	 setSftpHost(sftpHost) {
-	 	this.sftpHost = sftpHost;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSftpLogin() {
-	 	return this.sftpLogin;
-	 }
-	
-	/**
-	 * @param sftpLogin string 
-	 */
-	 setSftpLogin(sftpLogin) {
-	 	this.sftpLogin = sftpLogin;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSftpPass() {
-	 	return this.sftpPass;
-	 }
-	
-	/**
-	 * @param sftpPass string 
-	 */
-	 setSftpPass(sftpPass) {
-	 	this.sftpPass = sftpPass;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSeriesChannel() {
-	 	return this.seriesChannel;
-	 }
-	
-	/**
-	 * @param seriesChannel string 
-	 */
-	 setSeriesChannel(seriesChannel) {
-	 	this.seriesChannel = seriesChannel;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSeriesPrimaryCategory() {
-	 	return this.seriesPrimaryCategory;
-	 }
-	
-	/**
-	 * @param seriesPrimaryCategory string 
-	 */
-	 setSeriesPrimaryCategory(seriesPrimaryCategory) {
-	 	this.seriesPrimaryCategory = seriesPrimaryCategory;
-	 }
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getSeriesAdditionalCategories() {
-	 	return this.seriesAdditionalCategories;
-	 }
-	
-	/**
-	 * @param seriesAdditionalCategories array 
-	 */
-	 setSeriesAdditionalCategories(seriesAdditionalCategories) {
-	 	this.seriesAdditionalCategories = seriesAdditionalCategories;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSeasonNumber() {
-	 	return this.seasonNumber;
-	 }
-	
-	/**
-	 * @param seasonNumber string 
-	 */
-	 setSeasonNumber(seasonNumber) {
-	 	this.seasonNumber = seasonNumber;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSeasonSynopsis() {
-	 	return this.seasonSynopsis;
-	 }
-	
-	/**
-	 * @param seasonSynopsis string 
-	 */
-	 setSeasonSynopsis(seasonSynopsis) {
-	 	this.seasonSynopsis = seasonSynopsis;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSeasonTuneInInformation() {
-	 	return this.seasonTuneInInformation;
-	 }
-	
-	/**
-	 * @param seasonTuneInInformation string 
-	 */
-	 setSeasonTuneInInformation(seasonTuneInInformation) {
-	 	this.seasonTuneInInformation = seasonTuneInInformation;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getVideoMediaType() {
-	 	return this.videoMediaType;
-	 }
-	
-	/**
-	 * @param videoMediaType string 
-	 */
-	 setVideoMediaType(videoMediaType) {
-	 	this.videoMediaType = videoMediaType;
-	 }
-	
-	/**
-	 * 
-	 * @return bool
-	 */
-	 getDisableEpisodeNumberCustomValidation() {
-	 	return this.disableEpisodeNumberCustomValidation;
-	 }
-	
-	/**
-	 * @param disableEpisodeNumberCustomValidation bool 
-	 */
-	 setDisableEpisodeNumberCustomValidation(disableEpisodeNumberCustomValidation) {
-	 	this.disableEpisodeNumberCustomValidation = disableEpisodeNumberCustomValidation;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getProtocol() {
-	 	return this.protocol;
-	 }
-	
-	/**
-	 * @param protocol int 
-	 */
-	 setProtocol(protocol) {
-	 	this.protocol = protocol;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getAsperaHost() {
-	 	return this.asperaHost;
-	 }
-	
-	/**
-	 * @param asperaHost string 
-	 */
-	 setAsperaHost(asperaHost) {
-	 	this.asperaHost = asperaHost;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getAsperaLogin() {
-	 	return this.asperaLogin;
-	 }
-	
-	/**
-	 * @param asperaLogin string 
-	 */
-	 setAsperaLogin(asperaLogin) {
-	 	this.asperaLogin = asperaLogin;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getAsperaPass() {
-	 	return this.asperaPass;
-	 }
-	
-	/**
-	 * @param asperaPass string 
-	 */
-	 setAsperaPass(asperaPass) {
-	 	this.asperaPass = asperaPass;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getPort() {
-	 	return this.port;
-	 }
-	
-	/**
-	 * @param port int 
-	 */
-	 setPort(port) {
-	 	this.port = port;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getPassphrase() {
-	 	return this.passphrase;
-	 }
-	
-	/**
-	 * @param passphrase string 
-	 */
-	 setPassphrase(passphrase) {
-	 	this.passphrase = passphrase;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getAsperaPublicKey() {
-	 	return this.asperaPublicKey;
-	 }
-	
-	/**
-	 * @param asperaPublicKey string 
-	 */
-	 setAsperaPublicKey(asperaPublicKey) {
-	 	this.asperaPublicKey = asperaPublicKey;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getAsperaPrivateKey() {
-	 	return this.asperaPrivateKey;
-	 }
-	
-	/**
-	 * @param asperaPrivateKey string 
-	 */
-	 setAsperaPrivateKey(asperaPrivateKey) {
-	 	this.asperaPrivateKey = asperaPrivateKey;
-	 }
-}
-module.exports.HuluDistributionProfile = HuluDistributionProfile;
 
 /**
  *
@@ -59082,629 +53324,6 @@ module.exports.MetadataSearchItem = MetadataSearchItem;
 /**
  *
  */
-class MetroPcsDistributionJobProviderData extends ConfigurableDistributionJobProviderData{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaMetroPcsDistributionJobProviderData';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getAssetLocalPaths() {
-	 	return this.assetLocalPaths;
-	 }
-	
-	/**
-	 * @param assetLocalPaths string 
-	 */
-	 setAssetLocalPaths(assetLocalPaths) {
-	 	this.assetLocalPaths = assetLocalPaths;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getThumbUrls() {
-	 	return this.thumbUrls;
-	 }
-	
-	/**
-	 * @param thumbUrls string 
-	 */
-	 setThumbUrls(thumbUrls) {
-	 	this.thumbUrls = thumbUrls;
-	 }
-}
-module.exports.MetroPcsDistributionJobProviderData = MetroPcsDistributionJobProviderData;
-
-/**
- *
- */
-class MetroPcsDistributionProfile extends ConfigurableDistributionProfile{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaMetroPcsDistributionProfile';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFtpHost() {
-	 	return this.ftpHost;
-	 }
-	
-	/**
-	 * @param ftpHost string 
-	 */
-	 setFtpHost(ftpHost) {
-	 	this.ftpHost = ftpHost;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFtpLogin() {
-	 	return this.ftpLogin;
-	 }
-	
-	/**
-	 * @param ftpLogin string 
-	 */
-	 setFtpLogin(ftpLogin) {
-	 	this.ftpLogin = ftpLogin;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFtpPass() {
-	 	return this.ftpPass;
-	 }
-	
-	/**
-	 * @param ftpPass string 
-	 */
-	 setFtpPass(ftpPass) {
-	 	this.ftpPass = ftpPass;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFtpPath() {
-	 	return this.ftpPath;
-	 }
-	
-	/**
-	 * @param ftpPath string 
-	 */
-	 setFtpPath(ftpPath) {
-	 	this.ftpPath = ftpPath;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getProviderName() {
-	 	return this.providerName;
-	 }
-	
-	/**
-	 * @param providerName string 
-	 */
-	 setProviderName(providerName) {
-	 	this.providerName = providerName;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getProviderId() {
-	 	return this.providerId;
-	 }
-	
-	/**
-	 * @param providerId string 
-	 */
-	 setProviderId(providerId) {
-	 	this.providerId = providerId;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getCopyright() {
-	 	return this.copyright;
-	 }
-	
-	/**
-	 * @param copyright string 
-	 */
-	 setCopyright(copyright) {
-	 	this.copyright = copyright;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getEntitlements() {
-	 	return this.entitlements;
-	 }
-	
-	/**
-	 * @param entitlements string 
-	 */
-	 setEntitlements(entitlements) {
-	 	this.entitlements = entitlements;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getRating() {
-	 	return this.rating;
-	 }
-	
-	/**
-	 * @param rating string 
-	 */
-	 setRating(rating) {
-	 	this.rating = rating;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getItemType() {
-	 	return this.itemType;
-	 }
-	
-	/**
-	 * @param itemType string 
-	 */
-	 setItemType(itemType) {
-	 	this.itemType = itemType;
-	 }
-}
-module.exports.MetroPcsDistributionProfile = MetroPcsDistributionProfile;
-
-/**
- *
- */
-class MsnDistributionJobProviderData extends ConfigurableDistributionJobProviderData{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaMsnDistributionJobProviderData';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getXml() {
-	 	return this.xml;
-	 }
-	
-	/**
-	 * @param xml string 
-	 */
-	 setXml(xml) {
-	 	this.xml = xml;
-	 }
-}
-module.exports.MsnDistributionJobProviderData = MsnDistributionJobProviderData;
-
-/**
- *
- */
-class MsnDistributionProfile extends ConfigurableDistributionProfile{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaMsnDistributionProfile';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getUsername() {
-	 	return this.username;
-	 }
-	
-	/**
-	 * @param username string 
-	 */
-	 setUsername(username) {
-	 	this.username = username;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getPassword() {
-	 	return this.password;
-	 }
-	
-	/**
-	 * @param password string 
-	 */
-	 setPassword(password) {
-	 	this.password = password;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getDomain() {
-	 	return this.domain;
-	 }
-	
-	/**
-	 * @param domain string 
-	 */
-	 setDomain(domain) {
-	 	this.domain = domain;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getCsId() {
-	 	return this.csId;
-	 }
-	
-	/**
-	 * @param csId string 
-	 */
-	 setCsId(csId) {
-	 	this.csId = csId;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSource() {
-	 	return this.source;
-	 }
-	
-	/**
-	 * @param source string 
-	 */
-	 setSource(source) {
-	 	this.source = source;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSourceFriendlyName() {
-	 	return this.sourceFriendlyName;
-	 }
-	
-	/**
-	 * @param sourceFriendlyName string 
-	 */
-	 setSourceFriendlyName(sourceFriendlyName) {
-	 	this.sourceFriendlyName = sourceFriendlyName;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getPageGroup() {
-	 	return this.pageGroup;
-	 }
-	
-	/**
-	 * @param pageGroup string 
-	 */
-	 setPageGroup(pageGroup) {
-	 	this.pageGroup = pageGroup;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getSourceFlavorParamsId() {
-	 	return this.sourceFlavorParamsId;
-	 }
-	
-	/**
-	 * @param sourceFlavorParamsId int 
-	 */
-	 setSourceFlavorParamsId(sourceFlavorParamsId) {
-	 	this.sourceFlavorParamsId = sourceFlavorParamsId;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getWmvFlavorParamsId() {
-	 	return this.wmvFlavorParamsId;
-	 }
-	
-	/**
-	 * @param wmvFlavorParamsId int 
-	 */
-	 setWmvFlavorParamsId(wmvFlavorParamsId) {
-	 	this.wmvFlavorParamsId = wmvFlavorParamsId;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getFlvFlavorParamsId() {
-	 	return this.flvFlavorParamsId;
-	 }
-	
-	/**
-	 * @param flvFlavorParamsId int 
-	 */
-	 setFlvFlavorParamsId(flvFlavorParamsId) {
-	 	this.flvFlavorParamsId = flvFlavorParamsId;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getSlFlavorParamsId() {
-	 	return this.slFlavorParamsId;
-	 }
-	
-	/**
-	 * @param slFlavorParamsId int 
-	 */
-	 setSlFlavorParamsId(slFlavorParamsId) {
-	 	this.slFlavorParamsId = slFlavorParamsId;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getSlHdFlavorParamsId() {
-	 	return this.slHdFlavorParamsId;
-	 }
-	
-	/**
-	 * @param slHdFlavorParamsId int 
-	 */
-	 setSlHdFlavorParamsId(slHdFlavorParamsId) {
-	 	this.slHdFlavorParamsId = slHdFlavorParamsId;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getMsnvideoCat() {
-	 	return this.msnvideoCat;
-	 }
-	
-	/**
-	 * @param msnvideoCat string 
-	 */
-	 setMsnvideoCat(msnvideoCat) {
-	 	this.msnvideoCat = msnvideoCat;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getMsnvideoTop() {
-	 	return this.msnvideoTop;
-	 }
-	
-	/**
-	 * @param msnvideoTop string 
-	 */
-	 setMsnvideoTop(msnvideoTop) {
-	 	this.msnvideoTop = msnvideoTop;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getMsnvideoTopCat() {
-	 	return this.msnvideoTopCat;
-	 }
-	
-	/**
-	 * @param msnvideoTopCat string 
-	 */
-	 setMsnvideoTopCat(msnvideoTopCat) {
-	 	this.msnvideoTopCat = msnvideoTopCat;
-	 }
-}
-module.exports.MsnDistributionProfile = MsnDistributionProfile;
-
-/**
- *
- */
-class NdnDistributionProfile extends ConfigurableDistributionProfile{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaNdnDistributionProfile';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFeedUrl() {
-	 	return this.feedUrl;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getChannelTitle() {
-	 	return this.channelTitle;
-	 }
-	
-	/**
-	 * @param channelTitle string 
-	 */
-	 setChannelTitle(channelTitle) {
-	 	this.channelTitle = channelTitle;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getChannelLink() {
-	 	return this.channelLink;
-	 }
-	
-	/**
-	 * @param channelLink string 
-	 */
-	 setChannelLink(channelLink) {
-	 	this.channelLink = channelLink;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getChannelDescription() {
-	 	return this.channelDescription;
-	 }
-	
-	/**
-	 * @param channelDescription string 
-	 */
-	 setChannelDescription(channelDescription) {
-	 	this.channelDescription = channelDescription;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getChannelLanguage() {
-	 	return this.channelLanguage;
-	 }
-	
-	/**
-	 * @param channelLanguage string 
-	 */
-	 setChannelLanguage(channelLanguage) {
-	 	this.channelLanguage = channelLanguage;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getChannelCopyright() {
-	 	return this.channelCopyright;
-	 }
-	
-	/**
-	 * @param channelCopyright string 
-	 */
-	 setChannelCopyright(channelCopyright) {
-	 	this.channelCopyright = channelCopyright;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getChannelImageTitle() {
-	 	return this.channelImageTitle;
-	 }
-	
-	/**
-	 * @param channelImageTitle string 
-	 */
-	 setChannelImageTitle(channelImageTitle) {
-	 	this.channelImageTitle = channelImageTitle;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getChannelImageUrl() {
-	 	return this.channelImageUrl;
-	 }
-	
-	/**
-	 * @param channelImageUrl string 
-	 */
-	 setChannelImageUrl(channelImageUrl) {
-	 	this.channelImageUrl = channelImageUrl;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getChannelImageLink() {
-	 	return this.channelImageLink;
-	 }
-	
-	/**
-	 * @param channelImageLink string 
-	 */
-	 setChannelImageLink(channelImageLink) {
-	 	this.channelImageLink = channelImageLink;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getItemMediaRating() {
-	 	return this.itemMediaRating;
-	 }
-	
-	/**
-	 * @param itemMediaRating string 
-	 */
-	 setItemMediaRating(itemMediaRating) {
-	 	this.itemMediaRating = itemMediaRating;
-	 }
-}
-module.exports.NdnDistributionProfile = NdnDistributionProfile;
-
-/**
- *
- */
 class OperationResource extends ContentResource{
 	
 	constructor(object = null) {
@@ -60457,330 +54076,6 @@ class PreviewRestriction extends SessionRestriction{
 	 }
 }
 module.exports.PreviewRestriction = PreviewRestriction;
-
-/**
- *
- */
-class QuickPlayDistributionJobProviderData extends ConfigurableDistributionJobProviderData{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaQuickPlayDistributionJobProviderData';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getXml() {
-	 	return this.xml;
-	 }
-	
-	/**
-	 * @param xml string 
-	 */
-	 setXml(xml) {
-	 	this.xml = xml;
-	 }
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getVideoFilePaths() {
-	 	return this.videoFilePaths;
-	 }
-	
-	/**
-	 * @param videoFilePaths array 
-	 */
-	 setVideoFilePaths(videoFilePaths) {
-	 	this.videoFilePaths = videoFilePaths;
-	 }
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getThumbnailFilePaths() {
-	 	return this.thumbnailFilePaths;
-	 }
-	
-	/**
-	 * @param thumbnailFilePaths array 
-	 */
-	 setThumbnailFilePaths(thumbnailFilePaths) {
-	 	this.thumbnailFilePaths = thumbnailFilePaths;
-	 }
-}
-module.exports.QuickPlayDistributionJobProviderData = QuickPlayDistributionJobProviderData;
-
-/**
- *
- */
-class QuickPlayDistributionProfile extends ConfigurableDistributionProfile{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaQuickPlayDistributionProfile';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSftpHost() {
-	 	return this.sftpHost;
-	 }
-	
-	/**
-	 * @param sftpHost string 
-	 */
-	 setSftpHost(sftpHost) {
-	 	this.sftpHost = sftpHost;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSftpLogin() {
-	 	return this.sftpLogin;
-	 }
-	
-	/**
-	 * @param sftpLogin string 
-	 */
-	 setSftpLogin(sftpLogin) {
-	 	this.sftpLogin = sftpLogin;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSftpPass() {
-	 	return this.sftpPass;
-	 }
-	
-	/**
-	 * @param sftpPass string 
-	 */
-	 setSftpPass(sftpPass) {
-	 	this.sftpPass = sftpPass;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSftpBasePath() {
-	 	return this.sftpBasePath;
-	 }
-	
-	/**
-	 * @param sftpBasePath string 
-	 */
-	 setSftpBasePath(sftpBasePath) {
-	 	this.sftpBasePath = sftpBasePath;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getChannelTitle() {
-	 	return this.channelTitle;
-	 }
-	
-	/**
-	 * @param channelTitle string 
-	 */
-	 setChannelTitle(channelTitle) {
-	 	this.channelTitle = channelTitle;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getChannelLink() {
-	 	return this.channelLink;
-	 }
-	
-	/**
-	 * @param channelLink string 
-	 */
-	 setChannelLink(channelLink) {
-	 	this.channelLink = channelLink;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getChannelDescription() {
-	 	return this.channelDescription;
-	 }
-	
-	/**
-	 * @param channelDescription string 
-	 */
-	 setChannelDescription(channelDescription) {
-	 	this.channelDescription = channelDescription;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getChannelManagingEditor() {
-	 	return this.channelManagingEditor;
-	 }
-	
-	/**
-	 * @param channelManagingEditor string 
-	 */
-	 setChannelManagingEditor(channelManagingEditor) {
-	 	this.channelManagingEditor = channelManagingEditor;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getChannelLanguage() {
-	 	return this.channelLanguage;
-	 }
-	
-	/**
-	 * @param channelLanguage string 
-	 */
-	 setChannelLanguage(channelLanguage) {
-	 	this.channelLanguage = channelLanguage;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getChannelImageTitle() {
-	 	return this.channelImageTitle;
-	 }
-	
-	/**
-	 * @param channelImageTitle string 
-	 */
-	 setChannelImageTitle(channelImageTitle) {
-	 	this.channelImageTitle = channelImageTitle;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getChannelImageWidth() {
-	 	return this.channelImageWidth;
-	 }
-	
-	/**
-	 * @param channelImageWidth string 
-	 */
-	 setChannelImageWidth(channelImageWidth) {
-	 	this.channelImageWidth = channelImageWidth;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getChannelImageHeight() {
-	 	return this.channelImageHeight;
-	 }
-	
-	/**
-	 * @param channelImageHeight string 
-	 */
-	 setChannelImageHeight(channelImageHeight) {
-	 	this.channelImageHeight = channelImageHeight;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getChannelImageLink() {
-	 	return this.channelImageLink;
-	 }
-	
-	/**
-	 * @param channelImageLink string 
-	 */
-	 setChannelImageLink(channelImageLink) {
-	 	this.channelImageLink = channelImageLink;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getChannelImageUrl() {
-	 	return this.channelImageUrl;
-	 }
-	
-	/**
-	 * @param channelImageUrl string 
-	 */
-	 setChannelImageUrl(channelImageUrl) {
-	 	this.channelImageUrl = channelImageUrl;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getChannelCopyright() {
-	 	return this.channelCopyright;
-	 }
-	
-	/**
-	 * @param channelCopyright string 
-	 */
-	 setChannelCopyright(channelCopyright) {
-	 	this.channelCopyright = channelCopyright;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getChannelGenerator() {
-	 	return this.channelGenerator;
-	 }
-	
-	/**
-	 * @param channelGenerator string 
-	 */
-	 setChannelGenerator(channelGenerator) {
-	 	this.channelGenerator = channelGenerator;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getChannelRating() {
-	 	return this.channelRating;
-	 }
-	
-	/**
-	 * @param channelRating string 
-	 */
-	 setChannelRating(channelRating) {
-	 	this.channelRating = channelRating;
-	 }
-}
-module.exports.QuickPlayDistributionProfile = QuickPlayDistributionProfile;
 
 /**
  *
@@ -61672,6 +54967,21 @@ class ScheduleResourceBaseFilter extends RelatedFilter{
 	 * 
 	 * @return string
 	 */
+	 getNameEqual() {
+	 	return this.nameEqual;
+	 }
+	
+	/**
+	 * @param nameEqual string 
+	 */
+	 setNameEqual(nameEqual) {
+	 	this.nameEqual = nameEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
 	 getSystemNameEqual() {
 	 	return this.systemNameEqual;
 	 }
@@ -62303,291 +55613,6 @@ module.exports.SwfFlavorParams = SwfFlavorParams;
 /**
  *
  */
-class SynacorHboDistributionProfile extends ConfigurableDistributionProfile{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaSynacorHboDistributionProfile';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFeedUrl() {
-	 	return this.feedUrl;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFeedTitle() {
-	 	return this.feedTitle;
-	 }
-	
-	/**
-	 * @param feedTitle string 
-	 */
-	 setFeedTitle(feedTitle) {
-	 	this.feedTitle = feedTitle;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFeedSubtitle() {
-	 	return this.feedSubtitle;
-	 }
-	
-	/**
-	 * @param feedSubtitle string 
-	 */
-	 setFeedSubtitle(feedSubtitle) {
-	 	this.feedSubtitle = feedSubtitle;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFeedLink() {
-	 	return this.feedLink;
-	 }
-	
-	/**
-	 * @param feedLink string 
-	 */
-	 setFeedLink(feedLink) {
-	 	this.feedLink = feedLink;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFeedAuthorName() {
-	 	return this.feedAuthorName;
-	 }
-	
-	/**
-	 * @param feedAuthorName string 
-	 */
-	 setFeedAuthorName(feedAuthorName) {
-	 	this.feedAuthorName = feedAuthorName;
-	 }
-}
-module.exports.SynacorHboDistributionProfile = SynacorHboDistributionProfile;
-
-/**
- *
- */
-class TVComDistributionProfile extends ConfigurableDistributionProfile{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaTVComDistributionProfile';
-	}
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getMetadataProfileId() {
-	 	return this.metadataProfileId;
-	 }
-	
-	/**
-	 * @param metadataProfileId int 
-	 */
-	 setMetadataProfileId(metadataProfileId) {
-	 	this.metadataProfileId = metadataProfileId;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFeedUrl() {
-	 	return this.feedUrl;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFeedTitle() {
-	 	return this.feedTitle;
-	 }
-	
-	/**
-	 * @param feedTitle string 
-	 */
-	 setFeedTitle(feedTitle) {
-	 	this.feedTitle = feedTitle;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFeedLink() {
-	 	return this.feedLink;
-	 }
-	
-	/**
-	 * @param feedLink string 
-	 */
-	 setFeedLink(feedLink) {
-	 	this.feedLink = feedLink;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFeedDescription() {
-	 	return this.feedDescription;
-	 }
-	
-	/**
-	 * @param feedDescription string 
-	 */
-	 setFeedDescription(feedDescription) {
-	 	this.feedDescription = feedDescription;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFeedLanguage() {
-	 	return this.feedLanguage;
-	 }
-	
-	/**
-	 * @param feedLanguage string 
-	 */
-	 setFeedLanguage(feedLanguage) {
-	 	this.feedLanguage = feedLanguage;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFeedCopyright() {
-	 	return this.feedCopyright;
-	 }
-	
-	/**
-	 * @param feedCopyright string 
-	 */
-	 setFeedCopyright(feedCopyright) {
-	 	this.feedCopyright = feedCopyright;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFeedImageTitle() {
-	 	return this.feedImageTitle;
-	 }
-	
-	/**
-	 * @param feedImageTitle string 
-	 */
-	 setFeedImageTitle(feedImageTitle) {
-	 	this.feedImageTitle = feedImageTitle;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFeedImageUrl() {
-	 	return this.feedImageUrl;
-	 }
-	
-	/**
-	 * @param feedImageUrl string 
-	 */
-	 setFeedImageUrl(feedImageUrl) {
-	 	this.feedImageUrl = feedImageUrl;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFeedImageLink() {
-	 	return this.feedImageLink;
-	 }
-	
-	/**
-	 * @param feedImageLink string 
-	 */
-	 setFeedImageLink(feedImageLink) {
-	 	this.feedImageLink = feedImageLink;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getFeedImageWidth() {
-	 	return this.feedImageWidth;
-	 }
-	
-	/**
-	 * @param feedImageWidth int 
-	 */
-	 setFeedImageWidth(feedImageWidth) {
-	 	this.feedImageWidth = feedImageWidth;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getFeedImageHeight() {
-	 	return this.feedImageHeight;
-	 }
-	
-	/**
-	 * @param feedImageHeight int 
-	 */
-	 setFeedImageHeight(feedImageHeight) {
-	 	this.feedImageHeight = feedImageHeight;
-	 }
-}
-module.exports.TVComDistributionProfile = TVComDistributionProfile;
-
-/**
- *
- */
-class TimeWarnerDistributionProfile extends ConfigurableDistributionProfile{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaTimeWarnerDistributionProfile';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFeedUrl() {
-	 	return this.feedUrl;
-	 }
-}
-module.exports.TimeWarnerDistributionProfile = TimeWarnerDistributionProfile;
-
-/**
- *
- */
 class TimedThumbAsset extends ThumbAsset{
 	
 	constructor(object = null) {
@@ -62615,120 +55640,6 @@ module.exports.TimedThumbAsset = TimedThumbAsset;
 /**
  *
  */
-class TvinciDistributionJobProviderData extends ConfigurableDistributionJobProviderData{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaTvinciDistributionJobProviderData';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getXml() {
-	 	return this.xml;
-	 }
-	
-	/**
-	 * @param xml string 
-	 */
-	 setXml(xml) {
-	 	this.xml = xml;
-	 }
-}
-module.exports.TvinciDistributionJobProviderData = TvinciDistributionJobProviderData;
-
-/**
- *
- */
-class TvinciDistributionProfile extends ConfigurableDistributionProfile{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaTvinciDistributionProfile';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getIngestUrl() {
-	 	return this.ingestUrl;
-	 }
-	
-	/**
-	 * @param ingestUrl string 
-	 */
-	 setIngestUrl(ingestUrl) {
-	 	this.ingestUrl = ingestUrl;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getUsername() {
-	 	return this.username;
-	 }
-	
-	/**
-	 * @param username string 
-	 */
-	 setUsername(username) {
-	 	this.username = username;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getPassword() {
-	 	return this.password;
-	 }
-	
-	/**
-	 * @param password string 
-	 */
-	 setPassword(password) {
-	 	this.password = password;
-	 }
-	
-	/**
-	 * Tags array for Tvinci distribution
-	 * @return array
-	 */
-	 getTags() {
-	 	return this.tags;
-	 }
-	
-	/**
-	 * @param tags array Tags array for Tvinci distribution
-	 */
-	 setTags(tags) {
-	 	this.tags = tags;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getXsltFile() {
-	 	return this.xsltFile;
-	 }
-	
-	/**
-	 * @param xsltFile string 
-	 */
-	 setXsltFile(xsltFile) {
-	 	this.xsltFile = xsltFile;
-	 }
-}
-module.exports.TvinciDistributionProfile = TvinciDistributionProfile;
-
-/**
- *
- */
 class UiConfFilter extends UiConfBaseFilter{
 	
 	constructor(object = null) {
@@ -62737,240 +55648,6 @@ class UiConfFilter extends UiConfBaseFilter{
 	}
 }
 module.exports.UiConfFilter = UiConfFilter;
-
-/**
- *
- */
-class UnicornDistributionJobProviderData extends ConfigurableDistributionJobProviderData{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaUnicornDistributionJobProviderData';
-	}
-	
-	/**
-	 * The Catalog GUID the video is in or will be ingested into
-	 * @return string
-	 */
-	 getCatalogGuid() {
-	 	return this.catalogGuid;
-	 }
-	
-	/**
-	 * @param catalogGuid string The Catalog GUID the video is in or will be ingested into
-	 */
-	 setCatalogGuid(catalogGuid) {
-	 	this.catalogGuid = catalogGuid;
-	 }
-	
-	/**
-	 * The Title assigned to the video. The Foreign Key will be used if no title is provided
-	 * @return string
-	 */
-	 getTitle() {
-	 	return this.title;
-	 }
-	
-	/**
-	 * @param title string The Title assigned to the video. The Foreign Key will be used if no title is provided
-	 */
-	 setTitle(title) {
-	 	this.title = title;
-	 }
-	
-	/**
-	 * Indicates that the media content changed and therefore the job should wait for HTTP callback notification to be closed
-	 * @return bool
-	 */
-	 getMediaChanged() {
-	 	return this.mediaChanged;
-	 }
-	
-	/**
-	 * @param mediaChanged bool Indicates that the media content changed and therefore the job should wait for HTTP callback notification to be closed
-	 */
-	 setMediaChanged(mediaChanged) {
-	 	this.mediaChanged = mediaChanged;
-	 }
-	
-	/**
-	 * Flavor asset version
-	 * @return string
-	 */
-	 getFlavorAssetVersion() {
-	 	return this.flavorAssetVersion;
-	 }
-	
-	/**
-	 * @param flavorAssetVersion string Flavor asset version
-	 */
-	 setFlavorAssetVersion(flavorAssetVersion) {
-	 	this.flavorAssetVersion = flavorAssetVersion;
-	 }
-	
-	/**
-	 * The schema and host name to the Kaltura server, e.g. http://www.kaltura.com
-	 * @return string
-	 */
-	 getNotificationBaseUrl() {
-	 	return this.notificationBaseUrl;
-	 }
-	
-	/**
-	 * @param notificationBaseUrl string The schema and host name to the Kaltura server, e.g. http://www.kaltura.com
-	 */
-	 setNotificationBaseUrl(notificationBaseUrl) {
-	 	this.notificationBaseUrl = notificationBaseUrl;
-	 }
-}
-module.exports.UnicornDistributionJobProviderData = UnicornDistributionJobProviderData;
-
-/**
- *
- */
-class UnicornDistributionProfile extends ConfigurableDistributionProfile{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaUnicornDistributionProfile';
-	}
-	
-	/**
-	 * The email address associated with the Upload User, used to authorize the incoming request
-	 * @return string
-	 */
-	 getUsername() {
-	 	return this.username;
-	 }
-	
-	/**
-	 * @param username string The email address associated with the Upload User, used to authorize the incoming request
-	 */
-	 setUsername(username) {
-	 	this.username = username;
-	 }
-	
-	/**
-	 * The password used in association with the email to determine if the Upload User is authorized the incoming request
-	 * @return string
-	 */
-	 getPassword() {
-	 	return this.password;
-	 }
-	
-	/**
-	 * @param password string The password used in association with the email to determine if the Upload User is authorized the incoming request
-	 */
-	 setPassword(password) {
-	 	this.password = password;
-	 }
-	
-	/**
-	 * The name of the Domain that the Upload User should have access to, Used for authentication
-	 * @return string
-	 */
-	 getDomainName() {
-	 	return this.domainName;
-	 }
-	
-	/**
-	 * @param domainName string The name of the Domain that the Upload User should have access to, Used for authentication
-	 */
-	 setDomainName(domainName) {
-	 	this.domainName = domainName;
-	 }
-	
-	/**
-	 * The Channel GUID assigned to this Publication Rule. Must be a valid Channel in the Domain that was used in authentication
-	 * @return string
-	 */
-	 getChannelGuid() {
-	 	return this.channelGuid;
-	 }
-	
-	/**
-	 * @param channelGuid string The Channel GUID assigned to this Publication Rule. Must be a valid Channel in the Domain that was used in authentication
-	 */
-	 setChannelGuid(channelGuid) {
-	 	this.channelGuid = channelGuid;
-	 }
-	
-	/**
-	 * The API host URL that the Upload User should have access to, Used for HTTP content submission
-	 * @return string
-	 */
-	 getApiHostUrl() {
-	 	return this.apiHostUrl;
-	 }
-	
-	/**
-	 * @param apiHostUrl string The API host URL that the Upload User should have access to, Used for HTTP content submission
-	 */
-	 setApiHostUrl(apiHostUrl) {
-	 	this.apiHostUrl = apiHostUrl;
-	 }
-	
-	/**
-	 * The GUID of the Customer Domain in the Unicorn system obtained by contacting your Unicorn representative
-	 * @return string
-	 */
-	 getDomainGuid() {
-	 	return this.domainGuid;
-	 }
-	
-	/**
-	 * @param domainGuid string The GUID of the Customer Domain in the Unicorn system obtained by contacting your Unicorn representative
-	 */
-	 setDomainGuid(domainGuid) {
-	 	this.domainGuid = domainGuid;
-	 }
-	
-	/**
-	 * The GUID for the application in which to record metrics and enforce business rules obtained through your Unicorn representative
-	 * @return string
-	 */
-	 getAdFreeApplicationGuid() {
-	 	return this.adFreeApplicationGuid;
-	 }
-	
-	/**
-	 * @param adFreeApplicationGuid string The GUID for the application in which to record metrics and enforce business rules obtained through your Unicorn representative
-	 */
-	 setAdFreeApplicationGuid(adFreeApplicationGuid) {
-	 	this.adFreeApplicationGuid = adFreeApplicationGuid;
-	 }
-	
-	/**
-	 * The flavor-params that will be used for the remote asset
-	 * @return int
-	 */
-	 getRemoteAssetParamsId() {
-	 	return this.remoteAssetParamsId;
-	 }
-	
-	/**
-	 * @param remoteAssetParamsId int The flavor-params that will be used for the remote asset
-	 */
-	 setRemoteAssetParamsId(remoteAssetParamsId) {
-	 	this.remoteAssetParamsId = remoteAssetParamsId;
-	 }
-	
-	/**
-	 * The remote storage that should be used for the remote asset
-	 * @return string
-	 */
-	 getStorageProfileId() {
-	 	return this.storageProfileId;
-	 }
-	
-	/**
-	 * @param storageProfileId string The remote storage that should be used for the remote asset
-	 */
-	 setStorageProfileId(storageProfileId) {
-	 	this.storageProfileId = storageProfileId;
-	 }
-}
-module.exports.UnicornDistributionProfile = UnicornDistributionProfile;
 
 /**
  *
@@ -63632,117 +56309,6 @@ module.exports.VirusScanProfileFilter = VirusScanProfileFilter;
 /**
  *
  */
-class WebexDropFolderContentProcessorJobData extends DropFolderContentProcessorJobData{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaWebexDropFolderContentProcessorJobData';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getDescription() {
-	 	return this.description;
-	 }
-	
-	/**
-	 * @param description string 
-	 */
-	 setDescription(description) {
-	 	this.description = description;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getWebexHostId() {
-	 	return this.webexHostId;
-	 }
-	
-	/**
-	 * @param webexHostId string 
-	 */
-	 setWebexHostId(webexHostId) {
-	 	this.webexHostId = webexHostId;
-	 }
-}
-module.exports.WebexDropFolderContentProcessorJobData = WebexDropFolderContentProcessorJobData;
-
-/**
- *
- */
-class WidevineFlavorAsset extends FlavorAsset{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaWidevineFlavorAsset';
-	}
-	
-	/**
-	 * License distribution window start date
-	 * @return int
-	 */
-	 getWidevineDistributionStartDate() {
-	 	return this.widevineDistributionStartDate;
-	 }
-	
-	/**
-	 * @param widevineDistributionStartDate int License distribution window start date
-	 */
-	 setWidevineDistributionStartDate(widevineDistributionStartDate) {
-	 	this.widevineDistributionStartDate = widevineDistributionStartDate;
-	 }
-	
-	/**
-	 * License distribution window end date
-	 * @return int
-	 */
-	 getWidevineDistributionEndDate() {
-	 	return this.widevineDistributionEndDate;
-	 }
-	
-	/**
-	 * @param widevineDistributionEndDate int License distribution window end date
-	 */
-	 setWidevineDistributionEndDate(widevineDistributionEndDate) {
-	 	this.widevineDistributionEndDate = widevineDistributionEndDate;
-	 }
-	
-	/**
-	 * Widevine unique asset id
-	 * @return int
-	 */
-	 getWidevineAssetId() {
-	 	return this.widevineAssetId;
-	 }
-	
-	/**
-	 * @param widevineAssetId int Widevine unique asset id
-	 */
-	 setWidevineAssetId(widevineAssetId) {
-	 	this.widevineAssetId = widevineAssetId;
-	 }
-}
-module.exports.WidevineFlavorAsset = WidevineFlavorAsset;
-
-/**
- *
- */
-class WidevineFlavorParams extends FlavorParams{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaWidevineFlavorParams';
-	}
-}
-module.exports.WidevineFlavorParams = WidevineFlavorParams;
-
-/**
- *
- */
 class WidgetFilter extends WidgetBaseFilter{
 	
 	constructor(object = null) {
@@ -63751,969 +56317,6 @@ class WidgetFilter extends WidgetBaseFilter{
 	}
 }
 module.exports.WidgetFilter = WidgetFilter;
-
-/**
- *
- */
-class YahooDistributionJobProviderData extends ConfigurableDistributionJobProviderData{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaYahooDistributionJobProviderData';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSmallThumbPath() {
-	 	return this.smallThumbPath;
-	 }
-	
-	/**
-	 * @param smallThumbPath string 
-	 */
-	 setSmallThumbPath(smallThumbPath) {
-	 	this.smallThumbPath = smallThumbPath;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getLargeThumbPath() {
-	 	return this.largeThumbPath;
-	 }
-	
-	/**
-	 * @param largeThumbPath string 
-	 */
-	 setLargeThumbPath(largeThumbPath) {
-	 	this.largeThumbPath = largeThumbPath;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getVideoAssetFilePath() {
-	 	return this.videoAssetFilePath;
-	 }
-	
-	/**
-	 * @param videoAssetFilePath string 
-	 */
-	 setVideoAssetFilePath(videoAssetFilePath) {
-	 	this.videoAssetFilePath = videoAssetFilePath;
-	 }
-}
-module.exports.YahooDistributionJobProviderData = YahooDistributionJobProviderData;
-
-/**
- *
- */
-class YahooDistributionProfile extends ConfigurableDistributionProfile{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaYahooDistributionProfile';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFtpPath() {
-	 	return this.ftpPath;
-	 }
-	
-	/**
-	 * @param ftpPath string 
-	 */
-	 setFtpPath(ftpPath) {
-	 	this.ftpPath = ftpPath;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFtpUsername() {
-	 	return this.ftpUsername;
-	 }
-	
-	/**
-	 * @param ftpUsername string 
-	 */
-	 setFtpUsername(ftpUsername) {
-	 	this.ftpUsername = ftpUsername;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFtpPassword() {
-	 	return this.ftpPassword;
-	 }
-	
-	/**
-	 * @param ftpPassword string 
-	 */
-	 setFtpPassword(ftpPassword) {
-	 	this.ftpPassword = ftpPassword;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFtpHost() {
-	 	return this.ftpHost;
-	 }
-	
-	/**
-	 * @param ftpHost string 
-	 */
-	 setFtpHost(ftpHost) {
-	 	this.ftpHost = ftpHost;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getContactTelephone() {
-	 	return this.contactTelephone;
-	 }
-	
-	/**
-	 * @param contactTelephone string 
-	 */
-	 setContactTelephone(contactTelephone) {
-	 	this.contactTelephone = contactTelephone;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getContactEmail() {
-	 	return this.contactEmail;
-	 }
-	
-	/**
-	 * @param contactEmail string 
-	 */
-	 setContactEmail(contactEmail) {
-	 	this.contactEmail = contactEmail;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getProcessFeed() {
-	 	return this.processFeed;
-	 }
-	
-	/**
-	 * @param processFeed int 
-	 */
-	 setProcessFeed(processFeed) {
-	 	this.processFeed = processFeed;
-	 }
-}
-module.exports.YahooDistributionProfile = YahooDistributionProfile;
-
-/**
- *
- */
-class YouTubeDistributionJobProviderData extends ConfigurableDistributionJobProviderData{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaYouTubeDistributionJobProviderData';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getVideoAssetFilePath() {
-	 	return this.videoAssetFilePath;
-	 }
-	
-	/**
-	 * @param videoAssetFilePath string 
-	 */
-	 setVideoAssetFilePath(videoAssetFilePath) {
-	 	this.videoAssetFilePath = videoAssetFilePath;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getThumbAssetFilePath() {
-	 	return this.thumbAssetFilePath;
-	 }
-	
-	/**
-	 * @param thumbAssetFilePath string 
-	 */
-	 setThumbAssetFilePath(thumbAssetFilePath) {
-	 	this.thumbAssetFilePath = thumbAssetFilePath;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getCaptionAssetIds() {
-	 	return this.captionAssetIds;
-	 }
-	
-	/**
-	 * @param captionAssetIds string 
-	 */
-	 setCaptionAssetIds(captionAssetIds) {
-	 	this.captionAssetIds = captionAssetIds;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSftpDirectory() {
-	 	return this.sftpDirectory;
-	 }
-	
-	/**
-	 * @param sftpDirectory string 
-	 */
-	 setSftpDirectory(sftpDirectory) {
-	 	this.sftpDirectory = sftpDirectory;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSftpMetadataFilename() {
-	 	return this.sftpMetadataFilename;
-	 }
-	
-	/**
-	 * @param sftpMetadataFilename string 
-	 */
-	 setSftpMetadataFilename(sftpMetadataFilename) {
-	 	this.sftpMetadataFilename = sftpMetadataFilename;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getCurrentPlaylists() {
-	 	return this.currentPlaylists;
-	 }
-	
-	/**
-	 * @param currentPlaylists string 
-	 */
-	 setCurrentPlaylists(currentPlaylists) {
-	 	this.currentPlaylists = currentPlaylists;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getNewPlaylists() {
-	 	return this.newPlaylists;
-	 }
-	
-	/**
-	 * @param newPlaylists string 
-	 */
-	 setNewPlaylists(newPlaylists) {
-	 	this.newPlaylists = newPlaylists;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSubmitXml() {
-	 	return this.submitXml;
-	 }
-	
-	/**
-	 * @param submitXml string 
-	 */
-	 setSubmitXml(submitXml) {
-	 	this.submitXml = submitXml;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getUpdateXml() {
-	 	return this.updateXml;
-	 }
-	
-	/**
-	 * @param updateXml string 
-	 */
-	 setUpdateXml(updateXml) {
-	 	this.updateXml = updateXml;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getDeleteXml() {
-	 	return this.deleteXml;
-	 }
-	
-	/**
-	 * @param deleteXml string 
-	 */
-	 setDeleteXml(deleteXml) {
-	 	this.deleteXml = deleteXml;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getGoogleClientId() {
-	 	return this.googleClientId;
-	 }
-	
-	/**
-	 * @param googleClientId string 
-	 */
-	 setGoogleClientId(googleClientId) {
-	 	this.googleClientId = googleClientId;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getGoogleClientSecret() {
-	 	return this.googleClientSecret;
-	 }
-	
-	/**
-	 * @param googleClientSecret string 
-	 */
-	 setGoogleClientSecret(googleClientSecret) {
-	 	this.googleClientSecret = googleClientSecret;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getGoogleTokenData() {
-	 	return this.googleTokenData;
-	 }
-	
-	/**
-	 * @param googleTokenData string 
-	 */
-	 setGoogleTokenData(googleTokenData) {
-	 	this.googleTokenData = googleTokenData;
-	 }
-}
-module.exports.YouTubeDistributionJobProviderData = YouTubeDistributionJobProviderData;
-
-/**
- *
- */
-class YouTubeDistributionProfile extends ConfigurableDistributionProfile{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaYouTubeDistributionProfile';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFeedSpecVersion() {
-	 	return this.feedSpecVersion;
-	 }
-	
-	/**
-	 * @param feedSpecVersion string 
-	 */
-	 setFeedSpecVersion(feedSpecVersion) {
-	 	this.feedSpecVersion = feedSpecVersion;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getUsername() {
-	 	return this.username;
-	 }
-	
-	/**
-	 * @param username string 
-	 */
-	 setUsername(username) {
-	 	this.username = username;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getNotificationEmail() {
-	 	return this.notificationEmail;
-	 }
-	
-	/**
-	 * @param notificationEmail string 
-	 */
-	 setNotificationEmail(notificationEmail) {
-	 	this.notificationEmail = notificationEmail;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSftpHost() {
-	 	return this.sftpHost;
-	 }
-	
-	/**
-	 * @param sftpHost string 
-	 */
-	 setSftpHost(sftpHost) {
-	 	this.sftpHost = sftpHost;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getSftpPort() {
-	 	return this.sftpPort;
-	 }
-	
-	/**
-	 * @param sftpPort int 
-	 */
-	 setSftpPort(sftpPort) {
-	 	this.sftpPort = sftpPort;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSftpLogin() {
-	 	return this.sftpLogin;
-	 }
-	
-	/**
-	 * @param sftpLogin string 
-	 */
-	 setSftpLogin(sftpLogin) {
-	 	this.sftpLogin = sftpLogin;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSftpPublicKey() {
-	 	return this.sftpPublicKey;
-	 }
-	
-	/**
-	 * @param sftpPublicKey string 
-	 */
-	 setSftpPublicKey(sftpPublicKey) {
-	 	this.sftpPublicKey = sftpPublicKey;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSftpPrivateKey() {
-	 	return this.sftpPrivateKey;
-	 }
-	
-	/**
-	 * @param sftpPrivateKey string 
-	 */
-	 setSftpPrivateKey(sftpPrivateKey) {
-	 	this.sftpPrivateKey = sftpPrivateKey;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSftpBaseDir() {
-	 	return this.sftpBaseDir;
-	 }
-	
-	/**
-	 * @param sftpBaseDir string 
-	 */
-	 setSftpBaseDir(sftpBaseDir) {
-	 	this.sftpBaseDir = sftpBaseDir;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getOwnerName() {
-	 	return this.ownerName;
-	 }
-	
-	/**
-	 * @param ownerName string 
-	 */
-	 setOwnerName(ownerName) {
-	 	this.ownerName = ownerName;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getDefaultCategory() {
-	 	return this.defaultCategory;
-	 }
-	
-	/**
-	 * @param defaultCategory string 
-	 */
-	 setDefaultCategory(defaultCategory) {
-	 	this.defaultCategory = defaultCategory;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getAllowComments() {
-	 	return this.allowComments;
-	 }
-	
-	/**
-	 * @param allowComments string 
-	 */
-	 setAllowComments(allowComments) {
-	 	this.allowComments = allowComments;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getAllowEmbedding() {
-	 	return this.allowEmbedding;
-	 }
-	
-	/**
-	 * @param allowEmbedding string 
-	 */
-	 setAllowEmbedding(allowEmbedding) {
-	 	this.allowEmbedding = allowEmbedding;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getAllowRatings() {
-	 	return this.allowRatings;
-	 }
-	
-	/**
-	 * @param allowRatings string 
-	 */
-	 setAllowRatings(allowRatings) {
-	 	this.allowRatings = allowRatings;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getAllowResponses() {
-	 	return this.allowResponses;
-	 }
-	
-	/**
-	 * @param allowResponses string 
-	 */
-	 setAllowResponses(allowResponses) {
-	 	this.allowResponses = allowResponses;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getCommercialPolicy() {
-	 	return this.commercialPolicy;
-	 }
-	
-	/**
-	 * @param commercialPolicy string 
-	 */
-	 setCommercialPolicy(commercialPolicy) {
-	 	this.commercialPolicy = commercialPolicy;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getUgcPolicy() {
-	 	return this.ugcPolicy;
-	 }
-	
-	/**
-	 * @param ugcPolicy string 
-	 */
-	 setUgcPolicy(ugcPolicy) {
-	 	this.ugcPolicy = ugcPolicy;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getTarget() {
-	 	return this.target;
-	 }
-	
-	/**
-	 * @param target string 
-	 */
-	 setTarget(target) {
-	 	this.target = target;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getAdServerPartnerId() {
-	 	return this.adServerPartnerId;
-	 }
-	
-	/**
-	 * @param adServerPartnerId string 
-	 */
-	 setAdServerPartnerId(adServerPartnerId) {
-	 	this.adServerPartnerId = adServerPartnerId;
-	 }
-	
-	/**
-	 * 
-	 * @return bool
-	 */
-	 getEnableAdServer() {
-	 	return this.enableAdServer;
-	 }
-	
-	/**
-	 * @param enableAdServer bool 
-	 */
-	 setEnableAdServer(enableAdServer) {
-	 	this.enableAdServer = enableAdServer;
-	 }
-	
-	/**
-	 * 
-	 * @return bool
-	 */
-	 getAllowPreRollAds() {
-	 	return this.allowPreRollAds;
-	 }
-	
-	/**
-	 * @param allowPreRollAds bool 
-	 */
-	 setAllowPreRollAds(allowPreRollAds) {
-	 	this.allowPreRollAds = allowPreRollAds;
-	 }
-	
-	/**
-	 * 
-	 * @return bool
-	 */
-	 getAllowPostRollAds() {
-	 	return this.allowPostRollAds;
-	 }
-	
-	/**
-	 * @param allowPostRollAds bool 
-	 */
-	 setAllowPostRollAds(allowPostRollAds) {
-	 	this.allowPostRollAds = allowPostRollAds;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getStrict() {
-	 	return this.strict;
-	 }
-	
-	/**
-	 * @param strict string 
-	 */
-	 setStrict(strict) {
-	 	this.strict = strict;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getOverrideManualEdits() {
-	 	return this.overrideManualEdits;
-	 }
-	
-	/**
-	 * @param overrideManualEdits string 
-	 */
-	 setOverrideManualEdits(overrideManualEdits) {
-	 	this.overrideManualEdits = overrideManualEdits;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getUrgentReference() {
-	 	return this.urgentReference;
-	 }
-	
-	/**
-	 * @param urgentReference string 
-	 */
-	 setUrgentReference(urgentReference) {
-	 	this.urgentReference = urgentReference;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getAllowSyndication() {
-	 	return this.allowSyndication;
-	 }
-	
-	/**
-	 * @param allowSyndication string 
-	 */
-	 setAllowSyndication(allowSyndication) {
-	 	this.allowSyndication = allowSyndication;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getHideViewCount() {
-	 	return this.hideViewCount;
-	 }
-	
-	/**
-	 * @param hideViewCount string 
-	 */
-	 setHideViewCount(hideViewCount) {
-	 	this.hideViewCount = hideViewCount;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getAllowAdsenseForVideo() {
-	 	return this.allowAdsenseForVideo;
-	 }
-	
-	/**
-	 * @param allowAdsenseForVideo string 
-	 */
-	 setAllowAdsenseForVideo(allowAdsenseForVideo) {
-	 	this.allowAdsenseForVideo = allowAdsenseForVideo;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getAllowInvideo() {
-	 	return this.allowInvideo;
-	 }
-	
-	/**
-	 * @param allowInvideo string 
-	 */
-	 setAllowInvideo(allowInvideo) {
-	 	this.allowInvideo = allowInvideo;
-	 }
-	
-	/**
-	 * 
-	 * @return bool
-	 */
-	 getAllowMidRollAds() {
-	 	return this.allowMidRollAds;
-	 }
-	
-	/**
-	 * @param allowMidRollAds bool 
-	 */
-	 setAllowMidRollAds(allowMidRollAds) {
-	 	this.allowMidRollAds = allowMidRollAds;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getInstreamStandard() {
-	 	return this.instreamStandard;
-	 }
-	
-	/**
-	 * @param instreamStandard string 
-	 */
-	 setInstreamStandard(instreamStandard) {
-	 	this.instreamStandard = instreamStandard;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getInstreamTrueview() {
-	 	return this.instreamTrueview;
-	 }
-	
-	/**
-	 * @param instreamTrueview string 
-	 */
-	 setInstreamTrueview(instreamTrueview) {
-	 	this.instreamTrueview = instreamTrueview;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getClaimType() {
-	 	return this.claimType;
-	 }
-	
-	/**
-	 * @param claimType string 
-	 */
-	 setClaimType(claimType) {
-	 	this.claimType = claimType;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getBlockOutsideOwnership() {
-	 	return this.blockOutsideOwnership;
-	 }
-	
-	/**
-	 * @param blockOutsideOwnership string 
-	 */
-	 setBlockOutsideOwnership(blockOutsideOwnership) {
-	 	this.blockOutsideOwnership = blockOutsideOwnership;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getCaptionAutosync() {
-	 	return this.captionAutosync;
-	 }
-	
-	/**
-	 * @param captionAutosync string 
-	 */
-	 setCaptionAutosync(captionAutosync) {
-	 	this.captionAutosync = captionAutosync;
-	 }
-	
-	/**
-	 * 
-	 * @return bool
-	 */
-	 getDeleteReference() {
-	 	return this.deleteReference;
-	 }
-	
-	/**
-	 * @param deleteReference bool 
-	 */
-	 setDeleteReference(deleteReference) {
-	 	this.deleteReference = deleteReference;
-	 }
-	
-	/**
-	 * 
-	 * @return bool
-	 */
-	 getReleaseClaims() {
-	 	return this.releaseClaims;
-	 }
-	
-	/**
-	 * @param releaseClaims bool 
-	 */
-	 setReleaseClaims(releaseClaims) {
-	 	this.releaseClaims = releaseClaims;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getApiAuthorizeUrl() {
-	 	return this.apiAuthorizeUrl;
-	 }
-	
-	/**
-	 * @param apiAuthorizeUrl string 
-	 */
-	 setApiAuthorizeUrl(apiAuthorizeUrl) {
-	 	this.apiAuthorizeUrl = apiAuthorizeUrl;
-	 }
-}
-module.exports.YouTubeDistributionProfile = YouTubeDistributionProfile;
 
 /**
  *
@@ -64991,18 +56594,6 @@ module.exports.AccessControlProfileFilter = AccessControlProfileFilter;
 /**
  *
  */
-class ActivitiBusinessProcessServerBaseFilter extends BusinessProcessServerFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaActivitiBusinessProcessServerBaseFilter';
-	}
-}
-module.exports.ActivitiBusinessProcessServerBaseFilter = ActivitiBusinessProcessServerBaseFilter;
-
-/**
- *
- */
 class AmazonS3StorageExportJobData extends StorageExportJobData{
 	
 	constructor(object = null) {
@@ -65156,18 +56747,6 @@ module.exports.AssetParamsFilter = AssetParamsFilter;
 /**
  *
  */
-class AuditTrailFilter extends AuditTrailBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaAuditTrailFilter';
-	}
-}
-module.exports.AuditTrailFilter = AuditTrailFilter;
-
-/**
- *
- */
 class BaseEntryCompareAttributeCondition extends SearchComparableAttributeCondition{
 	
 	constructor(object = null) {
@@ -65245,18 +56824,6 @@ class BatchJobFilterExt extends BatchJobFilter{
 	 }
 }
 module.exports.BatchJobFilterExt = BatchJobFilterExt;
-
-/**
- *
- */
-class BusinessProcessNotificationTemplateBaseFilter extends EventNotificationTemplateFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaBusinessProcessNotificationTemplateBaseFilter';
-	}
-}
-module.exports.BusinessProcessNotificationTemplateBaseFilter = BusinessProcessNotificationTemplateBaseFilter;
 
 /**
  *
@@ -65405,18 +56972,6 @@ module.exports.CategoryFilter = CategoryFilter;
 /**
  *
  */
-class ComcastMrssDistributionProviderBaseFilter extends DistributionProviderFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaComcastMrssDistributionProviderBaseFilter';
-	}
-}
-module.exports.ComcastMrssDistributionProviderBaseFilter = ComcastMrssDistributionProviderBaseFilter;
-
-/**
- *
- */
 class ConfigurableDistributionProfileBaseFilter extends DistributionProfileFilter{
 	
 	constructor(object = null) {
@@ -65549,18 +57104,6 @@ module.exports.CountryContextField = CountryContextField;
 /**
  *
  */
-class CrossKalturaDistributionProviderBaseFilter extends DistributionProviderFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaCrossKalturaDistributionProviderBaseFilter';
-	}
-}
-module.exports.CrossKalturaDistributionProviderBaseFilter = CrossKalturaDistributionProviderBaseFilter;
-
-/**
- *
- */
 class CuePointFilter extends CuePointBaseFilter{
 	
 	constructor(object = null) {
@@ -65614,18 +57157,6 @@ class CuePointFilter extends CuePointBaseFilter{
 	 }
 }
 module.exports.CuePointFilter = CuePointFilter;
-
-/**
- *
- */
-class DailymotionDistributionProviderBaseFilter extends DistributionProviderFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaDailymotionDistributionProviderBaseFilter';
-	}
-}
-module.exports.DailymotionDistributionProviderBaseFilter = DailymotionDistributionProviderBaseFilter;
 
 /**
  *
@@ -65939,18 +57470,6 @@ module.exports.DocumentFlavorParamsOutput = DocumentFlavorParamsOutput;
 /**
  *
  */
-class DoubleClickDistributionProviderBaseFilter extends DistributionProviderFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaDoubleClickDistributionProviderBaseFilter';
-	}
-}
-module.exports.DoubleClickDistributionProviderBaseFilter = DoubleClickDistributionProviderBaseFilter;
-
-/**
- *
- */
 class DropFolderFileResource extends DataCenterContentResource{
 	
 	constructor(object = null) {
@@ -66169,54 +57688,6 @@ class FileAssetFilter extends FileAssetBaseFilter{
 	}
 }
 module.exports.FileAssetFilter = FileAssetFilter;
-
-/**
- *
- */
-class FreewheelDistributionProfileBaseFilter extends DistributionProfileFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFreewheelDistributionProfileBaseFilter';
-	}
-}
-module.exports.FreewheelDistributionProfileBaseFilter = FreewheelDistributionProfileBaseFilter;
-
-/**
- *
- */
-class FreewheelDistributionProviderBaseFilter extends DistributionProviderFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFreewheelDistributionProviderBaseFilter';
-	}
-}
-module.exports.FreewheelDistributionProviderBaseFilter = FreewheelDistributionProviderBaseFilter;
-
-/**
- *
- */
-class FreewheelGenericDistributionProviderBaseFilter extends DistributionProviderFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFreewheelGenericDistributionProviderBaseFilter';
-	}
-}
-module.exports.FreewheelGenericDistributionProviderBaseFilter = FreewheelGenericDistributionProviderBaseFilter;
-
-/**
- *
- */
-class FtpDistributionProviderBaseFilter extends DistributionProviderFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFtpDistributionProviderBaseFilter';
-	}
-}
-module.exports.FtpDistributionProviderBaseFilter = FtpDistributionProviderBaseFilter;
 
 /**
  *
@@ -66469,18 +57940,6 @@ class HttpNotificationTemplateBaseFilter extends EventNotificationTemplateFilter
 	}
 }
 module.exports.HttpNotificationTemplateBaseFilter = HttpNotificationTemplateBaseFilter;
-
-/**
- *
- */
-class HuluDistributionProviderBaseFilter extends DistributionProviderFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaHuluDistributionProviderBaseFilter';
-	}
-}
-module.exports.HuluDistributionProviderBaseFilter = HuluDistributionProviderBaseFilter;
 
 /**
  *
@@ -67100,18 +58559,6 @@ module.exports.MetadataFilter = MetadataFilter;
 /**
  *
  */
-class MetroPcsDistributionProviderBaseFilter extends DistributionProviderFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaMetroPcsDistributionProviderBaseFilter';
-	}
-}
-module.exports.MetroPcsDistributionProviderBaseFilter = MetroPcsDistributionProviderBaseFilter;
-
-/**
- *
- */
 class MixEntryCompareAttributeCondition extends SearchComparableAttributeCondition{
 	
 	constructor(object = null) {
@@ -67162,30 +58609,6 @@ class MixEntryMatchAttributeCondition extends SearchMatchAttributeCondition{
 	 }
 }
 module.exports.MixEntryMatchAttributeCondition = MixEntryMatchAttributeCondition;
-
-/**
- *
- */
-class MsnDistributionProviderBaseFilter extends DistributionProviderFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaMsnDistributionProviderBaseFilter';
-	}
-}
-module.exports.MsnDistributionProviderBaseFilter = MsnDistributionProviderBaseFilter;
-
-/**
- *
- */
-class NdnDistributionProviderBaseFilter extends DistributionProviderFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaNdnDistributionProviderBaseFilter';
-	}
-}
-module.exports.NdnDistributionProviderBaseFilter = NdnDistributionProviderBaseFilter;
 
 /**
  *
@@ -67249,30 +58672,6 @@ class PermissionItemFilter extends PermissionItemBaseFilter{
 	}
 }
 module.exports.PermissionItemFilter = PermissionItemFilter;
-
-/**
- *
- */
-class PlayReadyPolicyBaseFilter extends DrmPolicyFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaPlayReadyPolicyBaseFilter';
-	}
-}
-module.exports.PlayReadyPolicyBaseFilter = PlayReadyPolicyBaseFilter;
-
-/**
- *
- */
-class PlayReadyProfileBaseFilter extends DrmProfileFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaPlayReadyProfileBaseFilter';
-	}
-}
-module.exports.PlayReadyProfileBaseFilter = PlayReadyProfileBaseFilter;
 
 /**
  *
@@ -67381,54 +58780,6 @@ class PlaylistMatchAttributeCondition extends SearchMatchAttributeCondition{
 	 }
 }
 module.exports.PlaylistMatchAttributeCondition = PlaylistMatchAttributeCondition;
-
-/**
- *
- */
-class PodcastDistributionProfileBaseFilter extends DistributionProfileFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaPodcastDistributionProfileBaseFilter';
-	}
-}
-module.exports.PodcastDistributionProfileBaseFilter = PodcastDistributionProfileBaseFilter;
-
-/**
- *
- */
-class PodcastDistributionProviderBaseFilter extends DistributionProviderFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaPodcastDistributionProviderBaseFilter';
-	}
-}
-module.exports.PodcastDistributionProviderBaseFilter = PodcastDistributionProviderBaseFilter;
-
-/**
- *
- */
-class PushNotificationTemplateBaseFilter extends EventNotificationTemplateFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaPushNotificationTemplateBaseFilter';
-	}
-}
-module.exports.PushNotificationTemplateBaseFilter = PushNotificationTemplateBaseFilter;
-
-/**
- *
- */
-class QuickPlayDistributionProviderBaseFilter extends DistributionProviderFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaQuickPlayDistributionProviderBaseFilter';
-	}
-}
-module.exports.QuickPlayDistributionProviderBaseFilter = QuickPlayDistributionProviderBaseFilter;
 
 /**
  *
@@ -67630,6 +58981,21 @@ class ScheduleEventFilter extends ScheduleEventBaseFilter{
 	 */
 	 setResourceSystemNamesLike(resourceSystemNamesLike) {
 	 	this.resourceSystemNamesLike = resourceSystemNamesLike;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getResourceIdEqual() {
+	 	return this.resourceIdEqual;
+	 }
+	
+	/**
+	 * @param resourceIdEqual string 
+	 */
+	 setResourceIdEqual(resourceIdEqual) {
+	 	this.resourceIdEqual = resourceIdEqual;
 	 }
 }
 module.exports.ScheduleEventFilter = ScheduleEventFilter;
@@ -67841,18 +59207,6 @@ module.exports.SwfFlavorParamsOutput = SwfFlavorParamsOutput;
 /**
  *
  */
-class SynacorHboDistributionProviderBaseFilter extends DistributionProviderFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaSynacorHboDistributionProviderBaseFilter';
-	}
-}
-module.exports.SynacorHboDistributionProviderBaseFilter = SynacorHboDistributionProviderBaseFilter;
-
-/**
- *
- */
 class SyndicationDistributionProfileBaseFilter extends DistributionProfileFilter{
 	
 	constructor(object = null) {
@@ -67877,14 +59231,44 @@ module.exports.SyndicationDistributionProviderBaseFilter = SyndicationDistributi
 /**
  *
  */
-class TVComDistributionProviderBaseFilter extends DistributionProviderFilter{
+class SystemPartnerFilter extends PartnerFilter{
 	
 	constructor(object = null) {
 		super(object);
-		this.objectType = 'KalturaTVComDistributionProviderBaseFilter';
+		this.objectType = 'KalturaSystemPartnerFilter';
 	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getPartnerParentIdEqual() {
+	 	return this.partnerParentIdEqual;
+	 }
+	
+	/**
+	 * @param partnerParentIdEqual int 
+	 */
+	 setPartnerParentIdEqual(partnerParentIdEqual) {
+	 	this.partnerParentIdEqual = partnerParentIdEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getPartnerParentIdIn() {
+	 	return this.partnerParentIdIn;
+	 }
+	
+	/**
+	 * @param partnerParentIdIn string 
+	 */
+	 setPartnerParentIdIn(partnerParentIdIn) {
+	 	this.partnerParentIdIn = partnerParentIdIn;
+	 }
 }
-module.exports.TVComDistributionProviderBaseFilter = TVComDistributionProviderBaseFilter;
+module.exports.SystemPartnerFilter = SystemPartnerFilter;
 
 /**
  *
@@ -67916,18 +59300,6 @@ module.exports.TimeContextField = TimeContextField;
 /**
  *
  */
-class TimeWarnerDistributionProviderBaseFilter extends DistributionProviderFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaTimeWarnerDistributionProviderBaseFilter';
-	}
-}
-module.exports.TimeWarnerDistributionProviderBaseFilter = TimeWarnerDistributionProviderBaseFilter;
-
-/**
- *
- */
 class TubeMogulSyndicationFeedBaseFilter extends BaseSyndicationFeedFilter{
 	
 	constructor(object = null) {
@@ -67940,26 +59312,14 @@ module.exports.TubeMogulSyndicationFeedBaseFilter = TubeMogulSyndicationFeedBase
 /**
  *
  */
-class TvinciDistributionProviderBaseFilter extends DistributionProviderFilter{
+class UiConfAdminBaseFilter extends UiConfFilter{
 	
 	constructor(object = null) {
 		super(object);
-		this.objectType = 'KalturaTvinciDistributionProviderBaseFilter';
+		this.objectType = 'KalturaUiConfAdminBaseFilter';
 	}
 }
-module.exports.TvinciDistributionProviderBaseFilter = TvinciDistributionProviderBaseFilter;
-
-/**
- *
- */
-class UnicornDistributionProviderBaseFilter extends DistributionProviderFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaUnicornDistributionProviderBaseFilter';
-	}
-}
-module.exports.UnicornDistributionProviderBaseFilter = UnicornDistributionProviderBaseFilter;
+module.exports.UiConfAdminBaseFilter = UiConfAdminBaseFilter;
 
 /**
  *
@@ -68150,84 +59510,6 @@ module.exports.WebcamTokenResource = WebcamTokenResource;
 /**
  *
  */
-class WebexDropFolderBaseFilter extends DropFolderFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaWebexDropFolderBaseFilter';
-	}
-}
-module.exports.WebexDropFolderBaseFilter = WebexDropFolderBaseFilter;
-
-/**
- *
- */
-class WebexDropFolderFileBaseFilter extends DropFolderFileFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaWebexDropFolderFileBaseFilter';
-	}
-}
-module.exports.WebexDropFolderFileBaseFilter = WebexDropFolderFileBaseFilter;
-
-/**
- *
- */
-class WidevineFlavorParamsOutput extends FlavorParamsOutput{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaWidevineFlavorParamsOutput';
-	}
-	
-	/**
-	 * License distribution window start date
-	 * @return int
-	 */
-	 getWidevineDistributionStartDate() {
-	 	return this.widevineDistributionStartDate;
-	 }
-	
-	/**
-	 * @param widevineDistributionStartDate int License distribution window start date
-	 */
-	 setWidevineDistributionStartDate(widevineDistributionStartDate) {
-	 	this.widevineDistributionStartDate = widevineDistributionStartDate;
-	 }
-	
-	/**
-	 * License distribution window end date
-	 * @return int
-	 */
-	 getWidevineDistributionEndDate() {
-	 	return this.widevineDistributionEndDate;
-	 }
-	
-	/**
-	 * @param widevineDistributionEndDate int License distribution window end date
-	 */
-	 setWidevineDistributionEndDate(widevineDistributionEndDate) {
-	 	this.widevineDistributionEndDate = widevineDistributionEndDate;
-	 }
-}
-module.exports.WidevineFlavorParamsOutput = WidevineFlavorParamsOutput;
-
-/**
- *
- */
-class WidevineProfileBaseFilter extends DrmProfileFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaWidevineProfileBaseFilter';
-	}
-}
-module.exports.WidevineProfileBaseFilter = WidevineProfileBaseFilter;
-
-/**
- *
- */
 class WowzaMediaServerNode extends MediaServerNode{
 	
 	constructor(object = null) {
@@ -68330,18 +59612,6 @@ module.exports.WowzaMediaServerNode = WowzaMediaServerNode;
 /**
  *
  */
-class YahooDistributionProviderBaseFilter extends DistributionProviderFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaYahooDistributionProviderBaseFilter';
-	}
-}
-module.exports.YahooDistributionProviderBaseFilter = YahooDistributionProviderBaseFilter;
-
-/**
- *
- */
 class YahooSyndicationFeedBaseFilter extends BaseSyndicationFeedFilter{
 	
 	constructor(object = null) {
@@ -68354,18 +59624,6 @@ module.exports.YahooSyndicationFeedBaseFilter = YahooSyndicationFeedBaseFilter;
 /**
  *
  */
-class YouTubeDistributionProviderBaseFilter extends DistributionProviderFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaYouTubeDistributionProviderBaseFilter';
-	}
-}
-module.exports.YouTubeDistributionProviderBaseFilter = YouTubeDistributionProviderBaseFilter;
-
-/**
- *
- */
 class YoutubeApiDistributionProviderBaseFilter extends DistributionProviderFilter{
 	
 	constructor(object = null) {
@@ -68374,18 +59632,6 @@ class YoutubeApiDistributionProviderBaseFilter extends DistributionProviderFilte
 	}
 }
 module.exports.YoutubeApiDistributionProviderBaseFilter = YoutubeApiDistributionProviderBaseFilter;
-
-/**
- *
- */
-class ActivitiBusinessProcessServerFilter extends ActivitiBusinessProcessServerBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaActivitiBusinessProcessServerFilter';
-	}
-}
-module.exports.ActivitiBusinessProcessServerFilter = ActivitiBusinessProcessServerFilter;
 
 /**
  *
@@ -68918,18 +60164,6 @@ module.exports.AttachmentAssetBaseFilter = AttachmentAssetBaseFilter;
 /**
  *
  */
-class BusinessProcessNotificationTemplateFilter extends BusinessProcessNotificationTemplateBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaBusinessProcessNotificationTemplateFilter';
-	}
-}
-module.exports.BusinessProcessNotificationTemplateFilter = BusinessProcessNotificationTemplateFilter;
-
-/**
- *
- */
 class CameraScheduleResourceBaseFilter extends ScheduleResourceFilter{
 	
 	constructor(object = null) {
@@ -69293,18 +60527,6 @@ module.exports.CodeCuePointBaseFilter = CodeCuePointBaseFilter;
 /**
  *
  */
-class ComcastMrssDistributionProviderFilter extends ComcastMrssDistributionProviderBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaComcastMrssDistributionProviderFilter';
-	}
-}
-module.exports.ComcastMrssDistributionProviderFilter = ComcastMrssDistributionProviderFilter;
-
-/**
- *
- */
 class ConfigurableDistributionProfileFilter extends ConfigurableDistributionProfileBaseFilter{
 	
 	constructor(object = null) {
@@ -69313,30 +60535,6 @@ class ConfigurableDistributionProfileFilter extends ConfigurableDistributionProf
 	}
 }
 module.exports.ConfigurableDistributionProfileFilter = ConfigurableDistributionProfileFilter;
-
-/**
- *
- */
-class CrossKalturaDistributionProviderFilter extends CrossKalturaDistributionProviderBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaCrossKalturaDistributionProviderFilter';
-	}
-}
-module.exports.CrossKalturaDistributionProviderFilter = CrossKalturaDistributionProviderFilter;
-
-/**
- *
- */
-class DailymotionDistributionProviderFilter extends DailymotionDistributionProviderBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaDailymotionDistributionProviderFilter';
-	}
-}
-module.exports.DailymotionDistributionProviderFilter = DailymotionDistributionProviderFilter;
 
 /**
  *
@@ -69541,18 +60739,6 @@ class DocumentEntryBaseFilter extends BaseEntryFilter{
 	 }
 }
 module.exports.DocumentEntryBaseFilter = DocumentEntryBaseFilter;
-
-/**
- *
- */
-class DoubleClickDistributionProviderFilter extends DoubleClickDistributionProviderBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaDoubleClickDistributionProviderFilter';
-	}
-}
-module.exports.DoubleClickDistributionProviderFilter = DoubleClickDistributionProviderFilter;
 
 /**
  *
@@ -69854,54 +61040,6 @@ module.exports.FlavorParamsBaseFilter = FlavorParamsBaseFilter;
 /**
  *
  */
-class FreewheelDistributionProfileFilter extends FreewheelDistributionProfileBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFreewheelDistributionProfileFilter';
-	}
-}
-module.exports.FreewheelDistributionProfileFilter = FreewheelDistributionProfileFilter;
-
-/**
- *
- */
-class FreewheelDistributionProviderFilter extends FreewheelDistributionProviderBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFreewheelDistributionProviderFilter';
-	}
-}
-module.exports.FreewheelDistributionProviderFilter = FreewheelDistributionProviderFilter;
-
-/**
- *
- */
-class FreewheelGenericDistributionProviderFilter extends FreewheelGenericDistributionProviderBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFreewheelGenericDistributionProviderFilter';
-	}
-}
-module.exports.FreewheelGenericDistributionProviderFilter = FreewheelGenericDistributionProviderFilter;
-
-/**
- *
- */
-class FtpDistributionProviderFilter extends FtpDistributionProviderBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFtpDistributionProviderFilter';
-	}
-}
-module.exports.FtpDistributionProviderFilter = FtpDistributionProviderFilter;
-
-/**
- *
- */
 class GenericDistributionProfileFilter extends GenericDistributionProfileBaseFilter{
 	
 	constructor(object = null) {
@@ -69958,18 +61096,6 @@ class HttpNotificationTemplateFilter extends HttpNotificationTemplateBaseFilter{
 	}
 }
 module.exports.HttpNotificationTemplateFilter = HttpNotificationTemplateFilter;
-
-/**
- *
- */
-class HuluDistributionProviderFilter extends HuluDistributionProviderBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaHuluDistributionProviderFilter';
-	}
-}
-module.exports.HuluDistributionProviderFilter = HuluDistributionProviderFilter;
 
 /**
  *
@@ -70034,42 +61160,6 @@ module.exports.LocationScheduleResourceBaseFilter = LocationScheduleResourceBase
 /**
  *
  */
-class MetroPcsDistributionProviderFilter extends MetroPcsDistributionProviderBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaMetroPcsDistributionProviderFilter';
-	}
-}
-module.exports.MetroPcsDistributionProviderFilter = MetroPcsDistributionProviderFilter;
-
-/**
- *
- */
-class MsnDistributionProviderFilter extends MsnDistributionProviderBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaMsnDistributionProviderFilter';
-	}
-}
-module.exports.MsnDistributionProviderFilter = MsnDistributionProviderFilter;
-
-/**
- *
- */
-class NdnDistributionProviderFilter extends NdnDistributionProviderBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaNdnDistributionProviderFilter';
-	}
-}
-module.exports.NdnDistributionProviderFilter = NdnDistributionProviderFilter;
-
-/**
- *
- */
 class OperaSyndicationFeed extends ConstantXsltSyndicationFeed{
 	
 	constructor(object = null) {
@@ -70082,30 +61172,6 @@ module.exports.OperaSyndicationFeed = OperaSyndicationFeed;
 /**
  *
  */
-class PlayReadyPolicyFilter extends PlayReadyPolicyBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaPlayReadyPolicyFilter';
-	}
-}
-module.exports.PlayReadyPolicyFilter = PlayReadyPolicyFilter;
-
-/**
- *
- */
-class PlayReadyProfileFilter extends PlayReadyProfileBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaPlayReadyProfileFilter';
-	}
-}
-module.exports.PlayReadyProfileFilter = PlayReadyProfileFilter;
-
-/**
- *
- */
 class PlaylistBaseFilter extends BaseEntryFilter{
 	
 	constructor(object = null) {
@@ -70114,42 +61180,6 @@ class PlaylistBaseFilter extends BaseEntryFilter{
 	}
 }
 module.exports.PlaylistBaseFilter = PlaylistBaseFilter;
-
-/**
- *
- */
-class PodcastDistributionProfileFilter extends PodcastDistributionProfileBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaPodcastDistributionProfileFilter';
-	}
-}
-module.exports.PodcastDistributionProfileFilter = PodcastDistributionProfileFilter;
-
-/**
- *
- */
-class PodcastDistributionProviderFilter extends PodcastDistributionProviderBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaPodcastDistributionProviderFilter';
-	}
-}
-module.exports.PodcastDistributionProviderFilter = PodcastDistributionProviderFilter;
-
-/**
- *
- */
-class PushNotificationTemplateFilter extends PushNotificationTemplateBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaPushNotificationTemplateFilter';
-	}
-}
-module.exports.PushNotificationTemplateFilter = PushNotificationTemplateFilter;
 
 /**
  *
@@ -70211,18 +61241,6 @@ module.exports.QuestionCuePointBaseFilter = QuestionCuePointBaseFilter;
 /**
  *
  */
-class QuickPlayDistributionProviderFilter extends QuickPlayDistributionProviderBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaQuickPlayDistributionProviderFilter';
-	}
-}
-module.exports.QuickPlayDistributionProviderFilter = QuickPlayDistributionProviderFilter;
-
-/**
- *
- */
 class QuizUserEntryBaseFilter extends UserEntryFilter{
 	
 	constructor(object = null) {
@@ -70259,18 +61277,6 @@ module.exports.RokuSyndicationFeed = RokuSyndicationFeed;
 /**
  *
  */
-class SynacorHboDistributionProviderFilter extends SynacorHboDistributionProviderBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaSynacorHboDistributionProviderFilter';
-	}
-}
-module.exports.SynacorHboDistributionProviderFilter = SynacorHboDistributionProviderFilter;
-
-/**
- *
- */
 class SyndicationDistributionProfileFilter extends SyndicationDistributionProfileBaseFilter{
 	
 	constructor(object = null) {
@@ -70279,18 +61285,6 @@ class SyndicationDistributionProfileFilter extends SyndicationDistributionProfil
 	}
 }
 module.exports.SyndicationDistributionProfileFilter = SyndicationDistributionProfileFilter;
-
-/**
- *
- */
-class TVComDistributionProviderFilter extends TVComDistributionProviderBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaTVComDistributionProviderFilter';
-	}
-}
-module.exports.TVComDistributionProviderFilter = TVComDistributionProviderFilter;
 
 /**
  *
@@ -70541,18 +61535,6 @@ module.exports.ThumbParamsBaseFilter = ThumbParamsBaseFilter;
 /**
  *
  */
-class TimeWarnerDistributionProviderFilter extends TimeWarnerDistributionProviderBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaTimeWarnerDistributionProviderFilter';
-	}
-}
-module.exports.TimeWarnerDistributionProviderFilter = TimeWarnerDistributionProviderFilter;
-
-/**
- *
- */
 class TubeMogulSyndicationFeedFilter extends TubeMogulSyndicationFeedBaseFilter{
 	
 	constructor(object = null) {
@@ -70565,26 +61547,14 @@ module.exports.TubeMogulSyndicationFeedFilter = TubeMogulSyndicationFeedFilter;
 /**
  *
  */
-class TvinciDistributionProviderFilter extends TvinciDistributionProviderBaseFilter{
+class UiConfAdminFilter extends UiConfAdminBaseFilter{
 	
 	constructor(object = null) {
 		super(object);
-		this.objectType = 'KalturaTvinciDistributionProviderFilter';
+		this.objectType = 'KalturaUiConfAdminFilter';
 	}
 }
-module.exports.TvinciDistributionProviderFilter = TvinciDistributionProviderFilter;
-
-/**
- *
- */
-class UnicornDistributionProviderFilter extends UnicornDistributionProviderBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaUnicornDistributionProviderFilter';
-	}
-}
-module.exports.UnicornDistributionProviderFilter = UnicornDistributionProviderFilter;
+module.exports.UiConfAdminFilter = UiConfAdminFilter;
 
 /**
  *
@@ -70601,54 +61571,6 @@ module.exports.ViewHistoryUserEntryFilter = ViewHistoryUserEntryFilter;
 /**
  *
  */
-class WebexDropFolderFileFilter extends WebexDropFolderFileBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaWebexDropFolderFileFilter';
-	}
-}
-module.exports.WebexDropFolderFileFilter = WebexDropFolderFileFilter;
-
-/**
- *
- */
-class WebexDropFolderFilter extends WebexDropFolderBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaWebexDropFolderFilter';
-	}
-}
-module.exports.WebexDropFolderFilter = WebexDropFolderFilter;
-
-/**
- *
- */
-class WidevineProfileFilter extends WidevineProfileBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaWidevineProfileFilter';
-	}
-}
-module.exports.WidevineProfileFilter = WidevineProfileFilter;
-
-/**
- *
- */
-class YahooDistributionProviderFilter extends YahooDistributionProviderBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaYahooDistributionProviderFilter';
-	}
-}
-module.exports.YahooDistributionProviderFilter = YahooDistributionProviderFilter;
-
-/**
- *
- */
 class YahooSyndicationFeedFilter extends YahooSyndicationFeedBaseFilter{
 	
 	constructor(object = null) {
@@ -70657,18 +61579,6 @@ class YahooSyndicationFeedFilter extends YahooSyndicationFeedBaseFilter{
 	}
 }
 module.exports.YahooSyndicationFeedFilter = YahooSyndicationFeedFilter;
-
-/**
- *
- */
-class YouTubeDistributionProviderFilter extends YouTubeDistributionProviderBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaYouTubeDistributionProviderFilter';
-	}
-}
-module.exports.YouTubeDistributionProviderFilter = YouTubeDistributionProviderFilter;
 
 /**
  *
@@ -70781,42 +61691,6 @@ module.exports.AttachmentAssetFilter = AttachmentAssetFilter;
 /**
  *
  */
-class BusinessProcessAbortNotificationTemplateBaseFilter extends BusinessProcessNotificationTemplateFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaBusinessProcessAbortNotificationTemplateBaseFilter';
-	}
-}
-module.exports.BusinessProcessAbortNotificationTemplateBaseFilter = BusinessProcessAbortNotificationTemplateBaseFilter;
-
-/**
- *
- */
-class BusinessProcessSignalNotificationTemplateBaseFilter extends BusinessProcessNotificationTemplateFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaBusinessProcessSignalNotificationTemplateBaseFilter';
-	}
-}
-module.exports.BusinessProcessSignalNotificationTemplateBaseFilter = BusinessProcessSignalNotificationTemplateBaseFilter;
-
-/**
- *
- */
-class BusinessProcessStartNotificationTemplateBaseFilter extends BusinessProcessNotificationTemplateFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaBusinessProcessStartNotificationTemplateBaseFilter';
-	}
-}
-module.exports.BusinessProcessStartNotificationTemplateBaseFilter = BusinessProcessStartNotificationTemplateBaseFilter;
-
-/**
- *
- */
 class CameraScheduleResourceFilter extends CameraScheduleResourceBaseFilter{
 	
 	constructor(object = null) {
@@ -70865,42 +61739,6 @@ module.exports.CodeCuePointFilter = CodeCuePointFilter;
 /**
  *
  */
-class ComcastMrssDistributionProfileBaseFilter extends ConfigurableDistributionProfileFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaComcastMrssDistributionProfileBaseFilter';
-	}
-}
-module.exports.ComcastMrssDistributionProfileBaseFilter = ComcastMrssDistributionProfileBaseFilter;
-
-/**
- *
- */
-class CrossKalturaDistributionProfileBaseFilter extends ConfigurableDistributionProfileFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaCrossKalturaDistributionProfileBaseFilter';
-	}
-}
-module.exports.CrossKalturaDistributionProfileBaseFilter = CrossKalturaDistributionProfileBaseFilter;
-
-/**
- *
- */
-class DailymotionDistributionProfileBaseFilter extends ConfigurableDistributionProfileFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaDailymotionDistributionProfileBaseFilter';
-	}
-}
-module.exports.DailymotionDistributionProfileBaseFilter = DailymotionDistributionProfileBaseFilter;
-
-/**
- *
- */
 class DataEntryFilter extends DataEntryBaseFilter{
 	
 	constructor(object = null) {
@@ -70933,18 +61771,6 @@ class DocumentEntryFilter extends DocumentEntryBaseFilter{
 	}
 }
 module.exports.DocumentEntryFilter = DocumentEntryFilter;
-
-/**
- *
- */
-class DoubleClickDistributionProfileBaseFilter extends ConfigurableDistributionProfileFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaDoubleClickDistributionProfileBaseFilter';
-	}
-}
-module.exports.DoubleClickDistributionProfileBaseFilter = DoubleClickDistributionProfileBaseFilter;
 
 /**
  *
@@ -71066,30 +61892,6 @@ module.exports.FlavorParamsFilter = FlavorParamsFilter;
 /**
  *
  */
-class FreewheelGenericDistributionProfileBaseFilter extends ConfigurableDistributionProfileFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFreewheelGenericDistributionProfileBaseFilter';
-	}
-}
-module.exports.FreewheelGenericDistributionProfileBaseFilter = FreewheelGenericDistributionProfileBaseFilter;
-
-/**
- *
- */
-class FtpDistributionProfileBaseFilter extends ConfigurableDistributionProfileFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFtpDistributionProfileBaseFilter';
-	}
-}
-module.exports.FtpDistributionProfileBaseFilter = FtpDistributionProfileBaseFilter;
-
-/**
- *
- */
 class FtpDropFolderBaseFilter extends RemoteDropFolderFilter{
 	
 	constructor(object = null) {
@@ -71102,18 +61904,6 @@ module.exports.FtpDropFolderBaseFilter = FtpDropFolderBaseFilter;
 /**
  *
  */
-class FtpScheduledDistributionProviderBaseFilter extends FtpDistributionProviderFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFtpScheduledDistributionProviderBaseFilter';
-	}
-}
-module.exports.FtpScheduledDistributionProviderBaseFilter = FtpScheduledDistributionProviderBaseFilter;
-
-/**
- *
- */
 class GenericXsltSyndicationFeedBaseFilter extends GenericSyndicationFeedFilter{
 	
 	constructor(object = null) {
@@ -71122,18 +61912,6 @@ class GenericXsltSyndicationFeedBaseFilter extends GenericSyndicationFeedFilter{
 	}
 }
 module.exports.GenericXsltSyndicationFeedBaseFilter = GenericXsltSyndicationFeedBaseFilter;
-
-/**
- *
- */
-class HuluDistributionProfileBaseFilter extends ConfigurableDistributionProfileFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaHuluDistributionProfileBaseFilter';
-	}
-}
-module.exports.HuluDistributionProfileBaseFilter = HuluDistributionProfileBaseFilter;
 
 /**
  *
@@ -71198,42 +61976,6 @@ module.exports.MediaServerNodeBaseFilter = MediaServerNodeBaseFilter;
 /**
  *
  */
-class MetroPcsDistributionProfileBaseFilter extends ConfigurableDistributionProfileFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaMetroPcsDistributionProfileBaseFilter';
-	}
-}
-module.exports.MetroPcsDistributionProfileBaseFilter = MetroPcsDistributionProfileBaseFilter;
-
-/**
- *
- */
-class MsnDistributionProfileBaseFilter extends ConfigurableDistributionProfileFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaMsnDistributionProfileBaseFilter';
-	}
-}
-module.exports.MsnDistributionProfileBaseFilter = MsnDistributionProfileBaseFilter;
-
-/**
- *
- */
-class NdnDistributionProfileBaseFilter extends ConfigurableDistributionProfileFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaNdnDistributionProfileBaseFilter';
-	}
-}
-module.exports.NdnDistributionProfileBaseFilter = NdnDistributionProfileBaseFilter;
-
-/**
- *
- */
 class PlaylistFilter extends PlaylistBaseFilter{
 	
 	constructor(object = null) {
@@ -71258,18 +62000,6 @@ module.exports.QuestionCuePointFilter = QuestionCuePointFilter;
 /**
  *
  */
-class QuickPlayDistributionProfileBaseFilter extends ConfigurableDistributionProfileFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaQuickPlayDistributionProfileBaseFilter';
-	}
-}
-module.exports.QuickPlayDistributionProfileBaseFilter = QuickPlayDistributionProfileBaseFilter;
-
-/**
- *
- */
 class QuizUserEntryFilter extends QuizUserEntryBaseFilter{
 	
 	constructor(object = null) {
@@ -71290,30 +62020,6 @@ class SshDropFolderBaseFilter extends RemoteDropFolderFilter{
 	}
 }
 module.exports.SshDropFolderBaseFilter = SshDropFolderBaseFilter;
-
-/**
- *
- */
-class SynacorHboDistributionProfileBaseFilter extends ConfigurableDistributionProfileFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaSynacorHboDistributionProfileBaseFilter';
-	}
-}
-module.exports.SynacorHboDistributionProfileBaseFilter = SynacorHboDistributionProfileBaseFilter;
-
-/**
- *
- */
-class TVComDistributionProfileBaseFilter extends ConfigurableDistributionProfileFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaTVComDistributionProfileBaseFilter';
-	}
-}
-module.exports.TVComDistributionProfileBaseFilter = TVComDistributionProfileBaseFilter;
 
 /**
  *
@@ -71354,66 +62060,6 @@ module.exports.ThumbParamsFilter = ThumbParamsFilter;
 /**
  *
  */
-class TimeWarnerDistributionProfileBaseFilter extends ConfigurableDistributionProfileFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaTimeWarnerDistributionProfileBaseFilter';
-	}
-}
-module.exports.TimeWarnerDistributionProfileBaseFilter = TimeWarnerDistributionProfileBaseFilter;
-
-/**
- *
- */
-class TvinciDistributionProfileBaseFilter extends ConfigurableDistributionProfileFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaTvinciDistributionProfileBaseFilter';
-	}
-}
-module.exports.TvinciDistributionProfileBaseFilter = TvinciDistributionProfileBaseFilter;
-
-/**
- *
- */
-class UnicornDistributionProfileBaseFilter extends ConfigurableDistributionProfileFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaUnicornDistributionProfileBaseFilter';
-	}
-}
-module.exports.UnicornDistributionProfileBaseFilter = UnicornDistributionProfileBaseFilter;
-
-/**
- *
- */
-class YahooDistributionProfileBaseFilter extends ConfigurableDistributionProfileFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaYahooDistributionProfileBaseFilter';
-	}
-}
-module.exports.YahooDistributionProfileBaseFilter = YahooDistributionProfileBaseFilter;
-
-/**
- *
- */
-class YouTubeDistributionProfileBaseFilter extends ConfigurableDistributionProfileFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaYouTubeDistributionProfileBaseFilter';
-	}
-}
-module.exports.YouTubeDistributionProfileBaseFilter = YouTubeDistributionProfileBaseFilter;
-
-/**
- *
- */
 class YoutubeApiDistributionProfileBaseFilter extends ConfigurableDistributionProfileFilter{
 	
 	constructor(object = null) {
@@ -71422,42 +62068,6 @@ class YoutubeApiDistributionProfileBaseFilter extends ConfigurableDistributionPr
 	}
 }
 module.exports.YoutubeApiDistributionProfileBaseFilter = YoutubeApiDistributionProfileBaseFilter;
-
-/**
- *
- */
-class BusinessProcessAbortNotificationTemplateFilter extends BusinessProcessAbortNotificationTemplateBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaBusinessProcessAbortNotificationTemplateFilter';
-	}
-}
-module.exports.BusinessProcessAbortNotificationTemplateFilter = BusinessProcessAbortNotificationTemplateFilter;
-
-/**
- *
- */
-class BusinessProcessSignalNotificationTemplateFilter extends BusinessProcessSignalNotificationTemplateBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaBusinessProcessSignalNotificationTemplateFilter';
-	}
-}
-module.exports.BusinessProcessSignalNotificationTemplateFilter = BusinessProcessSignalNotificationTemplateFilter;
-
-/**
- *
- */
-class BusinessProcessStartNotificationTemplateFilter extends BusinessProcessStartNotificationTemplateBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaBusinessProcessStartNotificationTemplateFilter';
-	}
-}
-module.exports.BusinessProcessStartNotificationTemplateFilter = BusinessProcessStartNotificationTemplateFilter;
 
 /**
  *
@@ -71684,42 +62294,6 @@ module.exports.CaptionAssetItemFilter = CaptionAssetItemFilter;
 /**
  *
  */
-class ComcastMrssDistributionProfileFilter extends ComcastMrssDistributionProfileBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaComcastMrssDistributionProfileFilter';
-	}
-}
-module.exports.ComcastMrssDistributionProfileFilter = ComcastMrssDistributionProfileFilter;
-
-/**
- *
- */
-class CrossKalturaDistributionProfileFilter extends CrossKalturaDistributionProfileBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaCrossKalturaDistributionProfileFilter';
-	}
-}
-module.exports.CrossKalturaDistributionProfileFilter = CrossKalturaDistributionProfileFilter;
-
-/**
- *
- */
-class DailymotionDistributionProfileFilter extends DailymotionDistributionProfileBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaDailymotionDistributionProfileFilter';
-	}
-}
-module.exports.DailymotionDistributionProfileFilter = DailymotionDistributionProfileFilter;
-
-/**
- *
- */
 class DeliveryProfileGenericRtmpFilter extends DeliveryProfileGenericRtmpBaseFilter{
 	
 	constructor(object = null) {
@@ -71740,18 +62314,6 @@ class DocumentFlavorParamsBaseFilter extends FlavorParamsFilter{
 	}
 }
 module.exports.DocumentFlavorParamsBaseFilter = DocumentFlavorParamsBaseFilter;
-
-/**
- *
- */
-class DoubleClickDistributionProfileFilter extends DoubleClickDistributionProfileBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaDoubleClickDistributionProfileFilter';
-	}
-}
-module.exports.DoubleClickDistributionProfileFilter = DoubleClickDistributionProfileFilter;
 
 /**
  *
@@ -71852,30 +62414,6 @@ module.exports.FlavorParamsOutputBaseFilter = FlavorParamsOutputBaseFilter;
 /**
  *
  */
-class FreewheelGenericDistributionProfileFilter extends FreewheelGenericDistributionProfileBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFreewheelGenericDistributionProfileFilter';
-	}
-}
-module.exports.FreewheelGenericDistributionProfileFilter = FreewheelGenericDistributionProfileFilter;
-
-/**
- *
- */
-class FtpDistributionProfileFilter extends FtpDistributionProfileBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFtpDistributionProfileFilter';
-	}
-}
-module.exports.FtpDistributionProfileFilter = FtpDistributionProfileFilter;
-
-/**
- *
- */
 class FtpDropFolderFilter extends FtpDropFolderBaseFilter{
 	
 	constructor(object = null) {
@@ -71888,18 +62426,6 @@ module.exports.FtpDropFolderFilter = FtpDropFolderFilter;
 /**
  *
  */
-class FtpScheduledDistributionProviderFilter extends FtpScheduledDistributionProviderBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFtpScheduledDistributionProviderFilter';
-	}
-}
-module.exports.FtpScheduledDistributionProviderFilter = FtpScheduledDistributionProviderFilter;
-
-/**
- *
- */
 class GenericXsltSyndicationFeedFilter extends GenericXsltSyndicationFeedBaseFilter{
 	
 	constructor(object = null) {
@@ -71908,18 +62434,6 @@ class GenericXsltSyndicationFeedFilter extends GenericXsltSyndicationFeedBaseFil
 	}
 }
 module.exports.GenericXsltSyndicationFeedFilter = GenericXsltSyndicationFeedFilter;
-
-/**
- *
- */
-class HuluDistributionProfileFilter extends HuluDistributionProfileBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaHuluDistributionProfileFilter';
-	}
-}
-module.exports.HuluDistributionProfileFilter = HuluDistributionProfileFilter;
 
 /**
  *
@@ -72008,18 +62522,6 @@ module.exports.MediaServerNodeFilter = MediaServerNodeFilter;
 /**
  *
  */
-class MetroPcsDistributionProfileFilter extends MetroPcsDistributionProfileBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaMetroPcsDistributionProfileFilter';
-	}
-}
-module.exports.MetroPcsDistributionProfileFilter = MetroPcsDistributionProfileFilter;
-
-/**
- *
- */
 class MixEntryBaseFilter extends PlayableEntryFilter{
 	
 	constructor(object = null) {
@@ -72032,30 +62534,6 @@ module.exports.MixEntryBaseFilter = MixEntryBaseFilter;
 /**
  *
  */
-class MsnDistributionProfileFilter extends MsnDistributionProfileBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaMsnDistributionProfileFilter';
-	}
-}
-module.exports.MsnDistributionProfileFilter = MsnDistributionProfileFilter;
-
-/**
- *
- */
-class NdnDistributionProfileFilter extends NdnDistributionProfileBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaNdnDistributionProfileFilter';
-	}
-}
-module.exports.NdnDistributionProfileFilter = NdnDistributionProfileFilter;
-
-/**
- *
- */
 class PdfFlavorParamsBaseFilter extends FlavorParamsFilter{
 	
 	constructor(object = null) {
@@ -72064,18 +62542,6 @@ class PdfFlavorParamsBaseFilter extends FlavorParamsFilter{
 	}
 }
 module.exports.PdfFlavorParamsBaseFilter = PdfFlavorParamsBaseFilter;
-
-/**
- *
- */
-class QuickPlayDistributionProfileFilter extends QuickPlayDistributionProfileBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaQuickPlayDistributionProfileFilter';
-	}
-}
-module.exports.QuickPlayDistributionProfileFilter = QuickPlayDistributionProfileFilter;
 
 /**
  *
@@ -72112,30 +62578,6 @@ class SwfFlavorParamsBaseFilter extends FlavorParamsFilter{
 	}
 }
 module.exports.SwfFlavorParamsBaseFilter = SwfFlavorParamsBaseFilter;
-
-/**
- *
- */
-class SynacorHboDistributionProfileFilter extends SynacorHboDistributionProfileBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaSynacorHboDistributionProfileFilter';
-	}
-}
-module.exports.SynacorHboDistributionProfileFilter = SynacorHboDistributionProfileFilter;
-
-/**
- *
- */
-class TVComDistributionProfileFilter extends TVComDistributionProfileBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaTVComDistributionProfileFilter';
-	}
-}
-module.exports.TVComDistributionProfileFilter = TVComDistributionProfileFilter;
 
 /**
  *
@@ -72212,18 +62654,6 @@ module.exports.ThumbParamsOutputBaseFilter = ThumbParamsOutputBaseFilter;
 /**
  *
  */
-class TimeWarnerDistributionProfileFilter extends TimeWarnerDistributionProfileBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaTimeWarnerDistributionProfileFilter';
-	}
-}
-module.exports.TimeWarnerDistributionProfileFilter = TimeWarnerDistributionProfileFilter;
-
-/**
- *
- */
 class TimedThumbAssetBaseFilter extends ThumbAssetFilter{
 	
 	constructor(object = null) {
@@ -72244,78 +62674,6 @@ class TranscriptAssetBaseFilter extends AttachmentAssetFilter{
 	}
 }
 module.exports.TranscriptAssetBaseFilter = TranscriptAssetBaseFilter;
-
-/**
- *
- */
-class TvinciDistributionProfileFilter extends TvinciDistributionProfileBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaTvinciDistributionProfileFilter';
-	}
-}
-module.exports.TvinciDistributionProfileFilter = TvinciDistributionProfileFilter;
-
-/**
- *
- */
-class UnicornDistributionProfileFilter extends UnicornDistributionProfileBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaUnicornDistributionProfileFilter';
-	}
-}
-module.exports.UnicornDistributionProfileFilter = UnicornDistributionProfileFilter;
-
-/**
- *
- */
-class WidevineFlavorAssetBaseFilter extends FlavorAssetFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaWidevineFlavorAssetBaseFilter';
-	}
-}
-module.exports.WidevineFlavorAssetBaseFilter = WidevineFlavorAssetBaseFilter;
-
-/**
- *
- */
-class WidevineFlavorParamsBaseFilter extends FlavorParamsFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaWidevineFlavorParamsBaseFilter';
-	}
-}
-module.exports.WidevineFlavorParamsBaseFilter = WidevineFlavorParamsBaseFilter;
-
-/**
- *
- */
-class YahooDistributionProfileFilter extends YahooDistributionProfileBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaYahooDistributionProfileFilter';
-	}
-}
-module.exports.YahooDistributionProfileFilter = YahooDistributionProfileFilter;
-
-/**
- *
- */
-class YouTubeDistributionProfileFilter extends YouTubeDistributionProfileBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaYouTubeDistributionProfileFilter';
-	}
-}
-module.exports.YouTubeDistributionProfileFilter = YouTubeDistributionProfileFilter;
 
 /**
  *
@@ -72524,30 +62882,6 @@ module.exports.TranscriptAssetFilter = TranscriptAssetFilter;
 /**
  *
  */
-class WidevineFlavorAssetFilter extends WidevineFlavorAssetBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaWidevineFlavorAssetFilter';
-	}
-}
-module.exports.WidevineFlavorAssetFilter = WidevineFlavorAssetFilter;
-
-/**
- *
- */
-class WidevineFlavorParamsFilter extends WidevineFlavorParamsBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaWidevineFlavorParamsFilter';
-	}
-}
-module.exports.WidevineFlavorParamsFilter = WidevineFlavorParamsFilter;
-
-/**
- *
- */
 class WowzaMediaServerNodeBaseFilter extends MediaServerNodeFilter{
 	
 	constructor(object = null) {
@@ -72728,18 +63062,6 @@ module.exports.SwfFlavorParamsOutputBaseFilter = SwfFlavorParamsOutputBaseFilter
 /**
  *
  */
-class WidevineFlavorParamsOutputBaseFilter extends FlavorParamsOutputFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaWidevineFlavorParamsOutputBaseFilter';
-	}
-}
-module.exports.WidevineFlavorParamsOutputBaseFilter = WidevineFlavorParamsOutputBaseFilter;
-
-/**
- *
- */
 class WowzaMediaServerNodeFilter extends WowzaMediaServerNodeBaseFilter{
 	
 	constructor(object = null) {
@@ -72877,18 +63199,6 @@ class SwfFlavorParamsOutputFilter extends SwfFlavorParamsOutputBaseFilter{
 	}
 }
 module.exports.SwfFlavorParamsOutputFilter = SwfFlavorParamsOutputFilter;
-
-/**
- *
- */
-class WidevineFlavorParamsOutputFilter extends WidevineFlavorParamsOutputBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaWidevineFlavorParamsOutputFilter';
-	}
-}
-module.exports.WidevineFlavorParamsOutputFilter = WidevineFlavorParamsOutputFilter;
 
 /**
  *

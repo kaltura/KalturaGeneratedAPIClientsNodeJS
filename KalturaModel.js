@@ -6972,6 +6972,21 @@ class ConversionProfile extends kaltura.BaseObject{
 	 setDetectGOP(detectGOP) {
 	 	this.detectGOP = detectGOP;
 	 }
+	
+	/**
+	 * XSL to transform ingestion Media Info XML
+	 * @return string
+	 */
+	 getMediaInfoXslTransformation() {
+	 	return this.mediaInfoXslTransformation;
+	 }
+	
+	/**
+	 * @param mediaInfoXslTransformation string XSL to transform ingestion Media Info XML
+	 */
+	 setMediaInfoXslTransformation(mediaInfoXslTransformation) {
+	 	this.mediaInfoXslTransformation = mediaInfoXslTransformation;
+	 }
 }
 module.exports.ConversionProfile = ConversionProfile;
 

@@ -8875,3 +8875,56 @@ class integration{
 }
 module.exports.integration = integration;
 
+
+/**
+ *Class definition for the Kaltura service: poll.
+ * The available service actions:
+ * @action add Add Action.
+ * @action getVotes Get Votes Action.
+ * @action vote Vote Action.
+ */
+class poll{
+	
+	/**
+	 * Add Action.
+	 * @param pollType string  (optional, default: SINGLE_ANONYMOUS)
+	 * @return string
+	 */
+	static add(pollType = 'SINGLE_ANONYMOUS'){
+		let kparams = {};
+		kparams.pollType = pollType;
+		return new kaltura.RequestBuilder('poll_poll', 'add', kparams);
+	};
+	
+	/**
+	 * Get Votes Action.
+	 * @param pollId string 
+	 * @param answerIds string 
+	 * @param otherDCVotes string  (optional, default: null)
+	 * @return string
+	 */
+	static getVotes(pollId, answerIds, otherDCVotes = null){
+		let kparams = {};
+		kparams.pollId = pollId;
+		kparams.answerIds = answerIds;
+		kparams.otherDCVotes = otherDCVotes;
+		return new kaltura.RequestBuilder('poll_poll', 'getVotes', kparams);
+	};
+	
+	/**
+	 * Vote Action.
+	 * @param pollId string 
+	 * @param userId string 
+	 * @param answerIds string 
+	 * @return string
+	 */
+	static vote(pollId, userId, answerIds){
+		let kparams = {};
+		kparams.pollId = pollId;
+		kparams.userId = userId;
+		kparams.answerIds = answerIds;
+		return new kaltura.RequestBuilder('poll_poll', 'vote', kparams);
+	};
+}
+module.exports.poll = poll;
+

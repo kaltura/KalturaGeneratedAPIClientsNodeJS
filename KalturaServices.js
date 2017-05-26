@@ -8538,12 +8538,14 @@ class scheduleEvent{
 	 * List conflicting events for resourcesIds by event's dates.
 	 * @param resourceIds string comma separated
 	 * @param scheduleEvent ScheduleEvent 
+	 * @param scheduleEventIdToIgnore string  (optional, default: null)
 	 * @return KalturaScheduleEventListResponse
 	 */
-	static getConflicts(resourceIds, scheduleEvent){
+	static getConflicts(resourceIds, scheduleEvent, scheduleEventIdToIgnore = null){
 		let kparams = {};
 		kparams.resourceIds = resourceIds;
 		kparams.scheduleEvent = scheduleEvent;
+		kparams.scheduleEventIdToIgnore = scheduleEventIdToIgnore;
 		return new kaltura.RequestBuilder('schedule_scheduleevent', 'getConflicts', kparams);
 	};
 	

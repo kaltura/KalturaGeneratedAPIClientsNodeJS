@@ -8902,7 +8902,7 @@ class poll{
 	 * Get Votes Action.
 	 * @param pollId string 
 	 * @param answerIds string 
-	 * @param otherDCVotes string  (optional, default: null)
+	 * @param otherDCVotes string json (optional, default: null)
 	 * @return string
 	 */
 	static getVotes(pollId, answerIds, otherDCVotes = null){

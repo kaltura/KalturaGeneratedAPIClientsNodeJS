@@ -5,8 +5,6 @@ This client library replaces the older architecture that presented in previous n
 [![NPM](https://nodei.co/npm/kaltura-client.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/kaltura-client/)
 
 
-NodeJS auto generated clients libs which will then be built and test by Travis CI
-
 You can install this client library using npm with:
 ```
 npm install kaltura-client 

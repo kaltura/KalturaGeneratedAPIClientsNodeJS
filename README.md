@@ -12,7 +12,7 @@ You can install this client library using npm with:
 npm install kaltura-client 
 ```
 
-## Very Basic sanity
+## Sanity Check
 - Copy config.template.json to config.json  and set partnerId, secret and serviceUrl
 - Run npm test
 

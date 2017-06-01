@@ -16,7 +16,7 @@ npm install kaltura-client
 
 ## Code contributions
 
-We are happy to accept pull requests, please look at https://github.com/kaltura/platform-install-packages/blob/master/doc/Contributing-to-the-Kaltura-Platform.md
+We are happy to accept pull requests, please see [contribution guidelines](https://github.com/kaltura/platform-install-packages/blob/master/doc/Contributing-to-the-Kaltura-Platform.md)
 
 The contents of this client are auto generated from https://github.com/kaltura/clients-generator and pull requests should be made there, rather than to the https://github.com/kaltura/KalturaGeneratedAPIClientsNodeJS repo.
 

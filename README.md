@@ -7,7 +7,7 @@ NodeJS auto generated clients libs which will then be built and test by Travis C
 
 You can install this client library using npm with:
 ```
-npm install kaltura 
+npm install kaltura-client 
 ```
 ####Please note that you should not make pull requests to the repo as the clientlibs are auto generated upon every Core release.
 ####Instead, please submit pulls to:

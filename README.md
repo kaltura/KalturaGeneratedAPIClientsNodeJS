@@ -1,6 +1,6 @@
 # KalturaGeneratedAPIClientsNodeJS
 
-[![NPM](https://nodei.co/npm/kaltura.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/kaltura/)
+[![NPM](https://nodei.co/npm/kaltura.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/kaltura-client/)
 
 
 NodeJS auto generated clients libs which will then be built and test by Travis CI

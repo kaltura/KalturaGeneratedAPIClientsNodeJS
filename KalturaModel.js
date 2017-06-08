@@ -22764,14 +22764,14 @@ class ServerNode extends kaltura.BaseObject{
 	
 	/**
 	 * Id of the parent serverNode
-	 * @return int
+	 * @return string
 	 */
 	 getParentId() {
 	 	return this.parentId;
 	 }
 	
 	/**
-	 * @param parentId int Id of the parent serverNode
+	 * @param parentId string Id of the parent serverNode
 	 */
 	 setParentId(parentId) {
 	 	this.parentId = parentId;
@@ -36609,6 +36609,168 @@ module.exports.EntryScheduleEvent = EntryScheduleEvent;
 /**
  *
  */
+class EntryServerNodeBaseFilter extends Filter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaEntryServerNodeBaseFilter';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getEntryIdEqual() {
+	 	return this.entryIdEqual;
+	 }
+	
+	/**
+	 * @param entryIdEqual string 
+	 */
+	 setEntryIdEqual(entryIdEqual) {
+	 	this.entryIdEqual = entryIdEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getEntryIdIn() {
+	 	return this.entryIdIn;
+	 }
+	
+	/**
+	 * @param entryIdIn string 
+	 */
+	 setEntryIdIn(entryIdIn) {
+	 	this.entryIdIn = entryIdIn;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getServerNodeIdEqual() {
+	 	return this.serverNodeIdEqual;
+	 }
+	
+	/**
+	 * @param serverNodeIdEqual int 
+	 */
+	 setServerNodeIdEqual(serverNodeIdEqual) {
+	 	this.serverNodeIdEqual = serverNodeIdEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getCreatedAtLessThanOrEqual() {
+	 	return this.createdAtLessThanOrEqual;
+	 }
+	
+	/**
+	 * @param createdAtLessThanOrEqual int 
+	 */
+	 setCreatedAtLessThanOrEqual(createdAtLessThanOrEqual) {
+	 	this.createdAtLessThanOrEqual = createdAtLessThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getCreatedAtGreaterThanOrEqual() {
+	 	return this.createdAtGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * @param createdAtGreaterThanOrEqual int 
+	 */
+	 setCreatedAtGreaterThanOrEqual(createdAtGreaterThanOrEqual) {
+	 	this.createdAtGreaterThanOrEqual = createdAtGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getUpdatedAtGreaterThanOrEqual() {
+	 	return this.updatedAtGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * @param updatedAtGreaterThanOrEqual int 
+	 */
+	 setUpdatedAtGreaterThanOrEqual(updatedAtGreaterThanOrEqual) {
+	 	this.updatedAtGreaterThanOrEqual = updatedAtGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getUpdatedAtLessThanOrEqual() {
+	 	return this.updatedAtLessThanOrEqual;
+	 }
+	
+	/**
+	 * @param updatedAtLessThanOrEqual int 
+	 */
+	 setUpdatedAtLessThanOrEqual(updatedAtLessThanOrEqual) {
+	 	this.updatedAtLessThanOrEqual = updatedAtLessThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getStatusEqual() {
+	 	return this.statusEqual;
+	 }
+	
+	/**
+	 * @param statusEqual int 
+	 */
+	 setStatusEqual(statusEqual) {
+	 	this.statusEqual = statusEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getStatusIn() {
+	 	return this.statusIn;
+	 }
+	
+	/**
+	 * @param statusIn string 
+	 */
+	 setStatusIn(statusIn) {
+	 	this.statusIn = statusIn;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getServerTypeEqual() {
+	 	return this.serverTypeEqual;
+	 }
+	
+	/**
+	 * @param serverTypeEqual string 
+	 */
+	 setServerTypeEqual(serverTypeEqual) {
+	 	this.serverTypeEqual = serverTypeEqual;
+	 }
+}
+module.exports.EntryServerNodeBaseFilter = EntryServerNodeBaseFilter;
+
+/**
+ *
+ */
 class EntryServerNodeListResponse extends ListResponse{
 	
 	constructor(object = null) {
@@ -43328,32 +43490,47 @@ class ServerNodeBaseFilter extends Filter{
 	
 	/**
 	 * 
-	 * @return int
+	 * @return string
 	 */
-	 getParentIdEqual() {
-	 	return this.parentIdEqual;
+	 getParentIdLike() {
+	 	return this.parentIdLike;
 	 }
 	
 	/**
-	 * @param parentIdEqual int 
+	 * @param parentIdLike string 
 	 */
-	 setParentIdEqual(parentIdEqual) {
-	 	this.parentIdEqual = parentIdEqual;
+	 setParentIdLike(parentIdLike) {
+	 	this.parentIdLike = parentIdLike;
 	 }
 	
 	/**
 	 * 
 	 * @return string
 	 */
-	 getParentIdIn() {
-	 	return this.parentIdIn;
+	 getParentIdMultiLikeOr() {
+	 	return this.parentIdMultiLikeOr;
 	 }
 	
 	/**
-	 * @param parentIdIn string 
+	 * @param parentIdMultiLikeOr string 
 	 */
-	 setParentIdIn(parentIdIn) {
-	 	this.parentIdIn = parentIdIn;
+	 setParentIdMultiLikeOr(parentIdMultiLikeOr) {
+	 	this.parentIdMultiLikeOr = parentIdMultiLikeOr;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getParentIdMultiLikeAnd() {
+	 	return this.parentIdMultiLikeAnd;
+	 }
+	
+	/**
+	 * @param parentIdMultiLikeAnd string 
+	 */
+	 setParentIdMultiLikeAnd(parentIdMultiLikeAnd) {
+	 	this.parentIdMultiLikeAnd = parentIdMultiLikeAnd;
 	 }
 }
 module.exports.ServerNodeBaseFilter = ServerNodeBaseFilter;
@@ -50704,164 +50881,14 @@ module.exports.EntryResource = EntryResource;
 /**
  *
  */
-class EntryServerNodeBaseFilter extends RelatedFilter{
+class EntryServerNodeFilter extends EntryServerNodeBaseFilter{
 	
 	constructor(object = null) {
 		super(object);
-		this.objectType = 'KalturaEntryServerNodeBaseFilter';
+		this.objectType = 'KalturaEntryServerNodeFilter';
 	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getEntryIdEqual() {
-	 	return this.entryIdEqual;
-	 }
-	
-	/**
-	 * @param entryIdEqual string 
-	 */
-	 setEntryIdEqual(entryIdEqual) {
-	 	this.entryIdEqual = entryIdEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getEntryIdIn() {
-	 	return this.entryIdIn;
-	 }
-	
-	/**
-	 * @param entryIdIn string 
-	 */
-	 setEntryIdIn(entryIdIn) {
-	 	this.entryIdIn = entryIdIn;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getServerNodeIdEqual() {
-	 	return this.serverNodeIdEqual;
-	 }
-	
-	/**
-	 * @param serverNodeIdEqual int 
-	 */
-	 setServerNodeIdEqual(serverNodeIdEqual) {
-	 	this.serverNodeIdEqual = serverNodeIdEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getCreatedAtGreaterThanOrEqual() {
-	 	return this.createdAtGreaterThanOrEqual;
-	 }
-	
-	/**
-	 * @param createdAtGreaterThanOrEqual int 
-	 */
-	 setCreatedAtGreaterThanOrEqual(createdAtGreaterThanOrEqual) {
-	 	this.createdAtGreaterThanOrEqual = createdAtGreaterThanOrEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getCreatedAtLessThanOrEqual() {
-	 	return this.createdAtLessThanOrEqual;
-	 }
-	
-	/**
-	 * @param createdAtLessThanOrEqual int 
-	 */
-	 setCreatedAtLessThanOrEqual(createdAtLessThanOrEqual) {
-	 	this.createdAtLessThanOrEqual = createdAtLessThanOrEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getUpdatedAtGreaterThanOrEqual() {
-	 	return this.updatedAtGreaterThanOrEqual;
-	 }
-	
-	/**
-	 * @param updatedAtGreaterThanOrEqual int 
-	 */
-	 setUpdatedAtGreaterThanOrEqual(updatedAtGreaterThanOrEqual) {
-	 	this.updatedAtGreaterThanOrEqual = updatedAtGreaterThanOrEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getUpdatedAtLessThanOrEqual() {
-	 	return this.updatedAtLessThanOrEqual;
-	 }
-	
-	/**
-	 * @param updatedAtLessThanOrEqual int 
-	 */
-	 setUpdatedAtLessThanOrEqual(updatedAtLessThanOrEqual) {
-	 	this.updatedAtLessThanOrEqual = updatedAtLessThanOrEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getStatusEqual() {
-	 	return this.statusEqual;
-	 }
-	
-	/**
-	 * @param statusEqual int 
-	 */
-	 setStatusEqual(statusEqual) {
-	 	this.statusEqual = statusEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getStatusIn() {
-	 	return this.statusIn;
-	 }
-	
-	/**
-	 * @param statusIn string 
-	 */
-	 setStatusIn(statusIn) {
-	 	this.statusIn = statusIn;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getServerTypeEqual() {
-	 	return this.serverTypeEqual;
-	 }
-	
-	/**
-	 * @param serverTypeEqual string 
-	 */
-	 setServerTypeEqual(serverTypeEqual) {
-	 	this.serverTypeEqual = serverTypeEqual;
-	 }
 }
-module.exports.EntryServerNodeBaseFilter = EntryServerNodeBaseFilter;
+module.exports.EntryServerNodeFilter = EntryServerNodeFilter;
 
 /**
  *
@@ -57344,51 +57371,6 @@ class DeliveryServerNodeBaseFilter extends ServerNodeFilter{
 		super(object);
 		this.objectType = 'KalturaDeliveryServerNodeBaseFilter';
 	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getPlaybackDomainLike() {
-	 	return this.playbackDomainLike;
-	 }
-	
-	/**
-	 * @param playbackDomainLike string 
-	 */
-	 setPlaybackDomainLike(playbackDomainLike) {
-	 	this.playbackDomainLike = playbackDomainLike;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getPlaybackDomainMultiLikeOr() {
-	 	return this.playbackDomainMultiLikeOr;
-	 }
-	
-	/**
-	 * @param playbackDomainMultiLikeOr string 
-	 */
-	 setPlaybackDomainMultiLikeOr(playbackDomainMultiLikeOr) {
-	 	this.playbackDomainMultiLikeOr = playbackDomainMultiLikeOr;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getPlaybackDomainMultiLikeAnd() {
-	 	return this.playbackDomainMultiLikeAnd;
-	 }
-	
-	/**
-	 * @param playbackDomainMultiLikeAnd string 
-	 */
-	 setPlaybackDomainMultiLikeAnd(playbackDomainMultiLikeAnd) {
-	 	this.playbackDomainMultiLikeAnd = playbackDomainMultiLikeAnd;
-	 }
 }
 module.exports.DeliveryServerNodeBaseFilter = DeliveryServerNodeBaseFilter;
 
@@ -57559,18 +57541,6 @@ class EntryDistributionFilter extends EntryDistributionBaseFilter{
 	}
 }
 module.exports.EntryDistributionFilter = EntryDistributionFilter;
-
-/**
- *
- */
-class EntryServerNodeFilter extends EntryServerNodeBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaEntryServerNodeFilter';
-	}
-}
-module.exports.EntryServerNodeFilter = EntryServerNodeFilter;
 
 /**
  *
@@ -61796,6 +61766,51 @@ class EdgeServerNodeBaseFilter extends DeliveryServerNodeFilter{
 		super(object);
 		this.objectType = 'KalturaEdgeServerNodeBaseFilter';
 	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getPlaybackDomainLike() {
+	 	return this.playbackDomainLike;
+	 }
+	
+	/**
+	 * @param playbackDomainLike string 
+	 */
+	 setPlaybackDomainLike(playbackDomainLike) {
+	 	this.playbackDomainLike = playbackDomainLike;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getPlaybackDomainMultiLikeOr() {
+	 	return this.playbackDomainMultiLikeOr;
+	 }
+	
+	/**
+	 * @param playbackDomainMultiLikeOr string 
+	 */
+	 setPlaybackDomainMultiLikeOr(playbackDomainMultiLikeOr) {
+	 	this.playbackDomainMultiLikeOr = playbackDomainMultiLikeOr;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getPlaybackDomainMultiLikeAnd() {
+	 	return this.playbackDomainMultiLikeAnd;
+	 }
+	
+	/**
+	 * @param playbackDomainMultiLikeAnd string 
+	 */
+	 setPlaybackDomainMultiLikeAnd(playbackDomainMultiLikeAnd) {
+	 	this.playbackDomainMultiLikeAnd = playbackDomainMultiLikeAnd;
+	 }
 }
 module.exports.EdgeServerNodeBaseFilter = EdgeServerNodeBaseFilter;
 

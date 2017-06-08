@@ -8882,6 +8882,7 @@ module.exports.integration = integration;
  *Class definition for the Kaltura service: poll.
  * The available service actions:
  * @action add Add Action.
+ * @action getVote Vote Action.
  * @action getVotes Get Votes Action.
  * @action vote Vote Action.
  */
@@ -8896,6 +8897,19 @@ class poll{
 		let kparams = {};
 		kparams.pollType = pollType;
 		return new kaltura.RequestBuilder('poll_poll', 'add', kparams);
+	};
+	
+	/**
+	 * Vote Action.
+	 * @param pollId string 
+	 * @param userId string 
+	 * @return string
+	 */
+	static getVote(pollId, userId){
+		let kparams = {};
+		kparams.pollId = pollId;
+		kparams.userId = userId;
+		return new kaltura.RequestBuilder('poll_poll', 'getVote', kparams);
 	};
 	
 	/**

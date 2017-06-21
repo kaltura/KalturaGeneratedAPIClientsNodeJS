@@ -4485,6 +4485,7 @@ module.exports.session = session;
  * KalturaStatsEvent $event.
  * @action kmcCollect Will collect the kmcEvent sent form the KMC client
  * // this will actually be an empty function because all events will be sent using GET and will anyway be logged in the apache log.
+ * @action reportDeviceCapabilities Use this action to report device capabilities to the kaltura server.
  * @action reportError Use this action to report errors to the kaltura server.
  * @action reportKceError .
  */
@@ -4531,6 +4532,16 @@ class stats{
 		let kparams = {};
 		kparams.kmcEvent = kmcEvent;
 		return new kaltura.RequestBuilder('stats', 'kmcCollect', kparams);
+	};
+	
+	/**
+	 * Use this action to report device capabilities to the kaltura server.
+	 * @param data string 
+	 */
+	static reportDeviceCapabilities(data){
+		let kparams = {};
+		kparams.data = data;
+		return new kaltura.RequestBuilder('stats', 'reportDeviceCapabilities', kparams);
 	};
 	
 	/**

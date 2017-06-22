@@ -12206,6 +12206,13 @@ class FlavorAsset extends Asset{
 	 getLabel() {
 	 	return this.label;
 	 }
+	
+	/**
+	 * @param label string The label of the flavor asset
+	 */
+	 setLabel(label) {
+	 	this.label = label;
+	 }
 }
 module.exports.FlavorAsset = FlavorAsset;
 

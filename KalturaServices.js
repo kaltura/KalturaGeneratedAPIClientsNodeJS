@@ -8895,6 +8895,7 @@ module.exports.integration = integration;
  * @action add Add Action.
  * @action getVote Vote Action.
  * @action getVotes Get Votes Action.
+ * @action resetVotes Get resetVotes Action.
  * @action vote Vote Action.
  */
 class poll{
@@ -8936,6 +8937,18 @@ class poll{
 		kparams.answerIds = answerIds;
 		kparams.otherDCVotes = otherDCVotes;
 		return new kaltura.RequestBuilder('poll_poll', 'getVotes', kparams);
+	};
+	
+	/**
+	 * Get resetVotes Action.
+	 * @param pollId string 
+	 * @param answerIds string 
+	 */
+	static resetVotes(pollId, answerIds){
+		let kparams = {};
+		kparams.pollId = pollId;
+		kparams.answerIds = answerIds;
+		return new kaltura.RequestBuilder('poll_poll', 'resetVotes', kparams);
 	};
 	
 	/**

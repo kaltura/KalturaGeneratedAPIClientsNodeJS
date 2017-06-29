@@ -8928,26 +8928,22 @@ class poll{
 	 * Get Votes Action.
 	 * @param pollId string 
 	 * @param answerIds string 
-	 * @param otherDCVotes string json (optional, default: null)
 	 * @return string
 	 */
-	static getVotes(pollId, answerIds, otherDCVotes = null){
+	static getVotes(pollId, answerIds){
 		let kparams = {};
 		kparams.pollId = pollId;
 		kparams.answerIds = answerIds;
-		kparams.otherDCVotes = otherDCVotes;
 		return new kaltura.RequestBuilder('poll_poll', 'getVotes', kparams);
 	};
 	
 	/**
 	 * Get resetVotes Action.
 	 * @param pollId string 
-	 * @param answerIds string 
 	 */
-	static resetVotes(pollId, answerIds){
+	static resetVotes(pollId){
 		let kparams = {};
 		kparams.pollId = pollId;
-		kparams.answerIds = answerIds;
 		return new kaltura.RequestBuilder('poll_poll', 'resetVotes', kparams);
 	};
 	

@@ -28,237 +28,92 @@
 const kaltura = require('./KalturaClientBase');
 
 /**
- *Class definition for the Kaltura service: accessControlProfile.
+ *Class definition for the Kaltura service: announcement.
  * The available service actions:
- * @action add Add new access control profile.
- * @action delete Delete access control profile by id.
- * @action get Get access control profile by id.
- * @action list List access control profiles by filter and pager.
- * @action update Update access control profile by id.
+ * @action add Add a new future scheduled system announcement push notification.
+ * @action delete Delete an existing announcing. Announcement cannot be delete while being sent.
+ * @action enableSystemAnnouncements Enable system announcements.
+ * @action list Lists all announcements in the system.
+ * @action update Update an existing future system announcement push notification. Announcement can only be updated only before sending.
+ * @action updateStatus Update a system announcement status.
  */
-class accessControlProfile{
+class announcement{
 	
 	/**
-	 * Add new access control profile.
-	 * @param accessControlProfile AccessControlProfile 
-	 * @return KalturaAccessControlProfile
+	 * Add a new future scheduled system announcement push notification.
+	 * @param announcement Announcement The announcement to be added.
+ * timezone parameter should be taken from the 'name of timezone' from: https://msdn.microsoft.com/en-us/library/ms912391(v=winembedded.11).aspx
+ * Recipients values: All, LoggedIn, Guests
+	 * @return KalturaAnnouncement
 	 */
-	static add(accessControlProfile){
+	static add(announcement){
 		let kparams = {};
-		kparams.accessControlProfile = accessControlProfile;
-		return new kaltura.RequestBuilder('accesscontrolprofile', 'add', kparams);
+		kparams.announcement = announcement;
+		return new kaltura.RequestBuilder('announcement', 'add', kparams);
 	};
 	
 	/**
-	 * Delete access control profile by id.
-	 * @param id int 
+	 * Delete an existing announcing. Announcement cannot be delete while being sent.
+	 * @param id int Id of the announcement
+	 * @return bool
 	 */
 	static deleteAction(id){
 		let kparams = {};
 		kparams.id = id;
-		return new kaltura.RequestBuilder('accesscontrolprofile', 'delete', kparams);
+		return new kaltura.RequestBuilder('announcement', 'delete', kparams);
 	};
 	
 	/**
-	 * Get access control profile by id.
-	 * @param id int 
-	 * @return KalturaAccessControlProfile
+	 * Enable system announcements.
+	 * @return bool
 	 */
-	static get(id){
+	static enableSystemAnnouncements(){
 		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('accesscontrolprofile', 'get', kparams);
+		return new kaltura.RequestBuilder('announcement', 'enableSystemAnnouncements', kparams);
 	};
 	
 	/**
-	 * List access control profiles by filter and pager.
-	 * @param filter AccessControlProfileFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaAccessControlProfileListResponse
+	 * Lists all announcements in the system.
+	 * @param filter AnnouncementFilter Filter object
+	 * @param pager FilterPager Paging the request (optional, default: null)
+	 * @return KalturaAnnouncementListResponse
 	 */
-	static listAction(filter = null, pager = null){
+	static listAction(filter, pager = null){
 		let kparams = {};
 		kparams.filter = filter;
 		kparams.pager = pager;
-		return new kaltura.RequestBuilder('accesscontrolprofile', 'list', kparams);
+		return new kaltura.RequestBuilder('announcement', 'list', kparams);
 	};
 	
 	/**
-	 * Update access control profile by id.
-	 * @param id int 
-	 * @param accessControlProfile AccessControlProfile 
-	 * @return KalturaAccessControlProfile
+	 * Update an existing future system announcement push notification. Announcement can only be updated only before sending.
+	 * @param announcementId int The announcement identifier
+	 * @param announcement Announcement The announcement to update.
+ * timezone parameter should be taken from the 'name of timezone' from: https://msdn.microsoft.com/en-us/library/ms912391(v=winembedded.11).aspx
+ * Recipients values: All, LoggedIn, Guests
+	 * @return KalturaAnnouncement
 	 */
-	static update(id, accessControlProfile){
+	static update(announcementId, announcement){
+		let kparams = {};
+		kparams.announcementId = announcementId;
+		kparams.announcement = announcement;
+		return new kaltura.RequestBuilder('announcement', 'update', kparams);
+	};
+	
+	/**
+	 * Update a system announcement status.
+	 * @param id int Id of the announcement
+	 * @param status bool Status to update to
+	 * @return bool
+	 */
+	static updateStatus(id, status){
 		let kparams = {};
 		kparams.id = id;
-		kparams.accessControlProfile = accessControlProfile;
-		return new kaltura.RequestBuilder('accesscontrolprofile', 'update', kparams);
+		kparams.status = status;
+		return new kaltura.RequestBuilder('announcement', 'updateStatus', kparams);
 	};
 }
-module.exports.accessControlProfile = accessControlProfile;
-
-
-/**
- *Class definition for the Kaltura service: accessControl.
- * The available service actions:
- * @action add Add new Access Control Profile.
- * @action delete Delete Access Control Profile by id.
- * @action get Get Access Control Profile by id.
- * @action list List Access Control Profiles by filter and pager.
- * @action update Update Access Control Profile by id.
- */
-class accessControl{
-	
-	/**
-	 * Add new Access Control Profile.
-	 * @param accessControl AccessControl 
-	 * @return KalturaAccessControl
-	 */
-	static add(accessControl){
-		let kparams = {};
-		kparams.accessControl = accessControl;
-		return new kaltura.RequestBuilder('accesscontrol', 'add', kparams);
-	};
-	
-	/**
-	 * Delete Access Control Profile by id.
-	 * @param id int 
-	 */
-	static deleteAction(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('accesscontrol', 'delete', kparams);
-	};
-	
-	/**
-	 * Get Access Control Profile by id.
-	 * @param id int 
-	 * @return KalturaAccessControl
-	 */
-	static get(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('accesscontrol', 'get', kparams);
-	};
-	
-	/**
-	 * List Access Control Profiles by filter and pager.
-	 * @param filter AccessControlFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaAccessControlListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('accesscontrol', 'list', kparams);
-	};
-	
-	/**
-	 * Update Access Control Profile by id.
-	 * @param id int 
-	 * @param accessControl AccessControl 
-	 * @return KalturaAccessControl
-	 */
-	static update(id, accessControl){
-		let kparams = {};
-		kparams.id = id;
-		kparams.accessControl = accessControl;
-		return new kaltura.RequestBuilder('accesscontrol', 'update', kparams);
-	};
-}
-module.exports.accessControl = accessControl;
-
-
-/**
- *Class definition for the Kaltura service: adminUser.
- * The available service actions:
- * @action login Get an admin session using admin email and password (Used for login to the KMC application).
- * @action resetPassword Reset admin user password and send it to the users email address.
- * @action setInitialPassword Set initial users password.
- * @action updatePassword Update admin user password and email.
- */
-class adminUser{
-	
-	/**
-	 * Get an admin session using admin email and password (Used for login to the KMC application).
-	 * @param email string 
-	 * @param password string 
-	 * @param partnerId int  (optional, default: null)
-	 * @return string
-	 */
-	static login(email, password, partnerId = null){
-		let kparams = {};
-		kparams.email = email;
-		kparams.password = password;
-		kparams.partnerId = partnerId;
-		return new kaltura.RequestBuilder('adminuser', 'login', kparams);
-	};
-	
-	/**
-	 * Reset admin user password and send it to the users email address.
-	 * @param email string 
-	 */
-	static resetPassword(email){
-		let kparams = {};
-		kparams.email = email;
-		return new kaltura.RequestBuilder('adminuser', 'resetPassword', kparams);
-	};
-	
-	/**
-	 * Set initial users password.
-	 * @param hashKey string 
-	 * @param newPassword string new password to set
-	 */
-	static setInitialPassword(hashKey, newPassword){
-		let kparams = {};
-		kparams.hashKey = hashKey;
-		kparams.newPassword = newPassword;
-		return new kaltura.RequestBuilder('adminuser', 'setInitialPassword', kparams);
-	};
-	
-	/**
-	 * Update admin user password and email.
-	 * @param email string 
-	 * @param password string 
-	 * @param newEmail string Optional, provide only when you want to update the email (optional)
-	 * @param newPassword string  (optional)
-	 * @return KalturaAdminUser
-	 */
-	static updatePassword(email, password, newEmail = '', newPassword = ''){
-		let kparams = {};
-		kparams.email = email;
-		kparams.password = password;
-		kparams.newEmail = newEmail;
-		kparams.newPassword = newPassword;
-		return new kaltura.RequestBuilder('adminuser', 'updatePassword', kparams);
-	};
-}
-module.exports.adminUser = adminUser;
-
-
-/**
- *Class definition for the Kaltura service: analytics.
- * The available service actions:
- * @action query report query action allows to get a analytics data for specific query dimensions, metrics and filters.
- */
-class analytics{
-	
-	/**
-	 * report query action allows to get a analytics data for specific query dimensions, metrics and filters.
-	 * @param filter AnalyticsFilter the analytics query filter
-	 * @param pager FilterPager the analytics query result pager (optional, default: null)
-	 * @return KalturaReportResponse
-	 */
-	static query(filter, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('analytics', 'query', kparams);
-	};
-}
-module.exports.analytics = analytics;
+module.exports.announcement = announcement;
 
 
 /**
@@ -267,15 +122,13 @@ module.exports.analytics = analytics;
  * @action add Add new application authentication token.
  * @action delete Delete application authentication token by id.
  * @action get Get application authentication token by id.
- * @action list List application authentication tokens by filter and pager.
- * @action startSession Starts a new KS (kaltura Session) based on application authentication token id.
- * @action update Update application authentication token by id.
+ * @action startSession Starts a new KS (Kaltura Session) based on application authentication token id.
  */
 class appToken{
 	
 	/**
 	 * Add new application authentication token.
-	 * @param appToken AppToken 
+	 * @param appToken AppToken Application token
 	 * @return KalturaAppToken
 	 */
 	static add(appToken){
@@ -286,7 +139,8 @@ class appToken{
 	
 	/**
 	 * Delete application authentication token by id.
-	 * @param id string 
+	 * @param id string Application token identifier
+	 * @return bool
 	 */
 	static deleteAction(id){
 		let kparams = {};
@@ -296,7 +150,7 @@ class appToken{
 	
 	/**
 	 * Get application authentication token by id.
-	 * @param id string 
+	 * @param id string Application token identifier
 	 * @return KalturaAppToken
 	 */
 	static get(id){
@@ -306,4070 +160,2485 @@ class appToken{
 	};
 	
 	/**
-	 * List application authentication tokens by filter and pager.
-	 * @param filter AppTokenFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaAppTokenListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('apptoken', 'list', kparams);
-	};
-	
-	/**
-	 * Starts a new KS (kaltura Session) based on application authentication token id.
+	 * Starts a new KS (Kaltura Session) based on application authentication token id.
 	 * @param id string application token id
-	 * @param tokenHash string hashed token, built of sha1 on current KS concatenated with the application token
+	 * @param tokenHash string hashed token - current KS concatenated with the application token hashed using the application token ‘hashType’
 	 * @param userId string session user id, will be ignored if a different user id already defined on the application token (optional, default: null)
 	 * @param type int session type, will be ignored if a different session type already defined on the application token (optional, enum: KalturaSessionType, default: null)
 	 * @param expiry int session expiry (in seconds), could be overwritten by shorter expiry of the application token and the session-expiry that defined on the application token (optional, default: null)
+	 * @param udid string  (optional, default: null)
 	 * @return KalturaSessionInfo
 	 */
-	static startSession(id, tokenHash, userId = null, type = null, expiry = null){
+	static startSession(id, tokenHash, userId = null, type = null, expiry = null, udid = null){
 		let kparams = {};
 		kparams.id = id;
 		kparams.tokenHash = tokenHash;
 		kparams.userId = userId;
 		kparams.type = type;
 		kparams.expiry = expiry;
+		kparams.udid = udid;
 		return new kaltura.RequestBuilder('apptoken', 'startSession', kparams);
-	};
-	
-	/**
-	 * Update application authentication token by id.
-	 * @param id string 
-	 * @param appToken AppToken 
-	 * @return KalturaAppToken
-	 */
-	static update(id, appToken){
-		let kparams = {};
-		kparams.id = id;
-		kparams.appToken = appToken;
-		return new kaltura.RequestBuilder('apptoken', 'update', kparams);
 	};
 }
 module.exports.appToken = appToken;
 
 
 /**
- *Class definition for the Kaltura service: baseEntry.
+ *Class definition for the Kaltura service: assetComment.
  * The available service actions:
- * @action add Generic add entry, should be used when the uploaded entry type is not known.
- * @action addContent Attach content resource to entry in status NO_MEDIA.
- * @action addFromUploadedFile Generic add entry using an uploaded file, should be used when the uploaded entry type is not known.
- * @action anonymousRank Anonymously rank an entry, no validation is done on duplicate rankings.
- * @action approve Approve the entry and mark the pending flags (if any) as moderated (this will make the entry playable).
- * @action clone Clone an entry with optional attributes to apply to the clone.
- * @action count Count base entries by filter.
- * @action delete Delete an entry.
- * @action export .
- * @action flag Flag inappropriate entry for moderation.
- * @action get Get base entry by ID.
- * @action getByIds Get an array of KalturaBaseEntry objects by a comma-separated list of ids.
- * @action getContextData This action delivers entry-related data, based on the user's context: access control, restriction, playback format and storage information.
- * @action getPlaybackContext This action delivers all data relevant for player.
- * @action getRemotePaths Get remote storage existing paths for the asset.
- * @action index Index an entry by id.
- * @action list List base entries by filter with paging support.
- * @action listByReferenceId List base entries by filter according to reference id.
- * @action listFlags List all pending flags for the entry.
- * @action reject Reject the entry and mark the pending flags (if any) as moderated (this will make the entry non-playable).
- * @action update Update base entry. Only the properties that were set will be updated.
- * @action updateContent Update the content resource associated with the entry.
- * @action updateThumbnailFromSourceEntry Update entry thumbnail from a different entry by a specified time offset (in seconds).
- * @action updateThumbnailFromUrl Update entry thumbnail using url.
- * @action updateThumbnailJpeg Update entry thumbnail using a raw jpeg file.
- * @action upload Upload a file to Kaltura, that can be used to create an entry.
+ * @action add Add asset comments by asset id.
+ * @action list Returns asset comments by asset id.
  */
-class baseEntry{
+class assetComment{
 	
 	/**
-	 * Generic add entry, should be used when the uploaded entry type is not known.
-	 * @param entry BaseEntry 
-	 * @param type string  (optional, enum: KalturaEntryType, default: null)
-	 * @return KalturaBaseEntry
+	 * Add asset comments by asset id.
+	 * @param comment AssetComment comment
+	 * @return KalturaAssetComment
 	 */
-	static add(entry, type = null){
+	static add(comment){
 		let kparams = {};
-		kparams.entry = entry;
-		kparams.type = type;
-		return new kaltura.RequestBuilder('baseentry', 'add', kparams);
+		kparams.comment = comment;
+		return new kaltura.RequestBuilder('assetcomment', 'add', kparams);
 	};
 	
 	/**
-	 * Attach content resource to entry in status NO_MEDIA.
-	 * @param entryId string 
-	 * @param resource Resource 
-	 * @return KalturaBaseEntry
-	 */
-	static addContent(entryId, resource){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.resource = resource;
-		return new kaltura.RequestBuilder('baseentry', 'addContent', kparams);
-	};
-	
-	/**
-	 * Generic add entry using an uploaded file, should be used when the uploaded entry type is not known.
-	 * @param entry BaseEntry 
-	 * @param uploadTokenId string 
-	 * @param type string  (optional, enum: KalturaEntryType, default: null)
-	 * @return KalturaBaseEntry
-	 */
-	static addFromUploadedFile(entry, uploadTokenId, type = null){
-		let kparams = {};
-		kparams.entry = entry;
-		kparams.uploadTokenId = uploadTokenId;
-		kparams.type = type;
-		return new kaltura.RequestBuilder('baseentry', 'addFromUploadedFile', kparams);
-	};
-	
-	/**
-	 * Anonymously rank an entry, no validation is done on duplicate rankings.
-	 * @param entryId string 
-	 * @param rank int 
-	 */
-	static anonymousRank(entryId, rank){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.rank = rank;
-		return new kaltura.RequestBuilder('baseentry', 'anonymousRank', kparams);
-	};
-	
-	/**
-	 * Approve the entry and mark the pending flags (if any) as moderated (this will make the entry playable).
-	 * @param entryId string 
-	 */
-	static approve(entryId){
-		let kparams = {};
-		kparams.entryId = entryId;
-		return new kaltura.RequestBuilder('baseentry', 'approve', kparams);
-	};
-	
-	/**
-	 * Clone an entry with optional attributes to apply to the clone.
-	 * @param entryId string Id of entry to clone
-	 * @param cloneOptions array  (optional, default: null)
-	 * @return KalturaBaseEntry
-	 */
-	static cloneAction(entryId, cloneOptions = null){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.cloneOptions = cloneOptions;
-		return new kaltura.RequestBuilder('baseentry', 'clone', kparams);
-	};
-	
-	/**
-	 * Count base entries by filter.
-	 * @param filter BaseEntryFilter Entry filter (optional, default: null)
-	 * @return int
-	 */
-	static count(filter = null){
-		let kparams = {};
-		kparams.filter = filter;
-		return new kaltura.RequestBuilder('baseentry', 'count', kparams);
-	};
-	
-	/**
-	 * Delete an entry.
-	 * @param entryId string Entry id to delete
-	 */
-	static deleteAction(entryId){
-		let kparams = {};
-		kparams.entryId = entryId;
-		return new kaltura.RequestBuilder('baseentry', 'delete', kparams);
-	};
-	
-	/**
-	 * .
-	 * @param entryId string 
-	 * @param storageProfileId int 
-	 * @return KalturaBaseEntry
-	 */
-	static exportAction(entryId, storageProfileId){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.storageProfileId = storageProfileId;
-		return new kaltura.RequestBuilder('baseentry', 'export', kparams);
-	};
-	
-	/**
-	 * Flag inappropriate entry for moderation.
-	 * @param moderationFlag ModerationFlag 
-	 */
-	static flag(moderationFlag){
-		let kparams = {};
-		kparams.moderationFlag = moderationFlag;
-		return new kaltura.RequestBuilder('baseentry', 'flag', kparams);
-	};
-	
-	/**
-	 * Get base entry by ID.
-	 * @param entryId string Entry id
-	 * @param version int Desired version of the data (optional, default: -1)
-	 * @return KalturaBaseEntry
-	 */
-	static get(entryId, version = -1){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.version = version;
-		return new kaltura.RequestBuilder('baseentry', 'get', kparams);
-	};
-	
-	/**
-	 * Get an array of KalturaBaseEntry objects by a comma-separated list of ids.
-	 * @param entryIds string Comma separated string of entry ids
-	 * @return array
-	 */
-	static getByIds(entryIds){
-		let kparams = {};
-		kparams.entryIds = entryIds;
-		return new kaltura.RequestBuilder('baseentry', 'getByIds', kparams);
-	};
-	
-	/**
-	 * This action delivers entry-related data, based on the user's context: access control, restriction, playback format and storage information.
-	 * @param entryId string 
-	 * @param contextDataParams EntryContextDataParams 
-	 * @return KalturaEntryContextDataResult
-	 */
-	static getContextData(entryId, contextDataParams){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.contextDataParams = contextDataParams;
-		return new kaltura.RequestBuilder('baseentry', 'getContextData', kparams);
-	};
-	
-	/**
-	 * This action delivers all data relevant for player.
-	 * @param entryId string 
-	 * @param contextDataParams PlaybackContextOptions 
-	 * @return KalturaPlaybackContext
-	 */
-	static getPlaybackContext(entryId, contextDataParams){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.contextDataParams = contextDataParams;
-		return new kaltura.RequestBuilder('baseentry', 'getPlaybackContext', kparams);
-	};
-	
-	/**
-	 * Get remote storage existing paths for the asset.
-	 * @param entryId string 
-	 * @return KalturaRemotePathListResponse
-	 */
-	static getRemotePaths(entryId){
-		let kparams = {};
-		kparams.entryId = entryId;
-		return new kaltura.RequestBuilder('baseentry', 'getRemotePaths', kparams);
-	};
-	
-	/**
-	 * Index an entry by id.
-	 * @param id string 
-	 * @param shouldUpdate bool  (optional, default: true)
-	 * @return int
-	 */
-	static index(id, shouldUpdate = true){
-		let kparams = {};
-		kparams.id = id;
-		kparams.shouldUpdate = shouldUpdate;
-		return new kaltura.RequestBuilder('baseentry', 'index', kparams);
-	};
-	
-	/**
-	 * List base entries by filter with paging support.
-	 * @param filter BaseEntryFilter Entry filter (optional, default: null)
-	 * @param pager FilterPager Pager (optional, default: null)
-	 * @return KalturaBaseEntryListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('baseentry', 'list', kparams);
-	};
-	
-	/**
-	 * List base entries by filter according to reference id.
-	 * @param refId string Entry Reference ID
-	 * @param pager FilterPager Pager (optional, default: null)
-	 * @return KalturaBaseEntryListResponse
-	 */
-	static listByReferenceId(refId, pager = null){
-		let kparams = {};
-		kparams.refId = refId;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('baseentry', 'listByReferenceId', kparams);
-	};
-	
-	/**
-	 * List all pending flags for the entry.
-	 * @param entryId string 
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaModerationFlagListResponse
-	 */
-	static listFlags(entryId, pager = null){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('baseentry', 'listFlags', kparams);
-	};
-	
-	/**
-	 * Reject the entry and mark the pending flags (if any) as moderated (this will make the entry non-playable).
-	 * @param entryId string 
-	 */
-	static reject(entryId){
-		let kparams = {};
-		kparams.entryId = entryId;
-		return new kaltura.RequestBuilder('baseentry', 'reject', kparams);
-	};
-	
-	/**
-	 * Update base entry. Only the properties that were set will be updated.
-	 * @param entryId string Entry id to update
-	 * @param baseEntry BaseEntry Base entry metadata to update
-	 * @return KalturaBaseEntry
-	 */
-	static update(entryId, baseEntry){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.baseEntry = baseEntry;
-		return new kaltura.RequestBuilder('baseentry', 'update', kparams);
-	};
-	
-	/**
-	 * Update the content resource associated with the entry.
-	 * @param entryId string Entry id to update
-	 * @param resource Resource Resource to be used to replace entry content
-	 * @param conversionProfileId int The conversion profile id to be used on the entry (optional, default: null)
-	 * @param advancedOptions EntryReplacementOptions Additional update content options (optional, default: null)
-	 * @return KalturaBaseEntry
-	 */
-	static updateContent(entryId, resource, conversionProfileId = null, advancedOptions = null){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.resource = resource;
-		kparams.conversionProfileId = conversionProfileId;
-		kparams.advancedOptions = advancedOptions;
-		return new kaltura.RequestBuilder('baseentry', 'updateContent', kparams);
-	};
-	
-	/**
-	 * Update entry thumbnail from a different entry by a specified time offset (in seconds).
-	 * @param entryId string Media entry id
-	 * @param sourceEntryId string Media entry id
-	 * @param timeOffset int Time offset (in seconds)
-	 * @return KalturaBaseEntry
-	 */
-	static updateThumbnailFromSourceEntry(entryId, sourceEntryId, timeOffset){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.sourceEntryId = sourceEntryId;
-		kparams.timeOffset = timeOffset;
-		return new kaltura.RequestBuilder('baseentry', 'updateThumbnailFromSourceEntry', kparams);
-	};
-	
-	/**
-	 * Update entry thumbnail using url.
-	 * @param entryId string Media entry id
-	 * @param url string file url
-	 * @return KalturaBaseEntry
-	 */
-	static updateThumbnailFromUrl(entryId, url){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.url = url;
-		return new kaltura.RequestBuilder('baseentry', 'updateThumbnailFromUrl', kparams);
-	};
-	
-	/**
-	 * Update entry thumbnail using a raw jpeg file.
-	 * @param entryId string Media entry id
-	 * @param fileData file Jpeg file data
-	 * @return KalturaBaseEntry
-	 */
-	static updateThumbnailJpeg(entryId, fileData){
-		let kparams = {};
-		kparams.entryId = entryId;
-		let kfiles = {};
-		kfiles.fileData = fileData;
-		return new kaltura.RequestBuilder('baseentry', 'updateThumbnailJpeg', kparams, kfiles);
-	};
-	
-	/**
-	 * Upload a file to Kaltura, that can be used to create an entry.
-	 * @param fileData file The file data
-	 * @return string
-	 */
-	static upload(fileData){
-		let kparams = {};
-		let kfiles = {};
-		kfiles.fileData = fileData;
-		return new kaltura.RequestBuilder('baseentry', 'upload', kparams, kfiles);
-	};
-}
-module.exports.baseEntry = baseEntry;
-
-
-/**
- *Class definition for the Kaltura service: bulkUpload.
- * The available service actions:
- * @action abort Aborts the bulk upload and all its child jobs.
- * @action add Add new bulk upload batch job
- * Conversion profile id can be specified in the API or in the CSV file, the one in the CSV file will be stronger.
- * If no conversion profile was specified, partner's default will be used.
- * @action get Get bulk upload batch job by id.
- * @action list List bulk upload batch jobs.
- */
-class bulkUpload{
-	
-	/**
-	 * Aborts the bulk upload and all its child jobs.
-	 * @param id int job id
-	 * @return KalturaBulkUpload
-	 */
-	static abort(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('bulkupload', 'abort', kparams);
-	};
-	
-	/**
-	 * Add new bulk upload batch job
- * Conversion profile id can be specified in the API or in the CSV file, the one in the CSV file will be stronger.
- * If no conversion profile was specified, partner's default will be used.
-	 * @param conversionProfileId int Convertion profile id to use for converting the current bulk (-1 to use partner's default)
-	 * @param csvFileData file bulk upload file
-	 * @param bulkUploadType string  (optional, enum: KalturaBulkUploadType, default: null)
-	 * @param uploadedBy string  (optional, default: null)
-	 * @param fileName string Friendly name of the file, used to be recognized later in the logs (optional, default: null)
-	 * @return KalturaBulkUpload
-	 */
-	static add(conversionProfileId, csvFileData, bulkUploadType = null, uploadedBy = null, fileName = null){
-		let kparams = {};
-		kparams.conversionProfileId = conversionProfileId;
-		let kfiles = {};
-		kfiles.csvFileData = csvFileData;
-		kparams.bulkUploadType = bulkUploadType;
-		kparams.uploadedBy = uploadedBy;
-		kparams.fileName = fileName;
-		return new kaltura.RequestBuilder('bulkupload', 'add', kparams, kfiles);
-	};
-	
-	/**
-	 * Get bulk upload batch job by id.
-	 * @param id int 
-	 * @return KalturaBulkUpload
-	 */
-	static get(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('bulkupload', 'get', kparams);
-	};
-	
-	/**
-	 * List bulk upload batch jobs.
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaBulkUploadListResponse
-	 */
-	static listAction(pager = null){
-		let kparams = {};
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('bulkupload', 'list', kparams);
-	};
-}
-module.exports.bulkUpload = bulkUpload;
-
-
-/**
- *Class definition for the Kaltura service: categoryEntry.
- * The available service actions:
- * @action activate activate CategoryEntry when it is pending moderation.
- * @action add Add new CategoryEntry.
- * @action addFromBulkUpload .
- * @action delete Delete CategoryEntry.
- * @action index Index CategoryEntry by Id.
- * @action list List all categoryEntry.
- * @action reject activate CategoryEntry when it is pending moderation.
- * @action syncPrivacyContext update privacy context from the category.
- */
-class categoryEntry{
-	
-	/**
-	 * activate CategoryEntry when it is pending moderation.
-	 * @param entryId string 
-	 * @param categoryId int 
-	 */
-	static activate(entryId, categoryId){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.categoryId = categoryId;
-		return new kaltura.RequestBuilder('categoryentry', 'activate', kparams);
-	};
-	
-	/**
-	 * Add new CategoryEntry.
-	 * @param categoryEntry CategoryEntry 
-	 * @return KalturaCategoryEntry
-	 */
-	static add(categoryEntry){
-		let kparams = {};
-		kparams.categoryEntry = categoryEntry;
-		return new kaltura.RequestBuilder('categoryentry', 'add', kparams);
-	};
-	
-	/**
-	 * .
-	 * @param bulkUploadData BulkServiceData 
-	 * @param bulkUploadCategoryEntryData BulkUploadCategoryEntryData  (optional, default: null)
-	 * @return KalturaBulkUpload
-	 */
-	static addFromBulkUpload(bulkUploadData, bulkUploadCategoryEntryData = null){
-		let kparams = {};
-		kparams.bulkUploadData = bulkUploadData;
-		kparams.bulkUploadCategoryEntryData = bulkUploadCategoryEntryData;
-		return new kaltura.RequestBuilder('categoryentry', 'addFromBulkUpload', kparams);
-	};
-	
-	/**
-	 * Delete CategoryEntry.
-	 * @param entryId string 
-	 * @param categoryId int 
-	 */
-	static deleteAction(entryId, categoryId){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.categoryId = categoryId;
-		return new kaltura.RequestBuilder('categoryentry', 'delete', kparams);
-	};
-	
-	/**
-	 * Index CategoryEntry by Id.
-	 * @param entryId string 
-	 * @param categoryId int 
-	 * @param shouldUpdate bool  (optional, default: true)
-	 * @return int
-	 */
-	static index(entryId, categoryId, shouldUpdate = true){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.categoryId = categoryId;
-		kparams.shouldUpdate = shouldUpdate;
-		return new kaltura.RequestBuilder('categoryentry', 'index', kparams);
-	};
-	
-	/**
-	 * List all categoryEntry.
-	 * @param filter CategoryEntryFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaCategoryEntryListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('categoryentry', 'list', kparams);
-	};
-	
-	/**
-	 * activate CategoryEntry when it is pending moderation.
-	 * @param entryId string 
-	 * @param categoryId int 
-	 */
-	static reject(entryId, categoryId){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.categoryId = categoryId;
-		return new kaltura.RequestBuilder('categoryentry', 'reject', kparams);
-	};
-	
-	/**
-	 * update privacy context from the category.
-	 * @param entryId string 
-	 * @param categoryId int 
-	 */
-	static syncPrivacyContext(entryId, categoryId){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.categoryId = categoryId;
-		return new kaltura.RequestBuilder('categoryentry', 'syncPrivacyContext', kparams);
-	};
-}
-module.exports.categoryEntry = categoryEntry;
-
-
-/**
- *Class definition for the Kaltura service: category.
- * The available service actions:
- * @action add Add new Category.
- * @action addFromBulkUpload .
- * @action delete Delete a Category.
- * @action get Get Category by id.
- * @action index Index Category by id.
- * @action list List all categories.
- * @action move Move categories that belong to the same parent category to a target categroy - enabled only for ks with disable entitlement.
- * @action unlockCategories Unlock categories.
- * @action update Update Category.
- */
-class category{
-	
-	/**
-	 * Add new Category.
-	 * @param category Category 
-	 * @return KalturaCategory
-	 */
-	static add(category){
-		let kparams = {};
-		kparams.category = category;
-		return new kaltura.RequestBuilder('category', 'add', kparams);
-	};
-	
-	/**
-	 * .
-	 * @param fileData file 
-	 * @param bulkUploadData BulkUploadJobData  (optional, default: null)
-	 * @param bulkUploadCategoryData BulkUploadCategoryData  (optional, default: null)
-	 * @return KalturaBulkUpload
-	 */
-	static addFromBulkUpload(fileData, bulkUploadData = null, bulkUploadCategoryData = null){
-		let kparams = {};
-		let kfiles = {};
-		kfiles.fileData = fileData;
-		kparams.bulkUploadData = bulkUploadData;
-		kparams.bulkUploadCategoryData = bulkUploadCategoryData;
-		return new kaltura.RequestBuilder('category', 'addFromBulkUpload', kparams, kfiles);
-	};
-	
-	/**
-	 * Delete a Category.
-	 * @param id int 
-	 * @param moveEntriesToParentCategory int  (optional, enum: KalturaNullableBoolean, default: 1)
-	 */
-	static deleteAction(id, moveEntriesToParentCategory = 1){
-		let kparams = {};
-		kparams.id = id;
-		kparams.moveEntriesToParentCategory = moveEntriesToParentCategory;
-		return new kaltura.RequestBuilder('category', 'delete', kparams);
-	};
-	
-	/**
-	 * Get Category by id.
-	 * @param id int 
-	 * @return KalturaCategory
-	 */
-	static get(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('category', 'get', kparams);
-	};
-	
-	/**
-	 * Index Category by id.
-	 * @param id int 
-	 * @param shouldUpdate bool  (optional, default: true)
-	 * @return int
-	 */
-	static index(id, shouldUpdate = true){
-		let kparams = {};
-		kparams.id = id;
-		kparams.shouldUpdate = shouldUpdate;
-		return new kaltura.RequestBuilder('category', 'index', kparams);
-	};
-	
-	/**
-	 * List all categories.
-	 * @param filter CategoryFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaCategoryListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('category', 'list', kparams);
-	};
-	
-	/**
-	 * Move categories that belong to the same parent category to a target categroy - enabled only for ks with disable entitlement.
-	 * @param categoryIds string 
-	 * @param targetCategoryParentId int 
-	 * @return KalturaCategoryListResponse
-	 */
-	static move(categoryIds, targetCategoryParentId){
-		let kparams = {};
-		kparams.categoryIds = categoryIds;
-		kparams.targetCategoryParentId = targetCategoryParentId;
-		return new kaltura.RequestBuilder('category', 'move', kparams);
-	};
-	
-	/**
-	 * Unlock categories.
-	 */
-	static unlockCategories(){
-		let kparams = {};
-		return new kaltura.RequestBuilder('category', 'unlockCategories', kparams);
-	};
-	
-	/**
-	 * Update Category.
-	 * @param id int 
-	 * @param category Category 
-	 * @return KalturaCategory
-	 */
-	static update(id, category){
-		let kparams = {};
-		kparams.id = id;
-		kparams.category = category;
-		return new kaltura.RequestBuilder('category', 'update', kparams);
-	};
-}
-module.exports.category = category;
-
-
-/**
- *Class definition for the Kaltura service: categoryUser.
- * The available service actions:
- * @action activate activate CategoryUser.
- * @action add Add new CategoryUser.
- * @action addFromBulkUpload .
- * @action copyFromCategory Copy all memeber from parent category.
- * @action deactivate reject CategoryUser.
- * @action delete Delete a CategoryUser.
- * @action get Get CategoryUser by id.
- * @action index Index CategoryUser by userid and category id.
- * @action list List all categories.
- * @action update Update CategoryUser by id.
- */
-class categoryUser{
-	
-	/**
-	 * activate CategoryUser.
-	 * @param categoryId int 
-	 * @param userId string 
-	 * @return KalturaCategoryUser
-	 */
-	static activate(categoryId, userId){
-		let kparams = {};
-		kparams.categoryId = categoryId;
-		kparams.userId = userId;
-		return new kaltura.RequestBuilder('categoryuser', 'activate', kparams);
-	};
-	
-	/**
-	 * Add new CategoryUser.
-	 * @param categoryUser CategoryUser 
-	 * @return KalturaCategoryUser
-	 */
-	static add(categoryUser){
-		let kparams = {};
-		kparams.categoryUser = categoryUser;
-		return new kaltura.RequestBuilder('categoryuser', 'add', kparams);
-	};
-	
-	/**
-	 * .
-	 * @param fileData file 
-	 * @param bulkUploadData BulkUploadJobData  (optional, default: null)
-	 * @param bulkUploadCategoryUserData BulkUploadCategoryUserData  (optional, default: null)
-	 * @return KalturaBulkUpload
-	 */
-	static addFromBulkUpload(fileData, bulkUploadData = null, bulkUploadCategoryUserData = null){
-		let kparams = {};
-		let kfiles = {};
-		kfiles.fileData = fileData;
-		kparams.bulkUploadData = bulkUploadData;
-		kparams.bulkUploadCategoryUserData = bulkUploadCategoryUserData;
-		return new kaltura.RequestBuilder('categoryuser', 'addFromBulkUpload', kparams, kfiles);
-	};
-	
-	/**
-	 * Copy all memeber from parent category.
-	 * @param categoryId int 
-	 */
-	static copyFromCategory(categoryId){
-		let kparams = {};
-		kparams.categoryId = categoryId;
-		return new kaltura.RequestBuilder('categoryuser', 'copyFromCategory', kparams);
-	};
-	
-	/**
-	 * reject CategoryUser.
-	 * @param categoryId int 
-	 * @param userId string 
-	 * @return KalturaCategoryUser
-	 */
-	static deactivate(categoryId, userId){
-		let kparams = {};
-		kparams.categoryId = categoryId;
-		kparams.userId = userId;
-		return new kaltura.RequestBuilder('categoryuser', 'deactivate', kparams);
-	};
-	
-	/**
-	 * Delete a CategoryUser.
-	 * @param categoryId int 
-	 * @param userId string 
-	 */
-	static deleteAction(categoryId, userId){
-		let kparams = {};
-		kparams.categoryId = categoryId;
-		kparams.userId = userId;
-		return new kaltura.RequestBuilder('categoryuser', 'delete', kparams);
-	};
-	
-	/**
-	 * Get CategoryUser by id.
-	 * @param categoryId int 
-	 * @param userId string 
-	 * @return KalturaCategoryUser
-	 */
-	static get(categoryId, userId){
-		let kparams = {};
-		kparams.categoryId = categoryId;
-		kparams.userId = userId;
-		return new kaltura.RequestBuilder('categoryuser', 'get', kparams);
-	};
-	
-	/**
-	 * Index CategoryUser by userid and category id.
-	 * @param userId string 
-	 * @param categoryId int 
-	 * @param shouldUpdate bool  (optional, default: true)
-	 * @return int
-	 */
-	static index(userId, categoryId, shouldUpdate = true){
-		let kparams = {};
-		kparams.userId = userId;
-		kparams.categoryId = categoryId;
-		kparams.shouldUpdate = shouldUpdate;
-		return new kaltura.RequestBuilder('categoryuser', 'index', kparams);
-	};
-	
-	/**
-	 * List all categories.
-	 * @param filter CategoryUserFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaCategoryUserListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('categoryuser', 'list', kparams);
-	};
-	
-	/**
-	 * Update CategoryUser by id.
-	 * @param categoryId int 
-	 * @param userId string 
-	 * @param categoryUser CategoryUser 
-	 * @param override bool - to override manual changes (optional, default: false)
-	 * @return KalturaCategoryUser
-	 */
-	static update(categoryId, userId, categoryUser, override = false){
-		let kparams = {};
-		kparams.categoryId = categoryId;
-		kparams.userId = userId;
-		kparams.categoryUser = categoryUser;
-		kparams.override = override;
-		return new kaltura.RequestBuilder('categoryuser', 'update', kparams);
-	};
-}
-module.exports.categoryUser = categoryUser;
-
-
-/**
- *Class definition for the Kaltura service: conversionProfileAssetParams.
- * The available service actions:
- * @action list Lists asset parmas of conversion profile by ID.
- * @action update Update asset parmas of conversion profile by ID.
- */
-class conversionProfileAssetParams{
-	
-	/**
-	 * Lists asset parmas of conversion profile by ID.
-	 * @param filter ConversionProfileAssetParamsFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaConversionProfileAssetParamsListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('conversionprofileassetparams', 'list', kparams);
-	};
-	
-	/**
-	 * Update asset parmas of conversion profile by ID.
-	 * @param conversionProfileId int 
-	 * @param assetParamsId int 
-	 * @param conversionProfileAssetParams ConversionProfileAssetParams 
-	 * @return KalturaConversionProfileAssetParams
-	 */
-	static update(conversionProfileId, assetParamsId, conversionProfileAssetParams){
-		let kparams = {};
-		kparams.conversionProfileId = conversionProfileId;
-		kparams.assetParamsId = assetParamsId;
-		kparams.conversionProfileAssetParams = conversionProfileAssetParams;
-		return new kaltura.RequestBuilder('conversionprofileassetparams', 'update', kparams);
-	};
-}
-module.exports.conversionProfileAssetParams = conversionProfileAssetParams;
-
-
-/**
- *Class definition for the Kaltura service: conversionProfile.
- * The available service actions:
- * @action add Add new Conversion Profile.
- * @action delete Delete Conversion Profile by ID.
- * @action get Get Conversion Profile by ID.
- * @action getDefault Get the partner's default conversion profile.
- * @action list List Conversion Profiles by filter with paging support.
- * @action setAsDefault Set Conversion Profile to be the partner default.
- * @action update Update Conversion Profile by ID.
- */
-class conversionProfile{
-	
-	/**
-	 * Add new Conversion Profile.
-	 * @param conversionProfile ConversionProfile 
-	 * @return KalturaConversionProfile
-	 */
-	static add(conversionProfile){
-		let kparams = {};
-		kparams.conversionProfile = conversionProfile;
-		return new kaltura.RequestBuilder('conversionprofile', 'add', kparams);
-	};
-	
-	/**
-	 * Delete Conversion Profile by ID.
-	 * @param id int 
-	 */
-	static deleteAction(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('conversionprofile', 'delete', kparams);
-	};
-	
-	/**
-	 * Get Conversion Profile by ID.
-	 * @param id int 
-	 * @return KalturaConversionProfile
-	 */
-	static get(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('conversionprofile', 'get', kparams);
-	};
-	
-	/**
-	 * Get the partner's default conversion profile.
-	 * @param type string  (optional, enum: KalturaConversionProfileType, default: null)
-	 * @return KalturaConversionProfile
-	 */
-	static getDefault(type = null){
-		let kparams = {};
-		kparams.type = type;
-		return new kaltura.RequestBuilder('conversionprofile', 'getDefault', kparams);
-	};
-	
-	/**
-	 * List Conversion Profiles by filter with paging support.
-	 * @param filter ConversionProfileFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaConversionProfileListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('conversionprofile', 'list', kparams);
-	};
-	
-	/**
-	 * Set Conversion Profile to be the partner default.
-	 * @param id int 
-	 * @return KalturaConversionProfile
-	 */
-	static setAsDefault(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('conversionprofile', 'setAsDefault', kparams);
-	};
-	
-	/**
-	 * Update Conversion Profile by ID.
-	 * @param id int 
-	 * @param conversionProfile ConversionProfile 
-	 * @return KalturaConversionProfile
-	 */
-	static update(id, conversionProfile){
-		let kparams = {};
-		kparams.id = id;
-		kparams.conversionProfile = conversionProfile;
-		return new kaltura.RequestBuilder('conversionprofile', 'update', kparams);
-	};
-}
-module.exports.conversionProfile = conversionProfile;
-
-
-/**
- *Class definition for the Kaltura service: data.
- * The available service actions:
- * @action add Adds a new data entry.
- * @action delete Delete a data entry.
- * @action get Get data entry by ID.
- * @action list List data entries by filter with paging support.
- * @action update Update data entry. Only the properties that were set will be updated.
- */
-class data{
-	
-	/**
-	 * Adds a new data entry.
-	 * @param dataEntry DataEntry Data entry
-	 * @return KalturaDataEntry
-	 */
-	static add(dataEntry){
-		let kparams = {};
-		kparams.dataEntry = dataEntry;
-		return new kaltura.RequestBuilder('data', 'add', kparams);
-	};
-	
-	/**
-	 * Delete a data entry.
-	 * @param entryId string Data entry id to delete
-	 */
-	static deleteAction(entryId){
-		let kparams = {};
-		kparams.entryId = entryId;
-		return new kaltura.RequestBuilder('data', 'delete', kparams);
-	};
-	
-	/**
-	 * Get data entry by ID.
-	 * @param entryId string Data entry id
-	 * @param version int Desired version of the data (optional, default: -1)
-	 * @return KalturaDataEntry
-	 */
-	static get(entryId, version = -1){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.version = version;
-		return new kaltura.RequestBuilder('data', 'get', kparams);
-	};
-	
-	/**
-	 * List data entries by filter with paging support.
-	 * @param filter DataEntryFilter Document entry filter (optional, default: null)
-	 * @param pager FilterPager Pager (optional, default: null)
-	 * @return KalturaDataListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('data', 'list', kparams);
-	};
-	
-	/**
-	 * Update data entry. Only the properties that were set will be updated.
-	 * @param entryId string Data entry id to update
-	 * @param documentEntry DataEntry Data entry metadata to update
-	 * @return KalturaDataEntry
-	 */
-	static update(entryId, documentEntry){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.documentEntry = documentEntry;
-		return new kaltura.RequestBuilder('data', 'update', kparams);
-	};
-}
-module.exports.data = data;
-
-
-/**
- *Class definition for the Kaltura service: deliveryProfile.
- * The available service actions:
- * @action add Add new delivery.
- * @action clone Add delivery based on existing delivery.
- * Must provide valid sourceDeliveryId.
- * @action get Get delivery by id.
- * @action list Retrieve a list of available delivery depends on the filter given.
- * @action update Update exisiting delivery.
- */
-class deliveryProfile{
-	
-	/**
-	 * Add new delivery.
-	 * @param delivery DeliveryProfile 
-	 * @return KalturaDeliveryProfile
-	 */
-	static add(delivery){
-		let kparams = {};
-		kparams.delivery = delivery;
-		return new kaltura.RequestBuilder('deliveryprofile', 'add', kparams);
-	};
-	
-	/**
-	 * Add delivery based on existing delivery.
- * Must provide valid sourceDeliveryId.
-	 * @param deliveryId int 
-	 * @return KalturaDeliveryProfile
-	 */
-	static cloneAction(deliveryId){
-		let kparams = {};
-		kparams.deliveryId = deliveryId;
-		return new kaltura.RequestBuilder('deliveryprofile', 'clone', kparams);
-	};
-	
-	/**
-	 * Get delivery by id.
-	 * @param id string 
-	 * @return KalturaDeliveryProfile
-	 */
-	static get(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('deliveryprofile', 'get', kparams);
-	};
-	
-	/**
-	 * Retrieve a list of available delivery depends on the filter given.
-	 * @param filter DeliveryProfileFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaDeliveryProfileListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('deliveryprofile', 'list', kparams);
-	};
-	
-	/**
-	 * Update exisiting delivery.
-	 * @param id string 
-	 * @param delivery DeliveryProfile 
-	 * @return KalturaDeliveryProfile
-	 */
-	static update(id, delivery){
-		let kparams = {};
-		kparams.id = id;
-		kparams.delivery = delivery;
-		return new kaltura.RequestBuilder('deliveryprofile', 'update', kparams);
-	};
-}
-module.exports.deliveryProfile = deliveryProfile;
-
-
-/**
- *Class definition for the Kaltura service: EmailIngestionProfile.
- * The available service actions:
- * @action add EmailIngestionProfile Add action allows you to add a EmailIngestionProfile to Kaltura DB.
- * @action addMediaEntry add KalturaMediaEntry from email ingestion.
- * @action delete Delete an existing EmailIngestionProfile.
- * @action get Retrieve a EmailIngestionProfile by id.
- * @action getByEmailAddress Retrieve a EmailIngestionProfile by email address.
- * @action update Update an existing EmailIngestionProfile.
- */
-class EmailIngestionProfile{
-	
-	/**
-	 * EmailIngestionProfile Add action allows you to add a EmailIngestionProfile to Kaltura DB.
-	 * @param EmailIP EmailIngestionProfile Mandatory input parameter of type KalturaEmailIngestionProfile
-	 * @return KalturaEmailIngestionProfile
-	 */
-	static add(EmailIP){
-		let kparams = {};
-		kparams.EmailIP = EmailIP;
-		return new kaltura.RequestBuilder('emailingestionprofile', 'add', kparams);
-	};
-	
-	/**
-	 * add KalturaMediaEntry from email ingestion.
-	 * @param mediaEntry MediaEntry Media entry metadata
-	 * @param uploadTokenId string Upload token id
-	 * @param emailProfId int 
-	 * @param fromAddress string 
-	 * @param emailMsgId string 
-	 * @return KalturaMediaEntry
-	 */
-	static addMediaEntry(mediaEntry, uploadTokenId, emailProfId, fromAddress, emailMsgId){
-		let kparams = {};
-		kparams.mediaEntry = mediaEntry;
-		kparams.uploadTokenId = uploadTokenId;
-		kparams.emailProfId = emailProfId;
-		kparams.fromAddress = fromAddress;
-		kparams.emailMsgId = emailMsgId;
-		return new kaltura.RequestBuilder('emailingestionprofile', 'addMediaEntry', kparams);
-	};
-	
-	/**
-	 * Delete an existing EmailIngestionProfile.
-	 * @param id int 
-	 */
-	static deleteAction(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('emailingestionprofile', 'delete', kparams);
-	};
-	
-	/**
-	 * Retrieve a EmailIngestionProfile by id.
-	 * @param id int 
-	 * @return KalturaEmailIngestionProfile
-	 */
-	static get(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('emailingestionprofile', 'get', kparams);
-	};
-	
-	/**
-	 * Retrieve a EmailIngestionProfile by email address.
-	 * @param emailAddress string 
-	 * @return KalturaEmailIngestionProfile
-	 */
-	static getByEmailAddress(emailAddress){
-		let kparams = {};
-		kparams.emailAddress = emailAddress;
-		return new kaltura.RequestBuilder('emailingestionprofile', 'getByEmailAddress', kparams);
-	};
-	
-	/**
-	 * Update an existing EmailIngestionProfile.
-	 * @param id int 
-	 * @param EmailIP EmailIngestionProfile 
-	 * @return KalturaEmailIngestionProfile
-	 */
-	static update(id, EmailIP){
-		let kparams = {};
-		kparams.id = id;
-		kparams.EmailIP = EmailIP;
-		return new kaltura.RequestBuilder('emailingestionprofile', 'update', kparams);
-	};
-}
-module.exports.EmailIngestionProfile = EmailIngestionProfile;
-
-
-/**
- *Class definition for the Kaltura service: entryServerNode.
- * The available service actions:
- * @action get .
- * @action list .
- * @action update .
- * @action validateRegisteredEntryServerNode Validates server node still registered on entry.
- */
-class entryServerNode{
-	
-	/**
-	 * .
-	 * @param id string 
-	 * @return KalturaEntryServerNode
-	 */
-	static get(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('entryservernode', 'get', kparams);
-	};
-	
-	/**
-	 * .
-	 * @param filter EntryServerNodeFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaEntryServerNodeListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('entryservernode', 'list', kparams);
-	};
-	
-	/**
-	 * .
-	 * @param id int 
-	 * @param entryServerNode EntryServerNode 
-	 * @return KalturaEntryServerNode
-	 */
-	static update(id, entryServerNode){
-		let kparams = {};
-		kparams.id = id;
-		kparams.entryServerNode = entryServerNode;
-		return new kaltura.RequestBuilder('entryservernode', 'update', kparams);
-	};
-	
-	/**
-	 * Validates server node still registered on entry.
-	 * @param id int entry server node id
-	 */
-	static validateRegisteredEntryServerNode(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('entryservernode', 'validateRegisteredEntryServerNode', kparams);
-	};
-}
-module.exports.entryServerNode = entryServerNode;
-
-
-/**
- *Class definition for the Kaltura service: fileAsset.
- * The available service actions:
- * @action add Add new file asset.
- * @action delete Delete file asset by id.
- * @action get Get file asset by id.
- * @action list List file assets by filter and pager.
- * @action setContent Set content of file asset.
- * @action update Update file asset by id.
- */
-class fileAsset{
-	
-	/**
-	 * Add new file asset.
-	 * @param fileAsset FileAsset 
-	 * @return KalturaFileAsset
-	 */
-	static add(fileAsset){
-		let kparams = {};
-		kparams.fileAsset = fileAsset;
-		return new kaltura.RequestBuilder('fileasset', 'add', kparams);
-	};
-	
-	/**
-	 * Delete file asset by id.
-	 * @param id int 
-	 */
-	static deleteAction(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('fileasset', 'delete', kparams);
-	};
-	
-	/**
-	 * Get file asset by id.
-	 * @param id int 
-	 * @return KalturaFileAsset
-	 */
-	static get(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('fileasset', 'get', kparams);
-	};
-	
-	/**
-	 * List file assets by filter and pager.
-	 * @param filter FileAssetFilter 
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaFileAssetListResponse
+	 * Returns asset comments by asset id.
+	 * @param filter AssetCommentFilter Filtering the assets comments request
+	 * @param pager FilterPager Page size and index (optional, default: null)
+	 * @return KalturaAssetCommentListResponse
 	 */
 	static listAction(filter, pager = null){
 		let kparams = {};
 		kparams.filter = filter;
 		kparams.pager = pager;
-		return new kaltura.RequestBuilder('fileasset', 'list', kparams);
-	};
-	
-	/**
-	 * Set content of file asset.
-	 * @param id string 
-	 * @param contentResource ContentResource 
-	 * @return KalturaFileAsset
-	 */
-	static setContent(id, contentResource){
-		let kparams = {};
-		kparams.id = id;
-		kparams.contentResource = contentResource;
-		return new kaltura.RequestBuilder('fileasset', 'setContent', kparams);
-	};
-	
-	/**
-	 * Update file asset by id.
-	 * @param id int 
-	 * @param fileAsset FileAsset 
-	 * @return KalturaFileAsset
-	 */
-	static update(id, fileAsset){
-		let kparams = {};
-		kparams.id = id;
-		kparams.fileAsset = fileAsset;
-		return new kaltura.RequestBuilder('fileasset', 'update', kparams);
+		return new kaltura.RequestBuilder('assetcomment', 'list', kparams);
 	};
 }
-module.exports.fileAsset = fileAsset;
+module.exports.assetComment = assetComment;
 
 
 /**
- *Class definition for the Kaltura service: flavorAsset.
+ *Class definition for the Kaltura service: asset.
  * The available service actions:
- * @action add Add flavor asset.
- * @action convert Add and convert new Flavor Asset for Entry with specific Flavor Params.
- * @action delete Delete Flavor Asset by ID.
- * @action deleteLocalContent delete all local file syncs for this asset.
- * @action export manually export an asset.
- * @action get Get Flavor Asset by ID.
- * @action getByEntryId Get Flavor Assets for Entry.
- * @action getDownloadUrl Get download URL for the Flavor Asset.
- * @action getFlavorAssetsWithParams Get Flavor Asset with the relevant Flavor Params (Flavor Params can exist without Flavor Asset & vice versa).
- * @action getRemotePaths Get remote storage existing paths for the asset.
- * @action getUrl Get download URL for the asset.
- * @action getWebPlayableByEntryId Get web playable Flavor Assets for Entry.
- * @action list List Flavor Assets by filter and pager.
- * @action reconvert Reconvert Flavor Asset by ID.
- * @action serveAdStitchCmd serve cmd line to transcode the ad.
- * @action setAsSource Set a given flavor as the original flavor.
- * @action setContent Update content of flavor asset.
- * @action update Update flavor asset.
+ * @action get Returns media or EPG asset by media / EPG internal or external identifier.
+ * @action list Returns media or EPG assets. Filters by media identifiers or by EPG internal or external identifier.
  */
-class flavorAsset{
+class asset{
 	
 	/**
-	 * Add flavor asset.
-	 * @param entryId string 
-	 * @param flavorAsset FlavorAsset 
-	 * @return KalturaFlavorAsset
+	 * Returns media or EPG asset by media / EPG internal or external identifier.
+	 * @param id string Asset identifier
+	 * @param assetReferenceType string Asset type (enum: KalturaAssetReferenceType)
+	 * @return KalturaAsset
 	 */
-	static add(entryId, flavorAsset){
+	static get(id, assetReferenceType){
 		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.flavorAsset = flavorAsset;
-		return new kaltura.RequestBuilder('flavorasset', 'add', kparams);
+		kparams.id = id;
+		kparams.assetReferenceType = assetReferenceType;
+		return new kaltura.RequestBuilder('asset', 'get', kparams);
 	};
 	
 	/**
-	 * Add and convert new Flavor Asset for Entry with specific Flavor Params.
-	 * @param entryId string 
-	 * @param flavorParamsId int 
-	 * @param priority int  (optional)
+	 * Returns media or EPG assets. Filters by media identifiers or by EPG internal or external identifier.
+	 * @param filter AssetFilter Filtering the assets request (optional, default: null)
+	 * @param pager FilterPager Paging the request (optional, default: null)
+	 * @return KalturaAssetListResponse
 	 */
-	static convert(entryId, flavorParamsId, priority = 0){
+	static listAction(filter = null, pager = null){
 		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.flavorParamsId = flavorParamsId;
-		kparams.priority = priority;
-		return new kaltura.RequestBuilder('flavorasset', 'convert', kparams);
+		kparams.filter = filter;
+		kparams.pager = pager;
+		return new kaltura.RequestBuilder('asset', 'list', kparams);
+	};
+}
+module.exports.asset = asset;
+
+
+/**
+ *Class definition for the Kaltura service: assetFile.
+ * The available service actions:
+ * @action getContext get KalturaAssetFileContext.
+ */
+class assetFile{
+	
+	/**
+	 * get KalturaAssetFileContext.
+	 * @param id string Asset file identifier
+	 * @return KalturaAssetFileContext
+	 */
+	static getContext(id){
+		let kparams = {};
+		kparams.id = id;
+		return new kaltura.RequestBuilder('assetfile', 'getContext', kparams);
+	};
+}
+module.exports.assetFile = assetFile;
+
+
+/**
+ *Class definition for the Kaltura service: assetHistory.
+ * The available service actions:
+ * @action list Get recently watched media for user, ordered by recently watched first.
+ */
+class assetHistory{
+	
+	/**
+	 * Get recently watched media for user, ordered by recently watched first.
+	 * @param filter AssetHistoryFilter Filter parameters for filtering out the result (optional, default: null)
+	 * @param pager FilterPager Page size and index. Number of assets to return per page. Possible range 5 ≤ size ≥ 50. If omitted - will be set to 25. If a value > 50 provided – will set to 50 (optional, default: null)
+	 * @return KalturaAssetHistoryListResponse
+	 */
+	static listAction(filter = null, pager = null){
+		let kparams = {};
+		kparams.filter = filter;
+		kparams.pager = pager;
+		return new kaltura.RequestBuilder('assethistory', 'list', kparams);
+	};
+}
+module.exports.assetHistory = assetHistory;
+
+
+/**
+ *Class definition for the Kaltura service: assetStatistics.
+ * The available service actions:
+ * @action query Returns statistics for given list of assets by type and / or time period.
+ */
+class assetStatistics{
+	
+	/**
+	 * Returns statistics for given list of assets by type and / or time period.
+	 * @param query AssetStatisticsQuery Query for assets statistics
+	 * @return KalturaAssetStatisticsListResponse
+	 */
+	static query(query){
+		let kparams = {};
+		kparams.query = query;
+		return new kaltura.RequestBuilder('assetstatistics', 'query', kparams);
+	};
+}
+module.exports.assetStatistics = assetStatistics;
+
+
+/**
+ *Class definition for the Kaltura service: bookmark.
+ * The available service actions:
+ * @action add Report player position and action for the user on the watched asset. Player position is used to later allow resume watching.
+ * @action list Returns player position record/s for the requested asset and the requesting user.
+ * If default user makes the request – player position records are provided for all of the users in the household.
+ * If non-default user makes the request - player position records are provided for the requesting user and the default user of the household.
+ */
+class bookmark{
+	
+	/**
+	 * Report player position and action for the user on the watched asset. Player position is used to later allow resume watching.
+	 * @param bookmark Bookmark Bookmark details
+	 * @return bool
+	 */
+	static add(bookmark){
+		let kparams = {};
+		kparams.bookmark = bookmark;
+		return new kaltura.RequestBuilder('bookmark', 'add', kparams);
 	};
 	
 	/**
-	 * Delete Flavor Asset by ID.
-	 * @param id string 
+	 * Returns player position record/s for the requested asset and the requesting user.
+ * If default user makes the request – player position records are provided for all of the users in the household.
+ * If non-default user makes the request - player position records are provided for the requesting user and the default user of the household.
+	 * @param filter BookmarkFilter Filter option for the last position
+	 * @return KalturaBookmarkListResponse
+	 */
+	static listAction(filter){
+		let kparams = {};
+		kparams.filter = filter;
+		return new kaltura.RequestBuilder('bookmark', 'list', kparams);
+	};
+}
+module.exports.bookmark = bookmark;
+
+
+/**
+ *Class definition for the Kaltura service: cdnAdapterProfile.
+ * The available service actions:
+ * @action add Insert new CDN adapter for partner.
+ * @action delete Delete CDN adapter by CDN adapter id.
+ * @action generateSharedSecret Generate CDN adapter shared secret.
+ * @action list Returns all CDN adapters for partner.
+ * @action update Update CDN adapter details.
+ */
+class cdnAdapterProfile{
+	
+	/**
+	 * Insert new CDN adapter for partner.
+	 * @param adapter CDNAdapterProfile CDN adapter object
+	 * @return KalturaCDNAdapterProfile
+	 */
+	static add(adapter){
+		let kparams = {};
+		kparams.adapter = adapter;
+		return new kaltura.RequestBuilder('cdnadapterprofile', 'add', kparams);
+	};
+	
+	/**
+	 * Delete CDN adapter by CDN adapter id.
+	 * @param adapterId int CDN adapter identifier
+	 * @return bool
+	 */
+	static deleteAction(adapterId){
+		let kparams = {};
+		kparams.adapterId = adapterId;
+		return new kaltura.RequestBuilder('cdnadapterprofile', 'delete', kparams);
+	};
+	
+	/**
+	 * Generate CDN adapter shared secret.
+	 * @param adapterId int CDN adapter identifier
+	 * @return KalturaCDNAdapterProfile
+	 */
+	static generateSharedSecret(adapterId){
+		let kparams = {};
+		kparams.adapterId = adapterId;
+		return new kaltura.RequestBuilder('cdnadapterprofile', 'generateSharedSecret', kparams);
+	};
+	
+	/**
+	 * Returns all CDN adapters for partner.
+	 * @return KalturaCDNAdapterProfileListResponse
+	 */
+	static listAction(){
+		let kparams = {};
+		return new kaltura.RequestBuilder('cdnadapterprofile', 'list', kparams);
+	};
+	
+	/**
+	 * Update CDN adapter details.
+	 * @param adapterId int CDN adapter id to update
+	 * @param adapter CDNAdapterProfile CDN adapter Object
+	 * @return KalturaCDNAdapterProfile
+	 */
+	static update(adapterId, adapter){
+		let kparams = {};
+		kparams.adapterId = adapterId;
+		kparams.adapter = adapter;
+		return new kaltura.RequestBuilder('cdnadapterprofile', 'update', kparams);
+	};
+}
+module.exports.cdnAdapterProfile = cdnAdapterProfile;
+
+
+/**
+ *Class definition for the Kaltura service: cdnPartnerSettings.
+ * The available service actions:
+ * @action get Retrieve the partner’s CDN settings (default adapters).
+ * @action update Configure the partner’s CDN settings (default adapters).
+ */
+class cdnPartnerSettings{
+	
+	/**
+	 * Retrieve the partner’s CDN settings (default adapters).
+	 * @return KalturaCDNPartnerSettings
+	 */
+	static get(){
+		let kparams = {};
+		return new kaltura.RequestBuilder('cdnpartnersettings', 'get', kparams);
+	};
+	
+	/**
+	 * Configure the partner’s CDN settings (default adapters).
+	 * @param settings CDNPartnerSettings 
+	 * @return KalturaCDNPartnerSettings
+	 */
+	static update(settings){
+		let kparams = {};
+		kparams.settings = settings;
+		return new kaltura.RequestBuilder('cdnpartnersettings', 'update', kparams);
+	};
+}
+module.exports.cdnPartnerSettings = cdnPartnerSettings;
+
+
+/**
+ *Class definition for the Kaltura service: cDVRAdapterProfile.
+ * The available service actions:
+ * @action add Insert new C-DVR adapter for partner.
+ * @action delete Delete C-DVR adapter by C-DVR adapter id.
+ * @action generateSharedSecret Generate C-DVR adapter shared secret.
+ * @action list Returns all C-DVR adapters for partner.
+ * @action update Update C-DVR adapter details.
+ */
+class cDVRAdapterProfile{
+	
+	/**
+	 * Insert new C-DVR adapter for partner.
+	 * @param adapter CDVRAdapterProfile C-DVR adapter object
+	 * @return KalturaCDVRAdapterProfile
+	 */
+	static add(adapter){
+		let kparams = {};
+		kparams.adapter = adapter;
+		return new kaltura.RequestBuilder('cdvradapterprofile', 'add', kparams);
+	};
+	
+	/**
+	 * Delete C-DVR adapter by C-DVR adapter id.
+	 * @param adapterId int C-DVR adapter identifier
+	 * @return bool
+	 */
+	static deleteAction(adapterId){
+		let kparams = {};
+		kparams.adapterId = adapterId;
+		return new kaltura.RequestBuilder('cdvradapterprofile', 'delete', kparams);
+	};
+	
+	/**
+	 * Generate C-DVR adapter shared secret.
+	 * @param adapterId int C-DVR adapter identifier
+	 * @return KalturaCDVRAdapterProfile
+	 */
+	static generateSharedSecret(adapterId){
+		let kparams = {};
+		kparams.adapterId = adapterId;
+		return new kaltura.RequestBuilder('cdvradapterprofile', 'generateSharedSecret', kparams);
+	};
+	
+	/**
+	 * Returns all C-DVR adapters for partner.
+	 * @return KalturaCDVRAdapterProfileListResponse
+	 */
+	static listAction(){
+		let kparams = {};
+		return new kaltura.RequestBuilder('cdvradapterprofile', 'list', kparams);
+	};
+	
+	/**
+	 * Update C-DVR adapter details.
+	 * @param adapterId int C-DVR adapter identifier
+	 * @param adapter CDVRAdapterProfile C-DVR adapter Object
+	 * @return KalturaCDVRAdapterProfile
+	 */
+	static update(adapterId, adapter){
+		let kparams = {};
+		kparams.adapterId = adapterId;
+		kparams.adapter = adapter;
+		return new kaltura.RequestBuilder('cdvradapterprofile', 'update', kparams);
+	};
+}
+module.exports.cDVRAdapterProfile = cDVRAdapterProfile;
+
+
+/**
+ *Class definition for the Kaltura service: channel.
+ * The available service actions:
+ * @action add Insert new channel for partner. Currently supports only KSQL channel.
+ * @action delete Delete channel by its channel id.
+ * @action get Returns channel info.
+ * @action update Update channel details. Currently supports only KSQL channel.
+ */
+class channel{
+	
+	/**
+	 * Insert new channel for partner. Currently supports only KSQL channel.
+	 * @param channel Channel KSQL channel Object
+	 * @return KalturaChannel
+	 */
+	static add(channel){
+		let kparams = {};
+		kparams.channel = channel;
+		return new kaltura.RequestBuilder('channel', 'add', kparams);
+	};
+	
+	/**
+	 * Delete channel by its channel id.
+	 * @param channelId int channel identifier
+	 * @return bool
+	 */
+	static deleteAction(channelId){
+		let kparams = {};
+		kparams.channelId = channelId;
+		return new kaltura.RequestBuilder('channel', 'delete', kparams);
+	};
+	
+	/**
+	 * Returns channel info.
+	 * @param id int Channel Identifier
+	 * @return KalturaChannel
+	 */
+	static get(id){
+		let kparams = {};
+		kparams.id = id;
+		return new kaltura.RequestBuilder('channel', 'get', kparams);
+	};
+	
+	/**
+	 * Update channel details. Currently supports only KSQL channel.
+	 * @param channelId int Channel identifier
+	 * @param channel Channel KSQL channel Object
+	 * @return KalturaChannel
+	 */
+	static update(channelId, channel){
+		let kparams = {};
+		kparams.channelId = channelId;
+		kparams.channel = channel;
+		return new kaltura.RequestBuilder('channel', 'update', kparams);
+	};
+}
+module.exports.channel = channel;
+
+
+/**
+ *Class definition for the Kaltura service: coupon.
+ * The available service actions:
+ * @action get Returns information about a coupon.
+ */
+class coupon{
+	
+	/**
+	 * Returns information about a coupon.
+	 * @param code string Coupon code
+	 * @return KalturaCoupon
+	 */
+	static get(code){
+		let kparams = {};
+		kparams.code = code;
+		return new kaltura.RequestBuilder('coupon', 'get', kparams);
+	};
+}
+module.exports.coupon = coupon;
+
+
+/**
+ *Class definition for the Kaltura service: entitlement.
+ * The available service actions:
+ * @action cancel Immediately cancel a subscription, PPV or collection. Cancel is possible only if within cancellation window and content not already consumed.
+ * @action cancelRenewal Cancel a household service subscription at the next renewal. The subscription stays valid till the next renewal.
+ * @action externalReconcile Reconcile the user household&#39;s entitlements with an external entitlements source. This request is frequency protected to avoid too frequent calls per household.
+ * @action forceCancel Immediately cancel a subscription, PPV or collection. Cancel applies regardless of cancellation window and content consumption status.
+ * @action grant Grant household for an entitlement for a PPV or Subscription.
+ * @action list Gets all the entitled media items for a household.
+ */
+class entitlement{
+	
+	/**
+	 * Immediately cancel a subscription, PPV or collection. Cancel is possible only if within cancellation window and content not already consumed.
+	 * @param assetId int The mediaFileID to cancel
+	 * @param transactionType string The transaction type for the cancelation (enum: KalturaTransactionType)
+	 * @return bool
+	 */
+	static cancel(assetId, transactionType){
+		let kparams = {};
+		kparams.assetId = assetId;
+		kparams.transactionType = transactionType;
+		return new kaltura.RequestBuilder('entitlement', 'cancel', kparams);
+	};
+	
+	/**
+	 * Cancel a household service subscription at the next renewal. The subscription stays valid till the next renewal.
+	 * @param subscriptionId string Subscription Code
+	 */
+	static cancelRenewal(subscriptionId){
+		let kparams = {};
+		kparams.subscriptionId = subscriptionId;
+		return new kaltura.RequestBuilder('entitlement', 'cancelRenewal', kparams);
+	};
+	
+	/**
+	 * Reconcile the user household&#39;s entitlements with an external entitlements source. This request is frequency protected to avoid too frequent calls per household.
+	 * @return bool
+	 */
+	static externalReconcile(){
+		let kparams = {};
+		return new kaltura.RequestBuilder('entitlement', 'externalReconcile', kparams);
+	};
+	
+	/**
+	 * Immediately cancel a subscription, PPV or collection. Cancel applies regardless of cancellation window and content consumption status.
+	 * @param assetId int The mediaFileID to cancel
+	 * @param transactionType string The transaction type for the cancelation (enum: KalturaTransactionType)
+	 * @return bool
+	 */
+	static forceCancel(assetId, transactionType){
+		let kparams = {};
+		kparams.assetId = assetId;
+		kparams.transactionType = transactionType;
+		return new kaltura.RequestBuilder('entitlement', 'forceCancel', kparams);
+	};
+	
+	/**
+	 * Grant household for an entitlement for a PPV or Subscription.
+	 * @param productId int Identifier for the product package from which this content is offered
+	 * @param productType string Product package type. Possible values: PPV, Subscription, Collection (enum: KalturaTransactionType)
+	 * @param history bool Controls if the new entitlements grant will appear in the user’s history. True – will add a history entry. False (or if ommited) – no history entry will be added
+	 * @param contentId int Identifier for the content. Relevant only if Product type = PPV (optional)
+	 * @return bool
+	 */
+	static grant(productId, productType, history, contentId = 0){
+		let kparams = {};
+		kparams.productId = productId;
+		kparams.productType = productType;
+		kparams.history = history;
+		kparams.contentId = contentId;
+		return new kaltura.RequestBuilder('entitlement', 'grant', kparams);
+	};
+	
+	/**
+	 * Gets all the entitled media items for a household.
+	 * @param filter EntitlementFilter Request filter
+	 * @param pager FilterPager Request pager (optional, default: null)
+	 * @return KalturaEntitlementListResponse
+	 */
+	static listAction(filter, pager = null){
+		let kparams = {};
+		kparams.filter = filter;
+		kparams.pager = pager;
+		return new kaltura.RequestBuilder('entitlement', 'list', kparams);
+	};
+}
+module.exports.entitlement = entitlement;
+
+
+/**
+ *Class definition for the Kaltura service: exportTask.
+ * The available service actions:
+ * @action add Adds a new bulk export task.
+ * @action delete Deletes an existing bulk export task by task identifier.
+ * @action get Gets an existing bulk export task by task identifier.
+ * @action list Returns bulk export tasks by tasks identifiers.
+ * @action update Updates an existing bulk export task by task identifier.
+ */
+class exportTask{
+	
+	/**
+	 * Adds a new bulk export task.
+	 * @param task ExportTask The task model to add
+	 * @return KalturaExportTask
+	 */
+	static add(task){
+		let kparams = {};
+		kparams.task = task;
+		return new kaltura.RequestBuilder('exporttask', 'add', kparams);
+	};
+	
+	/**
+	 * Deletes an existing bulk export task by task identifier.
+	 * @param id int The identifier of the task to delete
+	 * @return bool
 	 */
 	static deleteAction(id){
 		let kparams = {};
 		kparams.id = id;
-		return new kaltura.RequestBuilder('flavorasset', 'delete', kparams);
+		return new kaltura.RequestBuilder('exporttask', 'delete', kparams);
 	};
 	
 	/**
-	 * delete all local file syncs for this asset.
-	 * @param assetId string 
-	 */
-	static deleteLocalContent(assetId){
-		let kparams = {};
-		kparams.assetId = assetId;
-		return new kaltura.RequestBuilder('flavorasset', 'deleteLocalContent', kparams);
-	};
-	
-	/**
-	 * manually export an asset.
-	 * @param assetId string 
-	 * @param storageProfileId int 
-	 * @return KalturaFlavorAsset
-	 */
-	static exportAction(assetId, storageProfileId){
-		let kparams = {};
-		kparams.assetId = assetId;
-		kparams.storageProfileId = storageProfileId;
-		return new kaltura.RequestBuilder('flavorasset', 'export', kparams);
-	};
-	
-	/**
-	 * Get Flavor Asset by ID.
-	 * @param id string 
-	 * @return KalturaFlavorAsset
+	 * Gets an existing bulk export task by task identifier.
+	 * @param id int The identifier of the task to get
+	 * @return KalturaExportTask
 	 */
 	static get(id){
 		let kparams = {};
 		kparams.id = id;
-		return new kaltura.RequestBuilder('flavorasset', 'get', kparams);
+		return new kaltura.RequestBuilder('exporttask', 'get', kparams);
 	};
 	
 	/**
-	 * Get Flavor Assets for Entry.
-	 * @param entryId string 
-	 * @return array
+	 * Returns bulk export tasks by tasks identifiers.
+	 * @param filter ExportTaskFilter Bulk export tasks filter (optional, default: null)
+	 * @return KalturaExportTaskListResponse
 	 */
-	static getByEntryId(entryId){
-		let kparams = {};
-		kparams.entryId = entryId;
-		return new kaltura.RequestBuilder('flavorasset', 'getByEntryId', kparams);
-	};
-	
-	/**
-	 * Get download URL for the Flavor Asset.
-	 * @param id string 
-	 * @param useCdn bool  (optional, default: false)
-	 * @return string
-	 */
-	static getDownloadUrl(id, useCdn = false){
-		let kparams = {};
-		kparams.id = id;
-		kparams.useCdn = useCdn;
-		return new kaltura.RequestBuilder('flavorasset', 'getDownloadUrl', kparams);
-	};
-	
-	/**
-	 * Get Flavor Asset with the relevant Flavor Params (Flavor Params can exist without Flavor Asset & vice versa).
-	 * @param entryId string 
-	 * @return array
-	 */
-	static getFlavorAssetsWithParams(entryId){
-		let kparams = {};
-		kparams.entryId = entryId;
-		return new kaltura.RequestBuilder('flavorasset', 'getFlavorAssetsWithParams', kparams);
-	};
-	
-	/**
-	 * Get remote storage existing paths for the asset.
-	 * @param id string 
-	 * @return KalturaRemotePathListResponse
-	 */
-	static getRemotePaths(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('flavorasset', 'getRemotePaths', kparams);
-	};
-	
-	/**
-	 * Get download URL for the asset.
-	 * @param id string 
-	 * @param storageId int  (optional, default: null)
-	 * @param forceProxy bool  (optional, default: false)
-	 * @param options FlavorAssetUrlOptions  (optional, default: null)
-	 * @return string
-	 */
-	static getUrl(id, storageId = null, forceProxy = false, options = null){
-		let kparams = {};
-		kparams.id = id;
-		kparams.storageId = storageId;
-		kparams.forceProxy = forceProxy;
-		kparams.options = options;
-		return new kaltura.RequestBuilder('flavorasset', 'getUrl', kparams);
-	};
-	
-	/**
-	 * Get web playable Flavor Assets for Entry.
-	 * @param entryId string 
-	 * @return array
-	 */
-	static getWebPlayableByEntryId(entryId){
-		let kparams = {};
-		kparams.entryId = entryId;
-		return new kaltura.RequestBuilder('flavorasset', 'getWebPlayableByEntryId', kparams);
-	};
-	
-	/**
-	 * List Flavor Assets by filter and pager.
-	 * @param filter AssetFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaFlavorAssetListResponse
-	 */
-	static listAction(filter = null, pager = null){
+	static listAction(filter = null){
 		let kparams = {};
 		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('flavorasset', 'list', kparams);
+		return new kaltura.RequestBuilder('exporttask', 'list', kparams);
 	};
 	
 	/**
-	 * Reconvert Flavor Asset by ID.
-	 * @param id string Flavor Asset ID
+	 * Updates an existing bulk export task by task identifier.
+	 * @param id int The task id to update
+	 * @param task ExportTask The task model to update
+	 * @return KalturaExportTask
 	 */
-	static reconvert(id){
+	static update(id, task){
 		let kparams = {};
 		kparams.id = id;
-		return new kaltura.RequestBuilder('flavorasset', 'reconvert', kparams);
-	};
-	
-	/**
-	 * serve cmd line to transcode the ad.
-	 * @param assetId string 
-	 * @param ffprobeJson string  (optional, default: null)
-	 * @param duration string  (optional, default: null)
-	 * @return string
-	 */
-	static serveAdStitchCmd(assetId, ffprobeJson = null, duration = null){
-		let kparams = {};
-		kparams.assetId = assetId;
-		kparams.ffprobeJson = ffprobeJson;
-		kparams.duration = duration;
-		return new kaltura.RequestBuilder('flavorasset', 'serveAdStitchCmd', kparams);
-	};
-	
-	/**
-	 * Set a given flavor as the original flavor.
-	 * @param assetId string 
-	 */
-	static setAsSource(assetId){
-		let kparams = {};
-		kparams.assetId = assetId;
-		return new kaltura.RequestBuilder('flavorasset', 'setAsSource', kparams);
-	};
-	
-	/**
-	 * Update content of flavor asset.
-	 * @param id string 
-	 * @param contentResource ContentResource 
-	 * @return KalturaFlavorAsset
-	 */
-	static setContent(id, contentResource){
-		let kparams = {};
-		kparams.id = id;
-		kparams.contentResource = contentResource;
-		return new kaltura.RequestBuilder('flavorasset', 'setContent', kparams);
-	};
-	
-	/**
-	 * Update flavor asset.
-	 * @param id string 
-	 * @param flavorAsset FlavorAsset 
-	 * @return KalturaFlavorAsset
-	 */
-	static update(id, flavorAsset){
-		let kparams = {};
-		kparams.id = id;
-		kparams.flavorAsset = flavorAsset;
-		return new kaltura.RequestBuilder('flavorasset', 'update', kparams);
+		kparams.task = task;
+		return new kaltura.RequestBuilder('exporttask', 'update', kparams);
 	};
 }
-module.exports.flavorAsset = flavorAsset;
+module.exports.exportTask = exportTask;
 
 
 /**
- *Class definition for the Kaltura service: flavorParamsOutput.
+ *Class definition for the Kaltura service: externalChannelProfile.
  * The available service actions:
- * @action get Get flavor params output object by ID.
- * @action list List flavor params output objects by filter and pager.
+ * @action add Insert new External channel for partner.
+ * @action delete Delete External channel by External channel id.
+ * @action list Returns all External channels for partner.
+ * @action update Update External channel details.
  */
-class flavorParamsOutput{
+class externalChannelProfile{
 	
 	/**
-	 * Get flavor params output object by ID.
-	 * @param id int 
-	 * @return KalturaFlavorParamsOutput
+	 * Insert new External channel for partner.
+	 * @param externalChannel ExternalChannelProfile External channel Object
+	 * @return KalturaExternalChannelProfile
 	 */
-	static get(id){
+	static add(externalChannel){
 		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('flavorparamsoutput', 'get', kparams);
+		kparams.externalChannel = externalChannel;
+		return new kaltura.RequestBuilder('externalchannelprofile', 'add', kparams);
 	};
 	
 	/**
-	 * List flavor params output objects by filter and pager.
-	 * @param filter FlavorParamsOutputFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaFlavorParamsOutputListResponse
+	 * Delete External channel by External channel id.
+	 * @param externalChannelId int External channel identifier
+	 * @return bool
 	 */
-	static listAction(filter = null, pager = null){
+	static deleteAction(externalChannelId){
 		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('flavorparamsoutput', 'list', kparams);
+		kparams.externalChannelId = externalChannelId;
+		return new kaltura.RequestBuilder('externalchannelprofile', 'delete', kparams);
+	};
+	
+	/**
+	 * Returns all External channels for partner.
+	 * @return KalturaExternalChannelProfileListResponse
+	 */
+	static listAction(){
+		let kparams = {};
+		return new kaltura.RequestBuilder('externalchannelprofile', 'list', kparams);
+	};
+	
+	/**
+	 * Update External channel details.
+	 * @param externalChannelId int External channel identifier
+	 * @param externalChannel ExternalChannelProfile External channel Object
+	 * @return KalturaExternalChannelProfile
+	 */
+	static update(externalChannelId, externalChannel){
+		let kparams = {};
+		kparams.externalChannelId = externalChannelId;
+		kparams.externalChannel = externalChannel;
+		return new kaltura.RequestBuilder('externalchannelprofile', 'update', kparams);
 	};
 }
-module.exports.flavorParamsOutput = flavorParamsOutput;
+module.exports.externalChannelProfile = externalChannelProfile;
 
 
 /**
- *Class definition for the Kaltura service: flavorParams.
+ *Class definition for the Kaltura service: favorite.
  * The available service actions:
- * @action add Add new Flavor Params.
- * @action delete Delete Flavor Params by ID.
- * @action get Get Flavor Params by ID.
- * @action getByConversionProfileId Get Flavor Params by Conversion Profile ID.
- * @action list List Flavor Params by filter with paging support (By default - all system default params will be listed too).
- * @action update Update Flavor Params by ID.
+ * @action add Add media to user&#39;s favorite list.
+ * @action delete Remove media from user&#39;s favorite list.
+ * @action list Retrieving users&#39; favorites.
  */
-class flavorParams{
+class favorite{
 	
 	/**
-	 * Add new Flavor Params.
-	 * @param flavorParams FlavorParams 
-	 * @return KalturaFlavorParams
+	 * Add media to user&#39;s favorite list.
+	 * @param favorite Favorite Favorite details
+	 * @return KalturaFavorite
 	 */
-	static add(flavorParams){
+	static add(favorite){
 		let kparams = {};
-		kparams.flavorParams = flavorParams;
-		return new kaltura.RequestBuilder('flavorparams', 'add', kparams);
+		kparams.favorite = favorite;
+		return new kaltura.RequestBuilder('favorite', 'add', kparams);
 	};
 	
 	/**
-	 * Delete Flavor Params by ID.
-	 * @param id int 
+	 * Remove media from user&#39;s favorite list.
+	 * @param id int Media identifier
+	 * @return bool
 	 */
 	static deleteAction(id){
 		let kparams = {};
 		kparams.id = id;
-		return new kaltura.RequestBuilder('flavorparams', 'delete', kparams);
+		return new kaltura.RequestBuilder('favorite', 'delete', kparams);
 	};
 	
 	/**
-	 * Get Flavor Params by ID.
+	 * Retrieving users&#39; favorites.
+	 * @param filter FavoriteFilter Request filter (optional, default: null)
+	 * @return KalturaFavoriteListResponse
+	 */
+	static listAction(filter = null){
+		let kparams = {};
+		kparams.filter = filter;
+		return new kaltura.RequestBuilder('favorite', 'list', kparams);
+	};
+}
+module.exports.favorite = favorite;
+
+
+/**
+ *Class definition for the Kaltura service: followTvSeries.
+ * The available service actions:
+ * @action add Add a user&#39;s tv series follow.
+ * Possible status codes: UserAlreadyFollowing = 8013, NotFound = 500007, InvalidAssetId = 4024.
+ * @action delete Delete a user&#39;s tv series follow.
+ * Possible status codes: UserNotFollowing = 8012, NotFound = 500007, InvalidAssetId = 4024, AnnouncementNotFound = 8006.
+ * @action list List user&#39;s tv series follows.
+ * Possible status codes:.
+ */
+class followTvSeries{
+	
+	/**
+	 * Add a user&#39;s tv series follow.
+ * Possible status codes: UserAlreadyFollowing = 8013, NotFound = 500007, InvalidAssetId = 4024.
+	 * @param followTvSeries FollowTvSeries 
+	 * @return KalturaFollowTvSeries
+	 */
+	static add(followTvSeries){
+		let kparams = {};
+		kparams.followTvSeries = followTvSeries;
+		return new kaltura.RequestBuilder('followtvseries', 'add', kparams);
+	};
+	
+	/**
+	 * Delete a user&#39;s tv series follow.
+ * Possible status codes: UserNotFollowing = 8012, NotFound = 500007, InvalidAssetId = 4024, AnnouncementNotFound = 8006.
+	 * @param assetId int 
+	 * @return bool
+	 */
+	static deleteAction(assetId){
+		let kparams = {};
+		kparams.assetId = assetId;
+		return new kaltura.RequestBuilder('followtvseries', 'delete', kparams);
+	};
+	
+	/**
+	 * List user&#39;s tv series follows.
+ * Possible status codes:.
+	 * @param filter FollowTvSeriesFilter 
+	 * @param pager FilterPager  (optional, default: null)
+	 * @return KalturaFollowTvSeriesListResponse
+	 */
+	static listAction(filter, pager = null){
+		let kparams = {};
+		kparams.filter = filter;
+		kparams.pager = pager;
+		return new kaltura.RequestBuilder('followtvseries', 'list', kparams);
+	};
+}
+module.exports.followTvSeries = followTvSeries;
+
+
+/**
+ *Class definition for the Kaltura service: homeNetwork.
+ * The available service actions:
+ * @action add Add a new home network to a household.
+ * @action delete Delete household’s existing home network.
+ * @action list Retrieve the household’s home networks.
+ * @action update Update and existing home network for a household.
+ */
+class homeNetwork{
+	
+	/**
+	 * Add a new home network to a household.
+	 * @param homeNetwork HomeNetwork Home network to add
+	 * @return KalturaHomeNetwork
+	 */
+	static add(homeNetwork){
+		let kparams = {};
+		kparams.homeNetwork = homeNetwork;
+		return new kaltura.RequestBuilder('homenetwork', 'add', kparams);
+	};
+	
+	/**
+	 * Delete household’s existing home network.
+	 * @param externalId string The network to update
+	 * @return bool
+	 */
+	static deleteAction(externalId){
+		let kparams = {};
+		kparams.externalId = externalId;
+		return new kaltura.RequestBuilder('homenetwork', 'delete', kparams);
+	};
+	
+	/**
+	 * Retrieve the household’s home networks.
+	 * @return KalturaHomeNetworkListResponse
+	 */
+	static listAction(){
+		let kparams = {};
+		return new kaltura.RequestBuilder('homenetwork', 'list', kparams);
+	};
+	
+	/**
+	 * Update and existing home network for a household.
+	 * @param externalId string Home network identifier
+	 * @param homeNetwork HomeNetwork Home network to update
+	 * @return KalturaHomeNetwork
+	 */
+	static update(externalId, homeNetwork){
+		let kparams = {};
+		kparams.externalId = externalId;
+		kparams.homeNetwork = homeNetwork;
+		return new kaltura.RequestBuilder('homenetwork', 'update', kparams);
+	};
+}
+module.exports.homeNetwork = homeNetwork;
+
+
+/**
+ *Class definition for the Kaltura service: household.
+ * The available service actions:
+ * @action add Creates a household for the user.
+ * @action delete Fully delete a household. Delete all of the household information, including users, devices, transactions and assets.
+ * @action get Returns the household model.
+ * @action resetFrequency Reset a household’s time limitation for removing user or device.
+ * @action resume Resumed a given household service to its previous service settings.
+ * @action suspend Suspend a given household service. Sets the household status to “suspended&quot;.The household service settings are maintained for later resume.
+ * @action update Update the household name and description.
+ */
+class household{
+	
+	/**
+	 * Creates a household for the user.
+	 * @param household Household Household object
+	 * @return KalturaHousehold
+	 */
+	static add(household){
+		let kparams = {};
+		kparams.household = household;
+		return new kaltura.RequestBuilder('household', 'add', kparams);
+	};
+	
+	/**
+	 * Fully delete a household. Delete all of the household information, including users, devices, transactions and assets.
+	 * @param id int Household identifier
+	 * @return bool
+	 */
+	static deleteAction(id){
+		let kparams = {};
+		kparams.id = id;
+		return new kaltura.RequestBuilder('household', 'delete', kparams);
+	};
+	
+	/**
+	 * Returns the household model.
+	 * @param id int Household identifier (optional, default: null)
+	 * @return KalturaHousehold
+	 */
+	static get(id = null){
+		let kparams = {};
+		kparams.id = id;
+		return new kaltura.RequestBuilder('household', 'get', kparams);
+	};
+	
+	/**
+	 * Reset a household’s time limitation for removing user or device.
+	 * @param frequencyType string Possible values: devices – reset the device change frequency.
+ * users – reset the user add/remove frequency (enum: KalturaHouseholdFrequencyType)
+	 * @return KalturaHousehold
+	 */
+	static resetFrequency(frequencyType){
+		let kparams = {};
+		kparams.frequencyType = frequencyType;
+		return new kaltura.RequestBuilder('household', 'resetFrequency', kparams);
+	};
+	
+	/**
+	 * Resumed a given household service to its previous service settings.
+	 * @return bool
+	 */
+	static resume(){
+		let kparams = {};
+		return new kaltura.RequestBuilder('household', 'resume', kparams);
+	};
+	
+	/**
+	 * Suspend a given household service. Sets the household status to “suspended&quot;.The household service settings are maintained for later resume.
+	 * @return bool
+	 */
+	static suspend(){
+		let kparams = {};
+		return new kaltura.RequestBuilder('household', 'suspend', kparams);
+	};
+	
+	/**
+	 * Update the household name and description.
+	 * @param household Household Household object
+	 * @return KalturaHousehold
+	 */
+	static update(household){
+		let kparams = {};
+		kparams.household = household;
+		return new kaltura.RequestBuilder('household', 'update', kparams);
+	};
+}
+module.exports.household = household;
+
+
+/**
+ *Class definition for the Kaltura service: householdDevice.
+ * The available service actions:
+ * @action add Registers a device to a household using pin code.
+ * @action addByPin Registers a device to a household using pin code.
+ * @action delete Removes a device from household.
+ * @action generatePin Generates device pin to use when adding a device to household by pin.
+ * @action get Returns device registration status to the supplied household.
+ * @action update Update the name of the device by UDID.
+ * @action updateStatus Update the name of the device by UDID.
+ */
+class householdDevice{
+	
+	/**
+	 * Registers a device to a household using pin code.
+	 * @param device HouseholdDevice Device
+	 * @return KalturaHouseholdDevice
+	 */
+	static add(device){
+		let kparams = {};
+		kparams.device = device;
+		return new kaltura.RequestBuilder('householddevice', 'add', kparams);
+	};
+	
+	/**
+	 * Registers a device to a household using pin code.
+	 * @param deviceName string Device name
+	 * @param pin string Pin code
+	 * @return KalturaHouseholdDevice
+	 */
+	static addByPin(deviceName, pin){
+		let kparams = {};
+		kparams.deviceName = deviceName;
+		kparams.pin = pin;
+		return new kaltura.RequestBuilder('householddevice', 'addByPin', kparams);
+	};
+	
+	/**
+	 * Removes a device from household.
+	 * @param udid string device UDID
+	 * @return bool
+	 */
+	static deleteAction(udid){
+		let kparams = {};
+		kparams.udid = udid;
+		return new kaltura.RequestBuilder('householddevice', 'delete', kparams);
+	};
+	
+	/**
+	 * Generates device pin to use when adding a device to household by pin.
+	 * @param udid string Device UDID
+	 * @param brandId int Device brand identifier
+	 * @return KalturaDevicePin
+	 */
+	static generatePin(udid, brandId){
+		let kparams = {};
+		kparams.udid = udid;
+		kparams.brandId = brandId;
+		return new kaltura.RequestBuilder('householddevice', 'generatePin', kparams);
+	};
+	
+	/**
+	 * Returns device registration status to the supplied household.
+	 * @return KalturaHouseholdDevice
+	 */
+	static get(){
+		let kparams = {};
+		return new kaltura.RequestBuilder('householddevice', 'get', kparams);
+	};
+	
+	/**
+	 * Update the name of the device by UDID.
+	 * @param udid string Device UDID
+	 * @param device HouseholdDevice Device object
+	 * @return KalturaHouseholdDevice
+	 */
+	static update(udid, device){
+		let kparams = {};
+		kparams.udid = udid;
+		kparams.device = device;
+		return new kaltura.RequestBuilder('householddevice', 'update', kparams);
+	};
+	
+	/**
+	 * Update the name of the device by UDID.
+	 * @param udid string Device UDID
+	 * @param status string Device status (enum: KalturaDeviceStatus)
+	 * @return bool
+	 */
+	static updateStatus(udid, status){
+		let kparams = {};
+		kparams.udid = udid;
+		kparams.status = status;
+		return new kaltura.RequestBuilder('householddevice', 'updateStatus', kparams);
+	};
+}
+module.exports.householdDevice = householdDevice;
+
+
+/**
+ *Class definition for the Kaltura service: householdLimitations.
+ * The available service actions:
+ * @action get Get the limitation module by id.
+ */
+class householdLimitations{
+	
+	/**
+	 * Get the limitation module by id.
 	 * @param id int 
-	 * @return KalturaFlavorParams
+	 * @return KalturaHouseholdLimitations
 	 */
 	static get(id){
 		let kparams = {};
 		kparams.id = id;
-		return new kaltura.RequestBuilder('flavorparams', 'get', kparams);
-	};
-	
-	/**
-	 * Get Flavor Params by Conversion Profile ID.
-	 * @param conversionProfileId int 
-	 * @return array
-	 */
-	static getByConversionProfileId(conversionProfileId){
-		let kparams = {};
-		kparams.conversionProfileId = conversionProfileId;
-		return new kaltura.RequestBuilder('flavorparams', 'getByConversionProfileId', kparams);
-	};
-	
-	/**
-	 * List Flavor Params by filter with paging support (By default - all system default params will be listed too).
-	 * @param filter FlavorParamsFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaFlavorParamsListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('flavorparams', 'list', kparams);
-	};
-	
-	/**
-	 * Update Flavor Params by ID.
-	 * @param id int 
-	 * @param flavorParams FlavorParams 
-	 * @return KalturaFlavorParams
-	 */
-	static update(id, flavorParams){
-		let kparams = {};
-		kparams.id = id;
-		kparams.flavorParams = flavorParams;
-		return new kaltura.RequestBuilder('flavorparams', 'update', kparams);
+		return new kaltura.RequestBuilder('householdlimitations', 'get', kparams);
 	};
 }
-module.exports.flavorParams = flavorParams;
+module.exports.householdLimitations = householdLimitations;
 
 
 /**
- *Class definition for the Kaltura service: groupUser.
+ *Class definition for the Kaltura service: householdPaymentGateway.
  * The available service actions:
- * @action add Add new GroupUser.
- * @action delete delete by userId and groupId.
- * @action list List all GroupUsers.
+ * @action delete Disable payment-gateway on the household.
+ * @action set Enable a payment-gateway provider for the household.
+ * @action getChargeID Get a household’s billing account identifier (charge ID) for a given payment gateway.
+ * @action invoke Gets the Payment Gateway Configuration for the payment gateway identifier given.
+ * @action list Get a list of all configured Payment Gateways providers available for the account. For each payment is provided with the household associated payment methods.
+ * @action setChargeID Set user billing account identifier (charge ID), for a specific household and a specific payment gateway.
  */
-class groupUser{
+class householdPaymentGateway{
 	
 	/**
-	 * Add new GroupUser.
-	 * @param groupUser GroupUser 
-	 * @return KalturaGroupUser
+	 * Disable payment-gateway on the household.
+	 * @param paymentGatewayId int Payment Gateway Identifier
+	 * @return bool
 	 */
-	static add(groupUser){
+	static deleteAction(paymentGatewayId){
 		let kparams = {};
-		kparams.groupUser = groupUser;
-		return new kaltura.RequestBuilder('groupuser', 'add', kparams);
+		kparams.paymentGatewayId = paymentGatewayId;
+		return new kaltura.RequestBuilder('householdpaymentgateway', 'delete', kparams);
 	};
 	
 	/**
-	 * delete by userId and groupId.
-	 * @param userId string 
-	 * @param groupId string 
+	 * Enable a payment-gateway provider for the household.
+	 * @param paymentGatewayId int Payment Gateway Identifier
+	 * @return bool
 	 */
-	static deleteAction(userId, groupId){
+	static set(paymentGatewayId){
+		let kparams = {};
+		kparams.paymentGatewayId = paymentGatewayId;
+		return new kaltura.RequestBuilder('householdpaymentgateway', 'set', kparams);
+	};
+	
+	/**
+	 * Get a household’s billing account identifier (charge ID) for a given payment gateway.
+	 * @param paymentGatewayExternalId string External identifier for the payment gateway
+	 * @return string
+	 */
+	static getChargeID(paymentGatewayExternalId){
+		let kparams = {};
+		kparams.paymentGatewayExternalId = paymentGatewayExternalId;
+		return new kaltura.RequestBuilder('householdpaymentgateway', 'getChargeID', kparams);
+	};
+	
+	/**
+	 * Gets the Payment Gateway Configuration for the payment gateway identifier given.
+	 * @param paymentGatewayId int The payemnt gateway for which to return the registration URL/s for the household. If omitted – return the regisration URL for the household for the default payment gateway
+	 * @param intent string Represent the client’s intent for working with the payment gateway. Intent options to be coordinated with the applicable payment gateway adapter
+	 * @param extraParameters array Additional parameters to send to the payment gateway adapter
+	 * @return KalturaPaymentGatewayConfiguration
+	 */
+	static invoke(paymentGatewayId, intent, extraParameters){
+		let kparams = {};
+		kparams.paymentGatewayId = paymentGatewayId;
+		kparams.intent = intent;
+		kparams.extraParameters = extraParameters;
+		return new kaltura.RequestBuilder('householdpaymentgateway', 'invoke', kparams);
+	};
+	
+	/**
+	 * Get a list of all configured Payment Gateways providers available for the account. For each payment is provided with the household associated payment methods.
+	 * @return KalturaHouseholdPaymentGatewayListResponse
+	 */
+	static listAction(){
+		let kparams = {};
+		return new kaltura.RequestBuilder('householdpaymentgateway', 'list', kparams);
+	};
+	
+	/**
+	 * Set user billing account identifier (charge ID), for a specific household and a specific payment gateway.
+	 * @param paymentGatewayExternalId string External identifier for the payment gateway
+	 * @param chargeId string The billing user account identifier for this household at the given payment gateway
+	 * @return bool
+	 */
+	static setChargeID(paymentGatewayExternalId, chargeId){
+		let kparams = {};
+		kparams.paymentGatewayExternalId = paymentGatewayExternalId;
+		kparams.chargeId = chargeId;
+		return new kaltura.RequestBuilder('householdpaymentgateway', 'setChargeID', kparams);
+	};
+}
+module.exports.householdPaymentGateway = householdPaymentGateway;
+
+
+/**
+ *Class definition for the Kaltura service: householdPaymentMethod.
+ * The available service actions:
+ * @action forceRemove Force remove of a payment method of the household.
+ * @action list Get a list of all configured Payment Gateways providers available for the account. For each payment is provided with the household associated payment methods.
+ * @action remove Removes a payment method of the household.
+ * @action setAsDefault Set a payment method as default for the household.
+ */
+class householdPaymentMethod{
+	
+	/**
+	 * Force remove of a payment method of the household.
+	 * @param paymentGatewayId int Payment Gateway Identifier
+	 * @param paymentMethodId int Payment method Identifier
+	 * @return bool
+	 */
+	static forceRemove(paymentGatewayId, paymentMethodId){
+		let kparams = {};
+		kparams.paymentGatewayId = paymentGatewayId;
+		kparams.paymentMethodId = paymentMethodId;
+		return new kaltura.RequestBuilder('householdpaymentmethod', 'forceRemove', kparams);
+	};
+	
+	/**
+	 * Get a list of all configured Payment Gateways providers available for the account. For each payment is provided with the household associated payment methods.
+	 * @return KalturaHouseholdPaymentMethodListResponse
+	 */
+	static listAction(){
+		let kparams = {};
+		return new kaltura.RequestBuilder('householdpaymentmethod', 'list', kparams);
+	};
+	
+	/**
+	 * Removes a payment method of the household.
+	 * @param paymentGatewayId int Payment Gateway Identifier
+	 * @param paymentMethodId int Payment method Identifier
+	 * @return bool
+	 */
+	static remove(paymentGatewayId, paymentMethodId){
+		let kparams = {};
+		kparams.paymentGatewayId = paymentGatewayId;
+		kparams.paymentMethodId = paymentMethodId;
+		return new kaltura.RequestBuilder('householdpaymentmethod', 'remove', kparams);
+	};
+	
+	/**
+	 * Set a payment method as default for the household.
+	 * @param paymentGatewayId int Payment Gateway Identifier
+	 * @param paymentMethodId int Payment method Identifier
+	 * @return bool
+	 */
+	static setAsDefault(paymentGatewayId, paymentMethodId){
+		let kparams = {};
+		kparams.paymentGatewayId = paymentGatewayId;
+		kparams.paymentMethodId = paymentMethodId;
+		return new kaltura.RequestBuilder('householdpaymentmethod', 'setAsDefault', kparams);
+	};
+}
+module.exports.householdPaymentMethod = householdPaymentMethod;
+
+
+/**
+ *Class definition for the Kaltura service: householdPremiumService.
+ * The available service actions:
+ * @action list Returns all the premium services allowed for the household.
+ */
+class householdPremiumService{
+	
+	/**
+	 * Returns all the premium services allowed for the household.
+	 * @return KalturaHouseholdPremiumServiceListResponse
+	 */
+	static listAction(){
+		let kparams = {};
+		return new kaltura.RequestBuilder('householdpremiumservice', 'list', kparams);
+	};
+}
+module.exports.householdPremiumService = householdPremiumService;
+
+
+/**
+ *Class definition for the Kaltura service: householdQuota.
+ * The available service actions:
+ * @action get Returns the household&#39;s quota data.
+ */
+class householdQuota{
+	
+	/**
+	 * Returns the household&#39;s quota data.
+	 * @return KalturaHouseholdQuota
+	 */
+	static get(){
+		let kparams = {};
+		return new kaltura.RequestBuilder('householdquota', 'get', kparams);
+	};
+}
+module.exports.householdQuota = householdQuota;
+
+
+/**
+ *Class definition for the Kaltura service: householdUser.
+ * The available service actions:
+ * @action add Adds a user to household.
+ * @action delete Removes a user from household.
+ */
+class householdUser{
+	
+	/**
+	 * Adds a user to household.
+	 * @param householdUser HouseholdUser User details to add
+	 * @return KalturaHouseholdUser
+	 */
+	static add(householdUser){
+		let kparams = {};
+		kparams.householdUser = householdUser;
+		return new kaltura.RequestBuilder('householduser', 'add', kparams);
+	};
+	
+	/**
+	 * Removes a user from household.
+	 * @param userId string The identifier of the user to delete
+	 * @return bool
+	 */
+	static deleteAction(userId){
 		let kparams = {};
 		kparams.userId = userId;
-		kparams.groupId = groupId;
-		return new kaltura.RequestBuilder('groupuser', 'delete', kparams);
-	};
-	
-	/**
-	 * List all GroupUsers.
-	 * @param filter GroupUserFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaGroupUserListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('groupuser', 'list', kparams);
+		return new kaltura.RequestBuilder('householduser', 'delete', kparams);
 	};
 }
-module.exports.groupUser = groupUser;
+module.exports.householdUser = householdUser;
 
 
 /**
- *Class definition for the Kaltura service: liveChannelSegment.
+ *Class definition for the Kaltura service: inboxMessage.
  * The available service actions:
- * @action add Add new live channel segment.
- * @action delete Delete live channel segment by id.
- * @action get Get live channel segment by id.
- * @action list List live channel segments by filter and pager.
- * @action update Update live channel segment by id.
+ * @action get TBD.
+ * @action list List inbox messages.
+ * @action updateStatus TBD.
  */
-class liveChannelSegment{
+class inboxMessage{
 	
 	/**
-	 * Add new live channel segment.
-	 * @param liveChannelSegment LiveChannelSegment 
-	 * @return KalturaLiveChannelSegment
-	 */
-	static add(liveChannelSegment){
-		let kparams = {};
-		kparams.liveChannelSegment = liveChannelSegment;
-		return new kaltura.RequestBuilder('livechannelsegment', 'add', kparams);
-	};
-	
-	/**
-	 * Delete live channel segment by id.
-	 * @param id int 
-	 */
-	static deleteAction(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('livechannelsegment', 'delete', kparams);
-	};
-	
-	/**
-	 * Get live channel segment by id.
-	 * @param id int 
-	 * @return KalturaLiveChannelSegment
+	 * TBD.
+	 * @param id string message id
+	 * @return KalturaInboxMessage
 	 */
 	static get(id){
 		let kparams = {};
 		kparams.id = id;
-		return new kaltura.RequestBuilder('livechannelsegment', 'get', kparams);
+		return new kaltura.RequestBuilder('inboxmessage', 'get', kparams);
 	};
 	
 	/**
-	 * List live channel segments by filter and pager.
-	 * @param filter LiveChannelSegmentFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaLiveChannelSegmentListResponse
+	 * List inbox messages.
+	 * @param filter InboxMessageFilter filter (optional, default: null)
+	 * @param pager FilterPager Page size and index (optional, default: null)
+	 * @return KalturaInboxMessageListResponse
 	 */
 	static listAction(filter = null, pager = null){
 		let kparams = {};
 		kparams.filter = filter;
 		kparams.pager = pager;
-		return new kaltura.RequestBuilder('livechannelsegment', 'list', kparams);
+		return new kaltura.RequestBuilder('inboxmessage', 'list', kparams);
 	};
 	
 	/**
-	 * Update live channel segment by id.
-	 * @param id int 
-	 * @param liveChannelSegment LiveChannelSegment 
-	 * @return KalturaLiveChannelSegment
-	 */
-	static update(id, liveChannelSegment){
-		let kparams = {};
-		kparams.id = id;
-		kparams.liveChannelSegment = liveChannelSegment;
-		return new kaltura.RequestBuilder('livechannelsegment', 'update', kparams);
-	};
-}
-module.exports.liveChannelSegment = liveChannelSegment;
-
-
-/**
- *Class definition for the Kaltura service: liveChannel.
- * The available service actions:
- * @action add Adds new live channel.
- * @action appendRecording Append recorded video to live entry.
- * @action delete Delete a live channel.
- * @action get Get live channel by ID.
- * @action isLive Delivering the status of a live channel (on-air/offline).
- * @action list List live channels by filter with paging support.
- * @action registerMediaServer Register media server to live entry.
- * @action setRecordedContent Sey recorded video to live entry.
- * @action unregisterMediaServer Unregister media server from live entry.
- * @action update Update live channel. Only the properties that were set will be updated.
- * @action validateRegisteredMediaServers Validates all registered media servers.
- */
-class liveChannel{
-	
-	/**
-	 * Adds new live channel.
-	 * @param liveChannel LiveChannel Live channel metadata
-	 * @return KalturaLiveChannel
-	 */
-	static add(liveChannel){
-		let kparams = {};
-		kparams.liveChannel = liveChannel;
-		return new kaltura.RequestBuilder('livechannel', 'add', kparams);
-	};
-	
-	/**
-	 * Append recorded video to live entry.
-	 * @param entryId string Live entry id
-	 * @param assetId string Live asset id
-	 * @param mediaServerIndex string  (enum: KalturaEntryServerNodeType)
-	 * @param resource DataCenterContentResource 
-	 * @param duration float in seconds
-	 * @param isLastChunk bool Is this the last recorded chunk in the current session (i.e. following a stream stop event) (optional, default: false)
-	 * @return KalturaLiveEntry
-	 */
-	static appendRecording(entryId, assetId, mediaServerIndex, resource, duration, isLastChunk = false){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.assetId = assetId;
-		kparams.mediaServerIndex = mediaServerIndex;
-		kparams.resource = resource;
-		kparams.duration = duration;
-		kparams.isLastChunk = isLastChunk;
-		return new kaltura.RequestBuilder('livechannel', 'appendRecording', kparams);
-	};
-	
-	/**
-	 * Delete a live channel.
-	 * @param id string Live channel id to delete
-	 */
-	static deleteAction(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('livechannel', 'delete', kparams);
-	};
-	
-	/**
-	 * Get live channel by ID.
-	 * @param id string Live channel id
-	 * @return KalturaLiveChannel
-	 */
-	static get(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('livechannel', 'get', kparams);
-	};
-	
-	/**
-	 * Delivering the status of a live channel (on-air/offline).
-	 * @param id string ID of the live channel
+	 * TBD.
+	 * @param id string 
+	 * @param status string  (enum: KalturaInboxMessageStatus)
 	 * @return bool
 	 */
-	static isLive(id){
+	static updateStatus(id, status){
 		let kparams = {};
 		kparams.id = id;
-		return new kaltura.RequestBuilder('livechannel', 'isLive', kparams);
-	};
-	
-	/**
-	 * List live channels by filter with paging support.
-	 * @param filter LiveChannelFilter live channel filter (optional, default: null)
-	 * @param pager FilterPager Pager (optional, default: null)
-	 * @return KalturaLiveChannelListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('livechannel', 'list', kparams);
-	};
-	
-	/**
-	 * Register media server to live entry.
-	 * @param entryId string Live entry id
-	 * @param hostname string Media server host name
-	 * @param mediaServerIndex string Media server index primary / secondary (enum: KalturaEntryServerNodeType)
-	 * @param applicationName string the application to which entry is being broadcast (optional, default: null)
-	 * @param liveEntryStatus int the status KalturaEntryServerNodeStatus::PLAYABLE | KalturaEntryServerNodeStatus::BROADCASTING (optional, enum: KalturaEntryServerNodeStatus, default: 1)
-	 * @return KalturaLiveEntry
-	 */
-	static registerMediaServer(entryId, hostname, mediaServerIndex, applicationName = null, liveEntryStatus = 1){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.hostname = hostname;
-		kparams.mediaServerIndex = mediaServerIndex;
-		kparams.applicationName = applicationName;
-		kparams.liveEntryStatus = liveEntryStatus;
-		return new kaltura.RequestBuilder('livechannel', 'registerMediaServer', kparams);
-	};
-	
-	/**
-	 * Sey recorded video to live entry.
-	 * @param entryId string Live entry id
-	 * @param mediaServerIndex string  (enum: KalturaEntryServerNodeType)
-	 * @param resource DataCenterContentResource 
-	 * @param duration float in seconds
-	 * @param recordedEntryId string Recorded entry Id (optional, default: null)
-	 * @param flavorParamsId int Recorded entry Id (optional, default: null)
-	 * @return KalturaLiveEntry
-	 */
-	static setRecordedContent(entryId, mediaServerIndex, resource, duration, recordedEntryId = null, flavorParamsId = null){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.mediaServerIndex = mediaServerIndex;
-		kparams.resource = resource;
-		kparams.duration = duration;
-		kparams.recordedEntryId = recordedEntryId;
-		kparams.flavorParamsId = flavorParamsId;
-		return new kaltura.RequestBuilder('livechannel', 'setRecordedContent', kparams);
-	};
-	
-	/**
-	 * Unregister media server from live entry.
-	 * @param entryId string Live entry id
-	 * @param hostname string Media server host name
-	 * @param mediaServerIndex string Media server index primary / secondary (enum: KalturaEntryServerNodeType)
-	 * @return KalturaLiveEntry
-	 */
-	static unregisterMediaServer(entryId, hostname, mediaServerIndex){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.hostname = hostname;
-		kparams.mediaServerIndex = mediaServerIndex;
-		return new kaltura.RequestBuilder('livechannel', 'unregisterMediaServer', kparams);
-	};
-	
-	/**
-	 * Update live channel. Only the properties that were set will be updated.
-	 * @param id string Live channel id to update
-	 * @param liveChannel LiveChannel Live channel metadata to update
-	 * @return KalturaLiveChannel
-	 */
-	static update(id, liveChannel){
-		let kparams = {};
-		kparams.id = id;
-		kparams.liveChannel = liveChannel;
-		return new kaltura.RequestBuilder('livechannel', 'update', kparams);
-	};
-	
-	/**
-	 * Validates all registered media servers.
-	 * @param entryId string Live entry id
-	 */
-	static validateRegisteredMediaServers(entryId){
-		let kparams = {};
-		kparams.entryId = entryId;
-		return new kaltura.RequestBuilder('livechannel', 'validateRegisteredMediaServers', kparams);
+		kparams.status = status;
+		return new kaltura.RequestBuilder('inboxmessage', 'updateStatus', kparams);
 	};
 }
-module.exports.liveChannel = liveChannel;
+module.exports.inboxMessage = inboxMessage;
 
 
 /**
- *Class definition for the Kaltura service: liveReports.
+ *Class definition for the Kaltura service: licensedUrl.
  * The available service actions:
- * @action exportToCsv .
- * @action getEvents .
- * @action getReport .
- * @action serveReport Will serve a requested report.
+ * @action get Get the URL for playing an asset - EPG or media (not available for recording for now).
  */
-class liveReports{
+class licensedUrl{
 	
 	/**
-	 * .
-	 * @param reportType int  (enum: KalturaLiveReportExportType)
-	 * @param params LiveReportExportParams 
-	 * @return KalturaLiveReportExportResponse
+	 * Get the URL for playing an asset - EPG or media (not available for recording for now).
+	 * @param request LicensedUrlBaseRequest 
+	 * @return KalturaLicensedUrl
 	 */
-	static exportToCsv(reportType, params){
+	static get(request){
 		let kparams = {};
-		kparams.reportType = reportType;
-		kparams.params = params;
-		return new kaltura.RequestBuilder('livereports', 'exportToCsv', kparams);
-	};
-	
-	/**
-	 * .
-	 * @param reportType string  (enum: KalturaLiveReportType)
-	 * @param filter LiveReportInputFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return array
-	 */
-	static getEvents(reportType, filter = null, pager = null){
-		let kparams = {};
-		kparams.reportType = reportType;
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('livereports', 'getEvents', kparams);
-	};
-	
-	/**
-	 * .
-	 * @param reportType string  (enum: KalturaLiveReportType)
-	 * @param filter LiveReportInputFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaLiveStatsListResponse
-	 */
-	static getReport(reportType, filter = null, pager = null){
-		let kparams = {};
-		kparams.reportType = reportType;
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('livereports', 'getReport', kparams);
-	};
-	
-	/**
-	 * Will serve a requested report.
-	 * @param id string - the requested id
-	 * @return string
-	 */
-	static serveReport(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('livereports', 'serveReport', kparams);
+		kparams.request = request;
+		return new kaltura.RequestBuilder('licensedurl', 'get', kparams);
 	};
 }
-module.exports.liveReports = liveReports;
+module.exports.licensedUrl = licensedUrl;
 
 
 /**
- *Class definition for the Kaltura service: liveStats.
+ *Class definition for the Kaltura service: messageTemplate.
  * The available service actions:
- * @action collect Will write to the event log a single line representing the event
- * KalturaStatsEvent $event.
+ * @action get Retrieve a message template used in push notifications and inbox.
+ * @action update Set the account’s push notifications and inbox messages templates.
  */
-class liveStats{
+class messageTemplate{
 	
 	/**
-	 * Will write to the event log a single line representing the event
- * KalturaStatsEvent $event.
-	 * @param event LiveStatsEvent 
-	 * @return bool
+	 * Retrieve a message template used in push notifications and inbox.
+	 * @param assetType int possible values: Asset type – Series (enum: KalturaOTTAssetType)
+	 * @return KalturaMessageTemplate
 	 */
-	static collect(event){
+	static get(assetType){
 		let kparams = {};
-		kparams.event = event;
-		return new kaltura.RequestBuilder('livestats', 'collect', kparams);
+		kparams.assetType = assetType;
+		return new kaltura.RequestBuilder('messagetemplate', 'get', kparams);
+	};
+	
+	/**
+	 * Set the account’s push notifications and inbox messages templates.
+	 * @param assetType int The asset type to update its template (enum: KalturaOTTAssetType)
+	 * @param template MessageTemplate The actual message with placeholders to be presented to the user
+	 * @return KalturaMessageTemplate
+	 */
+	static update(assetType, template){
+		let kparams = {};
+		kparams.assetType = assetType;
+		kparams.template = template;
+		return new kaltura.RequestBuilder('messagetemplate', 'update', kparams);
 	};
 }
-module.exports.liveStats = liveStats;
-
-
-/**
- *Class definition for the Kaltura service: liveStream.
- * The available service actions:
- * @action add Adds new live stream entry.
- * The entry will be queued for provision.
- * @action addLiveStreamPushPublishConfiguration Add new pushPublish configuration to entry.
- * @action appendRecording Append recorded video to live entry.
- * @action authenticate Authenticate live-stream entry against stream token and partner limitations.
- * @action createPeriodicSyncPoints Creates perioding metadata sync-point events on a live stream.
- * @action delete Delete a live stream entry.
- * @action get Get live stream entry by ID.
- * @action isLive Delivering the status of a live stream (on-air/offline) if it is possible.
- * @action list List live stream entries by filter with paging support.
- * @action regenerateStreamToken Regenerate new secure token for liveStream.
- * @action registerMediaServer Register media server to live entry.
- * @action removeLiveStreamPushPublishConfiguration Remove push publish configuration from entry.
- * @action setRecordedContent Sey recorded video to live entry.
- * @action unregisterMediaServer Unregister media server from live entry.
- * @action update Update live stream entry. Only the properties that were set will be updated.
- * @action updateOfflineThumbnailFromUrl Update entry thumbnail using url.
- * @action updateOfflineThumbnailJpeg Update live stream entry thumbnail using a raw jpeg file.
- * @action validateRegisteredMediaServers Validates all registered media servers.
- */
-class liveStream{
-	
-	/**
-	 * Adds new live stream entry.
- * The entry will be queued for provision.
-	 * @param liveStreamEntry LiveStreamEntry Live stream entry metadata
-	 * @param sourceType string Live stream source type (optional, enum: KalturaSourceType, default: null)
-	 * @return KalturaLiveStreamEntry
-	 */
-	static add(liveStreamEntry, sourceType = null){
-		let kparams = {};
-		kparams.liveStreamEntry = liveStreamEntry;
-		kparams.sourceType = sourceType;
-		return new kaltura.RequestBuilder('livestream', 'add', kparams);
-	};
-	
-	/**
-	 * Add new pushPublish configuration to entry.
-	 * @param entryId string 
-	 * @param protocol string  (enum: KalturaPlaybackProtocol)
-	 * @param url string  (optional, default: null)
-	 * @param liveStreamConfiguration LiveStreamConfiguration  (optional, default: null)
-	 * @return KalturaLiveStreamEntry
-	 */
-	static addLiveStreamPushPublishConfiguration(entryId, protocol, url = null, liveStreamConfiguration = null){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.protocol = protocol;
-		kparams.url = url;
-		kparams.liveStreamConfiguration = liveStreamConfiguration;
-		return new kaltura.RequestBuilder('livestream', 'addLiveStreamPushPublishConfiguration', kparams);
-	};
-	
-	/**
-	 * Append recorded video to live entry.
-	 * @param entryId string Live entry id
-	 * @param assetId string Live asset id
-	 * @param mediaServerIndex string  (enum: KalturaEntryServerNodeType)
-	 * @param resource DataCenterContentResource 
-	 * @param duration float in seconds
-	 * @param isLastChunk bool Is this the last recorded chunk in the current session (i.e. following a stream stop event) (optional, default: false)
-	 * @return KalturaLiveEntry
-	 */
-	static appendRecording(entryId, assetId, mediaServerIndex, resource, duration, isLastChunk = false){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.assetId = assetId;
-		kparams.mediaServerIndex = mediaServerIndex;
-		kparams.resource = resource;
-		kparams.duration = duration;
-		kparams.isLastChunk = isLastChunk;
-		return new kaltura.RequestBuilder('livestream', 'appendRecording', kparams);
-	};
-	
-	/**
-	 * Authenticate live-stream entry against stream token and partner limitations.
-	 * @param entryId string Live stream entry id
-	 * @param token string Live stream broadcasting token
-	 * @param hostname string Media server host name (optional, default: null)
-	 * @param mediaServerIndex string Media server index primary / secondary (optional, enum: KalturaEntryServerNodeType, default: null)
-	 * @param applicationName string the application to which entry is being broadcast (optional, default: null)
-	 * @return KalturaLiveStreamEntry
-	 */
-	static authenticate(entryId, token, hostname = null, mediaServerIndex = null, applicationName = null){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.token = token;
-		kparams.hostname = hostname;
-		kparams.mediaServerIndex = mediaServerIndex;
-		kparams.applicationName = applicationName;
-		return new kaltura.RequestBuilder('livestream', 'authenticate', kparams);
-	};
-	
-	/**
-	 * Creates perioding metadata sync-point events on a live stream.
-	 * @param entryId string Kaltura live-stream entry id
-	 * @param interval int Events interval in seconds
-	 * @param duration int Duration in seconds
-	 */
-	static createPeriodicSyncPoints(entryId, interval, duration){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.interval = interval;
-		kparams.duration = duration;
-		return new kaltura.RequestBuilder('livestream', 'createPeriodicSyncPoints', kparams);
-	};
-	
-	/**
-	 * Delete a live stream entry.
-	 * @param entryId string Live stream entry id to delete
-	 */
-	static deleteAction(entryId){
-		let kparams = {};
-		kparams.entryId = entryId;
-		return new kaltura.RequestBuilder('livestream', 'delete', kparams);
-	};
-	
-	/**
-	 * Get live stream entry by ID.
-	 * @param entryId string Live stream entry id
-	 * @param version int Desired version of the data (optional, default: -1)
-	 * @return KalturaLiveStreamEntry
-	 */
-	static get(entryId, version = -1){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.version = version;
-		return new kaltura.RequestBuilder('livestream', 'get', kparams);
-	};
-	
-	/**
-	 * Delivering the status of a live stream (on-air/offline) if it is possible.
-	 * @param id string ID of the live stream
-	 * @param protocol string protocol of the stream to test (enum: KalturaPlaybackProtocol)
-	 * @return bool
-	 */
-	static isLive(id, protocol){
-		let kparams = {};
-		kparams.id = id;
-		kparams.protocol = protocol;
-		return new kaltura.RequestBuilder('livestream', 'isLive', kparams);
-	};
-	
-	/**
-	 * List live stream entries by filter with paging support.
-	 * @param filter LiveStreamEntryFilter live stream entry filter (optional, default: null)
-	 * @param pager FilterPager Pager (optional, default: null)
-	 * @return KalturaLiveStreamListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('livestream', 'list', kparams);
-	};
-	
-	/**
-	 * Regenerate new secure token for liveStream.
-	 * @param entryId string Live stream entry id to regenerate secure token for
-	 */
-	static regenerateStreamToken(entryId){
-		let kparams = {};
-		kparams.entryId = entryId;
-		return new kaltura.RequestBuilder('livestream', 'regenerateStreamToken', kparams);
-	};
-	
-	/**
-	 * Register media server to live entry.
-	 * @param entryId string Live entry id
-	 * @param hostname string Media server host name
-	 * @param mediaServerIndex string Media server index primary / secondary (enum: KalturaEntryServerNodeType)
-	 * @param applicationName string the application to which entry is being broadcast (optional, default: null)
-	 * @param liveEntryStatus int the status KalturaEntryServerNodeStatus::PLAYABLE | KalturaEntryServerNodeStatus::BROADCASTING (optional, enum: KalturaEntryServerNodeStatus, default: 1)
-	 * @return KalturaLiveEntry
-	 */
-	static registerMediaServer(entryId, hostname, mediaServerIndex, applicationName = null, liveEntryStatus = 1){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.hostname = hostname;
-		kparams.mediaServerIndex = mediaServerIndex;
-		kparams.applicationName = applicationName;
-		kparams.liveEntryStatus = liveEntryStatus;
-		return new kaltura.RequestBuilder('livestream', 'registerMediaServer', kparams);
-	};
-	
-	/**
-	 * Remove push publish configuration from entry.
-	 * @param entryId string 
-	 * @param protocol string  (enum: KalturaPlaybackProtocol)
-	 * @return KalturaLiveStreamEntry
-	 */
-	static removeLiveStreamPushPublishConfiguration(entryId, protocol){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.protocol = protocol;
-		return new kaltura.RequestBuilder('livestream', 'removeLiveStreamPushPublishConfiguration', kparams);
-	};
-	
-	/**
-	 * Sey recorded video to live entry.
-	 * @param entryId string Live entry id
-	 * @param mediaServerIndex string  (enum: KalturaEntryServerNodeType)
-	 * @param resource DataCenterContentResource 
-	 * @param duration float in seconds
-	 * @param recordedEntryId string Recorded entry Id (optional, default: null)
-	 * @param flavorParamsId int Recorded entry Id (optional, default: null)
-	 * @return KalturaLiveEntry
-	 */
-	static setRecordedContent(entryId, mediaServerIndex, resource, duration, recordedEntryId = null, flavorParamsId = null){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.mediaServerIndex = mediaServerIndex;
-		kparams.resource = resource;
-		kparams.duration = duration;
-		kparams.recordedEntryId = recordedEntryId;
-		kparams.flavorParamsId = flavorParamsId;
-		return new kaltura.RequestBuilder('livestream', 'setRecordedContent', kparams);
-	};
-	
-	/**
-	 * Unregister media server from live entry.
-	 * @param entryId string Live entry id
-	 * @param hostname string Media server host name
-	 * @param mediaServerIndex string Media server index primary / secondary (enum: KalturaEntryServerNodeType)
-	 * @return KalturaLiveEntry
-	 */
-	static unregisterMediaServer(entryId, hostname, mediaServerIndex){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.hostname = hostname;
-		kparams.mediaServerIndex = mediaServerIndex;
-		return new kaltura.RequestBuilder('livestream', 'unregisterMediaServer', kparams);
-	};
-	
-	/**
-	 * Update live stream entry. Only the properties that were set will be updated.
-	 * @param entryId string Live stream entry id to update
-	 * @param liveStreamEntry LiveStreamEntry Live stream entry metadata to update
-	 * @return KalturaLiveStreamEntry
-	 */
-	static update(entryId, liveStreamEntry){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.liveStreamEntry = liveStreamEntry;
-		return new kaltura.RequestBuilder('livestream', 'update', kparams);
-	};
-	
-	/**
-	 * Update entry thumbnail using url.
-	 * @param entryId string live stream entry id
-	 * @param url string file url
-	 * @return KalturaLiveStreamEntry
-	 */
-	static updateOfflineThumbnailFromUrl(entryId, url){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.url = url;
-		return new kaltura.RequestBuilder('livestream', 'updateOfflineThumbnailFromUrl', kparams);
-	};
-	
-	/**
-	 * Update live stream entry thumbnail using a raw jpeg file.
-	 * @param entryId string live stream entry id
-	 * @param fileData file Jpeg file data
-	 * @return KalturaLiveStreamEntry
-	 */
-	static updateOfflineThumbnailJpeg(entryId, fileData){
-		let kparams = {};
-		kparams.entryId = entryId;
-		let kfiles = {};
-		kfiles.fileData = fileData;
-		return new kaltura.RequestBuilder('livestream', 'updateOfflineThumbnailJpeg', kparams, kfiles);
-	};
-	
-	/**
-	 * Validates all registered media servers.
-	 * @param entryId string Live entry id
-	 */
-	static validateRegisteredMediaServers(entryId){
-		let kparams = {};
-		kparams.entryId = entryId;
-		return new kaltura.RequestBuilder('livestream', 'validateRegisteredMediaServers', kparams);
-	};
-}
-module.exports.liveStream = liveStream;
-
-
-/**
- *Class definition for the Kaltura service: mediaInfo.
- * The available service actions:
- * @action list List media info objects by filter and pager.
- */
-class mediaInfo{
-	
-	/**
-	 * List media info objects by filter and pager.
-	 * @param filter MediaInfoFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaMediaInfoListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('mediainfo', 'list', kparams);
-	};
-}
-module.exports.mediaInfo = mediaInfo;
-
-
-/**
- *Class definition for the Kaltura service: media.
- * The available service actions:
- * @action add Add entry.
- * @action addContent Add content to media entry which is not yet associated with content (therefore is in status NO_CONTENT).
- * If the requirement is to replace the entry's associated content, use action updateContent.
- * @action addFromBulk Adds new media entry by importing an HTTP or FTP URL.
- * The entry will be queued for import and then for conversion.
- * This action should be exposed only to the batches.
- * @action addFromEntry Copy entry into new entry.
- * @action addFromFlavorAsset Copy flavor asset into new entry.
- * @action addFromRecordedWebcam Add new entry after the file was recored on the server and the token id exists.
- * @action addFromSearchResult Adds new media entry by importing the media file from a search provider.
- * This action should be used with the search service result.
- * @action addFromUploadedFile Add new entry after the specific media file was uploaded and the upload token id exists.
- * @action addFromUrl Adds new media entry by importing an HTTP or FTP URL.
- * The entry will be queued for import and then for conversion.
- * @action anonymousRank Anonymously rank a media entry, no validation is done on duplicate rankings.
- * @action approve Approve the media entry and mark the pending flags (if any) as moderated (this will make the entry playable).
- * @action approveReplace Approves media replacement.
- * @action bulkUploadAdd Add new bulk upload batch job
- * Conversion profile id can be specified in the API or in the CSV file, the one in the CSV file will be stronger.
- * If no conversion profile was specified, partner's default will be used.
- * @action cancelReplace Cancels media replacement.
- * @action convert Convert entry.
- * @action count Count media entries by filter.
- * @action delete Delete a media entry.
- * @action flag Flag inappropriate media entry for moderation.
- * @action get Get media entry by ID.
- * @action getMrss Get MRSS by entry id
- * XML will return as an escaped string.
- * @action list List media entries by filter with paging support.
- * @action listFlags List all pending flags for the media entry.
- * @action reject Reject the media entry and mark the pending flags (if any) as moderated (this will make the entry non playable).
- * @action requestConversion Request a new conversion job, this can be used to convert the media entry to a different format.
- * @action update Update media entry. Only the properties that were set will be updated.
- * @action updateContent Replace content associated with the media entry.
- * @action updateThumbnail Update media entry thumbnail by a specified time offset (In seconds)
- * If flavor params id not specified, source flavor will be used by default.
- * @action updateThumbnailFromSourceEntry Update media entry thumbnail from a different entry by a specified time offset (In seconds)
- * If flavor params id not specified, source flavor will be used by default.
- * @action updateThumbnailFromUrl Update entry thumbnail using url.
- * @action updateThumbnailJpeg Update media entry thumbnail using a raw jpeg file.
- * @action upload Upload a media file to Kaltura, then the file can be used to create a media entry.
- */
-class media{
-	
-	/**
-	 * Add entry.
-	 * @param entry MediaEntry 
-	 * @return KalturaMediaEntry
-	 */
-	static add(entry){
-		let kparams = {};
-		kparams.entry = entry;
-		return new kaltura.RequestBuilder('media', 'add', kparams);
-	};
-	
-	/**
-	 * Add content to media entry which is not yet associated with content (therefore is in status NO_CONTENT).
- * If the requirement is to replace the entry's associated content, use action updateContent.
-	 * @param entryId string 
-	 * @param resource Resource  (optional, default: null)
-	 * @return KalturaMediaEntry
-	 */
-	static addContent(entryId, resource = null){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.resource = resource;
-		return new kaltura.RequestBuilder('media', 'addContent', kparams);
-	};
-	
-	/**
-	 * Adds new media entry by importing an HTTP or FTP URL.
- * The entry will be queued for import and then for conversion.
- * This action should be exposed only to the batches.
-	 * @param mediaEntry MediaEntry Media entry metadata
-	 * @param url string An HTTP or FTP URL
-	 * @param bulkUploadId int The id of the bulk upload job
-	 * @return KalturaMediaEntry
-	 */
-	static addFromBulk(mediaEntry, url, bulkUploadId){
-		let kparams = {};
-		kparams.mediaEntry = mediaEntry;
-		kparams.url = url;
-		kparams.bulkUploadId = bulkUploadId;
-		return new kaltura.RequestBuilder('media', 'addFromBulk', kparams);
-	};
-	
-	/**
-	 * Copy entry into new entry.
-	 * @param sourceEntryId string Media entry id to copy from
-	 * @param mediaEntry MediaEntry Media entry metadata (optional, default: null)
-	 * @param sourceFlavorParamsId int The flavor to be used as the new entry source, source flavor will be used if not specified (optional, default: null)
-	 * @return KalturaMediaEntry
-	 */
-	static addFromEntry(sourceEntryId, mediaEntry = null, sourceFlavorParamsId = null){
-		let kparams = {};
-		kparams.sourceEntryId = sourceEntryId;
-		kparams.mediaEntry = mediaEntry;
-		kparams.sourceFlavorParamsId = sourceFlavorParamsId;
-		return new kaltura.RequestBuilder('media', 'addFromEntry', kparams);
-	};
-	
-	/**
-	 * Copy flavor asset into new entry.
-	 * @param sourceFlavorAssetId string Flavor asset id to be used as the new entry source
-	 * @param mediaEntry MediaEntry Media entry metadata (optional, default: null)
-	 * @return KalturaMediaEntry
-	 */
-	static addFromFlavorAsset(sourceFlavorAssetId, mediaEntry = null){
-		let kparams = {};
-		kparams.sourceFlavorAssetId = sourceFlavorAssetId;
-		kparams.mediaEntry = mediaEntry;
-		return new kaltura.RequestBuilder('media', 'addFromFlavorAsset', kparams);
-	};
-	
-	/**
-	 * Add new entry after the file was recored on the server and the token id exists.
-	 * @param mediaEntry MediaEntry Media entry metadata
-	 * @param webcamTokenId string Token id for the recored webcam file
-	 * @return KalturaMediaEntry
-	 */
-	static addFromRecordedWebcam(mediaEntry, webcamTokenId){
-		let kparams = {};
-		kparams.mediaEntry = mediaEntry;
-		kparams.webcamTokenId = webcamTokenId;
-		return new kaltura.RequestBuilder('media', 'addFromRecordedWebcam', kparams);
-	};
-	
-	/**
-	 * Adds new media entry by importing the media file from a search provider.
- * This action should be used with the search service result.
-	 * @param mediaEntry MediaEntry Media entry metadata (optional, default: null)
-	 * @param searchResult SearchResult Result object from search service (optional, default: null)
-	 * @return KalturaMediaEntry
-	 */
-	static addFromSearchResult(mediaEntry = null, searchResult = null){
-		let kparams = {};
-		kparams.mediaEntry = mediaEntry;
-		kparams.searchResult = searchResult;
-		return new kaltura.RequestBuilder('media', 'addFromSearchResult', kparams);
-	};
-	
-	/**
-	 * Add new entry after the specific media file was uploaded and the upload token id exists.
-	 * @param mediaEntry MediaEntry Media entry metadata
-	 * @param uploadTokenId string Upload token id
-	 * @return KalturaMediaEntry
-	 */
-	static addFromUploadedFile(mediaEntry, uploadTokenId){
-		let kparams = {};
-		kparams.mediaEntry = mediaEntry;
-		kparams.uploadTokenId = uploadTokenId;
-		return new kaltura.RequestBuilder('media', 'addFromUploadedFile', kparams);
-	};
-	
-	/**
-	 * Adds new media entry by importing an HTTP or FTP URL.
- * The entry will be queued for import and then for conversion.
-	 * @param mediaEntry MediaEntry Media entry metadata
-	 * @param url string An HTTP or FTP URL
-	 * @return KalturaMediaEntry
-	 */
-	static addFromUrl(mediaEntry, url){
-		let kparams = {};
-		kparams.mediaEntry = mediaEntry;
-		kparams.url = url;
-		return new kaltura.RequestBuilder('media', 'addFromUrl', kparams);
-	};
-	
-	/**
-	 * Anonymously rank a media entry, no validation is done on duplicate rankings.
-	 * @param entryId string 
-	 * @param rank int 
-	 */
-	static anonymousRank(entryId, rank){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.rank = rank;
-		return new kaltura.RequestBuilder('media', 'anonymousRank', kparams);
-	};
-	
-	/**
-	 * Approve the media entry and mark the pending flags (if any) as moderated (this will make the entry playable).
-	 * @param entryId string 
-	 */
-	static approve(entryId){
-		let kparams = {};
-		kparams.entryId = entryId;
-		return new kaltura.RequestBuilder('media', 'approve', kparams);
-	};
-	
-	/**
-	 * Approves media replacement.
-	 * @param entryId string Media entry id to replace
-	 * @return KalturaMediaEntry
-	 */
-	static approveReplace(entryId){
-		let kparams = {};
-		kparams.entryId = entryId;
-		return new kaltura.RequestBuilder('media', 'approveReplace', kparams);
-	};
-	
-	/**
-	 * Add new bulk upload batch job
- * Conversion profile id can be specified in the API or in the CSV file, the one in the CSV file will be stronger.
- * If no conversion profile was specified, partner's default will be used.
-	 * @param fileData file 
-	 * @param bulkUploadData BulkUploadJobData  (optional, default: null)
-	 * @param bulkUploadEntryData BulkUploadEntryData  (optional, default: null)
-	 * @return KalturaBulkUpload
-	 */
-	static bulkUploadAdd(fileData, bulkUploadData = null, bulkUploadEntryData = null){
-		let kparams = {};
-		let kfiles = {};
-		kfiles.fileData = fileData;
-		kparams.bulkUploadData = bulkUploadData;
-		kparams.bulkUploadEntryData = bulkUploadEntryData;
-		return new kaltura.RequestBuilder('media', 'bulkUploadAdd', kparams, kfiles);
-	};
-	
-	/**
-	 * Cancels media replacement.
-	 * @param entryId string Media entry id to cancel
-	 * @return KalturaMediaEntry
-	 */
-	static cancelReplace(entryId){
-		let kparams = {};
-		kparams.entryId = entryId;
-		return new kaltura.RequestBuilder('media', 'cancelReplace', kparams);
-	};
-	
-	/**
-	 * Convert entry.
-	 * @param entryId string Media entry id
-	 * @param conversionProfileId int  (optional, default: null)
-	 * @param dynamicConversionAttributes array  (optional, default: null)
-	 * @return bigint
-	 */
-	static convert(entryId, conversionProfileId = null, dynamicConversionAttributes = null){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.conversionProfileId = conversionProfileId;
-		kparams.dynamicConversionAttributes = dynamicConversionAttributes;
-		return new kaltura.RequestBuilder('media', 'convert', kparams);
-	};
-	
-	/**
-	 * Count media entries by filter.
-	 * @param filter MediaEntryFilter Media entry filter (optional, default: null)
-	 * @return int
-	 */
-	static count(filter = null){
-		let kparams = {};
-		kparams.filter = filter;
-		return new kaltura.RequestBuilder('media', 'count', kparams);
-	};
-	
-	/**
-	 * Delete a media entry.
-	 * @param entryId string Media entry id to delete
-	 */
-	static deleteAction(entryId){
-		let kparams = {};
-		kparams.entryId = entryId;
-		return new kaltura.RequestBuilder('media', 'delete', kparams);
-	};
-	
-	/**
-	 * Flag inappropriate media entry for moderation.
-	 * @param moderationFlag ModerationFlag 
-	 */
-	static flag(moderationFlag){
-		let kparams = {};
-		kparams.moderationFlag = moderationFlag;
-		return new kaltura.RequestBuilder('media', 'flag', kparams);
-	};
-	
-	/**
-	 * Get media entry by ID.
-	 * @param entryId string Media entry id
-	 * @param version int Desired version of the data (optional, default: -1)
-	 * @return KalturaMediaEntry
-	 */
-	static get(entryId, version = -1){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.version = version;
-		return new kaltura.RequestBuilder('media', 'get', kparams);
-	};
-	
-	/**
-	 * Get MRSS by entry id
- * XML will return as an escaped string.
-	 * @param entryId string Entry id
-	 * @param extendingItemsArray array  (optional, default: null)
-	 * @param features string  (optional, default: null)
-	 * @return string
-	 */
-	static getMrss(entryId, extendingItemsArray = null, features = null){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.extendingItemsArray = extendingItemsArray;
-		kparams.features = features;
-		return new kaltura.RequestBuilder('media', 'getMrss', kparams);
-	};
-	
-	/**
-	 * List media entries by filter with paging support.
-	 * @param filter MediaEntryFilter Media entry filter (optional, default: null)
-	 * @param pager FilterPager Pager (optional, default: null)
-	 * @return KalturaMediaListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('media', 'list', kparams);
-	};
-	
-	/**
-	 * List all pending flags for the media entry.
-	 * @param entryId string 
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaModerationFlagListResponse
-	 */
-	static listFlags(entryId, pager = null){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('media', 'listFlags', kparams);
-	};
-	
-	/**
-	 * Reject the media entry and mark the pending flags (if any) as moderated (this will make the entry non playable).
-	 * @param entryId string 
-	 */
-	static reject(entryId){
-		let kparams = {};
-		kparams.entryId = entryId;
-		return new kaltura.RequestBuilder('media', 'reject', kparams);
-	};
-	
-	/**
-	 * Request a new conversion job, this can be used to convert the media entry to a different format.
-	 * @param entryId string Media entry id
-	 * @param fileFormat string Format to convert
-	 * @return int
-	 */
-	static requestConversion(entryId, fileFormat){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.fileFormat = fileFormat;
-		return new kaltura.RequestBuilder('media', 'requestConversion', kparams);
-	};
-	
-	/**
-	 * Update media entry. Only the properties that were set will be updated.
-	 * @param entryId string Media entry id to update
-	 * @param mediaEntry MediaEntry Media entry metadata to update
-	 * @return KalturaMediaEntry
-	 */
-	static update(entryId, mediaEntry){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.mediaEntry = mediaEntry;
-		return new kaltura.RequestBuilder('media', 'update', kparams);
-	};
-	
-	/**
-	 * Replace content associated with the media entry.
-	 * @param entryId string Media entry id to update
-	 * @param resource Resource Resource to be used to replace entry media content
-	 * @param conversionProfileId int The conversion profile id to be used on the entry (optional, default: null)
-	 * @param advancedOptions EntryReplacementOptions Additional update content options (optional, default: null)
-	 * @return KalturaMediaEntry
-	 */
-	static updateContent(entryId, resource, conversionProfileId = null, advancedOptions = null){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.resource = resource;
-		kparams.conversionProfileId = conversionProfileId;
-		kparams.advancedOptions = advancedOptions;
-		return new kaltura.RequestBuilder('media', 'updateContent', kparams);
-	};
-	
-	/**
-	 * Update media entry thumbnail by a specified time offset (In seconds)
- * If flavor params id not specified, source flavor will be used by default.
-	 * @param entryId string Media entry id
-	 * @param timeOffset int Time offset (in seconds)
-	 * @param flavorParamsId int The flavor params id to be used (optional, default: null)
-	 * @return KalturaMediaEntry
-	 */
-	static updateThumbnail(entryId, timeOffset, flavorParamsId = null){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.timeOffset = timeOffset;
-		kparams.flavorParamsId = flavorParamsId;
-		return new kaltura.RequestBuilder('media', 'updateThumbnail', kparams);
-	};
-	
-	/**
-	 * Update media entry thumbnail from a different entry by a specified time offset (In seconds)
- * If flavor params id not specified, source flavor will be used by default.
-	 * @param entryId string Media entry id
-	 * @param sourceEntryId string Media entry id
-	 * @param timeOffset int Time offset (in seconds)
-	 * @param flavorParamsId int The flavor params id to be used (optional, default: null)
-	 * @return KalturaMediaEntry
-	 */
-	static updateThumbnailFromSourceEntry(entryId, sourceEntryId, timeOffset, flavorParamsId = null){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.sourceEntryId = sourceEntryId;
-		kparams.timeOffset = timeOffset;
-		kparams.flavorParamsId = flavorParamsId;
-		return new kaltura.RequestBuilder('media', 'updateThumbnailFromSourceEntry', kparams);
-	};
-	
-	/**
-	 * Update entry thumbnail using url.
-	 * @param entryId string Media entry id
-	 * @param url string file url
-	 * @return KalturaBaseEntry
-	 */
-	static updateThumbnailFromUrl(entryId, url){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.url = url;
-		return new kaltura.RequestBuilder('media', 'updateThumbnailFromUrl', kparams);
-	};
-	
-	/**
-	 * Update media entry thumbnail using a raw jpeg file.
-	 * @param entryId string Media entry id
-	 * @param fileData file Jpeg file data
-	 * @return KalturaMediaEntry
-	 */
-	static updateThumbnailJpeg(entryId, fileData){
-		let kparams = {};
-		kparams.entryId = entryId;
-		let kfiles = {};
-		kfiles.fileData = fileData;
-		return new kaltura.RequestBuilder('media', 'updateThumbnailJpeg', kparams, kfiles);
-	};
-	
-	/**
-	 * Upload a media file to Kaltura, then the file can be used to create a media entry.
-	 * @param fileData file The file data
-	 * @return string
-	 */
-	static upload(fileData){
-		let kparams = {};
-		let kfiles = {};
-		kfiles.fileData = fileData;
-		return new kaltura.RequestBuilder('media', 'upload', kparams, kfiles);
-	};
-}
-module.exports.media = media;
-
-
-/**
- *Class definition for the Kaltura service: mixing.
- * The available service actions:
- * @action add Adds a new mix.
- * If the dataContent is null, a default timeline will be created.
- * @action anonymousRank Anonymously rank a mix entry, no validation is done on duplicate rankings.
- * @action appendMediaEntry Appends a media entry to a the end of the mix timeline, this will save the mix timeline as a new version.
- * @action clone Clones an existing mix.
- * @action count Count mix entries by filter.
- * @action delete Delete a mix entry.
- * @action get Get mix entry by id.
- * @action getMixesByMediaId Get the mixes in which the media entry is included.
- * @action getReadyMediaEntries Get all ready media entries that exist in the given mix id.
- * @action list List entries by filter with paging support.
- * Return parameter is an array of mix entries.
- * @action update Update mix entry. Only the properties that were set will be updated.
- */
-class mixing{
-	
-	/**
-	 * Adds a new mix.
- * If the dataContent is null, a default timeline will be created.
-	 * @param mixEntry MixEntry Mix entry metadata
-	 * @return KalturaMixEntry
-	 */
-	static add(mixEntry){
-		let kparams = {};
-		kparams.mixEntry = mixEntry;
-		return new kaltura.RequestBuilder('mixing', 'add', kparams);
-	};
-	
-	/**
-	 * Anonymously rank a mix entry, no validation is done on duplicate rankings.
-	 * @param entryId string 
-	 * @param rank int 
-	 */
-	static anonymousRank(entryId, rank){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.rank = rank;
-		return new kaltura.RequestBuilder('mixing', 'anonymousRank', kparams);
-	};
-	
-	/**
-	 * Appends a media entry to a the end of the mix timeline, this will save the mix timeline as a new version.
-	 * @param mixEntryId string Mix entry to append to its timeline
-	 * @param mediaEntryId string Media entry to append to the timeline
-	 * @return KalturaMixEntry
-	 */
-	static appendMediaEntry(mixEntryId, mediaEntryId){
-		let kparams = {};
-		kparams.mixEntryId = mixEntryId;
-		kparams.mediaEntryId = mediaEntryId;
-		return new kaltura.RequestBuilder('mixing', 'appendMediaEntry', kparams);
-	};
-	
-	/**
-	 * Clones an existing mix.
-	 * @param entryId string Mix entry id to clone
-	 * @return KalturaMixEntry
-	 */
-	static cloneAction(entryId){
-		let kparams = {};
-		kparams.entryId = entryId;
-		return new kaltura.RequestBuilder('mixing', 'clone', kparams);
-	};
-	
-	/**
-	 * Count mix entries by filter.
-	 * @param filter MediaEntryFilter Media entry filter (optional, default: null)
-	 * @return int
-	 */
-	static count(filter = null){
-		let kparams = {};
-		kparams.filter = filter;
-		return new kaltura.RequestBuilder('mixing', 'count', kparams);
-	};
-	
-	/**
-	 * Delete a mix entry.
-	 * @param entryId string Mix entry id to delete
-	 */
-	static deleteAction(entryId){
-		let kparams = {};
-		kparams.entryId = entryId;
-		return new kaltura.RequestBuilder('mixing', 'delete', kparams);
-	};
-	
-	/**
-	 * Get mix entry by id.
-	 * @param entryId string Mix entry id
-	 * @param version int Desired version of the data (optional, default: -1)
-	 * @return KalturaMixEntry
-	 */
-	static get(entryId, version = -1){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.version = version;
-		return new kaltura.RequestBuilder('mixing', 'get', kparams);
-	};
-	
-	/**
-	 * Get the mixes in which the media entry is included.
-	 * @param mediaEntryId string 
-	 * @return array
-	 */
-	static getMixesByMediaId(mediaEntryId){
-		let kparams = {};
-		kparams.mediaEntryId = mediaEntryId;
-		return new kaltura.RequestBuilder('mixing', 'getMixesByMediaId', kparams);
-	};
-	
-	/**
-	 * Get all ready media entries that exist in the given mix id.
-	 * @param mixId string 
-	 * @param version int Desired version to get the data from (optional, default: -1)
-	 * @return array
-	 */
-	static getReadyMediaEntries(mixId, version = -1){
-		let kparams = {};
-		kparams.mixId = mixId;
-		kparams.version = version;
-		return new kaltura.RequestBuilder('mixing', 'getReadyMediaEntries', kparams);
-	};
-	
-	/**
-	 * List entries by filter with paging support.
- * Return parameter is an array of mix entries.
-	 * @param filter MixEntryFilter Mix entry filter (optional, default: null)
-	 * @param pager FilterPager Pager (optional, default: null)
-	 * @return KalturaMixListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('mixing', 'list', kparams);
-	};
-	
-	/**
-	 * Update mix entry. Only the properties that were set will be updated.
-	 * @param entryId string Mix entry id to update
-	 * @param mixEntry MixEntry Mix entry metadata to update
-	 * @return KalturaMixEntry
-	 */
-	static update(entryId, mixEntry){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.mixEntry = mixEntry;
-		return new kaltura.RequestBuilder('mixing', 'update', kparams);
-	};
-}
-module.exports.mixing = mixing;
+module.exports.messageTemplate = messageTemplate;
 
 
 /**
  *Class definition for the Kaltura service: notification.
  * The available service actions:
- * @action getClientNotification Return the notifications for a specific entry id and type.
+ * @action initiateCleanup TBD.
+ * @action register TBD.
+ * @action setDevicePushToken Registers the device push token to the push service.
  */
 class notification{
 	
 	/**
-	 * Return the notifications for a specific entry id and type.
-	 * @param entryId string 
-	 * @param type int  (enum: KalturaNotificationType)
-	 * @return KalturaClientNotification
+	 * TBD.
+	 * @return bool
 	 */
-	static getClientNotification(entryId, type){
+	static initiateCleanup(){
 		let kparams = {};
-		kparams.entryId = entryId;
+		return new kaltura.RequestBuilder('notification', 'initiateCleanup', kparams);
+	};
+	
+	/**
+	 * TBD.
+	 * @param identifier string In case type is "announcement", identifier should be the announcement ID. In case type is "system", identifier should be "login" (the login topic)
+	 * @param type string "announcement" - TV-Series topic, "system" - login topic (enum: KalturaNotificationType)
+	 * @return KalturaRegistryResponse
+	 */
+	static register(identifier, type){
+		let kparams = {};
+		kparams.identifier = identifier;
 		kparams.type = type;
-		return new kaltura.RequestBuilder('notification', 'getClientNotification', kparams);
+		return new kaltura.RequestBuilder('notification', 'register', kparams);
+	};
+	
+	/**
+	 * Registers the device push token to the push service.
+	 * @param pushToken string The device-application pair authentication for push delivery
+	 * @return bool
+	 */
+	static setDevicePushToken(pushToken){
+		let kparams = {};
+		kparams.pushToken = pushToken;
+		return new kaltura.RequestBuilder('notification', 'setDevicePushToken', kparams);
 	};
 }
 module.exports.notification = notification;
 
 
 /**
- *Class definition for the Kaltura service: partner.
+ *Class definition for the Kaltura service: notificationsPartnerSettings.
  * The available service actions:
- * @action count Count partner's existing sub-publishers (count includes the partner itself).
- * @action get Retrieve partner object by Id.
- * @action getInfo Retrieve all info attributed to the partner
- * This action expects no parameters. It returns information for the current KS partnerId.
- * @action getSecrets Retrieve partner secret and admin secret.
- * @action getStatistics Get usage statistics for a partner
- * Calculation is done according to partner's package.
- * @action getUsage Get usage statistics for a partner
- * Calculation is done according to partner's package
- * Additional data returned is a graph points of streaming usage in a timeframe
- * The resolution can be "days" or "months".
- * @action list List partners by filter with paging support
- * Current implementation will only list the sub partners of the partner initiating the api call (using the current KS).
- * This action is only partially implemented to support listing sub partners of a VAR partner.
- * @action listFeatureStatus List partner's current processes' statuses.
- * @action listPartnersForUser Retrieve a list of partner objects which the current user is allowed to access.
- * @action register Create a new Partner object.
- * @action update Update details and settings of an existing partner.
+ * @action get Retrieve the partner notification settings.
+ * @action update Update the account notification settings.
  */
-class partner{
+class notificationsPartnerSettings{
 	
 	/**
-	 * Count partner's existing sub-publishers (count includes the partner itself).
-	 * @param filter PartnerFilter  (optional, default: null)
-	 * @return int
+	 * Retrieve the partner notification settings.
+	 * @return KalturaNotificationsPartnerSettings
 	 */
-	static count(filter = null){
+	static get(){
 		let kparams = {};
-		kparams.filter = filter;
-		return new kaltura.RequestBuilder('partner', 'count', kparams);
+		return new kaltura.RequestBuilder('notificationspartnersettings', 'get', kparams);
 	};
 	
 	/**
-	 * Retrieve partner object by Id.
-	 * @param id int  (optional, default: null)
-	 * @return KalturaPartner
+	 * Update the account notification settings.
+	 * @param settings NotificationsPartnerSettings Account notification settings model
+	 * @return bool
 	 */
-	static get(id = null){
+	static update(settings){
 		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('partner', 'get', kparams);
-	};
-	
-	/**
-	 * Retrieve all info attributed to the partner
- * This action expects no parameters. It returns information for the current KS partnerId.
-	 * @return KalturaPartner
-	 */
-	static getInfo(){
-		let kparams = {};
-		return new kaltura.RequestBuilder('partner', 'getInfo', kparams);
-	};
-	
-	/**
-	 * Retrieve partner secret and admin secret.
-	 * @param partnerId int 
-	 * @param adminEmail string 
-	 * @param cmsPassword string 
-	 * @return KalturaPartner
-	 */
-	static getSecrets(partnerId, adminEmail, cmsPassword){
-		let kparams = {};
-		kparams.partnerId = partnerId;
-		kparams.adminEmail = adminEmail;
-		kparams.cmsPassword = cmsPassword;
-		return new kaltura.RequestBuilder('partner', 'getSecrets', kparams);
-	};
-	
-	/**
-	 * Get usage statistics for a partner
- * Calculation is done according to partner's package.
-	 * @return KalturaPartnerStatistics
-	 */
-	static getStatistics(){
-		let kparams = {};
-		return new kaltura.RequestBuilder('partner', 'getStatistics', kparams);
-	};
-	
-	/**
-	 * Get usage statistics for a partner
- * Calculation is done according to partner's package
- * Additional data returned is a graph points of streaming usage in a timeframe
- * The resolution can be "days" or "months".
-	 * @param year int  (optional)
-	 * @param month int  (optional, default: 1)
-	 * @param resolution string  (optional, enum: KalturaReportInterval, default: null)
-	 * @return KalturaPartnerUsage
-	 */
-	static getUsage(year = '', month = 1, resolution = null){
-		let kparams = {};
-		kparams.year = year;
-		kparams.month = month;
-		kparams.resolution = resolution;
-		return new kaltura.RequestBuilder('partner', 'getUsage', kparams);
-	};
-	
-	/**
-	 * List partners by filter with paging support
- * Current implementation will only list the sub partners of the partner initiating the api call (using the current KS).
- * This action is only partially implemented to support listing sub partners of a VAR partner.
-	 * @param filter PartnerFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaPartnerListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('partner', 'list', kparams);
-	};
-	
-	/**
-	 * List partner's current processes' statuses.
-	 * @return KalturaFeatureStatusListResponse
-	 */
-	static listFeatureStatus(){
-		let kparams = {};
-		return new kaltura.RequestBuilder('partner', 'listFeatureStatus', kparams);
-	};
-	
-	/**
-	 * Retrieve a list of partner objects which the current user is allowed to access.
-	 * @param partnerFilter PartnerFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaPartnerListResponse
-	 */
-	static listPartnersForUser(partnerFilter = null, pager = null){
-		let kparams = {};
-		kparams.partnerFilter = partnerFilter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('partner', 'listPartnersForUser', kparams);
-	};
-	
-	/**
-	 * Create a new Partner object.
-	 * @param partner Partner 
-	 * @param cmsPassword string  (optional)
-	 * @param templatePartnerId int  (optional, default: null)
-	 * @param silent bool  (optional, default: false)
-	 * @return KalturaPartner
-	 */
-	static register(partner, cmsPassword = '', templatePartnerId = null, silent = false){
-		let kparams = {};
-		kparams.partner = partner;
-		kparams.cmsPassword = cmsPassword;
-		kparams.templatePartnerId = templatePartnerId;
-		kparams.silent = silent;
-		return new kaltura.RequestBuilder('partner', 'register', kparams);
-	};
-	
-	/**
-	 * Update details and settings of an existing partner.
-	 * @param partner Partner 
-	 * @param allowEmpty bool  (optional, default: false)
-	 * @return KalturaPartner
-	 */
-	static update(partner, allowEmpty = false){
-		let kparams = {};
-		kparams.partner = partner;
-		kparams.allowEmpty = allowEmpty;
-		return new kaltura.RequestBuilder('partner', 'update', kparams);
+		kparams.settings = settings;
+		return new kaltura.RequestBuilder('notificationspartnersettings', 'update', kparams);
 	};
 }
-module.exports.partner = partner;
+module.exports.notificationsPartnerSettings = notificationsPartnerSettings;
 
 
 /**
- *Class definition for the Kaltura service: permissionItem.
+ *Class definition for the Kaltura service: notificationsSettings.
  * The available service actions:
- * @action add Adds a new permission item object to the account.
- * This action is available only to Kaltura system administrators.
- * @action delete Deletes an existing permission item object.
- * This action is available only to Kaltura system administrators.
- * @action get Retrieves a permission item object using its ID.
- * @action list Lists permission item objects that are associated with an account.
- * @action update Updates an existing permission item object.
- * This action is available only to Kaltura system administrators.
+ * @action get Retrieve the user’s notification settings.
+ * @action update Update the user’s notification settings.
  */
-class permissionItem{
+class notificationsSettings{
 	
 	/**
-	 * Adds a new permission item object to the account.
- * This action is available only to Kaltura system administrators.
-	 * @param permissionItem PermissionItem The new permission item
-	 * @return KalturaPermissionItem
+	 * Retrieve the user’s notification settings.
+	 * @return KalturaNotificationsSettings
 	 */
-	static add(permissionItem){
+	static get(){
 		let kparams = {};
-		kparams.permissionItem = permissionItem;
-		return new kaltura.RequestBuilder('permissionitem', 'add', kparams);
+		return new kaltura.RequestBuilder('notificationssettings', 'get', kparams);
 	};
 	
 	/**
-	 * Deletes an existing permission item object.
- * This action is available only to Kaltura system administrators.
-	 * @param permissionItemId int The permission item's unique identifier
-	 * @return KalturaPermissionItem
+	 * Update the user’s notification settings.
+	 * @param settings NotificationsSettings 
+	 * @return bool
 	 */
-	static deleteAction(permissionItemId){
+	static update(settings){
 		let kparams = {};
-		kparams.permissionItemId = permissionItemId;
-		return new kaltura.RequestBuilder('permissionitem', 'delete', kparams);
-	};
-	
-	/**
-	 * Retrieves a permission item object using its ID.
-	 * @param permissionItemId int The permission item's unique identifier
-	 * @return KalturaPermissionItem
-	 */
-	static get(permissionItemId){
-		let kparams = {};
-		kparams.permissionItemId = permissionItemId;
-		return new kaltura.RequestBuilder('permissionitem', 'get', kparams);
-	};
-	
-	/**
-	 * Lists permission item objects that are associated with an account.
-	 * @param filter PermissionItemFilter A filter used to exclude specific types of permission items (optional, default: null)
-	 * @param pager FilterPager A limit for the number of records to display on a page (optional, default: null)
-	 * @return KalturaPermissionItemListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('permissionitem', 'list', kparams);
-	};
-	
-	/**
-	 * Updates an existing permission item object.
- * This action is available only to Kaltura system administrators.
-	 * @param permissionItemId int The permission item's unique identifier
-	 * @param permissionItem PermissionItem Id The permission item's unique identifier
-	 * @return KalturaPermissionItem
-	 */
-	static update(permissionItemId, permissionItem){
-		let kparams = {};
-		kparams.permissionItemId = permissionItemId;
-		kparams.permissionItem = permissionItem;
-		return new kaltura.RequestBuilder('permissionitem', 'update', kparams);
+		kparams.settings = settings;
+		return new kaltura.RequestBuilder('notificationssettings', 'update', kparams);
 	};
 }
-module.exports.permissionItem = permissionItem;
+module.exports.notificationsSettings = notificationsSettings;
 
 
 /**
- *Class definition for the Kaltura service: permission.
+ *Class definition for the Kaltura service: ossAdapterProfile.
  * The available service actions:
- * @action add Adds a new permission object to the account.
- * @action delete Deletes an existing permission object.
- * @action get Retrieves a permission object using its ID.
- * @action getCurrentPermissions Retrieves a list of permissions that apply to the current KS.
- * @action list Lists permission objects that are associated with an account.
- * Blocked permissions are listed unless you use a filter to exclude them.
- * Blocked permissions are listed unless you use a filter to exclude them.
- * @action update Updates an existing permission object.
+ * @action add Insert new OSS adapter for partner.
+ * @action delete Delete OSS adapter by OSS adapter id.
+ * @action generateSharedSecret Generate oss adapter shared secret.
+ * @action update Update OSS adapter details.
  */
-class permission{
+class ossAdapterProfile{
 	
 	/**
-	 * Adds a new permission object to the account.
-	 * @param permission Permission The new permission
-	 * @return KalturaPermission
+	 * Insert new OSS adapter for partner.
+	 * @param ossAdapter OSSAdapterProfile OSS adapter Object
+	 * @return KalturaOSSAdapterProfile
 	 */
-	static add(permission){
+	static add(ossAdapter){
 		let kparams = {};
-		kparams.permission = permission;
-		return new kaltura.RequestBuilder('permission', 'add', kparams);
+		kparams.ossAdapter = ossAdapter;
+		return new kaltura.RequestBuilder('ossadapterprofile', 'add', kparams);
 	};
 	
 	/**
-	 * Deletes an existing permission object.
-	 * @param permissionName string The name assigned to the permission
-	 * @return KalturaPermission
+	 * Delete OSS adapter by OSS adapter id.
+	 * @param ossAdapterId int OSS adapter identifier
+	 * @return bool
 	 */
-	static deleteAction(permissionName){
+	static deleteAction(ossAdapterId){
 		let kparams = {};
-		kparams.permissionName = permissionName;
-		return new kaltura.RequestBuilder('permission', 'delete', kparams);
+		kparams.ossAdapterId = ossAdapterId;
+		return new kaltura.RequestBuilder('ossadapterprofile', 'delete', kparams);
 	};
 	
 	/**
-	 * Retrieves a permission object using its ID.
-	 * @param permissionName string The name assigned to the permission
-	 * @return KalturaPermission
+	 * Generate oss adapter shared secret.
+	 * @param ossAdapterId int OSS adapter identifier
+	 * @return KalturaOSSAdapterProfile
 	 */
-	static get(permissionName){
+	static generateSharedSecret(ossAdapterId){
 		let kparams = {};
-		kparams.permissionName = permissionName;
-		return new kaltura.RequestBuilder('permission', 'get', kparams);
+		kparams.ossAdapterId = ossAdapterId;
+		return new kaltura.RequestBuilder('ossadapterprofile', 'generateSharedSecret', kparams);
 	};
 	
 	/**
-	 * Retrieves a list of permissions that apply to the current KS.
-	 * @return string
+	 * Update OSS adapter details.
+	 * @param ossAdapterId int OSS adapter identifier
+	 * @param ossAdapter OSSAdapterProfile OSS adapter Object
+	 * @return KalturaOSSAdapterProfile
 	 */
-	static getCurrentPermissions(){
+	static update(ossAdapterId, ossAdapter){
 		let kparams = {};
-		return new kaltura.RequestBuilder('permission', 'getCurrentPermissions', kparams);
-	};
-	
-	/**
-	 * Lists permission objects that are associated with an account.
- * Blocked permissions are listed unless you use a filter to exclude them.
- * Blocked permissions are listed unless you use a filter to exclude them.
-	 * @param filter PermissionFilter A filter used to exclude specific types of permissions (optional, default: null)
-	 * @param pager FilterPager A limit for the number of records to display on a page (optional, default: null)
-	 * @return KalturaPermissionListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('permission', 'list', kparams);
-	};
-	
-	/**
-	 * Updates an existing permission object.
-	 * @param permissionName string The name assigned to the permission
-	 * @param permission Permission Name The name assigned to the permission
-	 * @return KalturaPermission
-	 */
-	static update(permissionName, permission){
-		let kparams = {};
-		kparams.permissionName = permissionName;
-		kparams.permission = permission;
-		return new kaltura.RequestBuilder('permission', 'update', kparams);
+		kparams.ossAdapterId = ossAdapterId;
+		kparams.ossAdapter = ossAdapter;
+		return new kaltura.RequestBuilder('ossadapterprofile', 'update', kparams);
 	};
 }
-module.exports.permission = permission;
+module.exports.ossAdapterProfile = ossAdapterProfile;
 
 
 /**
- *Class definition for the Kaltura service: playlist.
+ *Class definition for the Kaltura service: ottCategory.
  * The available service actions:
- * @action add Add new playlist
- * Note that all entries used in a playlist will become public and may appear in KalturaNetwork.
- * @action clone Clone an existing playlist.
- * @action delete Delete existing playlist.
- * @action execute Retrieve playlist for playing purpose.
- * @action executeFromContent Retrieve playlist for playing purpose, based on content.
- * @action executeFromFilters Revrieve playlist for playing purpose, based on media entry filters.
- * @action get Retrieve a playlist.
- * @action getStatsFromContent Retrieve playlist statistics.
- * @action list List available playlists.
- * @action update Update existing playlist
- * Note - you cannot change playlist type. updated playlist must be of the same type.
+ * @action get Retrieve the list of categories (hierarchical) and their associated channels.
  */
-class playlist{
+class ottCategory{
 	
 	/**
-	 * Add new playlist
- * Note that all entries used in a playlist will become public and may appear in KalturaNetwork.
-	 * @param playlist Playlist 
-	 * @param updateStats bool indicates that the playlist statistics attributes should be updated synchronously now (optional, default: false)
-	 * @return KalturaPlaylist
-	 */
-	static add(playlist, updateStats = false){
-		let kparams = {};
-		kparams.playlist = playlist;
-		kparams.updateStats = updateStats;
-		return new kaltura.RequestBuilder('playlist', 'add', kparams);
-	};
-	
-	/**
-	 * Clone an existing playlist.
-	 * @param id string Id of the playlist to clone
-	 * @param newPlaylist Playlist Parameters defined here will override the ones in the cloned playlist (optional, default: null)
-	 * @return KalturaPlaylist
-	 */
-	static cloneAction(id, newPlaylist = null){
-		let kparams = {};
-		kparams.id = id;
-		kparams.newPlaylist = newPlaylist;
-		return new kaltura.RequestBuilder('playlist', 'clone', kparams);
-	};
-	
-	/**
-	 * Delete existing playlist.
-	 * @param id string 
-	 */
-	static deleteAction(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('playlist', 'delete', kparams);
-	};
-	
-	/**
-	 * Retrieve playlist for playing purpose.
-	 * @param id string 
-	 * @param detailed string  (optional)
-	 * @param playlistContext Context  (optional, default: null)
-	 * @param filter MediaEntryFilterForPlaylist  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return array
-	 */
-	static execute(id, detailed = '', playlistContext = null, filter = null, pager = null){
-		let kparams = {};
-		kparams.id = id;
-		kparams.detailed = detailed;
-		kparams.playlistContext = playlistContext;
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('playlist', 'execute', kparams);
-	};
-	
-	/**
-	 * Retrieve playlist for playing purpose, based on content.
-	 * @param playlistType int  (enum: KalturaPlaylistType)
-	 * @param playlistContent string 
-	 * @param detailed string  (optional)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return array
-	 */
-	static executeFromContent(playlistType, playlistContent, detailed = '', pager = null){
-		let kparams = {};
-		kparams.playlistType = playlistType;
-		kparams.playlistContent = playlistContent;
-		kparams.detailed = detailed;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('playlist', 'executeFromContent', kparams);
-	};
-	
-	/**
-	 * Revrieve playlist for playing purpose, based on media entry filters.
-	 * @param filters array 
-	 * @param totalResults int 
-	 * @param detailed string  (optional, default: 1)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return array
-	 */
-	static executeFromFilters(filters, totalResults, detailed = 1, pager = null){
-		let kparams = {};
-		kparams.filters = filters;
-		kparams.totalResults = totalResults;
-		kparams.detailed = detailed;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('playlist', 'executeFromFilters', kparams);
-	};
-	
-	/**
-	 * Retrieve a playlist.
-	 * @param id string 
-	 * @param version int Desired version of the data (optional, default: -1)
-	 * @return KalturaPlaylist
-	 */
-	static get(id, version = -1){
-		let kparams = {};
-		kparams.id = id;
-		kparams.version = version;
-		return new kaltura.RequestBuilder('playlist', 'get', kparams);
-	};
-	
-	/**
-	 * Retrieve playlist statistics.
-	 * @param playlistType int  (enum: KalturaPlaylistType)
-	 * @param playlistContent string 
-	 * @return KalturaPlaylist
-	 */
-	static getStatsFromContent(playlistType, playlistContent){
-		let kparams = {};
-		kparams.playlistType = playlistType;
-		kparams.playlistContent = playlistContent;
-		return new kaltura.RequestBuilder('playlist', 'getStatsFromContent', kparams);
-	};
-	
-	/**
-	 * List available playlists.
-	 * @param filter PlaylistFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaPlaylistListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('playlist', 'list', kparams);
-	};
-	
-	/**
-	 * Update existing playlist
- * Note - you cannot change playlist type. updated playlist must be of the same type.
-	 * @param id string 
-	 * @param playlist Playlist 
-	 * @param updateStats bool  (optional, default: false)
-	 * @return KalturaPlaylist
-	 */
-	static update(id, playlist, updateStats = false){
-		let kparams = {};
-		kparams.id = id;
-		kparams.playlist = playlist;
-		kparams.updateStats = updateStats;
-		return new kaltura.RequestBuilder('playlist', 'update', kparams);
-	};
-}
-module.exports.playlist = playlist;
-
-
-/**
- *Class definition for the Kaltura service: report.
- * The available service actions:
- * @action execute .
- * @action getBaseTotal report getBaseTotal action allows to get a the total base for storage reports.
- * @action getGraphs report getGraphs action allows to get a graph data for a specific report.
- * @action getTable report getTable action allows to get a graph data for a specific report.
- * @action getTotal report getTotal action allows to get a graph data for a specific report.
- * @action getUrlForReportAsCsv will create a Csv file for the given report and return the URL to access it.
- * @action serve Will serve a requested report.
- */
-class report{
-	
-	/**
-	 * .
-	 * @param id int 
-	 * @param params array  (optional, default: null)
-	 * @return KalturaReportResponse
-	 */
-	static execute(id, params = null){
-		let kparams = {};
-		kparams.id = id;
-		kparams.params = params;
-		return new kaltura.RequestBuilder('report', 'execute', kparams);
-	};
-	
-	/**
-	 * report getBaseTotal action allows to get a the total base for storage reports.
-	 * @param reportType string  (enum: KalturaReportType)
-	 * @param reportInputFilter ReportInputFilter 
-	 * @param objectIds string - one ID or more (separated by ',') of specific objects to query (optional, default: null)
-	 * @return array
-	 */
-	static getBaseTotal(reportType, reportInputFilter, objectIds = null){
-		let kparams = {};
-		kparams.reportType = reportType;
-		kparams.reportInputFilter = reportInputFilter;
-		kparams.objectIds = objectIds;
-		return new kaltura.RequestBuilder('report', 'getBaseTotal', kparams);
-	};
-	
-	/**
-	 * report getGraphs action allows to get a graph data for a specific report.
-	 * @param reportType string  (enum: KalturaReportType)
-	 * @param reportInputFilter ReportInputFilter 
-	 * @param dimension string  (optional, default: null)
-	 * @param objectIds string - one ID or more (separated by ',') of specific objects to query (optional, default: null)
-	 * @return array
-	 */
-	static getGraphs(reportType, reportInputFilter, dimension = null, objectIds = null){
-		let kparams = {};
-		kparams.reportType = reportType;
-		kparams.reportInputFilter = reportInputFilter;
-		kparams.dimension = dimension;
-		kparams.objectIds = objectIds;
-		return new kaltura.RequestBuilder('report', 'getGraphs', kparams);
-	};
-	
-	/**
-	 * report getTable action allows to get a graph data for a specific report.
-	 * @param reportType string  (enum: KalturaReportType)
-	 * @param reportInputFilter ReportInputFilter 
-	 * @param pager FilterPager 
-	 * @param order string  (optional, default: null)
-	 * @param objectIds string - one ID or more (separated by ',') of specific objects to query (optional, default: null)
-	 * @return KalturaReportTable
-	 */
-	static getTable(reportType, reportInputFilter, pager, order = null, objectIds = null){
-		let kparams = {};
-		kparams.reportType = reportType;
-		kparams.reportInputFilter = reportInputFilter;
-		kparams.pager = pager;
-		kparams.order = order;
-		kparams.objectIds = objectIds;
-		return new kaltura.RequestBuilder('report', 'getTable', kparams);
-	};
-	
-	/**
-	 * report getTotal action allows to get a graph data for a specific report.
-	 * @param reportType string  (enum: KalturaReportType)
-	 * @param reportInputFilter ReportInputFilter 
-	 * @param objectIds string - one ID or more (separated by ',') of specific objects to query (optional, default: null)
-	 * @return KalturaReportTotal
-	 */
-	static getTotal(reportType, reportInputFilter, objectIds = null){
-		let kparams = {};
-		kparams.reportType = reportType;
-		kparams.reportInputFilter = reportInputFilter;
-		kparams.objectIds = objectIds;
-		return new kaltura.RequestBuilder('report', 'getTotal', kparams);
-	};
-	
-	/**
-	 * will create a Csv file for the given report and return the URL to access it.
-	 * @param reportTitle string The title of the report to display at top of CSV
-	 * @param reportText string The text of the filter of the report
-	 * @param headers string The headers of the columns - a map between the enumerations on the server side and the their display text
-	 * @param reportType string  (enum: KalturaReportType)
-	 * @param reportInputFilter ReportInputFilter 
-	 * @param dimension string  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @param order string  (optional, default: null)
-	 * @param objectIds string - one ID or more (separated by ',') of specific objects to query (optional, default: null)
-	 * @return string
-	 */
-	static getUrlForReportAsCsv(reportTitle, reportText, headers, reportType, reportInputFilter, dimension = null, pager = null, order = null, objectIds = null){
-		let kparams = {};
-		kparams.reportTitle = reportTitle;
-		kparams.reportText = reportText;
-		kparams.headers = headers;
-		kparams.reportType = reportType;
-		kparams.reportInputFilter = reportInputFilter;
-		kparams.dimension = dimension;
-		kparams.pager = pager;
-		kparams.order = order;
-		kparams.objectIds = objectIds;
-		return new kaltura.RequestBuilder('report', 'getUrlForReportAsCsv', kparams);
-	};
-	
-	/**
-	 * Will serve a requested report.
-	 * @param id string - the requested id
-	 * @return string
-	 */
-	static serve(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('report', 'serve', kparams);
-	};
-}
-module.exports.report = report;
-
-
-/**
- *Class definition for the Kaltura service: responseProfile.
- * The available service actions:
- * @action add Add new response profile.
- * @action clone Clone an existing response profile.
- * @action delete Delete response profile by id.
- * @action get Get response profile by id.
- * @action list List response profiles by filter and pager.
- * @action recalculate Recalculate response profile cached objects.
- * @action update Update response profile by id.
- * @action updateStatus Update response profile status by id.
- */
-class responseProfile{
-	
-	/**
-	 * Add new response profile.
-	 * @param addResponseProfile ResponseProfile 
-	 * @return KalturaResponseProfile
-	 */
-	static add(addResponseProfile){
-		let kparams = {};
-		kparams.addResponseProfile = addResponseProfile;
-		return new kaltura.RequestBuilder('responseprofile', 'add', kparams);
-	};
-	
-	/**
-	 * Clone an existing response profile.
-	 * @param id int 
-	 * @param profile ResponseProfile 
-	 * @return KalturaResponseProfile
-	 */
-	static cloneAction(id, profile){
-		let kparams = {};
-		kparams.id = id;
-		kparams.profile = profile;
-		return new kaltura.RequestBuilder('responseprofile', 'clone', kparams);
-	};
-	
-	/**
-	 * Delete response profile by id.
-	 * @param id int 
-	 */
-	static deleteAction(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('responseprofile', 'delete', kparams);
-	};
-	
-	/**
-	 * Get response profile by id.
-	 * @param id int 
-	 * @return KalturaResponseProfile
+	 * Retrieve the list of categories (hierarchical) and their associated channels.
+	 * @param id int Category Identifier
+	 * @return KalturaOTTCategory
 	 */
 	static get(id){
 		let kparams = {};
 		kparams.id = id;
-		return new kaltura.RequestBuilder('responseprofile', 'get', kparams);
+		return new kaltura.RequestBuilder('ottcategory', 'get', kparams);
+	};
+}
+module.exports.ottCategory = ottCategory;
+
+
+/**
+ *Class definition for the Kaltura service: ottUser.
+ * The available service actions:
+ * @action activate Activate the account by activation token.
+ * @action addRole Edit user details.
+ * @action anonymousLogin Returns tokens (KS and refresh token) for anonymous access.
+ * @action delete Permanently delete a user. User to delete cannot be an exclusive household master, and cannot be default user.
+ * @action get Retrieving users&#39; data.
+ * @action getEncryptedUserId Resend the activation token to a user.
+ * @action list Retrieve user by external identifier or username.
+ * @action login User sign-in via a time-expired sign-in PIN.
+ * @action loginWithPin User sign-in via a time-expired sign-in PIN.
+ * @action logout Logout the calling user.
+ * @action refreshSession Returns new Kaltura session (ks) for the user, using the supplied refresh_token (only if it&#39;s valid and not expired).
+ * @action register Sign up a new user.
+ * @action resendActivationToken Resend the activation token to a user.
+ * @action resetPassword Send an e-mail with URL to enable the user to set new password.
+ * @action setInitialPassword Renew the user&#39;s password after validating the token that sent as part of URL in e-mail.
+ * @action update Given a user name and existing password, change to a new password.
+ * @action updateLoginData Given a user name and existing password, change to a new password.
+ */
+class ottUser{
+	
+	/**
+	 * Activate the account by activation token.
+	 * @param partnerId int The partner ID
+	 * @param username string Username of the user to activate
+	 * @param activationToken string Activation token of the user
+	 * @return KalturaOTTUser
+	 */
+	static activate(partnerId, username, activationToken){
+		let kparams = {};
+		kparams.partnerId = partnerId;
+		kparams.username = username;
+		kparams.activationToken = activationToken;
+		return new kaltura.RequestBuilder('ottuser', 'activate', kparams);
 	};
 	
 	/**
-	 * List response profiles by filter and pager.
-	 * @param filter ResponseProfileFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaResponseProfileListResponse
+	 * Edit user details.
+	 * @param roleId int The role identifier to add
+	 * @return bool
 	 */
-	static listAction(filter = null, pager = null){
+	static addRole(roleId){
+		let kparams = {};
+		kparams.roleId = roleId;
+		return new kaltura.RequestBuilder('ottuser', 'addRole', kparams);
+	};
+	
+	/**
+	 * Returns tokens (KS and refresh token) for anonymous access.
+	 * @param partnerId int The partner ID
+	 * @param udid string The caller device's UDID (optional, default: null)
+	 * @return KalturaLoginSession
+	 */
+	static anonymousLogin(partnerId, udid = null){
+		let kparams = {};
+		kparams.partnerId = partnerId;
+		kparams.udid = udid;
+		return new kaltura.RequestBuilder('ottuser', 'anonymousLogin', kparams);
+	};
+	
+	/**
+	 * Permanently delete a user. User to delete cannot be an exclusive household master, and cannot be default user.
+	 * @return bool
+	 */
+	static deleteAction(){
+		let kparams = {};
+		return new kaltura.RequestBuilder('ottuser', 'delete', kparams);
+	};
+	
+	/**
+	 * Retrieving users&#39; data.
+	 * @return KalturaOTTUser
+	 */
+	static get(){
+		let kparams = {};
+		return new kaltura.RequestBuilder('ottuser', 'get', kparams);
+	};
+	
+	/**
+	 * Resend the activation token to a user.
+	 * @return KalturaStringValue
+	 */
+	static getEncryptedUserId(){
+		let kparams = {};
+		return new kaltura.RequestBuilder('ottuser', 'getEncryptedUserId', kparams);
+	};
+	
+	/**
+	 * Retrieve user by external identifier or username.
+	 * @param filter OTTUserFilter Filter request
+	 * @return KalturaOTTUserListResponse
+	 */
+	static listAction(filter){
 		let kparams = {};
 		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('responseprofile', 'list', kparams);
+		return new kaltura.RequestBuilder('ottuser', 'list', kparams);
 	};
 	
 	/**
-	 * Recalculate response profile cached objects.
-	 * @param options ResponseProfileCacheRecalculateOptions 
-	 * @return KalturaResponseProfileCacheRecalculateResults
+	 * User sign-in via a time-expired sign-in PIN.
+	 * @param partnerId int Partner Identifier
+	 * @param username string user name (optional, default: null)
+	 * @param password string password (optional, default: null)
+	 * @param extraParams map extra params (optional, default: null)
+	 * @param udid string Device UDID (optional, default: null)
+	 * @return KalturaLoginResponse
 	 */
-	static recalculate(options){
+	static login(partnerId, username = null, password = null, extraParams = null, udid = null){
 		let kparams = {};
-		kparams.options = options;
-		return new kaltura.RequestBuilder('responseprofile', 'recalculate', kparams);
-	};
-	
-	/**
-	 * Update response profile by id.
-	 * @param id int 
-	 * @param updateResponseProfile ResponseProfile 
-	 * @return KalturaResponseProfile
-	 */
-	static update(id, updateResponseProfile){
-		let kparams = {};
-		kparams.id = id;
-		kparams.updateResponseProfile = updateResponseProfile;
-		return new kaltura.RequestBuilder('responseprofile', 'update', kparams);
-	};
-	
-	/**
-	 * Update response profile status by id.
-	 * @param id int 
-	 * @param status int  (enum: KalturaResponseProfileStatus)
-	 * @return KalturaResponseProfile
-	 */
-	static updateStatus(id, status){
-		let kparams = {};
-		kparams.id = id;
-		kparams.status = status;
-		return new kaltura.RequestBuilder('responseprofile', 'updateStatus', kparams);
-	};
-}
-module.exports.responseProfile = responseProfile;
-
-
-/**
- *Class definition for the Kaltura service: schema.
- * The available service actions:
- */
-class schema{
-}
-module.exports.schema = schema;
-
-
-/**
- *Class definition for the Kaltura service: search.
- * The available service actions:
- * @action externalLogin .
- * @action getMediaInfo Retrieve extra information about media found in search action
- * Some providers return only part of the fields needed to create entry from, use this action to get the rest of the fields.
- * @action search Search for media in one of the supported media providers.
- * @action searchUrl Search for media given a specific URL
- * Kaltura supports a searchURL action on some of the media providers.
- * This action will return a KalturaSearchResult object based on a given URL (assuming the media provider is supported).
- */
-class search{
-	
-	/**
-	 * .
-	 * @param searchSource int  (enum: KalturaSearchProviderType)
-	 * @param userName string 
-	 * @param password string 
-	 * @return KalturaSearchAuthData
-	 */
-	static externalLogin(searchSource, userName, password){
-		let kparams = {};
-		kparams.searchSource = searchSource;
-		kparams.userName = userName;
+		kparams.partnerId = partnerId;
+		kparams.username = username;
 		kparams.password = password;
-		return new kaltura.RequestBuilder('search', 'externalLogin', kparams);
+		kparams.extraParams = extraParams;
+		kparams.udid = udid;
+		return new kaltura.RequestBuilder('ottuser', 'login', kparams);
 	};
 	
 	/**
-	 * Retrieve extra information about media found in search action
- * Some providers return only part of the fields needed to create entry from, use this action to get the rest of the fields.
-	 * @param searchResult SearchResult KalturaSearchResult object extends KalturaSearch and has all fields required for media:add
-	 * @return KalturaSearchResult
+	 * User sign-in via a time-expired sign-in PIN.
+	 * @param partnerId int Partner Identifier
+	 * @param pin string pin code
+	 * @param udid string Device UDID (optional, default: null)
+	 * @param secret string Additional security parameter to validate the login (optional, default: null)
+	 * @return KalturaLoginResponse
 	 */
-	static getMediaInfo(searchResult){
+	static loginWithPin(partnerId, pin, udid = null, secret = null){
 		let kparams = {};
-		kparams.searchResult = searchResult;
-		return new kaltura.RequestBuilder('search', 'getMediaInfo', kparams);
+		kparams.partnerId = partnerId;
+		kparams.pin = pin;
+		kparams.udid = udid;
+		kparams.secret = secret;
+		return new kaltura.RequestBuilder('ottuser', 'loginWithPin', kparams);
 	};
 	
 	/**
-	 * Search for media in one of the supported media providers.
-	 * @param search Search A KalturaSearch object contains the search keywords, media provider and media type
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaSearchResultResponse
+	 * Logout the calling user.
+	 * @return bool
 	 */
-	static search(search, pager = null){
+	static logout(){
 		let kparams = {};
-		kparams.search = search;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('search', 'search', kparams);
+		return new kaltura.RequestBuilder('ottuser', 'logout', kparams);
 	};
 	
 	/**
-	 * Search for media given a specific URL
- * Kaltura supports a searchURL action on some of the media providers.
- * This action will return a KalturaSearchResult object based on a given URL (assuming the media provider is supported).
-	 * @param mediaType int  (enum: KalturaMediaType)
-	 * @param url string 
-	 * @return KalturaSearchResult
+	 * Returns new Kaltura session (ks) for the user, using the supplied refresh_token (only if it&#39;s valid and not expired).
+	 * @param refreshToken string Refresh token
+	 * @param udid string Device UDID (optional, default: null)
+	 * @return KalturaLoginSession
 	 */
-	static searchUrl(mediaType, url){
+	static refreshSession(refreshToken, udid = null){
 		let kparams = {};
-		kparams.mediaType = mediaType;
-		kparams.url = url;
-		return new kaltura.RequestBuilder('search', 'searchUrl', kparams);
+		kparams.refreshToken = refreshToken;
+		kparams.udid = udid;
+		return new kaltura.RequestBuilder('ottuser', 'refreshSession', kparams);
+	};
+	
+	/**
+	 * Sign up a new user.
+	 * @param partnerId int Partner identifier
+	 * @param user OTTUser The user model to add
+	 * @param password string password
+	 * @return KalturaOTTUser
+	 */
+	static register(partnerId, user, password){
+		let kparams = {};
+		kparams.partnerId = partnerId;
+		kparams.user = user;
+		kparams.password = password;
+		return new kaltura.RequestBuilder('ottuser', 'register', kparams);
+	};
+	
+	/**
+	 * Resend the activation token to a user.
+	 * @param partnerId int The partner ID
+	 * @param username string Username of the user to activate
+	 * @return bool
+	 */
+	static resendActivationToken(partnerId, username){
+		let kparams = {};
+		kparams.partnerId = partnerId;
+		kparams.username = username;
+		return new kaltura.RequestBuilder('ottuser', 'resendActivationToken', kparams);
+	};
+	
+	/**
+	 * Send an e-mail with URL to enable the user to set new password.
+	 * @param partnerId int Partner Identifier
+	 * @param username string user name
+	 * @return bool
+	 */
+	static resetPassword(partnerId, username){
+		let kparams = {};
+		kparams.partnerId = partnerId;
+		kparams.username = username;
+		return new kaltura.RequestBuilder('ottuser', 'resetPassword', kparams);
+	};
+	
+	/**
+	 * Renew the user&#39;s password after validating the token that sent as part of URL in e-mail.
+	 * @param partnerId int Partner Identifier
+	 * @param token string Token that sent by e-mail
+	 * @param password string New password
+	 * @return KalturaOTTUser
+	 */
+	static setInitialPassword(partnerId, token, password){
+		let kparams = {};
+		kparams.partnerId = partnerId;
+		kparams.token = token;
+		kparams.password = password;
+		return new kaltura.RequestBuilder('ottuser', 'setInitialPassword', kparams);
+	};
+	
+	/**
+	 * Given a user name and existing password, change to a new password.
+	 * @param user OTTUser UserData Object (include basic and dynamic data)
+	 * @return KalturaOTTUser
+	 */
+	static update(user){
+		let kparams = {};
+		kparams.user = user;
+		return new kaltura.RequestBuilder('ottuser', 'update', kparams);
+	};
+	
+	/**
+	 * Given a user name and existing password, change to a new password.
+	 * @param username string user name
+	 * @param oldPassword string old password
+	 * @param newPassword string new password
+	 * @return bool
+	 */
+	static updateLoginData(username, oldPassword, newPassword){
+		let kparams = {};
+		kparams.username = username;
+		kparams.oldPassword = oldPassword;
+		kparams.newPassword = newPassword;
+		return new kaltura.RequestBuilder('ottuser', 'updateLoginData', kparams);
 	};
 }
-module.exports.search = search;
+module.exports.ottUser = ottUser;
 
 
 /**
- *Class definition for the Kaltura service: serverNode.
+ *Class definition for the Kaltura service: parentalRule.
  * The available service actions:
- * @action add Adds a server node to the Kaltura DB.
- * @action delete delete server node by id.
- * @action disable Disable server node by id.
- * @action enable Enable server node by id.
- * @action get Get server node by id.
- * @action list .
- * @action reportStatus Update server node status.
- * @action update Update server node by id.
+ * @action disable Disables a parental rule that was previously defined by the household master. Disable can be at specific user or household level.
+ * @action disableDefault Disables a parental rule that was defined at account level. Disable can be at specific user or household level.
+ * @action enable Enable a parental rules for a user.
+ * @action list Return the parental rules that applies for the user or household. Can include rules that have been associated in account, household, or user level.
+ * Association level is also specified in the response.
  */
-class serverNode{
+class parentalRule{
 	
 	/**
-	 * Adds a server node to the Kaltura DB.
-	 * @param serverNode ServerNode 
-	 * @return KalturaServerNode
+	 * Disables a parental rule that was previously defined by the household master. Disable can be at specific user or household level.
+	 * @param ruleId int Rule Identifier
+	 * @param entityReference string Reference type to filter by (enum: KalturaEntityReferenceBy)
+	 * @return bool
 	 */
-	static add(serverNode){
+	static disable(ruleId, entityReference){
 		let kparams = {};
-		kparams.serverNode = serverNode;
-		return new kaltura.RequestBuilder('servernode', 'add', kparams);
+		kparams.ruleId = ruleId;
+		kparams.entityReference = entityReference;
+		return new kaltura.RequestBuilder('parentalrule', 'disable', kparams);
 	};
 	
 	/**
-	 * delete server node by id.
-	 * @param serverNodeId string 
+	 * Disables a parental rule that was defined at account level. Disable can be at specific user or household level.
+	 * @param entityReference string Reference type to filter by (enum: KalturaEntityReferenceBy)
+	 * @return bool
 	 */
-	static deleteAction(serverNodeId){
+	static disableDefault(entityReference){
 		let kparams = {};
-		kparams.serverNodeId = serverNodeId;
-		return new kaltura.RequestBuilder('servernode', 'delete', kparams);
+		kparams.entityReference = entityReference;
+		return new kaltura.RequestBuilder('parentalrule', 'disableDefault', kparams);
 	};
 	
 	/**
-	 * Disable server node by id.
-	 * @param serverNodeId string 
-	 * @return KalturaServerNode
+	 * Enable a parental rules for a user.
+	 * @param ruleId int Rule Identifier
+	 * @param entityReference string Reference type to filter by (enum: KalturaEntityReferenceBy)
+	 * @return bool
 	 */
-	static disable(serverNodeId){
+	static enable(ruleId, entityReference){
 		let kparams = {};
-		kparams.serverNodeId = serverNodeId;
-		return new kaltura.RequestBuilder('servernode', 'disable', kparams);
+		kparams.ruleId = ruleId;
+		kparams.entityReference = entityReference;
+		return new kaltura.RequestBuilder('parentalrule', 'enable', kparams);
 	};
 	
 	/**
-	 * Enable server node by id.
-	 * @param serverNodeId string 
-	 * @return KalturaServerNode
+	 * Return the parental rules that applies for the user or household. Can include rules that have been associated in account, household, or user level.
+ * Association level is also specified in the response.
+	 * @param filter ParentalRuleFilter Filter
+	 * @return KalturaParentalRuleListResponse
 	 */
-	static enable(serverNodeId){
+	static listAction(filter){
 		let kparams = {};
-		kparams.serverNodeId = serverNodeId;
-		return new kaltura.RequestBuilder('servernode', 'enable', kparams);
+		kparams.filter = filter;
+		return new kaltura.RequestBuilder('parentalrule', 'list', kparams);
+	};
+}
+module.exports.parentalRule = parentalRule;
+
+
+/**
+ *Class definition for the Kaltura service: partnerConfiguration.
+ * The available service actions:
+ * @action update Update Partner Configuration.
+ */
+class partnerConfiguration{
+	
+	/**
+	 * Update Partner Configuration.
+	 * @param configuration PartnerConfiguration Partner Configuration
+ * possible configuration type:
+ * "configuration": { "value": 0, "partner_configuration_type": { "type": "OSSAdapter", "objectType": "KalturaPartnerConfigurationHolder" },
+ * "objectType": "KalturaBillingPartnerConfig"}
+	 * @return bool
+	 */
+	static update(configuration){
+		let kparams = {};
+		kparams.configuration = configuration;
+		return new kaltura.RequestBuilder('partnerconfiguration', 'update', kparams);
+	};
+}
+module.exports.partnerConfiguration = partnerConfiguration;
+
+
+/**
+ *Class definition for the Kaltura service: paymentGatewayProfile.
+ * The available service actions:
+ * @action add Insert new payment gateway for partner.
+ * @action delete Delete payment gateway by payment gateway id.
+ * @action generateSharedSecret Generate payment gateway shared secret.
+ * @action getConfiguration Gets the Payment Gateway Configuration for the payment gateway identifier given.
+ * @action list Returns all payment gateways for partner : id + name.
+ * @action update Update payment gateway details.
+ */
+class paymentGatewayProfile{
+	
+	/**
+	 * Insert new payment gateway for partner.
+	 * @param paymentGateway PaymentGatewayProfile Payment Gateway Object
+	 * @return KalturaPaymentGatewayProfile
+	 */
+	static add(paymentGateway){
+		let kparams = {};
+		kparams.paymentGateway = paymentGateway;
+		return new kaltura.RequestBuilder('paymentgatewayprofile', 'add', kparams);
 	};
 	
 	/**
-	 * Get server node by id.
-	 * @param serverNodeId int 
-	 * @return KalturaServerNode
+	 * Delete payment gateway by payment gateway id.
+	 * @param paymentGatewayId int Payment Gateway Identifier
+	 * @return bool
 	 */
-	static get(serverNodeId){
+	static deleteAction(paymentGatewayId){
 		let kparams = {};
-		kparams.serverNodeId = serverNodeId;
-		return new kaltura.RequestBuilder('servernode', 'get', kparams);
+		kparams.paymentGatewayId = paymentGatewayId;
+		return new kaltura.RequestBuilder('paymentgatewayprofile', 'delete', kparams);
 	};
 	
 	/**
-	 * .
-	 * @param filter ServerNodeFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaServerNodeListResponse
+	 * Generate payment gateway shared secret.
+	 * @param paymentGatewayId int Payment gateway identifier
+	 * @return KalturaPaymentGatewayProfile
+	 */
+	static generateSharedSecret(paymentGatewayId){
+		let kparams = {};
+		kparams.paymentGatewayId = paymentGatewayId;
+		return new kaltura.RequestBuilder('paymentgatewayprofile', 'generateSharedSecret', kparams);
+	};
+	
+	/**
+	 * Gets the Payment Gateway Configuration for the payment gateway identifier given.
+	 * @param alias string The payemnt gateway for which to return the registration URL/s for the household. If omitted – return the regisration URL for the household for the default payment gateway
+	 * @param intent string Represent the client’s intent for working with the payment gateway. Intent options to be coordinated with the applicable payment gateway adapter
+	 * @param extraParameters array Additional parameters to send to the payment gateway adapter
+	 * @return KalturaPaymentGatewayConfiguration
+	 */
+	static getConfiguration(alias, intent, extraParameters){
+		let kparams = {};
+		kparams.alias = alias;
+		kparams.intent = intent;
+		kparams.extraParameters = extraParameters;
+		return new kaltura.RequestBuilder('paymentgatewayprofile', 'getConfiguration', kparams);
+	};
+	
+	/**
+	 * Returns all payment gateways for partner : id + name.
+	 * @return KalturaPaymentGatewayProfileListResponse
+	 */
+	static listAction(){
+		let kparams = {};
+		return new kaltura.RequestBuilder('paymentgatewayprofile', 'list', kparams);
+	};
+	
+	/**
+	 * Update payment gateway details.
+	 * @param paymentGatewayId int Payment Gateway Identifier
+	 * @param paymentGateway PaymentGatewayProfile Payment Gateway Object
+	 * @return KalturaPaymentGatewayProfile
+	 */
+	static update(paymentGatewayId, paymentGateway){
+		let kparams = {};
+		kparams.paymentGatewayId = paymentGatewayId;
+		kparams.paymentGateway = paymentGateway;
+		return new kaltura.RequestBuilder('paymentgatewayprofile', 'update', kparams);
+	};
+}
+module.exports.paymentGatewayProfile = paymentGatewayProfile;
+
+
+/**
+ *Class definition for the Kaltura service: paymentMethodProfile.
+ * The available service actions:
+ * @action add TBD.
+ * @action delete Delete payment method profile.
+ * @action list TBD.
+ * @action update Update payment method.
+ */
+class paymentMethodProfile{
+	
+	/**
+	 * TBD.
+	 * @param paymentMethod PaymentMethodProfile Payment method to add
+	 * @return KalturaPaymentMethodProfile
+	 */
+	static add(paymentMethod){
+		let kparams = {};
+		kparams.paymentMethod = paymentMethod;
+		return new kaltura.RequestBuilder('paymentmethodprofile', 'add', kparams);
+	};
+	
+	/**
+	 * Delete payment method profile.
+	 * @param paymentMethodId int Payment method identifier to delete
+	 * @return bool
+	 */
+	static deleteAction(paymentMethodId){
+		let kparams = {};
+		kparams.paymentMethodId = paymentMethodId;
+		return new kaltura.RequestBuilder('paymentmethodprofile', 'delete', kparams);
+	};
+	
+	/**
+	 * TBD.
+	 * @param filter PaymentMethodProfileFilter Payment gateway method profile filter
+	 * @return KalturaPaymentMethodProfileListResponse
+	 */
+	static listAction(filter){
+		let kparams = {};
+		kparams.filter = filter;
+		return new kaltura.RequestBuilder('paymentmethodprofile', 'list', kparams);
+	};
+	
+	/**
+	 * Update payment method.
+	 * @param paymentMethodId int Payment method identifier to update
+	 * @param paymentMethod PaymentMethodProfile Payment method to update
+	 * @return KalturaPaymentMethodProfile
+	 */
+	static update(paymentMethodId, paymentMethod){
+		let kparams = {};
+		kparams.paymentMethodId = paymentMethodId;
+		kparams.paymentMethod = paymentMethod;
+		return new kaltura.RequestBuilder('paymentmethodprofile', 'update', kparams);
+	};
+}
+module.exports.paymentMethodProfile = paymentMethodProfile;
+
+
+/**
+ *Class definition for the Kaltura service: personalFeed.
+ * The available service actions:
+ * @action list List user&#39;s feeds.
+ * Possible status codes:.
+ */
+class personalFeed{
+	
+	/**
+	 * List user&#39;s feeds.
+ * Possible status codes:.
+	 * @param filter PersonalFeedFilter Required sort option to apply for the identified assets. If omitted – will use relevancy.
+ * Possible values: relevancy, a_to_z, z_to_a, views, ratings, votes, newest (optional, default: null)
+	 * @param pager FilterPager Page size and index (optional, default: null)
+	 * @return KalturaPersonalFeedListResponse
 	 */
 	static listAction(filter = null, pager = null){
 		let kparams = {};
 		kparams.filter = filter;
 		kparams.pager = pager;
-		return new kaltura.RequestBuilder('servernode', 'list', kparams);
-	};
-	
-	/**
-	 * Update server node status.
-	 * @param hostName string 
-	 * @param serverNode ServerNode  (optional, default: null)
-	 * @return KalturaServerNode
-	 */
-	static reportStatus(hostName, serverNode = null){
-		let kparams = {};
-		kparams.hostName = hostName;
-		kparams.serverNode = serverNode;
-		return new kaltura.RequestBuilder('servernode', 'reportStatus', kparams);
-	};
-	
-	/**
-	 * Update server node by id.
-	 * @param serverNodeId int 
-	 * @param serverNode ServerNode Id
-	 * @return KalturaServerNode
-	 */
-	static update(serverNodeId, serverNode){
-		let kparams = {};
-		kparams.serverNodeId = serverNodeId;
-		kparams.serverNode = serverNode;
-		return new kaltura.RequestBuilder('servernode', 'update', kparams);
+		return new kaltura.RequestBuilder('personalfeed', 'list', kparams);
 	};
 }
-module.exports.serverNode = serverNode;
+module.exports.personalFeed = personalFeed;
+
+
+/**
+ *Class definition for the Kaltura service: pin.
+ * The available service actions:
+ * @action get Retrieve the parental or purchase PIN that applies for the household or user. Includes specification of where the PIN was defined at – account, household or user  level.
+ * @action update Set the parental or purchase PIN that applies for the user or the household.
+ * @action validate Validate a purchase or parental PIN for a user.
+ */
+class pin{
+	
+	/**
+	 * Retrieve the parental or purchase PIN that applies for the household or user. Includes specification of where the PIN was defined at – account, household or user  level.
+	 * @param by string Reference type to filter by (enum: KalturaEntityReferenceBy)
+	 * @param type string The PIN type to retrieve (enum: KalturaPinType)
+	 * @param ruleId int Rule ID - for PIN per rule (MediaCorp): BEO-1923 (optional, default: null)
+	 * @return KalturaPin
+	 */
+	static get(by, type, ruleId = null){
+		let kparams = {};
+		kparams.by = by;
+		kparams.type = type;
+		kparams.ruleId = ruleId;
+		return new kaltura.RequestBuilder('pin', 'get', kparams);
+	};
+	
+	/**
+	 * Set the parental or purchase PIN that applies for the user or the household.
+	 * @param by string Reference type to filter by (enum: KalturaEntityReferenceBy)
+	 * @param type string The PIN type to retrieve (enum: KalturaPinType)
+	 * @param pin Pin PIN to set
+	 * @param ruleId int Rule ID - for PIN per rule (MediaCorp): BEO-1923 (optional, default: null)
+	 * @return KalturaPin
+	 */
+	static update(by, type, pin, ruleId = null){
+		let kparams = {};
+		kparams.by = by;
+		kparams.type = type;
+		kparams.pin = pin;
+		kparams.ruleId = ruleId;
+		return new kaltura.RequestBuilder('pin', 'update', kparams);
+	};
+	
+	/**
+	 * Validate a purchase or parental PIN for a user.
+	 * @param pin string PIN to validate
+	 * @param type string The PIN type to retrieve (enum: KalturaPinType)
+	 * @param ruleId int Rule ID - for PIN per rule (MediaCorp): BEO-1923 (optional, default: null)
+	 * @return bool
+	 */
+	static validate(pin, type, ruleId = null){
+		let kparams = {};
+		kparams.pin = pin;
+		kparams.type = type;
+		kparams.ruleId = ruleId;
+		return new kaltura.RequestBuilder('pin', 'validate', kparams);
+	};
+}
+module.exports.pin = pin;
+
+
+/**
+ *Class definition for the Kaltura service: ppv.
+ * The available service actions:
+ * @action get Returns ppv object by internal identifier.
+ */
+class ppv{
+	
+	/**
+	 * Returns ppv object by internal identifier.
+	 * @param id int ppv identifier
+	 * @return KalturaPpv
+	 */
+	static get(id){
+		let kparams = {};
+		kparams.id = id;
+		return new kaltura.RequestBuilder('ppv', 'get', kparams);
+	};
+}
+module.exports.ppv = ppv;
+
+
+/**
+ *Class definition for the Kaltura service: productPrice.
+ * The available service actions:
+ * @action list Returns a price and a purchase status for each subscription or/and media file, for a given user (if passed) and with the consideration of a coupon code (if passed).
+ */
+class productPrice{
+	
+	/**
+	 * Returns a price and a purchase status for each subscription or/and media file, for a given user (if passed) and with the consideration of a coupon code (if passed).
+	 * @param filter ProductPriceFilter Request filter
+	 * @return KalturaProductPriceListResponse
+	 */
+	static listAction(filter){
+		let kparams = {};
+		kparams.filter = filter;
+		return new kaltura.RequestBuilder('productprice', 'list', kparams);
+	};
+}
+module.exports.productPrice = productPrice;
+
+
+/**
+ *Class definition for the Kaltura service: purchaseSettings.
+ * The available service actions:
+ * @action get Retrieve the purchase settings.
+ * Includes specification of where these settings were defined – account, household or user.
+ * @action update Set a purchase PIN for the household or user.
+ */
+class purchaseSettings{
+	
+	/**
+	 * Retrieve the purchase settings.
+ * Includes specification of where these settings were defined – account, household or user.
+	 * @param by string Reference type to filter by (enum: KalturaEntityReferenceBy)
+	 * @return KalturaPurchaseSettings
+	 */
+	static get(by){
+		let kparams = {};
+		kparams.by = by;
+		return new kaltura.RequestBuilder('purchasesettings', 'get', kparams);
+	};
+	
+	/**
+	 * Set a purchase PIN for the household or user.
+	 * @param entityReference string Reference type to filter by (enum: KalturaEntityReferenceBy)
+	 * @param settings PurchaseSettings New settings to apply
+	 * @return KalturaPurchaseSettings
+	 */
+	static update(entityReference, settings){
+		let kparams = {};
+		kparams.entityReference = entityReference;
+		kparams.settings = settings;
+		return new kaltura.RequestBuilder('purchasesettings', 'update', kparams);
+	};
+}
+module.exports.purchaseSettings = purchaseSettings;
+
+
+/**
+ *Class definition for the Kaltura service: recommendationProfile.
+ * The available service actions:
+ * @action add Insert new recommendation engine for partner.
+ * @action delete Delete recommendation engine by recommendation engine id.
+ * @action generateSharedSecret Generate recommendation engine  shared secret.
+ * @action list Returns all recommendation engines for partner.
+ * @action update Update recommendation engine details.
+ */
+class recommendationProfile{
+	
+	/**
+	 * Insert new recommendation engine for partner.
+	 * @param recommendationEngine RecommendationProfile recommendation engine Object
+	 * @return KalturaRecommendationProfile
+	 */
+	static add(recommendationEngine){
+		let kparams = {};
+		kparams.recommendationEngine = recommendationEngine;
+		return new kaltura.RequestBuilder('recommendationprofile', 'add', kparams);
+	};
+	
+	/**
+	 * Delete recommendation engine by recommendation engine id.
+	 * @param id int recommendation engine Identifier
+	 * @return bool
+	 */
+	static deleteAction(id){
+		let kparams = {};
+		kparams.id = id;
+		return new kaltura.RequestBuilder('recommendationprofile', 'delete', kparams);
+	};
+	
+	/**
+	 * Generate recommendation engine  shared secret.
+	 * @param recommendationEngineId int recommendation engine Identifier
+	 * @return KalturaRecommendationProfile
+	 */
+	static generateSharedSecret(recommendationEngineId){
+		let kparams = {};
+		kparams.recommendationEngineId = recommendationEngineId;
+		return new kaltura.RequestBuilder('recommendationprofile', 'generateSharedSecret', kparams);
+	};
+	
+	/**
+	 * Returns all recommendation engines for partner.
+	 * @return KalturaRecommendationProfileListResponse
+	 */
+	static listAction(){
+		let kparams = {};
+		return new kaltura.RequestBuilder('recommendationprofile', 'list', kparams);
+	};
+	
+	/**
+	 * Update recommendation engine details.
+	 * @param recommendationEngineId int recommendation engine identifier
+	 * @param recommendationEngine RecommendationProfile recommendation engine Object
+	 * @return KalturaRecommendationProfile
+	 */
+	static update(recommendationEngineId, recommendationEngine){
+		let kparams = {};
+		kparams.recommendationEngineId = recommendationEngineId;
+		kparams.recommendationEngine = recommendationEngine;
+		return new kaltura.RequestBuilder('recommendationprofile', 'update', kparams);
+	};
+}
+module.exports.recommendationProfile = recommendationProfile;
+
+
+/**
+ *Class definition for the Kaltura service: recording.
+ * The available service actions:
+ * @action add Issue a record request for a program.
+ * @action cancel Cancel a previously requested recording. Cancel recording can be called for recording in status Scheduled or Recording Only.
+ * @action delete Delete one or more user recording(s). Delete recording can be called only for recordings in status Recorded.
+ * @action get Returns recording object by internal identifier.
+ * @action list Return a list of recordings for the household with optional filter by status and KSQL.
+ * @action protect Protects an existing recording from the cleanup process for the defined protection period.
+ */
+class recording{
+	
+	/**
+	 * Issue a record request for a program.
+	 * @param recording Recording Recording Object
+	 * @return KalturaRecording
+	 */
+	static add(recording){
+		let kparams = {};
+		kparams.recording = recording;
+		return new kaltura.RequestBuilder('recording', 'add', kparams);
+	};
+	
+	/**
+	 * Cancel a previously requested recording. Cancel recording can be called for recording in status Scheduled or Recording Only.
+	 * @param id int Recording identifier
+	 * @return KalturaRecording
+	 */
+	static cancel(id){
+		let kparams = {};
+		kparams.id = id;
+		return new kaltura.RequestBuilder('recording', 'cancel', kparams);
+	};
+	
+	/**
+	 * Delete one or more user recording(s). Delete recording can be called only for recordings in status Recorded.
+	 * @param id int Recording identifier
+	 * @return KalturaRecording
+	 */
+	static deleteAction(id){
+		let kparams = {};
+		kparams.id = id;
+		return new kaltura.RequestBuilder('recording', 'delete', kparams);
+	};
+	
+	/**
+	 * Returns recording object by internal identifier.
+	 * @param id int Recording identifier
+	 * @return KalturaRecording
+	 */
+	static get(id){
+		let kparams = {};
+		kparams.id = id;
+		return new kaltura.RequestBuilder('recording', 'get', kparams);
+	};
+	
+	/**
+	 * Return a list of recordings for the household with optional filter by status and KSQL.
+	 * @param filter RecordingFilter Filter parameters for filtering out the result (optional, default: null)
+	 * @param pager FilterPager Page size and index (optional, default: null)
+	 * @return KalturaRecordingListResponse
+	 */
+	static listAction(filter = null, pager = null){
+		let kparams = {};
+		kparams.filter = filter;
+		kparams.pager = pager;
+		return new kaltura.RequestBuilder('recording', 'list', kparams);
+	};
+	
+	/**
+	 * Protects an existing recording from the cleanup process for the defined protection period.
+	 * @param id int Recording identifier
+	 * @return KalturaRecording
+	 */
+	static protect(id){
+		let kparams = {};
+		kparams.id = id;
+		return new kaltura.RequestBuilder('recording', 'protect', kparams);
+	};
+}
+module.exports.recording = recording;
+
+
+/**
+ *Class definition for the Kaltura service: region.
+ * The available service actions:
+ * @action list Returns all regions for the partner.
+ */
+class region{
+	
+	/**
+	 * Returns all regions for the partner.
+	 * @param filter RegionFilter 
+	 * @return KalturaRegionListResponse
+	 */
+	static listAction(filter){
+		let kparams = {};
+		kparams.filter = filter;
+		return new kaltura.RequestBuilder('region', 'list', kparams);
+	};
+}
+module.exports.region = region;
+
+
+/**
+ *Class definition for the Kaltura service: registrySettings.
+ * The available service actions:
+ * @action list Retrieve the registry settings.
+ */
+class registrySettings{
+	
+	/**
+	 * Retrieve the registry settings.
+	 * @return KalturaRegistrySettingsListResponse
+	 */
+	static listAction(){
+		let kparams = {};
+		return new kaltura.RequestBuilder('registrysettings', 'list', kparams);
+	};
+}
+module.exports.registrySettings = registrySettings;
+
+
+/**
+ *Class definition for the Kaltura service: seriesRecording.
+ * The available service actions:
+ * @action add Issue a record request for a complete season or series.
+ * @action cancel Cancel a previously requested series recording. Cancel series recording can be called for recording in status Scheduled or Recording Only.
+ * @action cancelByEpgId Cancel EPG recording that was recorded as part of series.
+ * @action cancelBySeasonNumber Cancel Season recording epgs that was recorded as part of series.
+ * @action delete Delete series recording(s). Delete series recording can be called recordings in any status.
+ * @action deleteBySeasonNumber Delete Season recording epgs that was recorded as part of series.
+ * @action list Return a list of series recordings for the household with optional filter by status and KSQL.
+ */
+class seriesRecording{
+	
+	/**
+	 * Issue a record request for a complete season or series.
+	 * @param recording SeriesRecording SeriesRecording Object
+	 * @return KalturaSeriesRecording
+	 */
+	static add(recording){
+		let kparams = {};
+		kparams.recording = recording;
+		return new kaltura.RequestBuilder('seriesrecording', 'add', kparams);
+	};
+	
+	/**
+	 * Cancel a previously requested series recording. Cancel series recording can be called for recording in status Scheduled or Recording Only.
+	 * @param id int Series Recording identifier
+	 * @return KalturaSeriesRecording
+	 */
+	static cancel(id){
+		let kparams = {};
+		kparams.id = id;
+		return new kaltura.RequestBuilder('seriesrecording', 'cancel', kparams);
+	};
+	
+	/**
+	 * Cancel EPG recording that was recorded as part of series.
+	 * @param id int Series Recording identifier
+	 * @param epgId int epg program identifier
+	 * @return KalturaSeriesRecording
+	 */
+	static cancelByEpgId(id, epgId){
+		let kparams = {};
+		kparams.id = id;
+		kparams.epgId = epgId;
+		return new kaltura.RequestBuilder('seriesrecording', 'cancelByEpgId', kparams);
+	};
+	
+	/**
+	 * Cancel Season recording epgs that was recorded as part of series.
+	 * @param id int Series Recording identifier
+	 * @param seasonNumber int Season Number
+	 * @return KalturaSeriesRecording
+	 */
+	static cancelBySeasonNumber(id, seasonNumber){
+		let kparams = {};
+		kparams.id = id;
+		kparams.seasonNumber = seasonNumber;
+		return new kaltura.RequestBuilder('seriesrecording', 'cancelBySeasonNumber', kparams);
+	};
+	
+	/**
+	 * Delete series recording(s). Delete series recording can be called recordings in any status.
+	 * @param id int Series Recording identifier
+	 * @return KalturaSeriesRecording
+	 */
+	static deleteAction(id){
+		let kparams = {};
+		kparams.id = id;
+		return new kaltura.RequestBuilder('seriesrecording', 'delete', kparams);
+	};
+	
+	/**
+	 * Delete Season recording epgs that was recorded as part of series.
+	 * @param id int Series Recording identifier
+	 * @param seasonNumber int Season Number
+	 * @return KalturaSeriesRecording
+	 */
+	static deleteBySeasonNumber(id, seasonNumber){
+		let kparams = {};
+		kparams.id = id;
+		kparams.seasonNumber = seasonNumber;
+		return new kaltura.RequestBuilder('seriesrecording', 'deleteBySeasonNumber', kparams);
+	};
+	
+	/**
+	 * Return a list of series recordings for the household with optional filter by status and KSQL.
+	 * @param filter SeriesRecordingFilter Filter parameters for filtering out the result - support order by only - START_DATE_ASC, START_DATE_DESC, ID_ASC,ID_DESC,SERIES_ID_ASC, SERIES_ID_DESC (optional, default: null)
+	 * @return KalturaSeriesRecordingListResponse
+	 */
+	static listAction(filter = null){
+		let kparams = {};
+		kparams.filter = filter;
+		return new kaltura.RequestBuilder('seriesrecording', 'list', kparams);
+	};
+}
+module.exports.seriesRecording = seriesRecording;
 
 
 /**
  *Class definition for the Kaltura service: session.
  * The available service actions:
- * @action end End a session with the Kaltura server, making the current KS invalid.
- * @action get Parse session key and return its info.
- * @action impersonate Start an impersonated session with Kaltura's server.
- * The result KS is the session key that you should pass to all services that requires a ticket.
- * @action impersonateByKs Start an impersonated session with Kaltura's server.
- * The result KS info contains the session key that you should pass to all services that requires a ticket.
- * Type, expiry and privileges won't be changed if they're not set.
- * @action start Start a session with Kaltura's server.
- * The result KS is the session key that you should pass to all services that requires a ticket.
- * @action startWidgetSession Start a session for Kaltura's flash widgets.
+ * @action get Parses KS.
+ * @action switchUser Switching the user in the session by generating a new session for a new user within the same household.
  */
 class session{
 	
 	/**
-	 * End a session with the Kaltura server, making the current KS invalid.
-	 */
-	static end(){
-		let kparams = {};
-		return new kaltura.RequestBuilder('session', 'end', kparams);
-	};
-	
-	/**
-	 * Parse session key and return its info.
-	 * @param session string The KS to be parsed, keep it empty to use current session (optional, default: null)
-	 * @return KalturaSessionInfo
+	 * Parses KS.
+	 * @param session string Additional KS to parse, if not passed the user's KS will be parsed (optional, default: null)
+	 * @return KalturaSession
 	 */
 	static get(session = null){
 		let kparams = {};
@@ -4378,383 +2647,175 @@ class session{
 	};
 	
 	/**
-	 * Start an impersonated session with Kaltura's server.
- * The result KS is the session key that you should pass to all services that requires a ticket.
-	 * @param secret string - should be the secret (admin or user) of the original partnerId (not impersonatedPartnerId)
-	 * @param impersonatedPartnerId int 
-	 * @param userId string - impersonated userId (optional)
-	 * @param type int  (optional, enum: KalturaSessionType)
-	 * @param partnerId int  (optional, default: null)
-	 * @param expiry int KS expiry time in seconds (optional, default: 86400)
-	 * @param privileges string  (optional, default: null)
-	 * @return string
+	 * Switching the user in the session by generating a new session for a new user within the same household.
+	 * @param userIdToSwitch string The identifier of the user to change
+	 * @return KalturaLoginSession
 	 */
-	static impersonate(secret, impersonatedPartnerId, userId = '', type = 0, partnerId = null, expiry = 86400, privileges = null){
+	static switchUser(userIdToSwitch){
 		let kparams = {};
-		kparams.secret = secret;
-		kparams.impersonatedPartnerId = impersonatedPartnerId;
-		kparams.userId = userId;
-		kparams.type = type;
-		kparams.partnerId = partnerId;
-		kparams.expiry = expiry;
-		kparams.privileges = privileges;
-		return new kaltura.RequestBuilder('session', 'impersonate', kparams);
-	};
-	
-	/**
-	 * Start an impersonated session with Kaltura's server.
- * The result KS info contains the session key that you should pass to all services that requires a ticket.
- * Type, expiry and privileges won't be changed if they're not set.
-	 * @param session string The old KS of the impersonated partner
-	 * @param type int Type of the new KS (optional, enum: KalturaSessionType, default: null)
-	 * @param expiry int Expiry time in seconds of the new KS (optional, default: null)
-	 * @param privileges string Privileges of the new KS (optional, default: null)
-	 * @return KalturaSessionInfo
-	 */
-	static impersonateByKs(session, type = null, expiry = null, privileges = null){
-		let kparams = {};
-		kparams.session = session;
-		kparams.type = type;
-		kparams.expiry = expiry;
-		kparams.privileges = privileges;
-		return new kaltura.RequestBuilder('session', 'impersonateByKs', kparams);
-	};
-	
-	/**
-	 * Start a session with Kaltura's server.
- * The result KS is the session key that you should pass to all services that requires a ticket.
-	 * @param secret string Remember to provide the correct secret according to the sessionType you want
-	 * @param userId string  (optional)
-	 * @param type int Regular session or Admin session (optional, enum: KalturaSessionType)
-	 * @param partnerId int  (optional, default: null)
-	 * @param expiry int KS expiry time in seconds (optional, default: 86400)
-	 * @param privileges string  (optional, default: null)
-	 * @return string
-	 */
-	static start(secret, userId = '', type = 0, partnerId = null, expiry = 86400, privileges = null){
-		let kparams = {};
-		kparams.secret = secret;
-		kparams.userId = userId;
-		kparams.type = type;
-		kparams.partnerId = partnerId;
-		kparams.expiry = expiry;
-		kparams.privileges = privileges;
-		return new kaltura.RequestBuilder('session', 'start', kparams);
-	};
-	
-	/**
-	 * Start a session for Kaltura's flash widgets.
-	 * @param widgetId string 
-	 * @param expiry int  (optional, default: 86400)
-	 * @return KalturaStartWidgetSessionResponse
-	 */
-	static startWidgetSession(widgetId, expiry = 86400){
-		let kparams = {};
-		kparams.widgetId = widgetId;
-		kparams.expiry = expiry;
-		return new kaltura.RequestBuilder('session', 'startWidgetSession', kparams);
+		kparams.userIdToSwitch = userIdToSwitch;
+		return new kaltura.RequestBuilder('session', 'switchUser', kparams);
 	};
 }
 module.exports.session = session;
 
 
 /**
- *Class definition for the Kaltura service: stats.
+ *Class definition for the Kaltura service: social.
  * The available service actions:
- * @action collect Will write to the event log a single line representing the event
- * client version - will help interprete the line structure. different client versions might have slightly different data/data formats in the line
- * event_id - number is the row number in yuval's excel
- * datetime - same format as MySql's datetime - can change and should reflect the time zone
- * session id - can be some big random number or guid
- * partner id
- * entry id
- * unique viewer
- * widget id
- * ui_conf id
- * uid - the puser id as set by the ppartner
- * current point - in milliseconds
- * duration - milliseconds
- * user ip
- * process duration - in milliseconds
- * control id
- * seek
- * new point
- * referrer
- * 
- * 
- * KalturaStatsEvent $event.
- * @action kmcCollect Will collect the kmcEvent sent form the KMC client
- * // this will actually be an empty function because all events will be sent using GET and will anyway be logged in the apache log.
- * @action reportDeviceCapabilities Use this action to report device capabilities to the kaltura server.
- * @action reportError Use this action to report errors to the kaltura server.
- * @action reportKceError .
+ * @action get Return the user object with social information according to a provided external social token.
+ * @action getByToken Return the user object with social information according to a provided external social token.
+ * @action getConfiguration Retrieve the social network’s configuration information.
+ * @action login Login using social token.
+ * @action merge Connect an existing user in the system to an external social network user.
+ * @action register Create a new user in the system using a provided external social token.
+ * @action unmerge Disconnect an existing user in the system from its external social network user.
  */
-class stats{
+class social{
 	
 	/**
-	 * Will write to the event log a single line representing the event
- * client version - will help interprete the line structure. different client versions might have slightly different data/data formats in the line
- * event_id - number is the row number in yuval's excel
- * datetime - same format as MySql's datetime - can change and should reflect the time zone
- * session id - can be some big random number or guid
- * partner id
- * entry id
- * unique viewer
- * widget id
- * ui_conf id
- * uid - the puser id as set by the ppartner
- * current point - in milliseconds
- * duration - milliseconds
- * user ip
- * process duration - in milliseconds
- * control id
- * seek
- * new point
- * referrer
- * 
- * 
- * KalturaStatsEvent $event.
-	 * @param event StatsEvent 
-	 * @return bool
+	 * Return the user object with social information according to a provided external social token.
+	 * @param type string Social network type (enum: KalturaSocialNetwork)
+	 * @return KalturaSocial
 	 */
-	static collect(event){
+	static get(type){
 		let kparams = {};
-		kparams.event = event;
-		return new kaltura.RequestBuilder('stats', 'collect', kparams);
+		kparams.type = type;
+		return new kaltura.RequestBuilder('social', 'get', kparams);
 	};
 	
 	/**
-	 * Will collect the kmcEvent sent form the KMC client
- * // this will actually be an empty function because all events will be sent using GET and will anyway be logged in the apache log.
-	 * @param kmcEvent StatsKmcEvent 
+	 * Return the user object with social information according to a provided external social token.
+	 * @param partnerId int Partner identifier
+	 * @param token string Social token
+	 * @param type string Social network type (enum: KalturaSocialNetwork)
+	 * @return KalturaSocial
 	 */
-	static kmcCollect(kmcEvent){
+	static getByToken(partnerId, token, type){
 		let kparams = {};
-		kparams.kmcEvent = kmcEvent;
-		return new kaltura.RequestBuilder('stats', 'kmcCollect', kparams);
+		kparams.partnerId = partnerId;
+		kparams.token = token;
+		kparams.type = type;
+		return new kaltura.RequestBuilder('social', 'getByToken', kparams);
 	};
 	
 	/**
-	 * Use this action to report device capabilities to the kaltura server.
-	 * @param data string 
+	 * Retrieve the social network’s configuration information.
+	 * @param partnerId int Partner identifier
+	 * @param type string Social network type (enum: KalturaSocialNetwork)
+	 * @return KalturaSocialConfig
 	 */
-	static reportDeviceCapabilities(data){
+	static getConfiguration(partnerId, type){
 		let kparams = {};
-		kparams.data = data;
-		return new kaltura.RequestBuilder('stats', 'reportDeviceCapabilities', kparams);
+		kparams.partnerId = partnerId;
+		kparams.type = type;
+		return new kaltura.RequestBuilder('social', 'getConfiguration', kparams);
 	};
 	
 	/**
-	 * Use this action to report errors to the kaltura server.
-	 * @param errorCode string 
-	 * @param errorMessage string 
+	 * Login using social token.
+	 * @param partnerId int Partner identifier
+	 * @param token string Social token
+	 * @param type string Social network (enum: KalturaSocialNetwork)
+	 * @param udid string Device UDID (optional, default: null)
+	 * @return KalturaLoginResponse
 	 */
-	static reportError(errorCode, errorMessage){
+	static login(partnerId, token, type, udid = null){
 		let kparams = {};
-		kparams.errorCode = errorCode;
-		kparams.errorMessage = errorMessage;
-		return new kaltura.RequestBuilder('stats', 'reportError', kparams);
+		kparams.partnerId = partnerId;
+		kparams.token = token;
+		kparams.type = type;
+		kparams.udid = udid;
+		return new kaltura.RequestBuilder('social', 'login', kparams);
 	};
 	
 	/**
-	 * .
-	 * @param kalturaCEError CEError 
-	 * @return KalturaCEError
+	 * Connect an existing user in the system to an external social network user.
+	 * @param token string social token
+	 * @param type string Social network type (enum: KalturaSocialNetwork)
+	 * @return KalturaSocial
 	 */
-	static reportKceError(kalturaCEError){
+	static merge(token, type){
 		let kparams = {};
-		kparams.kalturaCEError = kalturaCEError;
-		return new kaltura.RequestBuilder('stats', 'reportKceError', kparams);
+		kparams.token = token;
+		kparams.type = type;
+		return new kaltura.RequestBuilder('social', 'merge', kparams);
+	};
+	
+	/**
+	 * Create a new user in the system using a provided external social token.
+	 * @param partnerId int Partner identifier
+	 * @param token string social token
+	 * @param type string Social network type (enum: KalturaSocialNetwork)
+	 * @return KalturaSocial
+	 */
+	static register(partnerId, token, type){
+		let kparams = {};
+		kparams.partnerId = partnerId;
+		kparams.token = token;
+		kparams.type = type;
+		return new kaltura.RequestBuilder('social', 'register', kparams);
+	};
+	
+	/**
+	 * Disconnect an existing user in the system from its external social network user.
+	 * @param type string Social network type (enum: KalturaSocialNetwork)
+	 * @return KalturaSocial
+	 */
+	static unmerge(type){
+		let kparams = {};
+		kparams.type = type;
+		return new kaltura.RequestBuilder('social', 'unmerge', kparams);
 	};
 }
-module.exports.stats = stats;
+module.exports.social = social;
 
 
 /**
- *Class definition for the Kaltura service: storageProfile.
+ *Class definition for the Kaltura service: subscription.
  * The available service actions:
- * @action add Adds a storage profile to the Kaltura DB.
- * @action get Get storage profile by id.
- * @action list .
- * @action update Update storage profile by id.
- * @action updateStatus .
+ * @action list Returns a list of subscriptions requested by Subscription ID or file ID.
  */
-class storageProfile{
+class subscription{
 	
 	/**
-	 * Adds a storage profile to the Kaltura DB.
-	 * @param storageProfile StorageProfile 
-	 * @return KalturaStorageProfile
+	 * Returns a list of subscriptions requested by Subscription ID or file ID.
+	 * @param filter SubscriptionFilter Filter request
+	 * @return KalturaSubscriptionListResponse
 	 */
-	static add(storageProfile){
-		let kparams = {};
-		kparams.storageProfile = storageProfile;
-		return new kaltura.RequestBuilder('storageprofile', 'add', kparams);
-	};
-	
-	/**
-	 * Get storage profile by id.
-	 * @param storageProfileId int 
-	 * @return KalturaStorageProfile
-	 */
-	static get(storageProfileId){
-		let kparams = {};
-		kparams.storageProfileId = storageProfileId;
-		return new kaltura.RequestBuilder('storageprofile', 'get', kparams);
-	};
-	
-	/**
-	 * .
-	 * @param filter StorageProfileFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaStorageProfileListResponse
-	 */
-	static listAction(filter = null, pager = null){
+	static listAction(filter){
 		let kparams = {};
 		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('storageprofile', 'list', kparams);
-	};
-	
-	/**
-	 * Update storage profile by id.
-	 * @param storageProfileId int 
-	 * @param storageProfile StorageProfile Id
-	 * @return KalturaStorageProfile
-	 */
-	static update(storageProfileId, storageProfile){
-		let kparams = {};
-		kparams.storageProfileId = storageProfileId;
-		kparams.storageProfile = storageProfile;
-		return new kaltura.RequestBuilder('storageprofile', 'update', kparams);
-	};
-	
-	/**
-	 * .
-	 * @param storageId int 
-	 * @param status int  (enum: KalturaStorageProfileStatus)
-	 */
-	static updateStatus(storageId, status){
-		let kparams = {};
-		kparams.storageId = storageId;
-		kparams.status = status;
-		return new kaltura.RequestBuilder('storageprofile', 'updateStatus', kparams);
+		return new kaltura.RequestBuilder('subscription', 'list', kparams);
 	};
 }
-module.exports.storageProfile = storageProfile;
-
-
-/**
- *Class definition for the Kaltura service: syndicationFeed.
- * The available service actions:
- * @action add Add new Syndication Feed.
- * @action delete Delete Syndication Feed by ID.
- * @action get Get Syndication Feed by ID.
- * @action getEntryCount get entry count for a syndication feed.
- * @action list List Syndication Feeds by filter with paging support.
- * @action requestConversion request conversion for all entries that doesnt have the required flavor param
- * returns a comma-separated ids of conversion jobs.
- * @action update Update Syndication Feed by ID.
- */
-class syndicationFeed{
-	
-	/**
-	 * Add new Syndication Feed.
-	 * @param syndicationFeed BaseSyndicationFeed 
-	 * @return KalturaBaseSyndicationFeed
-	 */
-	static add(syndicationFeed){
-		let kparams = {};
-		kparams.syndicationFeed = syndicationFeed;
-		return new kaltura.RequestBuilder('syndicationfeed', 'add', kparams);
-	};
-	
-	/**
-	 * Delete Syndication Feed by ID.
-	 * @param id string 
-	 */
-	static deleteAction(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('syndicationfeed', 'delete', kparams);
-	};
-	
-	/**
-	 * Get Syndication Feed by ID.
-	 * @param id string 
-	 * @return KalturaBaseSyndicationFeed
-	 */
-	static get(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('syndicationfeed', 'get', kparams);
-	};
-	
-	/**
-	 * get entry count for a syndication feed.
-	 * @param feedId string 
-	 * @return KalturaSyndicationFeedEntryCount
-	 */
-	static getEntryCount(feedId){
-		let kparams = {};
-		kparams.feedId = feedId;
-		return new kaltura.RequestBuilder('syndicationfeed', 'getEntryCount', kparams);
-	};
-	
-	/**
-	 * List Syndication Feeds by filter with paging support.
-	 * @param filter BaseSyndicationFeedFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaBaseSyndicationFeedListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('syndicationfeed', 'list', kparams);
-	};
-	
-	/**
-	 * request conversion for all entries that doesnt have the required flavor param
- * returns a comma-separated ids of conversion jobs.
-	 * @param feedId string 
-	 * @return string
-	 */
-	static requestConversion(feedId){
-		let kparams = {};
-		kparams.feedId = feedId;
-		return new kaltura.RequestBuilder('syndicationfeed', 'requestConversion', kparams);
-	};
-	
-	/**
-	 * Update Syndication Feed by ID.
-	 * @param id string 
-	 * @param syndicationFeed BaseSyndicationFeed 
-	 * @return KalturaBaseSyndicationFeed
-	 */
-	static update(id, syndicationFeed){
-		let kparams = {};
-		kparams.id = id;
-		kparams.syndicationFeed = syndicationFeed;
-		return new kaltura.RequestBuilder('syndicationfeed', 'update', kparams);
-	};
-}
-module.exports.syndicationFeed = syndicationFeed;
+module.exports.subscription = subscription;
 
 
 /**
  *Class definition for the Kaltura service: system.
  * The available service actions:
- * @action getTime .
- * @action getVersion .
- * @action ping .
- * @action pingDatabase .
+ * @action getCountry Returns country details by the provided IP, if not provided - by the client IP.
+ * @action getTime Returns current server timestamp.
+ * @action getVersion Returns current server version.
+ * @action ping Returns true.
  */
 class system{
 	
 	/**
-	 * .
-	 * @return int
+	 * Returns country details by the provided IP, if not provided - by the client IP.
+	 * @param ip string IP (optional, default: null)
+	 * @return KalturaCountry
+	 */
+	static getCountry(ip = null){
+		let kparams = {};
+		kparams.ip = ip;
+		return new kaltura.RequestBuilder('system', 'getCountry', kparams);
+	};
+	
+	/**
+	 * Returns current server timestamp.
+	 * @return bigint
 	 */
 	static getTime(){
 		let kparams = {};
@@ -4762,7 +2823,7 @@ class system{
 	};
 	
 	/**
-	 * .
+	 * Returns current server version.
 	 * @return string
 	 */
 	static getVersion(){
@@ -4771,4196 +2832,354 @@ class system{
 	};
 	
 	/**
-	 * .
+	 * Returns true.
 	 * @return bool
 	 */
 	static ping(){
 		let kparams = {};
 		return new kaltura.RequestBuilder('system', 'ping', kparams);
 	};
-	
-	/**
-	 * .
-	 * @return bool
-	 */
-	static pingDatabase(){
-		let kparams = {};
-		return new kaltura.RequestBuilder('system', 'pingDatabase', kparams);
-	};
 }
 module.exports.system = system;
 
 
 /**
- *Class definition for the Kaltura service: thumbAsset.
+ *Class definition for the Kaltura service: timeShiftedTvPartnerSettings.
  * The available service actions:
- * @action add Add thumbnail asset.
- * @action addFromImage .
- * @action addFromUrl .
- * @action delete .
- * @action export manually export an asset.
- * @action generate .
- * @action generateByEntryId .
- * @action get .
- * @action getByEntryId .
- * @action getRemotePaths Get remote storage existing paths for the asset.
- * @action getUrl Get download URL for the asset.
- * @action list List Thumbnail Assets by filter and pager.
- * @action regenerate .
- * @action setAsDefault Tags the thumbnail as DEFAULT_THUMB and removes that tag from all other thumbnail assets of the entry.
- * Create a new file sync link on the entry thumbnail that points to the thumbnail asset file sync.
- * @action setContent Update content of thumbnail asset.
- * @action update Update thumbnail asset.
+ * @action get Retrieve the account’s time-shifted TV settings (catch-up and C-DVR, Trick-play, Start-over).
+ * @action update Configure the account’s time-shifted TV settings (catch-up and C-DVR, Trick-play, Start-over).
  */
-class thumbAsset{
+class timeShiftedTvPartnerSettings{
 	
 	/**
-	 * Add thumbnail asset.
-	 * @param entryId string 
-	 * @param thumbAsset ThumbAsset 
-	 * @return KalturaThumbAsset
+	 * Retrieve the account’s time-shifted TV settings (catch-up and C-DVR, Trick-play, Start-over).
+	 * @return KalturaTimeShiftedTvPartnerSettings
 	 */
-	static add(entryId, thumbAsset){
+	static get(){
 		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.thumbAsset = thumbAsset;
-		return new kaltura.RequestBuilder('thumbasset', 'add', kparams);
+		return new kaltura.RequestBuilder('timeshiftedtvpartnersettings', 'get', kparams);
 	};
 	
 	/**
-	 * .
-	 * @param entryId string 
-	 * @param fileData file 
-	 * @return KalturaThumbAsset
+	 * Configure the account’s time-shifted TV settings (catch-up and C-DVR, Trick-play, Start-over).
+	 * @param settings TimeShiftedTvPartnerSettings 
+	 * @return bool
 	 */
-	static addFromImage(entryId, fileData){
+	static update(settings){
 		let kparams = {};
-		kparams.entryId = entryId;
-		let kfiles = {};
-		kfiles.fileData = fileData;
-		return new kaltura.RequestBuilder('thumbasset', 'addFromImage', kparams, kfiles);
+		kparams.settings = settings;
+		return new kaltura.RequestBuilder('timeshiftedtvpartnersettings', 'update', kparams);
+	};
+}
+module.exports.timeShiftedTvPartnerSettings = timeShiftedTvPartnerSettings;
+
+
+/**
+ *Class definition for the Kaltura service: topic.
+ * The available service actions:
+ * @action delete TBD.
+ * @action get TBD.
+ * @action list TBD.
+ * @action updateStatus TBD.
+ */
+class topic{
+	
+	/**
+	 * TBD.
+	 * @param id int Topic identifier
+	 * @return bool
+	 */
+	static deleteAction(id){
+		let kparams = {};
+		kparams.id = id;
+		return new kaltura.RequestBuilder('topic', 'delete', kparams);
 	};
 	
 	/**
-	 * .
-	 * @param entryId string 
-	 * @param url string 
-	 * @return KalturaThumbAsset
+	 * TBD.
+	 * @param id int topic id
+	 * @return KalturaTopic
 	 */
-	static addFromUrl(entryId, url){
+	static get(id){
 		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.url = url;
-		return new kaltura.RequestBuilder('thumbasset', 'addFromUrl', kparams);
+		kparams.id = id;
+		return new kaltura.RequestBuilder('topic', 'get', kparams);
 	};
 	
 	/**
-	 * .
-	 * @param thumbAssetId string 
+	 * TBD.
+	 * @param filter TopicFilter Topics filter (optional, default: null)
+	 * @param pager FilterPager Page size and index (optional, default: null)
+	 * @return KalturaTopicListResponse
 	 */
-	static deleteAction(thumbAssetId){
+	static listAction(filter = null, pager = null){
 		let kparams = {};
-		kparams.thumbAssetId = thumbAssetId;
-		return new kaltura.RequestBuilder('thumbasset', 'delete', kparams);
+		kparams.filter = filter;
+		kparams.pager = pager;
+		return new kaltura.RequestBuilder('topic', 'list', kparams);
 	};
 	
 	/**
-	 * manually export an asset.
-	 * @param assetId string 
-	 * @param storageProfileId int 
-	 * @return KalturaFlavorAsset
+	 * TBD.
+	 * @param id int 
+	 * @param automaticIssueNotification string  (enum: KalturaTopicAutomaticIssueNotification)
+	 * @return bool
 	 */
-	static exportAction(assetId, storageProfileId){
+	static updateStatus(id, automaticIssueNotification){
+		let kparams = {};
+		kparams.id = id;
+		kparams.automaticIssueNotification = automaticIssueNotification;
+		return new kaltura.RequestBuilder('topic', 'updateStatus', kparams);
+	};
+}
+module.exports.topic = topic;
+
+
+/**
+ *Class definition for the Kaltura service: transaction.
+ * The available service actions:
+ * @action getPurchaseSessionId Retrieve the purchase session identifier.
+ * @action purchase Purchase specific product or subscription for a household. Upon successful charge entitlements to use the requested product or subscription are granted.
+ * @action setWaiver This method shall set the waiver flag on the user entitlement table and the waiver date field to the current date.
+ * @action updateStatus Updates a pending purchase transaction state.
+ * @action validateReceipt Verifies PPV/Subscription/Collection client purchase (such as InApp) and entitles the user.
+ */
+class transaction{
+	
+	/**
+	 * Retrieve the purchase session identifier.
+	 * @param purchaseSession PurchaseSession Purchase properties
+	 * @return bigint
+	 */
+	static getPurchaseSessionId(purchaseSession){
+		let kparams = {};
+		kparams.purchaseSession = purchaseSession;
+		return new kaltura.RequestBuilder('transaction', 'getPurchaseSessionId', kparams);
+	};
+	
+	/**
+	 * Purchase specific product or subscription for a household. Upon successful charge entitlements to use the requested product or subscription are granted.
+	 * @param purchase Purchase Purchase properties
+	 * @return KalturaTransaction
+	 */
+	static purchase(purchase){
+		let kparams = {};
+		kparams.purchase = purchase;
+		return new kaltura.RequestBuilder('transaction', 'purchase', kparams);
+	};
+	
+	/**
+	 * This method shall set the waiver flag on the user entitlement table and the waiver date field to the current date.
+	 * @param assetId int Asset identifier
+	 * @param transactionType string The transaction type (enum: KalturaTransactionType)
+	 * @return bool
+	 */
+	static setWaiver(assetId, transactionType){
 		let kparams = {};
 		kparams.assetId = assetId;
-		kparams.storageProfileId = storageProfileId;
-		return new kaltura.RequestBuilder('thumbasset', 'export', kparams);
+		kparams.transactionType = transactionType;
+		return new kaltura.RequestBuilder('transaction', 'setWaiver', kparams);
 	};
 	
 	/**
-	 * .
-	 * @param entryId string 
-	 * @param thumbParams ThumbParams 
-	 * @param sourceAssetId string id of the source asset (flavor or thumbnail) to be used as source for the thumbnail generation (optional, default: null)
-	 * @return KalturaThumbAsset
+	 * Updates a pending purchase transaction state.
+	 * @param paymentGatewayId string Payment gateway identifier
+	 * @param externalTransactionId string external transaction identifier
+	 * @param signature string Security signature to validate the caller is a payment gateway adapter application
+	 * @param status TransactionStatus Status properties
 	 */
-	static generate(entryId, thumbParams, sourceAssetId = null){
+	static updateStatus(paymentGatewayId, externalTransactionId, signature, status){
 		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.thumbParams = thumbParams;
-		kparams.sourceAssetId = sourceAssetId;
-		return new kaltura.RequestBuilder('thumbasset', 'generate', kparams);
+		kparams.paymentGatewayId = paymentGatewayId;
+		kparams.externalTransactionId = externalTransactionId;
+		kparams.signature = signature;
+		kparams.status = status;
+		return new kaltura.RequestBuilder('transaction', 'updateStatus', kparams);
 	};
 	
 	/**
-	 * .
-	 * @param entryId string 
-	 * @param destThumbParamsId int indicate the id of the ThumbParams to be generate this thumbnail by
-	 * @return KalturaThumbAsset
+	 * Verifies PPV/Subscription/Collection client purchase (such as InApp) and entitles the user.
+	 * @param externalReceipt ExternalReceipt Receipt properties
+	 * @return KalturaTransaction
 	 */
-	static generateByEntryId(entryId, destThumbParamsId){
+	static validateReceipt(externalReceipt){
 		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.destThumbParamsId = destThumbParamsId;
-		return new kaltura.RequestBuilder('thumbasset', 'generateByEntryId', kparams);
+		kparams.externalReceipt = externalReceipt;
+		return new kaltura.RequestBuilder('transaction', 'validateReceipt', kparams);
 	};
+}
+module.exports.transaction = transaction;
+
+
+/**
+ *Class definition for the Kaltura service: transactionHistory.
+ * The available service actions:
+ * @action list Gets user or household transaction history.
+ */
+class transactionHistory{
 	
 	/**
-	 * .
-	 * @param thumbAssetId string 
-	 * @return KalturaThumbAsset
-	 */
-	static get(thumbAssetId){
-		let kparams = {};
-		kparams.thumbAssetId = thumbAssetId;
-		return new kaltura.RequestBuilder('thumbasset', 'get', kparams);
-	};
-	
-	/**
-	 * .
-	 * @param entryId string 
-	 * @return array
-	 */
-	static getByEntryId(entryId){
-		let kparams = {};
-		kparams.entryId = entryId;
-		return new kaltura.RequestBuilder('thumbasset', 'getByEntryId', kparams);
-	};
-	
-	/**
-	 * Get remote storage existing paths for the asset.
-	 * @param id string 
-	 * @return KalturaRemotePathListResponse
-	 */
-	static getRemotePaths(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('thumbasset', 'getRemotePaths', kparams);
-	};
-	
-	/**
-	 * Get download URL for the asset.
-	 * @param id string 
-	 * @param storageId int  (optional, default: null)
-	 * @param thumbParams ThumbParams  (optional, default: null)
-	 * @return string
-	 */
-	static getUrl(id, storageId = null, thumbParams = null){
-		let kparams = {};
-		kparams.id = id;
-		kparams.storageId = storageId;
-		kparams.thumbParams = thumbParams;
-		return new kaltura.RequestBuilder('thumbasset', 'getUrl', kparams);
-	};
-	
-	/**
-	 * List Thumbnail Assets by filter and pager.
-	 * @param filter AssetFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaThumbAssetListResponse
+	 * Gets user or household transaction history.
+	 * @param filter TransactionHistoryFilter Filter by household or user (optional, default: null)
+	 * @param pager FilterPager Page size and index (optional, default: null)
+	 * @return KalturaBillingTransactionListResponse
 	 */
 	static listAction(filter = null, pager = null){
 		let kparams = {};
 		kparams.filter = filter;
 		kparams.pager = pager;
-		return new kaltura.RequestBuilder('thumbasset', 'list', kparams);
-	};
-	
-	/**
-	 * .
-	 * @param thumbAssetId string 
-	 * @return KalturaThumbAsset
-	 */
-	static regenerate(thumbAssetId){
-		let kparams = {};
-		kparams.thumbAssetId = thumbAssetId;
-		return new kaltura.RequestBuilder('thumbasset', 'regenerate', kparams);
-	};
-	
-	/**
-	 * Tags the thumbnail as DEFAULT_THUMB and removes that tag from all other thumbnail assets of the entry.
- * Create a new file sync link on the entry thumbnail that points to the thumbnail asset file sync.
-	 * @param thumbAssetId string 
-	 */
-	static setAsDefault(thumbAssetId){
-		let kparams = {};
-		kparams.thumbAssetId = thumbAssetId;
-		return new kaltura.RequestBuilder('thumbasset', 'setAsDefault', kparams);
-	};
-	
-	/**
-	 * Update content of thumbnail asset.
-	 * @param id string 
-	 * @param contentResource ContentResource 
-	 * @return KalturaThumbAsset
-	 */
-	static setContent(id, contentResource){
-		let kparams = {};
-		kparams.id = id;
-		kparams.contentResource = contentResource;
-		return new kaltura.RequestBuilder('thumbasset', 'setContent', kparams);
-	};
-	
-	/**
-	 * Update thumbnail asset.
-	 * @param id string 
-	 * @param thumbAsset ThumbAsset 
-	 * @return KalturaThumbAsset
-	 */
-	static update(id, thumbAsset){
-		let kparams = {};
-		kparams.id = id;
-		kparams.thumbAsset = thumbAsset;
-		return new kaltura.RequestBuilder('thumbasset', 'update', kparams);
+		return new kaltura.RequestBuilder('transactionhistory', 'list', kparams);
 	};
 }
-module.exports.thumbAsset = thumbAsset;
+module.exports.transactionHistory = transactionHistory;
 
 
 /**
- *Class definition for the Kaltura service: thumbParamsOutput.
+ *Class definition for the Kaltura service: userAssetRule.
  * The available service actions:
- * @action get Get thumb params output object by ID.
- * @action list List thumb params output objects by filter and pager.
+ * @action list Retrieve all the rules (parental, geo, device or user-type) that applies for this user and asset.
  */
-class thumbParamsOutput{
+class userAssetRule{
 	
 	/**
-	 * Get thumb params output object by ID.
-	 * @param id int 
-	 * @return KalturaThumbParamsOutput
+	 * Retrieve all the rules (parental, geo, device or user-type) that applies for this user and asset.
+	 * @param filter UserAssetRuleFilter Filter
+	 * @return KalturaUserAssetRuleListResponse
 	 */
-	static get(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('thumbparamsoutput', 'get', kparams);
-	};
-	
-	/**
-	 * List thumb params output objects by filter and pager.
-	 * @param filter ThumbParamsOutputFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaThumbParamsOutputListResponse
-	 */
-	static listAction(filter = null, pager = null){
+	static listAction(filter){
 		let kparams = {};
 		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('thumbparamsoutput', 'list', kparams);
+		return new kaltura.RequestBuilder('userassetrule', 'list', kparams);
 	};
 }
-module.exports.thumbParamsOutput = thumbParamsOutput;
+module.exports.userAssetRule = userAssetRule;
 
 
 /**
- *Class definition for the Kaltura service: thumbParams.
+ *Class definition for the Kaltura service: userAssetsListItem.
  * The available service actions:
- * @action add Add new Thumb Params.
- * @action delete Delete Thumb Params by ID.
- * @action get Get Thumb Params by ID.
- * @action getByConversionProfileId Get Thumb Params by Conversion Profile ID.
- * @action list List Thumb Params by filter with paging support (By default - all system default params will be listed too).
- * @action update Update Thumb Params by ID.
+ * @action add Adds a new item to user’s private asset list.
+ * @action delete Deletes an item from user’s private asset list.
+ * @action get Get an item from user’s private asset list.
  */
-class thumbParams{
+class userAssetsListItem{
 	
 	/**
-	 * Add new Thumb Params.
-	 * @param thumbParams ThumbParams 
-	 * @return KalturaThumbParams
+	 * Adds a new item to user’s private asset list.
+	 * @param userAssetsListItem UserAssetsListItem A list item to add
+	 * @return KalturaUserAssetsListItem
 	 */
-	static add(thumbParams){
+	static add(userAssetsListItem){
 		let kparams = {};
-		kparams.thumbParams = thumbParams;
-		return new kaltura.RequestBuilder('thumbparams', 'add', kparams);
+		kparams.userAssetsListItem = userAssetsListItem;
+		return new kaltura.RequestBuilder('userassetslistitem', 'add', kparams);
 	};
 	
 	/**
-	 * Delete Thumb Params by ID.
-	 * @param id int 
+	 * Deletes an item from user’s private asset list.
+	 * @param assetId string Asset id to delete
+	 * @param listType string Asset list type to delete from (enum: KalturaUserAssetsListType)
+	 * @return bool
 	 */
-	static deleteAction(id){
+	static deleteAction(assetId, listType){
 		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('thumbparams', 'delete', kparams);
+		kparams.assetId = assetId;
+		kparams.listType = listType;
+		return new kaltura.RequestBuilder('userassetslistitem', 'delete', kparams);
 	};
 	
 	/**
-	 * Get Thumb Params by ID.
-	 * @param id int 
-	 * @return KalturaThumbParams
+	 * Get an item from user’s private asset list.
+	 * @param assetId string Asset id to get
+	 * @param listType string Asset list type to get from (enum: KalturaUserAssetsListType)
+	 * @param itemType string item type to get (enum: KalturaUserAssetsListItemType)
+	 * @return KalturaUserAssetsListItem
 	 */
-	static get(id){
+	static get(assetId, listType, itemType){
 		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('thumbparams', 'get', kparams);
-	};
-	
-	/**
-	 * Get Thumb Params by Conversion Profile ID.
-	 * @param conversionProfileId int 
-	 * @return array
-	 */
-	static getByConversionProfileId(conversionProfileId){
-		let kparams = {};
-		kparams.conversionProfileId = conversionProfileId;
-		return new kaltura.RequestBuilder('thumbparams', 'getByConversionProfileId', kparams);
-	};
-	
-	/**
-	 * List Thumb Params by filter with paging support (By default - all system default params will be listed too).
-	 * @param filter ThumbParamsFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaThumbParamsListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('thumbparams', 'list', kparams);
-	};
-	
-	/**
-	 * Update Thumb Params by ID.
-	 * @param id int 
-	 * @param thumbParams ThumbParams 
-	 * @return KalturaThumbParams
-	 */
-	static update(id, thumbParams){
-		let kparams = {};
-		kparams.id = id;
-		kparams.thumbParams = thumbParams;
-		return new kaltura.RequestBuilder('thumbparams', 'update', kparams);
+		kparams.assetId = assetId;
+		kparams.listType = listType;
+		kparams.itemType = itemType;
+		return new kaltura.RequestBuilder('userassetslistitem', 'get', kparams);
 	};
 }
-module.exports.thumbParams = thumbParams;
+module.exports.userAssetsListItem = userAssetsListItem;
 
 
 /**
- *Class definition for the Kaltura service: uiConf.
+ *Class definition for the Kaltura service: userLoginPin.
  * The available service actions:
- * @action add UIConf Add action allows you to add a UIConf to Kaltura DB.
- * @action clone Clone an existing UIConf.
- * @action delete Delete an existing UIConf.
- * @action get Retrieve a UIConf by id.
- * @action getAvailableTypes Retrieve a list of all available versions by object type.
- * @action list Retrieve a list of available UIConfs.
- * @action listTemplates retrieve a list of available template UIConfs.
- * @action update Update an existing UIConf.
+ * @action add Generate a time and usage expiry login-PIN that can allow a single login per PIN. If an active login-PIN already exists. Calling this API again for same user will add another login-PIN.
+ * @action delete Immediately expire all active login-PINs for a user.
+ * @action deleteAll Immediately expire all active login-PINs for a user.
+ * @action update Set a time and usage expiry login-PIN that can allow a single login per PIN. If an active login-PIN already exists. Calling this API again for same user will add another login-PIN.
  */
-class uiConf{
+class userLoginPin{
 	
 	/**
-	 * UIConf Add action allows you to add a UIConf to Kaltura DB.
-	 * @param uiConf UiConf Mandatory input parameter of type KalturaUiConf
-	 * @return KalturaUiConf
+	 * Generate a time and usage expiry login-PIN that can allow a single login per PIN. If an active login-PIN already exists. Calling this API again for same user will add another login-PIN.
+	 * @param secret string Additional security parameter for optional enhanced security (optional, default: null)
+	 * @return KalturaUserLoginPin
 	 */
-	static add(uiConf){
+	static add(secret = null){
 		let kparams = {};
-		kparams.uiConf = uiConf;
-		return new kaltura.RequestBuilder('uiconf', 'add', kparams);
+		kparams.secret = secret;
+		return new kaltura.RequestBuilder('userloginpin', 'add', kparams);
 	};
 	
 	/**
-	 * Clone an existing UIConf.
-	 * @param id int 
-	 * @return KalturaUiConf
+	 * Immediately expire all active login-PINs for a user.
+	 * @param pinCode string Login pin code to expire
+	 * @return bool
 	 */
-	static cloneAction(id){
+	static deleteAction(pinCode){
 		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('uiconf', 'clone', kparams);
+		kparams.pinCode = pinCode;
+		return new kaltura.RequestBuilder('userloginpin', 'delete', kparams);
 	};
 	
 	/**
-	 * Delete an existing UIConf.
-	 * @param id int 
+	 * Immediately expire all active login-PINs for a user.
+	 * @return bool
 	 */
-	static deleteAction(id){
+	static deleteAll(){
 		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('uiconf', 'delete', kparams);
+		return new kaltura.RequestBuilder('userloginpin', 'deleteAll', kparams);
 	};
 	
 	/**
-	 * Retrieve a UIConf by id.
-	 * @param id int 
-	 * @return KalturaUiConf
+	 * Set a time and usage expiry login-PIN that can allow a single login per PIN. If an active login-PIN already exists. Calling this API again for same user will add another login-PIN.
+	 * @param pinCode string Device Identifier
+	 * @param secret string Additional security parameter to validate the login (optional, default: null)
+	 * @return KalturaUserLoginPin
 	 */
-	static get(id){
+	static update(pinCode, secret = null){
 		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('uiconf', 'get', kparams);
-	};
-	
-	/**
-	 * Retrieve a list of all available versions by object type.
-	 * @return array
-	 */
-	static getAvailableTypes(){
-		let kparams = {};
-		return new kaltura.RequestBuilder('uiconf', 'getAvailableTypes', kparams);
-	};
-	
-	/**
-	 * Retrieve a list of available UIConfs.
-	 * @param filter UiConfFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaUiConfListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('uiconf', 'list', kparams);
-	};
-	
-	/**
-	 * retrieve a list of available template UIConfs.
-	 * @param filter UiConfFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaUiConfListResponse
-	 */
-	static listTemplates(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('uiconf', 'listTemplates', kparams);
-	};
-	
-	/**
-	 * Update an existing UIConf.
-	 * @param id int 
-	 * @param uiConf UiConf 
-	 * @return KalturaUiConf
-	 */
-	static update(id, uiConf){
-		let kparams = {};
-		kparams.id = id;
-		kparams.uiConf = uiConf;
-		return new kaltura.RequestBuilder('uiconf', 'update', kparams);
+		kparams.pinCode = pinCode;
+		kparams.secret = secret;
+		return new kaltura.RequestBuilder('userloginpin', 'update', kparams);
 	};
 }
-module.exports.uiConf = uiConf;
-
-
-/**
- *Class definition for the Kaltura service: upload.
- * The available service actions:
- * @action getUploadedFileTokenByFileName .
- * @action upload .
- */
-class upload{
-	
-	/**
-	 * .
-	 * @param fileName string 
-	 * @return KalturaUploadResponse
-	 */
-	static getUploadedFileTokenByFileName(fileName){
-		let kparams = {};
-		kparams.fileName = fileName;
-		return new kaltura.RequestBuilder('upload', 'getUploadedFileTokenByFileName', kparams);
-	};
-	
-	/**
-	 * .
-	 * @param fileData file The file data
-	 * @return string
-	 */
-	static upload(fileData){
-		let kparams = {};
-		let kfiles = {};
-		kfiles.fileData = fileData;
-		return new kaltura.RequestBuilder('upload', 'upload', kparams, kfiles);
-	};
-}
-module.exports.upload = upload;
-
-
-/**
- *Class definition for the Kaltura service: uploadToken.
- * The available service actions:
- * @action add Adds new upload token to upload a file.
- * @action delete Deletes the upload token by upload token id.
- * @action get Get upload token by id.
- * @action list List upload token by filter with pager support.
- * When using a user session the service will be restricted to users objects only.
- * @action upload Upload a file using the upload token id, returns an error on failure (an exception will be thrown when using one of the Kaltura clients)
- * Chunks can be uploaded in parallel and they will be appended according to their resumeAt position.
- * A parallel upload session should have three stages:
- * 1. A single upload with resume=false and finalChunk=false
- * 2. Parallel upload requests each with resume=true,finalChunk=false and the expected resumetAt position.
- * If a chunk fails to upload it can be re-uploaded.
- * 3. After all of the chunks have been uploaded a final chunk (can be of zero size) should be uploaded
- * with resume=true, finalChunk=true and the expected resumeAt position. In case an UPLOAD_TOKEN_CANNOT_MATCH_EXPECTED_SIZE exception
- * has been returned (indicating not all of the chunks were appended yet) the final request can be retried.
- */
-class uploadToken{
-	
-	/**
-	 * Adds new upload token to upload a file.
-	 * @param uploadToken UploadToken  (optional, default: null)
-	 * @return KalturaUploadToken
-	 */
-	static add(uploadToken = null){
-		let kparams = {};
-		kparams.uploadToken = uploadToken;
-		return new kaltura.RequestBuilder('uploadtoken', 'add', kparams);
-	};
-	
-	/**
-	 * Deletes the upload token by upload token id.
-	 * @param uploadTokenId string 
-	 */
-	static deleteAction(uploadTokenId){
-		let kparams = {};
-		kparams.uploadTokenId = uploadTokenId;
-		return new kaltura.RequestBuilder('uploadtoken', 'delete', kparams);
-	};
-	
-	/**
-	 * Get upload token by id.
-	 * @param uploadTokenId string 
-	 * @return KalturaUploadToken
-	 */
-	static get(uploadTokenId){
-		let kparams = {};
-		kparams.uploadTokenId = uploadTokenId;
-		return new kaltura.RequestBuilder('uploadtoken', 'get', kparams);
-	};
-	
-	/**
-	 * List upload token by filter with pager support.
- * When using a user session the service will be restricted to users objects only.
-	 * @param filter UploadTokenFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaUploadTokenListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('uploadtoken', 'list', kparams);
-	};
-	
-	/**
-	 * Upload a file using the upload token id, returns an error on failure (an exception will be thrown when using one of the Kaltura clients)
- * Chunks can be uploaded in parallel and they will be appended according to their resumeAt position.
- * A parallel upload session should have three stages:
- * 1. A single upload with resume=false and finalChunk=false
- * 2. Parallel upload requests each with resume=true,finalChunk=false and the expected resumetAt position.
- * If a chunk fails to upload it can be re-uploaded.
- * 3. After all of the chunks have been uploaded a final chunk (can be of zero size) should be uploaded
- * with resume=true, finalChunk=true and the expected resumeAt position. In case an UPLOAD_TOKEN_CANNOT_MATCH_EXPECTED_SIZE exception
- * has been returned (indicating not all of the chunks were appended yet) the final request can be retried.
-	 * @param uploadTokenId string 
-	 * @param fileData file 
-	 * @param resume bool  (optional, default: false)
-	 * @param finalChunk bool  (optional, default: true)
-	 * @param resumeAt float  (optional, default: -1)
-	 * @return KalturaUploadToken
-	 */
-	static upload(uploadTokenId, fileData, resume = false, finalChunk = true, resumeAt = -1){
-		let kparams = {};
-		kparams.uploadTokenId = uploadTokenId;
-		let kfiles = {};
-		kfiles.fileData = fileData;
-		kparams.resume = resume;
-		kparams.finalChunk = finalChunk;
-		kparams.resumeAt = resumeAt;
-		return new kaltura.RequestBuilder('uploadtoken', 'upload', kparams, kfiles);
-	};
-}
-module.exports.uploadToken = uploadToken;
-
-
-/**
- *Class definition for the Kaltura service: userEntry.
- * The available service actions:
- * @action add Adds a user_entry to the Kaltura DB.
- * @action bulkDelete .
- * @action delete .
- * @action get .
- * @action list .
- * @action submitQuiz Submits the quiz so that it's status will be submitted and calculates the score for the quiz.
- * @action update .
- */
-class userEntry{
-	
-	/**
-	 * Adds a user_entry to the Kaltura DB.
-	 * @param userEntry UserEntry 
-	 * @return KalturaUserEntry
-	 */
-	static add(userEntry){
-		let kparams = {};
-		kparams.userEntry = userEntry;
-		return new kaltura.RequestBuilder('userentry', 'add', kparams);
-	};
-	
-	/**
-	 * .
-	 * @param filter UserEntryFilter 
-	 * @return int
-	 */
-	static bulkDelete(filter){
-		let kparams = {};
-		kparams.filter = filter;
-		return new kaltura.RequestBuilder('userentry', 'bulkDelete', kparams);
-	};
-	
-	/**
-	 * .
-	 * @param id int 
-	 * @return KalturaUserEntry
-	 */
-	static deleteAction(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('userentry', 'delete', kparams);
-	};
-	
-	/**
-	 * .
-	 * @param id string 
-	 * @return KalturaUserEntry
-	 */
-	static get(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('userentry', 'get', kparams);
-	};
-	
-	/**
-	 * .
-	 * @param filter UserEntryFilter 
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaUserEntryListResponse
-	 */
-	static listAction(filter, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('userentry', 'list', kparams);
-	};
-	
-	/**
-	 * Submits the quiz so that it's status will be submitted and calculates the score for the quiz.
-	 * @param id int 
-	 * @return KalturaQuizUserEntry
-	 */
-	static submitQuiz(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('userentry', 'submitQuiz', kparams);
-	};
-	
-	/**
-	 * .
-	 * @param id int 
-	 * @param userEntry UserEntry 
-	 */
-	static update(id, userEntry){
-		let kparams = {};
-		kparams.id = id;
-		kparams.userEntry = userEntry;
-		return new kaltura.RequestBuilder('userentry', 'update', kparams);
-	};
-}
-module.exports.userEntry = userEntry;
+module.exports.userLoginPin = userLoginPin;
 
 
 /**
  *Class definition for the Kaltura service: userRole.
  * The available service actions:
- * @action add Adds a new user role object to the account.
- * @action clone Creates a new user role object that is a duplicate of an existing role.
- * @action delete Deletes an existing user role object.
- * @action get Retrieves a user role object using its ID.
- * @action list Lists user role objects that are associated with an account.
- * Blocked user roles are listed unless you use a filter to exclude them.
- * Deleted user roles are not listed unless you use a filter to include them.
- * @action update Updates an existing user role object.
+ * @action list Retrieving user roles by identifiers, if filter is empty, returns all partner roles.
  */
 class userRole{
 	
 	/**
-	 * Adds a new user role object to the account.
-	 * @param userRole UserRole A new role
-	 * @return KalturaUserRole
-	 */
-	static add(userRole){
-		let kparams = {};
-		kparams.userRole = userRole;
-		return new kaltura.RequestBuilder('userrole', 'add', kparams);
-	};
-	
-	/**
-	 * Creates a new user role object that is a duplicate of an existing role.
-	 * @param userRoleId int The user role's unique identifier
-	 * @return KalturaUserRole
-	 */
-	static cloneAction(userRoleId){
-		let kparams = {};
-		kparams.userRoleId = userRoleId;
-		return new kaltura.RequestBuilder('userrole', 'clone', kparams);
-	};
-	
-	/**
-	 * Deletes an existing user role object.
-	 * @param userRoleId int The user role's unique identifier
-	 * @return KalturaUserRole
-	 */
-	static deleteAction(userRoleId){
-		let kparams = {};
-		kparams.userRoleId = userRoleId;
-		return new kaltura.RequestBuilder('userrole', 'delete', kparams);
-	};
-	
-	/**
-	 * Retrieves a user role object using its ID.
-	 * @param userRoleId int The user role's unique identifier
-	 * @return KalturaUserRole
-	 */
-	static get(userRoleId){
-		let kparams = {};
-		kparams.userRoleId = userRoleId;
-		return new kaltura.RequestBuilder('userrole', 'get', kparams);
-	};
-	
-	/**
-	 * Lists user role objects that are associated with an account.
- * Blocked user roles are listed unless you use a filter to exclude them.
- * Deleted user roles are not listed unless you use a filter to include them.
-	 * @param filter UserRoleFilter A filter used to exclude specific types of user roles (optional, default: null)
-	 * @param pager FilterPager A limit for the number of records to display on a page (optional, default: null)
+	 * Retrieving user roles by identifiers, if filter is empty, returns all partner roles.
+	 * @param filter UserRoleFilter  (optional, default: null)
 	 * @return KalturaUserRoleListResponse
 	 */
-	static listAction(filter = null, pager = null){
+	static listAction(filter = null){
 		let kparams = {};
 		kparams.filter = filter;
-		kparams.pager = pager;
 		return new kaltura.RequestBuilder('userrole', 'list', kparams);
-	};
-	
-	/**
-	 * Updates an existing user role object.
-	 * @param userRoleId int The user role's unique identifier
-	 * @param userRole UserRole Id The user role's unique identifier
-	 * @return KalturaUserRole
-	 */
-	static update(userRoleId, userRole){
-		let kparams = {};
-		kparams.userRoleId = userRoleId;
-		kparams.userRole = userRole;
-		return new kaltura.RequestBuilder('userrole', 'update', kparams);
 	};
 }
 module.exports.userRole = userRole;
-
-
-/**
- *Class definition for the Kaltura service: user.
- * The available service actions:
- * @action add Adds a new user to an existing account in the Kaltura database.
- * Input param $id is the unique identifier in the partner's system.
- * @action addFromBulkUpload .
- * @action checkLoginDataExists Action which checks whther user login.
- * @action delete Deletes a user from a partner account.
- * @action disableLogin Disables a user's ability to log into a partner account using an email address and a password.
- * You may use either a userId or a loginId parameter for this action.
- * @action enableLogin Enables a user to log into a partner account using an email address and a password.
- * @action get Retrieves a user object for a specified user ID.
- * @action getByLoginId Retrieves a user object for a user's login ID and partner ID.
- * A login ID is the email address used by a user to log into the system.
- * @action index Index an entry by id.
- * @action list Lists user objects that are associated with an account.
- * Blocked users are listed unless you use a filter to exclude them.
- * Deleted users are not listed unless you use a filter to include them.
- * @action login Logs a user into a partner account with a partner ID, a partner user ID (puser), and a user password.
- * @action loginByLoginId Logs a user into a partner account with a user login ID and a user password.
- * @action notifyBan Notifies that a user is banned from an account.
- * @action resetPassword Reset user's password and send the user an email to generate a new one.
- * @action setInitialPassword Set initial users password.
- * @action update Updates an existing user object.
- * You can also use this action to update the userId.
- * @action updateLoginData Updates a user's login data: email, password, name.
- */
-class user{
-	
-	/**
-	 * Adds a new user to an existing account in the Kaltura database.
- * Input param $id is the unique identifier in the partner's system.
-	 * @param user User The new user
-	 * @return KalturaUser
-	 */
-	static add(user){
-		let kparams = {};
-		kparams.user = user;
-		return new kaltura.RequestBuilder('user', 'add', kparams);
-	};
-	
-	/**
-	 * .
-	 * @param fileData file 
-	 * @param bulkUploadData BulkUploadJobData  (optional, default: null)
-	 * @param bulkUploadUserData BulkUploadUserData  (optional, default: null)
-	 * @return KalturaBulkUpload
-	 */
-	static addFromBulkUpload(fileData, bulkUploadData = null, bulkUploadUserData = null){
-		let kparams = {};
-		let kfiles = {};
-		kfiles.fileData = fileData;
-		kparams.bulkUploadData = bulkUploadData;
-		kparams.bulkUploadUserData = bulkUploadUserData;
-		return new kaltura.RequestBuilder('user', 'addFromBulkUpload', kparams, kfiles);
-	};
-	
-	/**
-	 * Action which checks whther user login.
-	 * @param filter UserLoginDataFilter 
-	 * @return bool
-	 */
-	static checkLoginDataExists(filter){
-		let kparams = {};
-		kparams.filter = filter;
-		return new kaltura.RequestBuilder('user', 'checkLoginDataExists', kparams);
-	};
-	
-	/**
-	 * Deletes a user from a partner account.
-	 * @param userId string The user's unique identifier in the partner's system
-	 * @return KalturaUser
-	 */
-	static deleteAction(userId){
-		let kparams = {};
-		kparams.userId = userId;
-		return new kaltura.RequestBuilder('user', 'delete', kparams);
-	};
-	
-	/**
-	 * Disables a user's ability to log into a partner account using an email address and a password.
- * You may use either a userId or a loginId parameter for this action.
-	 * @param userId string The user's unique identifier in the partner's system (optional, default: null)
-	 * @param loginId string The user's email address that identifies the user for login (optional, default: null)
-	 * @return KalturaUser
-	 */
-	static disableLogin(userId = null, loginId = null){
-		let kparams = {};
-		kparams.userId = userId;
-		kparams.loginId = loginId;
-		return new kaltura.RequestBuilder('user', 'disableLogin', kparams);
-	};
-	
-	/**
-	 * Enables a user to log into a partner account using an email address and a password.
-	 * @param userId string The user's unique identifier in the partner's system
-	 * @param loginId string The user's email address that identifies the user for login
-	 * @param password string The user's password (optional, default: null)
-	 * @return KalturaUser
-	 */
-	static enableLogin(userId, loginId, password = null){
-		let kparams = {};
-		kparams.userId = userId;
-		kparams.loginId = loginId;
-		kparams.password = password;
-		return new kaltura.RequestBuilder('user', 'enableLogin', kparams);
-	};
-	
-	/**
-	 * Retrieves a user object for a specified user ID.
-	 * @param userId string The user's unique identifier in the partner's system (optional, default: null)
-	 * @return KalturaUser
-	 */
-	static get(userId = null){
-		let kparams = {};
-		kparams.userId = userId;
-		return new kaltura.RequestBuilder('user', 'get', kparams);
-	};
-	
-	/**
-	 * Retrieves a user object for a user's login ID and partner ID.
- * A login ID is the email address used by a user to log into the system.
-	 * @param loginId string The user's email address that identifies the user for login
-	 * @return KalturaUser
-	 */
-	static getByLoginId(loginId){
-		let kparams = {};
-		kparams.loginId = loginId;
-		return new kaltura.RequestBuilder('user', 'getByLoginId', kparams);
-	};
-	
-	/**
-	 * Index an entry by id.
-	 * @param id string 
-	 * @param shouldUpdate bool  (optional, default: true)
-	 * @return string
-	 */
-	static index(id, shouldUpdate = true){
-		let kparams = {};
-		kparams.id = id;
-		kparams.shouldUpdate = shouldUpdate;
-		return new kaltura.RequestBuilder('user', 'index', kparams);
-	};
-	
-	/**
-	 * Lists user objects that are associated with an account.
- * Blocked users are listed unless you use a filter to exclude them.
- * Deleted users are not listed unless you use a filter to include them.
-	 * @param filter UserFilter A filter used to exclude specific types of users (optional, default: null)
-	 * @param pager FilterPager A limit for the number of records to display on a page (optional, default: null)
-	 * @return KalturaUserListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('user', 'list', kparams);
-	};
-	
-	/**
-	 * Logs a user into a partner account with a partner ID, a partner user ID (puser), and a user password.
-	 * @param partnerId int The identifier of the partner account
-	 * @param userId string The user's unique identifier in the partner's system
-	 * @param password string The user's password
-	 * @param expiry int The requested time (in seconds) before the generated KS expires (By default, a KS expires after 24 hours) (optional, default: 86400)
-	 * @param privileges string Special privileges (optional, default: *)
-	 * @return string
-	 */
-	static login(partnerId, userId, password, expiry = 86400, privileges = '*'){
-		let kparams = {};
-		kparams.partnerId = partnerId;
-		kparams.userId = userId;
-		kparams.password = password;
-		kparams.expiry = expiry;
-		kparams.privileges = privileges;
-		return new kaltura.RequestBuilder('user', 'login', kparams);
-	};
-	
-	/**
-	 * Logs a user into a partner account with a user login ID and a user password.
-	 * @param loginId string The user's email address that identifies the user for login
-	 * @param password string The user's password
-	 * @param partnerId int The identifier of the partner account (optional, default: null)
-	 * @param expiry int The requested time (in seconds) before the generated KS expires (By default, a KS expires after 24 hours) (optional, default: 86400)
-	 * @param privileges string Special privileges (optional, default: *)
-	 * @param otp string the user's one-time password (optional, default: null)
-	 * @return string
-	 */
-	static loginByLoginId(loginId, password, partnerId = null, expiry = 86400, privileges = '*', otp = null){
-		let kparams = {};
-		kparams.loginId = loginId;
-		kparams.password = password;
-		kparams.partnerId = partnerId;
-		kparams.expiry = expiry;
-		kparams.privileges = privileges;
-		kparams.otp = otp;
-		return new kaltura.RequestBuilder('user', 'loginByLoginId', kparams);
-	};
-	
-	/**
-	 * Notifies that a user is banned from an account.
-	 * @param userId string The user's unique identifier in the partner's system
-	 */
-	static notifyBan(userId){
-		let kparams = {};
-		kparams.userId = userId;
-		return new kaltura.RequestBuilder('user', 'notifyBan', kparams);
-	};
-	
-	/**
-	 * Reset user's password and send the user an email to generate a new one.
-	 * @param email string The user's email address (login email)
-	 */
-	static resetPassword(email){
-		let kparams = {};
-		kparams.email = email;
-		return new kaltura.RequestBuilder('user', 'resetPassword', kparams);
-	};
-	
-	/**
-	 * Set initial users password.
-	 * @param hashKey string The hash key used to identify the user (retrieved by email)
-	 * @param newPassword string The new password to set for the user
-	 */
-	static setInitialPassword(hashKey, newPassword){
-		let kparams = {};
-		kparams.hashKey = hashKey;
-		kparams.newPassword = newPassword;
-		return new kaltura.RequestBuilder('user', 'setInitialPassword', kparams);
-	};
-	
-	/**
-	 * Updates an existing user object.
- * You can also use this action to update the userId.
-	 * @param userId string The user's unique identifier in the partner's system
-	 * @param user User Id The user's unique identifier in the partner's system
-	 * @return KalturaUser
-	 */
-	static update(userId, user){
-		let kparams = {};
-		kparams.userId = userId;
-		kparams.user = user;
-		return new kaltura.RequestBuilder('user', 'update', kparams);
-	};
-	
-	/**
-	 * Updates a user's login data: email, password, name.
-	 * @param oldLoginId string The user's current email address that identified the user for login
-	 * @param password string The user's current email address that identified the user for login
-	 * @param newLoginId string Optional, The user's email address that will identify the user for login (optional)
-	 * @param newPassword string Optional, The user's new password (optional)
-	 * @param newFirstName string Optional, The user's new first name (optional, default: null)
-	 * @param newLastName string Optional, The user's new last name (optional, default: null)
-	 */
-	static updateLoginData(oldLoginId, password, newLoginId = '', newPassword = '', newFirstName = null, newLastName = null){
-		let kparams = {};
-		kparams.oldLoginId = oldLoginId;
-		kparams.password = password;
-		kparams.newLoginId = newLoginId;
-		kparams.newPassword = newPassword;
-		kparams.newFirstName = newFirstName;
-		kparams.newLastName = newLastName;
-		return new kaltura.RequestBuilder('user', 'updateLoginData', kparams);
-	};
-}
-module.exports.user = user;
-
-
-/**
- *Class definition for the Kaltura service: widget.
- * The available service actions:
- * @action add Add new widget, can be attached to entry or kshow
- * SourceWidget is ignored.
- * @action clone Add widget based on existing widget.
- * Must provide valid sourceWidgetId.
- * @action get Get widget by id.
- * @action list Retrieve a list of available widget depends on the filter given.
- * @action update Update exisiting widget.
- */
-class widget{
-	
-	/**
-	 * Add new widget, can be attached to entry or kshow
- * SourceWidget is ignored.
-	 * @param widget Widget 
-	 * @return KalturaWidget
-	 */
-	static add(widget){
-		let kparams = {};
-		kparams.widget = widget;
-		return new kaltura.RequestBuilder('widget', 'add', kparams);
-	};
-	
-	/**
-	 * Add widget based on existing widget.
- * Must provide valid sourceWidgetId.
-	 * @param widget Widget 
-	 * @return KalturaWidget
-	 */
-	static cloneAction(widget){
-		let kparams = {};
-		kparams.widget = widget;
-		return new kaltura.RequestBuilder('widget', 'clone', kparams);
-	};
-	
-	/**
-	 * Get widget by id.
-	 * @param id string 
-	 * @return KalturaWidget
-	 */
-	static get(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('widget', 'get', kparams);
-	};
-	
-	/**
-	 * Retrieve a list of available widget depends on the filter given.
-	 * @param filter WidgetFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaWidgetListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('widget', 'list', kparams);
-	};
-	
-	/**
-	 * Update exisiting widget.
-	 * @param id string 
-	 * @param widget Widget 
-	 * @return KalturaWidget
-	 */
-	static update(id, widget){
-		let kparams = {};
-		kparams.id = id;
-		kparams.widget = widget;
-		return new kaltura.RequestBuilder('widget', 'update', kparams);
-	};
-}
-module.exports.widget = widget;
-
-
-/**
- *Class definition for the Kaltura service: metadata.
- * The available service actions:
- * @action add Allows you to add a metadata object and metadata content associated with Kaltura object.
- * @action addFromBulk Allows you to add a metadata xml data from remote URL.
- * Enables different permissions than addFromUrl action.
- * @action addFromFile Allows you to add a metadata object and metadata file associated with Kaltura object.
- * @action addFromUrl Allows you to add a metadata xml data from remote URL.
- * @action delete Delete an existing metadata.
- * @action get Retrieve a metadata object by id.
- * @action index Index metadata by id, will also index the related object.
- * @action invalidate Mark existing metadata as invalid
- * Used by batch metadata transform.
- * @action list List metadata objects by filter and pager.
- * @action update Update an existing metadata object with new XML content.
- * @action updateFromFile Update an existing metadata object with new XML file.
- * @action updateFromXSL Action transforms current metadata object XML using a provided XSL.
- */
-class metadata{
-	
-	/**
-	 * Allows you to add a metadata object and metadata content associated with Kaltura object.
-	 * @param metadataProfileId int 
-	 * @param objectType string  (enum: KalturaMetadataObjectType)
-	 * @param objectId string 
-	 * @param xmlData string XML metadata
-	 * @return KalturaMetadata
-	 */
-	static add(metadataProfileId, objectType, objectId, xmlData){
-		let kparams = {};
-		kparams.metadataProfileId = metadataProfileId;
-		kparams.objectType = objectType;
-		kparams.objectId = objectId;
-		kparams.xmlData = xmlData;
-		return new kaltura.RequestBuilder('metadata_metadata', 'add', kparams);
-	};
-	
-	/**
-	 * Allows you to add a metadata xml data from remote URL.
- * Enables different permissions than addFromUrl action.
-	 * @param metadataProfileId int 
-	 * @param objectType string  (enum: KalturaMetadataObjectType)
-	 * @param objectId string 
-	 * @param url string XML metadata remote url
-	 * @return KalturaMetadata
-	 */
-	static addFromBulk(metadataProfileId, objectType, objectId, url){
-		let kparams = {};
-		kparams.metadataProfileId = metadataProfileId;
-		kparams.objectType = objectType;
-		kparams.objectId = objectId;
-		kparams.url = url;
-		return new kaltura.RequestBuilder('metadata_metadata', 'addFromBulk', kparams);
-	};
-	
-	/**
-	 * Allows you to add a metadata object and metadata file associated with Kaltura object.
-	 * @param metadataProfileId int 
-	 * @param objectType string  (enum: KalturaMetadataObjectType)
-	 * @param objectId string 
-	 * @param xmlFile file XML metadata
-	 * @return KalturaMetadata
-	 */
-	static addFromFile(metadataProfileId, objectType, objectId, xmlFile){
-		let kparams = {};
-		kparams.metadataProfileId = metadataProfileId;
-		kparams.objectType = objectType;
-		kparams.objectId = objectId;
-		let kfiles = {};
-		kfiles.xmlFile = xmlFile;
-		return new kaltura.RequestBuilder('metadata_metadata', 'addFromFile', kparams, kfiles);
-	};
-	
-	/**
-	 * Allows you to add a metadata xml data from remote URL.
-	 * @param metadataProfileId int 
-	 * @param objectType string  (enum: KalturaMetadataObjectType)
-	 * @param objectId string 
-	 * @param url string XML metadata remote url
-	 * @return KalturaMetadata
-	 */
-	static addFromUrl(metadataProfileId, objectType, objectId, url){
-		let kparams = {};
-		kparams.metadataProfileId = metadataProfileId;
-		kparams.objectType = objectType;
-		kparams.objectId = objectId;
-		kparams.url = url;
-		return new kaltura.RequestBuilder('metadata_metadata', 'addFromUrl', kparams);
-	};
-	
-	/**
-	 * Delete an existing metadata.
-	 * @param id int 
-	 */
-	static deleteAction(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('metadata_metadata', 'delete', kparams);
-	};
-	
-	/**
-	 * Retrieve a metadata object by id.
-	 * @param id int 
-	 * @return KalturaMetadata
-	 */
-	static get(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('metadata_metadata', 'get', kparams);
-	};
-	
-	/**
-	 * Index metadata by id, will also index the related object.
-	 * @param id string 
-	 * @param shouldUpdate bool 
-	 * @return int
-	 */
-	static index(id, shouldUpdate){
-		let kparams = {};
-		kparams.id = id;
-		kparams.shouldUpdate = shouldUpdate;
-		return new kaltura.RequestBuilder('metadata_metadata', 'index', kparams);
-	};
-	
-	/**
-	 * Mark existing metadata as invalid
- * Used by batch metadata transform.
-	 * @param id int 
-	 * @param version int Enable update only if the metadata object version did not change by other process (optional, default: null)
-	 */
-	static invalidate(id, version = null){
-		let kparams = {};
-		kparams.id = id;
-		kparams.version = version;
-		return new kaltura.RequestBuilder('metadata_metadata', 'invalidate', kparams);
-	};
-	
-	/**
-	 * List metadata objects by filter and pager.
-	 * @param filter MetadataFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaMetadataListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('metadata_metadata', 'list', kparams);
-	};
-	
-	/**
-	 * Update an existing metadata object with new XML content.
-	 * @param id int 
-	 * @param xmlData string XML metadata (optional, default: null)
-	 * @param version int Enable update only if the metadata object version did not change by other process (optional, default: null)
-	 * @return KalturaMetadata
-	 */
-	static update(id, xmlData = null, version = null){
-		let kparams = {};
-		kparams.id = id;
-		kparams.xmlData = xmlData;
-		kparams.version = version;
-		return new kaltura.RequestBuilder('metadata_metadata', 'update', kparams);
-	};
-	
-	/**
-	 * Update an existing metadata object with new XML file.
-	 * @param id int 
-	 * @param xmlFile file XML metadata (optional, default: null)
-	 * @return KalturaMetadata
-	 */
-	static updateFromFile(id, xmlFile = null){
-		let kparams = {};
-		kparams.id = id;
-		let kfiles = {};
-		kfiles.xmlFile = xmlFile;
-		return new kaltura.RequestBuilder('metadata_metadata', 'updateFromFile', kparams, kfiles);
-	};
-	
-	/**
-	 * Action transforms current metadata object XML using a provided XSL.
-	 * @param id int 
-	 * @param xslFile file 
-	 * @return KalturaMetadata
-	 */
-	static updateFromXSL(id, xslFile){
-		let kparams = {};
-		kparams.id = id;
-		let kfiles = {};
-		kfiles.xslFile = xslFile;
-		return new kaltura.RequestBuilder('metadata_metadata', 'updateFromXSL', kparams, kfiles);
-	};
-}
-module.exports.metadata = metadata;
-
-
-/**
- *Class definition for the Kaltura service: metadataProfile.
- * The available service actions:
- * @action add Allows you to add a metadata profile object and metadata profile content associated with Kaltura object type.
- * @action addFromFile Allows you to add a metadata profile object and metadata profile file associated with Kaltura object type.
- * @action delete Delete an existing metadata profile.
- * @action get Retrieve a metadata profile object by id.
- * @action list List metadata profile objects by filter and pager.
- * @action listFields List metadata profile fields by metadata profile id.
- * @action revert Update an existing metadata object definition file.
- * @action update Update an existing metadata object.
- * @action updateDefinitionFromFile Update an existing metadata object definition file.
- * @action updateTransformationFromFile Update an existing metadata object xslt file.
- * @action updateViewsFromFile Update an existing metadata object views file.
- */
-class metadataProfile{
-	
-	/**
-	 * Allows you to add a metadata profile object and metadata profile content associated with Kaltura object type.
-	 * @param metadataProfile MetadataProfile 
-	 * @param xsdData string XSD metadata definition
-	 * @param viewsData string UI views definition (optional, default: null)
-	 * @return KalturaMetadataProfile
-	 */
-	static add(metadataProfile, xsdData, viewsData = null){
-		let kparams = {};
-		kparams.metadataProfile = metadataProfile;
-		kparams.xsdData = xsdData;
-		kparams.viewsData = viewsData;
-		return new kaltura.RequestBuilder('metadata_metadataprofile', 'add', kparams);
-	};
-	
-	/**
-	 * Allows you to add a metadata profile object and metadata profile file associated with Kaltura object type.
-	 * @param metadataProfile MetadataProfile 
-	 * @param xsdFile file XSD metadata definition
-	 * @param viewsFile file UI views definition (optional, default: null)
-	 * @return KalturaMetadataProfile
-	 */
-	static addFromFile(metadataProfile, xsdFile, viewsFile = null){
-		let kparams = {};
-		kparams.metadataProfile = metadataProfile;
-		let kfiles = {};
-		kfiles.xsdFile = xsdFile;
-		kfiles.viewsFile = viewsFile;
-		return new kaltura.RequestBuilder('metadata_metadataprofile', 'addFromFile', kparams, kfiles);
-	};
-	
-	/**
-	 * Delete an existing metadata profile.
-	 * @param id int 
-	 */
-	static deleteAction(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('metadata_metadataprofile', 'delete', kparams);
-	};
-	
-	/**
-	 * Retrieve a metadata profile object by id.
-	 * @param id int 
-	 * @return KalturaMetadataProfile
-	 */
-	static get(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('metadata_metadataprofile', 'get', kparams);
-	};
-	
-	/**
-	 * List metadata profile objects by filter and pager.
-	 * @param filter MetadataProfileFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaMetadataProfileListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('metadata_metadataprofile', 'list', kparams);
-	};
-	
-	/**
-	 * List metadata profile fields by metadata profile id.
-	 * @param metadataProfileId int 
-	 * @return KalturaMetadataProfileFieldListResponse
-	 */
-	static listFields(metadataProfileId){
-		let kparams = {};
-		kparams.metadataProfileId = metadataProfileId;
-		return new kaltura.RequestBuilder('metadata_metadataprofile', 'listFields', kparams);
-	};
-	
-	/**
-	 * Update an existing metadata object definition file.
-	 * @param id int 
-	 * @param toVersion int 
-	 * @return KalturaMetadataProfile
-	 */
-	static revert(id, toVersion){
-		let kparams = {};
-		kparams.id = id;
-		kparams.toVersion = toVersion;
-		return new kaltura.RequestBuilder('metadata_metadataprofile', 'revert', kparams);
-	};
-	
-	/**
-	 * Update an existing metadata object.
-	 * @param id int 
-	 * @param metadataProfile MetadataProfile 
-	 * @param xsdData string XSD metadata definition (optional, default: null)
-	 * @param viewsData string UI views definition (optional, default: null)
-	 * @return KalturaMetadataProfile
-	 */
-	static update(id, metadataProfile, xsdData = null, viewsData = null){
-		let kparams = {};
-		kparams.id = id;
-		kparams.metadataProfile = metadataProfile;
-		kparams.xsdData = xsdData;
-		kparams.viewsData = viewsData;
-		return new kaltura.RequestBuilder('metadata_metadataprofile', 'update', kparams);
-	};
-	
-	/**
-	 * Update an existing metadata object definition file.
-	 * @param id int 
-	 * @param xsdFile file XSD metadata definition
-	 * @return KalturaMetadataProfile
-	 */
-	static updateDefinitionFromFile(id, xsdFile){
-		let kparams = {};
-		kparams.id = id;
-		let kfiles = {};
-		kfiles.xsdFile = xsdFile;
-		return new kaltura.RequestBuilder('metadata_metadataprofile', 'updateDefinitionFromFile', kparams, kfiles);
-	};
-	
-	/**
-	 * Update an existing metadata object xslt file.
-	 * @param id int 
-	 * @param xsltFile file XSLT file, will be executed on every metadata add/update
-	 * @return KalturaMetadataProfile
-	 */
-	static updateTransformationFromFile(id, xsltFile){
-		let kparams = {};
-		kparams.id = id;
-		let kfiles = {};
-		kfiles.xsltFile = xsltFile;
-		return new kaltura.RequestBuilder('metadata_metadataprofile', 'updateTransformationFromFile', kparams, kfiles);
-	};
-	
-	/**
-	 * Update an existing metadata object views file.
-	 * @param id int 
-	 * @param viewsFile file UI views file
-	 * @return KalturaMetadataProfile
-	 */
-	static updateViewsFromFile(id, viewsFile){
-		let kparams = {};
-		kparams.id = id;
-		let kfiles = {};
-		kfiles.viewsFile = viewsFile;
-		return new kaltura.RequestBuilder('metadata_metadataprofile', 'updateViewsFromFile', kparams, kfiles);
-	};
-}
-module.exports.metadataProfile = metadataProfile;
-
-
-/**
- *Class definition for the Kaltura service: documents.
- * The available service actions:
- * @action addFromEntry Copy entry into new entry.
- * @action addFromFlavorAsset Copy flavor asset into new entry.
- * @action addFromUploadedFile Add new document entry after the specific document file was uploaded and the upload token id exists.
- * @action approveReplace Approves document replacement.
- * @action cancelReplace Cancels document replacement.
- * @action convert Convert entry.
- * @action convertPptToSwf This will queue a batch job for converting the document file to swf
- * Returns the URL where the new swf will be available.
- * @action delete Delete a document entry.
- * @action get Get document entry by ID.
- * @action list List document entries by filter with paging support.
- * @action update Update document entry. Only the properties that were set will be updated.
- * @action updateContent Replace content associated with the given document entry.
- * @action upload Upload a document file to Kaltura, then the file can be used to create a document entry.
- */
-class documents{
-	
-	/**
-	 * Copy entry into new entry.
-	 * @param sourceEntryId string Document entry id to copy from
-	 * @param documentEntry DocumentEntry Document entry metadata (optional, default: null)
-	 * @param sourceFlavorParamsId int The flavor to be used as the new entry source, source flavor will be used if not specified (optional, default: null)
-	 * @return KalturaDocumentEntry
-	 */
-	static addFromEntry(sourceEntryId, documentEntry = null, sourceFlavorParamsId = null){
-		let kparams = {};
-		kparams.sourceEntryId = sourceEntryId;
-		kparams.documentEntry = documentEntry;
-		kparams.sourceFlavorParamsId = sourceFlavorParamsId;
-		return new kaltura.RequestBuilder('document_documents', 'addFromEntry', kparams);
-	};
-	
-	/**
-	 * Copy flavor asset into new entry.
-	 * @param sourceFlavorAssetId string Flavor asset id to be used as the new entry source
-	 * @param documentEntry DocumentEntry Document entry metadata (optional, default: null)
-	 * @return KalturaDocumentEntry
-	 */
-	static addFromFlavorAsset(sourceFlavorAssetId, documentEntry = null){
-		let kparams = {};
-		kparams.sourceFlavorAssetId = sourceFlavorAssetId;
-		kparams.documentEntry = documentEntry;
-		return new kaltura.RequestBuilder('document_documents', 'addFromFlavorAsset', kparams);
-	};
-	
-	/**
-	 * Add new document entry after the specific document file was uploaded and the upload token id exists.
-	 * @param documentEntry DocumentEntry Document entry metadata
-	 * @param uploadTokenId string Upload token id
-	 * @return KalturaDocumentEntry
-	 */
-	static addFromUploadedFile(documentEntry, uploadTokenId){
-		let kparams = {};
-		kparams.documentEntry = documentEntry;
-		kparams.uploadTokenId = uploadTokenId;
-		return new kaltura.RequestBuilder('document_documents', 'addFromUploadedFile', kparams);
-	};
-	
-	/**
-	 * Approves document replacement.
-	 * @param entryId string document entry id to replace
-	 * @return KalturaDocumentEntry
-	 */
-	static approveReplace(entryId){
-		let kparams = {};
-		kparams.entryId = entryId;
-		return new kaltura.RequestBuilder('document_documents', 'approveReplace', kparams);
-	};
-	
-	/**
-	 * Cancels document replacement.
-	 * @param entryId string Document entry id to cancel
-	 * @return KalturaDocumentEntry
-	 */
-	static cancelReplace(entryId){
-		let kparams = {};
-		kparams.entryId = entryId;
-		return new kaltura.RequestBuilder('document_documents', 'cancelReplace', kparams);
-	};
-	
-	/**
-	 * Convert entry.
-	 * @param entryId string Document entry id
-	 * @param conversionProfileId int  (optional, default: null)
-	 * @param dynamicConversionAttributes array  (optional, default: null)
-	 * @return bigint
-	 */
-	static convert(entryId, conversionProfileId = null, dynamicConversionAttributes = null){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.conversionProfileId = conversionProfileId;
-		kparams.dynamicConversionAttributes = dynamicConversionAttributes;
-		return new kaltura.RequestBuilder('document_documents', 'convert', kparams);
-	};
-	
-	/**
-	 * This will queue a batch job for converting the document file to swf
- * Returns the URL where the new swf will be available.
-	 * @param entryId string 
-	 * @return string
-	 */
-	static convertPptToSwf(entryId){
-		let kparams = {};
-		kparams.entryId = entryId;
-		return new kaltura.RequestBuilder('document_documents', 'convertPptToSwf', kparams);
-	};
-	
-	/**
-	 * Delete a document entry.
-	 * @param entryId string Document entry id to delete
-	 */
-	static deleteAction(entryId){
-		let kparams = {};
-		kparams.entryId = entryId;
-		return new kaltura.RequestBuilder('document_documents', 'delete', kparams);
-	};
-	
-	/**
-	 * Get document entry by ID.
-	 * @param entryId string Document entry id
-	 * @param version int Desired version of the data (optional, default: -1)
-	 * @return KalturaDocumentEntry
-	 */
-	static get(entryId, version = -1){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.version = version;
-		return new kaltura.RequestBuilder('document_documents', 'get', kparams);
-	};
-	
-	/**
-	 * List document entries by filter with paging support.
-	 * @param filter DocumentEntryFilter Document entry filter (optional, default: null)
-	 * @param pager FilterPager Pager (optional, default: null)
-	 * @return KalturaDocumentListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('document_documents', 'list', kparams);
-	};
-	
-	/**
-	 * Update document entry. Only the properties that were set will be updated.
-	 * @param entryId string Document entry id to update
-	 * @param documentEntry DocumentEntry Document entry metadata to update
-	 * @return KalturaDocumentEntry
-	 */
-	static update(entryId, documentEntry){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.documentEntry = documentEntry;
-		return new kaltura.RequestBuilder('document_documents', 'update', kparams);
-	};
-	
-	/**
-	 * Replace content associated with the given document entry.
-	 * @param entryId string document entry id to update
-	 * @param resource Resource Resource to be used to replace entry doc content
-	 * @param conversionProfileId int The conversion profile id to be used on the entry (optional, default: null)
-	 * @return KalturaDocumentEntry
-	 */
-	static updateContent(entryId, resource, conversionProfileId = null){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.resource = resource;
-		kparams.conversionProfileId = conversionProfileId;
-		return new kaltura.RequestBuilder('document_documents', 'updateContent', kparams);
-	};
-	
-	/**
-	 * Upload a document file to Kaltura, then the file can be used to create a document entry.
-	 * @param fileData file The file data
-	 * @return string
-	 */
-	static upload(fileData){
-		let kparams = {};
-		let kfiles = {};
-		kfiles.fileData = fileData;
-		return new kaltura.RequestBuilder('document_documents', 'upload', kparams, kfiles);
-	};
-}
-module.exports.documents = documents;
-
-
-/**
- *Class definition for the Kaltura service: virusScanProfile.
- * The available service actions:
- * @action add Allows you to add an virus scan profile object and virus scan profile content associated with Kaltura object.
- * @action delete Mark the virus scan profile as deleted.
- * @action get Retrieve an virus scan profile object by id.
- * @action list List virus scan profile objects by filter and pager.
- * @action scan Scan flavor asset according to virus scan profile.
- * @action update Update exisitng virus scan profile, it is possible to update the virus scan profile id too.
- */
-class virusScanProfile{
-	
-	/**
-	 * Allows you to add an virus scan profile object and virus scan profile content associated with Kaltura object.
-	 * @param virusScanProfile VirusScanProfile 
-	 * @return KalturaVirusScanProfile
-	 */
-	static add(virusScanProfile){
-		let kparams = {};
-		kparams.virusScanProfile = virusScanProfile;
-		return new kaltura.RequestBuilder('virusscan_virusscanprofile', 'add', kparams);
-	};
-	
-	/**
-	 * Mark the virus scan profile as deleted.
-	 * @param virusScanProfileId int 
-	 * @return KalturaVirusScanProfile
-	 */
-	static deleteAction(virusScanProfileId){
-		let kparams = {};
-		kparams.virusScanProfileId = virusScanProfileId;
-		return new kaltura.RequestBuilder('virusscan_virusscanprofile', 'delete', kparams);
-	};
-	
-	/**
-	 * Retrieve an virus scan profile object by id.
-	 * @param virusScanProfileId int 
-	 * @return KalturaVirusScanProfile
-	 */
-	static get(virusScanProfileId){
-		let kparams = {};
-		kparams.virusScanProfileId = virusScanProfileId;
-		return new kaltura.RequestBuilder('virusscan_virusscanprofile', 'get', kparams);
-	};
-	
-	/**
-	 * List virus scan profile objects by filter and pager.
-	 * @param filter VirusScanProfileFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaVirusScanProfileListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('virusscan_virusscanprofile', 'list', kparams);
-	};
-	
-	/**
-	 * Scan flavor asset according to virus scan profile.
-	 * @param flavorAssetId string 
-	 * @param virusScanProfileId int  (optional, default: null)
-	 * @return int
-	 */
-	static scan(flavorAssetId, virusScanProfileId = null){
-		let kparams = {};
-		kparams.flavorAssetId = flavorAssetId;
-		kparams.virusScanProfileId = virusScanProfileId;
-		return new kaltura.RequestBuilder('virusscan_virusscanprofile', 'scan', kparams);
-	};
-	
-	/**
-	 * Update exisitng virus scan profile, it is possible to update the virus scan profile id too.
-	 * @param virusScanProfileId int 
-	 * @param virusScanProfile VirusScanProfile Id
-	 * @return KalturaVirusScanProfile
-	 */
-	static update(virusScanProfileId, virusScanProfile){
-		let kparams = {};
-		kparams.virusScanProfileId = virusScanProfileId;
-		kparams.virusScanProfile = virusScanProfile;
-		return new kaltura.RequestBuilder('virusscan_virusscanprofile', 'update', kparams);
-	};
-}
-module.exports.virusScanProfile = virusScanProfile;
-
-
-/**
- *Class definition for the Kaltura service: distributionProfile.
- * The available service actions:
- * @action add Add new Distribution Profile.
- * @action delete Delete Distribution Profile by id.
- * @action get Get Distribution Profile by id.
- * @action list List all distribution providers.
- * @action listByPartner .
- * @action update Update Distribution Profile by id.
- * @action updateStatus Update Distribution Profile status by id.
- */
-class distributionProfile{
-	
-	/**
-	 * Add new Distribution Profile.
-	 * @param distributionProfile DistributionProfile 
-	 * @return KalturaDistributionProfile
-	 */
-	static add(distributionProfile){
-		let kparams = {};
-		kparams.distributionProfile = distributionProfile;
-		return new kaltura.RequestBuilder('contentdistribution_distributionprofile', 'add', kparams);
-	};
-	
-	/**
-	 * Delete Distribution Profile by id.
-	 * @param id int 
-	 */
-	static deleteAction(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('contentdistribution_distributionprofile', 'delete', kparams);
-	};
-	
-	/**
-	 * Get Distribution Profile by id.
-	 * @param id int 
-	 * @return KalturaDistributionProfile
-	 */
-	static get(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('contentdistribution_distributionprofile', 'get', kparams);
-	};
-	
-	/**
-	 * List all distribution providers.
-	 * @param filter DistributionProfileFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaDistributionProfileListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('contentdistribution_distributionprofile', 'list', kparams);
-	};
-	
-	/**
-	 * .
-	 * @param filter PartnerFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaDistributionProfileListResponse
-	 */
-	static listByPartner(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('contentdistribution_distributionprofile', 'listByPartner', kparams);
-	};
-	
-	/**
-	 * Update Distribution Profile by id.
-	 * @param id int 
-	 * @param distributionProfile DistributionProfile 
-	 * @return KalturaDistributionProfile
-	 */
-	static update(id, distributionProfile){
-		let kparams = {};
-		kparams.id = id;
-		kparams.distributionProfile = distributionProfile;
-		return new kaltura.RequestBuilder('contentdistribution_distributionprofile', 'update', kparams);
-	};
-	
-	/**
-	 * Update Distribution Profile status by id.
-	 * @param id int 
-	 * @param status int  (enum: KalturaDistributionProfileStatus)
-	 * @return KalturaDistributionProfile
-	 */
-	static updateStatus(id, status){
-		let kparams = {};
-		kparams.id = id;
-		kparams.status = status;
-		return new kaltura.RequestBuilder('contentdistribution_distributionprofile', 'updateStatus', kparams);
-	};
-}
-module.exports.distributionProfile = distributionProfile;
-
-
-/**
- *Class definition for the Kaltura service: entryDistribution.
- * The available service actions:
- * @action add Add new Entry Distribution.
- * @action delete Delete Entry Distribution by id.
- * @action get Get Entry Distribution by id.
- * @action list List all distribution providers.
- * @action retrySubmit Retries last submit action.
- * @action submitAdd Submits Entry Distribution to the remote destination.
- * @action submitDelete Deletes Entry Distribution from the remote destination.
- * @action submitFetchReport Submits Entry Distribution report request.
- * @action submitUpdate Submits Entry Distribution changes to the remote destination.
- * @action update Update Entry Distribution by id.
- * @action validate Validates Entry Distribution by id for submission.
- */
-class entryDistribution{
-	
-	/**
-	 * Add new Entry Distribution.
-	 * @param entryDistribution EntryDistribution 
-	 * @return KalturaEntryDistribution
-	 */
-	static add(entryDistribution){
-		let kparams = {};
-		kparams.entryDistribution = entryDistribution;
-		return new kaltura.RequestBuilder('contentdistribution_entrydistribution', 'add', kparams);
-	};
-	
-	/**
-	 * Delete Entry Distribution by id.
-	 * @param id int 
-	 */
-	static deleteAction(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('contentdistribution_entrydistribution', 'delete', kparams);
-	};
-	
-	/**
-	 * Get Entry Distribution by id.
-	 * @param id int 
-	 * @return KalturaEntryDistribution
-	 */
-	static get(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('contentdistribution_entrydistribution', 'get', kparams);
-	};
-	
-	/**
-	 * List all distribution providers.
-	 * @param filter EntryDistributionFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaEntryDistributionListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('contentdistribution_entrydistribution', 'list', kparams);
-	};
-	
-	/**
-	 * Retries last submit action.
-	 * @param id int 
-	 * @return KalturaEntryDistribution
-	 */
-	static retrySubmit(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('contentdistribution_entrydistribution', 'retrySubmit', kparams);
-	};
-	
-	/**
-	 * Submits Entry Distribution to the remote destination.
-	 * @param id int 
-	 * @param submitWhenReady bool  (optional, default: false)
-	 * @return KalturaEntryDistribution
-	 */
-	static submitAdd(id, submitWhenReady = false){
-		let kparams = {};
-		kparams.id = id;
-		kparams.submitWhenReady = submitWhenReady;
-		return new kaltura.RequestBuilder('contentdistribution_entrydistribution', 'submitAdd', kparams);
-	};
-	
-	/**
-	 * Deletes Entry Distribution from the remote destination.
-	 * @param id int 
-	 * @return KalturaEntryDistribution
-	 */
-	static submitDelete(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('contentdistribution_entrydistribution', 'submitDelete', kparams);
-	};
-	
-	/**
-	 * Submits Entry Distribution report request.
-	 * @param id int 
-	 * @return KalturaEntryDistribution
-	 */
-	static submitFetchReport(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('contentdistribution_entrydistribution', 'submitFetchReport', kparams);
-	};
-	
-	/**
-	 * Submits Entry Distribution changes to the remote destination.
-	 * @param id int 
-	 * @return KalturaEntryDistribution
-	 */
-	static submitUpdate(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('contentdistribution_entrydistribution', 'submitUpdate', kparams);
-	};
-	
-	/**
-	 * Update Entry Distribution by id.
-	 * @param id int 
-	 * @param entryDistribution EntryDistribution 
-	 * @return KalturaEntryDistribution
-	 */
-	static update(id, entryDistribution){
-		let kparams = {};
-		kparams.id = id;
-		kparams.entryDistribution = entryDistribution;
-		return new kaltura.RequestBuilder('contentdistribution_entrydistribution', 'update', kparams);
-	};
-	
-	/**
-	 * Validates Entry Distribution by id for submission.
-	 * @param id int 
-	 * @return KalturaEntryDistribution
-	 */
-	static validate(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('contentdistribution_entrydistribution', 'validate', kparams);
-	};
-}
-module.exports.entryDistribution = entryDistribution;
-
-
-/**
- *Class definition for the Kaltura service: distributionProvider.
- * The available service actions:
- * @action list List all distribution providers.
- */
-class distributionProvider{
-	
-	/**
-	 * List all distribution providers.
-	 * @param filter DistributionProviderFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaDistributionProviderListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('contentdistribution_distributionprovider', 'list', kparams);
-	};
-}
-module.exports.distributionProvider = distributionProvider;
-
-
-/**
- *Class definition for the Kaltura service: genericDistributionProvider.
- * The available service actions:
- * @action add Add new Generic Distribution Provider.
- * @action delete Delete Generic Distribution Provider by id.
- * @action get Get Generic Distribution Provider by id.
- * @action list List all distribution providers.
- * @action update Update Generic Distribution Provider by id.
- */
-class genericDistributionProvider{
-	
-	/**
-	 * Add new Generic Distribution Provider.
-	 * @param genericDistributionProvider GenericDistributionProvider 
-	 * @return KalturaGenericDistributionProvider
-	 */
-	static add(genericDistributionProvider){
-		let kparams = {};
-		kparams.genericDistributionProvider = genericDistributionProvider;
-		return new kaltura.RequestBuilder('contentdistribution_genericdistributionprovider', 'add', kparams);
-	};
-	
-	/**
-	 * Delete Generic Distribution Provider by id.
-	 * @param id int 
-	 */
-	static deleteAction(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('contentdistribution_genericdistributionprovider', 'delete', kparams);
-	};
-	
-	/**
-	 * Get Generic Distribution Provider by id.
-	 * @param id int 
-	 * @return KalturaGenericDistributionProvider
-	 */
-	static get(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('contentdistribution_genericdistributionprovider', 'get', kparams);
-	};
-	
-	/**
-	 * List all distribution providers.
-	 * @param filter GenericDistributionProviderFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaGenericDistributionProviderListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('contentdistribution_genericdistributionprovider', 'list', kparams);
-	};
-	
-	/**
-	 * Update Generic Distribution Provider by id.
-	 * @param id int 
-	 * @param genericDistributionProvider GenericDistributionProvider 
-	 * @return KalturaGenericDistributionProvider
-	 */
-	static update(id, genericDistributionProvider){
-		let kparams = {};
-		kparams.id = id;
-		kparams.genericDistributionProvider = genericDistributionProvider;
-		return new kaltura.RequestBuilder('contentdistribution_genericdistributionprovider', 'update', kparams);
-	};
-}
-module.exports.genericDistributionProvider = genericDistributionProvider;
-
-
-/**
- *Class definition for the Kaltura service: genericDistributionProviderAction.
- * The available service actions:
- * @action add Add new Generic Distribution Provider Action.
- * @action addMrssTransform Add MRSS transform file to generic distribution provider action.
- * @action addMrssTransformFromFile Add MRSS transform file to generic distribution provider action.
- * @action addMrssValidate Add MRSS validate file to generic distribution provider action.
- * @action addMrssValidateFromFile Add MRSS validate file to generic distribution provider action.
- * @action addResultsTransform Add results transform file to generic distribution provider action.
- * @action addResultsTransformFromFile Add MRSS transform file to generic distribution provider action.
- * @action delete Delete Generic Distribution Provider Action by id.
- * @action deleteByProviderId Delete Generic Distribution Provider Action by provider id.
- * @action get Get Generic Distribution Provider Action by id.
- * @action getByProviderId Get Generic Distribution Provider Action by provider id.
- * @action list List all distribution providers.
- * @action update Update Generic Distribution Provider Action by id.
- * @action updateByProviderId Update Generic Distribution Provider Action by provider id.
- */
-class genericDistributionProviderAction{
-	
-	/**
-	 * Add new Generic Distribution Provider Action.
-	 * @param genericDistributionProviderAction GenericDistributionProviderAction 
-	 * @return KalturaGenericDistributionProviderAction
-	 */
-	static add(genericDistributionProviderAction){
-		let kparams = {};
-		kparams.genericDistributionProviderAction = genericDistributionProviderAction;
-		return new kaltura.RequestBuilder('contentdistribution_genericdistributionprovideraction', 'add', kparams);
-	};
-	
-	/**
-	 * Add MRSS transform file to generic distribution provider action.
-	 * @param id int the id of the generic distribution provider action
-	 * @param xslData string XSL MRSS transformation data
-	 * @return KalturaGenericDistributionProviderAction
-	 */
-	static addMrssTransform(id, xslData){
-		let kparams = {};
-		kparams.id = id;
-		kparams.xslData = xslData;
-		return new kaltura.RequestBuilder('contentdistribution_genericdistributionprovideraction', 'addMrssTransform', kparams);
-	};
-	
-	/**
-	 * Add MRSS transform file to generic distribution provider action.
-	 * @param id int the id of the generic distribution provider action
-	 * @param xslFile file XSL MRSS transformation file
-	 * @return KalturaGenericDistributionProviderAction
-	 */
-	static addMrssTransformFromFile(id, xslFile){
-		let kparams = {};
-		kparams.id = id;
-		let kfiles = {};
-		kfiles.xslFile = xslFile;
-		return new kaltura.RequestBuilder('contentdistribution_genericdistributionprovideraction', 'addMrssTransformFromFile', kparams, kfiles);
-	};
-	
-	/**
-	 * Add MRSS validate file to generic distribution provider action.
-	 * @param id int the id of the generic distribution provider action
-	 * @param xsdData string XSD MRSS validatation data
-	 * @return KalturaGenericDistributionProviderAction
-	 */
-	static addMrssValidate(id, xsdData){
-		let kparams = {};
-		kparams.id = id;
-		kparams.xsdData = xsdData;
-		return new kaltura.RequestBuilder('contentdistribution_genericdistributionprovideraction', 'addMrssValidate', kparams);
-	};
-	
-	/**
-	 * Add MRSS validate file to generic distribution provider action.
-	 * @param id int the id of the generic distribution provider action
-	 * @param xsdFile file XSD MRSS validatation file
-	 * @return KalturaGenericDistributionProviderAction
-	 */
-	static addMrssValidateFromFile(id, xsdFile){
-		let kparams = {};
-		kparams.id = id;
-		let kfiles = {};
-		kfiles.xsdFile = xsdFile;
-		return new kaltura.RequestBuilder('contentdistribution_genericdistributionprovideraction', 'addMrssValidateFromFile', kparams, kfiles);
-	};
-	
-	/**
-	 * Add results transform file to generic distribution provider action.
-	 * @param id int the id of the generic distribution provider action
-	 * @param transformData string transformation data xsl, xPath or regex
-	 * @return KalturaGenericDistributionProviderAction
-	 */
-	static addResultsTransform(id, transformData){
-		let kparams = {};
-		kparams.id = id;
-		kparams.transformData = transformData;
-		return new kaltura.RequestBuilder('contentdistribution_genericdistributionprovideraction', 'addResultsTransform', kparams);
-	};
-	
-	/**
-	 * Add MRSS transform file to generic distribution provider action.
-	 * @param id int the id of the generic distribution provider action
-	 * @param transformFile file transformation file xsl, xPath or regex
-	 * @return KalturaGenericDistributionProviderAction
-	 */
-	static addResultsTransformFromFile(id, transformFile){
-		let kparams = {};
-		kparams.id = id;
-		let kfiles = {};
-		kfiles.transformFile = transformFile;
-		return new kaltura.RequestBuilder('contentdistribution_genericdistributionprovideraction', 'addResultsTransformFromFile', kparams, kfiles);
-	};
-	
-	/**
-	 * Delete Generic Distribution Provider Action by id.
-	 * @param id int 
-	 */
-	static deleteAction(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('contentdistribution_genericdistributionprovideraction', 'delete', kparams);
-	};
-	
-	/**
-	 * Delete Generic Distribution Provider Action by provider id.
-	 * @param genericDistributionProviderId int 
-	 * @param actionType int  (enum: KalturaDistributionAction)
-	 */
-	static deleteByProviderId(genericDistributionProviderId, actionType){
-		let kparams = {};
-		kparams.genericDistributionProviderId = genericDistributionProviderId;
-		kparams.actionType = actionType;
-		return new kaltura.RequestBuilder('contentdistribution_genericdistributionprovideraction', 'deleteByProviderId', kparams);
-	};
-	
-	/**
-	 * Get Generic Distribution Provider Action by id.
-	 * @param id int 
-	 * @return KalturaGenericDistributionProviderAction
-	 */
-	static get(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('contentdistribution_genericdistributionprovideraction', 'get', kparams);
-	};
-	
-	/**
-	 * Get Generic Distribution Provider Action by provider id.
-	 * @param genericDistributionProviderId int 
-	 * @param actionType int  (enum: KalturaDistributionAction)
-	 * @return KalturaGenericDistributionProviderAction
-	 */
-	static getByProviderId(genericDistributionProviderId, actionType){
-		let kparams = {};
-		kparams.genericDistributionProviderId = genericDistributionProviderId;
-		kparams.actionType = actionType;
-		return new kaltura.RequestBuilder('contentdistribution_genericdistributionprovideraction', 'getByProviderId', kparams);
-	};
-	
-	/**
-	 * List all distribution providers.
-	 * @param filter GenericDistributionProviderActionFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaGenericDistributionProviderActionListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('contentdistribution_genericdistributionprovideraction', 'list', kparams);
-	};
-	
-	/**
-	 * Update Generic Distribution Provider Action by id.
-	 * @param id int 
-	 * @param genericDistributionProviderAction GenericDistributionProviderAction 
-	 * @return KalturaGenericDistributionProviderAction
-	 */
-	static update(id, genericDistributionProviderAction){
-		let kparams = {};
-		kparams.id = id;
-		kparams.genericDistributionProviderAction = genericDistributionProviderAction;
-		return new kaltura.RequestBuilder('contentdistribution_genericdistributionprovideraction', 'update', kparams);
-	};
-	
-	/**
-	 * Update Generic Distribution Provider Action by provider id.
-	 * @param genericDistributionProviderId int 
-	 * @param actionType int  (enum: KalturaDistributionAction)
-	 * @param genericDistributionProviderAction GenericDistributionProviderAction 
-	 * @return KalturaGenericDistributionProviderAction
-	 */
-	static updateByProviderId(genericDistributionProviderId, actionType, genericDistributionProviderAction){
-		let kparams = {};
-		kparams.genericDistributionProviderId = genericDistributionProviderId;
-		kparams.actionType = actionType;
-		kparams.genericDistributionProviderAction = genericDistributionProviderAction;
-		return new kaltura.RequestBuilder('contentdistribution_genericdistributionprovideraction', 'updateByProviderId', kparams);
-	};
-}
-module.exports.genericDistributionProviderAction = genericDistributionProviderAction;
-
-
-/**
- *Class definition for the Kaltura service: cuePoint.
- * The available service actions:
- * @action add Allows you to add an cue point object associated with an entry.
- * @action addFromBulk Allows you to add multiple cue points objects by uploading XML that contains multiple cue point definitions.
- * @action clone Clone cuePoint with id to given entry.
- * @action count count cue point objects by filter.
- * @action delete delete cue point by id, and delete all children cue points.
- * @action get Retrieve an CuePoint object by id.
- * @action list List cue point objects by filter and pager.
- * @action update Update cue point by id.
- * @action updateStatus Update cuePoint status by id.
- */
-class cuePoint{
-	
-	/**
-	 * Allows you to add an cue point object associated with an entry.
-	 * @param cuePoint CuePoint 
-	 * @return KalturaCuePoint
-	 */
-	static add(cuePoint){
-		let kparams = {};
-		kparams.cuePoint = cuePoint;
-		return new kaltura.RequestBuilder('cuepoint_cuepoint', 'add', kparams);
-	};
-	
-	/**
-	 * Allows you to add multiple cue points objects by uploading XML that contains multiple cue point definitions.
-	 * @param fileData file 
-	 * @return KalturaCuePointListResponse
-	 */
-	static addFromBulk(fileData){
-		let kparams = {};
-		let kfiles = {};
-		kfiles.fileData = fileData;
-		return new kaltura.RequestBuilder('cuepoint_cuepoint', 'addFromBulk', kparams, kfiles);
-	};
-	
-	/**
-	 * Clone cuePoint with id to given entry.
-	 * @param id string 
-	 * @param entryId string 
-	 * @return KalturaCuePoint
-	 */
-	static cloneAction(id, entryId){
-		let kparams = {};
-		kparams.id = id;
-		kparams.entryId = entryId;
-		return new kaltura.RequestBuilder('cuepoint_cuepoint', 'clone', kparams);
-	};
-	
-	/**
-	 * count cue point objects by filter.
-	 * @param filter CuePointFilter  (optional, default: null)
-	 * @return int
-	 */
-	static count(filter = null){
-		let kparams = {};
-		kparams.filter = filter;
-		return new kaltura.RequestBuilder('cuepoint_cuepoint', 'count', kparams);
-	};
-	
-	/**
-	 * delete cue point by id, and delete all children cue points.
-	 * @param id string 
-	 */
-	static deleteAction(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('cuepoint_cuepoint', 'delete', kparams);
-	};
-	
-	/**
-	 * Retrieve an CuePoint object by id.
-	 * @param id string 
-	 * @return KalturaCuePoint
-	 */
-	static get(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('cuepoint_cuepoint', 'get', kparams);
-	};
-	
-	/**
-	 * List cue point objects by filter and pager.
-	 * @param filter CuePointFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaCuePointListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('cuepoint_cuepoint', 'list', kparams);
-	};
-	
-	/**
-	 * Update cue point by id.
-	 * @param id string 
-	 * @param cuePoint CuePoint 
-	 * @return KalturaCuePoint
-	 */
-	static update(id, cuePoint){
-		let kparams = {};
-		kparams.id = id;
-		kparams.cuePoint = cuePoint;
-		return new kaltura.RequestBuilder('cuepoint_cuepoint', 'update', kparams);
-	};
-	
-	/**
-	 * Update cuePoint status by id.
-	 * @param id string 
-	 * @param status int  (enum: KalturaCuePointStatus)
-	 */
-	static updateStatus(id, status){
-		let kparams = {};
-		kparams.id = id;
-		kparams.status = status;
-		return new kaltura.RequestBuilder('cuepoint_cuepoint', 'updateStatus', kparams);
-	};
-}
-module.exports.cuePoint = cuePoint;
-
-
-/**
- *Class definition for the Kaltura service: annotation.
- * The available service actions:
- * @action add Allows you to add an annotation object associated with an entry.
- * @action addFromBulk Allows you to add multiple cue points objects by uploading XML that contains multiple cue point definitions.
- * @action clone Clone cuePoint with id to given entry.
- * @action count count cue point objects by filter.
- * @action delete delete cue point by id, and delete all children cue points.
- * @action get Retrieve an CuePoint object by id.
- * @action list List annotation objects by filter and pager.
- * @action update Update annotation by id.
- * @action updateStatus Update cuePoint status by id.
- */
-class annotation{
-	
-	/**
-	 * Allows you to add an annotation object associated with an entry.
-	 * @param annotation CuePoint 
-	 * @return KalturaAnnotation
-	 */
-	static add(annotation){
-		let kparams = {};
-		kparams.annotation = annotation;
-		return new kaltura.RequestBuilder('annotation_annotation', 'add', kparams);
-	};
-	
-	/**
-	 * Allows you to add multiple cue points objects by uploading XML that contains multiple cue point definitions.
-	 * @param fileData file 
-	 * @return KalturaCuePointListResponse
-	 */
-	static addFromBulk(fileData){
-		let kparams = {};
-		let kfiles = {};
-		kfiles.fileData = fileData;
-		return new kaltura.RequestBuilder('annotation_annotation', 'addFromBulk', kparams, kfiles);
-	};
-	
-	/**
-	 * Clone cuePoint with id to given entry.
-	 * @param id string 
-	 * @param entryId string 
-	 * @return KalturaCuePoint
-	 */
-	static cloneAction(id, entryId){
-		let kparams = {};
-		kparams.id = id;
-		kparams.entryId = entryId;
-		return new kaltura.RequestBuilder('annotation_annotation', 'clone', kparams);
-	};
-	
-	/**
-	 * count cue point objects by filter.
-	 * @param filter CuePointFilter  (optional, default: null)
-	 * @return int
-	 */
-	static count(filter = null){
-		let kparams = {};
-		kparams.filter = filter;
-		return new kaltura.RequestBuilder('annotation_annotation', 'count', kparams);
-	};
-	
-	/**
-	 * delete cue point by id, and delete all children cue points.
-	 * @param id string 
-	 */
-	static deleteAction(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('annotation_annotation', 'delete', kparams);
-	};
-	
-	/**
-	 * Retrieve an CuePoint object by id.
-	 * @param id string 
-	 * @return KalturaCuePoint
-	 */
-	static get(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('annotation_annotation', 'get', kparams);
-	};
-	
-	/**
-	 * List annotation objects by filter and pager.
-	 * @param filter CuePointFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaAnnotationListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('annotation_annotation', 'list', kparams);
-	};
-	
-	/**
-	 * Update annotation by id.
-	 * @param id string 
-	 * @param annotation CuePoint 
-	 * @return KalturaAnnotation
-	 */
-	static update(id, annotation){
-		let kparams = {};
-		kparams.id = id;
-		kparams.annotation = annotation;
-		return new kaltura.RequestBuilder('annotation_annotation', 'update', kparams);
-	};
-	
-	/**
-	 * Update cuePoint status by id.
-	 * @param id string 
-	 * @param status int  (enum: KalturaCuePointStatus)
-	 */
-	static updateStatus(id, status){
-		let kparams = {};
-		kparams.id = id;
-		kparams.status = status;
-		return new kaltura.RequestBuilder('annotation_annotation', 'updateStatus', kparams);
-	};
-}
-module.exports.annotation = annotation;
-
-
-/**
- *Class definition for the Kaltura service: quiz.
- * The available service actions:
- * @action add Allows to add a quiz to an entry.
- * @action get Allows to get a quiz.
- * @action getUrl sends a with an api request for pdf from quiz object.
- * @action list List quiz objects by filter and pager.
- * @action update Allows to update a quiz.
- */
-class quiz{
-	
-	/**
-	 * Allows to add a quiz to an entry.
-	 * @param entryId string 
-	 * @param quiz Quiz 
-	 * @return KalturaQuiz
-	 */
-	static add(entryId, quiz){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.quiz = quiz;
-		return new kaltura.RequestBuilder('quiz_quiz', 'add', kparams);
-	};
-	
-	/**
-	 * Allows to get a quiz.
-	 * @param entryId string 
-	 * @return KalturaQuiz
-	 */
-	static get(entryId){
-		let kparams = {};
-		kparams.entryId = entryId;
-		return new kaltura.RequestBuilder('quiz_quiz', 'get', kparams);
-	};
-	
-	/**
-	 * sends a with an api request for pdf from quiz object.
-	 * @param entryId string 
-	 * @param quizOutputType int  (enum: KalturaQuizOutputType)
-	 * @return string
-	 */
-	static getUrl(entryId, quizOutputType){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.quizOutputType = quizOutputType;
-		return new kaltura.RequestBuilder('quiz_quiz', 'getUrl', kparams);
-	};
-	
-	/**
-	 * List quiz objects by filter and pager.
-	 * @param filter QuizFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaQuizListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('quiz_quiz', 'list', kparams);
-	};
-	
-	/**
-	 * Allows to update a quiz.
-	 * @param entryId string 
-	 * @param quiz Quiz 
-	 * @return KalturaQuiz
-	 */
-	static update(entryId, quiz){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.quiz = quiz;
-		return new kaltura.RequestBuilder('quiz_quiz', 'update', kparams);
-	};
-}
-module.exports.quiz = quiz;
-
-
-/**
- *Class definition for the Kaltura service: shortLink.
- * The available service actions:
- * @action add Allows you to add a short link object.
- * @action delete Mark the short link as deleted.
- * @action get Retrieve an short link object by id.
- * @action list List short link objects by filter and pager.
- * @action update Update exisitng short link.
- */
-class shortLink{
-	
-	/**
-	 * Allows you to add a short link object.
-	 * @param shortLink ShortLink 
-	 * @return KalturaShortLink
-	 */
-	static add(shortLink){
-		let kparams = {};
-		kparams.shortLink = shortLink;
-		return new kaltura.RequestBuilder('shortlink_shortlink', 'add', kparams);
-	};
-	
-	/**
-	 * Mark the short link as deleted.
-	 * @param id string 
-	 * @return KalturaShortLink
-	 */
-	static deleteAction(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('shortlink_shortlink', 'delete', kparams);
-	};
-	
-	/**
-	 * Retrieve an short link object by id.
-	 * @param id string 
-	 * @return KalturaShortLink
-	 */
-	static get(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('shortlink_shortlink', 'get', kparams);
-	};
-	
-	/**
-	 * List short link objects by filter and pager.
-	 * @param filter ShortLinkFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaShortLinkListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('shortlink_shortlink', 'list', kparams);
-	};
-	
-	/**
-	 * Update exisitng short link.
-	 * @param id string 
-	 * @param shortLink ShortLink 
-	 * @return KalturaShortLink
-	 */
-	static update(id, shortLink){
-		let kparams = {};
-		kparams.id = id;
-		kparams.shortLink = shortLink;
-		return new kaltura.RequestBuilder('shortlink_shortlink', 'update', kparams);
-	};
-}
-module.exports.shortLink = shortLink;
-
-
-/**
- *Class definition for the Kaltura service: bulk.
- * The available service actions:
- * @action abort Aborts the bulk upload and all its child jobs.
- * @action get Get bulk upload batch job by id.
- * @action list List bulk upload batch jobs.
- */
-class bulk{
-	
-	/**
-	 * Aborts the bulk upload and all its child jobs.
-	 * @param id int job id
-	 * @return KalturaBulkUpload
-	 */
-	static abort(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('bulkupload_bulk', 'abort', kparams);
-	};
-	
-	/**
-	 * Get bulk upload batch job by id.
-	 * @param id int 
-	 * @return KalturaBulkUpload
-	 */
-	static get(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('bulkupload_bulk', 'get', kparams);
-	};
-	
-	/**
-	 * List bulk upload batch jobs.
-	 * @param bulkUploadFilter BulkUploadFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaBulkUploadListResponse
-	 */
-	static listAction(bulkUploadFilter = null, pager = null){
-		let kparams = {};
-		kparams.bulkUploadFilter = bulkUploadFilter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('bulkupload_bulk', 'list', kparams);
-	};
-}
-module.exports.bulk = bulk;
-
-
-/**
- *Class definition for the Kaltura service: dropFolder.
- * The available service actions:
- * @action add Allows you to add a new KalturaDropFolder object.
- * @action delete Mark the KalturaDropFolder object as deleted.
- * @action freeExclusiveDropFolder freeExclusive KalturaDropFolder object.
- * @action get Retrieve a KalturaDropFolder object by ID.
- * @action getExclusiveDropFolder getExclusive KalturaDropFolder object.
- * @action list List KalturaDropFolder objects.
- * @action update Update an existing KalturaDropFolder object.
- */
-class dropFolder{
-	
-	/**
-	 * Allows you to add a new KalturaDropFolder object.
-	 * @param dropFolder DropFolder 
-	 * @return KalturaDropFolder
-	 */
-	static add(dropFolder){
-		let kparams = {};
-		kparams.dropFolder = dropFolder;
-		return new kaltura.RequestBuilder('dropfolder_dropfolder', 'add', kparams);
-	};
-	
-	/**
-	 * Mark the KalturaDropFolder object as deleted.
-	 * @param dropFolderId int 
-	 * @return KalturaDropFolder
-	 */
-	static deleteAction(dropFolderId){
-		let kparams = {};
-		kparams.dropFolderId = dropFolderId;
-		return new kaltura.RequestBuilder('dropfolder_dropfolder', 'delete', kparams);
-	};
-	
-	/**
-	 * freeExclusive KalturaDropFolder object.
-	 * @param dropFolderId int 
-	 * @param status int 
-	 * @param errorCode string  (optional, default: null)
-	 * @param errorDescription string  (optional, default: null)
-	 * @return KalturaDropFolder
-	 */
-	static freeExclusiveDropFolder(dropFolderId, status, errorCode = null, errorDescription = null){
-		let kparams = {};
-		kparams.dropFolderId = dropFolderId;
-		kparams.status = status;
-		kparams.errorCode = errorCode;
-		kparams.errorDescription = errorDescription;
-		return new kaltura.RequestBuilder('dropfolder_dropfolder', 'freeExclusiveDropFolder', kparams);
-	};
-	
-	/**
-	 * Retrieve a KalturaDropFolder object by ID.
-	 * @param dropFolderId int 
-	 * @return KalturaDropFolder
-	 */
-	static get(dropFolderId){
-		let kparams = {};
-		kparams.dropFolderId = dropFolderId;
-		return new kaltura.RequestBuilder('dropfolder_dropfolder', 'get', kparams);
-	};
-	
-	/**
-	 * getExclusive KalturaDropFolder object.
-	 * @param tag string 
-	 * @param maxTime int 
-	 * @return KalturaDropFolder
-	 */
-	static getExclusiveDropFolder(tag, maxTime){
-		let kparams = {};
-		kparams.tag = tag;
-		kparams.maxTime = maxTime;
-		return new kaltura.RequestBuilder('dropfolder_dropfolder', 'getExclusiveDropFolder', kparams);
-	};
-	
-	/**
-	 * List KalturaDropFolder objects.
-	 * @param filter DropFolderFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaDropFolderListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('dropfolder_dropfolder', 'list', kparams);
-	};
-	
-	/**
-	 * Update an existing KalturaDropFolder object.
-	 * @param dropFolderId int 
-	 * @param dropFolder DropFolder Id
-	 * @return KalturaDropFolder
-	 */
-	static update(dropFolderId, dropFolder){
-		let kparams = {};
-		kparams.dropFolderId = dropFolderId;
-		kparams.dropFolder = dropFolder;
-		return new kaltura.RequestBuilder('dropfolder_dropfolder', 'update', kparams);
-	};
-}
-module.exports.dropFolder = dropFolder;
-
-
-/**
- *Class definition for the Kaltura service: dropFolderFile.
- * The available service actions:
- * @action add Allows you to add a new KalturaDropFolderFile object.
- * @action delete Mark the KalturaDropFolderFile object as deleted.
- * @action get Retrieve a KalturaDropFolderFile object by ID.
- * @action ignore Set the KalturaDropFolderFile status to ignore (KalturaDropFolderFileStatus::IGNORE).
- * @action list List KalturaDropFolderFile objects.
- * @action update Update an existing KalturaDropFolderFile object.
- * @action updateStatus Update status of KalturaDropFolderFile.
- */
-class dropFolderFile{
-	
-	/**
-	 * Allows you to add a new KalturaDropFolderFile object.
-	 * @param dropFolderFile DropFolderFile 
-	 * @return KalturaDropFolderFile
-	 */
-	static add(dropFolderFile){
-		let kparams = {};
-		kparams.dropFolderFile = dropFolderFile;
-		return new kaltura.RequestBuilder('dropfolder_dropfolderfile', 'add', kparams);
-	};
-	
-	/**
-	 * Mark the KalturaDropFolderFile object as deleted.
-	 * @param dropFolderFileId int 
-	 * @return KalturaDropFolderFile
-	 */
-	static deleteAction(dropFolderFileId){
-		let kparams = {};
-		kparams.dropFolderFileId = dropFolderFileId;
-		return new kaltura.RequestBuilder('dropfolder_dropfolderfile', 'delete', kparams);
-	};
-	
-	/**
-	 * Retrieve a KalturaDropFolderFile object by ID.
-	 * @param dropFolderFileId int 
-	 * @return KalturaDropFolderFile
-	 */
-	static get(dropFolderFileId){
-		let kparams = {};
-		kparams.dropFolderFileId = dropFolderFileId;
-		return new kaltura.RequestBuilder('dropfolder_dropfolderfile', 'get', kparams);
-	};
-	
-	/**
-	 * Set the KalturaDropFolderFile status to ignore (KalturaDropFolderFileStatus::IGNORE).
-	 * @param dropFolderFileId int 
-	 * @return KalturaDropFolderFile
-	 */
-	static ignore(dropFolderFileId){
-		let kparams = {};
-		kparams.dropFolderFileId = dropFolderFileId;
-		return new kaltura.RequestBuilder('dropfolder_dropfolderfile', 'ignore', kparams);
-	};
-	
-	/**
-	 * List KalturaDropFolderFile objects.
-	 * @param filter DropFolderFileFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaDropFolderFileListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('dropfolder_dropfolderfile', 'list', kparams);
-	};
-	
-	/**
-	 * Update an existing KalturaDropFolderFile object.
-	 * @param dropFolderFileId int 
-	 * @param dropFolderFile DropFolderFile Id
-	 * @return KalturaDropFolderFile
-	 */
-	static update(dropFolderFileId, dropFolderFile){
-		let kparams = {};
-		kparams.dropFolderFileId = dropFolderFileId;
-		kparams.dropFolderFile = dropFolderFile;
-		return new kaltura.RequestBuilder('dropfolder_dropfolderfile', 'update', kparams);
-	};
-	
-	/**
-	 * Update status of KalturaDropFolderFile.
-	 * @param dropFolderFileId int 
-	 * @param status int  (enum: KalturaDropFolderFileStatus)
-	 * @return KalturaDropFolderFile
-	 */
-	static updateStatus(dropFolderFileId, status){
-		let kparams = {};
-		kparams.dropFolderFileId = dropFolderFileId;
-		kparams.status = status;
-		return new kaltura.RequestBuilder('dropfolder_dropfolderfile', 'updateStatus', kparams);
-	};
-}
-module.exports.dropFolderFile = dropFolderFile;
-
-
-/**
- *Class definition for the Kaltura service: captionAsset.
- * The available service actions:
- * @action add Add caption asset.
- * @action delete .
- * @action get .
- * @action getRemotePaths Get remote storage existing paths for the asset.
- * @action getUrl Get download URL for the asset.
- * @action list List caption Assets by filter and pager.
- * @action setAsDefault Markss the caption as default and removes that mark from all other caption assets of the entry.
- * @action setContent Update content of caption asset.
- * @action update Update caption asset.
- */
-class captionAsset{
-	
-	/**
-	 * Add caption asset.
-	 * @param entryId string 
-	 * @param captionAsset CaptionAsset 
-	 * @return KalturaCaptionAsset
-	 */
-	static add(entryId, captionAsset){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.captionAsset = captionAsset;
-		return new kaltura.RequestBuilder('caption_captionasset', 'add', kparams);
-	};
-	
-	/**
-	 * .
-	 * @param captionAssetId string 
-	 */
-	static deleteAction(captionAssetId){
-		let kparams = {};
-		kparams.captionAssetId = captionAssetId;
-		return new kaltura.RequestBuilder('caption_captionasset', 'delete', kparams);
-	};
-	
-	/**
-	 * .
-	 * @param captionAssetId string 
-	 * @return KalturaCaptionAsset
-	 */
-	static get(captionAssetId){
-		let kparams = {};
-		kparams.captionAssetId = captionAssetId;
-		return new kaltura.RequestBuilder('caption_captionasset', 'get', kparams);
-	};
-	
-	/**
-	 * Get remote storage existing paths for the asset.
-	 * @param id string 
-	 * @return KalturaRemotePathListResponse
-	 */
-	static getRemotePaths(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('caption_captionasset', 'getRemotePaths', kparams);
-	};
-	
-	/**
-	 * Get download URL for the asset.
-	 * @param id string 
-	 * @param storageId int  (optional, default: null)
-	 * @return string
-	 */
-	static getUrl(id, storageId = null){
-		let kparams = {};
-		kparams.id = id;
-		kparams.storageId = storageId;
-		return new kaltura.RequestBuilder('caption_captionasset', 'getUrl', kparams);
-	};
-	
-	/**
-	 * List caption Assets by filter and pager.
-	 * @param filter AssetFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaCaptionAssetListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('caption_captionasset', 'list', kparams);
-	};
-	
-	/**
-	 * Markss the caption as default and removes that mark from all other caption assets of the entry.
-	 * @param captionAssetId string 
-	 */
-	static setAsDefault(captionAssetId){
-		let kparams = {};
-		kparams.captionAssetId = captionAssetId;
-		return new kaltura.RequestBuilder('caption_captionasset', 'setAsDefault', kparams);
-	};
-	
-	/**
-	 * Update content of caption asset.
-	 * @param id string 
-	 * @param contentResource ContentResource 
-	 * @return KalturaCaptionAsset
-	 */
-	static setContent(id, contentResource){
-		let kparams = {};
-		kparams.id = id;
-		kparams.contentResource = contentResource;
-		return new kaltura.RequestBuilder('caption_captionasset', 'setContent', kparams);
-	};
-	
-	/**
-	 * Update caption asset.
-	 * @param id string 
-	 * @param captionAsset CaptionAsset 
-	 * @return KalturaCaptionAsset
-	 */
-	static update(id, captionAsset){
-		let kparams = {};
-		kparams.id = id;
-		kparams.captionAsset = captionAsset;
-		return new kaltura.RequestBuilder('caption_captionasset', 'update', kparams);
-	};
-}
-module.exports.captionAsset = captionAsset;
-
-
-/**
- *Class definition for the Kaltura service: captionParams.
- * The available service actions:
- * @action add Add new Caption Params.
- * @action delete Delete Caption Params by ID.
- * @action get Get Caption Params by ID.
- * @action list List Caption Params by filter with paging support (By default - all system default params will be listed too).
- * @action update Update Caption Params by ID.
- */
-class captionParams{
-	
-	/**
-	 * Add new Caption Params.
-	 * @param captionParams CaptionParams 
-	 * @return KalturaCaptionParams
-	 */
-	static add(captionParams){
-		let kparams = {};
-		kparams.captionParams = captionParams;
-		return new kaltura.RequestBuilder('caption_captionparams', 'add', kparams);
-	};
-	
-	/**
-	 * Delete Caption Params by ID.
-	 * @param id int 
-	 */
-	static deleteAction(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('caption_captionparams', 'delete', kparams);
-	};
-	
-	/**
-	 * Get Caption Params by ID.
-	 * @param id int 
-	 * @return KalturaCaptionParams
-	 */
-	static get(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('caption_captionparams', 'get', kparams);
-	};
-	
-	/**
-	 * List Caption Params by filter with paging support (By default - all system default params will be listed too).
-	 * @param filter CaptionParamsFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaCaptionParamsListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('caption_captionparams', 'list', kparams);
-	};
-	
-	/**
-	 * Update Caption Params by ID.
-	 * @param id int 
-	 * @param captionParams CaptionParams 
-	 * @return KalturaCaptionParams
-	 */
-	static update(id, captionParams){
-		let kparams = {};
-		kparams.id = id;
-		kparams.captionParams = captionParams;
-		return new kaltura.RequestBuilder('caption_captionparams', 'update', kparams);
-	};
-}
-module.exports.captionParams = captionParams;
-
-
-/**
- *Class definition for the Kaltura service: captionAssetItem.
- * The available service actions:
- * @action parse Parse content of caption asset and index it.
- * @action search Search caption asset items by filter, pager and free text.
- * @action searchEntries Search caption asset items by filter, pager and free text.
- */
-class captionAssetItem{
-	
-	/**
-	 * Parse content of caption asset and index it.
-	 * @param captionAssetId string 
-	 */
-	static parse(captionAssetId){
-		let kparams = {};
-		kparams.captionAssetId = captionAssetId;
-		return new kaltura.RequestBuilder('captionsearch_captionassetitem', 'parse', kparams);
-	};
-	
-	/**
-	 * Search caption asset items by filter, pager and free text.
-	 * @param entryFilter BaseEntryFilter  (optional, default: null)
-	 * @param captionAssetItemFilter CaptionAssetItemFilter  (optional, default: null)
-	 * @param captionAssetItemPager FilterPager  (optional, default: null)
-	 * @return KalturaCaptionAssetItemListResponse
-	 */
-	static search(entryFilter = null, captionAssetItemFilter = null, captionAssetItemPager = null){
-		let kparams = {};
-		kparams.entryFilter = entryFilter;
-		kparams.captionAssetItemFilter = captionAssetItemFilter;
-		kparams.captionAssetItemPager = captionAssetItemPager;
-		return new kaltura.RequestBuilder('captionsearch_captionassetitem', 'search', kparams);
-	};
-	
-	/**
-	 * Search caption asset items by filter, pager and free text.
-	 * @param entryFilter BaseEntryFilter  (optional, default: null)
-	 * @param captionAssetItemFilter CaptionAssetItemFilter  (optional, default: null)
-	 * @param captionAssetItemPager FilterPager  (optional, default: null)
-	 * @return KalturaBaseEntryListResponse
-	 */
-	static searchEntries(entryFilter = null, captionAssetItemFilter = null, captionAssetItemPager = null){
-		let kparams = {};
-		kparams.entryFilter = entryFilter;
-		kparams.captionAssetItemFilter = captionAssetItemFilter;
-		kparams.captionAssetItemPager = captionAssetItemPager;
-		return new kaltura.RequestBuilder('captionsearch_captionassetitem', 'searchEntries', kparams);
-	};
-}
-module.exports.captionAssetItem = captionAssetItem;
-
-
-/**
- *Class definition for the Kaltura service: attachmentAsset.
- * The available service actions:
- * @action add Add attachment asset.
- * @action delete .
- * @action get .
- * @action getRemotePaths Get remote storage existing paths for the asset.
- * @action getUrl Get download URL for the asset.
- * @action list List attachment Assets by filter and pager.
- * @action setContent Update content of attachment asset.
- * @action update Update attachment asset.
- */
-class attachmentAsset{
-	
-	/**
-	 * Add attachment asset.
-	 * @param entryId string 
-	 * @param attachmentAsset AttachmentAsset 
-	 * @return KalturaAttachmentAsset
-	 */
-	static add(entryId, attachmentAsset){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.attachmentAsset = attachmentAsset;
-		return new kaltura.RequestBuilder('attachment_attachmentasset', 'add', kparams);
-	};
-	
-	/**
-	 * .
-	 * @param attachmentAssetId string 
-	 */
-	static deleteAction(attachmentAssetId){
-		let kparams = {};
-		kparams.attachmentAssetId = attachmentAssetId;
-		return new kaltura.RequestBuilder('attachment_attachmentasset', 'delete', kparams);
-	};
-	
-	/**
-	 * .
-	 * @param attachmentAssetId string 
-	 * @return KalturaAttachmentAsset
-	 */
-	static get(attachmentAssetId){
-		let kparams = {};
-		kparams.attachmentAssetId = attachmentAssetId;
-		return new kaltura.RequestBuilder('attachment_attachmentasset', 'get', kparams);
-	};
-	
-	/**
-	 * Get remote storage existing paths for the asset.
-	 * @param id string 
-	 * @return KalturaRemotePathListResponse
-	 */
-	static getRemotePaths(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('attachment_attachmentasset', 'getRemotePaths', kparams);
-	};
-	
-	/**
-	 * Get download URL for the asset.
-	 * @param id string 
-	 * @param storageId int  (optional, default: null)
-	 * @return string
-	 */
-	static getUrl(id, storageId = null){
-		let kparams = {};
-		kparams.id = id;
-		kparams.storageId = storageId;
-		return new kaltura.RequestBuilder('attachment_attachmentasset', 'getUrl', kparams);
-	};
-	
-	/**
-	 * List attachment Assets by filter and pager.
-	 * @param filter AssetFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaAttachmentAssetListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('attachment_attachmentasset', 'list', kparams);
-	};
-	
-	/**
-	 * Update content of attachment asset.
-	 * @param id string 
-	 * @param contentResource ContentResource 
-	 * @return KalturaAttachmentAsset
-	 */
-	static setContent(id, contentResource){
-		let kparams = {};
-		kparams.id = id;
-		kparams.contentResource = contentResource;
-		return new kaltura.RequestBuilder('attachment_attachmentasset', 'setContent', kparams);
-	};
-	
-	/**
-	 * Update attachment asset.
-	 * @param id string 
-	 * @param attachmentAsset AttachmentAsset 
-	 * @return KalturaAttachmentAsset
-	 */
-	static update(id, attachmentAsset){
-		let kparams = {};
-		kparams.id = id;
-		kparams.attachmentAsset = attachmentAsset;
-		return new kaltura.RequestBuilder('attachment_attachmentasset', 'update', kparams);
-	};
-}
-module.exports.attachmentAsset = attachmentAsset;
-
-
-/**
- *Class definition for the Kaltura service: tag.
- * The available service actions:
- * @action deletePending Action goes over all tags with instanceCount==0 and checks whether they need to be removed from the DB. Returns number of removed tags.
- * @action indexCategoryEntryTags .
- * @action search .
- */
-class tag{
-	
-	/**
-	 * Action goes over all tags with instanceCount==0 and checks whether they need to be removed from the DB. Returns number of removed tags.
-	 * @return int
-	 */
-	static deletePending(){
-		let kparams = {};
-		return new kaltura.RequestBuilder('tagsearch_tag', 'deletePending', kparams);
-	};
-	
-	/**
-	 * .
-	 * @param categoryId int 
-	 * @param pcToDecrement string 
-	 * @param pcToIncrement string 
-	 */
-	static indexCategoryEntryTags(categoryId, pcToDecrement, pcToIncrement){
-		let kparams = {};
-		kparams.categoryId = categoryId;
-		kparams.pcToDecrement = pcToDecrement;
-		kparams.pcToIncrement = pcToIncrement;
-		return new kaltura.RequestBuilder('tagsearch_tag', 'indexCategoryEntryTags', kparams);
-	};
-	
-	/**
-	 * .
-	 * @param tagFilter TagFilter 
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaTagListResponse
-	 */
-	static search(tagFilter, pager = null){
-		let kparams = {};
-		kparams.tagFilter = tagFilter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('tagsearch_tag', 'search', kparams);
-	};
-}
-module.exports.tag = tag;
-
-
-/**
- *Class definition for the Kaltura service: like.
- * The available service actions:
- * @action checkLikeExists .
- * @action like .
- * @action list .
- * @action unlike .
- */
-class like{
-	
-	/**
-	 * .
-	 * @param entryId string 
-	 * @param userId string  (optional, default: null)
-	 * @return bool
-	 */
-	static checkLikeExists(entryId, userId = null){
-		let kparams = {};
-		kparams.entryId = entryId;
-		kparams.userId = userId;
-		return new kaltura.RequestBuilder('like_like', 'checkLikeExists', kparams);
-	};
-	
-	/**
-	 * .
-	 * @param entryId string 
-	 * @return bool
-	 */
-	static like(entryId){
-		let kparams = {};
-		kparams.entryId = entryId;
-		return new kaltura.RequestBuilder('like_like', 'like', kparams);
-	};
-	
-	/**
-	 * .
-	 * @param filter LikeFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaLikeListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('like_like', 'list', kparams);
-	};
-	
-	/**
-	 * .
-	 * @param entryId string 
-	 * @return bool
-	 */
-	static unlike(entryId){
-		let kparams = {};
-		kparams.entryId = entryId;
-		return new kaltura.RequestBuilder('like_like', 'unlike', kparams);
-	};
-}
-module.exports.like = like;
-
-
-/**
- *Class definition for the Kaltura service: varConsole.
- * The available service actions:
- * @action getPartnerUsage Function which calulates partner usage of a group of a VAR's sub-publishers.
- * @action updateStatus Function to change a sub-publisher's status.
- */
-class varConsole{
-	
-	/**
-	 * Function which calulates partner usage of a group of a VAR's sub-publishers.
-	 * @param partnerFilter PartnerFilter  (optional, default: null)
-	 * @param usageFilter ReportInputFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaPartnerUsageListResponse
-	 */
-	static getPartnerUsage(partnerFilter = null, usageFilter = null, pager = null){
-		let kparams = {};
-		kparams.partnerFilter = partnerFilter;
-		kparams.usageFilter = usageFilter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('varconsole_varconsole', 'getPartnerUsage', kparams);
-	};
-	
-	/**
-	 * Function to change a sub-publisher's status.
-	 * @param id int 
-	 * @param status int  (enum: KalturaPartnerStatus)
-	 */
-	static updateStatus(id, status){
-		let kparams = {};
-		kparams.id = id;
-		kparams.status = status;
-		return new kaltura.RequestBuilder('varconsole_varconsole', 'updateStatus', kparams);
-	};
-}
-module.exports.varConsole = varConsole;
-
-
-/**
- *Class definition for the Kaltura service: eventNotificationTemplate.
- * The available service actions:
- * @action add This action allows for the creation of new backend event types in the system. This action requires access to the Kaltura server Admin Console. If you're looking to register to existing event types, please use the clone action instead.
- * @action clone This action allows registering to various backend event. Use this action to create notifications that will react to events such as new video was uploaded or metadata field was updated. To see the list of available event types, call the listTemplates action.
- * @action delete Delete an event notification template object.
- * @action dispatch Dispatch event notification object by id.
- * @action get Retrieve an event notification template object by id.
- * @action list list event notification template objects.
- * @action listByPartner .
- * @action listTemplates Action lists the template partner event notification templates.
- * @action update Update an existing event notification template object.
- * @action updateStatus Update event notification template status by id.
- */
-class eventNotificationTemplate{
-	
-	/**
-	 * This action allows for the creation of new backend event types in the system. This action requires access to the Kaltura server Admin Console. If you're looking to register to existing event types, please use the clone action instead.
-	 * @param eventNotificationTemplate EventNotificationTemplate 
-	 * @return KalturaEventNotificationTemplate
-	 */
-	static add(eventNotificationTemplate){
-		let kparams = {};
-		kparams.eventNotificationTemplate = eventNotificationTemplate;
-		return new kaltura.RequestBuilder('eventnotification_eventnotificationtemplate', 'add', kparams);
-	};
-	
-	/**
-	 * This action allows registering to various backend event. Use this action to create notifications that will react to events such as new video was uploaded or metadata field was updated. To see the list of available event types, call the listTemplates action.
-	 * @param id int source template to clone
-	 * @param eventNotificationTemplate EventNotificationTemplate overwrite configuration object (optional, default: null)
-	 * @return KalturaEventNotificationTemplate
-	 */
-	static cloneAction(id, eventNotificationTemplate = null){
-		let kparams = {};
-		kparams.id = id;
-		kparams.eventNotificationTemplate = eventNotificationTemplate;
-		return new kaltura.RequestBuilder('eventnotification_eventnotificationtemplate', 'clone', kparams);
-	};
-	
-	/**
-	 * Delete an event notification template object.
-	 * @param id int 
-	 */
-	static deleteAction(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('eventnotification_eventnotificationtemplate', 'delete', kparams);
-	};
-	
-	/**
-	 * Dispatch event notification object by id.
-	 * @param id int 
-	 * @param scope EventNotificationScope 
-	 * @return int
-	 */
-	static dispatch(id, scope){
-		let kparams = {};
-		kparams.id = id;
-		kparams.scope = scope;
-		return new kaltura.RequestBuilder('eventnotification_eventnotificationtemplate', 'dispatch', kparams);
-	};
-	
-	/**
-	 * Retrieve an event notification template object by id.
-	 * @param id int 
-	 * @return KalturaEventNotificationTemplate
-	 */
-	static get(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('eventnotification_eventnotificationtemplate', 'get', kparams);
-	};
-	
-	/**
-	 * list event notification template objects.
-	 * @param filter EventNotificationTemplateFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaEventNotificationTemplateListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('eventnotification_eventnotificationtemplate', 'list', kparams);
-	};
-	
-	/**
-	 * .
-	 * @param filter PartnerFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaEventNotificationTemplateListResponse
-	 */
-	static listByPartner(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('eventnotification_eventnotificationtemplate', 'listByPartner', kparams);
-	};
-	
-	/**
-	 * Action lists the template partner event notification templates.
-	 * @param filter EventNotificationTemplateFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaEventNotificationTemplateListResponse
-	 */
-	static listTemplates(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('eventnotification_eventnotificationtemplate', 'listTemplates', kparams);
-	};
-	
-	/**
-	 * Update an existing event notification template object.
-	 * @param id int 
-	 * @param eventNotificationTemplate EventNotificationTemplate 
-	 * @return KalturaEventNotificationTemplate
-	 */
-	static update(id, eventNotificationTemplate){
-		let kparams = {};
-		kparams.id = id;
-		kparams.eventNotificationTemplate = eventNotificationTemplate;
-		return new kaltura.RequestBuilder('eventnotification_eventnotificationtemplate', 'update', kparams);
-	};
-	
-	/**
-	 * Update event notification template status by id.
-	 * @param id int 
-	 * @param status int  (enum: KalturaEventNotificationTemplateStatus)
-	 * @return KalturaEventNotificationTemplate
-	 */
-	static updateStatus(id, status){
-		let kparams = {};
-		kparams.id = id;
-		kparams.status = status;
-		return new kaltura.RequestBuilder('eventnotification_eventnotificationtemplate', 'updateStatus', kparams);
-	};
-}
-module.exports.eventNotificationTemplate = eventNotificationTemplate;
-
-
-/**
- *Class definition for the Kaltura service: externalMedia.
- * The available service actions:
- * @action add Add external media entry.
- * @action count Count media entries by filter.
- * @action delete Delete a external media entry.
- * @action get Get external media entry by ID.
- * @action list List media entries by filter with paging support.
- * @action update Update external media entry. Only the properties that were set will be updated.
- */
-class externalMedia{
-	
-	/**
-	 * Add external media entry.
-	 * @param entry ExternalMediaEntry 
-	 * @return KalturaExternalMediaEntry
-	 */
-	static add(entry){
-		let kparams = {};
-		kparams.entry = entry;
-		return new kaltura.RequestBuilder('externalmedia_externalmedia', 'add', kparams);
-	};
-	
-	/**
-	 * Count media entries by filter.
-	 * @param filter ExternalMediaEntryFilter External media entry filter (optional, default: null)
-	 * @return int
-	 */
-	static count(filter = null){
-		let kparams = {};
-		kparams.filter = filter;
-		return new kaltura.RequestBuilder('externalmedia_externalmedia', 'count', kparams);
-	};
-	
-	/**
-	 * Delete a external media entry.
-	 * @param id string External media entry id to delete
-	 */
-	static deleteAction(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('externalmedia_externalmedia', 'delete', kparams);
-	};
-	
-	/**
-	 * Get external media entry by ID.
-	 * @param id string External media entry id
-	 * @return KalturaExternalMediaEntry
-	 */
-	static get(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('externalmedia_externalmedia', 'get', kparams);
-	};
-	
-	/**
-	 * List media entries by filter with paging support.
-	 * @param filter ExternalMediaEntryFilter External media entry filter (optional, default: null)
-	 * @param pager FilterPager Pager (optional, default: null)
-	 * @return KalturaExternalMediaEntryListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('externalmedia_externalmedia', 'list', kparams);
-	};
-	
-	/**
-	 * Update external media entry. Only the properties that were set will be updated.
-	 * @param id string External media entry id to update
-	 * @param entry ExternalMediaEntry External media entry object to update
-	 * @return KalturaExternalMediaEntry
-	 */
-	static update(id, entry){
-		let kparams = {};
-		kparams.id = id;
-		kparams.entry = entry;
-		return new kaltura.RequestBuilder('externalmedia_externalmedia', 'update', kparams);
-	};
-}
-module.exports.externalMedia = externalMedia;
-
-
-/**
- *Class definition for the Kaltura service: scheduleEvent.
- * The available service actions:
- * @action add Allows you to add a new KalturaScheduleEvent object.
- * @action addFromBulkUpload Add new bulk upload batch job.
- * @action cancel Mark the KalturaScheduleEvent object as cancelled.
- * @action delete Mark the KalturaScheduleEvent object as deleted.
- * @action get Retrieve a KalturaScheduleEvent object by ID.
- * @action getConflicts List conflicting events for resourcesIds by event's dates.
- * @action list List KalturaScheduleEvent objects.
- * @action update Update an existing KalturaScheduleEvent object.
- */
-class scheduleEvent{
-	
-	/**
-	 * Allows you to add a new KalturaScheduleEvent object.
-	 * @param scheduleEvent ScheduleEvent 
-	 * @return KalturaScheduleEvent
-	 */
-	static add(scheduleEvent){
-		let kparams = {};
-		kparams.scheduleEvent = scheduleEvent;
-		return new kaltura.RequestBuilder('schedule_scheduleevent', 'add', kparams);
-	};
-	
-	/**
-	 * Add new bulk upload batch job.
-	 * @param fileData file 
-	 * @param bulkUploadData BulkUploadICalJobData  (optional, default: null)
-	 * @return KalturaBulkUpload
-	 */
-	static addFromBulkUpload(fileData, bulkUploadData = null){
-		let kparams = {};
-		let kfiles = {};
-		kfiles.fileData = fileData;
-		kparams.bulkUploadData = bulkUploadData;
-		return new kaltura.RequestBuilder('schedule_scheduleevent', 'addFromBulkUpload', kparams, kfiles);
-	};
-	
-	/**
-	 * Mark the KalturaScheduleEvent object as cancelled.
-	 * @param scheduleEventId int 
-	 * @return KalturaScheduleEvent
-	 */
-	static cancel(scheduleEventId){
-		let kparams = {};
-		kparams.scheduleEventId = scheduleEventId;
-		return new kaltura.RequestBuilder('schedule_scheduleevent', 'cancel', kparams);
-	};
-	
-	/**
-	 * Mark the KalturaScheduleEvent object as deleted.
-	 * @param scheduleEventId int 
-	 * @return KalturaScheduleEvent
-	 */
-	static deleteAction(scheduleEventId){
-		let kparams = {};
-		kparams.scheduleEventId = scheduleEventId;
-		return new kaltura.RequestBuilder('schedule_scheduleevent', 'delete', kparams);
-	};
-	
-	/**
-	 * Retrieve a KalturaScheduleEvent object by ID.
-	 * @param scheduleEventId int 
-	 * @return KalturaScheduleEvent
-	 */
-	static get(scheduleEventId){
-		let kparams = {};
-		kparams.scheduleEventId = scheduleEventId;
-		return new kaltura.RequestBuilder('schedule_scheduleevent', 'get', kparams);
-	};
-	
-	/**
-	 * List conflicting events for resourcesIds by event's dates.
-	 * @param resourceIds string comma separated
-	 * @param scheduleEvent ScheduleEvent 
-	 * @param scheduleEventIdToIgnore string  (optional, default: null)
-	 * @return KalturaScheduleEventListResponse
-	 */
-	static getConflicts(resourceIds, scheduleEvent, scheduleEventIdToIgnore = null){
-		let kparams = {};
-		kparams.resourceIds = resourceIds;
-		kparams.scheduleEvent = scheduleEvent;
-		kparams.scheduleEventIdToIgnore = scheduleEventIdToIgnore;
-		return new kaltura.RequestBuilder('schedule_scheduleevent', 'getConflicts', kparams);
-	};
-	
-	/**
-	 * List KalturaScheduleEvent objects.
-	 * @param filter ScheduleEventFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaScheduleEventListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('schedule_scheduleevent', 'list', kparams);
-	};
-	
-	/**
-	 * Update an existing KalturaScheduleEvent object.
-	 * @param scheduleEventId int 
-	 * @param scheduleEvent ScheduleEvent Id
-	 * @return KalturaScheduleEvent
-	 */
-	static update(scheduleEventId, scheduleEvent){
-		let kparams = {};
-		kparams.scheduleEventId = scheduleEventId;
-		kparams.scheduleEvent = scheduleEvent;
-		return new kaltura.RequestBuilder('schedule_scheduleevent', 'update', kparams);
-	};
-}
-module.exports.scheduleEvent = scheduleEvent;
-
-
-/**
- *Class definition for the Kaltura service: scheduleResource.
- * The available service actions:
- * @action add Allows you to add a new KalturaScheduleResource object.
- * @action addFromBulkUpload Add new bulk upload batch job.
- * @action delete Mark the KalturaScheduleResource object as deleted.
- * @action get Retrieve a KalturaScheduleResource object by ID.
- * @action list List KalturaScheduleResource objects.
- * @action update Update an existing KalturaScheduleResource object.
- */
-class scheduleResource{
-	
-	/**
-	 * Allows you to add a new KalturaScheduleResource object.
-	 * @param scheduleResource ScheduleResource 
-	 * @return KalturaScheduleResource
-	 */
-	static add(scheduleResource){
-		let kparams = {};
-		kparams.scheduleResource = scheduleResource;
-		return new kaltura.RequestBuilder('schedule_scheduleresource', 'add', kparams);
-	};
-	
-	/**
-	 * Add new bulk upload batch job.
-	 * @param fileData file 
-	 * @param bulkUploadData BulkUploadCsvJobData  (optional, default: null)
-	 * @return KalturaBulkUpload
-	 */
-	static addFromBulkUpload(fileData, bulkUploadData = null){
-		let kparams = {};
-		let kfiles = {};
-		kfiles.fileData = fileData;
-		kparams.bulkUploadData = bulkUploadData;
-		return new kaltura.RequestBuilder('schedule_scheduleresource', 'addFromBulkUpload', kparams, kfiles);
-	};
-	
-	/**
-	 * Mark the KalturaScheduleResource object as deleted.
-	 * @param scheduleResourceId int 
-	 * @return KalturaScheduleResource
-	 */
-	static deleteAction(scheduleResourceId){
-		let kparams = {};
-		kparams.scheduleResourceId = scheduleResourceId;
-		return new kaltura.RequestBuilder('schedule_scheduleresource', 'delete', kparams);
-	};
-	
-	/**
-	 * Retrieve a KalturaScheduleResource object by ID.
-	 * @param scheduleResourceId int 
-	 * @return KalturaScheduleResource
-	 */
-	static get(scheduleResourceId){
-		let kparams = {};
-		kparams.scheduleResourceId = scheduleResourceId;
-		return new kaltura.RequestBuilder('schedule_scheduleresource', 'get', kparams);
-	};
-	
-	/**
-	 * List KalturaScheduleResource objects.
-	 * @param filter ScheduleResourceFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaScheduleResourceListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('schedule_scheduleresource', 'list', kparams);
-	};
-	
-	/**
-	 * Update an existing KalturaScheduleResource object.
-	 * @param scheduleResourceId int 
-	 * @param scheduleResource ScheduleResource Id
-	 * @return KalturaScheduleResource
-	 */
-	static update(scheduleResourceId, scheduleResource){
-		let kparams = {};
-		kparams.scheduleResourceId = scheduleResourceId;
-		kparams.scheduleResource = scheduleResource;
-		return new kaltura.RequestBuilder('schedule_scheduleresource', 'update', kparams);
-	};
-}
-module.exports.scheduleResource = scheduleResource;
-
-
-/**
- *Class definition for the Kaltura service: scheduleEventResource.
- * The available service actions:
- * @action add Allows you to add a new KalturaScheduleEventResource object.
- * @action delete Mark the KalturaScheduleEventResource object as deleted.
- * @action get Retrieve a KalturaScheduleEventResource object by ID.
- * @action list List KalturaScheduleEventResource objects.
- * @action update Update an existing KalturaScheduleEventResource object.
- */
-class scheduleEventResource{
-	
-	/**
-	 * Allows you to add a new KalturaScheduleEventResource object.
-	 * @param scheduleEventResource ScheduleEventResource 
-	 * @return KalturaScheduleEventResource
-	 */
-	static add(scheduleEventResource){
-		let kparams = {};
-		kparams.scheduleEventResource = scheduleEventResource;
-		return new kaltura.RequestBuilder('schedule_scheduleeventresource', 'add', kparams);
-	};
-	
-	/**
-	 * Mark the KalturaScheduleEventResource object as deleted.
-	 * @param scheduleEventId int 
-	 * @param scheduleResourceId int 
-	 */
-	static deleteAction(scheduleEventId, scheduleResourceId){
-		let kparams = {};
-		kparams.scheduleEventId = scheduleEventId;
-		kparams.scheduleResourceId = scheduleResourceId;
-		return new kaltura.RequestBuilder('schedule_scheduleeventresource', 'delete', kparams);
-	};
-	
-	/**
-	 * Retrieve a KalturaScheduleEventResource object by ID.
-	 * @param scheduleEventId int 
-	 * @param scheduleResourceId int 
-	 * @return KalturaScheduleEventResource
-	 */
-	static get(scheduleEventId, scheduleResourceId){
-		let kparams = {};
-		kparams.scheduleEventId = scheduleEventId;
-		kparams.scheduleResourceId = scheduleResourceId;
-		return new kaltura.RequestBuilder('schedule_scheduleeventresource', 'get', kparams);
-	};
-	
-	/**
-	 * List KalturaScheduleEventResource objects.
-	 * @param filter ScheduleEventResourceFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaScheduleEventResourceListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('schedule_scheduleeventresource', 'list', kparams);
-	};
-	
-	/**
-	 * Update an existing KalturaScheduleEventResource object.
-	 * @param scheduleEventId int 
-	 * @param scheduleResourceId int 
-	 * @param scheduleEventResource ScheduleEventResource 
-	 * @return KalturaScheduleEventResource
-	 */
-	static update(scheduleEventId, scheduleResourceId, scheduleEventResource){
-		let kparams = {};
-		kparams.scheduleEventId = scheduleEventId;
-		kparams.scheduleResourceId = scheduleResourceId;
-		kparams.scheduleEventResource = scheduleEventResource;
-		return new kaltura.RequestBuilder('schedule_scheduleeventresource', 'update', kparams);
-	};
-}
-module.exports.scheduleEventResource = scheduleEventResource;
-
-
-/**
- *Class definition for the Kaltura service: scheduledTaskProfile.
- * The available service actions:
- * @action add Add a new scheduled task profile.
- * @action delete Delete a scheduled task profile.
- * @action get Retrieve a scheduled task profile by id.
- * @action getDryRunResults .
- * @action list List scheduled task profiles.
- * @action requestDryRun .
- * @action update Update an existing scheduled task profile.
- */
-class scheduledTaskProfile{
-	
-	/**
-	 * Add a new scheduled task profile.
-	 * @param scheduledTaskProfile ScheduledTaskProfile 
-	 * @return KalturaScheduledTaskProfile
-	 */
-	static add(scheduledTaskProfile){
-		let kparams = {};
-		kparams.scheduledTaskProfile = scheduledTaskProfile;
-		return new kaltura.RequestBuilder('scheduledtask_scheduledtaskprofile', 'add', kparams);
-	};
-	
-	/**
-	 * Delete a scheduled task profile.
-	 * @param id int 
-	 */
-	static deleteAction(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('scheduledtask_scheduledtaskprofile', 'delete', kparams);
-	};
-	
-	/**
-	 * Retrieve a scheduled task profile by id.
-	 * @param id int 
-	 * @return KalturaScheduledTaskProfile
-	 */
-	static get(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('scheduledtask_scheduledtaskprofile', 'get', kparams);
-	};
-	
-	/**
-	 * .
-	 * @param requestId int 
-	 * @return KalturaObjectListResponse
-	 */
-	static getDryRunResults(requestId){
-		let kparams = {};
-		kparams.requestId = requestId;
-		return new kaltura.RequestBuilder('scheduledtask_scheduledtaskprofile', 'getDryRunResults', kparams);
-	};
-	
-	/**
-	 * List scheduled task profiles.
-	 * @param filter ScheduledTaskProfileFilter  (optional, default: null)
-	 * @param pager FilterPager  (optional, default: null)
-	 * @return KalturaScheduledTaskProfileListResponse
-	 */
-	static listAction(filter = null, pager = null){
-		let kparams = {};
-		kparams.filter = filter;
-		kparams.pager = pager;
-		return new kaltura.RequestBuilder('scheduledtask_scheduledtaskprofile', 'list', kparams);
-	};
-	
-	/**
-	 * .
-	 * @param scheduledTaskProfileId int 
-	 * @param maxResults int  (optional, default: 500)
-	 * @return int
-	 */
-	static requestDryRun(scheduledTaskProfileId, maxResults = 500){
-		let kparams = {};
-		kparams.scheduledTaskProfileId = scheduledTaskProfileId;
-		kparams.maxResults = maxResults;
-		return new kaltura.RequestBuilder('scheduledtask_scheduledtaskprofile', 'requestDryRun', kparams);
-	};
-	
-	/**
-	 * Update an existing scheduled task profile.
-	 * @param id int 
-	 * @param scheduledTaskProfile ScheduledTaskProfile 
-	 * @return KalturaScheduledTaskProfile
-	 */
-	static update(id, scheduledTaskProfile){
-		let kparams = {};
-		kparams.id = id;
-		kparams.scheduledTaskProfile = scheduledTaskProfile;
-		return new kaltura.RequestBuilder('scheduledtask_scheduledtaskprofile', 'update', kparams);
-	};
-}
-module.exports.scheduledTaskProfile = scheduledTaskProfile;
-
-
-/**
- *Class definition for the Kaltura service: integration.
- * The available service actions:
- * @action dispatch Dispatch integration task.
- * @action notify .
- */
-class integration{
-	
-	/**
-	 * Dispatch integration task.
-	 * @param data IntegrationJobData 
-	 * @param objectType string  (enum: KalturaBatchJobObjectType)
-	 * @param objectId string 
-	 * @return int
-	 */
-	static dispatch(data, objectType, objectId){
-		let kparams = {};
-		kparams.data = data;
-		kparams.objectType = objectType;
-		kparams.objectId = objectId;
-		return new kaltura.RequestBuilder('integration_integration', 'dispatch', kparams);
-	};
-	
-	/**
-	 * .
-	 * @param id int integration job id
-	 */
-	static notify(id){
-		let kparams = {};
-		kparams.id = id;
-		return new kaltura.RequestBuilder('integration_integration', 'notify', kparams);
-	};
-}
-module.exports.integration = integration;
-
-
-/**
- *Class definition for the Kaltura service: poll.
- * The available service actions:
- * @action add Add Action.
- * @action getVote Vote Action.
- * @action getVotes Get Votes Action.
- * @action resetVotes Get resetVotes Action.
- * @action vote Vote Action.
- */
-class poll{
-	
-	/**
-	 * Add Action.
-	 * @param pollType string  (optional, default: SINGLE_ANONYMOUS)
-	 * @return string
-	 */
-	static add(pollType = 'SINGLE_ANONYMOUS'){
-		let kparams = {};
-		kparams.pollType = pollType;
-		return new kaltura.RequestBuilder('poll_poll', 'add', kparams);
-	};
-	
-	/**
-	 * Vote Action.
-	 * @param pollId string 
-	 * @param userId string 
-	 * @return string
-	 */
-	static getVote(pollId, userId){
-		let kparams = {};
-		kparams.pollId = pollId;
-		kparams.userId = userId;
-		return new kaltura.RequestBuilder('poll_poll', 'getVote', kparams);
-	};
-	
-	/**
-	 * Get Votes Action.
-	 * @param pollId string 
-	 * @param answerIds string 
-	 * @return string
-	 */
-	static getVotes(pollId, answerIds){
-		let kparams = {};
-		kparams.pollId = pollId;
-		kparams.answerIds = answerIds;
-		return new kaltura.RequestBuilder('poll_poll', 'getVotes', kparams);
-	};
-	
-	/**
-	 * Get resetVotes Action.
-	 * @param pollId string 
-	 */
-	static resetVotes(pollId){
-		let kparams = {};
-		kparams.pollId = pollId;
-		return new kaltura.RequestBuilder('poll_poll', 'resetVotes', kparams);
-	};
-	
-	/**
-	 * Vote Action.
-	 * @param pollId string 
-	 * @param userId string 
-	 * @param answerIds string 
-	 * @return string
-	 */
-	static vote(pollId, userId, answerIds){
-		let kparams = {};
-		kparams.pollId = pollId;
-		kparams.userId = userId;
-		kparams.answerIds = answerIds;
-		return new kaltura.RequestBuilder('poll_poll', 'vote', kparams);
-	};
-}
-module.exports.poll = poll;
 

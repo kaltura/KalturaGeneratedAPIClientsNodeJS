@@ -79,42 +79,6 @@ class RequestData {
 	};
 	
 	/**
-	 * Impersonated user id
-	 * 
-	 * @param int userId
-	 */
-	setUserId(userId){
-		this.requestData['userId'] = userId;
-	};
-	
-	/**
-	 * Impersonated user id
-	 * 
-	 * @return int
-	 */
-	getUserId(){
-		return this.requestData['userId'];
-	};
-	
-	/**
-	 * Content language
-	 * 
-	 * @param int language
-	 */
-	setLanguage(language){
-		this.requestData['language'] = language;
-	};
-	
-	/**
-	 * Content language
-	 * 
-	 * @return int
-	 */
-	getLanguage(){
-		return this.requestData['language'];
-	};
-	
-	/**
 	 * Kaltura API session
 	 * 
 	 * @param string ks
@@ -154,6 +118,24 @@ class RequestData {
 
 class VolatileRequestData extends RequestData {
 
+	/**
+	 * Response profile - this attribute will be automatically unset after every API call.
+	 * 
+	 * @param KalturaBaseResponseProfile responseProfile
+	 */
+	setResponseProfile(responseProfile){
+		this.requestData['responseProfile'] = responseProfile;
+	};
+	
+	/**
+	 * Response profile - this attribute will be automatically unset after every API call.
+	 * 
+	 * @return KalturaBaseResponseProfile
+	 */
+	getResponseProfile(){
+		return this.requestData['responseProfile'];
+	};
+	
 }
 
 module.exports = {

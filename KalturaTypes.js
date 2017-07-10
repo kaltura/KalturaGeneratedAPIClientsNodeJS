@@ -2498,6 +2498,7 @@ UPDATED_AT_DESC : '-updatedAt',
 module.exports.GeoCoderType = {
 KALTURA : '1',
 MAX_MIND : '2',
+DIGITAL_ELEMENT : '3',
 };
 
 module.exports.GoogleSyndicationFeedAdultValues = {

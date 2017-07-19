@@ -1321,6 +1321,7 @@ module.exports.conversionProfile = conversionProfile;
  *Class definition for the Kaltura service: data.
  * The available service actions:
  * @action add Adds a new data entry.
+ * @action addContent Update the dataContent of data entry using a resource.
  * @action delete Delete a data entry.
  * @action get Get data entry by ID.
  * @action list List data entries by filter with paging support.
@@ -1337,6 +1338,19 @@ class data{
 		let kparams = {};
 		kparams.dataEntry = dataEntry;
 		return new kaltura.RequestBuilder('data', 'add', kparams);
+	};
+	
+	/**
+	 * Update the dataContent of data entry using a resource.
+	 * @param entryId string 
+	 * @param resource GenericDataCenterContentResource 
+	 * @return string
+	 */
+	static addContent(entryId, resource){
+		let kparams = {};
+		kparams.entryId = entryId;
+		kparams.resource = resource;
+		return new kaltura.RequestBuilder('data', 'addContent', kparams);
 	};
 	
 	/**

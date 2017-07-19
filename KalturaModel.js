@@ -40332,15 +40332,45 @@ class MailNotificationObjectTask extends ObjectTask{
 	 * The mail to send the notification to
 	 * @return string
 	 */
-	 getMailAddress() {
-	 	return this.mailAddress;
+	 getMailTo() {
+	 	return this.mailTo;
 	 }
 	
 	/**
-	 * @param mailAddress string The mail to send the notification to
+	 * @param mailTo string The mail to send the notification to
 	 */
-	 setMailAddress(mailAddress) {
-	 	this.mailAddress = mailAddress;
+	 setMailTo(mailTo) {
+	 	this.mailTo = mailTo;
+	 }
+	
+	/**
+	 * The sender in the mail
+	 * @return string
+	 */
+	 getSender() {
+	 	return this.sender;
+	 }
+	
+	/**
+	 * @param sender string The sender in the mail
+	 */
+	 setSender(sender) {
+	 	this.sender = sender;
+	 }
+	
+	/**
+	 * The subject of the entry
+	 * @return string
+	 */
+	 getSubject() {
+	 	return this.subject;
+	 }
+	
+	/**
+	 * @param subject string The subject of the entry
+	 */
+	 setSubject(subject) {
+	 	this.subject = subject;
 	 }
 	
 	/**
@@ -40356,6 +40386,21 @@ class MailNotificationObjectTask extends ObjectTask{
 	 */
 	 setMessage(message) {
 	 	this.message = message;
+	 }
+	
+	/**
+	 * The basic link for the KMC site
+	 * @return string
+	 */
+	 getLink() {
+	 	return this.link;
+	 }
+	
+	/**
+	 * @param link string The basic link for the KMC site
+	 */
+	 setLink(link) {
+	 	this.link = link;
 	 }
 	
 	/**
@@ -57489,33 +57534,6 @@ module.exports.DocumentFlavorParamsOutput = DocumentFlavorParamsOutput;
 /**
  *
  */
-class DropFolderFileResource extends DataCenterContentResource{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaDropFolderFileResource';
-	}
-	
-	/**
-	 * Id of the drop folder file object
-	 * @return int
-	 */
-	 getDropFolderFileId() {
-	 	return this.dropFolderFileId;
-	 }
-	
-	/**
-	 * @param dropFolderFileId int Id of the drop folder file object
-	 */
-	 setDropFolderFileId(dropFolderFileId) {
-	 	this.dropFolderFileId = dropFolderFileId;
-	 }
-}
-module.exports.DropFolderFileResource = DropFolderFileResource;
-
-/**
- *
- */
 class DropFolderImportJobData extends SshImportJobData{
 	
 	constructor(object = null) {
@@ -57695,6 +57713,18 @@ class FileAssetFilter extends FileAssetBaseFilter{
 	}
 }
 module.exports.FileAssetFilter = FileAssetFilter;
+
+/**
+ *
+ */
+class GenericDataCenterContentResource extends DataCenterContentResource{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaGenericDataCenterContentResource';
+	}
+}
+module.exports.GenericDataCenterContentResource = GenericDataCenterContentResource;
 
 /**
  *
@@ -59061,48 +59091,6 @@ module.exports.ScpDropFolder = ScpDropFolder;
 /**
  *
  */
-class ServerFileResource extends DataCenterContentResource{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaServerFileResource';
-	}
-	
-	/**
-	 * Full path to the local file
-	 * @return string
-	 */
-	 getLocalFilePath() {
-	 	return this.localFilePath;
-	 }
-	
-	/**
-	 * @param localFilePath string Full path to the local file
-	 */
-	 setLocalFilePath(localFilePath) {
-	 	this.localFilePath = localFilePath;
-	 }
-	
-	/**
-	 * Should keep original file (false = mv, true = cp)
-	 * @return bool
-	 */
-	 getKeepOriginalFile() {
-	 	return this.keepOriginalFile;
-	 }
-	
-	/**
-	 * @param keepOriginalFile bool Should keep original file (false = mv, true = cp)
-	 */
-	 setKeepOriginalFile(keepOriginalFile) {
-	 	this.keepOriginalFile = keepOriginalFile;
-	 }
-}
-module.exports.ServerFileResource = ServerFileResource;
-
-/**
- *
- */
 class SftpDropFolder extends SshDropFolder{
 	
 	constructor(object = null) {
@@ -59327,33 +59315,6 @@ class UiConfAdminBaseFilter extends UiConfFilter{
 	}
 }
 module.exports.UiConfAdminBaseFilter = UiConfAdminBaseFilter;
-
-/**
- *
- */
-class UploadedFileTokenResource extends DataCenterContentResource{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaUploadedFileTokenResource';
-	}
-	
-	/**
-	 * Token that returned from upload.upload action or uploadToken.add action
-	 * @return string
-	 */
-	 getToken() {
-	 	return this.token;
-	 }
-	
-	/**
-	 * @param token string Token that returned from upload.upload action or uploadToken.add action
-	 */
-	 setToken(token) {
-	 	this.token = token;
-	 }
-}
-module.exports.UploadedFileTokenResource = UploadedFileTokenResource;
 
 /**
  *
@@ -60750,6 +60711,33 @@ module.exports.DocumentEntryBaseFilter = DocumentEntryBaseFilter;
 /**
  *
  */
+class DropFolderFileResource extends GenericDataCenterContentResource{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaDropFolderFileResource';
+	}
+	
+	/**
+	 * Id of the drop folder file object
+	 * @return int
+	 */
+	 getDropFolderFileId() {
+	 	return this.dropFolderFileId;
+	 }
+	
+	/**
+	 * @param dropFolderFileId int Id of the drop folder file object
+	 */
+	 setDropFolderFileId(dropFolderFileId) {
+	 	this.dropFolderFileId = dropFolderFileId;
+	 }
+}
+module.exports.DropFolderFileResource = DropFolderFileResource;
+
+/**
+ *
+ */
 class EmailNotificationTemplateFilter extends EmailNotificationTemplateBaseFilter{
 	
 	constructor(object = null) {
@@ -61284,6 +61272,48 @@ module.exports.RokuSyndicationFeed = RokuSyndicationFeed;
 /**
  *
  */
+class ServerFileResource extends GenericDataCenterContentResource{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaServerFileResource';
+	}
+	
+	/**
+	 * Full path to the local file
+	 * @return string
+	 */
+	 getLocalFilePath() {
+	 	return this.localFilePath;
+	 }
+	
+	/**
+	 * @param localFilePath string Full path to the local file
+	 */
+	 setLocalFilePath(localFilePath) {
+	 	this.localFilePath = localFilePath;
+	 }
+	
+	/**
+	 * Should keep original file (false = mv, true = cp)
+	 * @return bool
+	 */
+	 getKeepOriginalFile() {
+	 	return this.keepOriginalFile;
+	 }
+	
+	/**
+	 * @param keepOriginalFile bool Should keep original file (false = mv, true = cp)
+	 */
+	 setKeepOriginalFile(keepOriginalFile) {
+	 	this.keepOriginalFile = keepOriginalFile;
+	 }
+}
+module.exports.ServerFileResource = ServerFileResource;
+
+/**
+ *
+ */
 class SyndicationDistributionProfileFilter extends SyndicationDistributionProfileBaseFilter{
 	
 	constructor(object = null) {
@@ -61562,6 +61592,33 @@ class UiConfAdminFilter extends UiConfAdminBaseFilter{
 	}
 }
 module.exports.UiConfAdminFilter = UiConfAdminFilter;
+
+/**
+ *
+ */
+class UploadedFileTokenResource extends GenericDataCenterContentResource{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaUploadedFileTokenResource';
+	}
+	
+	/**
+	 * Token that returned from upload.upload action or uploadToken.add action
+	 * @return string
+	 */
+	 getToken() {
+	 	return this.token;
+	 }
+	
+	/**
+	 * @param token string Token that returned from upload.upload action or uploadToken.add action
+	 */
+	 setToken(token) {
+	 	this.token = token;
+	 }
+}
+module.exports.UploadedFileTokenResource = UploadedFileTokenResource;
 
 /**
  *

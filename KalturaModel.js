@@ -7125,6 +7125,21 @@ class ConversionProfileAssetParams extends kaltura.BaseObject{
 	 * 
 	 * @return int
 	 */
+	 getChunkedEncodeMode() {
+	 	return this.chunkedEncodeMode;
+	 }
+	
+	/**
+	 * @param chunkedEncodeMode int 
+	 */
+	 setChunkedEncodeMode(chunkedEncodeMode) {
+	 	this.chunkedEncodeMode = chunkedEncodeMode;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
 	 getTwoPass() {
 	 	return this.twoPass;
 	 }
@@ -12821,6 +12836,21 @@ class FlavorParams extends AssetParams{
 	 */
 	 setContentAwareness(contentAwareness) {
 	 	this.contentAwareness = contentAwareness;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getChunkedEncodeMode() {
+	 	return this.chunkedEncodeMode;
+	 }
+	
+	/**
+	 * @param chunkedEncodeMode int 
+	 */
+	 setChunkedEncodeMode(chunkedEncodeMode) {
+	 	this.chunkedEncodeMode = chunkedEncodeMode;
 	 }
 	
 	/**

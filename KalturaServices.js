@@ -5448,11 +5448,11 @@ class userEntry{
 	
 	/**
 	 * .
-	 * @param filter UserEntryFilter 
+	 * @param filter UserEntryFilter  (optional, default: null)
 	 * @param pager FilterPager  (optional, default: null)
 	 * @return KalturaUserEntryListResponse
 	 */
-	static listAction(filter, pager = null){
+	static listAction(filter = null, pager = null){
 		let kparams = {};
 		kparams.filter = filter;
 		kparams.pager = pager;

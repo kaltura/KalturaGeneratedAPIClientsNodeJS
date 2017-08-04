@@ -8178,11 +8178,11 @@ module.exports.DestFileSyncDescriptor = DestFileSyncDescriptor;
 /**
  *
  */
-class FilterPager extends kaltura.BaseObject{
+class Pager extends kaltura.BaseObject{
 	
 	constructor(object = null) {
 		super(object);
-		this.objectType = 'KalturaFilterPager';
+		this.objectType = 'KalturaPager';
 	}
 	
 	/**
@@ -8214,6 +8214,18 @@ class FilterPager extends kaltura.BaseObject{
 	 setPageIndex(pageIndex) {
 	 	this.pageIndex = pageIndex;
 	 }
+}
+module.exports.Pager = Pager;
+
+/**
+ *
+ */
+class FilterPager extends Pager{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaFilterPager';
+	}
 }
 module.exports.FilterPager = FilterPager;
 

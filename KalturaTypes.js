@@ -1988,6 +1988,9 @@ module.exports.DocumentFlavorParamsOrderBy = {
 module.exports.DocumentFlavorParamsOutputOrderBy = {
 };
 
+module.exports.DrmSchemeName = {
+};
+
 module.exports.DropFolderErrorCode = {
 ERROR_CONNECT : '1',
 ERROR_AUTENTICATE : '2',
@@ -4397,7 +4400,4 @@ UPDATED_AT_DESC : '-updatedAt',
 };
 
 module.exports.YoutubeApiDistributionProviderOrderBy = {
-};
-
-module.exports.DrmSchemeName = {
 };

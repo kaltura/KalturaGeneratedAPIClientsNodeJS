@@ -50921,6 +50921,18 @@ module.exports.EntryDistributionBaseFilter = EntryDistributionBaseFilter;
 /**
  *
  */
+class EntryIndexAdvancedFilter extends IndexAdvancedFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaEntryIndexAdvancedFilter';
+	}
+}
+module.exports.EntryIndexAdvancedFilter = EntryIndexAdvancedFilter;
+
+/**
+ *
+ */
 class EntryReferrerLiveStats extends EntryLiveStats{
 	
 	constructor(object = null) {

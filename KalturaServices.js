@@ -2206,6 +2206,7 @@ module.exports.liveChannelSegment = liveChannelSegment;
  * The available service actions:
  * @action add Adds new live channel.
  * @action appendRecording Append recorded video to live entry.
+ * @action createRecordedEntry .
  * @action delete Delete a live channel.
  * @action get Get live channel by ID.
  * @action isLive Delivering the status of a live channel (on-air/offline).
@@ -2248,6 +2249,21 @@ class liveChannel{
 		kparams.duration = duration;
 		kparams.isLastChunk = isLastChunk;
 		return new kaltura.RequestBuilder('livechannel', 'appendRecording', kparams);
+	};
+	
+	/**
+	 * .
+	 * @param entryId string Live entry id
+	 * @param mediaServerIndex string Media server index primary / secondary (enum: KalturaEntryServerNodeType)
+	 * @param liveEntryStatus int the status KalturaEntryServerNodeStatus::PLAYABLE | KalturaEntryServerNodeStatus::BROADCASTING (enum: KalturaEntryServerNodeStatus)
+	 * @return KalturaLiveEntry
+	 */
+	static createRecordedEntry(entryId, mediaServerIndex, liveEntryStatus){
+		let kparams = {};
+		kparams.entryId = entryId;
+		kparams.mediaServerIndex = mediaServerIndex;
+		kparams.liveEntryStatus = liveEntryStatus;
+		return new kaltura.RequestBuilder('livechannel', 'createRecordedEntry', kparams);
 	};
 	
 	/**
@@ -2302,15 +2318,17 @@ class liveChannel{
 	 * @param mediaServerIndex string Media server index primary / secondary (enum: KalturaEntryServerNodeType)
 	 * @param applicationName string the application to which entry is being broadcast (optional, default: null)
 	 * @param liveEntryStatus int the status KalturaEntryServerNodeStatus::PLAYABLE | KalturaEntryServerNodeStatus::BROADCASTING (optional, enum: KalturaEntryServerNodeStatus, default: 1)
+	 * @param shouldCreateRecordedEntry bool  (optional, default: true)
 	 * @return KalturaLiveEntry
 	 */
-	static registerMediaServer(entryId, hostname, mediaServerIndex, applicationName = null, liveEntryStatus = 1){
+	static registerMediaServer(entryId, hostname, mediaServerIndex, applicationName = null, liveEntryStatus = 1, shouldCreateRecordedEntry = true){
 		let kparams = {};
 		kparams.entryId = entryId;
 		kparams.hostname = hostname;
 		kparams.mediaServerIndex = mediaServerIndex;
 		kparams.applicationName = applicationName;
 		kparams.liveEntryStatus = liveEntryStatus;
+		kparams.shouldCreateRecordedEntry = shouldCreateRecordedEntry;
 		return new kaltura.RequestBuilder('livechannel', 'registerMediaServer', kparams);
 	};
 	
@@ -2475,6 +2493,7 @@ module.exports.liveStats = liveStats;
  * @action appendRecording Append recorded video to live entry.
  * @action authenticate Authenticate live-stream entry against stream token and partner limitations.
  * @action createPeriodicSyncPoints Creates perioding metadata sync-point events on a live stream.
+ * @action createRecordedEntry .
  * @action delete Delete a live stream entry.
  * @action get Get live stream entry by ID.
  * @action isLive Delivering the status of a live stream (on-air/offline) if it is possible.
@@ -2577,6 +2596,21 @@ class liveStream{
 	};
 	
 	/**
+	 * .
+	 * @param entryId string Live entry id
+	 * @param mediaServerIndex string Media server index primary / secondary (enum: KalturaEntryServerNodeType)
+	 * @param liveEntryStatus int the status KalturaEntryServerNodeStatus::PLAYABLE | KalturaEntryServerNodeStatus::BROADCASTING (enum: KalturaEntryServerNodeStatus)
+	 * @return KalturaLiveEntry
+	 */
+	static createRecordedEntry(entryId, mediaServerIndex, liveEntryStatus){
+		let kparams = {};
+		kparams.entryId = entryId;
+		kparams.mediaServerIndex = mediaServerIndex;
+		kparams.liveEntryStatus = liveEntryStatus;
+		return new kaltura.RequestBuilder('livestream', 'createRecordedEntry', kparams);
+	};
+	
+	/**
 	 * Delete a live stream entry.
 	 * @param entryId string Live stream entry id to delete
 	 */
@@ -2642,15 +2676,17 @@ class liveStream{
 	 * @param mediaServerIndex string Media server index primary / secondary (enum: KalturaEntryServerNodeType)
 	 * @param applicationName string the application to which entry is being broadcast (optional, default: null)
 	 * @param liveEntryStatus int the status KalturaEntryServerNodeStatus::PLAYABLE | KalturaEntryServerNodeStatus::BROADCASTING (optional, enum: KalturaEntryServerNodeStatus, default: 1)
+	 * @param shouldCreateRecordedEntry bool  (optional, default: true)
 	 * @return KalturaLiveEntry
 	 */
-	static registerMediaServer(entryId, hostname, mediaServerIndex, applicationName = null, liveEntryStatus = 1){
+	static registerMediaServer(entryId, hostname, mediaServerIndex, applicationName = null, liveEntryStatus = 1, shouldCreateRecordedEntry = true){
 		let kparams = {};
 		kparams.entryId = entryId;
 		kparams.hostname = hostname;
 		kparams.mediaServerIndex = mediaServerIndex;
 		kparams.applicationName = applicationName;
 		kparams.liveEntryStatus = liveEntryStatus;
+		kparams.shouldCreateRecordedEntry = shouldCreateRecordedEntry;
 		return new kaltura.RequestBuilder('livestream', 'registerMediaServer', kparams);
 	};
 	

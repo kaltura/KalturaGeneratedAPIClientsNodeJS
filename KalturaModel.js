@@ -9222,6 +9222,489 @@ module.exports.DocumentEntry = DocumentEntry;
 /**
  *
  */
+class DrmLicenseAccessDetails extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaDrmLicenseAccessDetails';
+	}
+	
+	/**
+	 * Drm policy name
+	 * @return string
+	 */
+	 getPolicy() {
+	 	return this.policy;
+	 }
+	
+	/**
+	 * @param policy string Drm policy name
+	 */
+	 setPolicy(policy) {
+	 	this.policy = policy;
+	 }
+	
+	/**
+	 * movie duration in seconds
+	 * @return int
+	 */
+	 getDuration() {
+	 	return this.duration;
+	 }
+	
+	/**
+	 * @param duration int movie duration in seconds
+	 */
+	 setDuration(duration) {
+	 	this.duration = duration;
+	 }
+	
+	/**
+	 * playback window in seconds
+	 * @return int
+	 */
+	 getAbsolute_duration() {
+	 	return this.absolute_duration;
+	 }
+	
+	/**
+	 * @param absolute_duration int playback window in seconds
+	 */
+	 setAbsolute_duration(absolute_duration) {
+	 	this.absolute_duration = absolute_duration;
+	 }
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getLicenseParams() {
+	 	return this.licenseParams;
+	 }
+	
+	/**
+	 * @param licenseParams array 
+	 */
+	 setLicenseParams(licenseParams) {
+	 	this.licenseParams = licenseParams;
+	 }
+}
+module.exports.DrmLicenseAccessDetails = DrmLicenseAccessDetails;
+
+/**
+ *
+ */
+class PluginData extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaPluginData';
+	}
+}
+module.exports.PluginData = PluginData;
+
+/**
+ *
+ */
+class DrmPlaybackPluginData extends PluginData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaDrmPlaybackPluginData';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getScheme() {
+	 	return this.scheme;
+	 }
+	
+	/**
+	 * @param scheme string 
+	 */
+	 setScheme(scheme) {
+	 	this.scheme = scheme;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getLicenseURL() {
+	 	return this.licenseURL;
+	 }
+	
+	/**
+	 * @param licenseURL string 
+	 */
+	 setLicenseURL(licenseURL) {
+	 	this.licenseURL = licenseURL;
+	 }
+}
+module.exports.DrmPlaybackPluginData = DrmPlaybackPluginData;
+
+/**
+ *
+ */
+class DrmPolicy extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaDrmPolicy';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getId() {
+	 	return this.id;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getPartnerId() {
+	 	return this.partnerId;
+	 }
+	
+	/**
+	 * @param partnerId int 
+	 */
+	 setPartnerId(partnerId) {
+	 	this.partnerId = partnerId;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getName() {
+	 	return this.name;
+	 }
+	
+	/**
+	 * @param name string 
+	 */
+	 setName(name) {
+	 	this.name = name;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSystemName() {
+	 	return this.systemName;
+	 }
+	
+	/**
+	 * @param systemName string 
+	 */
+	 setSystemName(systemName) {
+	 	this.systemName = systemName;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getDescription() {
+	 	return this.description;
+	 }
+	
+	/**
+	 * @param description string 
+	 */
+	 setDescription(description) {
+	 	this.description = description;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getProvider() {
+	 	return this.provider;
+	 }
+	
+	/**
+	 * @param provider string 
+	 */
+	 setProvider(provider) {
+	 	this.provider = provider;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getStatus() {
+	 	return this.status;
+	 }
+	
+	/**
+	 * @param status int 
+	 */
+	 setStatus(status) {
+	 	this.status = status;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getScenario() {
+	 	return this.scenario;
+	 }
+	
+	/**
+	 * @param scenario string 
+	 */
+	 setScenario(scenario) {
+	 	this.scenario = scenario;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getLicenseType() {
+	 	return this.licenseType;
+	 }
+	
+	/**
+	 * @param licenseType string 
+	 */
+	 setLicenseType(licenseType) {
+	 	this.licenseType = licenseType;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getLicenseExpirationPolicy() {
+	 	return this.licenseExpirationPolicy;
+	 }
+	
+	/**
+	 * @param licenseExpirationPolicy int 
+	 */
+	 setLicenseExpirationPolicy(licenseExpirationPolicy) {
+	 	this.licenseExpirationPolicy = licenseExpirationPolicy;
+	 }
+	
+	/**
+	 * Duration in days the license is effective
+	 * @return int
+	 */
+	 getDuration() {
+	 	return this.duration;
+	 }
+	
+	/**
+	 * @param duration int Duration in days the license is effective
+	 */
+	 setDuration(duration) {
+	 	this.duration = duration;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getCreatedAt() {
+	 	return this.createdAt;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getUpdatedAt() {
+	 	return this.updatedAt;
+	 }
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getLicenseParams() {
+	 	return this.licenseParams;
+	 }
+	
+	/**
+	 * @param licenseParams array 
+	 */
+	 setLicenseParams(licenseParams) {
+	 	this.licenseParams = licenseParams;
+	 }
+}
+module.exports.DrmPolicy = DrmPolicy;
+
+/**
+ *
+ */
+class DrmProfile extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaDrmProfile';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getId() {
+	 	return this.id;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getPartnerId() {
+	 	return this.partnerId;
+	 }
+	
+	/**
+	 * @param partnerId int 
+	 */
+	 setPartnerId(partnerId) {
+	 	this.partnerId = partnerId;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getName() {
+	 	return this.name;
+	 }
+	
+	/**
+	 * @param name string 
+	 */
+	 setName(name) {
+	 	this.name = name;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getDescription() {
+	 	return this.description;
+	 }
+	
+	/**
+	 * @param description string 
+	 */
+	 setDescription(description) {
+	 	this.description = description;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getProvider() {
+	 	return this.provider;
+	 }
+	
+	/**
+	 * @param provider string 
+	 */
+	 setProvider(provider) {
+	 	this.provider = provider;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getStatus() {
+	 	return this.status;
+	 }
+	
+	/**
+	 * @param status int 
+	 */
+	 setStatus(status) {
+	 	this.status = status;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getLicenseServerUrl() {
+	 	return this.licenseServerUrl;
+	 }
+	
+	/**
+	 * @param licenseServerUrl string 
+	 */
+	 setLicenseServerUrl(licenseServerUrl) {
+	 	this.licenseServerUrl = licenseServerUrl;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getDefaultPolicy() {
+	 	return this.defaultPolicy;
+	 }
+	
+	/**
+	 * @param defaultPolicy string 
+	 */
+	 setDefaultPolicy(defaultPolicy) {
+	 	this.defaultPolicy = defaultPolicy;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getCreatedAt() {
+	 	return this.createdAt;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getUpdatedAt() {
+	 	return this.updatedAt;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSigningKey() {
+	 	return this.signingKey;
+	 }
+	
+	/**
+	 * @param signingKey string 
+	 */
+	 setSigningKey(signingKey) {
+	 	this.signingKey = signingKey;
+	 }
+}
+module.exports.DrmProfile = DrmProfile;
+
+/**
+ *
+ */
 class DropFolderFileHandlerConfig extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -20032,56 +20515,323 @@ module.exports.PermissionItem = PermissionItem;
 /**
  *
  */
-class PluginData extends kaltura.BaseObject{
+class PlayReadyAnalogVideoOPIdHolder extends kaltura.BaseObject{
 	
 	constructor(object = null) {
 		super(object);
-		this.objectType = 'KalturaPluginData';
+		this.objectType = 'KalturaPlayReadyAnalogVideoOPIdHolder';
 	}
+	
+	/**
+	 * The type of the play enabler
+	 * @return string
+	 */
+	 getType() {
+	 	return this.type;
+	 }
+	
+	/**
+	 * @param type string The type of the play enabler
+	 */
+	 setType(type) {
+	 	this.type = type;
+	 }
 }
-module.exports.PluginData = PluginData;
+module.exports.PlayReadyAnalogVideoOPIdHolder = PlayReadyAnalogVideoOPIdHolder;
 
 /**
  *
  */
-class DrmPlaybackPluginData extends PluginData{
+class PlayReadyContentKey extends kaltura.BaseObject{
 	
 	constructor(object = null) {
 		super(object);
-		this.objectType = 'KalturaDrmPlaybackPluginData';
+		this.objectType = 'KalturaPlayReadyContentKey';
+	}
+	
+	/**
+	 * Guid - key id of the specific content
+	 * @return string
+	 */
+	 getKeyId() {
+	 	return this.keyId;
+	 }
+	
+	/**
+	 * @param keyId string Guid - key id of the specific content
+	 */
+	 setKeyId(keyId) {
+	 	this.keyId = keyId;
+	 }
+	
+	/**
+	 * License content key 64 bit encoded
+	 * @return string
+	 */
+	 getContentKey() {
+	 	return this.contentKey;
+	 }
+	
+	/**
+	 * @param contentKey string License content key 64 bit encoded
+	 */
+	 setContentKey(contentKey) {
+	 	this.contentKey = contentKey;
+	 }
+}
+module.exports.PlayReadyContentKey = PlayReadyContentKey;
+
+/**
+ *
+ */
+class PlayReadyCopyEnablerHolder extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaPlayReadyCopyEnablerHolder';
+	}
+	
+	/**
+	 * The type of the copy enabler
+	 * @return string
+	 */
+	 getType() {
+	 	return this.type;
+	 }
+	
+	/**
+	 * @param type string The type of the copy enabler
+	 */
+	 setType(type) {
+	 	this.type = type;
+	 }
+}
+module.exports.PlayReadyCopyEnablerHolder = PlayReadyCopyEnablerHolder;
+
+/**
+ *
+ */
+class PlayReadyDigitalAudioOPIdHolder extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaPlayReadyDigitalAudioOPIdHolder';
+	}
+	
+	/**
+	 * The type of the play enabler
+	 * @return string
+	 */
+	 getType() {
+	 	return this.type;
+	 }
+	
+	/**
+	 * @param type string The type of the play enabler
+	 */
+	 setType(type) {
+	 	this.type = type;
+	 }
+}
+module.exports.PlayReadyDigitalAudioOPIdHolder = PlayReadyDigitalAudioOPIdHolder;
+
+/**
+ *
+ */
+class PlayReadyRight extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaPlayReadyRight';
+	}
+}
+module.exports.PlayReadyRight = PlayReadyRight;
+
+/**
+ *
+ */
+class PlayReadyPolicy extends DrmPolicy{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaPlayReadyPolicy';
 	}
 	
 	/**
 	 * 
-	 * @return string
+	 * @return int
 	 */
-	 getScheme() {
-	 	return this.scheme;
+	 getGracePeriod() {
+	 	return this.gracePeriod;
 	 }
 	
 	/**
-	 * @param scheme string 
+	 * @param gracePeriod int 
 	 */
-	 setScheme(scheme) {
-	 	this.scheme = scheme;
+	 setGracePeriod(gracePeriod) {
+	 	this.gracePeriod = gracePeriod;
 	 }
 	
 	/**
 	 * 
-	 * @return string
+	 * @return int
 	 */
-	 getLicenseURL() {
-	 	return this.licenseURL;
+	 getLicenseRemovalPolicy() {
+	 	return this.licenseRemovalPolicy;
 	 }
 	
 	/**
-	 * @param licenseURL string 
+	 * @param licenseRemovalPolicy int 
 	 */
-	 setLicenseURL(licenseURL) {
-	 	this.licenseURL = licenseURL;
+	 setLicenseRemovalPolicy(licenseRemovalPolicy) {
+	 	this.licenseRemovalPolicy = licenseRemovalPolicy;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getLicenseRemovalDuration() {
+	 	return this.licenseRemovalDuration;
+	 }
+	
+	/**
+	 * @param licenseRemovalDuration int 
+	 */
+	 setLicenseRemovalDuration(licenseRemovalDuration) {
+	 	this.licenseRemovalDuration = licenseRemovalDuration;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getMinSecurityLevel() {
+	 	return this.minSecurityLevel;
+	 }
+	
+	/**
+	 * @param minSecurityLevel int 
+	 */
+	 setMinSecurityLevel(minSecurityLevel) {
+	 	this.minSecurityLevel = minSecurityLevel;
+	 }
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getRights() {
+	 	return this.rights;
+	 }
+	
+	/**
+	 * @param rights array 
+	 */
+	 setRights(rights) {
+	 	this.rights = rights;
 	 }
 }
-module.exports.DrmPlaybackPluginData = DrmPlaybackPluginData;
+module.exports.PlayReadyPolicy = PlayReadyPolicy;
+
+/**
+ *
+ */
+class PlayReadyLicenseDetails extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaPlayReadyLicenseDetails';
+	}
+	
+	/**
+	 * PlayReady policy object
+	 * @return PlayReadyPolicy
+	 */
+	 getPolicy() {
+	 	return this.policy;
+	 }
+	
+	/**
+	 * @param policy PlayReadyPolicy PlayReady policy object
+	 */
+	 setPolicy(policy) {
+	 	this.policy = policy;
+	 }
+	
+	/**
+	 * License begin date
+	 * @return int
+	 */
+	 getBeginDate() {
+	 	return this.beginDate;
+	 }
+	
+	/**
+	 * @param beginDate int License begin date
+	 */
+	 setBeginDate(beginDate) {
+	 	this.beginDate = beginDate;
+	 }
+	
+	/**
+	 * License expiration date
+	 * @return int
+	 */
+	 getExpirationDate() {
+	 	return this.expirationDate;
+	 }
+	
+	/**
+	 * @param expirationDate int License expiration date
+	 */
+	 setExpirationDate(expirationDate) {
+	 	this.expirationDate = expirationDate;
+	 }
+	
+	/**
+	 * License removal date
+	 * @return int
+	 */
+	 getRemovalDate() {
+	 	return this.removalDate;
+	 }
+	
+	/**
+	 * @param removalDate int License removal date
+	 */
+	 setRemovalDate(removalDate) {
+	 	this.removalDate = removalDate;
+	 }
+}
+module.exports.PlayReadyLicenseDetails = PlayReadyLicenseDetails;
+
+/**
+ *
+ */
+class PlayReadyPlayEnablerHolder extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaPlayReadyPlayEnablerHolder';
+	}
+	
+	/**
+	 * The type of the play enabler
+	 * @return string
+	 */
+	 getType() {
+	 	return this.type;
+	 }
+	
+	/**
+	 * @param type string The type of the play enabler
+	 */
+	 setType(type) {
+	 	this.type = type;
+	 }
+}
+module.exports.PlayReadyPlayEnablerHolder = PlayReadyPlayEnablerHolder;
 
 /**
  *
@@ -27480,6 +28230,33 @@ module.exports.AccessControlBlockAction = AccessControlBlockAction;
 /**
  *
  */
+class AccessControlDrmPolicyAction extends RuleAction{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaAccessControlDrmPolicyAction';
+	}
+	
+	/**
+	 * Drm policy id
+	 * @return int
+	 */
+	 getPolicyId() {
+	 	return this.policyId;
+	 }
+	
+	/**
+	 * @param policyId int Drm policy id
+	 */
+	 setPolicyId(policyId) {
+	 	this.policyId = policyId;
+	 }
+}
+module.exports.AccessControlDrmPolicyAction = AccessControlDrmPolicyAction;
+
+/**
+ *
+ */
 class AccessControlLimitDeliveryProfilesAction extends RuleAction{
 	
 	constructor(object = null) {
@@ -33737,6 +34514,355 @@ class DrmEntryContextPluginData extends PluginData{
 	 }
 }
 module.exports.DrmEntryContextPluginData = DrmEntryContextPluginData;
+
+/**
+ *
+ */
+class DrmPolicyBaseFilter extends Filter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaDrmPolicyBaseFilter';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getPartnerIdEqual() {
+	 	return this.partnerIdEqual;
+	 }
+	
+	/**
+	 * @param partnerIdEqual int 
+	 */
+	 setPartnerIdEqual(partnerIdEqual) {
+	 	this.partnerIdEqual = partnerIdEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getPartnerIdIn() {
+	 	return this.partnerIdIn;
+	 }
+	
+	/**
+	 * @param partnerIdIn string 
+	 */
+	 setPartnerIdIn(partnerIdIn) {
+	 	this.partnerIdIn = partnerIdIn;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getNameLike() {
+	 	return this.nameLike;
+	 }
+	
+	/**
+	 * @param nameLike string 
+	 */
+	 setNameLike(nameLike) {
+	 	this.nameLike = nameLike;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSystemNameLike() {
+	 	return this.systemNameLike;
+	 }
+	
+	/**
+	 * @param systemNameLike string 
+	 */
+	 setSystemNameLike(systemNameLike) {
+	 	this.systemNameLike = systemNameLike;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getProviderEqual() {
+	 	return this.providerEqual;
+	 }
+	
+	/**
+	 * @param providerEqual string 
+	 */
+	 setProviderEqual(providerEqual) {
+	 	this.providerEqual = providerEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getProviderIn() {
+	 	return this.providerIn;
+	 }
+	
+	/**
+	 * @param providerIn string 
+	 */
+	 setProviderIn(providerIn) {
+	 	this.providerIn = providerIn;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getStatusEqual() {
+	 	return this.statusEqual;
+	 }
+	
+	/**
+	 * @param statusEqual int 
+	 */
+	 setStatusEqual(statusEqual) {
+	 	this.statusEqual = statusEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getStatusIn() {
+	 	return this.statusIn;
+	 }
+	
+	/**
+	 * @param statusIn string 
+	 */
+	 setStatusIn(statusIn) {
+	 	this.statusIn = statusIn;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getScenarioEqual() {
+	 	return this.scenarioEqual;
+	 }
+	
+	/**
+	 * @param scenarioEqual string 
+	 */
+	 setScenarioEqual(scenarioEqual) {
+	 	this.scenarioEqual = scenarioEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getScenarioIn() {
+	 	return this.scenarioIn;
+	 }
+	
+	/**
+	 * @param scenarioIn string 
+	 */
+	 setScenarioIn(scenarioIn) {
+	 	this.scenarioIn = scenarioIn;
+	 }
+}
+module.exports.DrmPolicyBaseFilter = DrmPolicyBaseFilter;
+
+/**
+ *
+ */
+class DrmPolicyListResponse extends ListResponse{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaDrmPolicyListResponse';
+	}
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getObjects() {
+	 	return this.objects;
+	 }
+}
+module.exports.DrmPolicyListResponse = DrmPolicyListResponse;
+
+/**
+ *
+ */
+class DrmProfileBaseFilter extends Filter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaDrmProfileBaseFilter';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getIdEqual() {
+	 	return this.idEqual;
+	 }
+	
+	/**
+	 * @param idEqual int 
+	 */
+	 setIdEqual(idEqual) {
+	 	this.idEqual = idEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getIdIn() {
+	 	return this.idIn;
+	 }
+	
+	/**
+	 * @param idIn string 
+	 */
+	 setIdIn(idIn) {
+	 	this.idIn = idIn;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getPartnerIdEqual() {
+	 	return this.partnerIdEqual;
+	 }
+	
+	/**
+	 * @param partnerIdEqual int 
+	 */
+	 setPartnerIdEqual(partnerIdEqual) {
+	 	this.partnerIdEqual = partnerIdEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getPartnerIdIn() {
+	 	return this.partnerIdIn;
+	 }
+	
+	/**
+	 * @param partnerIdIn string 
+	 */
+	 setPartnerIdIn(partnerIdIn) {
+	 	this.partnerIdIn = partnerIdIn;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getNameLike() {
+	 	return this.nameLike;
+	 }
+	
+	/**
+	 * @param nameLike string 
+	 */
+	 setNameLike(nameLike) {
+	 	this.nameLike = nameLike;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getProviderEqual() {
+	 	return this.providerEqual;
+	 }
+	
+	/**
+	 * @param providerEqual string 
+	 */
+	 setProviderEqual(providerEqual) {
+	 	this.providerEqual = providerEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getProviderIn() {
+	 	return this.providerIn;
+	 }
+	
+	/**
+	 * @param providerIn string 
+	 */
+	 setProviderIn(providerIn) {
+	 	this.providerIn = providerIn;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getStatusEqual() {
+	 	return this.statusEqual;
+	 }
+	
+	/**
+	 * @param statusEqual int 
+	 */
+	 setStatusEqual(statusEqual) {
+	 	this.statusEqual = statusEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getStatusIn() {
+	 	return this.statusIn;
+	 }
+	
+	/**
+	 * @param statusIn string 
+	 */
+	 setStatusIn(statusIn) {
+	 	this.statusIn = statusIn;
+	 }
+}
+module.exports.DrmProfileBaseFilter = DrmProfileBaseFilter;
+
+/**
+ *
+ */
+class DrmProfileListResponse extends ListResponse{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaDrmProfileListResponse';
+	}
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getObjects() {
+	 	return this.objects;
+	 }
+}
+module.exports.DrmProfileListResponse = DrmProfileListResponse;
 
 /**
  *
@@ -41874,6 +43000,222 @@ module.exports.PermissionListResponse = PermissionListResponse;
 /**
  *
  */
+class PlayReadyCopyRight extends PlayReadyRight{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaPlayReadyCopyRight';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getCopyCount() {
+	 	return this.copyCount;
+	 }
+	
+	/**
+	 * @param copyCount int 
+	 */
+	 setCopyCount(copyCount) {
+	 	this.copyCount = copyCount;
+	 }
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getCopyEnablers() {
+	 	return this.copyEnablers;
+	 }
+	
+	/**
+	 * @param copyEnablers array 
+	 */
+	 setCopyEnablers(copyEnablers) {
+	 	this.copyEnablers = copyEnablers;
+	 }
+}
+module.exports.PlayReadyCopyRight = PlayReadyCopyRight;
+
+/**
+ *
+ */
+class PlayReadyPlayRight extends PlayReadyRight{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaPlayReadyPlayRight';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getAnalogVideoOPL() {
+	 	return this.analogVideoOPL;
+	 }
+	
+	/**
+	 * @param analogVideoOPL int 
+	 */
+	 setAnalogVideoOPL(analogVideoOPL) {
+	 	this.analogVideoOPL = analogVideoOPL;
+	 }
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getAnalogVideoOutputProtectionList() {
+	 	return this.analogVideoOutputProtectionList;
+	 }
+	
+	/**
+	 * @param analogVideoOutputProtectionList array 
+	 */
+	 setAnalogVideoOutputProtectionList(analogVideoOutputProtectionList) {
+	 	this.analogVideoOutputProtectionList = analogVideoOutputProtectionList;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getCompressedDigitalAudioOPL() {
+	 	return this.compressedDigitalAudioOPL;
+	 }
+	
+	/**
+	 * @param compressedDigitalAudioOPL int 
+	 */
+	 setCompressedDigitalAudioOPL(compressedDigitalAudioOPL) {
+	 	this.compressedDigitalAudioOPL = compressedDigitalAudioOPL;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getCompressedDigitalVideoOPL() {
+	 	return this.compressedDigitalVideoOPL;
+	 }
+	
+	/**
+	 * @param compressedDigitalVideoOPL int 
+	 */
+	 setCompressedDigitalVideoOPL(compressedDigitalVideoOPL) {
+	 	this.compressedDigitalVideoOPL = compressedDigitalVideoOPL;
+	 }
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getDigitalAudioOutputProtectionList() {
+	 	return this.digitalAudioOutputProtectionList;
+	 }
+	
+	/**
+	 * @param digitalAudioOutputProtectionList array 
+	 */
+	 setDigitalAudioOutputProtectionList(digitalAudioOutputProtectionList) {
+	 	this.digitalAudioOutputProtectionList = digitalAudioOutputProtectionList;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getUncompressedDigitalAudioOPL() {
+	 	return this.uncompressedDigitalAudioOPL;
+	 }
+	
+	/**
+	 * @param uncompressedDigitalAudioOPL int 
+	 */
+	 setUncompressedDigitalAudioOPL(uncompressedDigitalAudioOPL) {
+	 	this.uncompressedDigitalAudioOPL = uncompressedDigitalAudioOPL;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getUncompressedDigitalVideoOPL() {
+	 	return this.uncompressedDigitalVideoOPL;
+	 }
+	
+	/**
+	 * @param uncompressedDigitalVideoOPL int 
+	 */
+	 setUncompressedDigitalVideoOPL(uncompressedDigitalVideoOPL) {
+	 	this.uncompressedDigitalVideoOPL = uncompressedDigitalVideoOPL;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getFirstPlayExpiration() {
+	 	return this.firstPlayExpiration;
+	 }
+	
+	/**
+	 * @param firstPlayExpiration int 
+	 */
+	 setFirstPlayExpiration(firstPlayExpiration) {
+	 	this.firstPlayExpiration = firstPlayExpiration;
+	 }
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getPlayEnablers() {
+	 	return this.playEnablers;
+	 }
+	
+	/**
+	 * @param playEnablers array 
+	 */
+	 setPlayEnablers(playEnablers) {
+	 	this.playEnablers = playEnablers;
+	 }
+}
+module.exports.PlayReadyPlayRight = PlayReadyPlayRight;
+
+/**
+ *
+ */
+class PlayReadyProfile extends DrmProfile{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaPlayReadyProfile';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getKeySeed() {
+	 	return this.keySeed;
+	 }
+	
+	/**
+	 * @param keySeed string 
+	 */
+	 setKeySeed(keySeed) {
+	 	this.keySeed = keySeed;
+	 }
+}
+module.exports.PlayReadyProfile = PlayReadyProfile;
+
+/**
+ *
+ */
 class PlaylistListResponse extends ListResponse{
 	
 	constructor(object = null) {
@@ -46945,6 +48287,180 @@ module.exports.VoicebaseJobProviderData = VoicebaseJobProviderData;
 /**
  *
  */
+class WidevineProfile extends DrmProfile{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaWidevineProfile';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getKey() {
+	 	return this.key;
+	 }
+	
+	/**
+	 * @param key string 
+	 */
+	 setKey(key) {
+	 	this.key = key;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getIv() {
+	 	return this.iv;
+	 }
+	
+	/**
+	 * @param iv string 
+	 */
+	 setIv(iv) {
+	 	this.iv = iv;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getOwner() {
+	 	return this.owner;
+	 }
+	
+	/**
+	 * @param owner string 
+	 */
+	 setOwner(owner) {
+	 	this.owner = owner;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getPortal() {
+	 	return this.portal;
+	 }
+	
+	/**
+	 * @param portal string 
+	 */
+	 setPortal(portal) {
+	 	this.portal = portal;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getMaxGop() {
+	 	return this.maxGop;
+	 }
+	
+	/**
+	 * @param maxGop int 
+	 */
+	 setMaxGop(maxGop) {
+	 	this.maxGop = maxGop;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getRegServerHost() {
+	 	return this.regServerHost;
+	 }
+	
+	/**
+	 * @param regServerHost string 
+	 */
+	 setRegServerHost(regServerHost) {
+	 	this.regServerHost = regServerHost;
+	 }
+}
+module.exports.WidevineProfile = WidevineProfile;
+
+/**
+ *
+ */
+class WidevineRepositorySyncJobData extends JobData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaWidevineRepositorySyncJobData';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getSyncMode() {
+	 	return this.syncMode;
+	 }
+	
+	/**
+	 * @param syncMode int 
+	 */
+	 setSyncMode(syncMode) {
+	 	this.syncMode = syncMode;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getWvAssetIds() {
+	 	return this.wvAssetIds;
+	 }
+	
+	/**
+	 * @param wvAssetIds string 
+	 */
+	 setWvAssetIds(wvAssetIds) {
+	 	this.wvAssetIds = wvAssetIds;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getModifiedAttributes() {
+	 	return this.modifiedAttributes;
+	 }
+	
+	/**
+	 * @param modifiedAttributes string 
+	 */
+	 setModifiedAttributes(modifiedAttributes) {
+	 	this.modifiedAttributes = modifiedAttributes;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getMonitorSyncCompletion() {
+	 	return this.monitorSyncCompletion;
+	 }
+	
+	/**
+	 * @param monitorSyncCompletion int 
+	 */
+	 setMonitorSyncCompletion(monitorSyncCompletion) {
+	 	this.monitorSyncCompletion = monitorSyncCompletion;
+	 }
+}
+module.exports.WidevineRepositorySyncJobData = WidevineRepositorySyncJobData;
+
+/**
+ *
+ */
 class WidgetBaseFilter extends Filter{
 	
 	constructor(object = null) {
@@ -50244,6 +51760,30 @@ class DocumentFlavorParams extends FlavorParams{
 	}
 }
 module.exports.DocumentFlavorParams = DocumentFlavorParams;
+
+/**
+ *
+ */
+class DrmPolicyFilter extends DrmPolicyBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaDrmPolicyFilter';
+	}
+}
+module.exports.DrmPolicyFilter = DrmPolicyFilter;
+
+/**
+ *
+ */
+class DrmProfileFilter extends DrmProfileBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaDrmProfileFilter';
+	}
+}
+module.exports.DrmProfileFilter = DrmProfileFilter;
 
 /**
  *
@@ -56472,6 +58012,75 @@ module.exports.VirusScanProfileFilter = VirusScanProfileFilter;
 /**
  *
  */
+class WidevineFlavorAsset extends FlavorAsset{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaWidevineFlavorAsset';
+	}
+	
+	/**
+	 * License distribution window start date
+	 * @return int
+	 */
+	 getWidevineDistributionStartDate() {
+	 	return this.widevineDistributionStartDate;
+	 }
+	
+	/**
+	 * @param widevineDistributionStartDate int License distribution window start date
+	 */
+	 setWidevineDistributionStartDate(widevineDistributionStartDate) {
+	 	this.widevineDistributionStartDate = widevineDistributionStartDate;
+	 }
+	
+	/**
+	 * License distribution window end date
+	 * @return int
+	 */
+	 getWidevineDistributionEndDate() {
+	 	return this.widevineDistributionEndDate;
+	 }
+	
+	/**
+	 * @param widevineDistributionEndDate int License distribution window end date
+	 */
+	 setWidevineDistributionEndDate(widevineDistributionEndDate) {
+	 	this.widevineDistributionEndDate = widevineDistributionEndDate;
+	 }
+	
+	/**
+	 * Widevine unique asset id
+	 * @return int
+	 */
+	 getWidevineAssetId() {
+	 	return this.widevineAssetId;
+	 }
+	
+	/**
+	 * @param widevineAssetId int Widevine unique asset id
+	 */
+	 setWidevineAssetId(widevineAssetId) {
+	 	this.widevineAssetId = widevineAssetId;
+	 }
+}
+module.exports.WidevineFlavorAsset = WidevineFlavorAsset;
+
+/**
+ *
+ */
+class WidevineFlavorParams extends FlavorParams{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaWidevineFlavorParams';
+	}
+}
+module.exports.WidevineFlavorParams = WidevineFlavorParams;
+
+/**
+ *
+ */
 class WidgetFilter extends WidgetBaseFilter{
 	
 	constructor(object = null) {
@@ -58767,6 +60376,30 @@ module.exports.PermissionItemFilter = PermissionItemFilter;
 /**
  *
  */
+class PlayReadyPolicyBaseFilter extends DrmPolicyFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaPlayReadyPolicyBaseFilter';
+	}
+}
+module.exports.PlayReadyPolicyBaseFilter = PlayReadyPolicyBaseFilter;
+
+/**
+ *
+ */
+class PlayReadyProfileBaseFilter extends DrmProfileFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaPlayReadyProfileBaseFilter';
+	}
+}
+module.exports.PlayReadyProfileBaseFilter = PlayReadyProfileBaseFilter;
+
+/**
+ *
+ */
 class PlayableEntryCompareAttributeCondition extends SearchComparableAttributeCondition{
 	
 	constructor(object = null) {
@@ -59528,6 +61161,60 @@ class WebcamTokenResource extends DataCenterContentResource{
 	 }
 }
 module.exports.WebcamTokenResource = WebcamTokenResource;
+
+/**
+ *
+ */
+class WidevineFlavorParamsOutput extends FlavorParamsOutput{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaWidevineFlavorParamsOutput';
+	}
+	
+	/**
+	 * License distribution window start date
+	 * @return int
+	 */
+	 getWidevineDistributionStartDate() {
+	 	return this.widevineDistributionStartDate;
+	 }
+	
+	/**
+	 * @param widevineDistributionStartDate int License distribution window start date
+	 */
+	 setWidevineDistributionStartDate(widevineDistributionStartDate) {
+	 	this.widevineDistributionStartDate = widevineDistributionStartDate;
+	 }
+	
+	/**
+	 * License distribution window end date
+	 * @return int
+	 */
+	 getWidevineDistributionEndDate() {
+	 	return this.widevineDistributionEndDate;
+	 }
+	
+	/**
+	 * @param widevineDistributionEndDate int License distribution window end date
+	 */
+	 setWidevineDistributionEndDate(widevineDistributionEndDate) {
+	 	this.widevineDistributionEndDate = widevineDistributionEndDate;
+	 }
+}
+module.exports.WidevineFlavorParamsOutput = WidevineFlavorParamsOutput;
+
+/**
+ *
+ */
+class WidevineProfileBaseFilter extends DrmProfileFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaWidevineProfileBaseFilter';
+	}
+}
+module.exports.WidevineProfileBaseFilter = WidevineProfileBaseFilter;
 
 /**
  *
@@ -61221,6 +62908,30 @@ module.exports.OperaSyndicationFeed = OperaSyndicationFeed;
 /**
  *
  */
+class PlayReadyPolicyFilter extends PlayReadyPolicyBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaPlayReadyPolicyFilter';
+	}
+}
+module.exports.PlayReadyPolicyFilter = PlayReadyPolicyFilter;
+
+/**
+ *
+ */
+class PlayReadyProfileFilter extends PlayReadyProfileBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaPlayReadyProfileFilter';
+	}
+}
+module.exports.PlayReadyProfileFilter = PlayReadyProfileFilter;
+
+/**
+ *
+ */
 class PlaylistBaseFilter extends BaseEntryFilter{
 	
 	constructor(object = null) {
@@ -61685,6 +63396,18 @@ class ViewHistoryUserEntryFilter extends UserEntryFilter{
 	}
 }
 module.exports.ViewHistoryUserEntryFilter = ViewHistoryUserEntryFilter;
+
+/**
+ *
+ */
+class WidevineProfileFilter extends WidevineProfileBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaWidevineProfileFilter';
+	}
+}
+module.exports.WidevineProfileFilter = WidevineProfileFilter;
 
 /**
  *
@@ -62841,6 +64564,30 @@ module.exports.TranscriptAssetBaseFilter = TranscriptAssetBaseFilter;
 /**
  *
  */
+class WidevineFlavorAssetBaseFilter extends FlavorAssetFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaWidevineFlavorAssetBaseFilter';
+	}
+}
+module.exports.WidevineFlavorAssetBaseFilter = WidevineFlavorAssetBaseFilter;
+
+/**
+ *
+ */
+class WidevineFlavorParamsBaseFilter extends FlavorParamsFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaWidevineFlavorParamsBaseFilter';
+	}
+}
+module.exports.WidevineFlavorParamsBaseFilter = WidevineFlavorParamsBaseFilter;
+
+/**
+ *
+ */
 class YoutubeApiDistributionProfileFilter extends YoutubeApiDistributionProfileBaseFilter{
 	
 	constructor(object = null) {
@@ -63045,6 +64792,30 @@ module.exports.TranscriptAssetFilter = TranscriptAssetFilter;
 /**
  *
  */
+class WidevineFlavorAssetFilter extends WidevineFlavorAssetBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaWidevineFlavorAssetFilter';
+	}
+}
+module.exports.WidevineFlavorAssetFilter = WidevineFlavorAssetFilter;
+
+/**
+ *
+ */
+class WidevineFlavorParamsFilter extends WidevineFlavorParamsBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaWidevineFlavorParamsFilter';
+	}
+}
+module.exports.WidevineFlavorParamsFilter = WidevineFlavorParamsFilter;
+
+/**
+ *
+ */
 class WowzaMediaServerNodeBaseFilter extends MediaServerNodeFilter{
 	
 	constructor(object = null) {
@@ -63225,6 +64996,18 @@ module.exports.SwfFlavorParamsOutputBaseFilter = SwfFlavorParamsOutputBaseFilter
 /**
  *
  */
+class WidevineFlavorParamsOutputBaseFilter extends FlavorParamsOutputFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaWidevineFlavorParamsOutputBaseFilter';
+	}
+}
+module.exports.WidevineFlavorParamsOutputBaseFilter = WidevineFlavorParamsOutputBaseFilter;
+
+/**
+ *
+ */
 class WowzaMediaServerNodeFilter extends WowzaMediaServerNodeBaseFilter{
 	
 	constructor(object = null) {
@@ -63362,6 +65145,18 @@ class SwfFlavorParamsOutputFilter extends SwfFlavorParamsOutputBaseFilter{
 	}
 }
 module.exports.SwfFlavorParamsOutputFilter = SwfFlavorParamsOutputFilter;
+
+/**
+ *
+ */
+class WidevineFlavorParamsOutputFilter extends WidevineFlavorParamsOutputBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaWidevineFlavorParamsOutputFilter';
+	}
+}
+module.exports.WidevineFlavorParamsOutputFilter = WidevineFlavorParamsOutputFilter;
 
 /**
  *

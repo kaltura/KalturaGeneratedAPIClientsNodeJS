@@ -258,22 +258,6 @@ SWF : 12,
 PDF : 13,
 };
 
-module.exports.DrmLicenseExpirationPolicy = {
-FIXED_DURATION : 1,
-ENTRY_SCHEDULING_END : 2,
-UNLIMITED : 3,
-};
-
-module.exports.DrmPolicyStatus = {
-ACTIVE : 1,
-DELETED : 2,
-};
-
-module.exports.DrmProfileStatus = {
-ACTIVE : 1,
-DELETED : 2,
-};
-
 module.exports.DropFolderContentFileHandlerMatchPolicy = {
 ADD_AS_NEW : 1,
 MATCH_EXISTING_OR_ADD_AS_NEW : 2,
@@ -654,43 +638,6 @@ NORMAL : 1,
 SPECIAL_FEATURE : 2,
 PLUGIN : 3,
 PARTNER_GROUP : 4,
-};
-
-module.exports.PlayReadyAnalogVideoOPL = {
-MIN_100 : 100,
-MIN_150 : 150,
-MIN_200 : 200,
-};
-
-module.exports.PlayReadyCompressedDigitalVideoOPL = {
-MIN_400 : 400,
-MIN_500 : 500,
-};
-
-module.exports.PlayReadyDigitalAudioOPL = {
-MIN_100 : 100,
-MIN_150 : 150,
-MIN_200 : 200,
-MIN_250 : 250,
-MIN_300 : 300,
-};
-
-module.exports.PlayReadyLicenseRemovalPolicy = {
-FIXED_FROM_EXPIRATION : 1,
-ENTRY_SCHEDULING_END : 2,
-NONE : 3,
-};
-
-module.exports.PlayReadyMinimumLicenseSecurityLevel = {
-NON_COMMERCIAL_QUALITY : 150,
-COMMERCIAL_QUALITY : 2000,
-};
-
-module.exports.PlayReadyUncompressedDigitalVideoOPL = {
-MIN_100 : 100,
-MIN_250 : 250,
-MIN_270 : 270,
-MIN_300 : 300,
 };
 
 module.exports.PlaylistType = {
@@ -1112,10 +1059,6 @@ ENABLED : 2,
 DELETED : 3,
 };
 
-module.exports.WidevineRepositorySyncMode = {
-MODIFY : 0,
-};
-
 module.exports.WidgetSecurityType = {
 NONE : 1,
 TIMEHASH : 2,
@@ -1289,7 +1232,6 @@ PDF : 'document.PDF',
 SWF : 'document.SWF',
 TIMED_THUMB_ASSET : 'thumbCuePoint.timedThumb',
 TRANSCRIPT : 'transcript.Transcript',
-WIDEVINE_FLAVOR : 'widevine.WidevineFlavor',
 FLAVOR : '1',
 THUMBNAIL : '2',
 LIVE : '3',
@@ -1463,7 +1405,6 @@ SCHEDULED_TASK : 'scheduledTask.ScheduledTask',
 INDEX_TAGS : 'tagSearch.IndexTagsByPrivacyContext',
 TAG_RESOLVE : 'tagSearch.TagResolve',
 VIRUS_SCAN : 'virusScan.VirusScan',
-WIDEVINE_REPOSITORY_SYNC : 'widevine.WidevineRepositorySync',
 IMPORT : '1',
 DELETE : '2',
 FLATTEN : '3',
@@ -2047,39 +1988,7 @@ module.exports.DocumentFlavorParamsOrderBy = {
 module.exports.DocumentFlavorParamsOutputOrderBy = {
 };
 
-module.exports.DrmLicenseScenario = {
-PROTECTION : 'playReady.PROTECTION',
-PURCHASE : 'playReady.PURCHASE',
-RENTAL : 'playReady.RENTAL',
-SUBSCRIPTION : 'playReady.SUBSCRIPTION',
-};
-
-module.exports.DrmLicenseType = {
-NON_PERSISTENT : 'playReady.NON_PERSISTENT',
-PERSISTENT : 'playReady.PERSISTENT',
-};
-
-module.exports.DrmPolicyOrderBy = {
-};
-
-module.exports.DrmProfileOrderBy = {
-ID_ASC : '+id',
-NAME_ASC : '+name',
-ID_DESC : '-id',
-NAME_DESC : '-name',
-};
-
-module.exports.DrmProviderType = {
-PLAY_READY : 'playReady.PLAY_READY',
-WIDEVINE : 'widevine.WIDEVINE',
-CENC : '1',
-};
-
 module.exports.DrmSchemeName = {
-PLAYREADY_CENC : 'drm.PLAYREADY_CENC',
-WIDEVINE_CENC : 'drm.WIDEVINE_CENC',
-PLAYREADY : 'playReady.PLAYREADY',
-WIDEVINE : 'widevine.WIDEVINE',
 };
 
 module.exports.DropFolderErrorCode = {
@@ -3795,53 +3704,6 @@ NAME_DESC : '-name',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-module.exports.PlayReadyAnalogVideoOPId = {
-EXPLICIT_ANALOG_TV : '2098DE8D-7DDD-4BAB-96C6-32EBB6FABEA3',
-BEST_EFFORT_EXPLICIT_ANALOG_TV : '225CD36F-F132-49EF-BA8C-C91EA28E4369',
-IMAGE_CONSTRAINT_VIDEO : '811C5110-46C8-4C6E-8163-C0482A15D47E',
-AGC_AND_COLOR_STRIPE : 'C3FD11C6-F8B7-4D20-B008-1DB17D61F2DA',
-IMAGE_CONSTRAINT_MONITOR : 'D783A191-E083-4BAF-B2DA-E69F910B3772',
-};
-
-module.exports.PlayReadyCopyEnablerType = {
-CSS : '3CAF2814-A7AB-467C-B4DF-54ACC56C66DC',
-PRINTER : '3CF2E054-F4D5-46cd-85A6-FCD152AD5FBE',
-DEVICE : '6848955D-516B-4EB0-90E8-8F6D5A77B85F',
-CLIPBOARD : '6E76C588-C3A9-47ea-A875-546D5209FF38',
-SDC : '79F78A0D-0B69-401e-8A90-8BEF30BCE192',
-SDC_PREVIEW : '81BD9AD4-A720-4ea1-B510-5D4E6FFB6A4D',
-AACS : 'C3CF56E0-7FF2-4491-809F-53E21D3ABF07',
-HELIX : 'CCB0B4E3-8B46-409e-A998-82556E3F5AF4',
-CPRM : 'CDD801AD-A577-48DB-950E-46D5F1592FAE',
-PC : 'CE480EDE-516B-40B3-90E1-D6CFC47630C5',
-SDC_LIMITED : 'E6785609-64CC-4bfa-B82D-6B619733B746',
-ORANGE_BOOK_CD : 'EC930B7D-1F2D-4682-A38B-8AB977721D0D',
-};
-
-module.exports.PlayReadyDigitalAudioOPId = {
-SCMS : '6D5CFA59-C250-4426-930E-FAC72C8FCFA6',
-};
-
-module.exports.PlayReadyPlayEnablerType = {
-HELIX : '002F9772-38A0-43E5-9F79-0F6361DCC62A',
-HDCP_WIVU : '1B4542E3-B5CF-4C99-B3BA-829AF46C92F8',
-AIRPLAY : '5ABF0F0D-DC29-4B82-9982-FD8E57525BFC',
-UNKNOWN : '786627D8-C2A6-44BE-8F88-08AE255B01A',
-HDCP_MIRACAST : 'A340C256-0941-4D4C-AD1D-0B6735C0CB24',
-UNKNOWN_520 : 'B621D91F-EDCC-4035-8D4B-DC71760D43E9',
-DTCP : 'D685030B-0F4F-43A6-BBAD-356F1EA0049A',
-};
-
-module.exports.PlayReadyPolicyOrderBy = {
-};
-
-module.exports.PlayReadyProfileOrderBy = {
-ID_ASC : '+id',
-NAME_ASC : '+name',
-ID_DESC : '-id',
-NAME_DESC : '-name',
-};
-
 module.exports.PlayableEntryCompareAttribute = {
 ACCESS_CONTROL_ID : 'accessControlId',
 CREATED_AT : 'createdAt',
@@ -4083,7 +3945,6 @@ UPDATED_AT_DESC : '-updatedAt',
 };
 
 module.exports.RuleActionType = {
-DRM_POLICY : 'drm.DRM_POLICY',
 BLOCK : '1',
 PREVIEW : '2',
 LIMIT_FLAVORS : '3',
@@ -4474,30 +4335,6 @@ CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
-};
-
-module.exports.WidevineFlavorAssetOrderBy = {
-CREATED_AT_ASC : '+createdAt',
-DELETED_AT_ASC : '+deletedAt',
-SIZE_ASC : '+size',
-UPDATED_AT_ASC : '+updatedAt',
-CREATED_AT_DESC : '-createdAt',
-DELETED_AT_DESC : '-deletedAt',
-SIZE_DESC : '-size',
-UPDATED_AT_DESC : '-updatedAt',
-};
-
-module.exports.WidevineFlavorParamsOrderBy = {
-};
-
-module.exports.WidevineFlavorParamsOutputOrderBy = {
-};
-
-module.exports.WidevineProfileOrderBy = {
-ID_ASC : '+id',
-NAME_ASC : '+name',
-ID_DESC : '-id',
-NAME_DESC : '-name',
 };
 
 module.exports.WidgetOrderBy = {

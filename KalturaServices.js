@@ -7621,15 +7621,13 @@ class dropFolder{
 	/**
 	 * freeExclusive KalturaDropFolder object.
 	 * @param dropFolderId int 
-	 * @param status int 
 	 * @param errorCode string  (optional, default: null)
 	 * @param errorDescription string  (optional, default: null)
 	 * @return KalturaDropFolder
 	 */
-	static freeExclusiveDropFolder(dropFolderId, status, errorCode = null, errorDescription = null){
+	static freeExclusiveDropFolder(dropFolderId, errorCode = null, errorDescription = null){
 		let kparams = {};
 		kparams.dropFolderId = dropFolderId;
-		kparams.status = status;
 		kparams.errorCode = errorCode;
 		kparams.errorDescription = errorDescription;
 		return new kaltura.RequestBuilder('dropfolder_dropfolder', 'freeExclusiveDropFolder', kparams);

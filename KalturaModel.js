@@ -16336,7 +16336,7 @@ class LiveChannelSegment extends kaltura.BaseObject{
 	
 	/**
 	 * Unique identifier
-	 * @return string
+	 * @return int
 	 */
 	 getId() {
 	 	return this.id;
@@ -16481,14 +16481,14 @@ class LiveChannelSegment extends kaltura.BaseObject{
 	
 	/**
 	 * Live channel segment that the trigger relates to
-	 * @return string
+	 * @return int
 	 */
 	 getTriggerSegmentId() {
 	 	return this.triggerSegmentId;
 	 }
 	
 	/**
-	 * @param triggerSegmentId string Live channel segment that the trigger relates to
+	 * @param triggerSegmentId int Live channel segment that the trigger relates to
 	 */
 	 setTriggerSegmentId(triggerSegmentId) {
 	 	this.triggerSegmentId = triggerSegmentId;

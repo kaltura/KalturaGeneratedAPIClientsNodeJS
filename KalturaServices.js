@@ -1689,7 +1689,7 @@ class fileAsset{
 	
 	/**
 	 * Set content of file asset.
-	 * @param id string 
+	 * @param id int 
 	 * @param contentResource ContentResource 
 	 * @return KalturaFileAsset
 	 */

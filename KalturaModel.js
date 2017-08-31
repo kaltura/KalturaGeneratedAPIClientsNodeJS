@@ -6647,6 +6647,60 @@ module.exports.CropDimensions = CropDimensions;
 /**
  *
  */
+class PluginReplacementOptionsItem extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaPluginReplacementOptionsItem';
+	}
+}
+module.exports.PluginReplacementOptionsItem = PluginReplacementOptionsItem;
+
+/**
+ *
+ */
+class EntryReplacementOptions extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaEntryReplacementOptions';
+	}
+	
+	/**
+	 * If true manually created thumbnails will not be deleted on entry replacement
+	 * @return int
+	 */
+	 getKeepManualThumbnails() {
+	 	return this.keepManualThumbnails;
+	 }
+	
+	/**
+	 * @param keepManualThumbnails int If true manually created thumbnails will not be deleted on entry replacement
+	 */
+	 setKeepManualThumbnails(keepManualThumbnails) {
+	 	this.keepManualThumbnails = keepManualThumbnails;
+	 }
+	
+	/**
+	 * Array of plugin replacement options
+	 * @return array
+	 */
+	 getPluginOptionItems() {
+	 	return this.pluginOptionItems;
+	 }
+	
+	/**
+	 * @param pluginOptionItems array Array of plugin replacement options
+	 */
+	 setPluginOptionItems(pluginOptionItems) {
+	 	this.pluginOptionItems = pluginOptionItems;
+	 }
+}
+module.exports.EntryReplacementOptions = EntryReplacementOptions;
+
+/**
+ *
+ */
 class ConversionProfile extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -6986,6 +7040,21 @@ class ConversionProfile extends kaltura.BaseObject{
 	 */
 	 setMediaInfoXslTransformation(mediaInfoXslTransformation) {
 	 	this.mediaInfoXslTransformation = mediaInfoXslTransformation;
+	 }
+	
+	/**
+	 * Default replacement options to be applied to entries
+	 * @return EntryReplacementOptions
+	 */
+	 getDefaultReplacementOptions() {
+	 	return this.defaultReplacementOptions;
+	 }
+	
+	/**
+	 * @param defaultReplacementOptions EntryReplacementOptions Default replacement options to be applied to entries
+	 */
+	 setDefaultReplacementOptions(defaultReplacementOptions) {
+	 	this.defaultReplacementOptions = defaultReplacementOptions;
 	 }
 }
 module.exports.ConversionProfile = ConversionProfile;
@@ -10582,60 +10651,6 @@ class EntryDistribution extends kaltura.BaseObject{
 	 }
 }
 module.exports.EntryDistribution = EntryDistribution;
-
-/**
- *
- */
-class PluginReplacementOptionsItem extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaPluginReplacementOptionsItem';
-	}
-}
-module.exports.PluginReplacementOptionsItem = PluginReplacementOptionsItem;
-
-/**
- *
- */
-class EntryReplacementOptions extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaEntryReplacementOptions';
-	}
-	
-	/**
-	 * If true manually created thumbnails will not be deleted on entry replacement
-	 * @return int
-	 */
-	 getKeepManualThumbnails() {
-	 	return this.keepManualThumbnails;
-	 }
-	
-	/**
-	 * @param keepManualThumbnails int If true manually created thumbnails will not be deleted on entry replacement
-	 */
-	 setKeepManualThumbnails(keepManualThumbnails) {
-	 	this.keepManualThumbnails = keepManualThumbnails;
-	 }
-	
-	/**
-	 * Array of plugin replacement options
-	 * @return array
-	 */
-	 getPluginOptionItems() {
-	 	return this.pluginOptionItems;
-	 }
-	
-	/**
-	 * @param pluginOptionItems array Array of plugin replacement options
-	 */
-	 setPluginOptionItems(pluginOptionItems) {
-	 	this.pluginOptionItems = pluginOptionItems;
-	 }
-}
-module.exports.EntryReplacementOptions = EntryReplacementOptions;
 
 /**
  *

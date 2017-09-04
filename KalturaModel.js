@@ -31090,6 +31090,41 @@ module.exports.Cielo24JobProviderData = Cielo24JobProviderData;
 /**
  *
  */
+class ClearBeaconsJobData extends JobData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaClearBeaconsJobData';
+	}
+	
+	/**
+	 * Beacon object Id to clear info for
+	 * @return string
+	 */
+	 getObjectId() {
+	 	return this.objectId;
+	 }
+	
+	/**
+	 * Beacon object Type to clear info for
+	 * @return int
+	 */
+	 getRelatedObjectType() {
+	 	return this.relatedObjectType;
+	 }
+	
+	/**
+	 * @param relatedObjectType int Beacon object Type to clear info for
+	 */
+	 setRelatedObjectType(relatedObjectType) {
+	 	this.relatedObjectType = relatedObjectType;
+	 }
+}
+module.exports.ClearBeaconsJobData = ClearBeaconsJobData;
+
+/**
+ *
+ */
 class ClipAttributes extends OperationAttributes{
 	
 	constructor(object = null) {
@@ -32222,6 +32257,93 @@ class ConvertProfileJobData extends JobData{
 	 }
 }
 module.exports.ConvertProfileJobData = ConvertProfileJobData;
+
+/**
+ *
+ */
+class CopyCaptionsJobData extends JobData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaCopyCaptionsJobData';
+	}
+	
+	/**
+	 * source entry Id
+	 * @return string
+	 */
+	 getSourceEntryId() {
+	 	return this.sourceEntryId;
+	 }
+	
+	/**
+	 * @param sourceEntryId string source entry Id
+	 */
+	 setSourceEntryId(sourceEntryId) {
+	 	this.sourceEntryId = sourceEntryId;
+	 }
+	
+	/**
+	 * entry Id
+	 * @return string
+	 */
+	 getEntryId() {
+	 	return this.entryId;
+	 }
+	
+	/**
+	 * @param entryId string entry Id
+	 */
+	 setEntryId(entryId) {
+	 	this.entryId = entryId;
+	 }
+	
+	/**
+	 * clip offset
+	 * @return int
+	 */
+	 getOffset() {
+	 	return this.offset;
+	 }
+	
+	/**
+	 * @param offset int clip offset
+	 */
+	 setOffset(offset) {
+	 	this.offset = offset;
+	 }
+	
+	/**
+	 * clip duration
+	 * @return int
+	 */
+	 getDuration() {
+	 	return this.duration;
+	 }
+	
+	/**
+	 * @param duration int clip duration
+	 */
+	 setDuration(duration) {
+	 	this.duration = duration;
+	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getFullCopy() {
+	 	return this.fullCopy;
+	 }
+	
+	/**
+	 * @param fullCopy bool 
+	 */
+	 setFullCopy(fullCopy) {
+	 	this.fullCopy = fullCopy;
+	 }
+}
+module.exports.CopyCaptionsJobData = CopyCaptionsJobData;
 
 /**
  *

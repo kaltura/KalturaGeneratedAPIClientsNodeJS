@@ -7985,11 +7985,27 @@ module.exports.captionParams = captionParams;
 /**
  *Class definition for the Kaltura service: captionAssetItem.
  * The available service actions:
+ * @action list List caption asset items by filter and pager.
  * @action parse Parse content of caption asset and index it.
  * @action search Search caption asset items by filter, pager and free text.
  * @action searchEntries Search caption asset items by filter, pager and free text.
  */
 class captionAssetItem{
+	
+	/**
+	 * List caption asset items by filter and pager.
+	 * @param captionAssetId string 
+	 * @param captionAssetItemFilter CaptionAssetItemFilter  (optional, default: null)
+	 * @param captionAssetItemPager FilterPager  (optional, default: null)
+	 * @return KalturaCaptionAssetItemListResponse
+	 */
+	static listAction(captionAssetId, captionAssetItemFilter = null, captionAssetItemPager = null){
+		let kparams = {};
+		kparams.captionAssetId = captionAssetId;
+		kparams.captionAssetItemFilter = captionAssetItemFilter;
+		kparams.captionAssetItemPager = captionAssetItemPager;
+		return new kaltura.RequestBuilder('captionsearch_captionassetitem', 'list', kparams);
+	};
 	
 	/**
 	 * Parse content of caption asset and index it.

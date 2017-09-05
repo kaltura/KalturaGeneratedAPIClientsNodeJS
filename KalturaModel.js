@@ -16580,6 +16580,21 @@ class LiveEntryServerNodeRecordingInfo extends kaltura.BaseObject{
 	 setDuration(duration) {
 	 	this.duration = duration;
 	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getRecordingStatus() {
+	 	return this.recordingStatus;
+	 }
+	
+	/**
+	 * @param recordingStatus int 
+	 */
+	 setRecordingStatus(recordingStatus) {
+	 	this.recordingStatus = recordingStatus;
+	 }
 }
 module.exports.LiveEntryServerNodeRecordingInfo = LiveEntryServerNodeRecordingInfo;
 

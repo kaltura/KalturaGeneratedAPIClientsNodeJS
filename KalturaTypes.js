@@ -57,6 +57,31 @@ IMPORTING : 7,
 EXPORTING : 9,
 };
 
+module.exports.AuditTrailChangeXmlNodeType = {
+CHANGED : 1,
+ADDED : 2,
+REMOVED : 3,
+};
+
+module.exports.AuditTrailContext = {
+CLIENT : -1,
+SCRIPT : 0,
+PS2 : 1,
+API_V3 : 2,
+};
+
+module.exports.AuditTrailFileSyncType = {
+FILE : 1,
+LINK : 2,
+URL : 3,
+};
+
+module.exports.AuditTrailStatus = {
+PENDING : 1,
+READY : 2,
+FAILED : 3,
+};
+
 module.exports.BatchJobErrorTypes = {
 APP : 0,
 RUNTIME : 1,
@@ -182,6 +207,24 @@ DISABLED : 0,
 ENABLED : 1,
 };
 
+module.exports.DailymotionDistributionCaptionAction = {
+UPDATE_ACTION : 1,
+SUBMIT_ACTION : 2,
+DELETE_ACTION : 3,
+};
+
+module.exports.DailymotionDistributionCaptionFormat = {
+SRT : 1,
+STL : 2,
+TT : 3,
+};
+
+module.exports.DailymotionGeoBlockingMapping = {
+DISABLED : 0,
+ACCESS_CONTROL : 1,
+METADATA : 2,
+};
+
 module.exports.DeleteFlavorsLogicType = {
 KEEP_LIST_DELETE_OTHERS : 1,
 DELETE_LIST : 2,
@@ -258,6 +301,22 @@ SWF : 12,
 PDF : 13,
 };
 
+module.exports.DrmLicenseExpirationPolicy = {
+FIXED_DURATION : 1,
+ENTRY_SCHEDULING_END : 2,
+UNLIMITED : 3,
+};
+
+module.exports.DrmPolicyStatus = {
+ACTIVE : 1,
+DELETED : 2,
+};
+
+module.exports.DrmProfileStatus = {
+ACTIVE : 1,
+DELETED : 2,
+};
+
 module.exports.DropFolderContentFileHandlerMatchPolicy = {
 ADD_AS_NEW : 1,
 MATCH_EXISTING_OR_ADD_AS_NEW : 2,
@@ -293,6 +352,20 @@ DISABLED : 0,
 ENABLED : 1,
 DELETED : 2,
 ERROR : 3,
+};
+
+module.exports.ESearchItemType = {
+EXACT_MATCH : 1,
+PARTIAL : 2,
+STARTS_WITH : 3,
+EXISTS : 4,
+RANGE : 5,
+};
+
+module.exports.ESearchOperatorType = {
+AND_OP : 1,
+OR_OP : 2,
+NOT_OP : 3,
 };
 
 module.exports.EditorType = {
@@ -645,6 +718,43 @@ NORMAL : 1,
 SPECIAL_FEATURE : 2,
 PLUGIN : 3,
 PARTNER_GROUP : 4,
+};
+
+module.exports.PlayReadyAnalogVideoOPL = {
+MIN_100 : 100,
+MIN_150 : 150,
+MIN_200 : 200,
+};
+
+module.exports.PlayReadyCompressedDigitalVideoOPL = {
+MIN_400 : 400,
+MIN_500 : 500,
+};
+
+module.exports.PlayReadyDigitalAudioOPL = {
+MIN_100 : 100,
+MIN_150 : 150,
+MIN_200 : 200,
+MIN_250 : 250,
+MIN_300 : 300,
+};
+
+module.exports.PlayReadyLicenseRemovalPolicy = {
+FIXED_FROM_EXPIRATION : 1,
+ENTRY_SCHEDULING_END : 2,
+NONE : 3,
+};
+
+module.exports.PlayReadyMinimumLicenseSecurityLevel = {
+NON_COMMERCIAL_QUALITY : 150,
+COMMERCIAL_QUALITY : 2000,
+};
+
+module.exports.PlayReadyUncompressedDigitalVideoOPL = {
+MIN_100 : 100,
+MIN_250 : 250,
+MIN_270 : 270,
+MIN_300 : 300,
 };
 
 module.exports.PlaylistType = {
@@ -1066,9 +1176,18 @@ ENABLED : 2,
 DELETED : 3,
 };
 
+module.exports.WidevineRepositorySyncMode = {
+MODIFY : 0,
+};
+
 module.exports.WidgetSecurityType = {
 NONE : 1,
 TIMEHASH : 2,
+};
+
+module.exports.YahooDistributionProcessFeedActionStatus = {
+MANUAL : 0,
+AUTOMATIC : 1,
 };
 
 module.exports.YouTubeApiDistributionCaptionAction = {
@@ -1087,6 +1206,18 @@ CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.ActivitiBusinessProcessServerOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.ActivitiBusinessProcessServerProtocol = {
+HTTP : 'http',
+HTTPS : 'https',
 };
 
 module.exports.AdCuePointOrderBy = {
@@ -1239,6 +1370,7 @@ PDF : 'document.PDF',
 SWF : 'document.SWF',
 TIMED_THUMB_ASSET : 'thumbCuePoint.timedThumb',
 TRANSCRIPT : 'transcript.Transcript',
+WIDEVINE_FLAVOR : 'widevine.WidevineFlavor',
 FLAVOR : '1',
 THUMBNAIL : '2',
 LIVE : '3',
@@ -1276,6 +1408,68 @@ PCM : 'pcm',
 VORBIS : 'vorbis',
 WMA : 'wma',
 WMAPRO : 'wmapro',
+};
+
+module.exports.AuditTrailAction = {
+CHANGED : 'CHANGED',
+CONTENT_VIEWED : 'CONTENT_VIEWED',
+COPIED : 'COPIED',
+CREATED : 'CREATED',
+DELETED : 'DELETED',
+FILE_SYNC_CREATED : 'FILE_SYNC_CREATED',
+RELATION_ADDED : 'RELATION_ADDED',
+RELATION_REMOVED : 'RELATION_REMOVED',
+VIEWED : 'VIEWED',
+};
+
+module.exports.AuditTrailObjectType = {
+BATCH_JOB : 'BatchJob',
+EMAIL_INGESTION_PROFILE : 'EmailIngestionProfile',
+FILE_SYNC : 'FileSync',
+KSHOW_KUSER : 'KshowKuser',
+METADATA : 'Metadata',
+METADATA_PROFILE : 'MetadataProfile',
+PARTNER : 'Partner',
+PERMISSION : 'Permission',
+UPLOAD_TOKEN : 'UploadToken',
+USER_LOGIN_DATA : 'UserLoginData',
+USER_ROLE : 'UserRole',
+ACCESS_CONTROL : 'accessControl',
+CATEGORY : 'category',
+CONVERSION_PROFILE_2 : 'conversionProfile2',
+ENTRY : 'entry',
+FLAVOR_ASSET : 'flavorAsset',
+FLAVOR_PARAMS : 'flavorParams',
+FLAVOR_PARAMS_CONVERSION_PROFILE : 'flavorParamsConversionProfile',
+FLAVOR_PARAMS_OUTPUT : 'flavorParamsOutput',
+KSHOW : 'kshow',
+KUSER : 'kuser',
+MEDIA_INFO : 'mediaInfo',
+MODERATION : 'moderation',
+ROUGHCUT : 'roughcutEntry',
+SYNDICATION : 'syndicationFeed',
+THUMBNAIL_ASSET : 'thumbAsset',
+THUMBNAIL_PARAMS : 'thumbParams',
+THUMBNAIL_PARAMS_OUTPUT : 'thumbParamsOutput',
+UI_CONF : 'uiConf',
+WIDGET : 'widget',
+};
+
+module.exports.AuditTrailOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+PARSED_AT_ASC : '+parsedAt',
+CREATED_AT_DESC : '-createdAt',
+PARSED_AT_DESC : '-parsedAt',
+};
+
+module.exports.AvnDistributionProfileOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.AvnDistributionProviderOrderBy = {
 };
 
 module.exports.BaseEntryCloneOptions = {
@@ -1394,10 +1588,10 @@ UPDATED_AT_DESC : '-updatedAt',
 };
 
 module.exports.BatchJobType = {
-CONVERT : '0',
 PARSE_MULTI_LANGUAGE_CAPTION_ASSET : 'caption.parsemultilanguagecaptionasset',
 PARSE_CAPTION_ASSET : 'captionSearch.parseCaptionAsset',
 DISTRIBUTION_DELETE : 'contentDistribution.DistributionDelete',
+CONVERT : '0',
 DISTRIBUTION_DISABLE : 'contentDistribution.DistributionDisable',
 DISTRIBUTION_ENABLE : 'contentDistribution.DistributionEnable',
 DISTRIBUTION_FETCH_REPORT : 'contentDistribution.DistributionFetchReport',
@@ -1412,6 +1606,7 @@ SCHEDULED_TASK : 'scheduledTask.ScheduledTask',
 INDEX_TAGS : 'tagSearch.IndexTagsByPrivacyContext',
 TAG_RESOLVE : 'tagSearch.TagResolve',
 VIRUS_SCAN : 'virusScan.VirusScan',
+WIDEVINE_REPOSITORY_SYNC : 'widevine.WidevineRepositorySync',
 IMPORT : '1',
 DELETE : '2',
 FLATTEN : '3',
@@ -1451,6 +1646,7 @@ LIVE_REPORT_EXPORT : '40',
 RECALCULATE_CACHE : '41',
 LIVE_TO_VOD : '42',
 COPY_CAPTIONS : '43',
+CHUNKED_ENCODE_JOB_SCHEDULER : '44',
 };
 
 module.exports.BulkUploadAction = {
@@ -1489,6 +1685,59 @@ XML : 'bulkUploadXml.XML',
 DROP_FOLDER_XML : 'dropFolderXmlBulkUpload.DROP_FOLDER_XML',
 ICAL : 'scheduleBulkUpload.ICAL',
 DROP_FOLDER_ICAL : 'scheduleDropFolder.DROP_FOLDER_ICAL',
+};
+
+module.exports.BusinessProcessAbortNotificationTemplateOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+ID_ASC : '+id',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+ID_DESC : '-id',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.BusinessProcessNotificationTemplateOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+ID_ASC : '+id',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+ID_DESC : '-id',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.BusinessProcessProvider = {
+ACTIVITI : 'activitiBusinessProcessNotification.Activiti',
+};
+
+module.exports.BusinessProcessServerOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.BusinessProcessServerStatus = {
+DISABLED : '1',
+ENABLED : '2',
+DELETED : '3',
+};
+
+module.exports.BusinessProcessSignalNotificationTemplateOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+ID_ASC : '+id',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+ID_DESC : '-id',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.BusinessProcessStartNotificationTemplateOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+ID_ASC : '+id',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+ID_DESC : '-id',
+UPDATED_AT_DESC : '-updatedAt',
 };
 
 module.exports.CameraScheduleResourceOrderBy = {
@@ -1598,6 +1847,16 @@ TRIGGERED_AT_DESC : '-triggeredAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
+module.exports.ComcastMrssDistributionProfileOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.ComcastMrssDistributionProviderOrderBy = {
+};
+
 module.exports.ConditionType = {
 EVENT_NOTIFICATION_FIELD : 'eventNotification.BooleanField',
 EVENT_NOTIFICATION_OBJECT_CHANGED : 'eventNotification.ObjectChanged',
@@ -1695,6 +1954,16 @@ MEDIA : '1',
 LIVE_STREAM : '2',
 };
 
+module.exports.CrossKalturaDistributionProfileOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.CrossKalturaDistributionProviderOrderBy = {
+};
+
 module.exports.CuePointOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 PARTNER_SORT_VALUE_ASC : '+partnerSortValue',
@@ -1716,6 +1985,16 @@ EVENT : 'eventCuePoint.Event',
 QUIZ_ANSWER : 'quiz.QUIZ_ANSWER',
 QUIZ_QUESTION : 'quiz.QUIZ_QUESTION',
 THUMB : 'thumbCuePoint.Thumb',
+};
+
+module.exports.DailymotionDistributionProfileOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.DailymotionDistributionProviderOrderBy = {
 };
 
 module.exports.DataEntryCompareAttribute = {
@@ -1926,8 +2205,24 @@ module.exports.DistributionProviderOrderBy = {
 };
 
 module.exports.DistributionProviderType = {
+AVN : 'avnDistribution.AVN',
+COMCAST_MRSS : 'comcastMrssDistribution.COMCAST_MRSS',
+CROSS_KALTURA : 'crossKalturaDistribution.CROSS_KALTURA',
+DAILYMOTION : 'dailymotionDistribution.DAILYMOTION',
+DOUBLECLICK : 'doubleClickDistribution.DOUBLECLICK',
 FACEBOOK : 'facebookDistribution.FACEBOOK',
+FREEWHEEL : 'freewheelDistribution.FREEWHEEL',
+FREEWHEEL_GENERIC : 'freewheelGenericDistribution.FREEWHEEL_GENERIC',
+FTP : 'ftpDistribution.FTP',
+FTP_SCHEDULED : 'ftpDistribution.FTP_SCHEDULED',
+HULU : 'huluDistribution.HULU',
 IDETIC : 'ideticDistribution.IDETIC',
+METRO_PCS : 'metroPcsDistribution.METRO_PCS',
+MSN : 'msnDistribution.MSN',
+QUICKPLAY : 'quickPlayDistribution.QUICKPLAY',
+UNICORN : 'unicornDistribution.UNICORN',
+YAHOO : 'yahooDistribution.YAHOO',
+YOUTUBE : 'youTubeDistribution.YOUTUBE',
 YOUTUBE_API : 'youtubeApiDistribution.YOUTUBE_API',
 GENERIC : '1',
 SYNDICATION : '2',
@@ -1997,7 +2292,51 @@ module.exports.DocumentFlavorParamsOrderBy = {
 module.exports.DocumentFlavorParamsOutputOrderBy = {
 };
 
+module.exports.DoubleClickDistributionProfileOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.DoubleClickDistributionProviderOrderBy = {
+};
+
+module.exports.DrmLicenseScenario = {
+PROTECTION : 'playReady.PROTECTION',
+PURCHASE : 'playReady.PURCHASE',
+RENTAL : 'playReady.RENTAL',
+SUBSCRIPTION : 'playReady.SUBSCRIPTION',
+};
+
+module.exports.DrmLicenseType = {
+NON_PERSISTENT : 'playReady.NON_PERSISTENT',
+PERSISTENT : 'playReady.PERSISTENT',
+};
+
+module.exports.DrmPolicyOrderBy = {
+};
+
+module.exports.DrmProfileOrderBy = {
+ID_ASC : '+id',
+NAME_ASC : '+name',
+ID_DESC : '-id',
+NAME_DESC : '-name',
+};
+
+module.exports.DrmProviderType = {
+FAIRPLAY : 'fairplay.FAIRPLAY',
+PLAY_READY : 'playReady.PLAY_READY',
+WIDEVINE : 'widevine.WIDEVINE',
+CENC : '1',
+};
+
 module.exports.DrmSchemeName = {
+PLAYREADY_CENC : 'drm.PLAYREADY_CENC',
+WIDEVINE_CENC : 'drm.WIDEVINE_CENC',
+FAIRPLAY : 'fairplay.FAIRPLAY',
+PLAYREADY : 'playReady.PLAYREADY',
+WIDEVINE : 'widevine.WIDEVINE',
 };
 
 module.exports.DropFolderErrorCode = {
@@ -2070,6 +2409,7 @@ UPDATED_AT_DESC : '-updatedAt',
 
 module.exports.DropFolderType = {
 FEED : 'FeedDropFolder.FEED',
+WEBEX : 'WebexDropFolder.WEBEX',
 LOCAL : '1',
 FTP : '2',
 SCP : '3',
@@ -2082,6 +2422,126 @@ LONG : 'long',
 MEDIUM : 'medium',
 NOT_AVAILABLE : 'notavailable',
 SHORT : 'short',
+};
+
+module.exports.ESearchCaptionFieldName = {
+CAPTION_CONTENT : 'caption_assets.lines.content',
+CAPTION_END_TIME : 'caption_assets.lines.end_time',
+CAPTION_START_TIME : 'caption_assets.lines.start_time',
+};
+
+module.exports.ESearchCategoryFieldName = {
+CATEGORY_CONTRIBUTION_POLICY : 'contribution_policy',
+CATEGORY_CREATED_AT : 'created_at',
+CATEGORY_DEPTH : 'depth',
+CATEGORY_DESCRIPTION : 'description',
+CATEGORY_DIRECT_ENTRIES_COUNT : 'direct_entries_count',
+CATEGORY_DIRECT_SUB_CATEGORIES_COUNT : 'direct_sub_categories_count',
+CATEGORY_DISPLAY_IN_SEARCH : 'display_in_search',
+CATEGORY_ENTRIES_COUNT : 'entries_count',
+CATEGORY_FULL_IDS : 'full_ids',
+CATEGORY_FULL_NAME : 'full_name',
+CATEGORY_INHERITANCE_TYPE : 'inheritance_type',
+CATEGORY_INHERITED_PARENT_ID : 'inherited_parent_id',
+CATEGORY_KUSER_ID : 'kuser_id',
+CATEGORY_KUSER_IDS : 'kuser_ids',
+CATEGORY_MEMBERS_COUNT : 'members_count',
+CATEGORY_MODERATION : 'moderation',
+CATEGORY_NAME : 'name',
+CATEGORY_PARENT_ID : 'parent_id',
+CATEGORY_PENDING_ENTRIES_COUNT : 'pending_entries_count',
+CATEGORY_PENDING_MEMBERS_COUNT : 'pending_members_count',
+CATEGORY_PRIVACY : 'privacy',
+CATEGORY_PRIVACY_CONTEXT : 'privacy_context',
+CATEGORY_PRIVACY_CONTEXTS : 'privacy_contexts',
+CATEGORY_REFERENCE_ID : 'reference_id',
+CATEGORY_TAGS : 'tags',
+CATEGORY_UPDATED_AT : 'updated_at',
+};
+
+module.exports.ESearchCategoryOrderByFieldName = {
+CATEGORY_CREATED_AT : 'created_at',
+CATEGORY_UPDATED_AT : 'updated_at',
+};
+
+module.exports.ESearchCuePointFieldName = {
+CUE_POINT_ANSWERS : 'cue_points.cue_point_answers',
+CUE_POINT_END_TIME : 'cue_points.cue_point_end_time',
+CUE_POINT_EXPLANATION : 'cue_points.cue_point_explanation',
+CUE_POINT_HINT : 'cue_points.cue_point_hint',
+CUE_POINT_ID : 'cue_points.cue_point_id',
+CUE_POINT_NAME : 'cue_points.cue_point_name',
+CUE_POINT_QUESTION : 'cue_points.cue_point_question',
+CUE_POINT_START_TIME : 'cue_points.cue_point_start_time',
+CUE_POINT_SUB_TYPE : 'cue_points.cue_point_sub_type',
+CUE_POINT_TAGS : 'cue_points.cue_point_tags',
+CUE_POINT_TEXT : 'cue_points.cue_point_text',
+CUE_POINT_TYPE : 'cue_points.cue_point_type',
+};
+
+module.exports.ESearchEntryFieldName = {
+ENTRY_ID : '_id',
+ENTRY_ACCESS_CONTROL_ID : 'access_control_id',
+ENTRY_ADMIN_TAGS : 'admin_tags',
+ENTRY_CATEGORIES : 'categories',
+ENTRY_CATEGORY_IDS : 'category_ids',
+ENTRY_CONVERSION_PROFILE_ID : 'conversion_profile_id',
+ENTRY_CREATED_AT : 'created_at',
+ENTRY_CREATOR_ID : 'creator_puser_id',
+ENTRY_CREDIT : 'credit',
+ENTRY_DESCRIPTION : 'description',
+ENTRY_DISPLAY_IN_SEARCH : 'display_in_search',
+ENTRY_END_DATE : 'end_date',
+ENTRY_ENTITLED_USER_EDIT : 'entitled_pusers_edit',
+ENTRY_ENTITLED_USER_PUBLISH : 'entitled_pusers_publish',
+ENTRY_TYPE : 'entry_type',
+ENTRY_LENGTH_IN_MSECS : 'length_in_msecs',
+ENTRY_MEDIA_TYPE : 'media_type',
+ENTRY_MODERATION_STATUS : 'moderation_status',
+ENTRY_NAME : 'name',
+ENTRY_PARENT_ENTRY_ID : 'parent_id',
+ENTRY_USER_ID : 'puser_id',
+ENTRY_PUSH_PUBLISH : 'push_publish',
+ENTRY_RECORDED_ENTRY_ID : 'recorded_entry_id',
+ENTRY_REDIRECT_ENTRY_ID : 'redirect_entry_id',
+ENTRY_REFERENCE_ID : 'reference_id',
+ENTRY_SITE_URL : 'site_url',
+ENTRY_SOURCE_TYPE : 'source_type',
+ENTRY_START_DATE : 'start_date',
+ENTRY_TAGS : 'tags',
+ENTRY_TEMPLATE_ENTRY_ID : 'template_entry_id',
+ENTRY_UPDATED_AT : 'updated_at',
+};
+
+module.exports.ESearchEntryOrderByFieldName = {
+ENTRY_CREATED_AT : 'created_at',
+ENTRY_END_DATE : 'end_date',
+ENTRY_START_DATE : 'start_date',
+ENTRY_UPDATED_AT : 'updated_at',
+};
+
+module.exports.ESearchSortOrder = {
+ORDER_BY_ASC : 'asc',
+ORDER_BY_DESC : 'desc',
+};
+
+module.exports.ESearchUserFieldName = {
+USER_CREATED_AT : 'created_at',
+USER_EMAIL : 'email',
+USER_FIRST_NAME : 'first_name',
+USER_GROUP_IDS : 'group_ids',
+USER_TYPE : 'kuser_type',
+USER_LAST_NAME : 'last_name',
+USER_PERMISSION_NAMES : 'permission_names',
+USER_ROLE_IDS : 'role_ids',
+USER_SCREEN_NAME : 'screen_name',
+USER_TAGS : 'tags',
+USER_UPDATED_AT : 'updated_at',
+};
+
+module.exports.ESearchUserOrderByFieldName = {
+USER_CREATED_AT : 'created_at',
+USER_UPDATED_AT : 'updated_at',
 };
 
 module.exports.EdgeServerNodeOrderBy = {
@@ -2255,6 +2715,7 @@ CATEGORYENTRY : '37',
 };
 
 module.exports.EventNotificationEventType = {
+INTEGRATION_JOB_CLOSED : 'integrationEventNotifications.INTEGRATION_JOB_CLOSED',
 BATCH_JOB_STATUS : '1',
 OBJECT_ADDED : '2',
 OBJECT_CHANGED : '3',
@@ -2280,8 +2741,12 @@ UPDATED_AT_DESC : '-updatedAt',
 };
 
 module.exports.EventNotificationTemplateType = {
+BPM_ABORT : 'businessProcessNotification.BusinessProcessAbort',
+BPM_SIGNAL : 'businessProcessNotification.BusinessProcessSignal',
+BPM_START : 'businessProcessNotification.BusinessProcessStart',
 EMAIL : 'emailNotification.Email',
 HTTP : 'httpNotification.Http',
+PUSH : 'pushNotification.Push',
 };
 
 module.exports.EventType = {
@@ -2449,6 +2914,36 @@ module.exports.FlavorParamsOrderBy = {
 module.exports.FlavorParamsOutputOrderBy = {
 };
 
+module.exports.FreewheelDistributionProfileOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.FreewheelDistributionProviderOrderBy = {
+};
+
+module.exports.FreewheelGenericDistributionProfileOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.FreewheelGenericDistributionProviderOrderBy = {
+};
+
+module.exports.FtpDistributionProfileOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.FtpDistributionProviderOrderBy = {
+};
+
 module.exports.FtpDropFolderOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 ID_ASC : '+id',
@@ -2458,6 +2953,9 @@ CREATED_AT_DESC : '-createdAt',
 ID_DESC : '-id',
 NAME_DESC : '-name',
 UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.FtpScheduledDistributionProviderOrderBy = {
 };
 
 module.exports.GenericDistributionProfileOrderBy = {
@@ -2557,6 +3055,16 @@ UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 ID_DESC : '-id',
 UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.HuluDistributionProfileOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.HuluDistributionProviderOrderBy = {
 };
 
 module.exports.ITunesSyndicationFeedAdultValues = {
@@ -2670,6 +3178,7 @@ VOICEBASE : 'voicebase.Voicebase',
 };
 
 module.exports.IntegrationTriggerType = {
+BPM_EVENT_NOTIFICATION : 'bpmEventNotificationIntegration.BpmEventNotification',
 MANUAL : '1',
 };
 
@@ -3963,6 +4472,16 @@ CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
+module.exports.MetroPcsDistributionProfileOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.MetroPcsDistributionProviderOrderBy = {
+};
+
 module.exports.MixEntryCompareAttribute = {
 ACCESS_CONTROL_ID : 'accessControlId',
 CREATED_AT : 'createdAt',
@@ -4044,6 +4563,16 @@ ENTRY : '2',
 USER : '3',
 };
 
+module.exports.MsnDistributionProfileOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.MsnDistributionProviderOrderBy = {
+};
+
 module.exports.ObjectFilterEngineType = {
 ENTRY : '1',
 };
@@ -4108,6 +4637,53 @@ CREATED_AT_DESC : '-createdAt',
 ID_DESC : '-id',
 NAME_DESC : '-name',
 UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.PlayReadyAnalogVideoOPId = {
+EXPLICIT_ANALOG_TV : '2098DE8D-7DDD-4BAB-96C6-32EBB6FABEA3',
+BEST_EFFORT_EXPLICIT_ANALOG_TV : '225CD36F-F132-49EF-BA8C-C91EA28E4369',
+IMAGE_CONSTRAINT_VIDEO : '811C5110-46C8-4C6E-8163-C0482A15D47E',
+AGC_AND_COLOR_STRIPE : 'C3FD11C6-F8B7-4D20-B008-1DB17D61F2DA',
+IMAGE_CONSTRAINT_MONITOR : 'D783A191-E083-4BAF-B2DA-E69F910B3772',
+};
+
+module.exports.PlayReadyCopyEnablerType = {
+CSS : '3CAF2814-A7AB-467C-B4DF-54ACC56C66DC',
+PRINTER : '3CF2E054-F4D5-46cd-85A6-FCD152AD5FBE',
+DEVICE : '6848955D-516B-4EB0-90E8-8F6D5A77B85F',
+CLIPBOARD : '6E76C588-C3A9-47ea-A875-546D5209FF38',
+SDC : '79F78A0D-0B69-401e-8A90-8BEF30BCE192',
+SDC_PREVIEW : '81BD9AD4-A720-4ea1-B510-5D4E6FFB6A4D',
+AACS : 'C3CF56E0-7FF2-4491-809F-53E21D3ABF07',
+HELIX : 'CCB0B4E3-8B46-409e-A998-82556E3F5AF4',
+CPRM : 'CDD801AD-A577-48DB-950E-46D5F1592FAE',
+PC : 'CE480EDE-516B-40B3-90E1-D6CFC47630C5',
+SDC_LIMITED : 'E6785609-64CC-4bfa-B82D-6B619733B746',
+ORANGE_BOOK_CD : 'EC930B7D-1F2D-4682-A38B-8AB977721D0D',
+};
+
+module.exports.PlayReadyDigitalAudioOPId = {
+SCMS : '6D5CFA59-C250-4426-930E-FAC72C8FCFA6',
+};
+
+module.exports.PlayReadyPlayEnablerType = {
+HELIX : '002F9772-38A0-43E5-9F79-0F6361DCC62A',
+HDCP_WIVU : '1B4542E3-B5CF-4C99-B3BA-829AF46C92F8',
+AIRPLAY : '5ABF0F0D-DC29-4B82-9982-FD8E57525BFC',
+UNKNOWN : '786627D8-C2A6-44BE-8F88-08AE255B01A',
+HDCP_MIRACAST : 'A340C256-0941-4D4C-AD1D-0B6735C0CB24',
+UNKNOWN_520 : 'B621D91F-EDCC-4035-8D4B-DC71760D43E9',
+DTCP : 'D685030B-0F4F-43A6-BBAD-356F1EA0049A',
+};
+
+module.exports.PlayReadyPolicyOrderBy = {
+};
+
+module.exports.PlayReadyProfileOrderBy = {
+ID_ASC : '+id',
+NAME_ASC : '+name',
+ID_DESC : '-id',
+NAME_DESC : '-name',
 };
 
 module.exports.PlayableEntryCompareAttribute = {
@@ -4256,6 +4832,19 @@ UPDATED_AT_DESC : '-updatedAt',
 WEIGHT_DESC : '-weight',
 };
 
+module.exports.PushNotificationCommandType = {
+CLEAR_QUEUE : 'CLEAR_QUEUE',
+};
+
+module.exports.PushNotificationTemplateOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+ID_ASC : '+id',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+ID_DESC : '-id',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
 module.exports.QuestionCuePointOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 PARTNER_SORT_VALUE_ASC : '+partnerSortValue',
@@ -4267,6 +4856,16 @@ PARTNER_SORT_VALUE_DESC : '-partnerSortValue',
 START_TIME_DESC : '-startTime',
 TRIGGERED_AT_DESC : '-triggeredAt',
 UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.QuickPlayDistributionProfileOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.QuickPlayDistributionProviderOrderBy = {
 };
 
 module.exports.QuizUserEntryOrderBy = {
@@ -4351,6 +4950,7 @@ UPDATED_AT_DESC : '-updatedAt',
 };
 
 module.exports.RuleActionType = {
+DRM_POLICY : 'drm.DRM_POLICY',
 BLOCK : '1',
 PREVIEW : '2',
 LIMIT_FLAVORS : '3',
@@ -4485,6 +5085,7 @@ UPDATED_AT_DESC : '-updatedAt',
 };
 
 module.exports.SourceType = {
+LIMELIGHT_LIVE : 'limeLight.LIVE_STREAM',
 VELOCIX_LIVE : 'velocix.VELOCIX_LIVE',
 FILE : '1',
 WEBCAM : '2',
@@ -4655,6 +5256,16 @@ CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
+module.exports.UnicornDistributionProfileOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.UnicornDistributionProviderOrderBy = {
+};
+
 module.exports.UploadTokenOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 CREATED_AT_DESC : '-createdAt',
@@ -4734,6 +5345,9 @@ WVC1A : 'wvc1a',
 
 module.exports.VirusScanEngineType = {
 CLAMAV_SCAN_ENGINE : 'clamAVScanEngine.ClamAV',
+SYMANTEC_SCAN_DIRECT_ENGINE : 'symantecScanEngine.SymantecScanDirectEngine',
+SYMANTEC_SCAN_ENGINE : 'symantecScanEngine.SymantecScanEngine',
+SYMANTEC_SCAN_JAVA_ENGINE : 'symantecScanEngine.SymantecScanJavaEngine',
 };
 
 module.exports.VirusScanProfileOrderBy = {
@@ -4741,6 +5355,60 @@ CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.WebexDropFolderFileOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+FILE_NAME_ASC : '+fileName',
+FILE_SIZE_ASC : '+fileSize',
+FILE_SIZE_LAST_SET_AT_ASC : '+fileSizeLastSetAt',
+ID_ASC : '+id',
+PARSED_FLAVOR_ASC : '+parsedFlavor',
+PARSED_SLUG_ASC : '+parsedSlug',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+FILE_NAME_DESC : '-fileName',
+FILE_SIZE_DESC : '-fileSize',
+FILE_SIZE_LAST_SET_AT_DESC : '-fileSizeLastSetAt',
+ID_DESC : '-id',
+PARSED_FLAVOR_DESC : '-parsedFlavor',
+PARSED_SLUG_DESC : '-parsedSlug',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.WebexDropFolderOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+ID_ASC : '+id',
+NAME_ASC : '+name',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+ID_DESC : '-id',
+NAME_DESC : '-name',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.WidevineFlavorAssetOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+DELETED_AT_ASC : '+deletedAt',
+SIZE_ASC : '+size',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+DELETED_AT_DESC : '-deletedAt',
+SIZE_DESC : '-size',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.WidevineFlavorParamsOrderBy = {
+};
+
+module.exports.WidevineFlavorParamsOutputOrderBy = {
+};
+
+module.exports.WidevineProfileOrderBy = {
+ID_ASC : '+id',
+NAME_ASC : '+name',
+ID_DESC : '-id',
+NAME_DESC : '-name',
 };
 
 module.exports.WidgetOrderBy = {
@@ -4755,6 +5423,16 @@ UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 HEARTBEAT_TIME_DESC : '-heartbeatTime',
 UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.YahooDistributionProfileOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.YahooDistributionProviderOrderBy = {
 };
 
 module.exports.YahooSyndicationFeedAdultValues = {
@@ -4796,6 +5474,21 @@ NAME_DESC : '-name',
 PLAYLIST_ID_DESC : '-playlistId',
 TYPE_DESC : '-type',
 UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.YouTubeDistributionFeedSpecVersion = {
+VERSION_1 : '1',
+VERSION_2 : '2',
+};
+
+module.exports.YouTubeDistributionProfileOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.YouTubeDistributionProviderOrderBy = {
 };
 
 module.exports.YoutubeApiDistributionProfileOrderBy = {

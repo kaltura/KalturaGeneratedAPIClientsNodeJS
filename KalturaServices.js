@@ -452,12 +452,14 @@ class baseEntry{
 	 * Clone an entry with optional attributes to apply to the clone.
 	 * @param entryId string Id of entry to clone
 	 * @param cloneOptions array  (optional, default: null)
+	 * @param setSourceAsRootEntryId bool should we set the original entryId as the rootEntryId of the new entry (optional, default: false)
 	 * @return KalturaBaseEntry
 	 */
-	static cloneAction(entryId, cloneOptions = null){
+	static cloneAction(entryId, cloneOptions = null, setSourceAsRootEntryId = false){
 		let kparams = {};
 		kparams.entryId = entryId;
 		kparams.cloneOptions = cloneOptions;
+		kparams.setSourceAsRootEntryId = setSourceAsRootEntryId;
 		return new kaltura.RequestBuilder('baseentry', 'clone', kparams);
 	};
 	

@@ -46478,14 +46478,14 @@ class QuestionCuePoint extends CuePoint{
 	
 	/**
 	 * Array of key value answerKey->optionAnswer objects
-	 * @return map
+	 * @return array
 	 */
 	 getOptionalAnswers() {
 	 	return this.optionalAnswers;
 	 }
 	
 	/**
-	 * @param optionalAnswers map Array of key value answerKey->optionAnswer objects
+	 * @param optionalAnswers array Array of key value answerKey->optionAnswer objects
 	 */
 	 setOptionalAnswers(optionalAnswers) {
 	 	this.optionalAnswers = optionalAnswers;
@@ -48028,6 +48028,18 @@ class ServerNodeListResponse extends ListResponse{
 	 }
 }
 module.exports.ServerNodeListResponse = ServerNodeListResponse;
+
+/**
+ *
+ */
+class SessionResponse extends StartWidgetSessionResponse{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaSessionResponse';
+	}
+}
+module.exports.SessionResponse = SessionResponse;
 
 /**
  *

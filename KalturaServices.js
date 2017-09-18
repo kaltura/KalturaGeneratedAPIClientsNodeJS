@@ -5631,6 +5631,7 @@ module.exports.userRole = userRole;
  * Blocked users are listed unless you use a filter to exclude them.
  * Deleted users are not listed unless you use a filter to include them.
  * @action login Logs a user into a partner account with a partner ID, a partner user ID (puser), and a user password.
+ * @action loginByKs Loges a user to the destination account as long the ks user id exists in the desc acount and the loginData id match for both accounts.
  * @action loginByLoginId Logs a user into a partner account with a user login ID and a user password.
  * @action notifyBan Notifies that a user is banned from an account.
  * @action resetPassword Reset user's password and send the user an email to generate a new one.
@@ -5788,6 +5789,17 @@ class user{
 		kparams.expiry = expiry;
 		kparams.privileges = privileges;
 		return new kaltura.RequestBuilder('user', 'login', kparams);
+	};
+	
+	/**
+	 * Loges a user to the destination account as long the ks user id exists in the desc acount and the loginData id match for both accounts.
+	 * @param requestedPartnerId int 
+	 * @return KalturaSessionResponse
+	 */
+	static loginByKs(requestedPartnerId){
+		let kparams = {};
+		kparams.requestedPartnerId = requestedPartnerId;
+		return new kaltura.RequestBuilder('user', 'loginByKs', kparams);
 	};
 	
 	/**

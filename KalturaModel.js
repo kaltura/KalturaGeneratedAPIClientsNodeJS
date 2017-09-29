@@ -2851,7 +2851,7 @@ class BaseEntry extends kaltura.BaseObject{
 	 }
 	
 	/**
-	 * list of user ids that are entitled to edit the entry (no server enforcement) The difference between entitledUsersEdit and entitledUsersPublish is applicative only
+	 * list of user ids that are entitled to edit the entry (no server enforcement) The difference between entitledUsersEdit, entitledUsersPublish and entitledUsersView is applicative only
 	 * @return string
 	 */
 	 getEntitledUsersEdit() {
@@ -2859,14 +2859,14 @@ class BaseEntry extends kaltura.BaseObject{
 	 }
 	
 	/**
-	 * @param entitledUsersEdit string list of user ids that are entitled to edit the entry (no server enforcement) The difference between entitledUsersEdit and entitledUsersPublish is applicative only
+	 * @param entitledUsersEdit string list of user ids that are entitled to edit the entry (no server enforcement) The difference between entitledUsersEdit, entitledUsersPublish and entitledUsersView is applicative only
 	 */
 	 setEntitledUsersEdit(entitledUsersEdit) {
 	 	this.entitledUsersEdit = entitledUsersEdit;
 	 }
 	
 	/**
-	 * list of user ids that are entitled to publish the entry (no server enforcement) The difference between entitledUsersEdit and entitledUsersPublish is applicative only
+	 * list of user ids that are entitled to publish the entry (no server enforcement) The difference between entitledUsersEdit, entitledUsersPublish and entitledUsersView is applicative only
 	 * @return string
 	 */
 	 getEntitledUsersPublish() {
@@ -2874,10 +2874,25 @@ class BaseEntry extends kaltura.BaseObject{
 	 }
 	
 	/**
-	 * @param entitledUsersPublish string list of user ids that are entitled to publish the entry (no server enforcement) The difference between entitledUsersEdit and entitledUsersPublish is applicative only
+	 * @param entitledUsersPublish string list of user ids that are entitled to publish the entry (no server enforcement) The difference between entitledUsersEdit, entitledUsersPublish and entitledUsersView is applicative only
 	 */
 	 setEntitledUsersPublish(entitledUsersPublish) {
 	 	this.entitledUsersPublish = entitledUsersPublish;
+	 }
+	
+	/**
+	 * list of user ids that are entitled to view the entry (no server enforcement) The difference between entitledUsersEdit, entitledUsersPublish and entitledUsersView is applicative only
+	 * @return string
+	 */
+	 getEntitledUsersView() {
+	 	return this.entitledUsersView;
+	 }
+	
+	/**
+	 * @param entitledUsersView string list of user ids that are entitled to view the entry (no server enforcement) The difference between entitledUsersEdit, entitledUsersPublish and entitledUsersView is applicative only
+	 */
+	 setEntitledUsersView(entitledUsersView) {
+	 	this.entitledUsersView = entitledUsersView;
 	 }
 	
 	/**
@@ -20287,6 +20302,36 @@ class BaseEntryBaseFilter extends RelatedFilter{
 	 * 
 	 * @return string
 	 */
+	 getEntitledUsersViewMatchAnd() {
+	 	return this.entitledUsersViewMatchAnd;
+	 }
+	
+	/**
+	 * @param entitledUsersViewMatchAnd string 
+	 */
+	 setEntitledUsersViewMatchAnd(entitledUsersViewMatchAnd) {
+	 	this.entitledUsersViewMatchAnd = entitledUsersViewMatchAnd;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getEntitledUsersViewMatchOr() {
+	 	return this.entitledUsersViewMatchOr;
+	 }
+	
+	/**
+	 * @param entitledUsersViewMatchOr string 
+	 */
+	 setEntitledUsersViewMatchOr(entitledUsersViewMatchOr) {
+	 	this.entitledUsersViewMatchOr = entitledUsersViewMatchOr;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
 	 getTagsNameMultiLikeOr() {
 	 	return this.tagsNameMultiLikeOr;
 	 }
@@ -27253,6 +27298,14 @@ class UploadToken extends kaltura.BaseObject{
 	 */
 	 getUpdatedAt() {
 	 	return this.updatedAt;
+	 }
+	
+	/**
+	 * Upload url - to explicitly determine to which domain to adress the uploadToken->upload call
+	 * @return string
+	 */
+	 getUploadUrl() {
+	 	return this.uploadUrl;
 	 }
 }
 module.exports.UploadToken = UploadToken;

@@ -38593,6 +38593,21 @@ class ESearchMetadataItemData extends ESearchItemData{
 	
 	/**
 	 * 
+	 * @return int
+	 */
+	 getMetadataFieldId() {
+	 	return this.metadataFieldId;
+	 }
+	
+	/**
+	 * @param metadataFieldId int 
+	 */
+	 setMetadataFieldId(metadataFieldId) {
+	 	this.metadataFieldId = metadataFieldId;
+	 }
+	
+	/**
+	 * 
 	 * @return string
 	 */
 	 getValueText() {
@@ -56960,6 +56975,21 @@ class ESearchMetadataItem extends ESearchItem{
 	 */
 	 setMetadataProfileId(metadataProfileId) {
 	 	this.metadataProfileId = metadataProfileId;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getMetadataFieldId() {
+	 	return this.metadataFieldId;
+	 }
+	
+	/**
+	 * @param metadataFieldId int 
+	 */
+	 setMetadataFieldId(metadataFieldId) {
+	 	this.metadataFieldId = metadataFieldId;
 	 }
 }
 module.exports.ESearchMetadataItem = ESearchMetadataItem;

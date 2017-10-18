@@ -2514,13 +2514,18 @@ ENTRY_START_DATE : 'start_date',
 ENTRY_TAGS : 'tags',
 ENTRY_TEMPLATE_ENTRY_ID : 'template_entry_id',
 ENTRY_UPDATED_AT : 'updated_at',
+ENTRY_VIEWS : 'views',
+ENTRY_VOTES : 'votes',
 };
 
 module.exports.ESearchEntryOrderByFieldName = {
 ENTRY_CREATED_AT : 'created_at',
 ENTRY_END_DATE : 'end_date',
+ENTRY_NAME : 'name.keyword',
 ENTRY_START_DATE : 'start_date',
 ENTRY_UPDATED_AT : 'updated_at',
+ENTRY_VIEWS : 'views',
+ENTRY_VOTES : 'votes',
 };
 
 module.exports.ESearchSortOrder = {

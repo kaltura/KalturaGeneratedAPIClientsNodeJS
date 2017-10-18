@@ -27307,6 +27307,21 @@ class UploadToken extends kaltura.BaseObject{
 	 getUploadUrl() {
 	 	return this.uploadUrl;
 	 }
+	
+	/**
+	 * autoFinalize - Should the upload be finalized once the file size on disk matches the file size reproted when adding the upload token
+	 * @return int
+	 */
+	 getAutoFinalize() {
+	 	return this.autoFinalize;
+	 }
+	
+	/**
+	 * @param autoFinalize int autoFinalize - Should the upload be finalized once the file size on disk matches the file size reproted when adding the upload token
+	 */
+	 setAutoFinalize(autoFinalize) {
+	 	this.autoFinalize = autoFinalize;
+	 }
 }
 module.exports.UploadToken = UploadToken;
 

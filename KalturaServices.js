@@ -2206,13 +2206,13 @@ module.exports.liveChannelSegment = liveChannelSegment;
  * The available service actions:
  * @action add Adds new live channel.
  * @action appendRecording Append recorded video to live entry.
- * @action createRecordedEntry .
+ * @action createRecordedEntry Create recorded entry id if it doesn't exist and make sure it happens on the DC that the live entry was created on.
  * @action delete Delete a live channel.
  * @action get Get live channel by ID.
  * @action isLive Delivering the status of a live channel (on-air/offline).
  * @action list List live channels by filter with paging support.
  * @action registerMediaServer Register media server to live entry.
- * @action setRecordedContent Sey recorded video to live entry.
+ * @action setRecordedContent Set recorded video to live entry.
  * @action unregisterMediaServer Unregister media server from live entry.
  * @action update Update live channel. Only the properties that were set will be updated.
  * @action validateRegisteredMediaServers Validates all registered media servers.
@@ -2252,7 +2252,7 @@ class liveChannel{
 	};
 	
 	/**
-	 * .
+	 * Create recorded entry id if it doesn't exist and make sure it happens on the DC that the live entry was created on.
 	 * @param entryId string Live entry id
 	 * @param mediaServerIndex string Media server index primary / secondary (enum: KalturaEntryServerNodeType)
 	 * @param liveEntryStatus int the status KalturaEntryServerNodeStatus::PLAYABLE | KalturaEntryServerNodeStatus::BROADCASTING (enum: KalturaEntryServerNodeStatus)
@@ -2333,7 +2333,7 @@ class liveChannel{
 	};
 	
 	/**
-	 * Sey recorded video to live entry.
+	 * Set recorded video to live entry.
 	 * @param entryId string Live entry id
 	 * @param mediaServerIndex string  (enum: KalturaEntryServerNodeType)
 	 * @param resource DataCenterContentResource 
@@ -2493,7 +2493,7 @@ module.exports.liveStats = liveStats;
  * @action appendRecording Append recorded video to live entry.
  * @action authenticate Authenticate live-stream entry against stream token and partner limitations.
  * @action createPeriodicSyncPoints Creates perioding metadata sync-point events on a live stream.
- * @action createRecordedEntry .
+ * @action createRecordedEntry Create recorded entry id if it doesn't exist and make sure it happens on the DC that the live entry was created on.
  * @action delete Delete a live stream entry.
  * @action get Get live stream entry by ID.
  * @action isLive Delivering the status of a live stream (on-air/offline) if it is possible.
@@ -2501,7 +2501,7 @@ module.exports.liveStats = liveStats;
  * @action regenerateStreamToken Regenerate new secure token for liveStream.
  * @action registerMediaServer Register media server to live entry.
  * @action removeLiveStreamPushPublishConfiguration Remove push publish configuration from entry.
- * @action setRecordedContent Sey recorded video to live entry.
+ * @action setRecordedContent Set recorded video to live entry.
  * @action unregisterMediaServer Unregister media server from live entry.
  * @action update Update live stream entry. Only the properties that were set will be updated.
  * @action updateOfflineThumbnailFromUrl Update entry thumbnail using url.
@@ -2596,7 +2596,7 @@ class liveStream{
 	};
 	
 	/**
-	 * .
+	 * Create recorded entry id if it doesn't exist and make sure it happens on the DC that the live entry was created on.
 	 * @param entryId string Live entry id
 	 * @param mediaServerIndex string Media server index primary / secondary (enum: KalturaEntryServerNodeType)
 	 * @param liveEntryStatus int the status KalturaEntryServerNodeStatus::PLAYABLE | KalturaEntryServerNodeStatus::BROADCASTING (enum: KalturaEntryServerNodeStatus)
@@ -2704,7 +2704,7 @@ class liveStream{
 	};
 	
 	/**
-	 * Sey recorded video to live entry.
+	 * Set recorded video to live entry.
 	 * @param entryId string Live entry id
 	 * @param mediaServerIndex string  (enum: KalturaEntryServerNodeType)
 	 * @param resource DataCenterContentResource 

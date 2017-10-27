@@ -38427,6 +38427,21 @@ class ESearchCuePointItemData extends ESearchItemData{
 	 * 
 	 * @return string
 	 */
+	 getQuestion() {
+	 	return this.question;
+	 }
+	
+	/**
+	 * @param question string 
+	 */
+	 setQuestion(question) {
+	 	this.question = question;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
 	 getAnswers() {
 	 	return this.answers;
 	 }

@@ -11284,6 +11284,18 @@ module.exports.ESearchItemDataResult = ESearchItemDataResult;
 /**
  *
  */
+class ESearchObject extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchObject';
+	}
+}
+module.exports.ESearchObject = ESearchObject;
+
+/**
+ *
+ */
 class ESearchOrderByItem extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -11334,105 +11346,6 @@ class ESearchOrderBy extends kaltura.BaseObject{
 	 }
 }
 module.exports.ESearchOrderBy = ESearchOrderBy;
-
-/**
- *
- */
-class ESearchOperator extends ESearchBaseItem{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaESearchOperator';
-	}
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getOperator() {
-	 	return this.operator;
-	 }
-	
-	/**
-	 * @param operator int 
-	 */
-	 setOperator(operator) {
-	 	this.operator = operator;
-	 }
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getSearchItems() {
-	 	return this.searchItems;
-	 }
-	
-	/**
-	 * @param searchItems array 
-	 */
-	 setSearchItems(searchItems) {
-	 	this.searchItems = searchItems;
-	 }
-}
-module.exports.ESearchOperator = ESearchOperator;
-
-/**
- *
- */
-class ESearchParams extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaESearchParams';
-	}
-	
-	/**
-	 * 
-	 * @return ESearchOperator
-	 */
-	 getSearchOperator() {
-	 	return this.searchOperator;
-	 }
-	
-	/**
-	 * @param searchOperator ESearchOperator 
-	 */
-	 setSearchOperator(searchOperator) {
-	 	this.searchOperator = searchOperator;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getObjectStatuses() {
-	 	return this.objectStatuses;
-	 }
-	
-	/**
-	 * @param objectStatuses string 
-	 */
-	 setObjectStatuses(objectStatuses) {
-	 	this.objectStatuses = objectStatuses;
-	 }
-	
-	/**
-	 * 
-	 * @return ESearchOrderBy
-	 */
-	 getOrderBy() {
-	 	return this.orderBy;
-	 }
-	
-	/**
-	 * @param orderBy ESearchOrderBy 
-	 */
-	 setOrderBy(orderBy) {
-	 	this.orderBy = orderBy;
-	 }
-}
-module.exports.ESearchParams = ESearchParams;
 
 /**
  *
@@ -38667,6 +38580,105 @@ class ESearchMetadataItemData extends ESearchItemData{
 	 }
 }
 module.exports.ESearchMetadataItemData = ESearchMetadataItemData;
+
+/**
+ *
+ */
+class ESearchOperator extends ESearchBaseItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchOperator';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getOperator() {
+	 	return this.operator;
+	 }
+	
+	/**
+	 * @param operator int 
+	 */
+	 setOperator(operator) {
+	 	this.operator = operator;
+	 }
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getSearchItems() {
+	 	return this.searchItems;
+	 }
+	
+	/**
+	 * @param searchItems array 
+	 */
+	 setSearchItems(searchItems) {
+	 	this.searchItems = searchItems;
+	 }
+}
+module.exports.ESearchOperator = ESearchOperator;
+
+/**
+ *
+ */
+class ESearchParams extends ESearchObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchParams';
+	}
+	
+	/**
+	 * 
+	 * @return ESearchOperator
+	 */
+	 getSearchOperator() {
+	 	return this.searchOperator;
+	 }
+	
+	/**
+	 * @param searchOperator ESearchOperator 
+	 */
+	 setSearchOperator(searchOperator) {
+	 	this.searchOperator = searchOperator;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getObjectStatuses() {
+	 	return this.objectStatuses;
+	 }
+	
+	/**
+	 * @param objectStatuses string 
+	 */
+	 setObjectStatuses(objectStatuses) {
+	 	this.objectStatuses = objectStatuses;
+	 }
+	
+	/**
+	 * 
+	 * @return ESearchOrderBy
+	 */
+	 getOrderBy() {
+	 	return this.orderBy;
+	 }
+	
+	/**
+	 * @param orderBy ESearchOrderBy 
+	 */
+	 setOrderBy(orderBy) {
+	 	this.orderBy = orderBy;
+	 }
+}
+module.exports.ESearchParams = ESearchParams;
 
 /**
  *

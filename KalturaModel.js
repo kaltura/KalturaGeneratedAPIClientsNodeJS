@@ -38683,6 +38683,33 @@ module.exports.ESearchParams = ESearchParams;
 /**
  *
  */
+class ESearchQuery extends ESearchObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchQuery';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getESerachQuery() {
+	 	return this.eSerachQuery;
+	 }
+	
+	/**
+	 * @param eSerachQuery string 
+	 */
+	 setESerachQuery(eSerachQuery) {
+	 	this.eSerachQuery = eSerachQuery;
+	 }
+}
+module.exports.ESearchQuery = ESearchQuery;
+
+/**
+ *
+ */
 class ESearchUserOrderByItem extends ESearchOrderByItem{
 	
 	constructor(object = null) {

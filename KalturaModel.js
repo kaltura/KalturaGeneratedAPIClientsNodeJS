@@ -8883,6 +8883,21 @@ class FileSyncDescriptor extends kaltura.BaseObject{
 	 }
 	
 	/**
+	 * 
+	 * @return string
+	 */
+	 getFileEncryptionKey() {
+	 	return this.fileEncryptionKey;
+	 }
+	
+	/**
+	 * @param fileEncryptionKey string 
+	 */
+	 setFileEncryptionKey(fileEncryptionKey) {
+	 	this.fileEncryptionKey = fileEncryptionKey;
+	 }
+	
+	/**
 	 * The translated path as used by the scheduler
 	 * @return string
 	 */
@@ -17876,6 +17891,51 @@ class LiveEntry extends MediaEntry{
 	 */
 	 setSegmentDuration(segmentDuration) {
 	 	this.segmentDuration = segmentDuration;
+	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getExplicitLive() {
+	 	return this.explicitLive;
+	 }
+	
+	/**
+	 * @param explicitLive bool 
+	 */
+	 setExplicitLive(explicitLive) {
+	 	this.explicitLive = explicitLive;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getViewMode() {
+	 	return this.viewMode;
+	 }
+	
+	/**
+	 * @param viewMode int 
+	 */
+	 setViewMode(viewMode) {
+	 	this.viewMode = viewMode;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getRecordingStatus() {
+	 	return this.recordingStatus;
+	 }
+	
+	/**
+	 * @param recordingStatus int 
+	 */
+	 setRecordingStatus(recordingStatus) {
+	 	this.recordingStatus = recordingStatus;
 	 }
 }
 module.exports.LiveEntry = LiveEntry;
@@ -38694,15 +38754,15 @@ class ESearchQuery extends ESearchObject{
 	 * 
 	 * @return string
 	 */
-	 getESerachQuery() {
-	 	return this.eSerachQuery;
+	 getESearchQuery() {
+	 	return this.eSearchQuery;
 	 }
 	
 	/**
-	 * @param eSerachQuery string 
+	 * @param eSearchQuery string 
 	 */
-	 setESerachQuery(eSerachQuery) {
-	 	this.eSerachQuery = eSerachQuery;
+	 setESearchQuery(eSearchQuery) {
+	 	this.eSearchQuery = eSearchQuery;
 	 }
 }
 module.exports.ESearchQuery = ESearchQuery;
@@ -44609,6 +44669,21 @@ class MailNotificationObjectTask extends ObjectTask{
 	 }
 	
 	/**
+	 * The footer of the message to send in the notification mail
+	 * @return string
+	 */
+	 getFooter() {
+	 	return this.footer;
+	 }
+	
+	/**
+	 * @param footer string The footer of the message to send in the notification mail
+	 */
+	 setFooter(footer) {
+	 	this.footer = footer;
+	 }
+	
+	/**
 	 * The basic link for the KMC site
 	 * @return string
 	 */
@@ -45730,6 +45805,21 @@ class ParseMultiLanguageCaptionAssetJobData extends JobData{
 	 */
 	 setFileLocation(fileLocation) {
 	 	this.fileLocation = fileLocation;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getFileEncryptionKey() {
+	 	return this.fileEncryptionKey;
+	 }
+	
+	/**
+	 * @param fileEncryptionKey string 
+	 */
+	 setFileEncryptionKey(fileEncryptionKey) {
+	 	this.fileEncryptionKey = fileEncryptionKey;
 	 }
 }
 module.exports.ParseMultiLanguageCaptionAssetJobData = ParseMultiLanguageCaptionAssetJobData;

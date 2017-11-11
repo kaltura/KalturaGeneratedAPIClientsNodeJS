@@ -997,7 +997,7 @@ class category{
 	 * Move categories that belong to the same parent category to a target categroy - enabled only for ks with disable entitlement.
 	 * @param categoryIds string 
 	 * @param targetCategoryParentId int 
-	 * @return KalturaCategoryListResponse
+	 * @return bool
 	 */
 	static move(categoryIds, targetCategoryParentId){
 		let kparams = {};

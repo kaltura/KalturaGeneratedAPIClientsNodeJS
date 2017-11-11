@@ -779,6 +779,13 @@ APPENDED : 1,
 PER_SESSION : 2,
 };
 
+module.exports.RecordingStatus = {
+STOPPED : 0,
+PAUSED : 1,
+ACTIVE : 2,
+DISABLED : 3,
+};
+
 module.exports.ResponseProfileStatus = {
 DISABLED : 1,
 ENABLED : 2,
@@ -1154,6 +1161,11 @@ DELETED : 2,
 module.exports.UserType = {
 USER : 0,
 GROUP : 1,
+};
+
+module.exports.ViewMode = {
+PREVIEW : 0,
+ALLOW_ALL : 1,
 };
 
 module.exports.VirusFoundAction = {
@@ -2720,6 +2732,7 @@ USERLOGINDATA : '34',
 USERROLE : '35',
 WIDGET : '36',
 CATEGORYENTRY : '37',
+LIVE_STREAM : '38',
 };
 
 module.exports.EventNotificationEventType = {

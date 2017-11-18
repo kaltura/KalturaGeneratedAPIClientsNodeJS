@@ -13744,6 +13744,21 @@ class FlavorAsset extends Asset{
 	 setLabel(label) {
 	 	this.label = label;
 	 }
+	
+	/**
+	 * Is default flavor asset of the entry (This field will be taken into account selectign which audio flavor will be selected as default)
+	 * @return int
+	 */
+	 getIsDefault() {
+	 	return this.isDefault;
+	 }
+	
+	/**
+	 * @param isDefault int Is default flavor asset of the entry (This field will be taken into account selectign which audio flavor will be selected as default)
+	 */
+	 setIsDefault(isDefault) {
+	 	this.isDefault = isDefault;
+	 }
 }
 module.exports.FlavorAsset = FlavorAsset;
 
@@ -27733,6 +27748,13 @@ class User extends kaltura.BaseObject{
 	 }
 	
 	/**
+	 * @param loginEnabled bool 
+	 */
+	 setLoginEnabled(loginEnabled) {
+	 	this.loginEnabled = loginEnabled;
+	 }
+	
+	/**
 	 * 
 	 * @return string
 	 */
@@ -27761,6 +27783,13 @@ class User extends kaltura.BaseObject{
 	 */
 	 getIsAccountOwner() {
 	 	return this.isAccountOwner;
+	 }
+	
+	/**
+	 * @param isAccountOwner bool 
+	 */
+	 setIsAccountOwner(isAccountOwner) {
+	 	this.isAccountOwner = isAccountOwner;
 	 }
 	
 	/**
@@ -60728,6 +60757,21 @@ class LiveStreamScheduleEvent extends EntryScheduleEvent{
 		super(object);
 		this.objectType = 'KalturaLiveStreamScheduleEvent';
 	}
+	
+	/**
+	 * Defines the expected audience
+	 * @return int
+	 */
+	 getProjectedAudience() {
+	 	return this.projectedAudience;
+	 }
+	
+	/**
+	 * @param projectedAudience int Defines the expected audience
+	 */
+	 setProjectedAudience(projectedAudience) {
+	 	this.projectedAudience = projectedAudience;
+	 }
 }
 module.exports.LiveStreamScheduleEvent = LiveStreamScheduleEvent;
 

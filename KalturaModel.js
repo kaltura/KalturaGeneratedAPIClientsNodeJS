@@ -13388,6 +13388,63 @@ module.exports.FileAsset = FileAsset;
 /**
  *
  */
+class FileContainer extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaFileContainer';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getFilePath() {
+	 	return this.filePath;
+	 }
+	
+	/**
+	 * @param filePath string 
+	 */
+	 setFilePath(filePath) {
+	 	this.filePath = filePath;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getEncryptionKey() {
+	 	return this.encryptionKey;
+	 }
+	
+	/**
+	 * @param encryptionKey string 
+	 */
+	 setEncryptionKey(encryptionKey) {
+	 	this.encryptionKey = encryptionKey;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getFileSize() {
+	 	return this.fileSize;
+	 }
+	
+	/**
+	 * @param fileSize int 
+	 */
+	 setFileSize(fileSize) {
+	 	this.fileSize = fileSize;
+	 }
+}
+module.exports.FileContainer = FileContainer;
+
+/**
+ *
+ */
 class FileSync extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -29528,6 +29585,21 @@ class YouTubeApiCaptionDistributionInfo extends kaltura.BaseObject{
 	 */
 	 setFilePath(filePath) {
 	 	this.filePath = filePath;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getEncryptionKey() {
+	 	return this.encryptionKey;
+	 }
+	
+	/**
+	 * @param encryptionKey string 
+	 */
+	 setEncryptionKey(encryptionKey) {
+	 	this.encryptionKey = encryptionKey;
 	 }
 	
 	/**
@@ -51174,17 +51246,17 @@ class VirusScanJobData extends JobData{
 	
 	/**
 	 * 
-	 * @return string
+	 * @return FileContainer
 	 */
-	 getSrcFilePath() {
-	 	return this.srcFilePath;
+	 getFileContainer() {
+	 	return this.fileContainer;
 	 }
 	
 	/**
-	 * @param srcFilePath string 
+	 * @param fileContainer FileContainer 
 	 */
-	 setSrcFilePath(srcFilePath) {
-	 	this.srcFilePath = srcFilePath;
+	 setFileContainer(fileContainer) {
+	 	this.fileContainer = fileContainer;
 	 }
 	
 	/**

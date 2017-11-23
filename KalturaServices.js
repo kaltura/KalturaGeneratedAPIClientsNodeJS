@@ -7891,7 +7891,7 @@ class eSearch{
 	
 	/**
 	 * .
-	 * @param searchParams ESearchObject 
+	 * @param searchParams ESearchParams 
 	 * @param pager Pager  (optional, default: null)
 	 * @return KalturaESearchResponse
 	 */
@@ -7904,7 +7904,7 @@ class eSearch{
 	
 	/**
 	 * .
-	 * @param searchParams ESearchObject 
+	 * @param searchParams ESearchParams 
 	 * @param pager Pager  (optional, default: null)
 	 * @return KalturaESearchResponse
 	 */
@@ -7917,7 +7917,7 @@ class eSearch{
 	
 	/**
 	 * .
-	 * @param searchParams ESearchObject 
+	 * @param searchParams ESearchParams 
 	 * @param pager Pager  (optional, default: null)
 	 * @return KalturaESearchResponse
 	 */

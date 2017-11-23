@@ -1424,6 +1424,21 @@ class AppToken extends kaltura.BaseObject{
 	 setHashType(hashType) {
 	 	this.hashType = hashType;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getDescription() {
+	 	return this.description;
+	 }
+	
+	/**
+	 * @param description string 
+	 */
+	 setDescription(description) {
+	 	this.description = description;
+	 }
 }
 module.exports.AppToken = AppToken;
 
@@ -4109,6 +4124,33 @@ module.exports.PlayerEmbedCodeType = PlayerEmbedCodeType;
 /**
  *
  */
+class ESearchLanguageItem extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchLanguageItem';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getESerachLanguage() {
+	 	return this.eSerachLanguage;
+	 }
+	
+	/**
+	 * @param eSerachLanguage string 
+	 */
+	 setESerachLanguage(eSerachLanguage) {
+	 	this.eSerachLanguage = eSerachLanguage;
+	 }
+}
+module.exports.ESearchLanguageItem = ESearchLanguageItem;
+
+/**
+ *
+ */
 class Partner extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -4755,6 +4797,21 @@ class Partner extends kaltura.BaseObject{
 	 */
 	 getTimeAlignedRenditions() {
 	 	return this.timeAlignedRenditions;
+	 }
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getESearchLanguages() {
+	 	return this.eSearchLanguages;
+	 }
+	
+	/**
+	 * @param eSearchLanguages array 
+	 */
+	 setESearchLanguages(eSearchLanguages) {
+	 	this.eSearchLanguages = eSearchLanguages;
 	 }
 }
 module.exports.Partner = Partner;
@@ -11236,6 +11293,21 @@ class ESearchItemData extends kaltura.BaseObject{
 		super(object);
 		this.objectType = 'KalturaESearchItemData';
 	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getHighlight() {
+	 	return this.highlight;
+	 }
+	
+	/**
+	 * @param highlight string 
+	 */
+	 setHighlight(highlight) {
+	 	this.highlight = highlight;
+	 }
 }
 module.exports.ESearchItemData = ESearchItemData;
 
@@ -11299,18 +11371,6 @@ module.exports.ESearchItemDataResult = ESearchItemDataResult;
 /**
  *
  */
-class ESearchObject extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaESearchObject';
-	}
-}
-module.exports.ESearchObject = ESearchObject;
-
-/**
- *
- */
 class ESearchOrderByItem extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -11361,6 +11421,135 @@ class ESearchOrderBy extends kaltura.BaseObject{
 	 }
 }
 module.exports.ESearchOrderBy = ESearchOrderBy;
+
+/**
+ *
+ */
+class ESearchOperator extends ESearchBaseItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchOperator';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getOperator() {
+	 	return this.operator;
+	 }
+	
+	/**
+	 * @param operator int 
+	 */
+	 setOperator(operator) {
+	 	this.operator = operator;
+	 }
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getSearchItems() {
+	 	return this.searchItems;
+	 }
+	
+	/**
+	 * @param searchItems array 
+	 */
+	 setSearchItems(searchItems) {
+	 	this.searchItems = searchItems;
+	 }
+}
+module.exports.ESearchOperator = ESearchOperator;
+
+/**
+ *
+ */
+class ESearchParams extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchParams';
+	}
+	
+	/**
+	 * 
+	 * @return ESearchOperator
+	 */
+	 getSearchOperator() {
+	 	return this.searchOperator;
+	 }
+	
+	/**
+	 * @param searchOperator ESearchOperator 
+	 */
+	 setSearchOperator(searchOperator) {
+	 	this.searchOperator = searchOperator;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getObjectStatuses() {
+	 	return this.objectStatuses;
+	 }
+	
+	/**
+	 * @param objectStatuses string 
+	 */
+	 setObjectStatuses(objectStatuses) {
+	 	this.objectStatuses = objectStatuses;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getObjectId() {
+	 	return this.objectId;
+	 }
+	
+	/**
+	 * @param objectId string 
+	 */
+	 setObjectId(objectId) {
+	 	this.objectId = objectId;
+	 }
+	
+	/**
+	 * 
+	 * @return ESearchOrderBy
+	 */
+	 getOrderBy() {
+	 	return this.orderBy;
+	 }
+	
+	/**
+	 * @param orderBy ESearchOrderBy 
+	 */
+	 setOrderBy(orderBy) {
+	 	this.orderBy = orderBy;
+	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getUseHighlight() {
+	 	return this.useHighlight;
+	 }
+	
+	/**
+	 * @param useHighlight bool 
+	 */
+	 setUseHighlight(useHighlight) {
+	 	this.useHighlight = useHighlight;
+	 }
+}
+module.exports.ESearchParams = ESearchParams;
 
 /**
  *
@@ -11477,6 +11666,21 @@ class ESearchResult extends kaltura.BaseObject{
 	 */
 	 setObject(object) {
 	 	this.object = object;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getHighlight() {
+	 	return this.highlight;
+	 }
+	
+	/**
+	 * @param highlight string 
+	 */
+	 setHighlight(highlight) {
+	 	this.highlight = highlight;
 	 }
 	
 	/**
@@ -17967,14 +18171,14 @@ class LiveEntry extends MediaEntry{
 	
 	/**
 	 * 
-	 * @return bool
+	 * @return int
 	 */
 	 getExplicitLive() {
 	 	return this.explicitLive;
 	 }
 	
 	/**
-	 * @param explicitLive bool 
+	 * @param explicitLive int 
 	 */
 	 setExplicitLive(explicitLive) {
 	 	this.explicitLive = explicitLive;
@@ -30582,6 +30786,21 @@ class AppTokenBaseFilter extends Filter{
 	 setStatusIn(statusIn) {
 	 	this.statusIn = statusIn;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSessionUserIdEqual() {
+	 	return this.sessionUserIdEqual;
+	 }
+	
+	/**
+	 * @param sessionUserIdEqual string 
+	 */
+	 setSessionUserIdEqual(sessionUserIdEqual) {
+	 	this.sessionUserIdEqual = sessionUserIdEqual;
+	 }
 }
 module.exports.AppTokenBaseFilter = AppTokenBaseFilter;
 
@@ -33245,17 +33464,17 @@ class CaptureThumbJobData extends JobData{
 	
 	/**
 	 * 
-	 * @return string
+	 * @return FileContainer
 	 */
-	 getSrcFileSyncLocalPath() {
-	 	return this.srcFileSyncLocalPath;
+	 getFileContainer() {
+	 	return this.fileContainer;
 	 }
 	
 	/**
-	 * @param srcFileSyncLocalPath string 
+	 * @param fileContainer FileContainer 
 	 */
-	 setSrcFileSyncLocalPath(srcFileSyncLocalPath) {
-	 	this.srcFileSyncLocalPath = srcFileSyncLocalPath;
+	 setFileContainer(fileContainer) {
+	 	this.fileContainer = fileContainer;
 	 }
 	
 	/**
@@ -38745,106 +38964,7 @@ module.exports.ESearchMetadataItemData = ESearchMetadataItemData;
 /**
  *
  */
-class ESearchOperator extends ESearchBaseItem{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaESearchOperator';
-	}
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getOperator() {
-	 	return this.operator;
-	 }
-	
-	/**
-	 * @param operator int 
-	 */
-	 setOperator(operator) {
-	 	this.operator = operator;
-	 }
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getSearchItems() {
-	 	return this.searchItems;
-	 }
-	
-	/**
-	 * @param searchItems array 
-	 */
-	 setSearchItems(searchItems) {
-	 	this.searchItems = searchItems;
-	 }
-}
-module.exports.ESearchOperator = ESearchOperator;
-
-/**
- *
- */
-class ESearchParams extends ESearchObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaESearchParams';
-	}
-	
-	/**
-	 * 
-	 * @return ESearchOperator
-	 */
-	 getSearchOperator() {
-	 	return this.searchOperator;
-	 }
-	
-	/**
-	 * @param searchOperator ESearchOperator 
-	 */
-	 setSearchOperator(searchOperator) {
-	 	this.searchOperator = searchOperator;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getObjectStatuses() {
-	 	return this.objectStatuses;
-	 }
-	
-	/**
-	 * @param objectStatuses string 
-	 */
-	 setObjectStatuses(objectStatuses) {
-	 	this.objectStatuses = objectStatuses;
-	 }
-	
-	/**
-	 * 
-	 * @return ESearchOrderBy
-	 */
-	 getOrderBy() {
-	 	return this.orderBy;
-	 }
-	
-	/**
-	 * @param orderBy ESearchOrderBy 
-	 */
-	 setOrderBy(orderBy) {
-	 	this.orderBy = orderBy;
-	 }
-}
-module.exports.ESearchParams = ESearchParams;
-
-/**
- *
- */
-class ESearchQuery extends ESearchObject{
+class ESearchQuery extends ESearchBaseItem{
 	
 	constructor(object = null) {
 		super(object);
@@ -39311,6 +39431,21 @@ class EmailNotificationCategoryRecipientProvider extends EmailNotificationRecipi
 	 */
 	 setCategoryId(categoryId) {
 	 	this.categoryId = categoryId;
+	 }
+	
+	/**
+	 * The IDs of the categories whose subscribers should receive the email notification
+	 * @return StringValue
+	 */
+	 getCategoryIds() {
+	 	return this.categoryIds;
+	 }
+	
+	/**
+	 * @param categoryIds StringValue The IDs of the categories whose subscribers should receive the email notification
+	 */
+	 setCategoryIds(categoryIds) {
+	 	this.categoryIds = categoryIds;
 	 }
 	
 	/**

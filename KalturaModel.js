@@ -43159,6 +43159,21 @@ class HttpNotificationObjectData extends HttpNotificationData{
 	 setCode(code) {
 	 	this.code = code;
 	 }
+	
+	/**
+	 * An array of pattern-replacement pairs used for data string regex replacements
+	 * @return array
+	 */
+	 getDataStringReplacements() {
+	 	return this.dataStringReplacements;
+	 }
+	
+	/**
+	 * @param dataStringReplacements array An array of pattern-replacement pairs used for data string regex replacements
+	 */
+	 setDataStringReplacements(dataStringReplacements) {
+	 	this.dataStringReplacements = dataStringReplacements;
+	 }
 }
 module.exports.HttpNotificationObjectData = HttpNotificationObjectData;
 

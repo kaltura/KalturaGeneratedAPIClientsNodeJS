@@ -51821,6 +51821,14 @@ class VoicebaseJobProviderData extends IntegrationJobProviderData{
 	 setReplaceMediaContent(replaceMediaContent) {
 	 	this.replaceMediaContent = replaceMediaContent;
 	 }
+	
+	/**
+	 * additional parameters to send to VoiceBase
+	 * @return string
+	 */
+	 getAdditionalParameters() {
+	 	return this.additionalParameters;
+	 }
 }
 module.exports.VoicebaseJobProviderData = VoicebaseJobProviderData;
 

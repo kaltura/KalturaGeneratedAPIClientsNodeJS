@@ -49018,6 +49018,21 @@ class StorageJobData extends JobData{
 	 * 
 	 * @return string
 	 */
+	 getSrcFileEncryptionKey() {
+	 	return this.srcFileEncryptionKey;
+	 }
+	
+	/**
+	 * @param srcFileEncryptionKey string 
+	 */
+	 setSrcFileEncryptionKey(srcFileEncryptionKey) {
+	 	this.srcFileEncryptionKey = srcFileEncryptionKey;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
 	 getSrcFileSyncId() {
 	 	return this.srcFileSyncId;
 	 }
@@ -49763,17 +49778,17 @@ class TransformMetadataJobData extends JobData{
 	
 	/**
 	 * 
-	 * @return string
+	 * @return FileContainer
 	 */
-	 getSrcXslPath() {
-	 	return this.srcXslPath;
+	 getSrcXsl() {
+	 	return this.srcXsl;
 	 }
 	
 	/**
-	 * @param srcXslPath string 
+	 * @param srcXsl FileContainer 
 	 */
-	 setSrcXslPath(srcXslPath) {
-	 	this.srcXslPath = srcXslPath;
+	 setSrcXsl(srcXsl) {
+	 	this.srcXsl = srcXsl;
 	 }
 	
 	/**
@@ -57324,6 +57339,21 @@ class ESearchCuePointItem extends ESearchItem{
 	 */
 	 setFieldName(fieldName) {
 	 	this.fieldName = fieldName;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getCuePointType() {
+	 	return this.cuePointType;
+	 }
+	
+	/**
+	 * @param cuePointType string 
+	 */
+	 setCuePointType(cuePointType) {
+	 	this.cuePointType = cuePointType;
 	 }
 }
 module.exports.ESearchCuePointItem = ESearchCuePointItem;

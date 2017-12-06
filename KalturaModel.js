@@ -11287,6 +11287,48 @@ module.exports.ESearchBaseItem = ESearchBaseItem;
 /**
  *
  */
+class ESearchHighlight extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchHighlight';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getFieldName() {
+	 	return this.fieldName;
+	 }
+	
+	/**
+	 * @param fieldName string 
+	 */
+	 setFieldName(fieldName) {
+	 	this.fieldName = fieldName;
+	 }
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getHits() {
+	 	return this.hits;
+	 }
+	
+	/**
+	 * @param hits array 
+	 */
+	 setHits(hits) {
+	 	this.hits = hits;
+	 }
+}
+module.exports.ESearchHighlight = ESearchHighlight;
+
+/**
+ *
+ */
 class ESearchItemData extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -11296,14 +11338,14 @@ class ESearchItemData extends kaltura.BaseObject{
 	
 	/**
 	 * 
-	 * @return string
+	 * @return array
 	 */
 	 getHighlight() {
 	 	return this.highlight;
 	 }
 	
 	/**
-	 * @param highlight string 
+	 * @param highlight array 
 	 */
 	 setHighlight(highlight) {
 	 	this.highlight = highlight;
@@ -11670,14 +11712,14 @@ class ESearchResult extends kaltura.BaseObject{
 	
 	/**
 	 * 
-	 * @return string
+	 * @return array
 	 */
 	 getHighlight() {
 	 	return this.highlight;
 	 }
 	
 	/**
-	 * @param highlight string 
+	 * @param highlight array 
 	 */
 	 setHighlight(highlight) {
 	 	this.highlight = highlight;
@@ -21082,6 +21124,21 @@ class MediaEntryFilterForPlaylist extends MediaEntryFilter{
 	 */
 	 setLimit(limit) {
 	 	this.limit = limit;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getName() {
+	 	return this.name;
+	 }
+	
+	/**
+	 * @param name string 
+	 */
+	 setName(name) {
+	 	this.name = name;
 	 }
 }
 module.exports.MediaEntryFilterForPlaylist = MediaEntryFilterForPlaylist;

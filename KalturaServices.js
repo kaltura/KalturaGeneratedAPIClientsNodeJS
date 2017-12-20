@@ -7871,7 +7871,6 @@ module.exports.dropFolderFile = dropFolderFile;
 /**
  *Class definition for the Kaltura service: eSearch.
  * The available service actions:
- * @action getAllowedSearchTypes .
  * @action searchCategory .
  * @action searchEntry .
  * @action searchUser .
@@ -7880,18 +7879,7 @@ class eSearch{
 	
 	/**
 	 * .
-	 * @param searchItem ESearchItem 
-	 * @return array
-	 */
-	static getAllowedSearchTypes(searchItem){
-		let kparams = {};
-		kparams.searchItem = searchItem;
-		return new kaltura.RequestBuilder('elasticsearch_esearch', 'getAllowedSearchTypes', kparams);
-	};
-	
-	/**
-	 * .
-	 * @param searchParams ESearchParams 
+	 * @param searchParams ESearchCategoryParams 
 	 * @param pager Pager  (optional, default: null)
 	 * @return KalturaESearchResponse
 	 */
@@ -7904,7 +7892,7 @@ class eSearch{
 	
 	/**
 	 * .
-	 * @param searchParams ESearchParams 
+	 * @param searchParams ESearchEntryParams 
 	 * @param pager Pager  (optional, default: null)
 	 * @return KalturaESearchResponse
 	 */
@@ -7917,7 +7905,7 @@ class eSearch{
 	
 	/**
 	 * .
-	 * @param searchParams ESearchParams 
+	 * @param searchParams ESearchUserParams 
 	 * @param pager Pager  (optional, default: null)
 	 * @return KalturaESearchResponse
 	 */

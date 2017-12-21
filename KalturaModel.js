@@ -13146,6 +13146,36 @@ class MediaEntry extends PlayableEntry{
 	 setStreams(streams) {
 	 	this.streams = streams;
 	 }
+	
+	/**
+	 * True if the entry is a sequence entry
+	 * @return int
+	 */
+	 getIsSequenceEntry() {
+	 	return this.isSequenceEntry;
+	 }
+	
+	/**
+	 * @param isSequenceEntry int True if the entry is a sequence entry
+	 */
+	 setIsSequenceEntry(isSequenceEntry) {
+	 	this.isSequenceEntry = isSequenceEntry;
+	 }
+	
+	/**
+	 * The sequence entries of the entry
+	 * @return string
+	 */
+	 getSequenceEntryIds() {
+	 	return this.sequenceEntryIds;
+	 }
+	
+	/**
+	 * @param sequenceEntryIds string The sequence entries of the entry
+	 */
+	 setSequenceEntryIds(sequenceEntryIds) {
+	 	this.sequenceEntryIds = sequenceEntryIds;
+	 }
 }
 module.exports.MediaEntry = MediaEntry;
 
@@ -21077,6 +21107,36 @@ class MediaEntryFilter extends MediaEntryBaseFilter{
 		super(object);
 		this.objectType = 'KalturaMediaEntryFilter';
 	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getIsSequenceEntry() {
+	 	return this.isSequenceEntry;
+	 }
+	
+	/**
+	 * @param isSequenceEntry int 
+	 */
+	 setIsSequenceEntry(isSequenceEntry) {
+	 	this.isSequenceEntry = isSequenceEntry;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSequenceEntryIdsIn() {
+	 	return this.sequenceEntryIdsIn;
+	 }
+	
+	/**
+	 * @param sequenceEntryIdsIn string 
+	 */
+	 setSequenceEntryIdsIn(sequenceEntryIdsIn) {
+	 	this.sequenceEntryIdsIn = sequenceEntryIdsIn;
+	 }
 }
 module.exports.MediaEntryFilter = MediaEntryFilter;
 

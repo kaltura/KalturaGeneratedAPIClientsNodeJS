@@ -37,6 +37,7 @@ class RequestData {
 	 */
 	setClientTag(clientTag){
 		this.requestData['clientTag'] = clientTag;
+		return this;
 	};
 	
 	/**
@@ -51,6 +52,7 @@ class RequestData {
 	 */
 	setApiVersion(apiVersion){
 		this.requestData['apiVersion'] = apiVersion;
+		return this;
 	};
 	
 	/**
@@ -67,6 +69,7 @@ class RequestData {
 	 */
 	setPartnerId(partnerId){
 		this.requestData['partnerId'] = partnerId;
+		return this;
 	};
 	
 	/**
@@ -85,6 +88,7 @@ class RequestData {
 	 */
 	setKs(ks){
 		this.requestData['ks'] = ks;
+		return this;
 	};
 	
 	/**
@@ -103,6 +107,7 @@ class RequestData {
 	 */
 	setSessionId(sessionId){
 		this.requestData['ks'] = sessionId;
+		return this;
 	};
 	
 	/**
@@ -125,6 +130,7 @@ class VolatileRequestData extends RequestData {
 	 */
 	setResponseProfile(responseProfile){
 		this.requestData['responseProfile'] = responseProfile;
+		return this;
 	};
 	
 	/**

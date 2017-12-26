@@ -4813,6 +4813,30 @@ class Partner extends kaltura.BaseObject{
 	 setESearchLanguages(eSearchLanguages) {
 	 	this.eSearchLanguages = eSearchLanguages;
 	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getPublisherEnvironmentType() {
+	 	return this.publisherEnvironmentType;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getOvpEnvironmentUrl() {
+	 	return this.ovpEnvironmentUrl;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getOttEnvironmentUrl() {
+	 	return this.ottEnvironmentUrl;
+	 }
 }
 module.exports.Partner = Partner;
 
@@ -21107,36 +21131,6 @@ class MediaEntryFilter extends MediaEntryBaseFilter{
 		super(object);
 		this.objectType = 'KalturaMediaEntryFilter';
 	}
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getIsSequenceEntry() {
-	 	return this.isSequenceEntry;
-	 }
-	
-	/**
-	 * @param isSequenceEntry int 
-	 */
-	 setIsSequenceEntry(isSequenceEntry) {
-	 	this.isSequenceEntry = isSequenceEntry;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSequenceEntryIdsIn() {
-	 	return this.sequenceEntryIdsIn;
-	 }
-	
-	/**
-	 * @param sequenceEntryIdsIn string 
-	 */
-	 setSequenceEntryIdsIn(sequenceEntryIdsIn) {
-	 	this.sequenceEntryIdsIn = sequenceEntryIdsIn;
-	 }
 }
 module.exports.MediaEntryFilter = MediaEntryFilter;
 

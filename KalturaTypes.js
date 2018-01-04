@@ -2445,6 +2445,14 @@ END_TIME : 'end_time',
 START_TIME : 'start_time',
 };
 
+module.exports.ESearchCategoryEntryFieldName = {
+ANCESTOR_ID : 'ancestor_id',
+ANCESTOR_NAME : 'ancestor_name',
+FULL_IDS : 'full_ids',
+ID : 'id',
+NAME : 'name',
+};
+
 module.exports.ESearchCategoryFieldName = {
 CONTRIBUTION_POLICY : 'contribution_policy',
 CREATED_AT : 'created_at',
@@ -2496,9 +2504,6 @@ TEXT : 'text',
 module.exports.ESearchEntryFieldName = {
 ACCESS_CONTROL_ID : 'access_control_id',
 ADMIN_TAGS : 'admin_tags',
-CATEGORIES : 'categories',
-CATEGORY_IDS : 'category_ids',
-CATEGORY_NAME : 'category_name',
 CONVERSION_PROFILE_ID : 'conversion_profile_id',
 CREATED_AT : 'created_at',
 CREATOR_ID : 'creator_kuser_id',

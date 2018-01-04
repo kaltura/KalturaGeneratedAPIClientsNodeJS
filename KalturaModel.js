@@ -68235,6 +68235,48 @@ module.exports.ESearchCaptionItem = ESearchCaptionItem;
 /**
  *
  */
+class ESearchCategoryEntryItem extends ESearchAbstractEntryItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchCategoryEntryItem';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getFieldName() {
+	 	return this.fieldName;
+	 }
+	
+	/**
+	 * @param fieldName string 
+	 */
+	 setFieldName(fieldName) {
+	 	this.fieldName = fieldName;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getCategoryEntryStatus() {
+	 	return this.categoryEntryStatus;
+	 }
+	
+	/**
+	 * @param categoryEntryStatus int 
+	 */
+	 setCategoryEntryStatus(categoryEntryStatus) {
+	 	this.categoryEntryStatus = categoryEntryStatus;
+	 }
+}
+module.exports.ESearchCategoryEntryItem = ESearchCategoryEntryItem;
+
+/**
+ *
+ */
 class ESearchCategoryItem extends ESearchAbstractCategoryItem{
 	
 	constructor(object = null) {

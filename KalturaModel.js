@@ -11566,21 +11566,6 @@ class ESearchParams extends kaltura.BaseObject{
 	 setOrderBy(orderBy) {
 	 	this.orderBy = orderBy;
 	 }
-	
-	/**
-	 * 
-	 * @return bool
-	 */
-	 getUseHighlight() {
-	 	return this.useHighlight;
-	 }
-	
-	/**
-	 * @param useHighlight bool 
-	 */
-	 setUseHighlight(useHighlight) {
-	 	this.useHighlight = useHighlight;
-	 }
 }
 module.exports.ESearchParams = ESearchParams;
 
@@ -57556,6 +57541,21 @@ class ESearchAbstractCategoryItem extends ESearchCategoryBaseItem{
 	 setRange(range) {
 	 	this.range = range;
 	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getAddHighlight() {
+	 	return this.addHighlight;
+	 }
+	
+	/**
+	 * @param addHighlight bool 
+	 */
+	 setAddHighlight(addHighlight) {
+	 	this.addHighlight = addHighlight;
+	 }
 }
 module.exports.ESearchAbstractCategoryItem = ESearchAbstractCategoryItem;
 
@@ -57613,6 +57613,21 @@ class ESearchAbstractEntryItem extends ESearchEntryBaseItem{
 	 setRange(range) {
 	 	this.range = range;
 	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getAddHighlight() {
+	 	return this.addHighlight;
+	 }
+	
+	/**
+	 * @param addHighlight bool 
+	 */
+	 setAddHighlight(addHighlight) {
+	 	this.addHighlight = addHighlight;
+	 }
 }
 module.exports.ESearchAbstractEntryItem = ESearchAbstractEntryItem;
 
@@ -57669,6 +57684,21 @@ class ESearchAbstractUserItem extends ESearchUserBaseItem{
 	 */
 	 setRange(range) {
 	 	this.range = range;
+	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getAddHighlight() {
+	 	return this.addHighlight;
+	 }
+	
+	/**
+	 * @param addHighlight bool 
+	 */
+	 setAddHighlight(addHighlight) {
+	 	this.addHighlight = addHighlight;
 	 }
 }
 module.exports.ESearchAbstractUserItem = ESearchAbstractUserItem;

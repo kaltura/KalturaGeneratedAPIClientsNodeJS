@@ -31045,6 +31045,33 @@ module.exports.AssetPropertiesCompareCondition = AssetPropertiesCompareCondition
 /**
  *
  */
+class AssetTypeCondition extends Condition{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaAssetTypeCondition';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getAssetTypes() {
+	 	return this.assetTypes;
+	 }
+	
+	/**
+	 * @param assetTypes string 
+	 */
+	 setAssetTypes(assetTypes) {
+	 	this.assetTypes = assetTypes;
+	 }
+}
+module.exports.AssetTypeCondition = AssetTypeCondition;
+
+/**
+ *
+ */
 class AssetsParamsResourceContainers extends Resource{
 	
 	constructor(object = null) {

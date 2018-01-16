@@ -4291,6 +4291,7 @@ module.exports.search = search;
  * @action enable Enable server node by id.
  * @action get Get server node by id.
  * @action list .
+ * @action markOffline Mark server node offline.
  * @action reportStatus Update server node status.
  * @action update Update server node by id.
  */
@@ -4361,6 +4362,17 @@ class serverNode{
 		kparams.filter = filter;
 		kparams.pager = pager;
 		return new kaltura.RequestBuilder('servernode', 'list', kparams);
+	};
+	
+	/**
+	 * Mark server node offline.
+	 * @param serverNodeId string 
+	 * @return KalturaServerNode
+	 */
+	static markOffline(serverNodeId){
+		let kparams = {};
+		kparams.serverNodeId = serverNodeId;
+		return new kaltura.RequestBuilder('servernode', 'markOffline', kparams);
 	};
 	
 	/**

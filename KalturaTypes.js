@@ -769,6 +769,16 @@ AUTHENTICATED_USERS : 2,
 MEMBERS_ONLY : 3,
 };
 
+module.exports.QuestionType = {
+MULTIPLE_CHOICE_ANSWER : 1,
+TRUE_FALSE : 2,
+REFLECTION_POINT : 3,
+MULTIPLE_ANSWER_QUESTION : 4,
+FILL_IN_BLANK : 5,
+HOT_SPOT : 6,
+GO_TO : 7,
+};
+
 module.exports.QuizOutputType = {
 PDF : 1,
 };
@@ -2501,6 +2511,7 @@ START_TIME : 'start_time',
 SUB_TYPE : 'sub_type',
 TAGS : 'tags',
 TEXT : 'text',
+TYPE : 'type',
 };
 
 module.exports.ESearchEntryFieldName = {

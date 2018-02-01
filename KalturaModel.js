@@ -11335,6 +11335,30 @@ module.exports.ESearchEntryBaseItem = ESearchEntryBaseItem;
 /**
  *
  */
+class ESearchEntryBaseNestedObject extends ESearchEntryBaseItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchEntryBaseNestedObject';
+	}
+}
+module.exports.ESearchEntryBaseNestedObject = ESearchEntryBaseNestedObject;
+
+/**
+ *
+ */
+class ESearchEntryNestedBaseItem extends ESearchEntryBaseNestedObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchEntryNestedBaseItem';
+	}
+}
+module.exports.ESearchEntryNestedBaseItem = ESearchEntryNestedBaseItem;
+
+/**
+ *
+ */
 class ESearchHighlight extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -38799,14 +38823,14 @@ class ESearchCuePointItemData extends ESearchItemData{
 	
 	/**
 	 * 
-	 * @return string
+	 * @return array
 	 */
 	 getTags() {
 	 	return this.tags;
 	 }
 	
 	/**
-	 * @param tags string 
+	 * @param tags array 
 	 */
 	 setTags(tags) {
 	 	this.tags = tags;
@@ -38874,14 +38898,14 @@ class ESearchCuePointItemData extends ESearchItemData{
 	
 	/**
 	 * 
-	 * @return string
+	 * @return array
 	 */
 	 getAnswers() {
 	 	return this.answers;
 	 }
 	
 	/**
-	 * @param answers string 
+	 * @param answers array 
 	 */
 	 setAnswers(answers) {
 	 	this.answers = answers;
@@ -47264,6 +47288,21 @@ class QuestionCuePoint extends CuePoint{
 	 */
 	 setExplanation(explanation) {
 	 	this.explanation = explanation;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getQuestionType() {
+	 	return this.questionType;
+	 }
+	
+	/**
+	 * @param questionType int 
+	 */
+	 setQuestionType(questionType) {
+	 	this.questionType = questionType;
 	 }
 }
 module.exports.QuestionCuePoint = QuestionCuePoint;
@@ -68265,33 +68304,6 @@ module.exports.DropFolderImportJobData = DropFolderImportJobData;
 /**
  *
  */
-class ESearchCaptionItem extends ESearchAbstractEntryItem{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaESearchCaptionItem';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFieldName() {
-	 	return this.fieldName;
-	 }
-	
-	/**
-	 * @param fieldName string 
-	 */
-	 setFieldName(fieldName) {
-	 	this.fieldName = fieldName;
-	 }
-}
-module.exports.ESearchCaptionItem = ESearchCaptionItem;
-
-/**
- *
- */
 class ESearchCategoryEntryItem extends ESearchAbstractEntryItem{
 	
 	constructor(object = null) {
@@ -68418,48 +68430,6 @@ module.exports.ESearchCategoryMetadataItem = ESearchCategoryMetadataItem;
 /**
  *
  */
-class ESearchCuePointItem extends ESearchAbstractEntryItem{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaESearchCuePointItem';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFieldName() {
-	 	return this.fieldName;
-	 }
-	
-	/**
-	 * @param fieldName string 
-	 */
-	 setFieldName(fieldName) {
-	 	this.fieldName = fieldName;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getCuePointType() {
-	 	return this.cuePointType;
-	 }
-	
-	/**
-	 * @param cuePointType string 
-	 */
-	 setCuePointType(cuePointType) {
-	 	this.cuePointType = cuePointType;
-	 }
-}
-module.exports.ESearchCuePointItem = ESearchCuePointItem;
-
-/**
- *
- */
 class ESearchEntryItem extends ESearchAbstractEntryItem{
 	
 	constructor(object = null) {
@@ -68483,63 +68453,6 @@ class ESearchEntryItem extends ESearchAbstractEntryItem{
 	 }
 }
 module.exports.ESearchEntryItem = ESearchEntryItem;
-
-/**
- *
- */
-class ESearchEntryMetadataItem extends ESearchAbstractEntryItem{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaESearchEntryMetadataItem';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getXpath() {
-	 	return this.xpath;
-	 }
-	
-	/**
-	 * @param xpath string 
-	 */
-	 setXpath(xpath) {
-	 	this.xpath = xpath;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getMetadataProfileId() {
-	 	return this.metadataProfileId;
-	 }
-	
-	/**
-	 * @param metadataProfileId int 
-	 */
-	 setMetadataProfileId(metadataProfileId) {
-	 	this.metadataProfileId = metadataProfileId;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getMetadataFieldId() {
-	 	return this.metadataFieldId;
-	 }
-	
-	/**
-	 * @param metadataFieldId int 
-	 */
-	 setMetadataFieldId(metadataFieldId) {
-	 	this.metadataFieldId = metadataFieldId;
-	 }
-}
-module.exports.ESearchEntryMetadataItem = ESearchEntryMetadataItem;
 
 /**
  *
@@ -72147,6 +72060,120 @@ module.exports.DropFolderFileResource = DropFolderFileResource;
 /**
  *
  */
+class ESearchEntryAbstractNestedItem extends ESearchEntryNestedBaseItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchEntryAbstractNestedItem';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSearchTerm() {
+	 	return this.searchTerm;
+	 }
+	
+	/**
+	 * @param searchTerm string 
+	 */
+	 setSearchTerm(searchTerm) {
+	 	this.searchTerm = searchTerm;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getItemType() {
+	 	return this.itemType;
+	 }
+	
+	/**
+	 * @param itemType int 
+	 */
+	 setItemType(itemType) {
+	 	this.itemType = itemType;
+	 }
+	
+	/**
+	 * 
+	 * @return ESearchRange
+	 */
+	 getRange() {
+	 	return this.range;
+	 }
+	
+	/**
+	 * @param range ESearchRange 
+	 */
+	 setRange(range) {
+	 	this.range = range;
+	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getAddHighlight() {
+	 	return this.addHighlight;
+	 }
+	
+	/**
+	 * @param addHighlight bool 
+	 */
+	 setAddHighlight(addHighlight) {
+	 	this.addHighlight = addHighlight;
+	 }
+}
+module.exports.ESearchEntryAbstractNestedItem = ESearchEntryAbstractNestedItem;
+
+/**
+ *
+ */
+class ESearchNestedOperator extends ESearchEntryNestedBaseItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchNestedOperator';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getOperator() {
+	 	return this.operator;
+	 }
+	
+	/**
+	 * @param operator int 
+	 */
+	 setOperator(operator) {
+	 	this.operator = operator;
+	 }
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getSearchItems() {
+	 	return this.searchItems;
+	 }
+	
+	/**
+	 * @param searchItems array 
+	 */
+	 setSearchItems(searchItems) {
+	 	this.searchItems = searchItems;
+	 }
+}
+module.exports.ESearchNestedOperator = ESearchNestedOperator;
+
+/**
+ *
+ */
 class EmailNotificationTemplateFilter extends EmailNotificationTemplateBaseFilter{
 	
 	constructor(object = null) {
@@ -73544,6 +73571,117 @@ class DoubleClickDistributionProfileBaseFilter extends ConfigurableDistributionP
 	}
 }
 module.exports.DoubleClickDistributionProfileBaseFilter = DoubleClickDistributionProfileBaseFilter;
+
+/**
+ *
+ */
+class ESearchCaptionItem extends ESearchEntryAbstractNestedItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchCaptionItem';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getFieldName() {
+	 	return this.fieldName;
+	 }
+	
+	/**
+	 * @param fieldName string 
+	 */
+	 setFieldName(fieldName) {
+	 	this.fieldName = fieldName;
+	 }
+}
+module.exports.ESearchCaptionItem = ESearchCaptionItem;
+
+/**
+ *
+ */
+class ESearchCuePointItem extends ESearchEntryAbstractNestedItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchCuePointItem';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getFieldName() {
+	 	return this.fieldName;
+	 }
+	
+	/**
+	 * @param fieldName string 
+	 */
+	 setFieldName(fieldName) {
+	 	this.fieldName = fieldName;
+	 }
+}
+module.exports.ESearchCuePointItem = ESearchCuePointItem;
+
+/**
+ *
+ */
+class ESearchEntryMetadataItem extends ESearchEntryAbstractNestedItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchEntryMetadataItem';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getXpath() {
+	 	return this.xpath;
+	 }
+	
+	/**
+	 * @param xpath string 
+	 */
+	 setXpath(xpath) {
+	 	this.xpath = xpath;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getMetadataProfileId() {
+	 	return this.metadataProfileId;
+	 }
+	
+	/**
+	 * @param metadataProfileId int 
+	 */
+	 setMetadataProfileId(metadataProfileId) {
+	 	this.metadataProfileId = metadataProfileId;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getMetadataFieldId() {
+	 	return this.metadataFieldId;
+	 }
+	
+	/**
+	 * @param metadataFieldId int 
+	 */
+	 setMetadataFieldId(metadataFieldId) {
+	 	this.metadataFieldId = metadataFieldId;
+	 }
+}
+module.exports.ESearchEntryMetadataItem = ESearchEntryMetadataItem;
 
 /**
  *

@@ -8060,6 +8060,48 @@ module.exports.Coordinate = Coordinate;
 /**
  *
  */
+class CsvAdditionalFieldInfo extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaCsvAdditionalFieldInfo';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getFieldName() {
+	 	return this.fieldName;
+	 }
+	
+	/**
+	 * @param fieldName string 
+	 */
+	 setFieldName(fieldName) {
+	 	this.fieldName = fieldName;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getXpath() {
+	 	return this.xpath;
+	 }
+	
+	/**
+	 * @param xpath string 
+	 */
+	 setXpath(xpath) {
+	 	this.xpath = xpath;
+	 }
+}
+module.exports.CsvAdditionalFieldInfo = CsvAdditionalFieldInfo;
+
+/**
+ *
+ */
 class DailymotionDistributionCaptionInfo extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -38640,6 +38682,21 @@ class ESearchCaptionItemData extends ESearchItemData{
 	 setCaptionAssetId(captionAssetId) {
 	 	this.captionAssetId = captionAssetId;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getLabel() {
+	 	return this.label;
+	 }
+	
+	/**
+	 * @param label string 
+	 */
+	 setLabel(label) {
+	 	this.label = label;
+	 }
 }
 module.exports.ESearchCaptionItemData = ESearchCaptionItemData;
 
@@ -51461,6 +51518,108 @@ class UserRoleListResponse extends ListResponse{
 	 }
 }
 module.exports.UserRoleListResponse = UserRoleListResponse;
+
+/**
+ *
+ */
+class UsersCsvJobData extends JobData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaUsersCsvJobData';
+	}
+	
+	/**
+	 * The filter should return the list of users that need to be specified in the csv
+	 * @return UserFilter
+	 */
+	 getFilter() {
+	 	return this.filter;
+	 }
+	
+	/**
+	 * @param filter UserFilter The filter should return the list of users that need to be specified in the csv
+	 */
+	 setFilter(filter) {
+	 	this.filter = filter;
+	 }
+	
+	/**
+	 * The metadata profile we should look the xpath in
+	 * @return int
+	 */
+	 getMetadataProfileId() {
+	 	return this.metadataProfileId;
+	 }
+	
+	/**
+	 * @param metadataProfileId int The metadata profile we should look the xpath in
+	 */
+	 setMetadataProfileId(metadataProfileId) {
+	 	this.metadataProfileId = metadataProfileId;
+	 }
+	
+	/**
+	 * The xpath to look in the metadataProfileId  and the wanted csv field name
+	 * @return array
+	 */
+	 getAdditionalFields() {
+	 	return this.additionalFields;
+	 }
+	
+	/**
+	 * @param additionalFields array The xpath to look in the metadataProfileId  and the wanted csv field name
+	 */
+	 setAdditionalFields(additionalFields) {
+	 	this.additionalFields = additionalFields;
+	 }
+	
+	/**
+	 * The users name
+	 * @return string
+	 */
+	 getUserName() {
+	 	return this.userName;
+	 }
+	
+	/**
+	 * @param userName string The users name
+	 */
+	 setUserName(userName) {
+	 	this.userName = userName;
+	 }
+	
+	/**
+	 * The users email
+	 * @return string
+	 */
+	 getUserMail() {
+	 	return this.userMail;
+	 }
+	
+	/**
+	 * @param userMail string The users email
+	 */
+	 setUserMail(userMail) {
+	 	this.userMail = userMail;
+	 }
+	
+	/**
+	 * The file location
+	 * @return string
+	 */
+	 getOutputPath() {
+	 	return this.outputPath;
+	 }
+	
+	/**
+	 * @param outputPath string The file location
+	 */
+	 setOutputPath(outputPath) {
+	 	this.outputPath = outputPath;
+	 }
+}
+module.exports.UsersCsvJobData = UsersCsvJobData;
 
 /**
  *

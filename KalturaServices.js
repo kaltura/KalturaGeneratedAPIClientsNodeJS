@@ -5633,6 +5633,7 @@ module.exports.userRole = userRole;
  * @action disableLogin Disables a user's ability to log into a partner account using an email address and a password.
  * You may use either a userId or a loginId parameter for this action.
  * @action enableLogin Enables a user to log into a partner account using an email address and a password.
+ * @action exportToCsv add batch job that sends an email with a link to download an updated CSV that contains list of users.
  * @action get Retrieves a user object for a specified user ID.
  * @action getByLoginId Retrieves a user object for a user's login ID and partner ID.
  * A login ID is the email address used by a user to log into the system.
@@ -5645,6 +5646,7 @@ module.exports.userRole = userRole;
  * @action loginByLoginId Logs a user into a partner account with a user login ID and a user password.
  * @action notifyBan Notifies that a user is banned from an account.
  * @action resetPassword Reset user's password and send the user an email to generate a new one.
+ * @action serveCsv Will serve a requested csv.
  * @action setInitialPassword Set initial users password.
  * @action update Updates an existing user object.
  * You can also use this action to update the userId.
@@ -5729,6 +5731,21 @@ class user{
 		kparams.loginId = loginId;
 		kparams.password = password;
 		return new kaltura.RequestBuilder('user', 'enableLogin', kparams);
+	};
+	
+	/**
+	 * add batch job that sends an email with a link to download an updated CSV that contains list of users.
+	 * @param filter UserFilter A filter used to exclude specific types of users
+	 * @param metadataProfileId int  (optional, default: null)
+	 * @param additionalFields array  (optional, default: null)
+	 * @return string
+	 */
+	static exportToCsv(filter, metadataProfileId = null, additionalFields = null){
+		let kparams = {};
+		kparams.filter = filter;
+		kparams.metadataProfileId = metadataProfileId;
+		kparams.additionalFields = additionalFields;
+		return new kaltura.RequestBuilder('user', 'exportToCsv', kparams);
 	};
 	
 	/**
@@ -5851,6 +5868,17 @@ class user{
 		let kparams = {};
 		kparams.email = email;
 		return new kaltura.RequestBuilder('user', 'resetPassword', kparams);
+	};
+	
+	/**
+	 * Will serve a requested csv.
+	 * @param id string - the requested file id
+	 * @return string
+	 */
+	static serveCsv(id){
+		let kparams = {};
+		kparams.id = id;
+		return new kaltura.RequestBuilder('user', 'serveCsv', kparams);
 	};
 	
 	/**

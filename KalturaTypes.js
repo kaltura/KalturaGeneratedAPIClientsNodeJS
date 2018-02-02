@@ -1622,8 +1622,8 @@ DISTRIBUTION_FETCH_REPORT : 'contentDistribution.DistributionFetchReport',
 DISTRIBUTION_SUBMIT : 'contentDistribution.DistributionSubmit',
 DISTRIBUTION_SYNC : 'contentDistribution.DistributionSync',
 DISTRIBUTION_UPDATE : 'contentDistribution.DistributionUpdate',
-DROP_FOLDER_CONTENT_PROCESSOR : 'dropFolder.DropFolderContentProcessor',
 CONVERT : '0',
+DROP_FOLDER_CONTENT_PROCESSOR : 'dropFolder.DropFolderContentProcessor',
 DROP_FOLDER_WATCHER : 'dropFolder.DropFolderWatcher',
 EVENT_NOTIFICATION_HANDLER : 'eventNotification.EventNotificationHandler',
 INTEGRATION : 'integration.Integration',
@@ -1673,6 +1673,7 @@ LIVE_TO_VOD : '42',
 COPY_CAPTIONS : '43',
 CHUNKED_ENCODE_JOB_SCHEDULER : '44',
 SERVER_NODE_MONITOR : '45',
+USERS_CSV : '46',
 };
 
 module.exports.BulkUploadAction = {
@@ -4417,6 +4418,7 @@ MAIL_TYPE_SYSTEM_USER_CREDENTIALS_SAVED : '113',
 MAIL_TYPE_LIVE_REPORT_EXPORT_SUCCESS : '130',
 MAIL_TYPE_LIVE_REPORT_EXPORT_FAILURE : '131',
 MAIL_TYPE_LIVE_REPORT_EXPORT_ABORT : '132',
+MAIL_TYPE_USERS_CSV : '133',
 };
 
 module.exports.MatchConditionType = {

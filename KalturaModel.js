@@ -50171,17 +50171,17 @@ class TransformMetadataJobData extends JobData{
 	
 	/**
 	 * 
-	 * @return string
+	 * @return FileContainer
 	 */
-	 getDestXsdPath() {
-	 	return this.destXsdPath;
+	 getDestXsd() {
+	 	return this.destXsd;
 	 }
 	
 	/**
-	 * @param destXsdPath string 
+	 * @param destXsd FileContainer 
 	 */
-	 setDestXsdPath(destXsdPath) {
-	 	this.destXsdPath = destXsdPath;
+	 setDestXsd(destXsd) {
+	 	this.destXsd = destXsd;
 	 }
 	
 	/**

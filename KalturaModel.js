@@ -47376,6 +47376,21 @@ class QuestionCuePoint extends CuePoint{
 	 setQuestionType(questionType) {
 	 	this.questionType = questionType;
 	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getPresentationOrder() {
+	 	return this.presentationOrder;
+	 }
+	
+	/**
+	 * @param presentationOrder int 
+	 */
+	 setPresentationOrder(presentationOrder) {
+	 	this.presentationOrder = presentationOrder;
+	 }
 }
 module.exports.QuestionCuePoint = QuestionCuePoint;
 
@@ -58852,15 +58867,15 @@ class FacebookDistributionJobProviderData extends ConfigurableDistributionJobPro
 	 * 
 	 * @return string
 	 */
-	 getThumbAssetFilePath() {
-	 	return this.thumbAssetFilePath;
+	 getThumbAssetId() {
+	 	return this.thumbAssetId;
 	 }
 	
 	/**
-	 * @param thumbAssetFilePath string 
+	 * @param thumbAssetId string 
 	 */
-	 setThumbAssetFilePath(thumbAssetFilePath) {
-	 	this.thumbAssetFilePath = thumbAssetFilePath;
+	 setThumbAssetId(thumbAssetId) {
+	 	this.thumbAssetId = thumbAssetId;
 	 }
 	
 	/**

@@ -9367,6 +9367,21 @@ class DistributionFieldConfig extends kaltura.BaseObject{
 	 }
 	
 	/**
+	 * 
+	 * @return string
+	 */
+	 getType() {
+	 	return this.type;
+	 }
+	
+	/**
+	 * @param type string 
+	 */
+	 setType(type) {
+	 	this.type = type;
+	 }
+	
+	/**
 	 * Trigger distribution update when this field changes or not ?
 	 * @return bool
 	 */

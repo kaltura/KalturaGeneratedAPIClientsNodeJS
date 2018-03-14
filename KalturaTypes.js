@@ -2928,6 +2928,7 @@ module.exports.FacebookDistributionProviderOrderBy = {
 
 module.exports.FileAssetObjectType = {
 UI_CONF : '2',
+ENTRY : '3',
 };
 
 module.exports.FileAssetOrderBy = {

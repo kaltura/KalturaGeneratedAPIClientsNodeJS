@@ -41373,6 +41373,21 @@ class EntryServerNodeBaseFilter extends Filter{
 	 setServerTypeEqual(serverTypeEqual) {
 	 	this.serverTypeEqual = serverTypeEqual;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getServerTypeIn() {
+	 	return this.serverTypeIn;
+	 }
+	
+	/**
+	 * @param serverTypeIn string 
+	 */
+	 setServerTypeIn(serverTypeIn) {
+	 	this.serverTypeIn = serverTypeIn;
+	 }
 }
 module.exports.EntryServerNodeBaseFilter = EntryServerNodeBaseFilter;
 
@@ -47405,6 +47420,21 @@ class QuestionCuePoint extends CuePoint{
 	 */
 	 setPresentationOrder(presentationOrder) {
 	 	this.presentationOrder = presentationOrder;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getExcludeFromScore() {
+	 	return this.excludeFromScore;
+	 }
+	
+	/**
+	 * @param excludeFromScore int 
+	 */
+	 setExcludeFromScore(excludeFromScore) {
+	 	this.excludeFromScore = excludeFromScore;
 	 }
 }
 module.exports.QuestionCuePoint = QuestionCuePoint;
@@ -69603,6 +69633,18 @@ module.exports.LiveEntryMatchAttributeCondition = LiveEntryMatchAttributeConditi
 /**
  *
  */
+class LiveEntryServerNodeBaseFilter extends EntryServerNodeFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaLiveEntryServerNodeBaseFilter';
+	}
+}
+module.exports.LiveEntryServerNodeBaseFilter = LiveEntryServerNodeBaseFilter;
+
+/**
+ *
+ */
 class LiveStreamAdminEntryCompareAttributeCondition extends SearchComparableAttributeCondition{
 	
 	constructor(object = null) {
@@ -72839,6 +72881,18 @@ class LiveEntryScheduleResourceBaseFilter extends ScheduleResourceFilter{
 	}
 }
 module.exports.LiveEntryScheduleResourceBaseFilter = LiveEntryScheduleResourceBaseFilter;
+
+/**
+ *
+ */
+class LiveEntryServerNodeFilter extends LiveEntryServerNodeBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaLiveEntryServerNodeFilter';
+	}
+}
+module.exports.LiveEntryServerNodeFilter = LiveEntryServerNodeFilter;
 
 /**
  *

@@ -7702,6 +7702,21 @@ class ConversionProfile extends kaltura.BaseObject{
 	 setDefaultReplacementOptions(defaultReplacementOptions) {
 	 	this.defaultReplacementOptions = defaultReplacementOptions;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getDefaultAudioLang() {
+	 	return this.defaultAudioLang;
+	 }
+	
+	/**
+	 * @param defaultAudioLang string 
+	 */
+	 setDefaultAudioLang(defaultAudioLang) {
+	 	this.defaultAudioLang = defaultAudioLang;
+	 }
 }
 module.exports.ConversionProfile = ConversionProfile;
 

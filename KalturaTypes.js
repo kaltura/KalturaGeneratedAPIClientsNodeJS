@@ -2497,6 +2497,9 @@ USER_IDS : 'user_ids',
 
 module.exports.ESearchCategoryOrderByFieldName = {
 CREATED_AT : 'created_at',
+ENTRIES_COUNT : 'entries_count',
+MEMBERS_COUNT : 'members_count',
+NAME : 'name',
 UPDATED_AT : 'updated_at',
 };
 

@@ -48112,6 +48112,36 @@ class ScheduledTaskJobData extends JobData{
 	
 	/**
 	 * 
+	 * @return int
+	 */
+	 getTotalCount() {
+	 	return this.totalCount;
+	 }
+	
+	/**
+	 * @param totalCount int 
+	 */
+	 setTotalCount(totalCount) {
+	 	this.totalCount = totalCount;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getFileFormat() {
+	 	return this.fileFormat;
+	 }
+	
+	/**
+	 * @param fileFormat int 
+	 */
+	 setFileFormat(fileFormat) {
+	 	this.fileFormat = fileFormat;
+	 }
+	
+	/**
+	 * 
 	 * @return string
 	 */
 	 getResultsFilePath() {

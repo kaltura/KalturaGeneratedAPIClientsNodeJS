@@ -354,6 +354,11 @@ DELETED : 2,
 ERROR : 3,
 };
 
+module.exports.DryRunFileType = {
+LIST_RESPONSE : 1,
+CSV : 2,
+};
+
 module.exports.ESearchItemType = {
 EXACT_MATCH : 1,
 PARTIAL : 2,

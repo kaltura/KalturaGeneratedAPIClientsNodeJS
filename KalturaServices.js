@@ -5735,12 +5735,12 @@ class user{
 	
 	/**
 	 * add batch job that sends an email with a link to download an updated CSV that contains list of users.
-	 * @param filter UserFilter A filter used to exclude specific types of users
+	 * @param filter UserFilter A filter used to exclude specific types of users (optional, default: null)
 	 * @param metadataProfileId int  (optional, default: null)
 	 * @param additionalFields array  (optional, default: null)
 	 * @return string
 	 */
-	static exportToCsv(filter, metadataProfileId = null, additionalFields = null){
+	static exportToCsv(filter = null, metadataProfileId = null, additionalFields = null){
 		let kparams = {};
 		kparams.filter = filter;
 		kparams.metadataProfileId = metadataProfileId;

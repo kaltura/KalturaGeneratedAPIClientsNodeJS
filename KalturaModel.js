@@ -11740,47 +11740,12 @@ module.exports.ESearchRange = ESearchRange;
 /**
  *
  */
-class Object extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaObject';
-	}
-	
-	/**
-	 * 
-	 * @return map
-	 */
-	 getRelatedObjects() {
-	 	return this.relatedObjects;
-	 }
-}
-module.exports.Object = Object;
-
-/**
- *
- */
 class ESearchResult extends kaltura.BaseObject{
 	
 	constructor(object = null) {
 		super(object);
 		this.objectType = 'KalturaESearchResult';
 	}
-	
-	/**
-	 * 
-	 * @return ObjectBase
-	 */
-	 getObject() {
-	 	return this.object;
-	 }
-	
-	/**
-	 * @param object ObjectBase 
-	 */
-	 setObject(object) {
-	 	this.object = object;
-	 }
 	
 	/**
 	 * 
@@ -16325,6 +16290,26 @@ class GroupUser extends kaltura.BaseObject{
 	 }
 }
 module.exports.GroupUser = GroupUser;
+
+/**
+ *
+ */
+class Object extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaObject';
+	}
+	
+	/**
+	 * 
+	 * @return map
+	 */
+	 getRelatedObjects() {
+	 	return this.relatedObjects;
+	 }
+}
+module.exports.Object = Object;
 
 /**
  *
@@ -38835,6 +38820,21 @@ class ESearchCategoryResult extends ESearchResult{
 		super(object);
 		this.objectType = 'KalturaESearchCategoryResult';
 	}
+	
+	/**
+	 * 
+	 * @return Category
+	 */
+	 getObject() {
+	 	return this.object;
+	 }
+	
+	/**
+	 * @param object Category 
+	 */
+	 setObject(object) {
+	 	this.object = object;
+	 }
 }
 module.exports.ESearchCategoryResult = ESearchCategoryResult;
 
@@ -39150,6 +39150,21 @@ class ESearchEntryResult extends ESearchResult{
 		super(object);
 		this.objectType = 'KalturaESearchEntryResult';
 	}
+	
+	/**
+	 * 
+	 * @return BaseEntry
+	 */
+	 getObject() {
+	 	return this.object;
+	 }
+	
+	/**
+	 * @param object BaseEntry 
+	 */
+	 setObject(object) {
+	 	this.object = object;
+	 }
 }
 module.exports.ESearchEntryResult = ESearchEntryResult;
 
@@ -39387,6 +39402,21 @@ class ESearchUserResult extends ESearchResult{
 		super(object);
 		this.objectType = 'KalturaESearchUserResult';
 	}
+	
+	/**
+	 * 
+	 * @return User
+	 */
+	 getObject() {
+	 	return this.object;
+	 }
+	
+	/**
+	 * @param object User 
+	 */
+	 setObject(object) {
+	 	this.object = object;
+	 }
 }
 module.exports.ESearchUserResult = ESearchUserResult;
 

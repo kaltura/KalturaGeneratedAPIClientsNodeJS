@@ -18324,6 +18324,14 @@ class LiveEntry extends MediaEntry{
 	 setRecordingStatus(recordingStatus) {
 	 	this.recordingStatus = recordingStatus;
 	 }
+	
+	/**
+	 * The time the last broadcast finished
+	 * @return int
+	 */
+	 getLastBroadcastEndTime() {
+	 	return this.lastBroadcastEndTime;
+	 }
 }
 module.exports.LiveEntry = LiveEntry;
 

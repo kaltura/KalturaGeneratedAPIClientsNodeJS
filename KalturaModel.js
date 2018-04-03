@@ -34363,8 +34363,80 @@ class ClipAttributes extends OperationAttributes{
 	 setDuration(duration) {
 	 	this.duration = duration;
 	 }
+	
+	/**
+	 * global Offset In Destination in milliseconds
+	 * @return int
+	 */
+	 getGlobalOffsetInDestination() {
+	 	return this.globalOffsetInDestination;
+	 }
+	
+	/**
+	 * @param globalOffsetInDestination int global Offset In Destination in milliseconds
+	 */
+	 setGlobalOffsetInDestination(globalOffsetInDestination) {
+	 	this.globalOffsetInDestination = globalOffsetInDestination;
+	 }
 }
 module.exports.ClipAttributes = ClipAttributes;
+
+/**
+ *
+ */
+class ClipConcatJobData extends JobData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaClipConcatJobData';
+	}
+	
+	/**
+	 * $partnerId
+	 * @return int
+	 */
+	 getPartnerId() {
+	 	return this.partnerId;
+	 }
+	
+	/**
+	 * @param partnerId int $partnerId
+	 */
+	 setPartnerId(partnerId) {
+	 	this.partnerId = partnerId;
+	 }
+	
+	/**
+	 * $priority
+	 * @return int
+	 */
+	 getPriority() {
+	 	return this.priority;
+	 }
+	
+	/**
+	 * @param priority int $priority
+	 */
+	 setPriority(priority) {
+	 	this.priority = priority;
+	 }
+	
+	/**
+	 * clip operations
+	 * @return array
+	 */
+	 getOperationAttributes() {
+	 	return this.operationAttributes;
+	 }
+	
+	/**
+	 * @param operationAttributes array clip operations
+	 */
+	 setOperationAttributes(operationAttributes) {
+	 	this.operationAttributes = operationAttributes;
+	 }
+}
+module.exports.ClipConcatJobData = ClipConcatJobData;
 
 /**
  *
@@ -34622,6 +34694,21 @@ class ConcatJobData extends JobData{
 	 */
 	 setConcatenatedDuration(concatenatedDuration) {
 	 	this.concatenatedDuration = concatenatedDuration;
+	 }
+	
+	/**
+	 * Should Sort the clip parts
+	 * @return bool
+	 */
+	 getShouldSort() {
+	 	return this.shouldSort;
+	 }
+	
+	/**
+	 * @param shouldSort bool Should Sort the clip parts
+	 */
+	 setShouldSort(shouldSort) {
+	 	this.shouldSort = shouldSort;
 	 }
 }
 module.exports.ConcatJobData = ConcatJobData;

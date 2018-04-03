@@ -6018,6 +6018,7 @@ module.exports.widget = widget;
  * @action get Retrieve an CuePoint object by id.
  * @action list List annotation objects by filter and pager.
  * @action update Update annotation by id.
+ * @action updateCuePointsTimes .
  * @action updateStatus Update cuePoint status by id.
  */
 class annotation{
@@ -6114,6 +6115,21 @@ class annotation{
 		kparams.id = id;
 		kparams.annotation = annotation;
 		return new kaltura.RequestBuilder('annotation_annotation', 'update', kparams);
+	};
+	
+	/**
+	 * .
+	 * @param id string 
+	 * @param startTime int 
+	 * @param endTime int  (optional, default: null)
+	 * @return KalturaCuePoint
+	 */
+	static updateCuePointsTimes(id, startTime, endTime = null){
+		let kparams = {};
+		kparams.id = id;
+		kparams.startTime = startTime;
+		kparams.endTime = endTime;
+		return new kaltura.RequestBuilder('annotation_annotation', 'updateCuePointsTimes', kparams);
 	};
 	
 	/**
@@ -7217,6 +7233,7 @@ module.exports.genericDistributionProviderAction = genericDistributionProviderAc
  * @action get Retrieve an CuePoint object by id.
  * @action list List cue point objects by filter and pager.
  * @action update Update cue point by id.
+ * @action updateCuePointsTimes .
  * @action updateStatus Update cuePoint status by id.
  */
 class cuePoint{
@@ -7313,6 +7330,21 @@ class cuePoint{
 		kparams.id = id;
 		kparams.cuePoint = cuePoint;
 		return new kaltura.RequestBuilder('cuepoint_cuepoint', 'update', kparams);
+	};
+	
+	/**
+	 * .
+	 * @param id string 
+	 * @param startTime int 
+	 * @param endTime int  (optional, default: null)
+	 * @return KalturaCuePoint
+	 */
+	static updateCuePointsTimes(id, startTime, endTime = null){
+		let kparams = {};
+		kparams.id = id;
+		kparams.startTime = startTime;
+		kparams.endTime = endTime;
+		return new kaltura.RequestBuilder('cuepoint_cuepoint', 'updateCuePointsTimes', kparams);
 	};
 	
 	/**

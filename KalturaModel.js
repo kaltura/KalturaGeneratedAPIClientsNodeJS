@@ -6864,6 +6864,78 @@ module.exports.ClientNotification = ClientNotification;
 /**
  *
  */
+class ClipDescription extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaClipDescription';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSourceEntryId() {
+	 	return this.sourceEntryId;
+	 }
+	
+	/**
+	 * @param sourceEntryId string 
+	 */
+	 setSourceEntryId(sourceEntryId) {
+	 	this.sourceEntryId = sourceEntryId;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getStartTime() {
+	 	return this.startTime;
+	 }
+	
+	/**
+	 * @param startTime int 
+	 */
+	 setStartTime(startTime) {
+	 	this.startTime = startTime;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getDuration() {
+	 	return this.duration;
+	 }
+	
+	/**
+	 * @param duration int 
+	 */
+	 setDuration(duration) {
+	 	this.duration = duration;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getOffsetInDestination() {
+	 	return this.offsetInDestination;
+	 }
+	
+	/**
+	 * @param offsetInDestination int 
+	 */
+	 setOffsetInDestination(offsetInDestination) {
+	 	this.offsetInDestination = offsetInDestination;
+	 }
+}
+module.exports.ClipDescription = ClipDescription;
+
+/**
+ *
+ */
 class Context extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -35570,21 +35642,6 @@ class CopyCaptionsJobData extends JobData{
 	}
 	
 	/**
-	 * source entry Id
-	 * @return string
-	 */
-	 getSourceEntryId() {
-	 	return this.sourceEntryId;
-	 }
-	
-	/**
-	 * @param sourceEntryId string source entry Id
-	 */
-	 setSourceEntryId(sourceEntryId) {
-	 	this.sourceEntryId = sourceEntryId;
-	 }
-	
-	/**
 	 * entry Id
 	 * @return string
 	 */
@@ -35600,33 +35657,18 @@ class CopyCaptionsJobData extends JobData{
 	 }
 	
 	/**
-	 * clip offset
-	 * @return int
+	 * an array of source start time and duration
+	 * @return array
 	 */
-	 getOffset() {
-	 	return this.offset;
+	 getClipsDescriptionArray() {
+	 	return this.clipsDescriptionArray;
 	 }
 	
 	/**
-	 * @param offset int clip offset
+	 * @param clipsDescriptionArray array an array of source start time and duration
 	 */
-	 setOffset(offset) {
-	 	this.offset = offset;
-	 }
-	
-	/**
-	 * clip duration
-	 * @return int
-	 */
-	 getDuration() {
-	 	return this.duration;
-	 }
-	
-	/**
-	 * @param duration int clip duration
-	 */
-	 setDuration(duration) {
-	 	this.duration = duration;
+	 setClipsDescriptionArray(clipsDescriptionArray) {
+	 	this.clipsDescriptionArray = clipsDescriptionArray;
 	 }
 	
 	/**

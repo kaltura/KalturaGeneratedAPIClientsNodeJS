@@ -2662,6 +2662,7 @@ class liveStream{
 	/**
 	 * Regenerate new secure token for liveStream.
 	 * @param entryId string Live stream entry id to regenerate secure token for
+	 * @return KalturaLiveEntry
 	 */
 	static regenerateStreamToken(entryId){
 		let kparams = {};

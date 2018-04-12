@@ -30001,21 +30001,6 @@ class YouTubeApiCaptionDistributionInfo extends kaltura.BaseObject{
 	 * 
 	 * @return string
 	 */
-	 getEncryptionKey() {
-	 	return this.encryptionKey;
-	 }
-	
-	/**
-	 * @param encryptionKey string 
-	 */
-	 setEncryptionKey(encryptionKey) {
-	 	this.encryptionKey = encryptionKey;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
 	 getRemoteId() {
 	 	return this.remoteId;
 	 }

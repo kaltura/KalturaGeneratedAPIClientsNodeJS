@@ -52701,6 +52701,21 @@ class WebexDropFolder extends DropFolder{
 	
 	/**
 	 * 
+	 * @return string
+	 */
+	 getWebexSiteName() {
+	 	return this.webexSiteName;
+	 }
+	
+	/**
+	 * @param webexSiteName string 
+	 */
+	 setWebexSiteName(webexSiteName) {
+	 	this.webexSiteName = webexSiteName;
+	 }
+	
+	/**
+	 * 
 	 * @return int
 	 */
 	 getDeleteFromTimestamp() {

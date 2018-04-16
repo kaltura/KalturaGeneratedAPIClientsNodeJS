@@ -68876,6 +68876,63 @@ module.exports.ESearchCategoryMetadataItem = ESearchCategoryMetadataItem;
 /**
  *
  */
+class ESearchCategoryUserItem extends ESearchAbstractCategoryItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchCategoryUserItem';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getFieldName() {
+	 	return this.fieldName;
+	 }
+	
+	/**
+	 * @param fieldName string 
+	 */
+	 setFieldName(fieldName) {
+	 	this.fieldName = fieldName;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getPermissionLevel() {
+	 	return this.permissionLevel;
+	 }
+	
+	/**
+	 * @param permissionLevel int 
+	 */
+	 setPermissionLevel(permissionLevel) {
+	 	this.permissionLevel = permissionLevel;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getPermissionName() {
+	 	return this.permissionName;
+	 }
+	
+	/**
+	 * @param permissionName string 
+	 */
+	 setPermissionName(permissionName) {
+	 	this.permissionName = permissionName;
+	 }
+}
+module.exports.ESearchCategoryUserItem = ESearchCategoryUserItem;
+
+/**
+ *
+ */
 class ESearchEntryItem extends ESearchAbstractEntryItem{
 	
 	constructor(object = null) {

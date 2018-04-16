@@ -2500,7 +2500,6 @@ REFERENCE_ID : 'reference_id',
 TAGS : 'tags',
 UPDATED_AT : 'updated_at',
 USER_ID : 'user_id',
-USER_IDS : 'user_ids',
 };
 
 module.exports.ESearchCategoryOrderByFieldName = {
@@ -2509,6 +2508,10 @@ ENTRIES_COUNT : 'entries_count',
 MEMBERS_COUNT : 'members_count',
 NAME : 'name',
 UPDATED_AT : 'updated_at',
+};
+
+module.exports.ESearchCategoryUserFieldName = {
+USER_ID : 'user_id',
 };
 
 module.exports.ESearchCuePointFieldName = {

@@ -44144,6 +44144,21 @@ class ITunesSyndicationFeed extends BaseSyndicationFeed{
 	 }
 	
 	/**
+	 * 
+	 * @return bool
+	 */
+	 getEnforceFeedAuthor() {
+	 	return this.enforceFeedAuthor;
+	 }
+	
+	/**
+	 * @param enforceFeedAuthor bool 
+	 */
+	 setEnforceFeedAuthor(enforceFeedAuthor) {
+	 	this.enforceFeedAuthor = enforceFeedAuthor;
+	 }
+	
+	/**
 	 * true in case you want to enfore the palylist order on the
 	 * @return int
 	 */

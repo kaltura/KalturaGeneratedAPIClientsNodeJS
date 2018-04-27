@@ -378,6 +378,11 @@ SIMPLE : 1,
 ADVANCED : 2,
 };
 
+module.exports.EffectType = {
+VIDEO_FADE_IN : 1,
+VIDEO_FADE_OUT : 2,
+};
+
 module.exports.EmailIngestionProfileStatus = {
 INACTIVE : 0,
 ACTIVE : 1,

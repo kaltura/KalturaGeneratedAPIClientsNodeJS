@@ -11894,6 +11894,48 @@ module.exports.ESearchUserBaseItem = ESearchUserBaseItem;
 /**
  *
  */
+class Effect extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaEffect';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getEffectType() {
+	 	return this.effectType;
+	 }
+	
+	/**
+	 * @param effectType int 
+	 */
+	 setEffectType(effectType) {
+	 	this.effectType = effectType;
+	 }
+	
+	/**
+	 * value
+	 * @return string
+	 */
+	 getValue() {
+	 	return this.value;
+	 }
+	
+	/**
+	 * @param value string value
+	 */
+	 setValue(value) {
+	 	this.value = value;
+	 }
+}
+module.exports.Effect = Effect;
+
+/**
+ *
+ */
 class EmailIngestionProfile extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -34434,6 +34476,21 @@ class ClipAttributes extends OperationAttributes{
 	 */
 	 setGlobalOffsetInDestination(globalOffsetInDestination) {
 	 	this.globalOffsetInDestination = globalOffsetInDestination;
+	 }
+	
+	/**
+	 * global Offset In Destination in milliseconds
+	 * @return array
+	 */
+	 getEffectArray() {
+	 	return this.effectArray;
+	 }
+	
+	/**
+	 * @param effectArray array global Offset In Destination in milliseconds
+	 */
+	 setEffectArray(effectArray) {
+	 	this.effectArray = effectArray;
 	 }
 }
 module.exports.ClipAttributes = ClipAttributes;

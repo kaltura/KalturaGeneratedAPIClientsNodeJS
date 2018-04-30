@@ -50297,6 +50297,18 @@ module.exports.TagListResponse = TagListResponse;
 /**
  *
  */
+class TaskEntryServerNode extends EntryServerNode{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaTaskEntryServerNode';
+	}
+}
+module.exports.TaskEntryServerNode = TaskEntryServerNode;
+
+/**
+ *
+ */
 class ThumbAssetListResponse extends ListResponse{
 	
 	constructor(object = null) {
@@ -55738,6 +55750,63 @@ class CategoryEntryBaseFilter extends RelatedFilter{
 	 }
 }
 module.exports.CategoryEntryBaseFilter = CategoryEntryBaseFilter;
+
+/**
+ *
+ */
+class ClippingTaskEntryServerNode extends TaskEntryServerNode{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaClippingTaskEntryServerNode';
+	}
+	
+	/**
+	 * 
+	 * @return ClipAttributes
+	 */
+	 getClipAttributes() {
+	 	return this.clipAttributes;
+	 }
+	
+	/**
+	 * @param clipAttributes ClipAttributes 
+	 */
+	 setClipAttributes(clipAttributes) {
+	 	this.clipAttributes = clipAttributes;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getClippedEntryId() {
+	 	return this.clippedEntryId;
+	 }
+	
+	/**
+	 * @param clippedEntryId string 
+	 */
+	 setClippedEntryId(clippedEntryId) {
+	 	this.clippedEntryId = clippedEntryId;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getLiveEntryId() {
+	 	return this.liveEntryId;
+	 }
+	
+	/**
+	 * @param liveEntryId string 
+	 */
+	 setLiveEntryId(liveEntryId) {
+	 	this.liveEntryId = liveEntryId;
+	 }
+}
+module.exports.ClippingTaskEntryServerNode = ClippingTaskEntryServerNode;
 
 /**
  *

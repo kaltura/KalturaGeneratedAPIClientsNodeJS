@@ -449,11 +449,17 @@ DISMISSED : 3,
 };
 
 module.exports.EntryServerNodeStatus = {
+ERROR : -1,
 STOPPED : 0,
 PLAYABLE : 1,
 BROADCASTING : 2,
 AUTHENTICATED : 3,
 MARKED_FOR_DELETION : 4,
+TASK_PENDING : 5,
+TASK_QUEUED : 6,
+TASK_PROCESSING : 7,
+TASK_UPLOADING : 8,
+TASK_FINISHED : 9,
 };
 
 module.exports.EventNotificationTemplateStatus = {
@@ -2722,6 +2728,7 @@ UPDATED_AT_DESC : '-updatedAt',
 module.exports.EntryServerNodeType = {
 LIVE_PRIMARY : '0',
 LIVE_BACKUP : '1',
+LIVE_CLIPPING_TASK : '2',
 };
 
 module.exports.EntryStatus = {
@@ -2812,6 +2819,7 @@ WIDGET : '36',
 CATEGORYENTRY : '37',
 LIVE_STREAM : '38',
 SERVER_NODE : '39',
+ENTRY_SERVER_NODE : '40',
 };
 
 module.exports.EventNotificationEventType = {

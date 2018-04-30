@@ -1576,6 +1576,7 @@ module.exports.EmailIngestionProfile = EmailIngestionProfile;
  * @action get .
  * @action list .
  * @action update .
+ * @action updateStatus .
  * @action validateRegisteredEntryServerNode Validates server node still registered on entry.
  */
 class entryServerNode{
@@ -1615,6 +1616,19 @@ class entryServerNode{
 		kparams.id = id;
 		kparams.entryServerNode = entryServerNode;
 		return new kaltura.RequestBuilder('entryservernode', 'update', kparams);
+	};
+	
+	/**
+	 * .
+	 * @param id string 
+	 * @param status int  (enum: KalturaEntryServerNodeStatus)
+	 * @return KalturaEntryServerNode
+	 */
+	static updateStatus(id, status){
+		let kparams = {};
+		kparams.id = id;
+		kparams.status = status;
+		return new kaltura.RequestBuilder('entryservernode', 'updateStatus', kparams);
 	};
 	
 	/**

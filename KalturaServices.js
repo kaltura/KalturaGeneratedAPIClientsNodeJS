@@ -7968,7 +7968,7 @@ class eSearch{
 	 * .
 	 * @param searchParams ESearchCategoryParams 
 	 * @param pager Pager  (optional, default: null)
-	 * @return KalturaESearchResponse
+	 * @return KalturaESearchCategoryResponse
 	 */
 	static searchCategory(searchParams, pager = null){
 		let kparams = {};
@@ -7981,7 +7981,7 @@ class eSearch{
 	 * .
 	 * @param searchParams ESearchEntryParams 
 	 * @param pager Pager  (optional, default: null)
-	 * @return KalturaESearchResponse
+	 * @return KalturaESearchEntryResponse
 	 */
 	static searchEntry(searchParams, pager = null){
 		let kparams = {};
@@ -7994,7 +7994,7 @@ class eSearch{
 	 * .
 	 * @param searchParams ESearchUserParams 
 	 * @param pager Pager  (optional, default: null)
-	 * @return KalturaESearchResponse
+	 * @return KalturaESearchUserResponse
 	 */
 	static searchUser(searchParams, pager = null){
 		let kparams = {};

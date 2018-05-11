@@ -12445,6 +12445,21 @@ class User extends kaltura.BaseObject{
 	 setAllowedPartnerPackages(allowedPartnerPackages) {
 	 	this.allowedPartnerPackages = allowedPartnerPackages;
 	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getUserMode() {
+	 	return this.userMode;
+	 }
+	
+	/**
+	 * @param userMode int 
+	 */
+	 setUserMode(userMode) {
+	 	this.userMode = userMode;
+	 }
 }
 module.exports.User = User;
 
@@ -16985,6 +17000,21 @@ class GroupUser extends kaltura.BaseObject{
 	 */
 	 getUpdatedAt() {
 	 	return this.updatedAt;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getCreationMode() {
+	 	return this.creationMode;
+	 }
+	
+	/**
+	 * @param creationMode int 
+	 */
+	 setCreationMode(creationMode) {
+	 	this.creationMode = creationMode;
 	 }
 }
 module.exports.GroupUser = GroupUser;

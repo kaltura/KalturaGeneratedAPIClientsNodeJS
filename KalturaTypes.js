@@ -529,6 +529,11 @@ ACTIVE : 2,
 DELETED : 3,
 };
 
+module.exports.GroupUserCreationMode = {
+MANUAL : 1,
+AUTOMATIC : 2,
+};
+
 module.exports.GroupUserStatus = {
 ACTIVE : 0,
 DELETED : 1,
@@ -1171,6 +1176,11 @@ module.exports.UserJoinPolicyType = {
 AUTO_JOIN : 1,
 REQUEST_TO_JOIN : 2,
 NOT_ALLOWED : 3,
+};
+
+module.exports.UserMode = {
+NONE : 0,
+PROTECTED_USER : 1,
 };
 
 module.exports.UserRoleStatus = {

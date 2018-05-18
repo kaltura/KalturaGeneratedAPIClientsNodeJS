@@ -5662,7 +5662,7 @@ module.exports.userRole = userRole;
  * @action disableLogin Disables a user's ability to log into a partner account using an email address and a password.
  * You may use either a userId or a loginId parameter for this action.
  * @action enableLogin Enables a user to log into a partner account using an email address and a password.
- * @action exportToCsv add batch job that sends an email with a link to download an updated CSV that contains list of users.
+ * @action exportToCsv Creates a batch job that sends an email with a link to download a CSV containing a list of users.
  * @action get Retrieves a user object for a specified user ID.
  * @action getByLoginId Retrieves a user object for a user's login ID and partner ID.
  * A login ID is the email address used by a user to log into the system.
@@ -5671,12 +5671,12 @@ module.exports.userRole = userRole;
  * Blocked users are listed unless you use a filter to exclude them.
  * Deleted users are not listed unless you use a filter to include them.
  * @action login Logs a user into a partner account with a partner ID, a partner user ID (puser), and a user password.
- * @action loginByKs Loges a user to the destination account as long the ks user id exists in the desc acount and the loginData id match for both accounts.
+ * @action loginByKs Logs a user to the destination account provided the KS' user ID is associated with the destination account and the loginData ID matches.
  * @action loginByLoginId Logs a user into a partner account with a user login ID and a user password.
  * @action notifyBan Notifies that a user is banned from an account.
  * @action resetPassword Reset user's password and send the user an email to generate a new one.
- * @action serveCsv Will serve a requested csv.
- * @action setInitialPassword Set initial users password.
+ * @action serveCsv Will serve a requested CSV.
+ * @action setInitialPassword Set initial user password.
  * @action update Updates an existing user object.
  * You can also use this action to update the userId.
  * @action updateLoginData Updates a user's login data: email, password, name.
@@ -5763,7 +5763,7 @@ class user{
 	};
 	
 	/**
-	 * add batch job that sends an email with a link to download an updated CSV that contains list of users.
+	 * Creates a batch job that sends an email with a link to download a CSV containing a list of users.
 	 * @param filter UserFilter A filter used to exclude specific types of users (optional, default: null)
 	 * @param metadataProfileId int  (optional, default: null)
 	 * @param additionalFields array  (optional, default: null)
@@ -5848,7 +5848,7 @@ class user{
 	};
 	
 	/**
-	 * Loges a user to the destination account as long the ks user id exists in the desc acount and the loginData id match for both accounts.
+	 * Logs a user to the destination account provided the KS' user ID is associated with the destination account and the loginData ID matches.
 	 * @param requestedPartnerId int 
 	 * @return KalturaSessionResponse
 	 */
@@ -5900,7 +5900,7 @@ class user{
 	};
 	
 	/**
-	 * Will serve a requested csv.
+	 * Will serve a requested CSV.
 	 * @param id string - the requested file id
 	 * @return string
 	 */
@@ -5911,7 +5911,7 @@ class user{
 	};
 	
 	/**
-	 * Set initial users password.
+	 * Set initial user password.
 	 * @param hashKey string The hash key used to identify the user (retrieved by email)
 	 * @param newPassword string The new password to set for the user
 	 */

@@ -2677,6 +2677,7 @@ module.exports.EmailNotificationRecipientProviderType = {
 STATIC_LIST : '1',
 CATEGORY : '2',
 USER : '3',
+GROUP : '4',
 };
 
 module.exports.EmailNotificationTemplateOrderBy = {
@@ -2831,6 +2832,8 @@ CATEGORYENTRY : '37',
 LIVE_STREAM : '38',
 SERVER_NODE : '39',
 ENTRY_SERVER_NODE : '40',
+REACH_PROFILE : '41',
+ENTRY_VENDOR_TASK : '42',
 };
 
 module.exports.EventNotificationEventType = {
@@ -4700,6 +4703,7 @@ module.exports.MsnDistributionProviderOrderBy = {
 
 module.exports.ObjectFilterEngineType = {
 ENTRY : '1',
+ENTRY_VENDOR_TASK : '2',
 };
 
 module.exports.ObjectTaskType = {
@@ -5625,4 +5629,65 @@ UPDATED_AT_DESC : '-updatedAt',
 };
 
 module.exports.YoutubeApiDistributionProviderOrderBy = {
+};
+
+module.exports.EntryVendorTaskStatus = {
+PENDING : 1,
+READY : 2,
+PROCESSING : 3,
+PENDING_MODERATION : 4,
+REJECTED : 5,
+ERROR : 6,
+ABORTED : 7,
+};
+
+module.exports.EntryVendorTaskCreationMode = {
+MANUAL : 1,
+AUTOMATIC : 2,
+};
+
+module.exports.ReachProfileStatus = {
+DISABLED : 1,
+ACTIVE : 2,
+DELETED : 3,
+};
+
+module.exports.ReachProfileType = {
+FREE_TRIAL : 1,
+PAID : 2,
+};
+
+module.exports.CatalogItemLanguage = {
+AR : 'Arabic',
+YUE : 'Cantonese',
+ZH : 'Chinese',
+NL : 'Dutch',
+EN : 'English',
+EN_US : 'English (American)',
+EN_GB : 'English (British)',
+FR : 'French',
+DE : 'German',
+HE : 'Hebrew',
+HI : 'Hindi',
+IT : 'Italian',
+JA : 'Japanese',
+KO : 'Korean',
+CMN : 'Mandarin Chinese',
+PT : 'Portuguese',
+RU : 'Russian',
+ES : 'Spanish',
+TR : 'Turkish',
+};
+
+module.exports.VendorCatalogItemOutputFormat = {
+SRT : 1,
+DFXP : 2,
+};
+
+module.exports.ReachProfileContentDeletionPolicy = {
+DO_NOTHING : 1,
+DELETE_ONCE_PROCESSED : 2,
+DELETE_AFTER_WEEK : 3,
+DELETE_AFTER_MONTH : 4,
+DELETE_AFTER_THREE_MONTHS : 5,
 };

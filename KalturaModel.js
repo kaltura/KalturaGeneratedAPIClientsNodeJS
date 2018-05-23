@@ -4801,29 +4801,6 @@ class Partner extends kaltura.BaseObject{
 	
 	/**
 	 * 
-	 * @return array
-	 */
-	 getESearchLanguages() {
-	 	return this.eSearchLanguages;
-	 }
-	
-	/**
-	 * @param eSearchLanguages array 
-	 */
-	 setESearchLanguages(eSearchLanguages) {
-	 	this.eSearchLanguages = eSearchLanguages;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getPublisherEnvironmentType() {
-	 	return this.publisherEnvironmentType;
-	 }
-	
-	/**
-	 * 
 	 * @return string
 	 */
 	 getOvpEnvironmentUrl() {
@@ -4836,6 +4813,21 @@ class Partner extends kaltura.BaseObject{
 	 */
 	 getOttEnvironmentUrl() {
 	 	return this.ottEnvironmentUrl;
+	 }
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getESearchLanguages() {
+	 	return this.eSearchLanguages;
+	 }
+	
+	/**
+	 * @param eSearchLanguages array 
+	 */
+	 setESearchLanguages(eSearchLanguages) {
+	 	this.eSearchLanguages = eSearchLanguages;
 	 }
 }
 module.exports.Partner = Partner;
@@ -5978,6 +5970,21 @@ class CaptionAsset extends Asset{
 	 */
 	 setAccuracy(accuracy) {
 	 	this.accuracy = accuracy;
+	 }
+	
+	/**
+	 * The Accuracy of the caption content
+	 * @return bool
+	 */
+	 getDisplayOnPlayer() {
+	 	return this.displayOnPlayer;
+	 }
+	
+	/**
+	 * @param displayOnPlayer bool The Accuracy of the caption content
+	 */
+	 setDisplayOnPlayer(displayOnPlayer) {
+	 	this.displayOnPlayer = displayOnPlayer;
 	 }
 }
 module.exports.CaptionAsset = CaptionAsset;
@@ -40122,6 +40129,60 @@ module.exports.EmailNotificationCategoryRecipientProvider = EmailNotificationCat
 /**
  *
  */
+class EmailNotificationGroupRecipientJobData extends EmailNotificationRecipientJobData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaEmailNotificationGroupRecipientJobData';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getGroupId() {
+	 	return this.groupId;
+	 }
+	
+	/**
+	 * @param groupId string 
+	 */
+	 setGroupId(groupId) {
+	 	this.groupId = groupId;
+	 }
+}
+module.exports.EmailNotificationGroupRecipientJobData = EmailNotificationGroupRecipientJobData;
+
+/**
+ *
+ */
+class EmailNotificationGroupRecipientProvider extends EmailNotificationRecipientProvider{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaEmailNotificationGroupRecipientProvider';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getGroupId() {
+	 	return this.groupId;
+	 }
+	
+	/**
+	 * @param groupId string 
+	 */
+	 setGroupId(groupId) {
+	 	this.groupId = groupId;
+	 }
+}
+module.exports.EmailNotificationGroupRecipientProvider = EmailNotificationGroupRecipientProvider;
+
+/**
+ *
+ */
 class EmailNotificationParameter extends EventNotificationParameter{
 	
 	constructor(object = null) {
@@ -41773,6 +41834,300 @@ class EntryTranscriptAssetSearchItem extends SearchItem{
 	 }
 }
 module.exports.EntryTranscriptAssetSearchItem = EntryTranscriptAssetSearchItem;
+
+/**
+ *
+ */
+class EntryVendorTask extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaEntryVendorTask';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getId() {
+	 	return this.id;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getPartnerId() {
+	 	return this.partnerId;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getVendorPartnerId() {
+	 	return this.vendorPartnerId;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getCreatedAt() {
+	 	return this.createdAt;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getUpdatedAt() {
+	 	return this.updatedAt;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getQueueTime() {
+	 	return this.queueTime;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getFinishTime() {
+	 	return this.finishTime;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getEntryId() {
+	 	return this.entryId;
+	 }
+	
+	/**
+	 * @param entryId string 
+	 */
+	 setEntryId(entryId) {
+	 	this.entryId = entryId;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getStatus() {
+	 	return this.status;
+	 }
+	
+	/**
+	 * @param status int 
+	 */
+	 setStatus(status) {
+	 	this.status = status;
+	 }
+	
+	/**
+	 * The profile id from which this task base config is taken from
+	 * @return int
+	 */
+	 getReachProfileId() {
+	 	return this.reachProfileId;
+	 }
+	
+	/**
+	 * @param reachProfileId int The profile id from which this task base config is taken from
+	 */
+	 setReachProfileId(reachProfileId) {
+	 	this.reachProfileId = reachProfileId;
+	 }
+	
+	/**
+	 * The catalog item Id containing the task description
+	 * @return int
+	 */
+	 getCatalogItemId() {
+	 	return this.catalogItemId;
+	 }
+	
+	/**
+	 * @param catalogItemId int The catalog item Id containing the task description
+	 */
+	 setCatalogItemId(catalogItemId) {
+	 	this.catalogItemId = catalogItemId;
+	 }
+	
+	/**
+	 * The charged price to execute this task
+	 * @return int
+	 */
+	 getPrice() {
+	 	return this.price;
+	 }
+	
+	/**
+	 * The ID of the user who created this task
+	 * @return string
+	 */
+	 getUserId() {
+	 	return this.userId;
+	 }
+	
+	/**
+	 * The user ID that approved this task for execution (in case moderation is requested)
+	 * @return string
+	 */
+	 getModeratingUser() {
+	 	return this.moderatingUser;
+	 }
+	
+	/**
+	 * Err description provided by provider in case job execution has failed
+	 * @return string
+	 */
+	 getErrDescription() {
+	 	return this.errDescription;
+	 }
+	
+	/**
+	 * @param errDescription string Err description provided by provider in case job execution has failed
+	 */
+	 setErrDescription(errDescription) {
+	 	this.errDescription = errDescription;
+	 }
+	
+	/**
+	 * Access key generated by Kaltura to allow vendors to ingest the end result to the destination
+	 * @return string
+	 */
+	 getAccessKey() {
+	 	return this.accessKey;
+	 }
+	
+	/**
+	 * Vendor generated by Kaltura representing the entry vendor task version correlated to the entry version
+	 * @return string
+	 */
+	 getVersion() {
+	 	return this.version;
+	 }
+	
+	/**
+	 * User generated notes that should be taken into account by the vendor while executing the task
+	 * @return string
+	 */
+	 getNotes() {
+	 	return this.notes;
+	 }
+	
+	/**
+	 * @param notes string User generated notes that should be taken into account by the vendor while executing the task
+	 */
+	 setNotes(notes) {
+	 	this.notes = notes;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getDictionary() {
+	 	return this.dictionary;
+	 }
+	
+	/**
+	 * Task context
+	 * @return string
+	 */
+	 getContext() {
+	 	return this.context;
+	 }
+	
+	/**
+	 * @param context string Task context
+	 */
+	 setContext(context) {
+	 	this.context = context;
+	 }
+	
+	/**
+	 * Task result accuracy percentage
+	 * @return int
+	 */
+	 getAccuracy() {
+	 	return this.accuracy;
+	 }
+	
+	/**
+	 * @param accuracy int Task result accuracy percentage
+	 */
+	 setAccuracy(accuracy) {
+	 	this.accuracy = accuracy;
+	 }
+	
+	/**
+	 * Task main object generated by executing the task
+	 * @return string
+	 */
+	 getOutputObjectId() {
+	 	return this.outputObjectId;
+	 }
+	
+	/**
+	 * @param outputObjectId string Task main object generated by executing the task
+	 */
+	 setOutputObjectId(outputObjectId) {
+	 	this.outputObjectId = outputObjectId;
+	 }
+	
+	/**
+	 * Json object containing extra task data required by the requester
+	 * @return string
+	 */
+	 getPartnerData() {
+	 	return this.partnerData;
+	 }
+	
+	/**
+	 * @param partnerData string Json object containing extra task data required by the requester
+	 */
+	 setPartnerData(partnerData) {
+	 	this.partnerData = partnerData;
+	 }
+	
+	/**
+	 * Task creation mode
+	 * @return int
+	 */
+	 getCreationMode() {
+	 	return this.creationMode;
+	 }
+}
+module.exports.EntryVendorTask = EntryVendorTask;
+
+/**
+ *
+ */
+class EntryVendorTaskListResponse extends ListResponse{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaEntryVendorTaskListResponse';
+	}
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getObjects() {
+	 	return this.objects;
+	 }
+}
+module.exports.EntryVendorTaskListResponse = EntryVendorTaskListResponse;
 
 /**
  *
@@ -47838,6 +48193,395 @@ class QuizUserEntry extends UserEntry{
 	 }
 }
 module.exports.QuizUserEntry = QuizUserEntry;
+
+/**
+ *
+ */
+class BaseVendorCredit extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaBaseVendorCredit';
+	}
+}
+module.exports.BaseVendorCredit = BaseVendorCredit;
+
+/**
+ *
+ */
+class Dictionary extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaDictionary';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getLanguage() {
+	 	return this.language;
+	 }
+	
+	/**
+	 * @param language string 
+	 */
+	 setLanguage(language) {
+	 	this.language = language;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getData() {
+	 	return this.data;
+	 }
+	
+	/**
+	 * @param data string 
+	 */
+	 setData(data) {
+	 	this.data = data;
+	 }
+}
+module.exports.Dictionary = Dictionary;
+
+/**
+ *
+ */
+class ReachProfile extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaReachProfile';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getId() {
+	 	return this.id;
+	 }
+	
+	/**
+	 * The name of the profile
+	 * @return string
+	 */
+	 getName() {
+	 	return this.name;
+	 }
+	
+	/**
+	 * @param name string The name of the profile
+	 */
+	 setName(name) {
+	 	this.name = name;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getPartnerId() {
+	 	return this.partnerId;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getCreatedAt() {
+	 	return this.createdAt;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getUpdatedAt() {
+	 	return this.updatedAt;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getStatus() {
+	 	return this.status;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getProfileType() {
+	 	return this.profileType;
+	 }
+	
+	/**
+	 * @param profileType int 
+	 */
+	 setProfileType(profileType) {
+	 	this.profileType = profileType;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getDefaultSourceLanguage() {
+	 	return this.defaultSourceLanguage;
+	 }
+	
+	/**
+	 * @param defaultSourceLanguage string 
+	 */
+	 setDefaultSourceLanguage(defaultSourceLanguage) {
+	 	this.defaultSourceLanguage = defaultSourceLanguage;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getDefaultOutputFormat() {
+	 	return this.defaultOutputFormat;
+	 }
+	
+	/**
+	 * @param defaultOutputFormat int 
+	 */
+	 setDefaultOutputFormat(defaultOutputFormat) {
+	 	this.defaultOutputFormat = defaultOutputFormat;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getEnableMachineModeration() {
+	 	return this.enableMachineModeration;
+	 }
+	
+	/**
+	 * @param enableMachineModeration int 
+	 */
+	 setEnableMachineModeration(enableMachineModeration) {
+	 	this.enableMachineModeration = enableMachineModeration;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getEnableHumanModeration() {
+	 	return this.enableHumanModeration;
+	 }
+	
+	/**
+	 * @param enableHumanModeration int 
+	 */
+	 setEnableHumanModeration(enableHumanModeration) {
+	 	this.enableHumanModeration = enableHumanModeration;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getAutoDisplayMachineCaptionsOnPlayer() {
+	 	return this.autoDisplayMachineCaptionsOnPlayer;
+	 }
+	
+	/**
+	 * @param autoDisplayMachineCaptionsOnPlayer int 
+	 */
+	 setAutoDisplayMachineCaptionsOnPlayer(autoDisplayMachineCaptionsOnPlayer) {
+	 	this.autoDisplayMachineCaptionsOnPlayer = autoDisplayMachineCaptionsOnPlayer;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getAutoDisplayHumanCaptionsOnPlayer() {
+	 	return this.autoDisplayHumanCaptionsOnPlayer;
+	 }
+	
+	/**
+	 * @param autoDisplayHumanCaptionsOnPlayer int 
+	 */
+	 setAutoDisplayHumanCaptionsOnPlayer(autoDisplayHumanCaptionsOnPlayer) {
+	 	this.autoDisplayHumanCaptionsOnPlayer = autoDisplayHumanCaptionsOnPlayer;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getEnableMetadataExtraction() {
+	 	return this.enableMetadataExtraction;
+	 }
+	
+	/**
+	 * @param enableMetadataExtraction int 
+	 */
+	 setEnableMetadataExtraction(enableMetadataExtraction) {
+	 	this.enableMetadataExtraction = enableMetadataExtraction;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getEnableSpeakerChangeIndication() {
+	 	return this.enableSpeakerChangeIndication;
+	 }
+	
+	/**
+	 * @param enableSpeakerChangeIndication int 
+	 */
+	 setEnableSpeakerChangeIndication(enableSpeakerChangeIndication) {
+	 	this.enableSpeakerChangeIndication = enableSpeakerChangeIndication;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getEnableAudioTags() {
+	 	return this.enableAudioTags;
+	 }
+	
+	/**
+	 * @param enableAudioTags int 
+	 */
+	 setEnableAudioTags(enableAudioTags) {
+	 	this.enableAudioTags = enableAudioTags;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getEnableProfanityRemoval() {
+	 	return this.enableProfanityRemoval;
+	 }
+	
+	/**
+	 * @param enableProfanityRemoval int 
+	 */
+	 setEnableProfanityRemoval(enableProfanityRemoval) {
+	 	this.enableProfanityRemoval = enableProfanityRemoval;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getMaxCharactersPerCaptionLine() {
+	 	return this.maxCharactersPerCaptionLine;
+	 }
+	
+	/**
+	 * @param maxCharactersPerCaptionLine int 
+	 */
+	 setMaxCharactersPerCaptionLine(maxCharactersPerCaptionLine) {
+	 	this.maxCharactersPerCaptionLine = maxCharactersPerCaptionLine;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getContentDeletionPolicy() {
+	 	return this.contentDeletionPolicy;
+	 }
+	
+	/**
+	 * @param contentDeletionPolicy int 
+	 */
+	 setContentDeletionPolicy(contentDeletionPolicy) {
+	 	this.contentDeletionPolicy = contentDeletionPolicy;
+	 }
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getRules() {
+	 	return this.rules;
+	 }
+	
+	/**
+	 * @param rules array 
+	 */
+	 setRules(rules) {
+	 	this.rules = rules;
+	 }
+	
+	/**
+	 * 
+	 * @return BaseVendorCredit
+	 */
+	 getCredit() {
+	 	return this.credit;
+	 }
+	
+	/**
+	 * @param credit BaseVendorCredit 
+	 */
+	 setCredit(credit) {
+	 	this.credit = credit;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getUsedCredit() {
+	 	return this.usedCredit;
+	 }
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getDictionaries() {
+	 	return this.dictionaries;
+	 }
+	
+	/**
+	 * @param dictionaries array 
+	 */
+	 setDictionaries(dictionaries) {
+	 	this.dictionaries = dictionaries;
+	 }
+}
+module.exports.ReachProfile = ReachProfile;
+
+/**
+ *
+ */
+class ReachProfileListResponse extends ListResponse{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaReachProfileListResponse';
+	}
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getObjects() {
+	 	return this.objects;
+	 }
+}
+module.exports.ReachProfileListResponse = ReachProfileListResponse;
 
 /**
  *

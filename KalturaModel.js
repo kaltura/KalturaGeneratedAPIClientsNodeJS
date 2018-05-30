@@ -1113,6 +1113,21 @@ class CuePoint extends kaltura.BaseObject{
 	 setSystemName(systemName) {
 	 	this.systemName = systemName;
 	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getIsMomentary() {
+	 	return this.isMomentary;
+	 }
+	
+	/**
+	 * @param isMomentary bool 
+	 */
+	 setIsMomentary(isMomentary) {
+	 	this.isMomentary = isMomentary;
+	 }
 }
 module.exports.CuePoint = CuePoint;
 

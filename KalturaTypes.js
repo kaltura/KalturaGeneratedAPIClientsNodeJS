@@ -5609,6 +5609,7 @@ UPDATED_AT_DESC : '-updatedAt',
 module.exports.YouTubeDistributionFeedSpecVersion = {
 VERSION_1 : '1',
 VERSION_2 : '2',
+VERSION_3 : '3',
 };
 
 module.exports.YouTubeDistributionProfileOrderBy = {

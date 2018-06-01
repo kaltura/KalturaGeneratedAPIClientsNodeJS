@@ -1121,13 +1121,6 @@ class CuePoint extends kaltura.BaseObject{
 	 getIsMomentary() {
 	 	return this.isMomentary;
 	 }
-	
-	/**
-	 * @param isMomentary bool 
-	 */
-	 setIsMomentary(isMomentary) {
-	 	this.isMomentary = isMomentary;
-	 }
 }
 module.exports.CuePoint = CuePoint;
 
@@ -67917,6 +67910,66 @@ class YouTubeDistributionJobProviderData extends ConfigurableDistributionJobProv
 	 setGoogleTokenData(googleTokenData) {
 	 	this.googleTokenData = googleTokenData;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getCaptionsCsvMap() {
+	 	return this.captionsCsvMap;
+	 }
+	
+	/**
+	 * @param captionsCsvMap string 
+	 */
+	 setCaptionsCsvMap(captionsCsvMap) {
+	 	this.captionsCsvMap = captionsCsvMap;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSubmitCsvMap() {
+	 	return this.submitCsvMap;
+	 }
+	
+	/**
+	 * @param submitCsvMap string 
+	 */
+	 setSubmitCsvMap(submitCsvMap) {
+	 	this.submitCsvMap = submitCsvMap;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getUpdateCsvMap() {
+	 	return this.updateCsvMap;
+	 }
+	
+	/**
+	 * @param updateCsvMap string 
+	 */
+	 setUpdateCsvMap(updateCsvMap) {
+	 	this.updateCsvMap = updateCsvMap;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getDeleteVideoIds() {
+	 	return this.deleteVideoIds;
+	 }
+	
+	/**
+	 * @param deleteVideoIds string 
+	 */
+	 setDeleteVideoIds(deleteVideoIds) {
+	 	this.deleteVideoIds = deleteVideoIds;
+	 }
 }
 module.exports.YouTubeDistributionJobProviderData = YouTubeDistributionJobProviderData;
 
@@ -68498,6 +68551,96 @@ class YouTubeDistributionProfile extends ConfigurableDistributionProfile{
 	 */
 	 setApiAuthorizeUrl(apiAuthorizeUrl) {
 	 	this.apiAuthorizeUrl = apiAuthorizeUrl;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getPrivacyStatus() {
+	 	return this.privacyStatus;
+	 }
+	
+	/**
+	 * @param privacyStatus string 
+	 */
+	 setPrivacyStatus(privacyStatus) {
+	 	this.privacyStatus = privacyStatus;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getEnableContentId() {
+	 	return this.enableContentId;
+	 }
+	
+	/**
+	 * @param enableContentId string 
+	 */
+	 setEnableContentId(enableContentId) {
+	 	this.enableContentId = enableContentId;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getThirdPartyAds() {
+	 	return this.thirdPartyAds;
+	 }
+	
+	/**
+	 * @param thirdPartyAds string 
+	 */
+	 setThirdPartyAds(thirdPartyAds) {
+	 	this.thirdPartyAds = thirdPartyAds;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getProductListingAds() {
+	 	return this.productListingAds;
+	 }
+	
+	/**
+	 * @param productListingAds string 
+	 */
+	 setProductListingAds(productListingAds) {
+	 	this.productListingAds = productListingAds;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getDomainWhitelist() {
+	 	return this.domainWhitelist;
+	 }
+	
+	/**
+	 * @param domainWhitelist string 
+	 */
+	 setDomainWhitelist(domainWhitelist) {
+	 	this.domainWhitelist = domainWhitelist;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getNotifySubscribers() {
+	 	return this.notifySubscribers;
+	 }
+	
+	/**
+	 * @param notifySubscribers string 
+	 */
+	 setNotifySubscribers(notifySubscribers) {
+	 	this.notifySubscribers = notifySubscribers;
 	 }
 }
 module.exports.YouTubeDistributionProfile = YouTubeDistributionProfile;

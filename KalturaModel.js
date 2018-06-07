@@ -67750,6 +67750,21 @@ class YouTubeDistributionJobProviderData extends ConfigurableDistributionJobProv
 	 * 
 	 * @return string
 	 */
+	 getThumbAssetId() {
+	 	return this.thumbAssetId;
+	 }
+	
+	/**
+	 * @param thumbAssetId string 
+	 */
+	 setThumbAssetId(thumbAssetId) {
+	 	this.thumbAssetId = thumbAssetId;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
 	 getCaptionAssetIds() {
 	 	return this.captionAssetIds;
 	 }

@@ -36649,6 +36649,33 @@ module.exports.DeliveryProfileLiveAppleHttp = DeliveryProfileLiveAppleHttp;
 /**
  *
  */
+class DeliveryProfileLivePackager extends DeliveryProfile{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaDeliveryProfileLivePackager';
+	}
+	
+	/**
+	 * Domain used to sign the live url
+	 * @return string
+	 */
+	 getLivePackagerSigningDomain() {
+	 	return this.livePackagerSigningDomain;
+	 }
+	
+	/**
+	 * @param livePackagerSigningDomain string Domain used to sign the live url
+	 */
+	 setLivePackagerSigningDomain(livePackagerSigningDomain) {
+	 	this.livePackagerSigningDomain = livePackagerSigningDomain;
+	 }
+}
+module.exports.DeliveryProfileLivePackager = DeliveryProfileLivePackager;
+
+/**
+ *
+ */
 class DeliveryProfileRtmp extends DeliveryProfile{
 	
 	constructor(object = null) {
@@ -58590,6 +58617,48 @@ class DeliveryProfileGenericRtmp extends DeliveryProfileRtmp{
 	 }
 }
 module.exports.DeliveryProfileGenericRtmp = DeliveryProfileGenericRtmp;
+
+/**
+ *
+ */
+class DeliveryProfileLivePackagerHls extends DeliveryProfileLivePackager{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaDeliveryProfileLivePackagerHls';
+	}
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getDisableExtraAttributes() {
+	 	return this.disableExtraAttributes;
+	 }
+	
+	/**
+	 * @param disableExtraAttributes bool 
+	 */
+	 setDisableExtraAttributes(disableExtraAttributes) {
+	 	this.disableExtraAttributes = disableExtraAttributes;
+	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getForceProxy() {
+	 	return this.forceProxy;
+	 }
+	
+	/**
+	 * @param forceProxy bool 
+	 */
+	 setForceProxy(forceProxy) {
+	 	this.forceProxy = forceProxy;
+	 }
+}
+module.exports.DeliveryProfileLivePackagerHls = DeliveryProfileLivePackagerHls;
 
 /**
  *

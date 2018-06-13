@@ -4809,6 +4809,14 @@ class Partner extends kaltura.BaseObject{
 	
 	/**
 	 * 
+	 * @return int
+	 */
+	 getPublisherEnvironmentType() {
+	 	return this.publisherEnvironmentType;
+	 }
+	
+	/**
+	 * 
 	 * @return string
 	 */
 	 getOvpEnvironmentUrl() {

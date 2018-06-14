@@ -52598,6 +52598,48 @@ module.exports.UrlTokenizerVnpt = UrlTokenizerVnpt;
 /**
  *
  */
+class UrlTokenizerWowzaSecureToken extends UrlTokenizer{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaUrlTokenizerWowzaSecureToken';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getParamPrefix() {
+	 	return this.paramPrefix;
+	 }
+	
+	/**
+	 * @param paramPrefix string 
+	 */
+	 setParamPrefix(paramPrefix) {
+	 	this.paramPrefix = paramPrefix;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getHashAlgorithm() {
+	 	return this.hashAlgorithm;
+	 }
+	
+	/**
+	 * @param hashAlgorithm string 
+	 */
+	 setHashAlgorithm(hashAlgorithm) {
+	 	this.hashAlgorithm = hashAlgorithm;
+	 }
+}
+module.exports.UrlTokenizerWowzaSecureToken = UrlTokenizerWowzaSecureToken;
+
+/**
+ *
+ */
 class UserAgentRestriction extends BaseRestriction{
 	
 	constructor(object = null) {

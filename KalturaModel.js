@@ -1121,6 +1121,14 @@ class CuePoint extends kaltura.BaseObject{
 	 getIsMomentary() {
 	 	return this.isMomentary;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getCopiedFrom() {
+	 	return this.copiedFrom;
+	 }
 }
 module.exports.CuePoint = CuePoint;
 

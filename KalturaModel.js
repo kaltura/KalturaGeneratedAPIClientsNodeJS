@@ -36782,6 +36782,21 @@ class DeliveryServerNode extends ServerNode{
 	 setDeliveryProfileIds(deliveryProfileIds) {
 	 	this.deliveryProfileIds = deliveryProfileIds;
 	 }
+	
+	/**
+	 * Override server node default configuration - json format
+	 * @return string
+	 */
+	 getConfig() {
+	 	return this.config;
+	 }
+	
+	/**
+	 * @param config string Override server node default configuration - json format
+	 */
+	 setConfig(config) {
+	 	this.config = config;
+	 }
 }
 module.exports.DeliveryServerNode = DeliveryServerNode;
 
@@ -58738,21 +58753,6 @@ class EdgeServerNode extends DeliveryServerNode{
 	 */
 	 setPlaybackDomain(playbackDomain) {
 	 	this.playbackDomain = playbackDomain;
-	 }
-	
-	/**
-	 * Overdie edge server default configuration - json format
-	 * @return string
-	 */
-	 getConfig() {
-	 	return this.config;
-	 }
-	
-	/**
-	 * @param config string Overdie edge server default configuration - json format
-	 */
-	 setConfig(config) {
-	 	this.config = config;
 	 }
 }
 module.exports.EdgeServerNode = EdgeServerNode;

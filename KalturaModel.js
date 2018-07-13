@@ -48824,6 +48824,21 @@ class ScheduledTaskProfileBaseFilter extends Filter{
 	 setLastExecutionStartedAtLessThanOrEqual(lastExecutionStartedAtLessThanOrEqual) {
 	 	this.lastExecutionStartedAtLessThanOrEqual = lastExecutionStartedAtLessThanOrEqual;
 	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getLastExecutionStartedAtLessThanOrEqualOrNull() {
+	 	return this.lastExecutionStartedAtLessThanOrEqualOrNull;
+	 }
+	
+	/**
+	 * @param lastExecutionStartedAtLessThanOrEqualOrNull int 
+	 */
+	 setLastExecutionStartedAtLessThanOrEqualOrNull(lastExecutionStartedAtLessThanOrEqualOrNull) {
+	 	this.lastExecutionStartedAtLessThanOrEqualOrNull = lastExecutionStartedAtLessThanOrEqualOrNull;
+	 }
 }
 module.exports.ScheduledTaskProfileBaseFilter = ScheduledTaskProfileBaseFilter;
 

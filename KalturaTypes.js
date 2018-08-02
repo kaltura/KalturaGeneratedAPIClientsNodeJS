@@ -2486,6 +2486,8 @@ SHORT : 'short',
 module.exports.ESearchCaptionFieldName = {
 CONTENT : 'content',
 END_TIME : 'end_time',
+LABEL : 'label',
+LANGUAGE : 'language',
 START_TIME : 'start_time',
 };
 

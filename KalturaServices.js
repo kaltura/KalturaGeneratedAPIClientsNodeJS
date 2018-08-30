@@ -325,15 +325,17 @@ class appToken{
 	 * @param userId string session user ID, will be ignored if a different user ID already defined on the application token (optional, default: null)
 	 * @param type int session type, will be ignored if a different session type is already defined on the application token (optional, enum: KalturaSessionType, default: null)
 	 * @param expiry int session expiry (in seconds), could be overridden by shorter expiry of the application token (optional, default: null)
+	 * @param sessionPrivileges string session privileges, will be ignored if a similar privilege is already defined on the application token or the privilege is server reserved (optional, default: null)
 	 * @return KalturaSessionInfo
 	 */
-	static startSession(id, tokenHash, userId = null, type = null, expiry = null){
+	static startSession(id, tokenHash, userId = null, type = null, expiry = null, sessionPrivileges = null){
 		let kparams = {};
 		kparams.id = id;
 		kparams.tokenHash = tokenHash;
 		kparams.userId = userId;
 		kparams.type = type;
 		kparams.expiry = expiry;
+		kparams.sessionPrivileges = sessionPrivileges;
 		return new kaltura.RequestBuilder('apptoken', 'startSession', kparams);
 	};
 	

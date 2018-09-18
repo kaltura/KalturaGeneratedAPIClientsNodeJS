@@ -4325,6 +4325,7 @@ module.exports.search = search;
  * @action disable Disable server node by id.
  * @action enable Enable server node by id.
  * @action get Get server node by id.
+ * @action getFullPath Get the edge server node full path.
  * @action list .
  * @action markOffline Mark server node offline.
  * @action reportStatus Update server node status.
@@ -4387,6 +4388,23 @@ class serverNode{
 	};
 	
 	/**
+	 * Get the edge server node full path.
+	 * @param hostName string 
+	 * @param protocol string  (optional, default: http)
+	 * @param deliveryFormat string  (optional, default: null)
+	 * @param deliveryType string  (optional, default: null)
+	 * @return string
+	 */
+	static getFullPath(hostName, protocol = 'http', deliveryFormat = null, deliveryType = null){
+		let kparams = {};
+		kparams.hostName = hostName;
+		kparams.protocol = protocol;
+		kparams.deliveryFormat = deliveryFormat;
+		kparams.deliveryType = deliveryType;
+		return new kaltura.RequestBuilder('servernode', 'getFullPath', kparams);
+	};
+	
+	/**
 	 * .
 	 * @param filter ServerNodeFilter  (optional, default: null)
 	 * @param pager FilterPager  (optional, default: null)
@@ -4414,12 +4432,14 @@ class serverNode{
 	 * Update server node status.
 	 * @param hostName string 
 	 * @param serverNode ServerNode  (optional, default: null)
+	 * @param serverNodeStatus int  (optional, enum: KalturaServerNodeStatus, default: 1)
 	 * @return KalturaServerNode
 	 */
-	static reportStatus(hostName, serverNode = null){
+	static reportStatus(hostName, serverNode = null, serverNodeStatus = 1){
 		let kparams = {};
 		kparams.hostName = hostName;
 		kparams.serverNode = serverNode;
+		kparams.serverNodeStatus = serverNodeStatus;
 		return new kaltura.RequestBuilder('servernode', 'reportStatus', kparams);
 	};
 	

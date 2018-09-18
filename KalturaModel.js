@@ -30518,6 +30518,21 @@ class AccessControlServeRemoteEdgeServerAction extends RuleAction{
 	 setEdgeServerIds(edgeServerIds) {
 	 	this.edgeServerIds = edgeServerIds;
 	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getSeamlessFallbackEnabled() {
+	 	return this.seamlessFallbackEnabled;
+	 }
+	
+	/**
+	 * @param seamlessFallbackEnabled int 
+	 */
+	 setSeamlessFallbackEnabled(seamlessFallbackEnabled) {
+	 	this.seamlessFallbackEnabled = seamlessFallbackEnabled;
+	 }
 }
 module.exports.AccessControlServeRemoteEdgeServerAction = AccessControlServeRemoteEdgeServerAction;
 

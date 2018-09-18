@@ -923,6 +923,7 @@ ACTIVE : 1,
 DISABLED : 2,
 DELETED : 3,
 NOT_REGISTERED : 4,
+NOT_HEALTHY : 5,
 };
 
 module.exports.SessionType = {

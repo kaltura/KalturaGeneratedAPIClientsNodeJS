@@ -33965,6 +33965,21 @@ class CaptureThumbJobData extends JobData{
 	 * 
 	 * @return string
 	 */
+	 getSrcAssetEncryptionKey() {
+	 	return this.srcAssetEncryptionKey;
+	 }
+	
+	/**
+	 * @param srcAssetEncryptionKey string 
+	 */
+	 setSrcAssetEncryptionKey(srcAssetEncryptionKey) {
+	 	this.srcAssetEncryptionKey = srcAssetEncryptionKey;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
 	 getSrcAssetType() {
 	 	return this.srcAssetType;
 	 }
@@ -63894,6 +63909,21 @@ class PostConvertJobData extends ConvartableJobData{
 	 */
 	 setFlavorAssetId(flavorAssetId) {
 	 	this.flavorAssetId = flavorAssetId;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getFlavorAssetEncryptionKey() {
+	 	return this.flavorAssetEncryptionKey;
+	 }
+	
+	/**
+	 * @param flavorAssetEncryptionKey string 
+	 */
+	 setFlavorAssetEncryptionKey(flavorAssetEncryptionKey) {
+	 	this.flavorAssetEncryptionKey = flavorAssetEncryptionKey;
 	 }
 	
 	/**

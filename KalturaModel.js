@@ -48213,6 +48213,51 @@ class ReportInputFilter extends ReportInputBaseFilter{
 	 }
 	
 	/**
+	 * Filter by customVar1
+	 * @return string
+	 */
+	 getCustomVar1In() {
+	 	return this.customVar1In;
+	 }
+	
+	/**
+	 * @param customVar1In string Filter by customVar1
+	 */
+	 setCustomVar1In(customVar1In) {
+	 	this.customVar1In = customVar1In;
+	 }
+	
+	/**
+	 * Filter by customVar2
+	 * @return string
+	 */
+	 getCustomVar2In() {
+	 	return this.customVar2In;
+	 }
+	
+	/**
+	 * @param customVar2In string Filter by customVar2
+	 */
+	 setCustomVar2In(customVar2In) {
+	 	this.customVar2In = customVar2In;
+	 }
+	
+	/**
+	 * Filter by customVar3
+	 * @return string
+	 */
+	 getCustomVar3In() {
+	 	return this.customVar3In;
+	 }
+	
+	/**
+	 * @param customVar3In string Filter by customVar3
+	 */
+	 setCustomVar3In(customVar3In) {
+	 	this.customVar3In = customVar3In;
+	 }
+	
+	/**
 	 * Time zone offset in minutes
 	 * @return int
 	 */

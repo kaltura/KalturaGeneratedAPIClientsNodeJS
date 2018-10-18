@@ -32291,6 +32291,21 @@ class BulkUploadJobData extends JobData{
 	 setNumOfErrorObjects(numOfErrorObjects) {
 	 	this.numOfErrorObjects = numOfErrorObjects;
 	 }
+	
+	/**
+	 * privileges for the job
+	 * @return string
+	 */
+	 getPrivileges() {
+	 	return this.privileges;
+	 }
+	
+	/**
+	 * @param privileges string privileges for the job
+	 */
+	 setPrivileges(privileges) {
+	 	this.privileges = privileges;
+	 }
 }
 module.exports.BulkUploadJobData = BulkUploadJobData;
 

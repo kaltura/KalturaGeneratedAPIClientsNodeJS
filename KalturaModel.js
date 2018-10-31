@@ -7998,6 +7998,21 @@ class ConversionProfileAssetParams extends kaltura.BaseObject{
 	 setTags(tags) {
 	 	this.tags = tags;
 	 }
+	
+	/**
+	 * JSON string containing an array of flavotParams field-value pairs
+	 * @return string
+	 */
+	 getOverloadParams() {
+	 	return this.overloadParams;
+	 }
+	
+	/**
+	 * @param overloadParams string JSON string containing an array of flavotParams field-value pairs
+	 */
+	 setOverloadParams(overloadParams) {
+	 	this.overloadParams = overloadParams;
+	 }
 }
 module.exports.ConversionProfileAssetParams = ConversionProfileAssetParams;
 

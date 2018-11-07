@@ -69388,6 +69388,33 @@ module.exports.DropFolderImportJobData = DropFolderImportJobData;
 /**
  *
  */
+class DropFolderXmlBulkUploadJobData extends BulkUploadXmlJobData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaDropFolderXmlBulkUploadJobData';
+	}
+	
+	/**
+	 * the job drop folder id
+	 * @return int
+	 */
+	 getDropFolderId() {
+	 	return this.dropFolderId;
+	 }
+	
+	/**
+	 * @param dropFolderId int the job drop folder id
+	 */
+	 setDropFolderId(dropFolderId) {
+	 	this.dropFolderId = dropFolderId;
+	 }
+}
+module.exports.DropFolderXmlBulkUploadJobData = DropFolderXmlBulkUploadJobData;
+
+/**
+ *
+ */
 class ESearchCategoryEntryItem extends ESearchAbstractEntryItem{
 	
 	constructor(object = null) {

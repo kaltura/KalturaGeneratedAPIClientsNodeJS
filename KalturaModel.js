@@ -26084,6 +26084,21 @@ class ServerNode extends kaltura.BaseObject{
 	 setParentId(parentId) {
 	 	this.parentId = parentId;
 	 }
+	
+	/**
+	 * Environment
+	 * @return string
+	 */
+	 getEnvironment() {
+	 	return this.environment;
+	 }
+	
+	/**
+	 * @param environment string Environment
+	 */
+	 setEnvironment(environment) {
+	 	this.environment = environment;
+	 }
 }
 module.exports.ServerNode = ServerNode;
 
@@ -49504,6 +49519,36 @@ class ServerNodeBaseFilter extends Filter{
 	 */
 	 setParentIdMultiLikeAnd(parentIdMultiLikeAnd) {
 	 	this.parentIdMultiLikeAnd = parentIdMultiLikeAnd;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getEnvironmentEqual() {
+	 	return this.environmentEqual;
+	 }
+	
+	/**
+	 * @param environmentEqual string 
+	 */
+	 setEnvironmentEqual(environmentEqual) {
+	 	this.environmentEqual = environmentEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getEnvironmentIn() {
+	 	return this.environmentIn;
+	 }
+	
+	/**
+	 * @param environmentIn string 
+	 */
+	 setEnvironmentIn(environmentIn) {
+	 	this.environmentIn = environmentIn;
 	 }
 }
 module.exports.ServerNodeBaseFilter = ServerNodeBaseFilter;

@@ -48303,6 +48303,21 @@ class ReportInputFilter extends ReportInputBaseFilter{
 	 }
 	
 	/**
+	 * Filter by device
+	 * @return string
+	 */
+	 getDevicesIn() {
+	 	return this.devicesIn;
+	 }
+	
+	/**
+	 * @param devicesIn string Filter by device
+	 */
+	 setDevicesIn(devicesIn) {
+	 	this.devicesIn = devicesIn;
+	 }
+	
+	/**
 	 * Time zone offset in minutes
 	 * @return int
 	 */

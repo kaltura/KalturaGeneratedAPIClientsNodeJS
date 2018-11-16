@@ -48318,6 +48318,36 @@ class ReportInputFilter extends ReportInputBaseFilter{
 	 }
 	
 	/**
+	 * Filter by country
+	 * @return string
+	 */
+	 getCountriesIn() {
+	 	return this.countriesIn;
+	 }
+	
+	/**
+	 * @param countriesIn string Filter by country
+	 */
+	 setCountriesIn(countriesIn) {
+	 	this.countriesIn = countriesIn;
+	 }
+	
+	/**
+	 * Filter by region
+	 * @return string
+	 */
+	 getRegionsIn() {
+	 	return this.regionsIn;
+	 }
+	
+	/**
+	 * @param regionsIn string Filter by region
+	 */
+	 setRegionsIn(regionsIn) {
+	 	this.regionsIn = regionsIn;
+	 }
+	
+	/**
 	 * Time zone offset in minutes
 	 * @return int
 	 */

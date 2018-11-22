@@ -1716,6 +1716,8 @@ DELETE : '3',
 REPLACE : '4',
 TRANSFORM_XSLT : '5',
 ADD_OR_UPDATE : '6',
+ACTIVATE : '7',
+REJECT : '8',
 };
 
 module.exports.BulkUploadObjectType = {

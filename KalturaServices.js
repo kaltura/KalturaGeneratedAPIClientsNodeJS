@@ -798,6 +798,7 @@ module.exports.bulkUpload = bulkUpload;
  * @action list List all categoryEntry.
  * @action reject activate CategoryEntry when it is pending moderation.
  * @action syncPrivacyContext update privacy context from the category.
+ * @action updateStatusfrombulk .
  */
 class categoryEntry{
 	
@@ -899,6 +900,22 @@ class categoryEntry{
 		kparams.entryId = entryId;
 		kparams.categoryId = categoryId;
 		return new kaltura.RequestBuilder('categoryentry', 'syncPrivacyContext', kparams);
+	};
+	
+	/**
+	 * .
+	 * @param fileData file 
+	 * @param bulkUploadData BulkUploadJobData  (optional, default: null)
+	 * @param bulkUploadCategoryEntryData BulkUploadCategoryEntryData  (optional, default: null)
+	 * @return KalturaBulkUpload
+	 */
+	static updateStatusfrombulk(fileData, bulkUploadData = null, bulkUploadCategoryEntryData = null){
+		let kparams = {};
+		let kfiles = {};
+		kfiles.fileData = fileData;
+		kparams.bulkUploadData = bulkUploadData;
+		kparams.bulkUploadCategoryEntryData = bulkUploadCategoryEntryData;
+		return new kaltura.RequestBuilder('categoryentry', 'updateStatusfrombulk', kparams, kfiles);
 	};
 }
 module.exports.categoryEntry = categoryEntry;

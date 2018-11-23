@@ -48306,45 +48306,75 @@ class ReportInputFilter extends ReportInputBaseFilter{
 	 * Filter by device
 	 * @return string
 	 */
-	 getDevicesIn() {
-	 	return this.devicesIn;
+	 getDeviceIn() {
+	 	return this.deviceIn;
 	 }
 	
 	/**
-	 * @param devicesIn string Filter by device
+	 * @param deviceIn string Filter by device
 	 */
-	 setDevicesIn(devicesIn) {
-	 	this.devicesIn = devicesIn;
+	 setDeviceIn(deviceIn) {
+	 	this.deviceIn = deviceIn;
 	 }
 	
 	/**
 	 * Filter by country
 	 * @return string
 	 */
-	 getCountriesIn() {
-	 	return this.countriesIn;
+	 getCountryIn() {
+	 	return this.countryIn;
 	 }
 	
 	/**
-	 * @param countriesIn string Filter by country
+	 * @param countryIn string Filter by country
 	 */
-	 setCountriesIn(countriesIn) {
-	 	this.countriesIn = countriesIn;
+	 setCountryIn(countryIn) {
+	 	this.countryIn = countryIn;
 	 }
 	
 	/**
 	 * Filter by region
 	 * @return string
 	 */
-	 getRegionsIn() {
-	 	return this.regionsIn;
+	 getRegionIn() {
+	 	return this.regionIn;
 	 }
 	
 	/**
-	 * @param regionsIn string Filter by region
+	 * @param regionIn string Filter by region
 	 */
-	 setRegionsIn(regionsIn) {
-	 	this.regionsIn = regionsIn;
+	 setRegionIn(regionIn) {
+	 	this.regionIn = regionIn;
+	 }
+	
+	/**
+	 * Filter by operating system family
+	 * @return string
+	 */
+	 getOperatingSystemFamilyIn() {
+	 	return this.operatingSystemFamilyIn;
+	 }
+	
+	/**
+	 * @param operatingSystemFamilyIn string Filter by operating system family
+	 */
+	 setOperatingSystemFamilyIn(operatingSystemFamilyIn) {
+	 	this.operatingSystemFamilyIn = operatingSystemFamilyIn;
+	 }
+	
+	/**
+	 * Filter by browser family
+	 * @return string
+	 */
+	 getBrowserFamilyIn() {
+	 	return this.browserFamilyIn;
+	 }
+	
+	/**
+	 * @param browserFamilyIn string Filter by browser family
+	 */
+	 setBrowserFamilyIn(browserFamilyIn) {
+	 	this.browserFamilyIn = browserFamilyIn;
 	 }
 	
 	/**

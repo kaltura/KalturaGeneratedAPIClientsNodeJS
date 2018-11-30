@@ -798,7 +798,7 @@ module.exports.bulkUpload = bulkUpload;
  * @action list List all categoryEntry.
  * @action reject activate CategoryEntry when it is pending moderation.
  * @action syncPrivacyContext update privacy context from the category.
- * @action updateStatusfrombulk .
+ * @action updateStatusFromBulk .
  */
 class categoryEntry{
 	
@@ -909,13 +909,13 @@ class categoryEntry{
 	 * @param bulkUploadCategoryEntryData BulkUploadCategoryEntryData  (optional, default: null)
 	 * @return KalturaBulkUpload
 	 */
-	static updateStatusfrombulk(fileData, bulkUploadData = null, bulkUploadCategoryEntryData = null){
+	static updateStatusFromBulk(fileData, bulkUploadData = null, bulkUploadCategoryEntryData = null){
 		let kparams = {};
 		let kfiles = {};
 		kfiles.fileData = fileData;
 		kparams.bulkUploadData = bulkUploadData;
 		kparams.bulkUploadCategoryEntryData = bulkUploadCategoryEntryData;
-		return new kaltura.RequestBuilder('categoryentry', 'updateStatusfrombulk', kparams, kfiles);
+		return new kaltura.RequestBuilder('categoryentry', 'updateStatusFromBulk', kparams, kfiles);
 	};
 }
 module.exports.categoryEntry = categoryEntry;

@@ -4859,6 +4859,30 @@ module.exports.Partner = Partner;
 /**
  *
  */
+class ESearchBaseItem extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchBaseItem';
+	}
+}
+module.exports.ESearchBaseItem = ESearchBaseItem;
+
+/**
+ *
+ */
+class BeaconScheduledResourceBaseItem extends ESearchBaseItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaBeaconScheduledResourceBaseItem';
+	}
+}
+module.exports.BeaconScheduledResourceBaseItem = BeaconScheduledResourceBaseItem;
+
+/**
+ *
+ */
 class Value extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -11485,18 +11509,6 @@ class DropFolderFile extends kaltura.BaseObject{
 	 }
 }
 module.exports.DropFolderFile = DropFolderFile;
-
-/**
- *
- */
-class ESearchBaseItem extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaESearchBaseItem';
-	}
-}
-module.exports.ESearchBaseItem = ESearchBaseItem;
 
 /**
  *
@@ -55159,6 +55171,63 @@ class BaseSyndicationFeedFilter extends BaseSyndicationFeedBaseFilter{
 	}
 }
 module.exports.BaseSyndicationFeedFilter = BaseSyndicationFeedFilter;
+
+/**
+ *
+ */
+class BeaconAbstractScheduledResourceItem extends BeaconScheduledResourceBaseItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaBeaconAbstractScheduledResourceItem';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSearchTerm() {
+	 	return this.searchTerm;
+	 }
+	
+	/**
+	 * @param searchTerm string 
+	 */
+	 setSearchTerm(searchTerm) {
+	 	this.searchTerm = searchTerm;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getItemType() {
+	 	return this.itemType;
+	 }
+	
+	/**
+	 * @param itemType int 
+	 */
+	 setItemType(itemType) {
+	 	this.itemType = itemType;
+	 }
+	
+	/**
+	 * 
+	 * @return ESearchRange
+	 */
+	 getRange() {
+	 	return this.range;
+	 }
+	
+	/**
+	 * @param range ESearchRange 
+	 */
+	 setRange(range) {
+	 	this.range = range;
+	 }
+}
+module.exports.BeaconAbstractScheduledResourceItem = BeaconAbstractScheduledResourceItem;
 
 /**
  *

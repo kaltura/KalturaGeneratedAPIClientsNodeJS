@@ -48225,7 +48225,7 @@ class ReportInputFilter extends ReportInputBaseFilter{
 	 }
 	
 	/**
-	 * Search keywords in onjects tags
+	 * Search keywords in objects tags
 	 * @return bool
 	 */
 	 getSearchInTags() {
@@ -48233,14 +48233,14 @@ class ReportInputFilter extends ReportInputBaseFilter{
 	 }
 	
 	/**
-	 * @param searchInTags bool Search keywords in onjects tags
+	 * @param searchInTags bool Search keywords in objects tags
 	 */
 	 setSearchInTags(searchInTags) {
 	 	this.searchInTags = searchInTags;
 	 }
 	
 	/**
-	 * Search keywords in onjects admin tags
+	 * Search keywords in objects admin tags
 	 * @return bool
 	 */
 	 getSearchInAdminTags() {
@@ -48248,14 +48248,14 @@ class ReportInputFilter extends ReportInputBaseFilter{
 	 }
 	
 	/**
-	 * @param searchInAdminTags bool Search keywords in onjects admin tags
+	 * @param searchInAdminTags bool Search keywords in objects admin tags
 	 */
 	 setSearchInAdminTags(searchInAdminTags) {
 	 	this.searchInAdminTags = searchInAdminTags;
 	 }
 	
 	/**
-	 * Search onjects in specified categories
+	 * Search objects in specified categories
 	 * @return string
 	 */
 	 getCategories() {
@@ -48263,10 +48263,25 @@ class ReportInputFilter extends ReportInputBaseFilter{
 	 }
 	
 	/**
-	 * @param categories string Search onjects in specified categories
+	 * @param categories string Search objects in specified categories
 	 */
 	 setCategories(categories) {
 	 	this.categories = categories;
+	 }
+	
+	/**
+	 * Search objects in specified category ids
+	 * @return string
+	 */
+	 getCategoriesIdsIn() {
+	 	return this.categoriesIdsIn;
+	 }
+	
+	/**
+	 * @param categoriesIdsIn string Search objects in specified category ids
+	 */
+	 setCategoriesIdsIn(categoriesIdsIn) {
+	 	this.categoriesIdsIn = categoriesIdsIn;
 	 }
 	
 	/**
@@ -48360,6 +48375,21 @@ class ReportInputFilter extends ReportInputBaseFilter{
 	 }
 	
 	/**
+	 * Filter by city
+	 * @return string
+	 */
+	 getCitiesIn() {
+	 	return this.citiesIn;
+	 }
+	
+	/**
+	 * @param citiesIn string Filter by city
+	 */
+	 setCitiesIn(citiesIn) {
+	 	this.citiesIn = citiesIn;
+	 }
+	
+	/**
 	 * Filter by operating system family
 	 * @return string
 	 */
@@ -48417,6 +48447,36 @@ class ReportInputFilter extends ReportInputBaseFilter{
 	 */
 	 setInterval(interval) {
 	 	this.interval = interval;
+	 }
+	
+	/**
+	 * Filter by media types
+	 * @return string
+	 */
+	 getMediaTypeIn() {
+	 	return this.mediaTypeIn;
+	 }
+	
+	/**
+	 * @param mediaTypeIn string Filter by media types
+	 */
+	 setMediaTypeIn(mediaTypeIn) {
+	 	this.mediaTypeIn = mediaTypeIn;
+	 }
+	
+	/**
+	 * Filter by source types
+	 * @return string
+	 */
+	 getSourceTypeIn() {
+	 	return this.sourceTypeIn;
+	 }
+	
+	/**
+	 * @param sourceTypeIn string Filter by source types
+	 */
+	 setSourceTypeIn(sourceTypeIn) {
+	 	this.sourceTypeIn = sourceTypeIn;
 	 }
 }
 module.exports.ReportInputFilter = ReportInputFilter;

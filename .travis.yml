@@ -5,7 +5,7 @@ node_js:
       - "10"
 #before_install: npm install --dev
 script: 
-    - sed -e "s#@YOUR_PARTNER_ID@#$PARTNER_ID#g" -e "s#@YOUR_ADMIN_SECRET@#$ADMIN_SECRET#g" -e "s#@SERVICE_URL@#https://www.kaltura.com#g" config.template.json > config.json
+    - sed -e "s#1931861#$PARTNER_ID#g" -e "s#83c3d4449a3abbe92ca5966f5f010eb4#$ADMIN_SECRET#g" -e "s#https://www.kaltura.com#https://www.kaltura.com#g" config.template.json > config.json
     - npm test
 notifications:
   email:

@@ -2487,6 +2487,7 @@ SHORT : 'short',
 };
 
 module.exports.ESearchCaptionFieldName = {
+CAPTION_ASSET_ID : 'caption_asset_id',
 CONTENT : 'content',
 END_TIME : 'end_time',
 LABEL : 'label',
@@ -5079,11 +5080,13 @@ VPAAS_USAGE : '26',
 ENTRY_USAGE : '27',
 REACH_USAGE : '28',
 TOP_CUSTOM_VAR1 : '29',
-CITIES : '30',
+MAP_OVERLAY_CITY : '30',
 OPERATING_SYSTEM_FAMILIES : '32',
 BROWSERS_FAMILIES : '33',
 USER_ENGAGEMENT_TIMELINE : '34',
 UNIQUE_USERS_PLAY : '35',
+MAP_OVERLAY_COUNTRY : '36',
+MAP_OVERLAY_REGION : '37',
 PARTNER_USAGE : '201',
 };
 

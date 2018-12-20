@@ -381,7 +381,7 @@ module.exports.appToken = appToken;
  * @action update Update base entry. Only the properties that were set will be updated.
  * @action updateContent Update the content resource associated with the entry.
  * @action updateThumbnailFromSourceEntry Update entry thumbnail from a different entry by a specified time offset (in seconds).
- * @action updateThumbnailFromUrl Update entry thumbnail using url.
+ * @action updateThumbnailFromUrl Update entry thumbnail using URL.
  * @action updateThumbnailJpeg Update entry thumbnail using a raw jpeg file.
  * @action upload Upload a file to Kaltura, that can be used to create an entry.
  */
@@ -676,7 +676,7 @@ class baseEntry{
 	};
 	
 	/**
-	 * Update entry thumbnail using url.
+	 * Update entry thumbnail using URL.
 	 * @param entryId string Media entry id
 	 * @param url string file url
 	 * @return KalturaBaseEntry
@@ -744,7 +744,7 @@ class bulkUpload{
 	 * Add new bulk upload batch job
  * Conversion profile id can be specified in the API or in the CSV file, the one in the CSV file will be stronger.
  * If no conversion profile was specified, partner's default will be used.
-	 * @param conversionProfileId int Convertion profile id to use for converting the current bulk (-1 to use partner's default)
+	 * @param conversionProfileId int Conversion profile id to use for converting the current bulk (-1 to use partner's default)
 	 * @param csvFileData file bulk upload file
 	 * @param bulkUploadType string  (optional, enum: KalturaBulkUploadType, default: null)
 	 * @param uploadedBy string  (optional, default: null)
@@ -1055,7 +1055,7 @@ module.exports.category = category;
  * @action activate activate CategoryUser.
  * @action add Add new CategoryUser.
  * @action addFromBulkUpload .
- * @action copyFromCategory Copy all memeber from parent category.
+ * @action copyFromCategory Copy all member from parent category.
  * @action deactivate reject CategoryUser.
  * @action delete Delete a CategoryUser.
  * @action get Get CategoryUser by id.
@@ -1106,7 +1106,7 @@ class categoryUser{
 	};
 	
 	/**
-	 * Copy all memeber from parent category.
+	 * Copy all member from parent category.
 	 * @param categoryId int 
 	 */
 	static copyFromCategory(categoryId){
@@ -1432,7 +1432,7 @@ module.exports.data = data;
  * Must provide valid sourceDeliveryId.
  * @action get Get delivery by id.
  * @action list Retrieve a list of available delivery depends on the filter given.
- * @action update Update exisiting delivery.
+ * @action update Update existing delivery profile.
  */
 class deliveryProfile{
 	
@@ -1484,7 +1484,7 @@ class deliveryProfile{
 	};
 	
 	/**
-	 * Update exisiting delivery.
+	 * Update existing delivery profile.
 	 * @param id string 
 	 * @param delivery DeliveryProfile 
 	 * @return KalturaDeliveryProfile
@@ -2878,7 +2878,7 @@ module.exports.mediaInfo = mediaInfo;
  * This action should be exposed only to the batches.
  * @action addFromEntry Copy entry into new entry.
  * @action addFromFlavorAsset Copy flavor asset into new entry.
- * @action addFromRecordedWebcam Add new entry after the file was recored on the server and the token id exists.
+ * @action addFromRecordedWebcam Add new entry after the file was recorded on the server and the token id exists.
  * @action addFromSearchResult Adds new media entry by importing the media file from a search provider.
  * This action should be used with the search service result.
  * @action addFromUploadedFile Add new entry after the specific media file was uploaded and the upload token id exists.
@@ -2908,7 +2908,7 @@ module.exports.mediaInfo = mediaInfo;
  * If flavor params id not specified, source flavor will be used by default.
  * @action updateThumbnailFromSourceEntry Update media entry thumbnail from a different entry by a specified time offset (In seconds)
  * If flavor params id not specified, source flavor will be used by default.
- * @action updateThumbnailFromUrl Update entry thumbnail using url.
+ * @action updateThumbnailFromUrl Update entry thumbnail using URL.
  * @action updateThumbnailJpeg Update media entry thumbnail using a raw jpeg file.
  * @action upload Upload a media file to Kaltura, then the file can be used to create a media entry.
  */
@@ -2985,9 +2985,9 @@ class media{
 	};
 	
 	/**
-	 * Add new entry after the file was recored on the server and the token id exists.
+	 * Add new entry after the file was recorded on the server and the token id exists.
 	 * @param mediaEntry MediaEntry Media entry metadata
-	 * @param webcamTokenId string Token id for the recored webcam file
+	 * @param webcamTokenId string Token id for the recorded webcam file
 	 * @return KalturaMediaEntry
 	 */
 	static addFromRecordedWebcam(mediaEntry, webcamTokenId){
@@ -3289,7 +3289,7 @@ class media{
 	};
 	
 	/**
-	 * Update entry thumbnail using url.
+	 * Update entry thumbnail using URL.
 	 * @param entryId string Media entry id
 	 * @param url string file url
 	 * @return KalturaBaseEntry
@@ -3336,7 +3336,7 @@ module.exports.media = media;
  * @action add Adds a new mix.
  * If the dataContent is null, a default timeline will be created.
  * @action anonymousRank Anonymously rank a mix entry, no validation is done on duplicate rankings.
- * @action appendMediaEntry Appends a media entry to a the end of the mix timeline, this will save the mix timeline as a new version.
+ * @action appendMediaEntry Appends a media entry to the end of the mix timeline, this will save the mix timeline as a new version.
  * @action clone Clones an existing mix.
  * @action count Count mix entries by filter.
  * @action delete Delete a mix entry.
@@ -3374,7 +3374,7 @@ class mixing{
 	};
 	
 	/**
-	 * Appends a media entry to a the end of the mix timeline, this will save the mix timeline as a new version.
+	 * Appends a media entry to the end of the mix timeline, this will save the mix timeline as a new version.
 	 * @param mixEntryId string Mix entry to append to its timeline
 	 * @param mediaEntryId string Media entry to append to the timeline
 	 * @return KalturaMixEntry
@@ -3520,10 +3520,10 @@ module.exports.notification = notification;
  * Calculation is done according to partner's package.
  * @action getUsage Get usage statistics for a partner
  * Calculation is done according to partner's package
- * Additional data returned is a graph points of streaming usage in a timeframe
+ * Additional data returned is a graph points of streaming usage in a time frame
  * The resolution can be "days" or "months".
  * @action list List partners by filter with paging support
- * Current implementation will only list the sub partners of the partner initiating the api call (using the current KS).
+ * Current implementation will only list the sub partners of the partner initiating the API call (using the current KS).
  * This action is only partially implemented to support listing sub partners of a VAR partner.
  * @action listFeatureStatus List partner's current processes' statuses.
  * @action listPartnersForUser Retrieve a list of partner objects which the current user is allowed to access.
@@ -3592,7 +3592,7 @@ class partner{
 	/**
 	 * Get usage statistics for a partner
  * Calculation is done according to partner's package
- * Additional data returned is a graph points of streaming usage in a timeframe
+ * Additional data returned is a graph points of streaming usage in a time frame
  * The resolution can be "days" or "months".
 	 * @param year int  (optional)
 	 * @param month int  (optional, default: 1)
@@ -3609,7 +3609,7 @@ class partner{
 	
 	/**
 	 * List partners by filter with paging support
- * Current implementation will only list the sub partners of the partner initiating the api call (using the current KS).
+ * Current implementation will only list the sub partners of the partner initiating the API call (using the current KS).
  * This action is only partially implemented to support listing sub partners of a VAR partner.
 	 * @param filter PartnerFilter  (optional, default: null)
 	 * @param pager FilterPager  (optional, default: null)
@@ -3852,12 +3852,12 @@ module.exports.permission = permission;
  * @action delete Delete existing playlist.
  * @action execute Retrieve playlist for playing purpose.
  * @action executeFromContent Retrieve playlist for playing purpose, based on content.
- * @action executeFromFilters Revrieve playlist for playing purpose, based on media entry filters.
+ * @action executeFromFilters Retrieve playlist for playing purpose, based on media entry filters.
  * @action get Retrieve a playlist.
  * @action getStatsFromContent Retrieve playlist statistics.
  * @action list List available playlists.
  * @action update Update existing playlist
- * Note - you cannot change playlist type. updated playlist must be of the same type.
+ * Note - you cannot change playlist type. Updated playlist must be of the same type.
  */
 class playlist{
 	
@@ -3935,7 +3935,7 @@ class playlist{
 	};
 	
 	/**
-	 * Revrieve playlist for playing purpose, based on media entry filters.
+	 * Retrieve playlist for playing purpose, based on media entry filters.
 	 * @param filters array 
 	 * @param totalResults int 
 	 * @param detailed string  (optional, default: 1)
@@ -3992,7 +3992,7 @@ class playlist{
 	
 	/**
 	 * Update existing playlist
- * Note - you cannot change playlist type. updated playlist must be of the same type.
+ * Note - you cannot change playlist type. Updated playlist must be of the same type.
 	 * @param id string 
 	 * @param playlist Playlist 
 	 * @param updateStats bool  (optional, default: false)
@@ -4013,11 +4013,11 @@ module.exports.playlist = playlist;
  *Class definition for the Kaltura service: report.
  * The available service actions:
  * @action execute .
- * @action getBaseTotal report getBaseTotal action allows to get a the total base for storage reports.
+ * @action getBaseTotal report getBaseTotal action allows to get the total base for storage reports.
  * @action getGraphs report getGraphs action allows to get a graph data for a specific report.
  * @action getTable report getTable action allows to get a graph data for a specific report.
  * @action getTotal report getTotal action allows to get a graph data for a specific report.
- * @action getUrlForReportAsCsv will create a Csv file for the given report and return the URL to access it.
+ * @action getUrlForReportAsCsv will create a CSV file for the given report and return the URL to access it.
  * @action serve Will serve a requested report.
  */
 class report{
@@ -4036,7 +4036,7 @@ class report{
 	};
 	
 	/**
-	 * report getBaseTotal action allows to get a the total base for storage reports.
+	 * report getBaseTotal action allows to get the total base for storage reports.
 	 * @param reportType string  (enum: KalturaReportType)
 	 * @param reportInputFilter ReportInputFilter 
 	 * @param objectIds string - one ID or more (separated by ',') of specific objects to query (optional, default: null)
@@ -4102,7 +4102,7 @@ class report{
 	};
 	
 	/**
-	 * will create a Csv file for the given report and return the URL to access it.
+	 * will create a CSV file for the given report and return the URL to access it.
 	 * @param reportTitle string The title of the report to display at top of CSV
 	 * @param reportText string The text of the filter of the report
 	 * @param headers string The headers of the columns - a map between the enumerations on the server side and the their display text
@@ -4786,7 +4786,7 @@ module.exports.storageProfile = storageProfile;
  * @action get Get Syndication Feed by ID.
  * @action getEntryCount get entry count for a syndication feed.
  * @action list List Syndication Feeds by filter with paging support.
- * @action requestConversion request conversion for all entries that doesnt have the required flavor param
+ * @action requestConversion request conversion for all entries that doesn't have the required flavor param
  * returns a comma-separated ids of conversion jobs.
  * @action update Update Syndication Feed by ID.
  */
@@ -4849,7 +4849,7 @@ class syndicationFeed{
 	};
 	
 	/**
-	 * request conversion for all entries that doesnt have the required flavor param
+	 * request conversion for all entries that doesn't have the required flavor param
  * returns a comma-separated ids of conversion jobs.
 	 * @param feedId string 
 	 * @return string
@@ -6011,7 +6011,7 @@ module.exports.user = user;
  * Must provide valid sourceWidgetId.
  * @action get Get widget by id.
  * @action list Retrieve a list of available widget depends on the filter given.
- * @action update Update exisiting widget.
+ * @action update Update existing widget.
  */
 class widget{
 	
@@ -6064,7 +6064,7 @@ class widget{
 	};
 	
 	/**
-	 * Update exisiting widget.
+	 * Update existing widget.
 	 * @param id string 
 	 * @param widget Widget 
 	 * @return KalturaWidget

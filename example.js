@@ -3,7 +3,7 @@ const kaltura = require('./KalturaClient');
 
 
 const secret = '@SECRET@';
-const partnerId = 1931861;
+const partnerId = @PARTNER_ID@;
 const entryName = 'test';
 const entryDescription = 'test';
 

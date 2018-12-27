@@ -6214,6 +6214,108 @@ module.exports.CaptionParams = CaptionParams;
 /**
  *
  */
+class CaptionPlaybackPluginData extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaCaptionPlaybackPluginData';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getLabel() {
+	 	return this.label;
+	 }
+	
+	/**
+	 * @param label string 
+	 */
+	 setLabel(label) {
+	 	this.label = label;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getFormat() {
+	 	return this.format;
+	 }
+	
+	/**
+	 * @param format string 
+	 */
+	 setFormat(format) {
+	 	this.format = format;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getLanguage() {
+	 	return this.language;
+	 }
+	
+	/**
+	 * @param language string 
+	 */
+	 setLanguage(language) {
+	 	this.language = language;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getWebVttUrl() {
+	 	return this.webVttUrl;
+	 }
+	
+	/**
+	 * @param webVttUrl string 
+	 */
+	 setWebVttUrl(webVttUrl) {
+	 	this.webVttUrl = webVttUrl;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getUrl() {
+	 	return this.url;
+	 }
+	
+	/**
+	 * @param url string 
+	 */
+	 setUrl(url) {
+	 	this.url = url;
+	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getIsDefault() {
+	 	return this.isDefault;
+	 }
+	
+	/**
+	 * @param isDefault bool 
+	 */
+	 setIsDefault(isDefault) {
+	 	this.isDefault = isDefault;
+	 }
+}
+module.exports.CaptionPlaybackPluginData = CaptionPlaybackPluginData;
+
+/**
+ *
+ */
 class Category extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -23416,6 +23518,21 @@ class PlaybackContext extends kaltura.BaseObject{
 	 */
 	 setSources(sources) {
 	 	this.sources = sources;
+	 }
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getPlaybackCaptions() {
+	 	return this.playbackCaptions;
+	 }
+	
+	/**
+	 * @param playbackCaptions array 
+	 */
+	 setPlaybackCaptions(playbackCaptions) {
+	 	this.playbackCaptions = playbackCaptions;
 	 }
 	
 	/**

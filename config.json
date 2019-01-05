@@ -1,5 +1,5 @@
 {
 	"secret": "@YOUR_ADMIN_SECRET@",
 	"partnerId": @YOUR_PARTNER_ID@,
-	"serviceUrl": "https://www.kaltura.com"
+	"serviceUrl": "@SERVICE_URL@"
 }

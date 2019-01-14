@@ -1721,6 +1721,7 @@ REJECT : '8',
 };
 
 module.exports.BulkUploadObjectType = {
+JOB : 'bulkUploadFilter.JOB',
 SCHEDULE_EVENT : 'scheduleBulkUpload.SCHEDULE_EVENT',
 SCHEDULE_RESOURCE : 'scheduleBulkUpload.SCHEDULE_RESOURCE',
 ENTRY : '1',

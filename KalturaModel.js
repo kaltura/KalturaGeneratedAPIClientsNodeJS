@@ -33214,6 +33214,33 @@ module.exports.BulkUploadResultEntry = BulkUploadResultEntry;
 /**
  *
  */
+class BulkUploadResultJob extends BulkUploadResult{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaBulkUploadResultJob';
+	}
+	
+	/**
+	 * ID of object being processed by the job
+	 * @return int
+	 */
+	 getJobObjectId() {
+	 	return this.jobObjectId;
+	 }
+	
+	/**
+	 * @param jobObjectId int ID of object being processed by the job
+	 */
+	 setJobObjectId(jobObjectId) {
+	 	this.jobObjectId = jobObjectId;
+	 }
+}
+module.exports.BulkUploadResultJob = BulkUploadResultJob;
+
+/**
+ *
+ */
 class BulkUploadResultScheduleEvent extends BulkUploadResult{
 	
 	constructor(object = null) {

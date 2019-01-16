@@ -31975,6 +31975,18 @@ module.exports.BaseSyndicationFeedListResponse = BaseSyndicationFeedListResponse
 /**
  *
  */
+class BlackoutScheduleEvent extends ScheduleEvent{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaBlackoutScheduleEvent';
+	}
+}
+module.exports.BlackoutScheduleEvent = BlackoutScheduleEvent;
+
+/**
+ *
+ */
 class BpmEventNotificationIntegrationJobTriggerData extends IntegrationJobTriggerData{
 	
 	constructor(object = null) {
@@ -41874,6 +41886,14 @@ class EntryScheduleEvent extends ScheduleEvent{
 	 */
 	 setCategoryIds(categoryIds) {
 	 	this.categoryIds = categoryIds;
+	 }
+	
+	/**
+	 * Blackout schedule events the conflict with this event
+	 * @return array
+	 */
+	 getBlackoutConflicts() {
+	 	return this.blackoutConflicts;
 	 }
 }
 module.exports.EntryScheduleEvent = EntryScheduleEvent;
@@ -76587,6 +76607,18 @@ class YoutubeApiDistributionProfileFilter extends YoutubeApiDistributionProfileB
 	}
 }
 module.exports.YoutubeApiDistributionProfileFilter = YoutubeApiDistributionProfileFilter;
+
+/**
+ *
+ */
+class BlackoutScheduleEventFilter extends RecordScheduleEventBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaBlackoutScheduleEventFilter';
+	}
+}
+module.exports.BlackoutScheduleEventFilter = BlackoutScheduleEventFilter;
 
 /**
  *

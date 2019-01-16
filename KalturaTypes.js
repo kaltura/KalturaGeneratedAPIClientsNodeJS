@@ -846,6 +846,12 @@ PRIVATE_EVENT : 2,
 CONFIDENTIAL_EVENT : 3,
 };
 
+module.exports.ScheduleEventConflictType = {
+RESOURCE_CONFLICT : 1,
+BLACKOUT_CONFLICT : 2,
+BOTH : 3,
+};
+
 module.exports.ScheduleEventRecurrenceType = {
 NONE : 0,
 RECURRING : 1,
@@ -861,6 +867,7 @@ DELETED : 3,
 module.exports.ScheduleEventType = {
 RECORD : 1,
 LIVE_STREAM : 2,
+BLACKOUT : 3,
 };
 
 module.exports.ScheduleResourceStatus = {
@@ -5090,6 +5097,7 @@ UNIQUE_USERS_PLAY : '35',
 MAP_OVERLAY_COUNTRY : '36',
 MAP_OVERLAY_REGION : '37',
 TOP_CONTENT_CREATOR : '38',
+TOP_CONTENT_CONTRIBUTORS : '39',
 APP_DOMAIN_UNIQUE_ACTIVE_USERS : '40',
 PARTNER_USAGE : '201',
 };

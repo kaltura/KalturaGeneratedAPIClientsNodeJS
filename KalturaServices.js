@@ -9074,13 +9074,15 @@ class scheduleEvent{
 	 * @param resourceIds string comma separated
 	 * @param scheduleEvent ScheduleEvent 
 	 * @param scheduleEventIdToIgnore string  (optional, default: null)
+	 * @param scheduleEventConflictType int  (optional, enum: KalturaScheduleEventConflictType, default: 1)
 	 * @return KalturaScheduleEventListResponse
 	 */
-	static getConflicts(resourceIds, scheduleEvent, scheduleEventIdToIgnore = null){
+	static getConflicts(resourceIds, scheduleEvent, scheduleEventIdToIgnore = null, scheduleEventConflictType = 1){
 		let kparams = {};
 		kparams.resourceIds = resourceIds;
 		kparams.scheduleEvent = scheduleEvent;
 		kparams.scheduleEventIdToIgnore = scheduleEventIdToIgnore;
+		kparams.scheduleEventConflictType = scheduleEventConflictType;
 		return new kaltura.RequestBuilder('schedule_scheduleevent', 'getConflicts', kparams);
 	};
 	
@@ -9252,12 +9254,14 @@ class scheduleEventResource{
 	 * List KalturaScheduleEventResource objects.
 	 * @param filter ScheduleEventResourceFilter  (optional, default: null)
 	 * @param pager FilterPager  (optional, default: null)
+	 * @param filterBlackoutConflicts bool  (optional, default: true)
 	 * @return KalturaScheduleEventResourceListResponse
 	 */
-	static listAction(filter = null, pager = null){
+	static listAction(filter = null, pager = null, filterBlackoutConflicts = true){
 		let kparams = {};
 		kparams.filter = filter;
 		kparams.pager = pager;
+		kparams.filterBlackoutConflicts = filterBlackoutConflicts;
 		return new kaltura.RequestBuilder('schedule_scheduleeventresource', 'list', kparams);
 	};
 	

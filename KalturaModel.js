@@ -31075,6 +31075,21 @@ class AnswerCuePoint extends CuePoint{
 	
 	/**
 	 * 
+	 * @return string
+	 */
+	 getOpenAnswer() {
+	 	return this.openAnswer;
+	 }
+	
+	/**
+	 * @param openAnswer string 
+	 */
+	 setOpenAnswer(openAnswer) {
+	 	this.openAnswer = openAnswer;
+	 }
+	
+	/**
+	 * 
 	 * @return int
 	 */
 	 getIsCorrect() {
@@ -48213,6 +48228,21 @@ class QuizUserEntry extends UserEntry{
 	 */
 	 getScore() {
 	 	return this.score;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getFeedback() {
+	 	return this.feedback;
+	 }
+	
+	/**
+	 * @param feedback string 
+	 */
+	 setFeedback(feedback) {
+	 	this.feedback = feedback;
 	 }
 }
 module.exports.QuizUserEntry = QuizUserEntry;

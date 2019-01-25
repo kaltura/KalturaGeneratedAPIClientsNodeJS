@@ -2543,7 +2543,7 @@ module.exports.liveStats = liveStats;
  * @action addLiveStreamPushPublishConfiguration Add new pushPublish configuration to entry.
  * @action appendRecording Append recorded video to live entry.
  * @action authenticate Authenticate live-stream entry against stream token and partner limitations.
- * @action createPeriodicSyncPoints Creates perioding metadata sync-point events on a live stream.
+ * @action createPeriodicSyncPoints Creates periodic metadata sync-point events on a live stream.
  * @action createRecordedEntry Create recorded entry id if it doesn't exist and make sure it happens on the DC that the live entry was created on.
  * @action delete Delete a live stream entry.
  * @action get Get live stream entry by ID.
@@ -2633,7 +2633,7 @@ class liveStream{
 	};
 	
 	/**
-	 * Creates perioding metadata sync-point events on a live stream.
+	 * Creates periodic metadata sync-point events on a live stream.
 	 * @param entryId string Kaltura live-stream entry id
 	 * @param interval int Events interval in seconds
 	 * @param duration int Duration in seconds
@@ -8419,10 +8419,10 @@ module.exports.like = like;
  *Class definition for the Kaltura service: metadata.
  * The available service actions:
  * @action add Allows you to add a metadata object and metadata content associated with Kaltura object.
- * @action addFromBulk Allows you to add a metadata xml data from remote URL.
+ * @action addFromBulk Allows you to add a metadata XML data from remote URL.
  * Enables different permissions than addFromUrl action.
  * @action addFromFile Allows you to add a metadata object and metadata file associated with Kaltura object.
- * @action addFromUrl Allows you to add a metadata xml data from remote URL.
+ * @action addFromUrl Allows you to add a metadata XML data from remote URL.
  * @action delete Delete an existing metadata.
  * @action get Retrieve a metadata object by id.
  * @action index Index metadata by id, will also index the related object.
@@ -8453,12 +8453,12 @@ class metadata{
 	};
 	
 	/**
-	 * Allows you to add a metadata xml data from remote URL.
+	 * Allows you to add a metadata XML data from remote URL.
  * Enables different permissions than addFromUrl action.
 	 * @param metadataProfileId int 
 	 * @param objectType string  (enum: KalturaMetadataObjectType)
 	 * @param objectId string 
-	 * @param url string XML metadata remote url
+	 * @param url string XML metadata remote URL
 	 * @return KalturaMetadata
 	 */
 	static addFromBulk(metadataProfileId, objectType, objectId, url){
@@ -8489,11 +8489,11 @@ class metadata{
 	};
 	
 	/**
-	 * Allows you to add a metadata xml data from remote URL.
+	 * Allows you to add a metadata XML data from remote URL.
 	 * @param metadataProfileId int 
 	 * @param objectType string  (enum: KalturaMetadataObjectType)
 	 * @param objectId string 
-	 * @param url string XML metadata remote url
+	 * @param url string XML metadata remote URL
 	 * @return KalturaMetadata
 	 */
 	static addFromUrl(metadataProfileId, objectType, objectId, url){
@@ -8623,7 +8623,7 @@ module.exports.metadata = metadata;
  * @action revert Update an existing metadata object definition file.
  * @action update Update an existing metadata object.
  * @action updateDefinitionFromFile Update an existing metadata object definition file.
- * @action updateTransformationFromFile Update an existing metadata object xslt file.
+ * @action updateTransformationFromFile Update an existing metadata object XSLT file.
  * @action updateViewsFromFile Update an existing metadata object views file.
  */
 class metadataProfile{
@@ -8749,7 +8749,7 @@ class metadataProfile{
 	};
 	
 	/**
-	 * Update an existing metadata object xslt file.
+	 * Update an existing metadata object XSLT file.
 	 * @param id int 
 	 * @param xsltFile file XSLT file, will be executed on every metadata add/update
 	 * @return KalturaMetadataProfile
@@ -9388,7 +9388,7 @@ module.exports.scheduledTaskProfile = scheduledTaskProfile;
  * @action delete Mark the short link as deleted.
  * @action get Retrieve an short link object by id.
  * @action list List short link objects by filter and pager.
- * @action update Update exisitng short link.
+ * @action update Update existing short link.
  */
 class shortLink{
 	
@@ -9439,7 +9439,7 @@ class shortLink{
 	};
 	
 	/**
-	 * Update exisitng short link.
+	 * Update existing short link.
 	 * @param id string 
 	 * @param shortLink ShortLink 
 	 * @return KalturaShortLink
@@ -9568,7 +9568,7 @@ module.exports.varConsole = varConsole;
  * @action get Retrieve an virus scan profile object by id.
  * @action list List virus scan profile objects by filter and pager.
  * @action scan Scan flavor asset according to virus scan profile.
- * @action update Update exisitng virus scan profile, it is possible to update the virus scan profile id too.
+ * @action update Update existing virus scan profile, it is possible to update the virus scan profile id too.
  */
 class virusScanProfile{
 	
@@ -9632,7 +9632,7 @@ class virusScanProfile{
 	};
 	
 	/**
-	 * Update exisitng virus scan profile, it is possible to update the virus scan profile id too.
+	 * Update existing virus scan profile, it is possible to update the virus scan profile id too.
 	 * @param virusScanProfileId int 
 	 * @param virusScanProfile VirusScanProfile Id
 	 * @return KalturaVirusScanProfile

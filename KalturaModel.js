@@ -31111,6 +31111,21 @@ class AnswerCuePoint extends CuePoint{
 	 getExplanation() {
 	 	return this.explanation;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getFeedback() {
+	 	return this.feedback;
+	 }
+	
+	/**
+	 * @param feedback string 
+	 */
+	 setFeedback(feedback) {
+	 	this.feedback = feedback;
+	 }
 }
 module.exports.AnswerCuePoint = AnswerCuePoint;
 

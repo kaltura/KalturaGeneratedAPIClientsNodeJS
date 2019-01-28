@@ -6310,6 +6310,21 @@ class CaptionPlaybackPluginData extends kaltura.BaseObject{
 	 setIsDefault(isDefault) {
 	 	this.isDefault = isDefault;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getLanguageCode() {
+	 	return this.languageCode;
+	 }
+	
+	/**
+	 * @param languageCode string 
+	 */
+	 setLanguageCode(languageCode) {
+	 	this.languageCode = languageCode;
+	 }
 }
 module.exports.CaptionPlaybackPluginData = CaptionPlaybackPluginData;
 

@@ -48702,6 +48702,21 @@ class ReportInputFilter extends ReportInputBaseFilter{
 	 setSourceTypeIn(sourceTypeIn) {
 	 	this.sourceTypeIn = sourceTypeIn;
 	 }
+	
+	/**
+	 * Filter by entry owner
+	 * @return string
+	 */
+	 getOwnerIdsIn() {
+	 	return this.ownerIdsIn;
+	 }
+	
+	/**
+	 * @param ownerIdsIn string Filter by entry owner
+	 */
+	 setOwnerIdsIn(ownerIdsIn) {
+	 	this.ownerIdsIn = ownerIdsIn;
+	 }
 }
 module.exports.ReportInputFilter = ReportInputFilter;
 

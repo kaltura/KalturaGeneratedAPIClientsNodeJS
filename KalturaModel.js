@@ -48717,6 +48717,21 @@ class ReportInputFilter extends ReportInputBaseFilter{
 	 setOwnerIdsIn(ownerIdsIn) {
 	 	this.ownerIdsIn = ownerIdsIn;
 	 }
+	
+	/**
+	 * 
+	 * @return ESearchEntryOperator
+	 */
+	 getEntryOperator() {
+	 	return this.entryOperator;
+	 }
+	
+	/**
+	 * @param entryOperator ESearchEntryOperator 
+	 */
+	 setEntryOperator(entryOperator) {
+	 	this.entryOperator = entryOperator;
+	 }
 }
 module.exports.ReportInputFilter = ReportInputFilter;
 

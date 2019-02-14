@@ -4040,13 +4040,15 @@ class report{
 	 * @param reportType string  (enum: KalturaReportType)
 	 * @param reportInputFilter ReportInputFilter 
 	 * @param objectIds string - one ID or more (separated by ',') of specific objects to query (optional, default: null)
+	 * @param responseOptions ReportResponseOptions  (optional, default: null)
 	 * @return array
 	 */
-	static getBaseTotal(reportType, reportInputFilter, objectIds = null){
+	static getBaseTotal(reportType, reportInputFilter, objectIds = null, responseOptions = null){
 		let kparams = {};
 		kparams.reportType = reportType;
 		kparams.reportInputFilter = reportInputFilter;
 		kparams.objectIds = objectIds;
+		kparams.responseOptions = responseOptions;
 		return new kaltura.RequestBuilder('report', 'getBaseTotal', kparams);
 	};
 	
@@ -4056,14 +4058,16 @@ class report{
 	 * @param reportInputFilter ReportInputFilter 
 	 * @param dimension string  (optional, default: null)
 	 * @param objectIds string - one ID or more (separated by ',') of specific objects to query (optional, default: null)
+	 * @param responseOptions ReportResponseOptions  (optional, default: null)
 	 * @return array
 	 */
-	static getGraphs(reportType, reportInputFilter, dimension = null, objectIds = null){
+	static getGraphs(reportType, reportInputFilter, dimension = null, objectIds = null, responseOptions = null){
 		let kparams = {};
 		kparams.reportType = reportType;
 		kparams.reportInputFilter = reportInputFilter;
 		kparams.dimension = dimension;
 		kparams.objectIds = objectIds;
+		kparams.responseOptions = responseOptions;
 		return new kaltura.RequestBuilder('report', 'getGraphs', kparams);
 	};
 	
@@ -4074,15 +4078,17 @@ class report{
 	 * @param pager FilterPager 
 	 * @param order string  (optional, default: null)
 	 * @param objectIds string - one ID or more (separated by ',') of specific objects to query (optional, default: null)
+	 * @param responseOptions ReportResponseOptions  (optional, default: null)
 	 * @return KalturaReportTable
 	 */
-	static getTable(reportType, reportInputFilter, pager, order = null, objectIds = null){
+	static getTable(reportType, reportInputFilter, pager, order = null, objectIds = null, responseOptions = null){
 		let kparams = {};
 		kparams.reportType = reportType;
 		kparams.reportInputFilter = reportInputFilter;
 		kparams.pager = pager;
 		kparams.order = order;
 		kparams.objectIds = objectIds;
+		kparams.responseOptions = responseOptions;
 		return new kaltura.RequestBuilder('report', 'getTable', kparams);
 	};
 	
@@ -4091,13 +4097,15 @@ class report{
 	 * @param reportType string  (enum: KalturaReportType)
 	 * @param reportInputFilter ReportInputFilter 
 	 * @param objectIds string - one ID or more (separated by ',') of specific objects to query (optional, default: null)
+	 * @param responseOptions ReportResponseOptions  (optional, default: null)
 	 * @return KalturaReportTotal
 	 */
-	static getTotal(reportType, reportInputFilter, objectIds = null){
+	static getTotal(reportType, reportInputFilter, objectIds = null, responseOptions = null){
 		let kparams = {};
 		kparams.reportType = reportType;
 		kparams.reportInputFilter = reportInputFilter;
 		kparams.objectIds = objectIds;
+		kparams.responseOptions = responseOptions;
 		return new kaltura.RequestBuilder('report', 'getTotal', kparams);
 	};
 	
@@ -4112,9 +4120,10 @@ class report{
 	 * @param pager FilterPager  (optional, default: null)
 	 * @param order string  (optional, default: null)
 	 * @param objectIds string - one ID or more (separated by ',') of specific objects to query (optional, default: null)
+	 * @param responseOptions ReportResponseOptions  (optional, default: null)
 	 * @return string
 	 */
-	static getUrlForReportAsCsv(reportTitle, reportText, headers, reportType, reportInputFilter, dimension = null, pager = null, order = null, objectIds = null){
+	static getUrlForReportAsCsv(reportTitle, reportText, headers, reportType, reportInputFilter, dimension = null, pager = null, order = null, objectIds = null, responseOptions = null){
 		let kparams = {};
 		kparams.reportTitle = reportTitle;
 		kparams.reportText = reportText;
@@ -4125,6 +4134,7 @@ class report{
 		kparams.pager = pager;
 		kparams.order = order;
 		kparams.objectIds = objectIds;
+		kparams.responseOptions = responseOptions;
 		return new kaltura.RequestBuilder('report', 'getUrlForReportAsCsv', kparams);
 	};
 	

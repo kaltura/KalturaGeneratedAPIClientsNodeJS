@@ -24331,6 +24331,33 @@ module.exports.ReportResponse = ReportResponse;
 /**
  *
  */
+class ReportResponseOptions extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaReportResponseOptions';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getDelimiter() {
+	 	return this.delimiter;
+	 }
+	
+	/**
+	 * @param delimiter string 
+	 */
+	 setDelimiter(delimiter) {
+	 	this.delimiter = delimiter;
+	 }
+}
+module.exports.ReportResponseOptions = ReportResponseOptions;
+
+/**
+ *
+ */
 class ReportTable extends kaltura.BaseObject{
 	
 	constructor(object = null) {

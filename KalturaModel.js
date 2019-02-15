@@ -24352,6 +24352,21 @@ class ReportResponseOptions extends kaltura.BaseObject{
 	 setDelimiter(delimiter) {
 	 	this.delimiter = delimiter;
 	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getSkipEmptyDates() {
+	 	return this.skipEmptyDates;
+	 }
+	
+	/**
+	 * @param skipEmptyDates bool 
+	 */
+	 setSkipEmptyDates(skipEmptyDates) {
+	 	this.skipEmptyDates = skipEmptyDates;
+	 }
 }
 module.exports.ReportResponseOptions = ReportResponseOptions;
 

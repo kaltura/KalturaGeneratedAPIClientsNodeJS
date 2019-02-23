@@ -48774,6 +48774,36 @@ class ReportInputFilter extends ReportInputBaseFilter{
 	 setEntryOperator(entryOperator) {
 	 	this.entryOperator = entryOperator;
 	 }
+	
+	/**
+	 * Entry created at greater than or equal as Unix timestamp
+	 * @return int
+	 */
+	 getEntryCreatedAtGreaterThanOrEqual() {
+	 	return this.entryCreatedAtGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * @param entryCreatedAtGreaterThanOrEqual int Entry created at greater than or equal as Unix timestamp
+	 */
+	 setEntryCreatedAtGreaterThanOrEqual(entryCreatedAtGreaterThanOrEqual) {
+	 	this.entryCreatedAtGreaterThanOrEqual = entryCreatedAtGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * Entry created at less than or equal as Unix timestamp
+	 * @return int
+	 */
+	 getEntryCreatedAtLessThanOrEqual() {
+	 	return this.entryCreatedAtLessThanOrEqual;
+	 }
+	
+	/**
+	 * @param entryCreatedAtLessThanOrEqual int Entry created at less than or equal as Unix timestamp
+	 */
+	 setEntryCreatedAtLessThanOrEqual(entryCreatedAtLessThanOrEqual) {
+	 	this.entryCreatedAtLessThanOrEqual = entryCreatedAtLessThanOrEqual;
+	 }
 }
 module.exports.ReportInputFilter = ReportInputFilter;
 

@@ -48804,6 +48804,21 @@ class ReportInputFilter extends ReportInputBaseFilter{
 	 setEntryCreatedAtLessThanOrEqual(entryCreatedAtLessThanOrEqual) {
 	 	this.entryCreatedAtLessThanOrEqual = entryCreatedAtLessThanOrEqual;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getEntryIdIn() {
+	 	return this.entryIdIn;
+	 }
+	
+	/**
+	 * @param entryIdIn string 
+	 */
+	 setEntryIdIn(entryIdIn) {
+	 	this.entryIdIn = entryIdIn;
+	 }
 }
 module.exports.ReportInputFilter = ReportInputFilter;
 

@@ -5604,6 +5604,7 @@ class userEntry{
 	 * .
 	 * @param id int 
 	 * @param userEntry UserEntry 
+	 * @return KalturaUserEntry
 	 */
 	static update(id, userEntry){
 		let kparams = {};

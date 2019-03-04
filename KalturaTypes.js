@@ -168,6 +168,11 @@ NON_COMMERCIAL_USE : 0,
 COMMERCIAL_USE : 1,
 };
 
+module.exports.ConfMapsStatus = {
+STATUS_DISABLED : 0,
+STATUS_ENABLED : 1,
+};
+
 module.exports.ContributionPolicyType = {
 ALL : 1,
 MEMBERS_WITH_CONTRIBUTION_PERMISSION : 2,
@@ -1716,6 +1721,42 @@ CLIP_CONCAT : '47',
 COPY_CUE_POINTS : '48',
 };
 
+module.exports.BeaconIndexType = {
+LOG : 'Log',
+STATE : 'State',
+};
+
+module.exports.BeaconObjectTypes = {
+SCHEDULE_RESOURCE_BEACON : '1',
+ENTRY_SERVER_NODE_BEACON : '2',
+SERVER_NODE_BEACON : '3',
+ENTRY_BEACON : '4',
+};
+
+module.exports.BeaconOrderBy = {
+OBJECT_ID_ASC : '+objectId',
+UPDATED_AT_ASC : '+updatedAt',
+OBJECT_ID_DESC : '-objectId',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.BeaconScheduledResourceFieldName = {
+EVENT_TYPE : 'event_type',
+IS_LOG : 'is_log',
+OBJECT_ID : 'object_id',
+RECORDING : 'recording',
+RESOURCE_NAME : 'resource_name',
+STATUS : 'status',
+UPDATED_AT : 'updated_at',
+};
+
+module.exports.BeaconScheduledResourceOrderByFieldName = {
+STATUS : 'app_status',
+RECORDING : 'recording_phase',
+RESOURCE_NAME : 'resource_Name',
+UPDATED_AT : 'updated_at',
+};
+
 module.exports.BulkUploadAction = {
 CANCEL : 'scheduleBulkUpload.CANCEL',
 ADD : '1',
@@ -1949,6 +1990,11 @@ DELIVERY_PROFILE : '13',
 ACTIVE_EDGE_VALIDATE : '14',
 ANONYMOUS_IP : '15',
 ASSET_TYPE : '16',
+};
+
+module.exports.ConfMapsSourceLocation = {
+FS : 'FileSystem',
+DB : 'database',
 };
 
 module.exports.ConfigurableDistributionProfileOrderBy = {

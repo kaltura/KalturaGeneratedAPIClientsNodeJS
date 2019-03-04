@@ -4859,6 +4859,117 @@ module.exports.Partner = Partner;
 /**
  *
  */
+class Beacon extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaBeacon';
+	}
+	
+	/**
+	 * Beacon id
+	 * @return string
+	 */
+	 getId() {
+	 	return this.id;
+	 }
+	
+	/**
+	 * Beacon indexType
+	 * @return string
+	 */
+	 getIndexType() {
+	 	return this.indexType;
+	 }
+	
+	/**
+	 * Beacon update date as Unix timestamp (In seconds)
+	 * @return int
+	 */
+	 getUpdatedAt() {
+	 	return this.updatedAt;
+	 }
+	
+	/**
+	 * The object which this beacon belongs to
+	 * @return string
+	 */
+	 getRelatedObjectType() {
+	 	return this.relatedObjectType;
+	 }
+	
+	/**
+	 * @param relatedObjectType string The object which this beacon belongs to
+	 */
+	 setRelatedObjectType(relatedObjectType) {
+	 	this.relatedObjectType = relatedObjectType;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getEventType() {
+	 	return this.eventType;
+	 }
+	
+	/**
+	 * @param eventType string 
+	 */
+	 setEventType(eventType) {
+	 	this.eventType = eventType;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getObjectId() {
+	 	return this.objectId;
+	 }
+	
+	/**
+	 * @param objectId string 
+	 */
+	 setObjectId(objectId) {
+	 	this.objectId = objectId;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getPrivateData() {
+	 	return this.privateData;
+	 }
+	
+	/**
+	 * @param privateData string 
+	 */
+	 setPrivateData(privateData) {
+	 	this.privateData = privateData;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getRawData() {
+	 	return this.rawData;
+	 }
+	
+	/**
+	 * @param rawData string 
+	 */
+	 setRawData(rawData) {
+	 	this.rawData = rawData;
+	 }
+}
+module.exports.Beacon = Beacon;
+
+/**
+ *
+ */
 class ESearchBaseItem extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -4879,6 +4990,114 @@ class BeaconScheduledResourceBaseItem extends ESearchBaseItem{
 	}
 }
 module.exports.BeaconScheduledResourceBaseItem = BeaconScheduledResourceBaseItem;
+
+/**
+ *
+ */
+class BeaconSearchParams extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaBeaconSearchParams';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getObjectId() {
+	 	return this.objectId;
+	 }
+	
+	/**
+	 * @param objectId string 
+	 */
+	 setObjectId(objectId) {
+	 	this.objectId = objectId;
+	 }
+}
+module.exports.BeaconSearchParams = BeaconSearchParams;
+
+/**
+ *
+ */
+class ESearchOrderByItem extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchOrderByItem';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSortOrder() {
+	 	return this.sortOrder;
+	 }
+	
+	/**
+	 * @param sortOrder string 
+	 */
+	 setSortOrder(sortOrder) {
+	 	this.sortOrder = sortOrder;
+	 }
+}
+module.exports.ESearchOrderByItem = ESearchOrderByItem;
+
+/**
+ *
+ */
+class BeaconSearchScheduledResourceOrderByItem extends ESearchOrderByItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaBeaconSearchScheduledResourceOrderByItem';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSortField() {
+	 	return this.sortField;
+	 }
+	
+	/**
+	 * @param sortField string 
+	 */
+	 setSortField(sortField) {
+	 	this.sortField = sortField;
+	 }
+}
+module.exports.BeaconSearchScheduledResourceOrderByItem = BeaconSearchScheduledResourceOrderByItem;
+
+/**
+ *
+ */
+class BeaconSearchScheduledResourceOrderBy extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaBeaconSearchScheduledResourceOrderBy';
+	}
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getOrderItems() {
+	 	return this.orderItems;
+	 }
+	
+	/**
+	 * @param orderItems array 
+	 */
+	 setOrderItems(orderItems) {
+	 	this.orderItems = orderItems;
+	 }
+}
+module.exports.BeaconSearchScheduledResourceOrderBy = BeaconSearchScheduledResourceOrderBy;
 
 /**
  *
@@ -7104,6 +7323,132 @@ class ClipDescription extends kaltura.BaseObject{
 	 }
 }
 module.exports.ClipDescription = ClipDescription;
+
+/**
+ *
+ */
+class ConfMaps extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaConfMaps';
+	}
+	
+	/**
+	 * Name of the map
+	 * @return string
+	 */
+	 getName() {
+	 	return this.name;
+	 }
+	
+	/**
+	 * @param name string Name of the map
+	 */
+	 setName(name) {
+	 	this.name = name;
+	 }
+	
+	/**
+	 * Ini file content
+	 * @return string
+	 */
+	 getContent() {
+	 	return this.content;
+	 }
+	
+	/**
+	 * @param content string Ini file content
+	 */
+	 setContent(content) {
+	 	this.content = content;
+	 }
+	
+	/**
+	 * IsEditable - true / false
+	 * @return bool
+	 */
+	 getIsEditable() {
+	 	return this.isEditable;
+	 }
+	
+	/**
+	 * Time of the last update
+	 * @return int
+	 */
+	 getLastUpdate() {
+	 	return this.lastUpdate;
+	 }
+	
+	/**
+	 * Regex that represent the host/s that this map affect
+	 * @return string
+	 */
+	 getRelatedHost() {
+	 	return this.relatedHost;
+	 }
+	
+	/**
+	 * @param relatedHost string Regex that represent the host/s that this map affect
+	 */
+	 setRelatedHost(relatedHost) {
+	 	this.relatedHost = relatedHost;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getVersion() {
+	 	return this.version;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSourceLocation() {
+	 	return this.sourceLocation;
+	 }
+	
+	/**
+	 * @param sourceLocation string 
+	 */
+	 setSourceLocation(sourceLocation) {
+	 	this.sourceLocation = sourceLocation;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getRemarks() {
+	 	return this.remarks;
+	 }
+	
+	/**
+	 * @param remarks string 
+	 */
+	 setRemarks(remarks) {
+	 	this.remarks = remarks;
+	 }
+	
+	/**
+	 * map status
+	 * @return int
+	 */
+	 getStatus() {
+	 	return this.status;
+	 }
+	
+	/**
+	 * @param status int map status
+	 */
+	 setStatus(status) {
+	 	this.status = status;
+	 }
+}
+module.exports.ConfMaps = ConfMaps;
 
 /**
  *
@@ -11630,6 +11975,18 @@ module.exports.DropFolderFile = DropFolderFile;
 /**
  *
  */
+class ESearchBaseFilter extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchBaseFilter';
+	}
+}
+module.exports.ESearchBaseFilter = ESearchBaseFilter;
+
+/**
+ *
+ */
 class ESearchCategoryBaseItem extends ESearchBaseItem{
 	
 	constructor(object = null) {
@@ -11900,29 +12257,38 @@ module.exports.ESearchEntryResult = ESearchEntryResult;
 /**
  *
  */
-class ESearchOrderByItem extends kaltura.BaseObject{
+class ESearchHistory extends kaltura.BaseObject{
 	
 	constructor(object = null) {
 		super(object);
-		this.objectType = 'KalturaESearchOrderByItem';
+		this.objectType = 'KalturaESearchHistory';
 	}
 	
 	/**
 	 * 
 	 * @return string
 	 */
-	 getSortOrder() {
-	 	return this.sortOrder;
+	 getSearchTerm() {
+	 	return this.searchTerm;
 	 }
 	
 	/**
-	 * @param sortOrder string 
+	 * 
+	 * @return string
 	 */
-	 setSortOrder(sortOrder) {
-	 	this.sortOrder = sortOrder;
+	 getSearchedObject() {
+	 	return this.searchedObject;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getTimestamp() {
+	 	return this.timestamp;
 	 }
 }
-module.exports.ESearchOrderByItem = ESearchOrderByItem;
+module.exports.ESearchHistory = ESearchHistory;
 
 /**
  *
@@ -32062,6 +32428,254 @@ module.exports.BaseSyndicationFeedListResponse = BaseSyndicationFeedListResponse
 /**
  *
  */
+class BeaconBaseFilter extends Filter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaBeaconBaseFilter';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getUpdatedAtGreaterThanOrEqual() {
+	 	return this.updatedAtGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * @param updatedAtGreaterThanOrEqual int 
+	 */
+	 setUpdatedAtGreaterThanOrEqual(updatedAtGreaterThanOrEqual) {
+	 	this.updatedAtGreaterThanOrEqual = updatedAtGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getUpdatedAtLessThanOrEqual() {
+	 	return this.updatedAtLessThanOrEqual;
+	 }
+	
+	/**
+	 * @param updatedAtLessThanOrEqual int 
+	 */
+	 setUpdatedAtLessThanOrEqual(updatedAtLessThanOrEqual) {
+	 	this.updatedAtLessThanOrEqual = updatedAtLessThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getRelatedObjectTypeIn() {
+	 	return this.relatedObjectTypeIn;
+	 }
+	
+	/**
+	 * @param relatedObjectTypeIn string 
+	 */
+	 setRelatedObjectTypeIn(relatedObjectTypeIn) {
+	 	this.relatedObjectTypeIn = relatedObjectTypeIn;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getRelatedObjectTypeEqual() {
+	 	return this.relatedObjectTypeEqual;
+	 }
+	
+	/**
+	 * @param relatedObjectTypeEqual string 
+	 */
+	 setRelatedObjectTypeEqual(relatedObjectTypeEqual) {
+	 	this.relatedObjectTypeEqual = relatedObjectTypeEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getEventTypeIn() {
+	 	return this.eventTypeIn;
+	 }
+	
+	/**
+	 * @param eventTypeIn string 
+	 */
+	 setEventTypeIn(eventTypeIn) {
+	 	this.eventTypeIn = eventTypeIn;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getObjectIdIn() {
+	 	return this.objectIdIn;
+	 }
+	
+	/**
+	 * @param objectIdIn string 
+	 */
+	 setObjectIdIn(objectIdIn) {
+	 	this.objectIdIn = objectIdIn;
+	 }
+}
+module.exports.BeaconBaseFilter = BeaconBaseFilter;
+
+/**
+ *
+ */
+class BeaconEnhanceFilter extends Filter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaBeaconEnhanceFilter';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getExternalElasticQueryObject() {
+	 	return this.externalElasticQueryObject;
+	 }
+	
+	/**
+	 * @param externalElasticQueryObject string 
+	 */
+	 setExternalElasticQueryObject(externalElasticQueryObject) {
+	 	this.externalElasticQueryObject = externalElasticQueryObject;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getIndexTypeEqual() {
+	 	return this.indexTypeEqual;
+	 }
+	
+	/**
+	 * @param indexTypeEqual string 
+	 */
+	 setIndexTypeEqual(indexTypeEqual) {
+	 	this.indexTypeEqual = indexTypeEqual;
+	 }
+}
+module.exports.BeaconEnhanceFilter = BeaconEnhanceFilter;
+
+/**
+ *
+ */
+class BeaconListResponse extends ListResponse{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaBeaconListResponse';
+	}
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getObjects() {
+	 	return this.objects;
+	 }
+}
+module.exports.BeaconListResponse = BeaconListResponse;
+
+/**
+ *
+ */
+class BeaconScheduledResourceOperator extends BeaconScheduledResourceBaseItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaBeaconScheduledResourceOperator';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getOperator() {
+	 	return this.operator;
+	 }
+	
+	/**
+	 * @param operator int 
+	 */
+	 setOperator(operator) {
+	 	this.operator = operator;
+	 }
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getSearchItems() {
+	 	return this.searchItems;
+	 }
+	
+	/**
+	 * @param searchItems array 
+	 */
+	 setSearchItems(searchItems) {
+	 	this.searchItems = searchItems;
+	 }
+}
+module.exports.BeaconScheduledResourceOperator = BeaconScheduledResourceOperator;
+
+/**
+ *
+ */
+class BeaconScheduledResourceSearchParams extends BeaconSearchParams{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaBeaconScheduledResourceSearchParams';
+	}
+	
+	/**
+	 * 
+	 * @return BeaconScheduledResourceOperator
+	 */
+	 getSearchOperator() {
+	 	return this.searchOperator;
+	 }
+	
+	/**
+	 * @param searchOperator BeaconScheduledResourceOperator 
+	 */
+	 setSearchOperator(searchOperator) {
+	 	this.searchOperator = searchOperator;
+	 }
+	
+	/**
+	 * 
+	 * @return BeaconSearchScheduledResourceOrderBy
+	 */
+	 getOrderBy() {
+	 	return this.orderBy;
+	 }
+	
+	/**
+	 * @param orderBy BeaconSearchScheduledResourceOrderBy 
+	 */
+	 setOrderBy(orderBy) {
+	 	this.orderBy = orderBy;
+	 }
+}
+module.exports.BeaconScheduledResourceSearchParams = BeaconScheduledResourceSearchParams;
+
+/**
+ *
+ */
 class BlackoutScheduleEvent extends ScheduleEvent{
 	
 	constructor(object = null) {
@@ -35290,6 +35904,26 @@ class ConcatJobData extends JobData{
 	 }
 }
 module.exports.ConcatJobData = ConcatJobData;
+
+/**
+ *
+ */
+class ConfMapsListResponse extends ListResponse{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaConfMapsListResponse';
+	}
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getObjects() {
+	 	return this.objects;
+	 }
+}
+module.exports.ConfMapsListResponse = ConfMapsListResponse;
 
 /**
  *
@@ -39838,6 +40472,68 @@ class ESearchEntryResponse extends ESearchResponse{
 	 }
 }
 module.exports.ESearchEntryResponse = ESearchEntryResponse;
+
+/**
+ *
+ */
+class ESearchHistoryFilter extends ESearchBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchHistoryFilter';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSearchTermStartsWith() {
+	 	return this.searchTermStartsWith;
+	 }
+	
+	/**
+	 * @param searchTermStartsWith string 
+	 */
+	 setSearchTermStartsWith(searchTermStartsWith) {
+	 	this.searchTermStartsWith = searchTermStartsWith;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSearchedObjectIn() {
+	 	return this.searchedObjectIn;
+	 }
+	
+	/**
+	 * @param searchedObjectIn string 
+	 */
+	 setSearchedObjectIn(searchedObjectIn) {
+	 	this.searchedObjectIn = searchedObjectIn;
+	 }
+}
+module.exports.ESearchHistoryFilter = ESearchHistoryFilter;
+
+/**
+ *
+ */
+class ESearchHistoryListResponse extends ListResponse{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchHistoryListResponse';
+	}
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getObjects() {
+	 	return this.objects;
+	 }
+}
+module.exports.ESearchHistoryListResponse = ESearchHistoryListResponse;
 
 /**
  *
@@ -55633,6 +56329,33 @@ module.exports.BeaconAbstractScheduledResourceItem = BeaconAbstractScheduledReso
 /**
  *
  */
+class BeaconFilter extends BeaconBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaBeaconFilter';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getIndexTypeEqual() {
+	 	return this.indexTypeEqual;
+	 }
+	
+	/**
+	 * @param indexTypeEqual string 
+	 */
+	 setIndexTypeEqual(indexTypeEqual) {
+	 	this.indexTypeEqual = indexTypeEqual;
+	 }
+}
+module.exports.BeaconFilter = BeaconFilter;
+
+/**
+ *
+ */
 class BulkUploadCsvJobData extends BulkUploadJobData{
 	
 	constructor(object = null) {
@@ -57016,6 +57739,63 @@ class CompareMetadataCondition extends CompareCondition{
 	 }
 }
 module.exports.CompareMetadataCondition = CompareMetadataCondition;
+
+/**
+ *
+ */
+class ConfMapsBaseFilter extends RelatedFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaConfMapsBaseFilter';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getNameEqual() {
+	 	return this.nameEqual;
+	 }
+	
+	/**
+	 * @param nameEqual string 
+	 */
+	 setNameEqual(nameEqual) {
+	 	this.nameEqual = nameEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getRelatedHostEqual() {
+	 	return this.relatedHostEqual;
+	 }
+	
+	/**
+	 * @param relatedHostEqual string 
+	 */
+	 setRelatedHostEqual(relatedHostEqual) {
+	 	this.relatedHostEqual = relatedHostEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getVersionEqual() {
+	 	return this.versionEqual;
+	 }
+	
+	/**
+	 * @param versionEqual int 
+	 */
+	 setVersionEqual(versionEqual) {
+	 	this.versionEqual = versionEqual;
+	 }
+}
+module.exports.ConfMapsBaseFilter = ConfMapsBaseFilter;
 
 /**
  *
@@ -69294,6 +70074,33 @@ module.exports.BatchJobFilterExt = BatchJobFilterExt;
 /**
  *
  */
+class BeaconScheduledResourceItem extends BeaconAbstractScheduledResourceItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaBeaconScheduledResourceItem';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getFieldName() {
+	 	return this.fieldName;
+	 }
+	
+	/**
+	 * @param fieldName string 
+	 */
+	 setFieldName(fieldName) {
+	 	this.fieldName = fieldName;
+	 }
+}
+module.exports.BeaconScheduledResourceItem = BeaconScheduledResourceItem;
+
+/**
+ *
+ */
 class BusinessProcessNotificationTemplateBaseFilter extends EventNotificationTemplateFilter{
 	
 	constructor(object = null) {
@@ -69458,6 +70265,18 @@ class ComcastMrssDistributionProviderBaseFilter extends DistributionProviderFilt
 	}
 }
 module.exports.ComcastMrssDistributionProviderBaseFilter = ComcastMrssDistributionProviderBaseFilter;
+
+/**
+ *
+ */
+class ConfMapsFilter extends ConfMapsBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaConfMapsFilter';
+	}
+}
+module.exports.ConfMapsFilter = ConfMapsFilter;
 
 /**
  *

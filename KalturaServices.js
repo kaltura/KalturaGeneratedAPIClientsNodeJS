@@ -6413,6 +6413,71 @@ module.exports.auditTrail = auditTrail;
 
 
 /**
+ *Class definition for the Kaltura service: beacon.
+ * The available service actions:
+ * @action add .
+ * @action enhanceSearch .
+ * @action list .
+ * @action searchScheduledResource .
+ */
+class beacon{
+	
+	/**
+	 * .
+	 * @param beacon Beacon 
+	 * @param shouldLog int  (optional, enum: KalturaNullableBoolean)
+	 * @return bool
+	 */
+	static add(beacon, shouldLog = 0){
+		let kparams = {};
+		kparams.beacon = beacon;
+		kparams.shouldLog = shouldLog;
+		return new kaltura.RequestBuilder('beacon_beacon', 'add', kparams);
+	};
+	
+	/**
+	 * .
+	 * @param filter BeaconEnhanceFilter  (optional, default: null)
+	 * @param pager FilterPager  (optional, default: null)
+	 * @return KalturaBeaconListResponse
+	 */
+	static enhanceSearch(filter = null, pager = null){
+		let kparams = {};
+		kparams.filter = filter;
+		kparams.pager = pager;
+		return new kaltura.RequestBuilder('beacon_beacon', 'enhanceSearch', kparams);
+	};
+	
+	/**
+	 * .
+	 * @param filter BeaconFilter  (optional, default: null)
+	 * @param pager FilterPager  (optional, default: null)
+	 * @return KalturaBeaconListResponse
+	 */
+	static listAction(filter = null, pager = null){
+		let kparams = {};
+		kparams.filter = filter;
+		kparams.pager = pager;
+		return new kaltura.RequestBuilder('beacon_beacon', 'list', kparams);
+	};
+	
+	/**
+	 * .
+	 * @param searchParams BeaconSearchParams 
+	 * @param pager Pager  (optional, default: null)
+	 * @return KalturaBeaconListResponse
+	 */
+	static searchScheduledResource(searchParams, pager = null){
+		let kparams = {};
+		kparams.searchParams = searchParams;
+		kparams.pager = pager;
+		return new kaltura.RequestBuilder('beacon_beacon', 'searchScheduledResource', kparams);
+	};
+}
+module.exports.beacon = beacon;
+
+
+/**
  *Class definition for the Kaltura service: bulk.
  * The available service actions:
  * @action abort Aborts the bulk upload and all its child jobs.
@@ -6760,6 +6825,73 @@ class captionAssetItem{
 	};
 }
 module.exports.captionAssetItem = captionAssetItem;
+
+
+/**
+ *Class definition for the Kaltura service: confMaps.
+ * The available service actions:
+ * @action add Add configuration map.
+ * @action get Get configuration map.
+ * @action getMapNames List configuration maps names.
+ * @action list List configuration maps.
+ * @action update Update configuration map.
+ */
+class confMaps{
+	
+	/**
+	 * Add configuration map.
+	 * @param map ConfMaps 
+	 * @return KalturaConfMaps
+	 */
+	static add(map){
+		let kparams = {};
+		kparams.map = map;
+		return new kaltura.RequestBuilder('confmaps_confmaps', 'add', kparams);
+	};
+	
+	/**
+	 * Get configuration map.
+	 * @param filter ConfMapsFilter 
+	 * @return KalturaConfMaps
+	 */
+	static get(filter){
+		let kparams = {};
+		kparams.filter = filter;
+		return new kaltura.RequestBuilder('confmaps_confmaps', 'get', kparams);
+	};
+	
+	/**
+	 * List configuration maps names.
+	 * @return array
+	 */
+	static getMapNames(){
+		let kparams = {};
+		return new kaltura.RequestBuilder('confmaps_confmaps', 'getMapNames', kparams);
+	};
+	
+	/**
+	 * List configuration maps.
+	 * @param filter ConfMapsFilter 
+	 * @return KalturaConfMapsListResponse
+	 */
+	static listAction(filter){
+		let kparams = {};
+		kparams.filter = filter;
+		return new kaltura.RequestBuilder('confmaps_confmaps', 'list', kparams);
+	};
+	
+	/**
+	 * Update configuration map.
+	 * @param map ConfMaps 
+	 * @return KalturaConfMaps
+	 */
+	static update(map){
+		let kparams = {};
+		kparams.map = map;
+		return new kaltura.RequestBuilder('confmaps_confmaps', 'update', kparams);
+	};
+}
+module.exports.confMaps = confMaps;
 
 
 /**
@@ -9390,6 +9522,38 @@ class scheduledTaskProfile{
 	};
 }
 module.exports.scheduledTaskProfile = scheduledTaskProfile;
+
+
+/**
+ *Class definition for the Kaltura service: searchHistory.
+ * The available service actions:
+ * @action delete .
+ * @action list .
+ */
+class searchHistory{
+	
+	/**
+	 * .
+	 * @param searchTerm string 
+	 */
+	static deleteAction(searchTerm){
+		let kparams = {};
+		kparams.searchTerm = searchTerm;
+		return new kaltura.RequestBuilder('searchhistory_searchhistory', 'delete', kparams);
+	};
+	
+	/**
+	 * .
+	 * @param filter ESearchHistoryFilter  (optional, default: null)
+	 * @return KalturaESearchHistoryListResponse
+	 */
+	static listAction(filter = null){
+		let kparams = {};
+		kparams.filter = filter;
+		return new kaltura.RequestBuilder('searchhistory_searchhistory', 'list', kparams);
+	};
+}
+module.exports.searchHistory = searchHistory;
 
 
 /**

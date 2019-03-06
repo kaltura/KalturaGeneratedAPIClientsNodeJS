@@ -541,6 +541,11 @@ MANUAL : 1,
 AUTOMATIC : 2,
 };
 
+module.exports.GroupUserRole = {
+MEMBER : 1,
+MANAGER : 2,
+};
+
 module.exports.GroupUserStatus = {
 ACTIVE : 0,
 DELETED : 1,
@@ -2008,6 +2013,7 @@ module.exports.ContainerFormat = {
 _3GP : '3gp',
 APPLEHTTP : 'applehttp',
 AVI : 'avi',
+BIF : 'bif',
 BMP : 'bmp',
 COPY : 'copy',
 FLV : 'flv',

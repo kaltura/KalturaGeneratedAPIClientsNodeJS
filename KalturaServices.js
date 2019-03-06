@@ -2121,6 +2121,7 @@ module.exports.flavorParams = flavorParams;
  * @action delete delete by userId and groupId.
  * @action list List all GroupUsers.
  * @action sync sync by userId and groupIds.
+ * @action update update GroupUser.
  */
 class groupUser{
 	
@@ -2175,6 +2176,19 @@ class groupUser{
 		kparams.removeFromExistingGroups = removeFromExistingGroups;
 		kparams.createNewGroups = createNewGroups;
 		return new kaltura.RequestBuilder('groupuser', 'sync', kparams);
+	};
+	
+	/**
+	 * update GroupUser.
+	 * @param groupUserId string 
+	 * @param groupUser GroupUser Id
+	 * @return KalturaGroupUser
+	 */
+	static update(groupUserId, groupUser){
+		let kparams = {};
+		kparams.groupUserId = groupUserId;
+		kparams.groupUser = groupUser;
+		return new kaltura.RequestBuilder('groupuser', 'update', kparams);
 	};
 }
 module.exports.groupUser = groupUser;

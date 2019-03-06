@@ -17485,6 +17485,14 @@ class GroupUser extends kaltura.BaseObject{
 	 * 
 	 * @return string
 	 */
+	 getId() {
+	 	return this.id;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
 	 getUserId() {
 	 	return this.userId;
 	 }
@@ -17556,6 +17564,21 @@ class GroupUser extends kaltura.BaseObject{
 	 */
 	 setCreationMode(creationMode) {
 	 	this.creationMode = creationMode;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getUserRole() {
+	 	return this.userRole;
+	 }
+	
+	/**
+	 * @param userRole int 
+	 */
+	 setUserRole(userRole) {
+	 	this.userRole = userRole;
 	 }
 }
 module.exports.GroupUser = GroupUser;
@@ -18684,6 +18707,21 @@ class ThumbParams extends AssetParams{
 	 */
 	 setVideoOffsetInPercentage(videoOffsetInPercentage) {
 	 	this.videoOffsetInPercentage = videoOffsetInPercentage;
+	 }
+	
+	/**
+	 * interval in seconds for creating thumbnail
+	 * @return int
+	 */
+	 getInterval() {
+	 	return this.interval;
+	 }
+	
+	/**
+	 * @param interval int interval in seconds for creating thumbnail
+	 */
+	 setInterval(interval) {
+	 	this.interval = interval;
 	 }
 }
 module.exports.ThumbParams = ThumbParams;
@@ -24284,6 +24322,21 @@ class Quiz extends kaltura.BaseObject{
 	 */
 	 setShowGradeAfterSubmission(showGradeAfterSubmission) {
 	 	this.showGradeAfterSubmission = showGradeAfterSubmission;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getMaxRetakesAllowed() {
+	 	return this.maxRetakesAllowed;
+	 }
+	
+	/**
+	 * @param maxRetakesAllowed int 
+	 */
+	 setMaxRetakesAllowed(maxRetakesAllowed) {
+	 	this.maxRetakesAllowed = maxRetakesAllowed;
 	 }
 }
 module.exports.Quiz = Quiz;
@@ -49011,6 +49064,14 @@ class QuizUserEntry extends UserEntry{
 	 */
 	 setFeedback(feedback) {
 	 	this.feedback = feedback;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getVersion() {
+	 	return this.version;
 	 }
 }
 module.exports.QuizUserEntry = QuizUserEntry;
@@ -76647,6 +76708,21 @@ class QuizUserEntryFilter extends QuizUserEntryBaseFilter{
 		super(object);
 		this.objectType = 'KalturaQuizUserEntryFilter';
 	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getVersionEqual() {
+	 	return this.versionEqual;
+	 }
+	
+	/**
+	 * @param versionEqual int 
+	 */
+	 setVersionEqual(versionEqual) {
+	 	this.versionEqual = versionEqual;
+	 }
 }
 module.exports.QuizUserEntryFilter = QuizUserEntryFilter;
 

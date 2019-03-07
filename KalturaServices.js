@@ -9155,6 +9155,387 @@ module.exports.quiz = quiz;
 
 
 /**
+ *Class definition for the Kaltura service: vendorCatalogItem.
+ * The available service actions:
+ * @action add Allows you to add an service catalog item.
+ * @action delete Delete vedor catalog item object.
+ * @action get Retrieve specific catalog item by id.
+ * @action list List KalturaVendorCatalogItem objects.
+ * @action update Update an existing vedor catalog item object.
+ * @action updateStatus Update vendor catalog item status by id.
+ */
+class vendorCatalogItem{
+	
+	/**
+	 * Allows you to add an service catalog item.
+	 * @param vendorCatalogItem VendorCatalogItem 
+	 * @return KalturaVendorCatalogItem
+	 */
+	static add(vendorCatalogItem){
+		let kparams = {};
+		kparams.vendorCatalogItem = vendorCatalogItem;
+		return new kaltura.RequestBuilder('reach_vendorcatalogitem', 'add', kparams);
+	};
+	
+	/**
+	 * Delete vedor catalog item object.
+	 * @param id int 
+	 */
+	static deleteAction(id){
+		let kparams = {};
+		kparams.id = id;
+		return new kaltura.RequestBuilder('reach_vendorcatalogitem', 'delete', kparams);
+	};
+	
+	/**
+	 * Retrieve specific catalog item by id.
+	 * @param id int 
+	 * @return KalturaVendorCatalogItem
+	 */
+	static get(id){
+		let kparams = {};
+		kparams.id = id;
+		return new kaltura.RequestBuilder('reach_vendorcatalogitem', 'get', kparams);
+	};
+	
+	/**
+	 * List KalturaVendorCatalogItem objects.
+	 * @param filter VendorCatalogItemFilter  (optional, default: null)
+	 * @param pager FilterPager  (optional, default: null)
+	 * @return KalturaVendorCatalogItemListResponse
+	 */
+	static listAction(filter = null, pager = null){
+		let kparams = {};
+		kparams.filter = filter;
+		kparams.pager = pager;
+		return new kaltura.RequestBuilder('reach_vendorcatalogitem', 'list', kparams);
+	};
+	
+	/**
+	 * Update an existing vedor catalog item object.
+	 * @param id int 
+	 * @param vendorCatalogItem VendorCatalogItem 
+	 * @return KalturaVendorCatalogItem
+	 */
+	static update(id, vendorCatalogItem){
+		let kparams = {};
+		kparams.id = id;
+		kparams.vendorCatalogItem = vendorCatalogItem;
+		return new kaltura.RequestBuilder('reach_vendorcatalogitem', 'update', kparams);
+	};
+	
+	/**
+	 * Update vendor catalog item status by id.
+	 * @param id int 
+	 * @param status int  (enum: KalturaVendorCatalogItemStatus)
+	 * @return KalturaVendorCatalogItem
+	 */
+	static updateStatus(id, status){
+		let kparams = {};
+		kparams.id = id;
+		kparams.status = status;
+		return new kaltura.RequestBuilder('reach_vendorcatalogitem', 'updateStatus', kparams);
+	};
+}
+module.exports.vendorCatalogItem = vendorCatalogItem;
+
+
+/**
+ *Class definition for the Kaltura service: reachProfile.
+ * The available service actions:
+ * @action add Allows you to add a partner specific reach profile.
+ * @action delete Delete vednor profile by id.
+ * @action get Retrieve specific reach profile by id.
+ * @action list List KalturaReachProfile objects.
+ * @action syncCredit sync vednor profile credit.
+ * @action update Update an existing reach profile object.
+ * @action updateStatus Update reach profile status by id.
+ */
+class reachProfile{
+	
+	/**
+	 * Allows you to add a partner specific reach profile.
+	 * @param reachProfile ReachProfile 
+	 * @return KalturaReachProfile
+	 */
+	static add(reachProfile){
+		let kparams = {};
+		kparams.reachProfile = reachProfile;
+		return new kaltura.RequestBuilder('reach_reachprofile', 'add', kparams);
+	};
+	
+	/**
+	 * Delete vednor profile by id.
+	 * @param id int 
+	 */
+	static deleteAction(id){
+		let kparams = {};
+		kparams.id = id;
+		return new kaltura.RequestBuilder('reach_reachprofile', 'delete', kparams);
+	};
+	
+	/**
+	 * Retrieve specific reach profile by id.
+	 * @param id int 
+	 * @return KalturaReachProfile
+	 */
+	static get(id){
+		let kparams = {};
+		kparams.id = id;
+		return new kaltura.RequestBuilder('reach_reachprofile', 'get', kparams);
+	};
+	
+	/**
+	 * List KalturaReachProfile objects.
+	 * @param filter ReachProfileFilter  (optional, default: null)
+	 * @param pager FilterPager  (optional, default: null)
+	 * @return KalturaReachProfileListResponse
+	 */
+	static listAction(filter = null, pager = null){
+		let kparams = {};
+		kparams.filter = filter;
+		kparams.pager = pager;
+		return new kaltura.RequestBuilder('reach_reachprofile', 'list', kparams);
+	};
+	
+	/**
+	 * sync vednor profile credit.
+	 * @param reachProfileId int 
+	 * @return KalturaReachProfile
+	 */
+	static syncCredit(reachProfileId){
+		let kparams = {};
+		kparams.reachProfileId = reachProfileId;
+		return new kaltura.RequestBuilder('reach_reachprofile', 'syncCredit', kparams);
+	};
+	
+	/**
+	 * Update an existing reach profile object.
+	 * @param id int 
+	 * @param reachProfile ReachProfile 
+	 * @return KalturaReachProfile
+	 */
+	static update(id, reachProfile){
+		let kparams = {};
+		kparams.id = id;
+		kparams.reachProfile = reachProfile;
+		return new kaltura.RequestBuilder('reach_reachprofile', 'update', kparams);
+	};
+	
+	/**
+	 * Update reach profile status by id.
+	 * @param id int 
+	 * @param status int  (enum: KalturaReachProfileStatus)
+	 * @return KalturaReachProfile
+	 */
+	static updateStatus(id, status){
+		let kparams = {};
+		kparams.id = id;
+		kparams.status = status;
+		return new kaltura.RequestBuilder('reach_reachprofile', 'updateStatus', kparams);
+	};
+}
+module.exports.reachProfile = reachProfile;
+
+
+/**
+ *Class definition for the Kaltura service: entryVendorTask.
+ * The available service actions:
+ * @action abort Cancel entry task. will only occur for task in PENDING or PENDING_MODERATION status.
+ * @action add Allows you to add a entry vendor task.
+ * @action approve Approve entry vendor task for execution.
+ * @action exportToCsv add batch job that sends an email with a link to download an updated CSV that contains list of users.
+ * @action extendAccessKey Extend access key in case the existing one has expired.
+ * @action get Retrieve specific entry vendor task by id.
+ * @action getJobs get KalturaEntryVendorTask objects for specific vendor partner.
+ * @action list List KalturaEntryVendorTask objects.
+ * @action reject Reject entry vendor task for execution.
+ * @action serveCsv Will serve a requested csv.
+ * @action update Update entry vendor task. Only the properties that were set will be updated.
+ * @action updateJob Update entry vendor task. Only the properties that were set will be updated.
+ */
+class entryVendorTask{
+	
+	/**
+	 * Cancel entry task. will only occur for task in PENDING or PENDING_MODERATION status.
+	 * @param id int vendor task id
+	 * @param abortReason string  (optional, default: null)
+	 * @return KalturaEntryVendorTask
+	 */
+	static abort(id, abortReason = null){
+		let kparams = {};
+		kparams.id = id;
+		kparams.abortReason = abortReason;
+		return new kaltura.RequestBuilder('reach_entryvendortask', 'abort', kparams);
+	};
+	
+	/**
+	 * Allows you to add a entry vendor task.
+	 * @param entryVendorTask EntryVendorTask 
+	 * @return KalturaEntryVendorTask
+	 */
+	static add(entryVendorTask){
+		let kparams = {};
+		kparams.entryVendorTask = entryVendorTask;
+		return new kaltura.RequestBuilder('reach_entryvendortask', 'add', kparams);
+	};
+	
+	/**
+	 * Approve entry vendor task for execution.
+	 * @param id int vendor task id to approve
+	 * @return KalturaEntryVendorTask
+	 */
+	static approve(id){
+		let kparams = {};
+		kparams.id = id;
+		return new kaltura.RequestBuilder('reach_entryvendortask', 'approve', kparams);
+	};
+	
+	/**
+	 * add batch job that sends an email with a link to download an updated CSV that contains list of users.
+	 * @param filter EntryVendorTaskFilter A filter used to exclude specific tasks
+	 * @return string
+	 */
+	static exportToCsv(filter){
+		let kparams = {};
+		kparams.filter = filter;
+		return new kaltura.RequestBuilder('reach_entryvendortask', 'exportToCsv', kparams);
+	};
+	
+	/**
+	 * Extend access key in case the existing one has expired.
+	 * @param id int vendor task id
+	 * @return KalturaEntryVendorTask
+	 */
+	static extendAccessKey(id){
+		let kparams = {};
+		kparams.id = id;
+		return new kaltura.RequestBuilder('reach_entryvendortask', 'extendAccessKey', kparams);
+	};
+	
+	/**
+	 * Retrieve specific entry vendor task by id.
+	 * @param id int 
+	 * @return KalturaEntryVendorTask
+	 */
+	static get(id){
+		let kparams = {};
+		kparams.id = id;
+		return new kaltura.RequestBuilder('reach_entryvendortask', 'get', kparams);
+	};
+	
+	/**
+	 * get KalturaEntryVendorTask objects for specific vendor partner.
+	 * @param filter EntryVendorTaskFilter  (optional, default: null)
+	 * @param pager FilterPager  (optional, default: null)
+	 * @return KalturaEntryVendorTaskListResponse
+	 */
+	static getJobs(filter = null, pager = null){
+		let kparams = {};
+		kparams.filter = filter;
+		kparams.pager = pager;
+		return new kaltura.RequestBuilder('reach_entryvendortask', 'getJobs', kparams);
+	};
+	
+	/**
+	 * List KalturaEntryVendorTask objects.
+	 * @param filter EntryVendorTaskFilter  (optional, default: null)
+	 * @param pager FilterPager  (optional, default: null)
+	 * @return KalturaEntryVendorTaskListResponse
+	 */
+	static listAction(filter = null, pager = null){
+		let kparams = {};
+		kparams.filter = filter;
+		kparams.pager = pager;
+		return new kaltura.RequestBuilder('reach_entryvendortask', 'list', kparams);
+	};
+	
+	/**
+	 * Reject entry vendor task for execution.
+	 * @param id int vendor task id to reject
+	 * @param rejectReason string  (optional, default: null)
+	 * @return KalturaEntryVendorTask
+	 */
+	static reject(id, rejectReason = null){
+		let kparams = {};
+		kparams.id = id;
+		kparams.rejectReason = rejectReason;
+		return new kaltura.RequestBuilder('reach_entryvendortask', 'reject', kparams);
+	};
+	
+	/**
+	 * Will serve a requested csv.
+	 * @param id string - the requested file id
+	 * @return string
+	 */
+	static serveCsv(id){
+		let kparams = {};
+		kparams.id = id;
+		return new kaltura.RequestBuilder('reach_entryvendortask', 'serveCsv', kparams);
+	};
+	
+	/**
+	 * Update entry vendor task. Only the properties that were set will be updated.
+	 * @param id int vendor task id to update
+	 * @param entryVendorTask EntryVendorTask evntry vendor task to update
+	 * @return KalturaEntryVendorTask
+	 */
+	static update(id, entryVendorTask){
+		let kparams = {};
+		kparams.id = id;
+		kparams.entryVendorTask = entryVendorTask;
+		return new kaltura.RequestBuilder('reach_entryvendortask', 'update', kparams);
+	};
+	
+	/**
+	 * Update entry vendor task. Only the properties that were set will be updated.
+	 * @param id int vendor task id to update
+	 * @param entryVendorTask EntryVendorTask evntry vendor task to update
+	 * @return KalturaEntryVendorTask
+	 */
+	static updateJob(id, entryVendorTask){
+		let kparams = {};
+		kparams.id = id;
+		kparams.entryVendorTask = entryVendorTask;
+		return new kaltura.RequestBuilder('reach_entryvendortask', 'updateJob', kparams);
+	};
+}
+module.exports.entryVendorTask = entryVendorTask;
+
+
+/**
+ *Class definition for the Kaltura service: PartnerCatalogItem.
+ * The available service actions:
+ * @action add Assign existing catalogItem to specific account.
+ * @action delete Remove existing catalogItem from specific account.
+ */
+class PartnerCatalogItem{
+	
+	/**
+	 * Assign existing catalogItem to specific account.
+	 * @param id int source catalog item to assign to partner
+	 * @return KalturaVendorCatalogItem
+	 */
+	static add(id){
+		let kparams = {};
+		kparams.id = id;
+		return new kaltura.RequestBuilder('reach_partnercatalogitem', 'add', kparams);
+	};
+	
+	/**
+	 * Remove existing catalogItem from specific account.
+	 * @param id int source catalog item to remove
+	 */
+	static deleteAction(id){
+		let kparams = {};
+		kparams.id = id;
+		return new kaltura.RequestBuilder('reach_partnercatalogitem', 'delete', kparams);
+	};
+}
+module.exports.PartnerCatalogItem = PartnerCatalogItem;
+
+
+/**
  *Class definition for the Kaltura service: scheduleEvent.
  * The available service actions:
  * @action add Allows you to add a new KalturaScheduleEvent object.

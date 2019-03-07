@@ -469,6 +469,22 @@ TASK_UPLOADING : 8,
 TASK_FINISHED : 9,
 };
 
+module.exports.EntryVendorTaskCreationMode = {
+MANUAL : 1,
+AUTOMATIC : 2,
+};
+
+module.exports.EntryVendorTaskStatus = {
+PENDING : 1,
+READY : 2,
+PROCESSING : 3,
+PENDING_MODERATION : 4,
+REJECTED : 5,
+ERROR : 6,
+ABORTED : 7,
+PENDING_ENTRY_READY : 8,
+};
+
 module.exports.EventNotificationTemplateStatus = {
 DISABLED : 1,
 ACTIVE : 2,
@@ -817,6 +833,25 @@ module.exports.QuizOutputType = {
 PDF : 1,
 };
 
+module.exports.ReachProfileContentDeletionPolicy = {
+DO_NOTHING : 1,
+DELETE_ONCE_PROCESSED : 2,
+DELETE_AFTER_WEEK : 3,
+DELETE_AFTER_MONTH : 4,
+DELETE_AFTER_THREE_MONTHS : 5,
+};
+
+module.exports.ReachProfileStatus = {
+DISABLED : 1,
+ACTIVE : 2,
+DELETED : 3,
+};
+
+module.exports.ReachProfileType = {
+FREE_TRIAL : 1,
+PAID : 2,
+};
+
 module.exports.RecordStatus = {
 DISABLED : 0,
 APPENDED : 1,
@@ -910,6 +945,14 @@ RUNNING_BATCHES_DISC_IO : 5,
 RUNNING_BATCHES_DISC_SPACE : 6,
 RUNNING_BATCHES_IS_RUNNING : 7,
 RUNNING_BATCHES_LAST_EXECUTION_TIME : 8,
+};
+
+module.exports.ScoreType = {
+HIGHEST : 1,
+LOWEST : 2,
+LATEST : 3,
+FIRST : 4,
+AVERAGE : 5,
 };
 
 module.exports.SearchOperatorType = {
@@ -1219,6 +1262,42 @@ DELETED : 2,
 module.exports.UserType = {
 USER : 0,
 GROUP : 1,
+};
+
+module.exports.VendorCatalogItemOutputFormat = {
+SRT : 1,
+DFXP : 2,
+};
+
+module.exports.VendorCatalogItemStatus = {
+DEPRECATED : 1,
+ACTIVE : 2,
+DELETED : 3,
+};
+
+module.exports.VendorServiceFeature = {
+CAPTIONS : 1,
+TRANSLATION : 2,
+ALIGNMENT : 3,
+};
+
+module.exports.VendorServiceTurnAroundTime = {
+BEST_EFFORT : -1,
+IMMEDIATE : 0,
+THIRTY_MINUTES : 1800,
+TWO_HOURS : 7200,
+THREE_HOURS : 10800,
+SIX_HOURS : 21600,
+EIGHT_HOURS : 28800,
+TWELVE_HOURS : 43200,
+TWENTY_FOUR_HOURS : 86400,
+FORTY_EIGHT_HOURS : 172800,
+TEN_DAYS : 864000,
+};
+
+module.exports.VendorServiceType = {
+HUMAN : 1,
+MACHINE : 2,
 };
 
 module.exports.ViewMode = {
@@ -1667,14 +1746,16 @@ DISTRIBUTION_DELETE : 'contentDistribution.DistributionDelete',
 DISTRIBUTION_DISABLE : 'contentDistribution.DistributionDisable',
 DISTRIBUTION_ENABLE : 'contentDistribution.DistributionEnable',
 DISTRIBUTION_FETCH_REPORT : 'contentDistribution.DistributionFetchReport',
+CONVERT : '0',
 DISTRIBUTION_SUBMIT : 'contentDistribution.DistributionSubmit',
+DISTRIBUTION_SYNC : 'contentDistribution.DistributionSync',
 DISTRIBUTION_UPDATE : 'contentDistribution.DistributionUpdate',
 DROP_FOLDER_CONTENT_PROCESSOR : 'dropFolder.DropFolderContentProcessor',
-CONVERT : '0',
-DISTRIBUTION_SYNC : 'contentDistribution.DistributionSync',
 DROP_FOLDER_WATCHER : 'dropFolder.DropFolderWatcher',
 EVENT_NOTIFICATION_HANDLER : 'eventNotification.EventNotificationHandler',
 INTEGRATION : 'integration.Integration',
+ENTRY_VENDOR_TASK_CSV : 'reach.EntryVendorTasksCsv',
+SYNC_REACH_CREDIT_TASK : 'reach.SyncReachCreditTask',
 SCHEDULED_TASK : 'scheduledTask.ScheduledTask',
 INDEX_TAGS : 'tagSearch.IndexTagsByPrivacyContext',
 TAG_RESOLVE : 'tagSearch.TagResolve',
@@ -1884,6 +1965,29 @@ WEBVTT : '3',
 CAP : '4',
 };
 
+module.exports.CatalogItemLanguage = {
+AR : 'Arabic',
+YUE : 'Cantonese',
+ZH : 'Chinese',
+NL : 'Dutch',
+EN : 'English',
+EN_US : 'English (American)',
+EN_GB : 'English (British)',
+FR : 'French',
+DE : 'German',
+HE : 'Hebrew',
+HI : 'Hindi',
+IT : 'Italian',
+JA : 'Japanese',
+KO : 'Korean',
+CMN : 'Mandarin Chinese',
+PT : 'Portuguese',
+RU : 'Russian',
+ES : 'Spanish',
+TH : 'Thai',
+TR : 'Turkish',
+};
+
 module.exports.CategoryEntryAdvancedOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 CREATED_AT_DESC : '-createdAt',
@@ -1979,6 +2083,7 @@ EVENT_NOTIFICATION_OBJECT_CHANGED : 'eventNotification.ObjectChanged',
 METADATA_FIELD_CHANGED : 'metadata.FieldChanged',
 METADATA_FIELD_COMPARE : 'metadata.FieldCompare',
 METADATA_FIELD_MATCH : 'metadata.FieldMatch',
+EVENT_CATEGORY_ENTRY : 'reach.CategoryEntry',
 AUTHENTICATED : '1',
 COUNTRY : '2',
 IP_ADDRESS : '3',
@@ -2845,6 +2950,23 @@ DATA : '6',
 LIVE_STREAM : '7',
 LIVE_CHANNEL : '8',
 DOCUMENT : '10',
+};
+
+module.exports.EntryVendorTaskOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+FINISH_TIME_ASC : '+finishTime',
+ID_ASC : '+id',
+PRICE_ASC : '+price',
+QUEUE_TIME_ASC : '+queueTime',
+STATUS_ASC : '+status',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+FINISH_TIME_DESC : '-finishTime',
+ID_DESC : '-id',
+PRICE_DESC : '-price',
+QUEUE_TIME_DESC : '-queueTime',
+STATUS_DESC : '-status',
+UPDATED_AT_DESC : '-updatedAt',
 };
 
 module.exports.EventCuePointOrderBy = {
@@ -5077,7 +5199,18 @@ module.exports.QuickPlayDistributionProviderOrderBy = {
 module.exports.QuizUserEntryOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
+VERSION_ASC : '+version',
 CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+VERSION_DESC : '-version',
+};
+
+module.exports.ReachProfileOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+ID_ASC : '+id',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+ID_DESC : '-id',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
@@ -5160,6 +5293,7 @@ TOP_CONTENT_CONTRIBUTORS : '39',
 APP_DOMAIN_UNIQUE_ACTIVE_USERS : '40',
 TOP_SOURCES : '41',
 VPAAS_USAGE_MULTI : '42',
+CONTENT_REPORT_REASONS : '44',
 PARTNER_USAGE : '201',
 };
 
@@ -5172,6 +5306,7 @@ UPDATED_AT_DESC : '-updatedAt',
 
 module.exports.RuleActionType = {
 DRM_POLICY : 'drm.DRM_POLICY',
+ADD_ENTRY_VENDOR_TASK : 'reach.ADD_ENTRY_VENDOR_TASK',
 BLOCK : '1',
 PREVIEW : '2',
 LIMIT_FLAVORS : '3',
@@ -5534,6 +5669,45 @@ UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 ID_DESC : '-id',
 NAME_DESC : '-name',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.VendorCaptionsCatalogItemOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+ID_ASC : '+id',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+ID_DESC : '-id',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.VendorCatalogItemOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+ID_ASC : '+id',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+ID_DESC : '-id',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.VendorCatalogItemPriceFunction = {
+PRICE_PER_MINUTE : 'kReachUtils::calcPricePerMinute',
+PRICE_PER_SECOND : 'kReachUtils::calcPricePerSecond',
+};
+
+module.exports.VendorCreditRecurrenceFrequency = {
+DAILY : 'day',
+MONTHLY : 'month',
+WEEKLY : 'week',
+YEARLY : 'year',
+};
+
+module.exports.VendorTranslationCatalogItemOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+ID_ASC : '+id',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+ID_DESC : '-id',
 UPDATED_AT_DESC : '-updatedAt',
 };
 

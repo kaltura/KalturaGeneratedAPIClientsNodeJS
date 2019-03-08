@@ -24683,15 +24683,15 @@ class Quiz extends kaltura.BaseObject{
 	 * 
 	 * @return int
 	 */
-	 getMaxRetakesAllowed() {
-	 	return this.maxRetakesAllowed;
+	 getAttemptsAllowed() {
+	 	return this.attemptsAllowed;
 	 }
 	
 	/**
-	 * @param maxRetakesAllowed int 
+	 * @param attemptsAllowed int 
 	 */
-	 setMaxRetakesAllowed(maxRetakesAllowed) {
-	 	this.maxRetakesAllowed = maxRetakesAllowed;
+	 setAttemptsAllowed(attemptsAllowed) {
+	 	this.attemptsAllowed = attemptsAllowed;
 	 }
 	
 	/**
@@ -33690,6 +33690,33 @@ class BlackoutScheduleEvent extends ScheduleEvent{
 	}
 }
 module.exports.BlackoutScheduleEvent = BlackoutScheduleEvent;
+
+/**
+ *
+ */
+class BooleanEventNotificationCondition extends Condition{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaBooleanEventNotificationCondition';
+	}
+	
+	/**
+	 * The boolean event notification ids
+	 * @return string
+	 */
+	 getBooleanEventNotificationIds() {
+	 	return this.booleanEventNotificationIds;
+	 }
+	
+	/**
+	 * @param booleanEventNotificationIds string The boolean event notification ids
+	 */
+	 setBooleanEventNotificationIds(booleanEventNotificationIds) {
+	 	this.booleanEventNotificationIds = booleanEventNotificationIds;
+	 }
+}
+module.exports.BooleanEventNotificationCondition = BooleanEventNotificationCondition;
 
 /**
  *

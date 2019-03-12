@@ -2781,6 +2781,28 @@ VIEWS_LAST_7_DAYS : 'views_last_7_days',
 VOTES : 'votes',
 };
 
+module.exports.ESearchGroupFieldName = {
+CREATED_AT : 'created_at',
+EMAIL : 'email',
+FIRST_NAME : 'first_name',
+GROUP_IDS : 'group_ids',
+LAST_NAME : 'last_name',
+PERMISSION_NAMES : 'permission_names',
+ROLE_IDS : 'role_ids',
+SCREEN_NAME : 'screen_name',
+TAGS : 'tags',
+UPDATED_AT : 'updated_at',
+USER_ID : 'user_id',
+};
+
+module.exports.ESearchGroupOrderByFieldName = {
+CREATED_AT : 'created_at',
+MEMBERS_COUNT : 'members_count',
+USER_ID : 'puser_id',
+SCREEN_NAME : 'screen_name',
+UPDATED_AT : 'updated_at',
+};
+
 module.exports.ESearchLanguage = {
 ARABIC : 'Arabic',
 BASQUE : 'Basque',
@@ -2839,6 +2861,8 @@ TYPE : 'user_type',
 
 module.exports.ESearchUserOrderByFieldName = {
 CREATED_AT : 'created_at',
+USER_ID : 'puser_id',
+SCREEN_NAME : 'screen_name',
 UPDATED_AT : 'updated_at',
 };
 
@@ -5294,7 +5318,9 @@ TOP_CONTENT_CONTRIBUTORS : '39',
 APP_DOMAIN_UNIQUE_ACTIVE_USERS : '40',
 TOP_SOURCES : '41',
 VPAAS_USAGE_MULTI : '42',
+PERCENTILES : '43',
 CONTENT_REPORT_REASONS : '44',
+PLAYER_RELATED_INTERACTIONS : '45',
 PARTNER_USAGE : '201',
 };
 

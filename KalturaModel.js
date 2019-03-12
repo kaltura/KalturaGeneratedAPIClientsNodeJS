@@ -12311,230 +12311,6 @@ module.exports.ESearchEntryResult = ESearchEntryResult;
 /**
  *
  */
-class ESearchHistory extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaESearchHistory';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSearchTerm() {
-	 	return this.searchTerm;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSearchedObject() {
-	 	return this.searchedObject;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getTimestamp() {
-	 	return this.timestamp;
-	 }
-}
-module.exports.ESearchHistory = ESearchHistory;
-
-/**
- *
- */
-class ESearchOrderBy extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaESearchOrderBy';
-	}
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getOrderItems() {
-	 	return this.orderItems;
-	 }
-	
-	/**
-	 * @param orderItems array 
-	 */
-	 setOrderItems(orderItems) {
-	 	this.orderItems = orderItems;
-	 }
-}
-module.exports.ESearchOrderBy = ESearchOrderBy;
-
-/**
- *
- */
-class ESearchParams extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaESearchParams';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getObjectStatuses() {
-	 	return this.objectStatuses;
-	 }
-	
-	/**
-	 * @param objectStatuses string 
-	 */
-	 setObjectStatuses(objectStatuses) {
-	 	this.objectStatuses = objectStatuses;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getObjectId() {
-	 	return this.objectId;
-	 }
-	
-	/**
-	 * @param objectId string 
-	 */
-	 setObjectId(objectId) {
-	 	this.objectId = objectId;
-	 }
-	
-	/**
-	 * 
-	 * @return ESearchOrderBy
-	 */
-	 getOrderBy() {
-	 	return this.orderBy;
-	 }
-	
-	/**
-	 * @param orderBy ESearchOrderBy 
-	 */
-	 setOrderBy(orderBy) {
-	 	this.orderBy = orderBy;
-	 }
-}
-module.exports.ESearchParams = ESearchParams;
-
-/**
- *
- */
-class ESearchRange extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaESearchRange';
-	}
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getGreaterThanOrEqual() {
-	 	return this.greaterThanOrEqual;
-	 }
-	
-	/**
-	 * @param greaterThanOrEqual int 
-	 */
-	 setGreaterThanOrEqual(greaterThanOrEqual) {
-	 	this.greaterThanOrEqual = greaterThanOrEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getLessThanOrEqual() {
-	 	return this.lessThanOrEqual;
-	 }
-	
-	/**
-	 * @param lessThanOrEqual int 
-	 */
-	 setLessThanOrEqual(lessThanOrEqual) {
-	 	this.lessThanOrEqual = lessThanOrEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getGreaterThan() {
-	 	return this.greaterThan;
-	 }
-	
-	/**
-	 * @param greaterThan int 
-	 */
-	 setGreaterThan(greaterThan) {
-	 	this.greaterThan = greaterThan;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getLessThan() {
-	 	return this.lessThan;
-	 }
-	
-	/**
-	 * @param lessThan int 
-	 */
-	 setLessThan(lessThan) {
-	 	this.lessThan = lessThan;
-	 }
-}
-module.exports.ESearchRange = ESearchRange;
-
-/**
- *
- */
-class ESearchResponse extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaESearchResponse';
-	}
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getTotalCount() {
-	 	return this.totalCount;
-	 }
-}
-module.exports.ESearchResponse = ESearchResponse;
-
-/**
- *
- */
-class ESearchUserBaseItem extends ESearchBaseItem{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaESearchUserBaseItem';
-	}
-}
-module.exports.ESearchUserBaseItem = ESearchUserBaseItem;
-
-/**
- *
- */
 class User extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -13057,6 +12833,292 @@ class User extends kaltura.BaseObject{
 	 }
 }
 module.exports.User = User;
+
+/**
+ *
+ */
+class Group extends User{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaGroup';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getType() {
+	 	return this.type;
+	 }
+	
+	/**
+	 * @param type int 
+	 */
+	 setType(type) {
+	 	this.type = type;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getMembersCount() {
+	 	return this.membersCount;
+	 }
+}
+module.exports.Group = Group;
+
+/**
+ *
+ */
+class ESearchGroupResult extends ESearchResult{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchGroupResult';
+	}
+	
+	/**
+	 * 
+	 * @return Group
+	 */
+	 getObject() {
+	 	return this.object;
+	 }
+	
+	/**
+	 * @param object Group 
+	 */
+	 setObject(object) {
+	 	this.object = object;
+	 }
+}
+module.exports.ESearchGroupResult = ESearchGroupResult;
+
+/**
+ *
+ */
+class ESearchHistory extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchHistory';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSearchTerm() {
+	 	return this.searchTerm;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSearchedObject() {
+	 	return this.searchedObject;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getTimestamp() {
+	 	return this.timestamp;
+	 }
+}
+module.exports.ESearchHistory = ESearchHistory;
+
+/**
+ *
+ */
+class ESearchOrderBy extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchOrderBy';
+	}
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getOrderItems() {
+	 	return this.orderItems;
+	 }
+	
+	/**
+	 * @param orderItems array 
+	 */
+	 setOrderItems(orderItems) {
+	 	this.orderItems = orderItems;
+	 }
+}
+module.exports.ESearchOrderBy = ESearchOrderBy;
+
+/**
+ *
+ */
+class ESearchParams extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchParams';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getObjectStatuses() {
+	 	return this.objectStatuses;
+	 }
+	
+	/**
+	 * @param objectStatuses string 
+	 */
+	 setObjectStatuses(objectStatuses) {
+	 	this.objectStatuses = objectStatuses;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getObjectId() {
+	 	return this.objectId;
+	 }
+	
+	/**
+	 * @param objectId string 
+	 */
+	 setObjectId(objectId) {
+	 	this.objectId = objectId;
+	 }
+	
+	/**
+	 * 
+	 * @return ESearchOrderBy
+	 */
+	 getOrderBy() {
+	 	return this.orderBy;
+	 }
+	
+	/**
+	 * @param orderBy ESearchOrderBy 
+	 */
+	 setOrderBy(orderBy) {
+	 	this.orderBy = orderBy;
+	 }
+}
+module.exports.ESearchParams = ESearchParams;
+
+/**
+ *
+ */
+class ESearchRange extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchRange';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getGreaterThanOrEqual() {
+	 	return this.greaterThanOrEqual;
+	 }
+	
+	/**
+	 * @param greaterThanOrEqual int 
+	 */
+	 setGreaterThanOrEqual(greaterThanOrEqual) {
+	 	this.greaterThanOrEqual = greaterThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getLessThanOrEqual() {
+	 	return this.lessThanOrEqual;
+	 }
+	
+	/**
+	 * @param lessThanOrEqual int 
+	 */
+	 setLessThanOrEqual(lessThanOrEqual) {
+	 	this.lessThanOrEqual = lessThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getGreaterThan() {
+	 	return this.greaterThan;
+	 }
+	
+	/**
+	 * @param greaterThan int 
+	 */
+	 setGreaterThan(greaterThan) {
+	 	this.greaterThan = greaterThan;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getLessThan() {
+	 	return this.lessThan;
+	 }
+	
+	/**
+	 * @param lessThan int 
+	 */
+	 setLessThan(lessThan) {
+	 	this.lessThan = lessThan;
+	 }
+}
+module.exports.ESearchRange = ESearchRange;
+
+/**
+ *
+ */
+class ESearchResponse extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchResponse';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getTotalCount() {
+	 	return this.totalCount;
+	 }
+}
+module.exports.ESearchResponse = ESearchResponse;
+
+/**
+ *
+ */
+class ESearchUserBaseItem extends ESearchBaseItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchUserBaseItem';
+	}
+}
+module.exports.ESearchUserBaseItem = ESearchUserBaseItem;
 
 /**
  *
@@ -41698,6 +41760,134 @@ module.exports.ESearchEntryResponse = ESearchEntryResponse;
 /**
  *
  */
+class ESearchGroupOrderByItem extends ESearchOrderByItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchGroupOrderByItem';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSortField() {
+	 	return this.sortField;
+	 }
+	
+	/**
+	 * @param sortField string 
+	 */
+	 setSortField(sortField) {
+	 	this.sortField = sortField;
+	 }
+}
+module.exports.ESearchGroupOrderByItem = ESearchGroupOrderByItem;
+
+/**
+ *
+ */
+class ESearchUserOperator extends ESearchUserBaseItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchUserOperator';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getOperator() {
+	 	return this.operator;
+	 }
+	
+	/**
+	 * @param operator int 
+	 */
+	 setOperator(operator) {
+	 	this.operator = operator;
+	 }
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getSearchItems() {
+	 	return this.searchItems;
+	 }
+	
+	/**
+	 * @param searchItems array 
+	 */
+	 setSearchItems(searchItems) {
+	 	this.searchItems = searchItems;
+	 }
+}
+module.exports.ESearchUserOperator = ESearchUserOperator;
+
+/**
+ *
+ */
+class ESearchGroupOperator extends ESearchUserOperator{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchGroupOperator';
+	}
+}
+module.exports.ESearchGroupOperator = ESearchGroupOperator;
+
+/**
+ *
+ */
+class ESearchGroupParams extends ESearchParams{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchGroupParams';
+	}
+	
+	/**
+	 * 
+	 * @return ESearchGroupOperator
+	 */
+	 getSearchOperator() {
+	 	return this.searchOperator;
+	 }
+	
+	/**
+	 * @param searchOperator ESearchGroupOperator 
+	 */
+	 setSearchOperator(searchOperator) {
+	 	this.searchOperator = searchOperator;
+	 }
+}
+module.exports.ESearchGroupParams = ESearchGroupParams;
+
+/**
+ *
+ */
+class ESearchGroupResponse extends ESearchResponse{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchGroupResponse';
+	}
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getObjects() {
+	 	return this.objects;
+	 }
+}
+module.exports.ESearchGroupResponse = ESearchGroupResponse;
+
+/**
+ *
+ */
 class ESearchHistoryFilter extends ESearchBaseFilter{
 	
 	constructor(object = null) {
@@ -41912,48 +42102,6 @@ class ESearchUserOrderByItem extends ESearchOrderByItem{
 	 }
 }
 module.exports.ESearchUserOrderByItem = ESearchUserOrderByItem;
-
-/**
- *
- */
-class ESearchUserOperator extends ESearchUserBaseItem{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaESearchUserOperator';
-	}
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getOperator() {
-	 	return this.operator;
-	 }
-	
-	/**
-	 * @param operator int 
-	 */
-	 setOperator(operator) {
-	 	this.operator = operator;
-	 }
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getSearchItems() {
-	 	return this.searchItems;
-	 }
-	
-	/**
-	 * @param searchItems array 
-	 */
-	 setSearchItems(searchItems) {
-	 	this.searchItems = searchItems;
-	 }
-}
-module.exports.ESearchUserOperator = ESearchUserOperator;
 
 /**
  *
@@ -73534,6 +73682,33 @@ module.exports.ESearchEntryItem = ESearchEntryItem;
 /**
  *
  */
+class ESearchGroupItem extends ESearchAbstractUserItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchGroupItem';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getFieldName() {
+	 	return this.fieldName;
+	 }
+	
+	/**
+	 * @param fieldName string 
+	 */
+	 setFieldName(fieldName) {
+	 	this.fieldName = fieldName;
+	 }
+}
+module.exports.ESearchGroupItem = ESearchGroupItem;
+
+/**
+ *
+ */
 class ESearchUnifiedItem extends ESearchAbstractEntryItem{
 	
 	constructor(object = null) {
@@ -77283,6 +77458,18 @@ class ESearchEntryAbstractNestedItem extends ESearchEntryNestedBaseItem{
 	 }
 }
 module.exports.ESearchEntryAbstractNestedItem = ESearchEntryAbstractNestedItem;
+
+/**
+ *
+ */
+class ESearchGroupMetadataItem extends ESearchUserMetadataItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchGroupMetadataItem';
+	}
+}
+module.exports.ESearchGroupMetadataItem = ESearchGroupMetadataItem;
 
 /**
  *

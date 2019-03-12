@@ -8107,6 +8107,7 @@ module.exports.dropFolderFile = dropFolderFile;
  * The available service actions:
  * @action searchCategory .
  * @action searchEntry .
+ * @action searchGroup .
  * @action searchUser .
  */
 class eSearch{
@@ -8135,6 +8136,19 @@ class eSearch{
 		kparams.searchParams = searchParams;
 		kparams.pager = pager;
 		return new kaltura.RequestBuilder('elasticsearch_esearch', 'searchEntry', kparams);
+	};
+	
+	/**
+	 * .
+	 * @param searchParams ESearchGroupParams 
+	 * @param pager Pager  (optional, default: null)
+	 * @return KalturaESearchGroupResponse
+	 */
+	static searchGroup(searchParams, pager = null){
+		let kparams = {};
+		kparams.searchParams = searchParams;
+		kparams.pager = pager;
+		return new kaltura.RequestBuilder('elasticsearch_esearch', 'searchGroup', kparams);
 	};
 	
 	/**

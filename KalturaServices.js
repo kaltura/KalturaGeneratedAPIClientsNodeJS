@@ -8423,6 +8423,83 @@ module.exports.externalMedia = externalMedia;
 
 
 /**
+ *Class definition for the Kaltura service: group.
+ * The available service actions:
+ * @action add Adds a new group (user of type group).
+ * @action delete Delete group by ID.
+ * @action get Retrieves a group object for a specified group ID.
+ * @action list Lists group  objects that are associated with an account.
+ * Blocked users are listed unless you use a filter to exclude them.
+ * Deleted users are not listed unless you use a filter to include them.
+ * @action update Update group by ID.
+ */
+class group{
+	
+	/**
+	 * Adds a new group (user of type group).
+	 * @param group Group a new group
+	 * @return KalturaGroup
+	 */
+	static add(group){
+		let kparams = {};
+		kparams.group = group;
+		return new kaltura.RequestBuilder('group_group', 'add', kparams);
+	};
+	
+	/**
+	 * Delete group by ID.
+	 * @param groupId string The unique identifier in the partner's system
+	 * @return KalturaGroup
+	 */
+	static deleteAction(groupId){
+		let kparams = {};
+		kparams.groupId = groupId;
+		return new kaltura.RequestBuilder('group_group', 'delete', kparams);
+	};
+	
+	/**
+	 * Retrieves a group object for a specified group ID.
+	 * @param groupId string The unique identifier in the partner's system
+	 * @return KalturaGroup
+	 */
+	static get(groupId){
+		let kparams = {};
+		kparams.groupId = groupId;
+		return new kaltura.RequestBuilder('group_group', 'get', kparams);
+	};
+	
+	/**
+	 * Lists group  objects that are associated with an account.
+ * Blocked users are listed unless you use a filter to exclude them.
+ * Deleted users are not listed unless you use a filter to include them.
+	 * @param filter GroupFilter  (optional, default: null)
+	 * @param pager FilterPager A limit for the number of records to display on a page (optional, default: null)
+	 * @return KalturaGroupListResponse
+	 */
+	static listAction(filter = null, pager = null){
+		let kparams = {};
+		kparams.filter = filter;
+		kparams.pager = pager;
+		return new kaltura.RequestBuilder('group_group', 'list', kparams);
+	};
+	
+	/**
+	 * Update group by ID.
+	 * @param groupId string The unique identifier in the partner's system
+	 * @param group Group Id The unique identifier in the partner's system
+	 * @return KalturaGroup
+	 */
+	static update(groupId, group){
+		let kparams = {};
+		kparams.groupId = groupId;
+		kparams.group = group;
+		return new kaltura.RequestBuilder('group_group', 'update', kparams);
+	};
+}
+module.exports.group = group;
+
+
+/**
  *Class definition for the Kaltura service: integration.
  * The available service actions:
  * @action dispatch Dispatch integration task.

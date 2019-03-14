@@ -5224,10 +5224,8 @@ module.exports.QuickPlayDistributionProviderOrderBy = {
 module.exports.QuizUserEntryOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
-VERSION_ASC : '+version',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
-VERSION_DESC : '-version',
 };
 
 module.exports.ReachProfileOrderBy = {
@@ -5321,6 +5319,7 @@ VPAAS_USAGE_MULTI : '42',
 PERCENTILES : '43',
 CONTENT_REPORT_REASONS : '44',
 PLAYER_RELATED_INTERACTIONS : '45',
+PLAYBACK_RATE : '46',
 PARTNER_USAGE : '201',
 };
 

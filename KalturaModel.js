@@ -3303,6 +3303,374 @@ module.exports.BaseSyndicationFeed = BaseSyndicationFeed;
 /**
  *
  */
+class BaseUser extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaBaseUser';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getId() {
+	 	return this.id;
+	 }
+	
+	/**
+	 * @param id string 
+	 */
+	 setId(id) {
+	 	this.id = id;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getPartnerId() {
+	 	return this.partnerId;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getScreenName() {
+	 	return this.screenName;
+	 }
+	
+	/**
+	 * @param screenName string 
+	 */
+	 setScreenName(screenName) {
+	 	this.screenName = screenName;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getFullName() {
+	 	return this.fullName;
+	 }
+	
+	/**
+	 * @param fullName string 
+	 */
+	 setFullName(fullName) {
+	 	this.fullName = fullName;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getEmail() {
+	 	return this.email;
+	 }
+	
+	/**
+	 * @param email string 
+	 */
+	 setEmail(email) {
+	 	this.email = email;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getCountry() {
+	 	return this.country;
+	 }
+	
+	/**
+	 * @param country string 
+	 */
+	 setCountry(country) {
+	 	this.country = country;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getState() {
+	 	return this.state;
+	 }
+	
+	/**
+	 * @param state string 
+	 */
+	 setState(state) {
+	 	this.state = state;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getCity() {
+	 	return this.city;
+	 }
+	
+	/**
+	 * @param city string 
+	 */
+	 setCity(city) {
+	 	this.city = city;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getZip() {
+	 	return this.zip;
+	 }
+	
+	/**
+	 * @param zip string 
+	 */
+	 setZip(zip) {
+	 	this.zip = zip;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getThumbnailUrl() {
+	 	return this.thumbnailUrl;
+	 }
+	
+	/**
+	 * @param thumbnailUrl string 
+	 */
+	 setThumbnailUrl(thumbnailUrl) {
+	 	this.thumbnailUrl = thumbnailUrl;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getDescription() {
+	 	return this.description;
+	 }
+	
+	/**
+	 * @param description string 
+	 */
+	 setDescription(description) {
+	 	this.description = description;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getTags() {
+	 	return this.tags;
+	 }
+	
+	/**
+	 * @param tags string 
+	 */
+	 setTags(tags) {
+	 	this.tags = tags;
+	 }
+	
+	/**
+	 * Admin tags can be updated only by using an admin session
+	 * @return string
+	 */
+	 getAdminTags() {
+	 	return this.adminTags;
+	 }
+	
+	/**
+	 * @param adminTags string Admin tags can be updated only by using an admin session
+	 */
+	 setAdminTags(adminTags) {
+	 	this.adminTags = adminTags;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getStatus() {
+	 	return this.status;
+	 }
+	
+	/**
+	 * @param status int 
+	 */
+	 setStatus(status) {
+	 	this.status = status;
+	 }
+	
+	/**
+	 * Creation date as Unix timestamp (In seconds)
+	 * @return int
+	 */
+	 getCreatedAt() {
+	 	return this.createdAt;
+	 }
+	
+	/**
+	 * Last update date as Unix timestamp (In seconds)
+	 * @return int
+	 */
+	 getUpdatedAt() {
+	 	return this.updatedAt;
+	 }
+	
+	/**
+	 * Can be used to store various partner related data as a string
+	 * @return string
+	 */
+	 getPartnerData() {
+	 	return this.partnerData;
+	 }
+	
+	/**
+	 * @param partnerData string Can be used to store various partner related data as a string
+	 */
+	 setPartnerData(partnerData) {
+	 	this.partnerData = partnerData;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getIndexedPartnerDataInt() {
+	 	return this.indexedPartnerDataInt;
+	 }
+	
+	/**
+	 * @param indexedPartnerDataInt int 
+	 */
+	 setIndexedPartnerDataInt(indexedPartnerDataInt) {
+	 	this.indexedPartnerDataInt = indexedPartnerDataInt;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getIndexedPartnerDataString() {
+	 	return this.indexedPartnerDataString;
+	 }
+	
+	/**
+	 * @param indexedPartnerDataString string 
+	 */
+	 setIndexedPartnerDataString(indexedPartnerDataString) {
+	 	this.indexedPartnerDataString = indexedPartnerDataString;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getStorageSize() {
+	 	return this.storageSize;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getLanguage() {
+	 	return this.language;
+	 }
+	
+	/**
+	 * @param language string 
+	 */
+	 setLanguage(language) {
+	 	this.language = language;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getLastLoginTime() {
+	 	return this.lastLoginTime;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getStatusUpdatedAt() {
+	 	return this.statusUpdatedAt;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getDeletedAt() {
+	 	return this.deletedAt;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getAllowedPartnerIds() {
+	 	return this.allowedPartnerIds;
+	 }
+	
+	/**
+	 * @param allowedPartnerIds string 
+	 */
+	 setAllowedPartnerIds(allowedPartnerIds) {
+	 	this.allowedPartnerIds = allowedPartnerIds;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getAllowedPartnerPackages() {
+	 	return this.allowedPartnerPackages;
+	 }
+	
+	/**
+	 * @param allowedPartnerPackages string 
+	 */
+	 setAllowedPartnerPackages(allowedPartnerPackages) {
+	 	this.allowedPartnerPackages = allowedPartnerPackages;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getUserMode() {
+	 	return this.userMode;
+	 }
+	
+	/**
+	 * @param userMode int 
+	 */
+	 setUserMode(userMode) {
+	 	this.userMode = userMode;
+	 }
+}
+module.exports.BaseUser = BaseUser;
+
+/**
+ *
+ */
 class BaseVendorCredit extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -12311,553 +12679,12 @@ module.exports.ESearchEntryResult = ESearchEntryResult;
 /**
  *
  */
-class User extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaUser';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getId() {
-	 	return this.id;
-	 }
-	
-	/**
-	 * @param id string 
-	 */
-	 setId(id) {
-	 	this.id = id;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getPartnerId() {
-	 	return this.partnerId;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getType() {
-	 	return this.type;
-	 }
-	
-	/**
-	 * @param type int 
-	 */
-	 setType(type) {
-	 	this.type = type;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getScreenName() {
-	 	return this.screenName;
-	 }
-	
-	/**
-	 * @param screenName string 
-	 */
-	 setScreenName(screenName) {
-	 	this.screenName = screenName;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFullName() {
-	 	return this.fullName;
-	 }
-	
-	/**
-	 * @param fullName string 
-	 */
-	 setFullName(fullName) {
-	 	this.fullName = fullName;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getEmail() {
-	 	return this.email;
-	 }
-	
-	/**
-	 * @param email string 
-	 */
-	 setEmail(email) {
-	 	this.email = email;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getDateOfBirth() {
-	 	return this.dateOfBirth;
-	 }
-	
-	/**
-	 * @param dateOfBirth int 
-	 */
-	 setDateOfBirth(dateOfBirth) {
-	 	this.dateOfBirth = dateOfBirth;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getCountry() {
-	 	return this.country;
-	 }
-	
-	/**
-	 * @param country string 
-	 */
-	 setCountry(country) {
-	 	this.country = country;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getState() {
-	 	return this.state;
-	 }
-	
-	/**
-	 * @param state string 
-	 */
-	 setState(state) {
-	 	this.state = state;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getCity() {
-	 	return this.city;
-	 }
-	
-	/**
-	 * @param city string 
-	 */
-	 setCity(city) {
-	 	this.city = city;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getZip() {
-	 	return this.zip;
-	 }
-	
-	/**
-	 * @param zip string 
-	 */
-	 setZip(zip) {
-	 	this.zip = zip;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getThumbnailUrl() {
-	 	return this.thumbnailUrl;
-	 }
-	
-	/**
-	 * @param thumbnailUrl string 
-	 */
-	 setThumbnailUrl(thumbnailUrl) {
-	 	this.thumbnailUrl = thumbnailUrl;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getDescription() {
-	 	return this.description;
-	 }
-	
-	/**
-	 * @param description string 
-	 */
-	 setDescription(description) {
-	 	this.description = description;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getTags() {
-	 	return this.tags;
-	 }
-	
-	/**
-	 * @param tags string 
-	 */
-	 setTags(tags) {
-	 	this.tags = tags;
-	 }
-	
-	/**
-	 * Admin tags can be updated only by using an admin session
-	 * @return string
-	 */
-	 getAdminTags() {
-	 	return this.adminTags;
-	 }
-	
-	/**
-	 * @param adminTags string Admin tags can be updated only by using an admin session
-	 */
-	 setAdminTags(adminTags) {
-	 	this.adminTags = adminTags;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getGender() {
-	 	return this.gender;
-	 }
-	
-	/**
-	 * @param gender int 
-	 */
-	 setGender(gender) {
-	 	this.gender = gender;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getStatus() {
-	 	return this.status;
-	 }
-	
-	/**
-	 * @param status int 
-	 */
-	 setStatus(status) {
-	 	this.status = status;
-	 }
-	
-	/**
-	 * Creation date as Unix timestamp (In seconds)
-	 * @return int
-	 */
-	 getCreatedAt() {
-	 	return this.createdAt;
-	 }
-	
-	/**
-	 * Last update date as Unix timestamp (In seconds)
-	 * @return int
-	 */
-	 getUpdatedAt() {
-	 	return this.updatedAt;
-	 }
-	
-	/**
-	 * Can be used to store various partner related data as a string
-	 * @return string
-	 */
-	 getPartnerData() {
-	 	return this.partnerData;
-	 }
-	
-	/**
-	 * @param partnerData string Can be used to store various partner related data as a string
-	 */
-	 setPartnerData(partnerData) {
-	 	this.partnerData = partnerData;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getIndexedPartnerDataInt() {
-	 	return this.indexedPartnerDataInt;
-	 }
-	
-	/**
-	 * @param indexedPartnerDataInt int 
-	 */
-	 setIndexedPartnerDataInt(indexedPartnerDataInt) {
-	 	this.indexedPartnerDataInt = indexedPartnerDataInt;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getIndexedPartnerDataString() {
-	 	return this.indexedPartnerDataString;
-	 }
-	
-	/**
-	 * @param indexedPartnerDataString string 
-	 */
-	 setIndexedPartnerDataString(indexedPartnerDataString) {
-	 	this.indexedPartnerDataString = indexedPartnerDataString;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getStorageSize() {
-	 	return this.storageSize;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getPassword() {
-	 	return this.password;
-	 }
-	
-	/**
-	 * @param password string 
-	 */
-	 setPassword(password) {
-	 	this.password = password;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFirstName() {
-	 	return this.firstName;
-	 }
-	
-	/**
-	 * @param firstName string 
-	 */
-	 setFirstName(firstName) {
-	 	this.firstName = firstName;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getLastName() {
-	 	return this.lastName;
-	 }
-	
-	/**
-	 * @param lastName string 
-	 */
-	 setLastName(lastName) {
-	 	this.lastName = lastName;
-	 }
-	
-	/**
-	 * 
-	 * @return bool
-	 */
-	 getIsAdmin() {
-	 	return this.isAdmin;
-	 }
-	
-	/**
-	 * @param isAdmin bool 
-	 */
-	 setIsAdmin(isAdmin) {
-	 	this.isAdmin = isAdmin;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getLanguage() {
-	 	return this.language;
-	 }
-	
-	/**
-	 * @param language string 
-	 */
-	 setLanguage(language) {
-	 	this.language = language;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getLastLoginTime() {
-	 	return this.lastLoginTime;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getStatusUpdatedAt() {
-	 	return this.statusUpdatedAt;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getDeletedAt() {
-	 	return this.deletedAt;
-	 }
-	
-	/**
-	 * 
-	 * @return bool
-	 */
-	 getLoginEnabled() {
-	 	return this.loginEnabled;
-	 }
-	
-	/**
-	 * @param loginEnabled bool 
-	 */
-	 setLoginEnabled(loginEnabled) {
-	 	this.loginEnabled = loginEnabled;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getRoleIds() {
-	 	return this.roleIds;
-	 }
-	
-	/**
-	 * @param roleIds string 
-	 */
-	 setRoleIds(roleIds) {
-	 	this.roleIds = roleIds;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getRoleNames() {
-	 	return this.roleNames;
-	 }
-	
-	/**
-	 * 
-	 * @return bool
-	 */
-	 getIsAccountOwner() {
-	 	return this.isAccountOwner;
-	 }
-	
-	/**
-	 * @param isAccountOwner bool 
-	 */
-	 setIsAccountOwner(isAccountOwner) {
-	 	this.isAccountOwner = isAccountOwner;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getAllowedPartnerIds() {
-	 	return this.allowedPartnerIds;
-	 }
-	
-	/**
-	 * @param allowedPartnerIds string 
-	 */
-	 setAllowedPartnerIds(allowedPartnerIds) {
-	 	this.allowedPartnerIds = allowedPartnerIds;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getAllowedPartnerPackages() {
-	 	return this.allowedPartnerPackages;
-	 }
-	
-	/**
-	 * @param allowedPartnerPackages string 
-	 */
-	 setAllowedPartnerPackages(allowedPartnerPackages) {
-	 	this.allowedPartnerPackages = allowedPartnerPackages;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getUserMode() {
-	 	return this.userMode;
-	 }
-	
-	/**
-	 * @param userMode int 
-	 */
-	 setUserMode(userMode) {
-	 	this.userMode = userMode;
-	 }
-}
-module.exports.User = User;
-
-/**
- *
- */
-class Group extends User{
+class Group extends BaseUser{
 	
 	constructor(object = null) {
 		super(object);
 		this.objectType = 'KalturaGroup';
 	}
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getType() {
-	 	return this.type;
-	 }
-	
-	/**
-	 * @param type int 
-	 */
-	 setType(type) {
-	 	this.type = type;
-	 }
 	
 	/**
 	 * 
@@ -13119,6 +12946,176 @@ class ESearchUserBaseItem extends ESearchBaseItem{
 	}
 }
 module.exports.ESearchUserBaseItem = ESearchUserBaseItem;
+
+/**
+ *
+ */
+class User extends BaseUser{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaUser';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getType() {
+	 	return this.type;
+	 }
+	
+	/**
+	 * @param type int 
+	 */
+	 setType(type) {
+	 	this.type = type;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getDateOfBirth() {
+	 	return this.dateOfBirth;
+	 }
+	
+	/**
+	 * @param dateOfBirth int 
+	 */
+	 setDateOfBirth(dateOfBirth) {
+	 	this.dateOfBirth = dateOfBirth;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getGender() {
+	 	return this.gender;
+	 }
+	
+	/**
+	 * @param gender int 
+	 */
+	 setGender(gender) {
+	 	this.gender = gender;
+	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getIsAdmin() {
+	 	return this.isAdmin;
+	 }
+	
+	/**
+	 * @param isAdmin bool 
+	 */
+	 setIsAdmin(isAdmin) {
+	 	this.isAdmin = isAdmin;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getRoleIds() {
+	 	return this.roleIds;
+	 }
+	
+	/**
+	 * @param roleIds string 
+	 */
+	 setRoleIds(roleIds) {
+	 	this.roleIds = roleIds;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getRoleNames() {
+	 	return this.roleNames;
+	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getIsAccountOwner() {
+	 	return this.isAccountOwner;
+	 }
+	
+	/**
+	 * @param isAccountOwner bool 
+	 */
+	 setIsAccountOwner(isAccountOwner) {
+	 	this.isAccountOwner = isAccountOwner;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getPassword() {
+	 	return this.password;
+	 }
+	
+	/**
+	 * @param password string 
+	 */
+	 setPassword(password) {
+	 	this.password = password;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getFirstName() {
+	 	return this.firstName;
+	 }
+	
+	/**
+	 * @param firstName string 
+	 */
+	 setFirstName(firstName) {
+	 	this.firstName = firstName;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getLastName() {
+	 	return this.lastName;
+	 }
+	
+	/**
+	 * @param lastName string 
+	 */
+	 setLastName(lastName) {
+	 	this.lastName = lastName;
+	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getLoginEnabled() {
+	 	return this.loginEnabled;
+	 }
+	
+	/**
+	 * @param loginEnabled bool 
+	 */
+	 setLoginEnabled(loginEnabled) {
+	 	this.loginEnabled = loginEnabled;
+	 }
+}
+module.exports.User = User;
 
 /**
  *
@@ -32321,18 +32318,6 @@ module.exports.AddEntryVendorTaskAction = AddEntryVendorTaskAction;
 /**
  *
  */
-class AdminUser extends User{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaAdminUser';
-	}
-}
-module.exports.AdminUser = AdminUser;
-
-/**
- *
- */
 class AlignmentVendorTaskData extends VendorTaskData{
 	
 	constructor(object = null) {
@@ -46638,6 +46623,26 @@ module.exports.GoogleVideoSyndicationFeed = GoogleVideoSyndicationFeed;
 /**
  *
  */
+class GroupListResponse extends ListResponse{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaGroupListResponse';
+	}
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getObjects() {
+	 	return this.objects;
+	 }
+}
+module.exports.GroupListResponse = GroupListResponse;
+
+/**
+ *
+ */
 class GroupUserListResponse extends ListResponse{
 	
 	constructor(object = null) {
@@ -57330,6 +57335,18 @@ class AccessControlProfileBaseFilter extends RelatedFilter{
 	 }
 }
 module.exports.AccessControlProfileBaseFilter = AccessControlProfileBaseFilter;
+
+/**
+ *
+ */
+class AdminUser extends User{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaAdminUser';
+	}
+}
+module.exports.AdminUser = AdminUser;
 
 /**
  *
@@ -77909,6 +77926,18 @@ module.exports.GoogleVideoSyndicationFeedFilter = GoogleVideoSyndicationFeedFilt
 /**
  *
  */
+class GroupFilter extends UserFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaGroupFilter';
+	}
+}
+module.exports.GroupFilter = GroupFilter;
+
+/**
+ *
+ */
 class HttpNotificationTemplateFilter extends HttpNotificationTemplateBaseFilter{
 	
 	constructor(object = null) {
@@ -79472,21 +79501,6 @@ class QuizUserEntryFilter extends QuizUserEntryBaseFilter{
 		super(object);
 		this.objectType = 'KalturaQuizUserEntryFilter';
 	}
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getVersionEqual() {
-	 	return this.versionEqual;
-	 }
-	
-	/**
-	 * @param versionEqual int 
-	 */
-	 setVersionEqual(versionEqual) {
-	 	this.versionEqual = versionEqual;
-	 }
 }
 module.exports.QuizUserEntryFilter = QuizUserEntryFilter;
 

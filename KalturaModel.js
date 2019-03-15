@@ -12679,6 +12679,18 @@ module.exports.ESearchEntryResult = ESearchEntryResult;
 /**
  *
  */
+class ESearchGroupBaseItem extends ESearchBaseItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchGroupBaseItem';
+	}
+}
+module.exports.ESearchGroupBaseItem = ESearchGroupBaseItem;
+
+/**
+ *
+ */
 class Group extends BaseUser{
 	
 	constructor(object = null) {
@@ -41772,11 +41784,11 @@ module.exports.ESearchGroupOrderByItem = ESearchGroupOrderByItem;
 /**
  *
  */
-class ESearchUserOperator extends ESearchUserBaseItem{
+class ESearchGroupOperator extends ESearchGroupBaseItem{
 	
 	constructor(object = null) {
 		super(object);
-		this.objectType = 'KalturaESearchUserOperator';
+		this.objectType = 'KalturaESearchGroupOperator';
 	}
 	
 	/**
@@ -41808,18 +41820,6 @@ class ESearchUserOperator extends ESearchUserBaseItem{
 	 setSearchItems(searchItems) {
 	 	this.searchItems = searchItems;
 	 }
-}
-module.exports.ESearchUserOperator = ESearchUserOperator;
-
-/**
- *
- */
-class ESearchGroupOperator extends ESearchUserOperator{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaESearchGroupOperator';
-	}
 }
 module.exports.ESearchGroupOperator = ESearchGroupOperator;
 
@@ -42087,6 +42087,48 @@ class ESearchUserOrderByItem extends ESearchOrderByItem{
 	 }
 }
 module.exports.ESearchUserOrderByItem = ESearchUserOrderByItem;
+
+/**
+ *
+ */
+class ESearchUserOperator extends ESearchUserBaseItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchUserOperator';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getOperator() {
+	 	return this.operator;
+	 }
+	
+	/**
+	 * @param operator int 
+	 */
+	 setOperator(operator) {
+	 	this.operator = operator;
+	 }
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getSearchItems() {
+	 	return this.searchItems;
+	 }
+	
+	/**
+	 * @param searchItems array 
+	 */
+	 setSearchItems(searchItems) {
+	 	this.searchItems = searchItems;
+	 }
+}
+module.exports.ESearchUserOperator = ESearchUserOperator;
 
 /**
  *
@@ -62195,6 +62237,78 @@ module.exports.ESearchAbstractEntryItem = ESearchAbstractEntryItem;
 /**
  *
  */
+class ESearchAbstractGroupItem extends ESearchGroupBaseItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchAbstractGroupItem';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSearchTerm() {
+	 	return this.searchTerm;
+	 }
+	
+	/**
+	 * @param searchTerm string 
+	 */
+	 setSearchTerm(searchTerm) {
+	 	this.searchTerm = searchTerm;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getItemType() {
+	 	return this.itemType;
+	 }
+	
+	/**
+	 * @param itemType int 
+	 */
+	 setItemType(itemType) {
+	 	this.itemType = itemType;
+	 }
+	
+	/**
+	 * 
+	 * @return ESearchRange
+	 */
+	 getRange() {
+	 	return this.range;
+	 }
+	
+	/**
+	 * @param range ESearchRange 
+	 */
+	 setRange(range) {
+	 	this.range = range;
+	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getAddHighlight() {
+	 	return this.addHighlight;
+	 }
+	
+	/**
+	 * @param addHighlight bool 
+	 */
+	 setAddHighlight(addHighlight) {
+	 	this.addHighlight = addHighlight;
+	 }
+}
+module.exports.ESearchAbstractGroupItem = ESearchAbstractGroupItem;
+
+/**
+ *
+ */
 class ESearchAbstractUserItem extends ESearchUserBaseItem{
 	
 	constructor(object = null) {
@@ -73699,7 +73813,7 @@ module.exports.ESearchEntryItem = ESearchEntryItem;
 /**
  *
  */
-class ESearchGroupItem extends ESearchAbstractUserItem{
+class ESearchGroupItem extends ESearchAbstractGroupItem{
 	
 	constructor(object = null) {
 		super(object);
@@ -73722,6 +73836,63 @@ class ESearchGroupItem extends ESearchAbstractUserItem{
 	 }
 }
 module.exports.ESearchGroupItem = ESearchGroupItem;
+
+/**
+ *
+ */
+class ESearchGroupMetadataItem extends ESearchAbstractGroupItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchGroupMetadataItem';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getXpath() {
+	 	return this.xpath;
+	 }
+	
+	/**
+	 * @param xpath string 
+	 */
+	 setXpath(xpath) {
+	 	this.xpath = xpath;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getMetadataProfileId() {
+	 	return this.metadataProfileId;
+	 }
+	
+	/**
+	 * @param metadataProfileId int 
+	 */
+	 setMetadataProfileId(metadataProfileId) {
+	 	this.metadataProfileId = metadataProfileId;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getMetadataFieldId() {
+	 	return this.metadataFieldId;
+	 }
+	
+	/**
+	 * @param metadataFieldId int 
+	 */
+	 setMetadataFieldId(metadataFieldId) {
+	 	this.metadataFieldId = metadataFieldId;
+	 }
+}
+module.exports.ESearchGroupMetadataItem = ESearchGroupMetadataItem;
 
 /**
  *
@@ -77475,18 +77646,6 @@ class ESearchEntryAbstractNestedItem extends ESearchEntryNestedBaseItem{
 	 }
 }
 module.exports.ESearchEntryAbstractNestedItem = ESearchEntryAbstractNestedItem;
-
-/**
- *
- */
-class ESearchGroupMetadataItem extends ESearchUserMetadataItem{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaESearchGroupMetadataItem';
-	}
-}
-module.exports.ESearchGroupMetadataItem = ESearchGroupMetadataItem;
 
 /**
  *

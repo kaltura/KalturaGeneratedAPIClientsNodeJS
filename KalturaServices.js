@@ -1664,6 +1664,27 @@ module.exports.entryServerNode = entryServerNode;
 
 
 /**
+ *Class definition for the Kaltura service: exportcsv.
+ * The available service actions:
+ * @action serveCsv Will serve a requested CSV.
+ */
+class exportcsv{
+	
+	/**
+	 * Will serve a requested CSV.
+	 * @param id string - the requested file id
+	 * @return string
+	 */
+	static serveCsv(id){
+		let kparams = {};
+		kparams.id = id;
+		return new kaltura.RequestBuilder('exportcsv', 'serveCsv', kparams);
+	};
+}
+module.exports.exportcsv = exportcsv;
+
+
+/**
  *Class definition for the Kaltura service: fileAsset.
  * The available service actions:
  * @action add Add new file asset.
@@ -2908,6 +2929,7 @@ module.exports.mediaInfo = mediaInfo;
  * @action convert Convert entry.
  * @action count Count media entries by filter.
  * @action delete Delete a media entry.
+ * @action exportToCsv Creates a batch job that sends an email with a link to download a CSV containing a list of entries.
  * @action flag Flag inappropriate media entry for moderation.
  * @action get Get media entry by ID.
  * @action getMrss Get MRSS by entry id
@@ -3148,6 +3170,17 @@ class media{
 		let kparams = {};
 		kparams.entryId = entryId;
 		return new kaltura.RequestBuilder('media', 'delete', kparams);
+	};
+	
+	/**
+	 * Creates a batch job that sends an email with a link to download a CSV containing a list of entries.
+	 * @param data MediaEsearchExportToCsvJobData job data indicating filter to pass to the job
+	 * @return string
+	 */
+	static exportToCsv(data){
+		let kparams = {};
+		kparams.data = data;
+		return new kaltura.RequestBuilder('media', 'exportToCsv', kparams);
 	};
 	
 	/**
@@ -8426,6 +8459,7 @@ module.exports.externalMedia = externalMedia;
  *Class definition for the Kaltura service: group.
  * The available service actions:
  * @action add Adds a new group (user of type group).
+ * @action clone clone the group (groupId), and set group id with the neeGroupName.
  * @action delete Delete group by ID.
  * @action get Retrieves a group object for a specified group ID.
  * @action list Lists group  objects that are associated with an account.
@@ -8444,6 +8478,19 @@ class group{
 		let kparams = {};
 		kparams.group = group;
 		return new kaltura.RequestBuilder('group_group', 'add', kparams);
+	};
+	
+	/**
+	 * clone the group (groupId), and set group id with the neeGroupName.
+	 * @param originalGroupId string The unique identifier in the partner's system
+	 * @param newGroupName string The unique identifier in the partner's system
+	 * @return KalturaGroup
+	 */
+	static cloneAction(originalGroupId, newGroupName){
+		let kparams = {};
+		kparams.originalGroupId = originalGroupId;
+		kparams.newGroupName = newGroupName;
+		return new kaltura.RequestBuilder('group_group', 'clone', kparams);
 	};
 	
 	/**

@@ -25094,6 +25094,21 @@ class ReachProfile extends kaltura.BaseObject{
 	 setFlavorParamsIds(flavorParamsIds) {
 	 	this.flavorParamsIds = flavorParamsIds;
 	 }
+	
+	/**
+	 * Indicates in which region the task processing should task place
+	 * @return int
+	 */
+	 getVendorTaskProcessingRegion() {
+	 	return this.vendorTaskProcessingRegion;
+	 }
+	
+	/**
+	 * @param vendorTaskProcessingRegion int Indicates in which region the task processing should task place
+	 */
+	 setVendorTaskProcessingRegion(vendorTaskProcessingRegion) {
+	 	this.vendorTaskProcessingRegion = vendorTaskProcessingRegion;
+	 }
 }
 module.exports.ReachProfile = ReachProfile;
 
@@ -44335,432 +44350,6 @@ module.exports.EntryTranscriptAssetSearchItem = EntryTranscriptAssetSearchItem;
 /**
  *
  */
-class EntryVendorTaskBaseFilter extends RelatedFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaEntryVendorTaskBaseFilter';
-	}
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getIdEqual() {
-	 	return this.idEqual;
-	 }
-	
-	/**
-	 * @param idEqual int 
-	 */
-	 setIdEqual(idEqual) {
-	 	this.idEqual = idEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getIdIn() {
-	 	return this.idIn;
-	 }
-	
-	/**
-	 * @param idIn string 
-	 */
-	 setIdIn(idIn) {
-	 	this.idIn = idIn;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getVendorPartnerIdEqual() {
-	 	return this.vendorPartnerIdEqual;
-	 }
-	
-	/**
-	 * @param vendorPartnerIdEqual int 
-	 */
-	 setVendorPartnerIdEqual(vendorPartnerIdEqual) {
-	 	this.vendorPartnerIdEqual = vendorPartnerIdEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getVendorPartnerIdIn() {
-	 	return this.vendorPartnerIdIn;
-	 }
-	
-	/**
-	 * @param vendorPartnerIdIn string 
-	 */
-	 setVendorPartnerIdIn(vendorPartnerIdIn) {
-	 	this.vendorPartnerIdIn = vendorPartnerIdIn;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getCreatedAtGreaterThanOrEqual() {
-	 	return this.createdAtGreaterThanOrEqual;
-	 }
-	
-	/**
-	 * @param createdAtGreaterThanOrEqual int 
-	 */
-	 setCreatedAtGreaterThanOrEqual(createdAtGreaterThanOrEqual) {
-	 	this.createdAtGreaterThanOrEqual = createdAtGreaterThanOrEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getCreatedAtLessThanOrEqual() {
-	 	return this.createdAtLessThanOrEqual;
-	 }
-	
-	/**
-	 * @param createdAtLessThanOrEqual int 
-	 */
-	 setCreatedAtLessThanOrEqual(createdAtLessThanOrEqual) {
-	 	this.createdAtLessThanOrEqual = createdAtLessThanOrEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getUpdatedAtGreaterThanOrEqual() {
-	 	return this.updatedAtGreaterThanOrEqual;
-	 }
-	
-	/**
-	 * @param updatedAtGreaterThanOrEqual int 
-	 */
-	 setUpdatedAtGreaterThanOrEqual(updatedAtGreaterThanOrEqual) {
-	 	this.updatedAtGreaterThanOrEqual = updatedAtGreaterThanOrEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getUpdatedAtLessThanOrEqual() {
-	 	return this.updatedAtLessThanOrEqual;
-	 }
-	
-	/**
-	 * @param updatedAtLessThanOrEqual int 
-	 */
-	 setUpdatedAtLessThanOrEqual(updatedAtLessThanOrEqual) {
-	 	this.updatedAtLessThanOrEqual = updatedAtLessThanOrEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getQueueTimeGreaterThanOrEqual() {
-	 	return this.queueTimeGreaterThanOrEqual;
-	 }
-	
-	/**
-	 * @param queueTimeGreaterThanOrEqual int 
-	 */
-	 setQueueTimeGreaterThanOrEqual(queueTimeGreaterThanOrEqual) {
-	 	this.queueTimeGreaterThanOrEqual = queueTimeGreaterThanOrEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getQueueTimeLessThanOrEqual() {
-	 	return this.queueTimeLessThanOrEqual;
-	 }
-	
-	/**
-	 * @param queueTimeLessThanOrEqual int 
-	 */
-	 setQueueTimeLessThanOrEqual(queueTimeLessThanOrEqual) {
-	 	this.queueTimeLessThanOrEqual = queueTimeLessThanOrEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getFinishTimeGreaterThanOrEqual() {
-	 	return this.finishTimeGreaterThanOrEqual;
-	 }
-	
-	/**
-	 * @param finishTimeGreaterThanOrEqual int 
-	 */
-	 setFinishTimeGreaterThanOrEqual(finishTimeGreaterThanOrEqual) {
-	 	this.finishTimeGreaterThanOrEqual = finishTimeGreaterThanOrEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getFinishTimeLessThanOrEqual() {
-	 	return this.finishTimeLessThanOrEqual;
-	 }
-	
-	/**
-	 * @param finishTimeLessThanOrEqual int 
-	 */
-	 setFinishTimeLessThanOrEqual(finishTimeLessThanOrEqual) {
-	 	this.finishTimeLessThanOrEqual = finishTimeLessThanOrEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getEntryIdEqual() {
-	 	return this.entryIdEqual;
-	 }
-	
-	/**
-	 * @param entryIdEqual string 
-	 */
-	 setEntryIdEqual(entryIdEqual) {
-	 	this.entryIdEqual = entryIdEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getStatusEqual() {
-	 	return this.statusEqual;
-	 }
-	
-	/**
-	 * @param statusEqual int 
-	 */
-	 setStatusEqual(statusEqual) {
-	 	this.statusEqual = statusEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getStatusIn() {
-	 	return this.statusIn;
-	 }
-	
-	/**
-	 * @param statusIn string 
-	 */
-	 setStatusIn(statusIn) {
-	 	this.statusIn = statusIn;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getReachProfileIdEqual() {
-	 	return this.reachProfileIdEqual;
-	 }
-	
-	/**
-	 * @param reachProfileIdEqual int 
-	 */
-	 setReachProfileIdEqual(reachProfileIdEqual) {
-	 	this.reachProfileIdEqual = reachProfileIdEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getReachProfileIdIn() {
-	 	return this.reachProfileIdIn;
-	 }
-	
-	/**
-	 * @param reachProfileIdIn string 
-	 */
-	 setReachProfileIdIn(reachProfileIdIn) {
-	 	this.reachProfileIdIn = reachProfileIdIn;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getCatalogItemIdEqual() {
-	 	return this.catalogItemIdEqual;
-	 }
-	
-	/**
-	 * @param catalogItemIdEqual int 
-	 */
-	 setCatalogItemIdEqual(catalogItemIdEqual) {
-	 	this.catalogItemIdEqual = catalogItemIdEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getCatalogItemIdIn() {
-	 	return this.catalogItemIdIn;
-	 }
-	
-	/**
-	 * @param catalogItemIdIn string 
-	 */
-	 setCatalogItemIdIn(catalogItemIdIn) {
-	 	this.catalogItemIdIn = catalogItemIdIn;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getUserIdEqual() {
-	 	return this.userIdEqual;
-	 }
-	
-	/**
-	 * @param userIdEqual string 
-	 */
-	 setUserIdEqual(userIdEqual) {
-	 	this.userIdEqual = userIdEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getContextEqual() {
-	 	return this.contextEqual;
-	 }
-	
-	/**
-	 * @param contextEqual string 
-	 */
-	 setContextEqual(contextEqual) {
-	 	this.contextEqual = contextEqual;
-	 }
-}
-module.exports.EntryVendorTaskBaseFilter = EntryVendorTaskBaseFilter;
-
-/**
- *
- */
-class EntryVendorTaskFilter extends EntryVendorTaskBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaEntryVendorTaskFilter';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getFreeText() {
-	 	return this.freeText;
-	 }
-	
-	/**
-	 * @param freeText string 
-	 */
-	 setFreeText(freeText) {
-	 	this.freeText = freeText;
-	 }
-}
-module.exports.EntryVendorTaskFilter = EntryVendorTaskFilter;
-
-/**
- *
- */
-class EntryVendorTaskCsvJobData extends JobData{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaEntryVendorTaskCsvJobData';
-	}
-	
-	/**
-	 * The filter should return the list of users that need to be specified in the csv
-	 * @return EntryVendorTaskFilter
-	 */
-	 getFilter() {
-	 	return this.filter;
-	 }
-	
-	/**
-	 * @param filter EntryVendorTaskFilter The filter should return the list of users that need to be specified in the csv
-	 */
-	 setFilter(filter) {
-	 	this.filter = filter;
-	 }
-	
-	/**
-	 * The users name
-	 * @return string
-	 */
-	 getUserName() {
-	 	return this.userName;
-	 }
-	
-	/**
-	 * @param userName string The users name
-	 */
-	 setUserName(userName) {
-	 	this.userName = userName;
-	 }
-	
-	/**
-	 * The users email
-	 * @return string
-	 */
-	 getUserMail() {
-	 	return this.userMail;
-	 }
-	
-	/**
-	 * @param userMail string The users email
-	 */
-	 setUserMail(userMail) {
-	 	this.userMail = userMail;
-	 }
-	
-	/**
-	 * The file location
-	 * @return string
-	 */
-	 getOutputPath() {
-	 	return this.outputPath;
-	 }
-	
-	/**
-	 * @param outputPath string The file location
-	 */
-	 setOutputPath(outputPath) {
-	 	this.outputPath = outputPath;
-	 }
-}
-module.exports.EntryVendorTaskCsvJobData = EntryVendorTaskCsvJobData;
-
-/**
- *
- */
 class EntryVendorTaskListResponse extends ListResponse{
 	
 	constructor(object = null) {
@@ -45295,6 +44884,63 @@ class ExecuteMetadataXsltObjectTask extends ObjectTask{
 	 }
 }
 module.exports.ExecuteMetadataXsltObjectTask = ExecuteMetadataXsltObjectTask;
+
+/**
+ *
+ */
+class ExportCsvJobData extends JobData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaExportCsvJobData';
+	}
+	
+	/**
+	 * The users name
+	 * @return string
+	 */
+	 getUserName() {
+	 	return this.userName;
+	 }
+	
+	/**
+	 * @param userName string The users name
+	 */
+	 setUserName(userName) {
+	 	this.userName = userName;
+	 }
+	
+	/**
+	 * The users email
+	 * @return string
+	 */
+	 getUserMail() {
+	 	return this.userMail;
+	 }
+	
+	/**
+	 * @param userMail string The users email
+	 */
+	 setUserMail(userMail) {
+	 	this.userMail = userMail;
+	 }
+	
+	/**
+	 * The file location
+	 * @return string
+	 */
+	 getOutputPath() {
+	 	return this.outputPath;
+	 }
+	
+	/**
+	 * @param outputPath string The file location
+	 */
+	 setOutputPath(outputPath) {
+	 	this.outputPath = outputPath;
+	 }
+}
+module.exports.ExportCsvJobData = ExportCsvJobData;
 
 /**
  *
@@ -55427,108 +55073,6 @@ module.exports.UserRoleListResponse = UserRoleListResponse;
 /**
  *
  */
-class UsersCsvJobData extends JobData{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaUsersCsvJobData';
-	}
-	
-	/**
-	 * The filter should return the list of users that need to be specified in the csv
-	 * @return UserFilter
-	 */
-	 getFilter() {
-	 	return this.filter;
-	 }
-	
-	/**
-	 * @param filter UserFilter The filter should return the list of users that need to be specified in the csv
-	 */
-	 setFilter(filter) {
-	 	this.filter = filter;
-	 }
-	
-	/**
-	 * The metadata profile we should look the xpath in
-	 * @return int
-	 */
-	 getMetadataProfileId() {
-	 	return this.metadataProfileId;
-	 }
-	
-	/**
-	 * @param metadataProfileId int The metadata profile we should look the xpath in
-	 */
-	 setMetadataProfileId(metadataProfileId) {
-	 	this.metadataProfileId = metadataProfileId;
-	 }
-	
-	/**
-	 * The xpath to look in the metadataProfileId  and the wanted csv field name
-	 * @return array
-	 */
-	 getAdditionalFields() {
-	 	return this.additionalFields;
-	 }
-	
-	/**
-	 * @param additionalFields array The xpath to look in the metadataProfileId  and the wanted csv field name
-	 */
-	 setAdditionalFields(additionalFields) {
-	 	this.additionalFields = additionalFields;
-	 }
-	
-	/**
-	 * The users name
-	 * @return string
-	 */
-	 getUserName() {
-	 	return this.userName;
-	 }
-	
-	/**
-	 * @param userName string The users name
-	 */
-	 setUserName(userName) {
-	 	this.userName = userName;
-	 }
-	
-	/**
-	 * The users email
-	 * @return string
-	 */
-	 getUserMail() {
-	 	return this.userMail;
-	 }
-	
-	/**
-	 * @param userMail string The users email
-	 */
-	 setUserMail(userMail) {
-	 	this.userMail = userMail;
-	 }
-	
-	/**
-	 * The file location
-	 * @return string
-	 */
-	 getOutputPath() {
-	 	return this.outputPath;
-	 }
-	
-	/**
-	 * @param outputPath string The file location
-	 */
-	 setOutputPath(outputPath) {
-	 	this.outputPath = outputPath;
-	 }
-}
-module.exports.UsersCsvJobData = UsersCsvJobData;
-
-/**
- *
- */
 class ValidateActiveEdgeCondition extends Condition{
 	
 	constructor(object = null) {
@@ -63066,6 +62610,387 @@ module.exports.EntryServerNodeFilter = EntryServerNodeFilter;
 /**
  *
  */
+class EntryVendorTaskBaseFilter extends RelatedFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaEntryVendorTaskBaseFilter';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getIdEqual() {
+	 	return this.idEqual;
+	 }
+	
+	/**
+	 * @param idEqual int 
+	 */
+	 setIdEqual(idEqual) {
+	 	this.idEqual = idEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getIdIn() {
+	 	return this.idIn;
+	 }
+	
+	/**
+	 * @param idIn string 
+	 */
+	 setIdIn(idIn) {
+	 	this.idIn = idIn;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getVendorPartnerIdEqual() {
+	 	return this.vendorPartnerIdEqual;
+	 }
+	
+	/**
+	 * @param vendorPartnerIdEqual int 
+	 */
+	 setVendorPartnerIdEqual(vendorPartnerIdEqual) {
+	 	this.vendorPartnerIdEqual = vendorPartnerIdEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getVendorPartnerIdIn() {
+	 	return this.vendorPartnerIdIn;
+	 }
+	
+	/**
+	 * @param vendorPartnerIdIn string 
+	 */
+	 setVendorPartnerIdIn(vendorPartnerIdIn) {
+	 	this.vendorPartnerIdIn = vendorPartnerIdIn;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getCreatedAtGreaterThanOrEqual() {
+	 	return this.createdAtGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * @param createdAtGreaterThanOrEqual int 
+	 */
+	 setCreatedAtGreaterThanOrEqual(createdAtGreaterThanOrEqual) {
+	 	this.createdAtGreaterThanOrEqual = createdAtGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getCreatedAtLessThanOrEqual() {
+	 	return this.createdAtLessThanOrEqual;
+	 }
+	
+	/**
+	 * @param createdAtLessThanOrEqual int 
+	 */
+	 setCreatedAtLessThanOrEqual(createdAtLessThanOrEqual) {
+	 	this.createdAtLessThanOrEqual = createdAtLessThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getUpdatedAtGreaterThanOrEqual() {
+	 	return this.updatedAtGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * @param updatedAtGreaterThanOrEqual int 
+	 */
+	 setUpdatedAtGreaterThanOrEqual(updatedAtGreaterThanOrEqual) {
+	 	this.updatedAtGreaterThanOrEqual = updatedAtGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getUpdatedAtLessThanOrEqual() {
+	 	return this.updatedAtLessThanOrEqual;
+	 }
+	
+	/**
+	 * @param updatedAtLessThanOrEqual int 
+	 */
+	 setUpdatedAtLessThanOrEqual(updatedAtLessThanOrEqual) {
+	 	this.updatedAtLessThanOrEqual = updatedAtLessThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getQueueTimeGreaterThanOrEqual() {
+	 	return this.queueTimeGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * @param queueTimeGreaterThanOrEqual int 
+	 */
+	 setQueueTimeGreaterThanOrEqual(queueTimeGreaterThanOrEqual) {
+	 	this.queueTimeGreaterThanOrEqual = queueTimeGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getQueueTimeLessThanOrEqual() {
+	 	return this.queueTimeLessThanOrEqual;
+	 }
+	
+	/**
+	 * @param queueTimeLessThanOrEqual int 
+	 */
+	 setQueueTimeLessThanOrEqual(queueTimeLessThanOrEqual) {
+	 	this.queueTimeLessThanOrEqual = queueTimeLessThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getFinishTimeGreaterThanOrEqual() {
+	 	return this.finishTimeGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * @param finishTimeGreaterThanOrEqual int 
+	 */
+	 setFinishTimeGreaterThanOrEqual(finishTimeGreaterThanOrEqual) {
+	 	this.finishTimeGreaterThanOrEqual = finishTimeGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getFinishTimeLessThanOrEqual() {
+	 	return this.finishTimeLessThanOrEqual;
+	 }
+	
+	/**
+	 * @param finishTimeLessThanOrEqual int 
+	 */
+	 setFinishTimeLessThanOrEqual(finishTimeLessThanOrEqual) {
+	 	this.finishTimeLessThanOrEqual = finishTimeLessThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getEntryIdEqual() {
+	 	return this.entryIdEqual;
+	 }
+	
+	/**
+	 * @param entryIdEqual string 
+	 */
+	 setEntryIdEqual(entryIdEqual) {
+	 	this.entryIdEqual = entryIdEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getStatusEqual() {
+	 	return this.statusEqual;
+	 }
+	
+	/**
+	 * @param statusEqual int 
+	 */
+	 setStatusEqual(statusEqual) {
+	 	this.statusEqual = statusEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getStatusIn() {
+	 	return this.statusIn;
+	 }
+	
+	/**
+	 * @param statusIn string 
+	 */
+	 setStatusIn(statusIn) {
+	 	this.statusIn = statusIn;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getReachProfileIdEqual() {
+	 	return this.reachProfileIdEqual;
+	 }
+	
+	/**
+	 * @param reachProfileIdEqual int 
+	 */
+	 setReachProfileIdEqual(reachProfileIdEqual) {
+	 	this.reachProfileIdEqual = reachProfileIdEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getReachProfileIdIn() {
+	 	return this.reachProfileIdIn;
+	 }
+	
+	/**
+	 * @param reachProfileIdIn string 
+	 */
+	 setReachProfileIdIn(reachProfileIdIn) {
+	 	this.reachProfileIdIn = reachProfileIdIn;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getCatalogItemIdEqual() {
+	 	return this.catalogItemIdEqual;
+	 }
+	
+	/**
+	 * @param catalogItemIdEqual int 
+	 */
+	 setCatalogItemIdEqual(catalogItemIdEqual) {
+	 	this.catalogItemIdEqual = catalogItemIdEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getCatalogItemIdIn() {
+	 	return this.catalogItemIdIn;
+	 }
+	
+	/**
+	 * @param catalogItemIdIn string 
+	 */
+	 setCatalogItemIdIn(catalogItemIdIn) {
+	 	this.catalogItemIdIn = catalogItemIdIn;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getUserIdEqual() {
+	 	return this.userIdEqual;
+	 }
+	
+	/**
+	 * @param userIdEqual string 
+	 */
+	 setUserIdEqual(userIdEqual) {
+	 	this.userIdEqual = userIdEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getContextEqual() {
+	 	return this.contextEqual;
+	 }
+	
+	/**
+	 * @param contextEqual string 
+	 */
+	 setContextEqual(contextEqual) {
+	 	this.contextEqual = contextEqual;
+	 }
+}
+module.exports.EntryVendorTaskBaseFilter = EntryVendorTaskBaseFilter;
+
+/**
+ *
+ */
+class EntryVendorTaskFilter extends EntryVendorTaskBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaEntryVendorTaskFilter';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getFreeText() {
+	 	return this.freeText;
+	 }
+	
+	/**
+	 * @param freeText string 
+	 */
+	 setFreeText(freeText) {
+	 	this.freeText = freeText;
+	 }
+}
+module.exports.EntryVendorTaskFilter = EntryVendorTaskFilter;
+
+/**
+ *
+ */
+class EntryVendorTaskCsvJobData extends ExportCsvJobData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaEntryVendorTaskCsvJobData';
+	}
+	
+	/**
+	 * The filter should return the list of users that need to be specified in the csv
+	 * @return EntryVendorTaskFilter
+	 */
+	 getFilter() {
+	 	return this.filter;
+	 }
+	
+	/**
+	 * @param filter EntryVendorTaskFilter The filter should return the list of users that need to be specified in the csv
+	 */
+	 setFilter(filter) {
+	 	this.filter = filter;
+	 }
+}
+module.exports.EntryVendorTaskCsvJobData = EntryVendorTaskCsvJobData;
+
+/**
+ *
+ */
 class EventNotificationTemplateFilter extends EventNotificationTemplateBaseFilter{
 	
 	constructor(object = null) {
@@ -65979,6 +65904,33 @@ class MatchMetadataCondition extends MatchCondition{
 	 }
 }
 module.exports.MatchMetadataCondition = MatchMetadataCondition;
+
+/**
+ *
+ */
+class MediaEsearchExportToCsvJobData extends ExportCsvJobData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaMediaEsearchExportToCsvJobData';
+	}
+	
+	/**
+	 * Esearch parameters for the entry search
+	 * @return ESearchEntryParams
+	 */
+	 getSearchParams() {
+	 	return this.searchParams;
+	 }
+	
+	/**
+	 * @param searchParams ESearchEntryParams Esearch parameters for the entry search
+	 */
+	 setSearchParams(searchParams) {
+	 	this.searchParams = searchParams;
+	 }
+}
+module.exports.MediaEsearchExportToCsvJobData = MediaEsearchExportToCsvJobData;
 
 /**
  *
@@ -70692,6 +70644,63 @@ class UserRoleBaseFilter extends RelatedFilter{
 	 }
 }
 module.exports.UserRoleBaseFilter = UserRoleBaseFilter;
+
+/**
+ *
+ */
+class UsersCsvJobData extends ExportCsvJobData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaUsersCsvJobData';
+	}
+	
+	/**
+	 * The filter should return the list of users that need to be specified in the csv
+	 * @return UserFilter
+	 */
+	 getFilter() {
+	 	return this.filter;
+	 }
+	
+	/**
+	 * @param filter UserFilter The filter should return the list of users that need to be specified in the csv
+	 */
+	 setFilter(filter) {
+	 	this.filter = filter;
+	 }
+	
+	/**
+	 * The metadata profile we should look the xpath in
+	 * @return int
+	 */
+	 getMetadataProfileId() {
+	 	return this.metadataProfileId;
+	 }
+	
+	/**
+	 * @param metadataProfileId int The metadata profile we should look the xpath in
+	 */
+	 setMetadataProfileId(metadataProfileId) {
+	 	this.metadataProfileId = metadataProfileId;
+	 }
+	
+	/**
+	 * The xpath to look in the metadataProfileId  and the wanted csv field name
+	 * @return array
+	 */
+	 getAdditionalFields() {
+	 	return this.additionalFields;
+	 }
+	
+	/**
+	 * @param additionalFields array The xpath to look in the metadataProfileId  and the wanted csv field name
+	 */
+	 setAdditionalFields(additionalFields) {
+	 	this.additionalFields = additionalFields;
+	 }
+}
+module.exports.UsersCsvJobData = UsersCsvJobData;
 
 /**
  *

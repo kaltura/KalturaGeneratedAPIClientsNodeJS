@@ -1292,12 +1292,18 @@ EIGHT_HOURS : 28800,
 TWELVE_HOURS : 43200,
 TWENTY_FOUR_HOURS : 86400,
 FORTY_EIGHT_HOURS : 172800,
+FOUR_DAYS : 345600,
 TEN_DAYS : 864000,
 };
 
 module.exports.VendorServiceType = {
 HUMAN : 1,
 MACHINE : 2,
+};
+
+module.exports.VendorTaskProcessingRegion = {
+US : 1,
+EU : 2,
 };
 
 module.exports.ViewMode = {
@@ -1743,10 +1749,10 @@ module.exports.BatchJobType = {
 PARSE_MULTI_LANGUAGE_CAPTION_ASSET : 'caption.parsemultilanguagecaptionasset',
 PARSE_CAPTION_ASSET : 'captionSearch.parseCaptionAsset',
 DISTRIBUTION_DELETE : 'contentDistribution.DistributionDelete',
+CONVERT : '0',
 DISTRIBUTION_DISABLE : 'contentDistribution.DistributionDisable',
 DISTRIBUTION_ENABLE : 'contentDistribution.DistributionEnable',
 DISTRIBUTION_FETCH_REPORT : 'contentDistribution.DistributionFetchReport',
-CONVERT : '0',
 DISTRIBUTION_SUBMIT : 'contentDistribution.DistributionSubmit',
 DISTRIBUTION_SYNC : 'contentDistribution.DistributionSync',
 DISTRIBUTION_UPDATE : 'contentDistribution.DistributionUpdate',
@@ -1805,6 +1811,7 @@ SERVER_NODE_MONITOR : '45',
 USERS_CSV : '46',
 CLIP_CONCAT : '47',
 COPY_CUE_POINTS : '48',
+EXPORT_CSV : '49',
 };
 
 module.exports.BeaconIndexType = {
@@ -4686,6 +4693,7 @@ MAIL_TYPE_LIVE_REPORT_EXPORT_SUCCESS : '130',
 MAIL_TYPE_LIVE_REPORT_EXPORT_FAILURE : '131',
 MAIL_TYPE_LIVE_REPORT_EXPORT_ABORT : '132',
 MAIL_TYPE_USERS_CSV : '133',
+MAIL_TYPE_OBJECTS_CSV : '135',
 };
 
 module.exports.MatchConditionType = {

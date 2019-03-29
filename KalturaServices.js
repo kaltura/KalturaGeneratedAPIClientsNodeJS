@@ -4060,6 +4060,7 @@ module.exports.playlist = playlist;
  *Class definition for the Kaltura service: report.
  * The available service actions:
  * @action execute .
+ * @action exportToCsv .
  * @action getBaseTotal report getBaseTotal action allows to get the total base for storage reports.
  * @action getGraphs report getGraphs action allows to get a graph data for a specific report.
  * @action getTable report getTable action allows to get a graph data for a specific report.
@@ -4080,6 +4081,17 @@ class report{
 		kparams.id = id;
 		kparams.params = params;
 		return new kaltura.RequestBuilder('report', 'execute', kparams);
+	};
+	
+	/**
+	 * .
+	 * @param params ReportExportParams 
+	 * @return KalturaReportExportResponse
+	 */
+	static exportToCsv(params){
+		let kparams = {};
+		kparams.params = params;
+		return new kaltura.RequestBuilder('report', 'exportToCsv', kparams);
 	};
 	
 	/**

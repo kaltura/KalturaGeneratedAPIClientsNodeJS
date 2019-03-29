@@ -25365,48 +25365,6 @@ module.exports.ReportBaseTotal = ReportBaseTotal;
 /**
  *
  */
-class ReportGraph extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaReportGraph';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getId() {
-	 	return this.id;
-	 }
-	
-	/**
-	 * @param id string 
-	 */
-	 setId(id) {
-	 	this.id = id;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getData() {
-	 	return this.data;
-	 }
-	
-	/**
-	 * @param data string 
-	 */
-	 setData(data) {
-	 	this.data = data;
-	 }
-}
-module.exports.ReportGraph = ReportGraph;
-
-/**
- *
- */
 class ReportInputBaseFilter extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -25479,44 +25437,401 @@ module.exports.ReportInputBaseFilter = ReportInputBaseFilter;
 /**
  *
  */
-class ReportResponse extends kaltura.BaseObject{
+class ESearchEntryOperator extends ESearchEntryBaseItem{
 	
 	constructor(object = null) {
 		super(object);
-		this.objectType = 'KalturaReportResponse';
+		this.objectType = 'KalturaESearchEntryOperator';
 	}
 	
 	/**
 	 * 
-	 * @return string
+	 * @return int
 	 */
-	 getColumns() {
-	 	return this.columns;
+	 getOperator() {
+	 	return this.operator;
 	 }
 	
 	/**
-	 * @param columns string 
+	 * @param operator int 
 	 */
-	 setColumns(columns) {
-	 	this.columns = columns;
+	 setOperator(operator) {
+	 	this.operator = operator;
 	 }
 	
 	/**
 	 * 
 	 * @return array
 	 */
-	 getResults() {
-	 	return this.results;
+	 getSearchItems() {
+	 	return this.searchItems;
 	 }
 	
 	/**
-	 * @param results array 
+	 * @param searchItems array 
 	 */
-	 setResults(results) {
-	 	this.results = results;
+	 setSearchItems(searchItems) {
+	 	this.searchItems = searchItems;
 	 }
 }
-module.exports.ReportResponse = ReportResponse;
+module.exports.ESearchEntryOperator = ESearchEntryOperator;
+
+/**
+ *
+ */
+class ReportInputFilter extends ReportInputBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaReportInputFilter';
+	}
+	
+	/**
+	 * Search keywords to filter objects
+	 * @return string
+	 */
+	 getKeywords() {
+	 	return this.keywords;
+	 }
+	
+	/**
+	 * @param keywords string Search keywords to filter objects
+	 */
+	 setKeywords(keywords) {
+	 	this.keywords = keywords;
+	 }
+	
+	/**
+	 * Search keywords in objects tags
+	 * @return bool
+	 */
+	 getSearchInTags() {
+	 	return this.searchInTags;
+	 }
+	
+	/**
+	 * @param searchInTags bool Search keywords in objects tags
+	 */
+	 setSearchInTags(searchInTags) {
+	 	this.searchInTags = searchInTags;
+	 }
+	
+	/**
+	 * Search keywords in objects admin tags
+	 * @return bool
+	 */
+	 getSearchInAdminTags() {
+	 	return this.searchInAdminTags;
+	 }
+	
+	/**
+	 * @param searchInAdminTags bool Search keywords in objects admin tags
+	 */
+	 setSearchInAdminTags(searchInAdminTags) {
+	 	this.searchInAdminTags = searchInAdminTags;
+	 }
+	
+	/**
+	 * Search objects in specified categories
+	 * @return string
+	 */
+	 getCategories() {
+	 	return this.categories;
+	 }
+	
+	/**
+	 * @param categories string Search objects in specified categories
+	 */
+	 setCategories(categories) {
+	 	this.categories = categories;
+	 }
+	
+	/**
+	 * Search objects in specified category ids
+	 * @return string
+	 */
+	 getCategoriesIdsIn() {
+	 	return this.categoriesIdsIn;
+	 }
+	
+	/**
+	 * @param categoriesIdsIn string Search objects in specified category ids
+	 */
+	 setCategoriesIdsIn(categoriesIdsIn) {
+	 	this.categoriesIdsIn = categoriesIdsIn;
+	 }
+	
+	/**
+	 * Filter by customVar1
+	 * @return string
+	 */
+	 getCustomVar1In() {
+	 	return this.customVar1In;
+	 }
+	
+	/**
+	 * @param customVar1In string Filter by customVar1
+	 */
+	 setCustomVar1In(customVar1In) {
+	 	this.customVar1In = customVar1In;
+	 }
+	
+	/**
+	 * Filter by customVar2
+	 * @return string
+	 */
+	 getCustomVar2In() {
+	 	return this.customVar2In;
+	 }
+	
+	/**
+	 * @param customVar2In string Filter by customVar2
+	 */
+	 setCustomVar2In(customVar2In) {
+	 	this.customVar2In = customVar2In;
+	 }
+	
+	/**
+	 * Filter by customVar3
+	 * @return string
+	 */
+	 getCustomVar3In() {
+	 	return this.customVar3In;
+	 }
+	
+	/**
+	 * @param customVar3In string Filter by customVar3
+	 */
+	 setCustomVar3In(customVar3In) {
+	 	this.customVar3In = customVar3In;
+	 }
+	
+	/**
+	 * Filter by device
+	 * @return string
+	 */
+	 getDeviceIn() {
+	 	return this.deviceIn;
+	 }
+	
+	/**
+	 * @param deviceIn string Filter by device
+	 */
+	 setDeviceIn(deviceIn) {
+	 	this.deviceIn = deviceIn;
+	 }
+	
+	/**
+	 * Filter by country
+	 * @return string
+	 */
+	 getCountryIn() {
+	 	return this.countryIn;
+	 }
+	
+	/**
+	 * @param countryIn string Filter by country
+	 */
+	 setCountryIn(countryIn) {
+	 	this.countryIn = countryIn;
+	 }
+	
+	/**
+	 * Filter by region
+	 * @return string
+	 */
+	 getRegionIn() {
+	 	return this.regionIn;
+	 }
+	
+	/**
+	 * @param regionIn string Filter by region
+	 */
+	 setRegionIn(regionIn) {
+	 	this.regionIn = regionIn;
+	 }
+	
+	/**
+	 * Filter by city
+	 * @return string
+	 */
+	 getCitiesIn() {
+	 	return this.citiesIn;
+	 }
+	
+	/**
+	 * @param citiesIn string Filter by city
+	 */
+	 setCitiesIn(citiesIn) {
+	 	this.citiesIn = citiesIn;
+	 }
+	
+	/**
+	 * Filter by operating system family
+	 * @return string
+	 */
+	 getOperatingSystemFamilyIn() {
+	 	return this.operatingSystemFamilyIn;
+	 }
+	
+	/**
+	 * @param operatingSystemFamilyIn string Filter by operating system family
+	 */
+	 setOperatingSystemFamilyIn(operatingSystemFamilyIn) {
+	 	this.operatingSystemFamilyIn = operatingSystemFamilyIn;
+	 }
+	
+	/**
+	 * Filter by browser family
+	 * @return string
+	 */
+	 getBrowserFamilyIn() {
+	 	return this.browserFamilyIn;
+	 }
+	
+	/**
+	 * @param browserFamilyIn string Filter by browser family
+	 */
+	 setBrowserFamilyIn(browserFamilyIn) {
+	 	this.browserFamilyIn = browserFamilyIn;
+	 }
+	
+	/**
+	 * Time zone offset in minutes
+	 * @return int
+	 */
+	 getTimeZoneOffset() {
+	 	return this.timeZoneOffset;
+	 }
+	
+	/**
+	 * @param timeZoneOffset int Time zone offset in minutes
+	 */
+	 setTimeZoneOffset(timeZoneOffset) {
+	 	this.timeZoneOffset = timeZoneOffset;
+	 }
+	
+	/**
+	 * Aggregated results according to interval
+	 * @return string
+	 */
+	 getInterval() {
+	 	return this.interval;
+	 }
+	
+	/**
+	 * @param interval string Aggregated results according to interval
+	 */
+	 setInterval(interval) {
+	 	this.interval = interval;
+	 }
+	
+	/**
+	 * Filter by media types
+	 * @return string
+	 */
+	 getMediaTypeIn() {
+	 	return this.mediaTypeIn;
+	 }
+	
+	/**
+	 * @param mediaTypeIn string Filter by media types
+	 */
+	 setMediaTypeIn(mediaTypeIn) {
+	 	this.mediaTypeIn = mediaTypeIn;
+	 }
+	
+	/**
+	 * Filter by source types
+	 * @return string
+	 */
+	 getSourceTypeIn() {
+	 	return this.sourceTypeIn;
+	 }
+	
+	/**
+	 * @param sourceTypeIn string Filter by source types
+	 */
+	 setSourceTypeIn(sourceTypeIn) {
+	 	this.sourceTypeIn = sourceTypeIn;
+	 }
+	
+	/**
+	 * Filter by entry owner
+	 * @return string
+	 */
+	 getOwnerIdsIn() {
+	 	return this.ownerIdsIn;
+	 }
+	
+	/**
+	 * @param ownerIdsIn string Filter by entry owner
+	 */
+	 setOwnerIdsIn(ownerIdsIn) {
+	 	this.ownerIdsIn = ownerIdsIn;
+	 }
+	
+	/**
+	 * 
+	 * @return ESearchEntryOperator
+	 */
+	 getEntryOperator() {
+	 	return this.entryOperator;
+	 }
+	
+	/**
+	 * @param entryOperator ESearchEntryOperator 
+	 */
+	 setEntryOperator(entryOperator) {
+	 	this.entryOperator = entryOperator;
+	 }
+	
+	/**
+	 * Entry created at greater than or equal as Unix timestamp
+	 * @return int
+	 */
+	 getEntryCreatedAtGreaterThanOrEqual() {
+	 	return this.entryCreatedAtGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * @param entryCreatedAtGreaterThanOrEqual int Entry created at greater than or equal as Unix timestamp
+	 */
+	 setEntryCreatedAtGreaterThanOrEqual(entryCreatedAtGreaterThanOrEqual) {
+	 	this.entryCreatedAtGreaterThanOrEqual = entryCreatedAtGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * Entry created at less than or equal as Unix timestamp
+	 * @return int
+	 */
+	 getEntryCreatedAtLessThanOrEqual() {
+	 	return this.entryCreatedAtLessThanOrEqual;
+	 }
+	
+	/**
+	 * @param entryCreatedAtLessThanOrEqual int Entry created at less than or equal as Unix timestamp
+	 */
+	 setEntryCreatedAtLessThanOrEqual(entryCreatedAtLessThanOrEqual) {
+	 	this.entryCreatedAtLessThanOrEqual = entryCreatedAtLessThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getEntryIdIn() {
+	 	return this.entryIdIn;
+	 }
+	
+	/**
+	 * @param entryIdIn string 
+	 */
+	 setEntryIdIn(entryIdIn) {
+	 	this.entryIdIn = entryIdIn;
+	 }
+}
+module.exports.ReportInputFilter = ReportInputFilter;
 
 /**
  *
@@ -25559,6 +25874,306 @@ class ReportResponseOptions extends kaltura.BaseObject{
 	 }
 }
 module.exports.ReportResponseOptions = ReportResponseOptions;
+
+/**
+ *
+ */
+class ReportExportItem extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaReportExportItem';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getReportTitle() {
+	 	return this.reportTitle;
+	 }
+	
+	/**
+	 * @param reportTitle string 
+	 */
+	 setReportTitle(reportTitle) {
+	 	this.reportTitle = reportTitle;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getAction() {
+	 	return this.action;
+	 }
+	
+	/**
+	 * @param action int 
+	 */
+	 setAction(action) {
+	 	this.action = action;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getReportType() {
+	 	return this.reportType;
+	 }
+	
+	/**
+	 * @param reportType string 
+	 */
+	 setReportType(reportType) {
+	 	this.reportType = reportType;
+	 }
+	
+	/**
+	 * 
+	 * @return ReportInputFilter
+	 */
+	 getFilter() {
+	 	return this.filter;
+	 }
+	
+	/**
+	 * @param filter ReportInputFilter 
+	 */
+	 setFilter(filter) {
+	 	this.filter = filter;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getOrder() {
+	 	return this.order;
+	 }
+	
+	/**
+	 * @param order string 
+	 */
+	 setOrder(order) {
+	 	this.order = order;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getObjectIds() {
+	 	return this.objectIds;
+	 }
+	
+	/**
+	 * @param objectIds string 
+	 */
+	 setObjectIds(objectIds) {
+	 	this.objectIds = objectIds;
+	 }
+	
+	/**
+	 * 
+	 * @return ReportResponseOptions
+	 */
+	 getResponseOptions() {
+	 	return this.responseOptions;
+	 }
+	
+	/**
+	 * @param responseOptions ReportResponseOptions 
+	 */
+	 setResponseOptions(responseOptions) {
+	 	this.responseOptions = responseOptions;
+	 }
+}
+module.exports.ReportExportItem = ReportExportItem;
+
+/**
+ *
+ */
+class ReportExportParams extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaReportExportParams';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getRecipientEmail() {
+	 	return this.recipientEmail;
+	 }
+	
+	/**
+	 * @param recipientEmail string 
+	 */
+	 setRecipientEmail(recipientEmail) {
+	 	this.recipientEmail = recipientEmail;
+	 }
+	
+	/**
+	 * Time zone offset in minutes (between client to UTC)
+	 * @return int
+	 */
+	 getTimeZoneOffset() {
+	 	return this.timeZoneOffset;
+	 }
+	
+	/**
+	 * @param timeZoneOffset int Time zone offset in minutes (between client to UTC)
+	 */
+	 setTimeZoneOffset(timeZoneOffset) {
+	 	this.timeZoneOffset = timeZoneOffset;
+	 }
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getReportItems() {
+	 	return this.reportItems;
+	 }
+	
+	/**
+	 * @param reportItems array 
+	 */
+	 setReportItems(reportItems) {
+	 	this.reportItems = reportItems;
+	 }
+}
+module.exports.ReportExportParams = ReportExportParams;
+
+/**
+ *
+ */
+class ReportExportResponse extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaReportExportResponse';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getReferenceJobId() {
+	 	return this.referenceJobId;
+	 }
+	
+	/**
+	 * @param referenceJobId int 
+	 */
+	 setReferenceJobId(referenceJobId) {
+	 	this.referenceJobId = referenceJobId;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getReportEmail() {
+	 	return this.reportEmail;
+	 }
+	
+	/**
+	 * @param reportEmail string 
+	 */
+	 setReportEmail(reportEmail) {
+	 	this.reportEmail = reportEmail;
+	 }
+}
+module.exports.ReportExportResponse = ReportExportResponse;
+
+/**
+ *
+ */
+class ReportGraph extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaReportGraph';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getId() {
+	 	return this.id;
+	 }
+	
+	/**
+	 * @param id string 
+	 */
+	 setId(id) {
+	 	this.id = id;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getData() {
+	 	return this.data;
+	 }
+	
+	/**
+	 * @param data string 
+	 */
+	 setData(data) {
+	 	this.data = data;
+	 }
+}
+module.exports.ReportGraph = ReportGraph;
+
+/**
+ *
+ */
+class ReportResponse extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaReportResponse';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getColumns() {
+	 	return this.columns;
+	 }
+	
+	/**
+	 * @param columns string 
+	 */
+	 setColumns(columns) {
+	 	this.columns = columns;
+	 }
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getResults() {
+	 	return this.results;
+	 }
+	
+	/**
+	 * @param results array 
+	 */
+	 setResults(results) {
+	 	this.results = results;
+	 }
+}
+module.exports.ReportResponse = ReportResponse;
 
 /**
  *
@@ -41683,48 +42298,6 @@ module.exports.ESearchEntryOrderByItem = ESearchEntryOrderByItem;
 /**
  *
  */
-class ESearchEntryOperator extends ESearchEntryBaseItem{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaESearchEntryOperator';
-	}
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getOperator() {
-	 	return this.operator;
-	 }
-	
-	/**
-	 * @param operator int 
-	 */
-	 setOperator(operator) {
-	 	this.operator = operator;
-	 }
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getSearchItems() {
-	 	return this.searchItems;
-	 }
-	
-	/**
-	 * @param searchItems array 
-	 */
-	 setSearchItems(searchItems) {
-	 	this.searchItems = searchItems;
-	 }
-}
-module.exports.ESearchEntryOperator = ESearchEntryOperator;
-
-/**
- *
- */
 class ESearchEntryParams extends ESearchParams{
 	
 	constructor(object = null) {
@@ -50709,359 +51282,59 @@ module.exports.ReportBaseFilter = ReportBaseFilter;
 /**
  *
  */
-class ReportInputFilter extends ReportInputBaseFilter{
+class ReportExportJobData extends JobData{
 	
 	constructor(object = null) {
 		super(object);
-		this.objectType = 'KalturaReportInputFilter';
+		this.objectType = 'KalturaReportExportJobData';
 	}
 	
 	/**
-	 * Search keywords to filter objects
+	 * 
 	 * @return string
 	 */
-	 getKeywords() {
-	 	return this.keywords;
+	 getRecipientEmail() {
+	 	return this.recipientEmail;
 	 }
 	
 	/**
-	 * @param keywords string Search keywords to filter objects
+	 * @param recipientEmail string 
 	 */
-	 setKeywords(keywords) {
-	 	this.keywords = keywords;
-	 }
-	
-	/**
-	 * Search keywords in objects tags
-	 * @return bool
-	 */
-	 getSearchInTags() {
-	 	return this.searchInTags;
-	 }
-	
-	/**
-	 * @param searchInTags bool Search keywords in objects tags
-	 */
-	 setSearchInTags(searchInTags) {
-	 	this.searchInTags = searchInTags;
-	 }
-	
-	/**
-	 * Search keywords in objects admin tags
-	 * @return bool
-	 */
-	 getSearchInAdminTags() {
-	 	return this.searchInAdminTags;
-	 }
-	
-	/**
-	 * @param searchInAdminTags bool Search keywords in objects admin tags
-	 */
-	 setSearchInAdminTags(searchInAdminTags) {
-	 	this.searchInAdminTags = searchInAdminTags;
-	 }
-	
-	/**
-	 * Search objects in specified categories
-	 * @return string
-	 */
-	 getCategories() {
-	 	return this.categories;
-	 }
-	
-	/**
-	 * @param categories string Search objects in specified categories
-	 */
-	 setCategories(categories) {
-	 	this.categories = categories;
-	 }
-	
-	/**
-	 * Search objects in specified category ids
-	 * @return string
-	 */
-	 getCategoriesIdsIn() {
-	 	return this.categoriesIdsIn;
-	 }
-	
-	/**
-	 * @param categoriesIdsIn string Search objects in specified category ids
-	 */
-	 setCategoriesIdsIn(categoriesIdsIn) {
-	 	this.categoriesIdsIn = categoriesIdsIn;
-	 }
-	
-	/**
-	 * Filter by customVar1
-	 * @return string
-	 */
-	 getCustomVar1In() {
-	 	return this.customVar1In;
-	 }
-	
-	/**
-	 * @param customVar1In string Filter by customVar1
-	 */
-	 setCustomVar1In(customVar1In) {
-	 	this.customVar1In = customVar1In;
-	 }
-	
-	/**
-	 * Filter by customVar2
-	 * @return string
-	 */
-	 getCustomVar2In() {
-	 	return this.customVar2In;
-	 }
-	
-	/**
-	 * @param customVar2In string Filter by customVar2
-	 */
-	 setCustomVar2In(customVar2In) {
-	 	this.customVar2In = customVar2In;
-	 }
-	
-	/**
-	 * Filter by customVar3
-	 * @return string
-	 */
-	 getCustomVar3In() {
-	 	return this.customVar3In;
-	 }
-	
-	/**
-	 * @param customVar3In string Filter by customVar3
-	 */
-	 setCustomVar3In(customVar3In) {
-	 	this.customVar3In = customVar3In;
-	 }
-	
-	/**
-	 * Filter by device
-	 * @return string
-	 */
-	 getDeviceIn() {
-	 	return this.deviceIn;
-	 }
-	
-	/**
-	 * @param deviceIn string Filter by device
-	 */
-	 setDeviceIn(deviceIn) {
-	 	this.deviceIn = deviceIn;
-	 }
-	
-	/**
-	 * Filter by country
-	 * @return string
-	 */
-	 getCountryIn() {
-	 	return this.countryIn;
-	 }
-	
-	/**
-	 * @param countryIn string Filter by country
-	 */
-	 setCountryIn(countryIn) {
-	 	this.countryIn = countryIn;
-	 }
-	
-	/**
-	 * Filter by region
-	 * @return string
-	 */
-	 getRegionIn() {
-	 	return this.regionIn;
-	 }
-	
-	/**
-	 * @param regionIn string Filter by region
-	 */
-	 setRegionIn(regionIn) {
-	 	this.regionIn = regionIn;
-	 }
-	
-	/**
-	 * Filter by city
-	 * @return string
-	 */
-	 getCitiesIn() {
-	 	return this.citiesIn;
-	 }
-	
-	/**
-	 * @param citiesIn string Filter by city
-	 */
-	 setCitiesIn(citiesIn) {
-	 	this.citiesIn = citiesIn;
-	 }
-	
-	/**
-	 * Filter by operating system family
-	 * @return string
-	 */
-	 getOperatingSystemFamilyIn() {
-	 	return this.operatingSystemFamilyIn;
-	 }
-	
-	/**
-	 * @param operatingSystemFamilyIn string Filter by operating system family
-	 */
-	 setOperatingSystemFamilyIn(operatingSystemFamilyIn) {
-	 	this.operatingSystemFamilyIn = operatingSystemFamilyIn;
-	 }
-	
-	/**
-	 * Filter by browser family
-	 * @return string
-	 */
-	 getBrowserFamilyIn() {
-	 	return this.browserFamilyIn;
-	 }
-	
-	/**
-	 * @param browserFamilyIn string Filter by browser family
-	 */
-	 setBrowserFamilyIn(browserFamilyIn) {
-	 	this.browserFamilyIn = browserFamilyIn;
-	 }
-	
-	/**
-	 * Time zone offset in minutes
-	 * @return int
-	 */
-	 getTimeZoneOffset() {
-	 	return this.timeZoneOffset;
-	 }
-	
-	/**
-	 * @param timeZoneOffset int Time zone offset in minutes
-	 */
-	 setTimeZoneOffset(timeZoneOffset) {
-	 	this.timeZoneOffset = timeZoneOffset;
-	 }
-	
-	/**
-	 * Aggregated results according to interval
-	 * @return string
-	 */
-	 getInterval() {
-	 	return this.interval;
-	 }
-	
-	/**
-	 * @param interval string Aggregated results according to interval
-	 */
-	 setInterval(interval) {
-	 	this.interval = interval;
-	 }
-	
-	/**
-	 * Filter by media types
-	 * @return string
-	 */
-	 getMediaTypeIn() {
-	 	return this.mediaTypeIn;
-	 }
-	
-	/**
-	 * @param mediaTypeIn string Filter by media types
-	 */
-	 setMediaTypeIn(mediaTypeIn) {
-	 	this.mediaTypeIn = mediaTypeIn;
-	 }
-	
-	/**
-	 * Filter by source types
-	 * @return string
-	 */
-	 getSourceTypeIn() {
-	 	return this.sourceTypeIn;
-	 }
-	
-	/**
-	 * @param sourceTypeIn string Filter by source types
-	 */
-	 setSourceTypeIn(sourceTypeIn) {
-	 	this.sourceTypeIn = sourceTypeIn;
-	 }
-	
-	/**
-	 * Filter by entry owner
-	 * @return string
-	 */
-	 getOwnerIdsIn() {
-	 	return this.ownerIdsIn;
-	 }
-	
-	/**
-	 * @param ownerIdsIn string Filter by entry owner
-	 */
-	 setOwnerIdsIn(ownerIdsIn) {
-	 	this.ownerIdsIn = ownerIdsIn;
+	 setRecipientEmail(recipientEmail) {
+	 	this.recipientEmail = recipientEmail;
 	 }
 	
 	/**
 	 * 
-	 * @return ESearchEntryOperator
+	 * @return array
 	 */
-	 getEntryOperator() {
-	 	return this.entryOperator;
+	 getReportItems() {
+	 	return this.reportItems;
 	 }
 	
 	/**
-	 * @param entryOperator ESearchEntryOperator 
+	 * @param reportItems array 
 	 */
-	 setEntryOperator(entryOperator) {
-	 	this.entryOperator = entryOperator;
-	 }
-	
-	/**
-	 * Entry created at greater than or equal as Unix timestamp
-	 * @return int
-	 */
-	 getEntryCreatedAtGreaterThanOrEqual() {
-	 	return this.entryCreatedAtGreaterThanOrEqual;
-	 }
-	
-	/**
-	 * @param entryCreatedAtGreaterThanOrEqual int Entry created at greater than or equal as Unix timestamp
-	 */
-	 setEntryCreatedAtGreaterThanOrEqual(entryCreatedAtGreaterThanOrEqual) {
-	 	this.entryCreatedAtGreaterThanOrEqual = entryCreatedAtGreaterThanOrEqual;
-	 }
-	
-	/**
-	 * Entry created at less than or equal as Unix timestamp
-	 * @return int
-	 */
-	 getEntryCreatedAtLessThanOrEqual() {
-	 	return this.entryCreatedAtLessThanOrEqual;
-	 }
-	
-	/**
-	 * @param entryCreatedAtLessThanOrEqual int Entry created at less than or equal as Unix timestamp
-	 */
-	 setEntryCreatedAtLessThanOrEqual(entryCreatedAtLessThanOrEqual) {
-	 	this.entryCreatedAtLessThanOrEqual = entryCreatedAtLessThanOrEqual;
+	 setReportItems(reportItems) {
+	 	this.reportItems = reportItems;
 	 }
 	
 	/**
 	 * 
 	 * @return string
 	 */
-	 getEntryIdIn() {
-	 	return this.entryIdIn;
+	 getFilePaths() {
+	 	return this.filePaths;
 	 }
 	
 	/**
-	 * @param entryIdIn string 
+	 * @param filePaths string 
 	 */
-	 setEntryIdIn(entryIdIn) {
-	 	this.entryIdIn = entryIdIn;
+	 setFilePaths(filePaths) {
+	 	this.filePaths = filePaths;
 	 }
 }
-module.exports.ReportInputFilter = ReportInputFilter;
+module.exports.ReportExportJobData = ReportExportJobData;
 
 /**
  *

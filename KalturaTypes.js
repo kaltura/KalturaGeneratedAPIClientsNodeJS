@@ -865,6 +865,12 @@ ACTIVE : 2,
 DISABLED : 3,
 };
 
+module.exports.ReportExportItemType = {
+TABLE : 1,
+TOTAL : 2,
+GRAPH : 3,
+};
+
 module.exports.ResponseProfileStatus = {
 DISABLED : 1,
 ENABLED : 2,
@@ -1749,10 +1755,10 @@ module.exports.BatchJobType = {
 PARSE_MULTI_LANGUAGE_CAPTION_ASSET : 'caption.parsemultilanguagecaptionasset',
 PARSE_CAPTION_ASSET : 'captionSearch.parseCaptionAsset',
 DISTRIBUTION_DELETE : 'contentDistribution.DistributionDelete',
-CONVERT : '0',
 DISTRIBUTION_DISABLE : 'contentDistribution.DistributionDisable',
 DISTRIBUTION_ENABLE : 'contentDistribution.DistributionEnable',
 DISTRIBUTION_FETCH_REPORT : 'contentDistribution.DistributionFetchReport',
+CONVERT : '0',
 DISTRIBUTION_SUBMIT : 'contentDistribution.DistributionSubmit',
 DISTRIBUTION_SYNC : 'contentDistribution.DistributionSync',
 DISTRIBUTION_UPDATE : 'contentDistribution.DistributionUpdate',
@@ -1812,6 +1818,7 @@ USERS_CSV : '46',
 CLIP_CONCAT : '47',
 COPY_CUE_POINTS : '48',
 EXPORT_CSV : '49',
+REPORT_EXPORT : '50',
 };
 
 module.exports.BeaconIndexType = {
@@ -4694,6 +4701,9 @@ MAIL_TYPE_LIVE_REPORT_EXPORT_FAILURE : '131',
 MAIL_TYPE_LIVE_REPORT_EXPORT_ABORT : '132',
 MAIL_TYPE_USERS_CSV : '133',
 MAIL_TYPE_OBJECTS_CSV : '135',
+MAIL_TYPE_REPORT_EXPORT_SUCCESS : '136',
+MAIL_TYPE_REPORT_EXPORT_FAILURE : '137',
+MAIL_TYPE_REPORT_EXPORT_ABORT : '138',
 };
 
 module.exports.MatchConditionType = {

@@ -1285,6 +1285,7 @@ module.exports.VendorServiceFeature = {
 CAPTIONS : 1,
 TRANSLATION : 2,
 ALIGNMENT : 3,
+AUDIO_DESCRIPTION : 4,
 };
 
 module.exports.VendorServiceTurnAroundTime = {
@@ -1878,6 +1879,7 @@ CATEGORY : '2',
 USER : '3',
 CATEGORY_USER : '4',
 CATEGORY_ENTRY : '5',
+USER_ENTRY : '6',
 };
 
 module.exports.BulkUploadOrderBy = {
@@ -1983,21 +1985,26 @@ module.exports.CatalogItemLanguage = {
 AR : 'Arabic',
 YUE : 'Cantonese',
 ZH : 'Chinese',
+DA : 'Danish',
 NL : 'Dutch',
 EN : 'English',
 EN_US : 'English (American)',
 EN_GB : 'English (British)',
+FI : 'Finnish',
 FR : 'French',
 DE : 'German',
 HE : 'Hebrew',
 HI : 'Hindi',
+IS : 'Icelandic',
 IT : 'Italian',
 JA : 'Japanese',
 KO : 'Korean',
 CMN : 'Mandarin Chinese',
+NO : 'Norwegian',
 PT : 'Portuguese',
 RU : 'Russian',
 ES : 'Spanish',
+SV : 'Swedish',
 TH : 'Thai',
 TR : 'Turkish',
 };

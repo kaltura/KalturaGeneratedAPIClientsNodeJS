@@ -5605,7 +5605,7 @@ class userEntry{
 	/**
 	 * .
 	 * @param filter UserEntryFilter 
-	 * @return int
+	 * @return KalturaBulkUpload
 	 */
 	static bulkDelete(filter){
 		let kparams = {};
@@ -6192,12 +6192,14 @@ class annotation{
 	 * Clone cuePoint with id to given entry.
 	 * @param id string 
 	 * @param entryId string 
-	 * @return KalturaCuePoint
+	 * @param parentId string  (optional, default: null)
+	 * @return KalturaAnnotation
 	 */
-	static cloneAction(id, entryId){
+	static cloneAction(id, entryId, parentId = null){
 		let kparams = {};
 		kparams.id = id;
 		kparams.entryId = entryId;
+		kparams.parentId = parentId;
 		return new kaltura.RequestBuilder('annotation_annotation', 'clone', kparams);
 	};
 	

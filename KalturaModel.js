@@ -34524,11 +34524,11 @@ module.exports.BulkDownloadJobData = BulkDownloadJobData;
 /**
  *
  */
-class BulkServiceFilterData extends BulkServiceData{
+class BulkServiceFilterDataBase extends BulkServiceData{
 	
 	constructor(object = null) {
 		super(object);
-		this.objectType = 'KalturaBulkServiceFilterData';
+		this.objectType = 'KalturaBulkServiceFilterDataBase';
 	}
 	
 	/**
@@ -34545,23 +34545,8 @@ class BulkServiceFilterData extends BulkServiceData{
 	 setFilter(filter) {
 	 	this.filter = filter;
 	 }
-	
-	/**
-	 * Template object for new object creation
-	 * @return ObjectBase
-	 */
-	 getTemplateObject() {
-	 	return this.templateObject;
-	 }
-	
-	/**
-	 * @param templateObject ObjectBase Template object for new object creation
-	 */
-	 setTemplateObject(templateObject) {
-	 	this.templateObject = templateObject;
-	 }
 }
-module.exports.BulkServiceFilterData = BulkServiceFilterData;
+module.exports.BulkServiceFilterDataBase = BulkServiceFilterDataBase;
 
 /**
  *
@@ -36053,6 +36038,33 @@ class BulkUploadResultUser extends BulkUploadResult{
 	 }
 }
 module.exports.BulkUploadResultUser = BulkUploadResultUser;
+
+/**
+ *
+ */
+class BulkUploadResultUserEntry extends BulkUploadResult{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaBulkUploadResultUserEntry';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getUserEntryId() {
+	 	return this.userEntryId;
+	 }
+	
+	/**
+	 * @param userEntryId int 
+	 */
+	 setUserEntryId(userEntryId) {
+	 	this.userEntryId = userEntryId;
+	 }
+}
+module.exports.BulkUploadResultUserEntry = BulkUploadResultUserEntry;
 
 /**
  *
@@ -50251,6 +50263,36 @@ class PartnerBaseFilter extends Filter{
 	 setPartnerNameDescriptionWebsiteAdminNameAdminEmailLike(partnerNameDescriptionWebsiteAdminNameAdminEmailLike) {
 	 	this.partnerNameDescriptionWebsiteAdminNameAdminEmailLike = partnerNameDescriptionWebsiteAdminNameAdminEmailLike;
 	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getCreatedAtGreaterThanOrEqual() {
+	 	return this.createdAtGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * @param createdAtGreaterThanOrEqual int 
+	 */
+	 setCreatedAtGreaterThanOrEqual(createdAtGreaterThanOrEqual) {
+	 	this.createdAtGreaterThanOrEqual = createdAtGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getIdGreaterThan() {
+	 	return this.idGreaterThan;
+	 }
+	
+	/**
+	 * @param idGreaterThan int 
+	 */
+	 setIdGreaterThan(idGreaterThan) {
+	 	this.idGreaterThan = idGreaterThan;
+	 }
 }
 module.exports.PartnerBaseFilter = PartnerBaseFilter;
 
@@ -55427,6 +55469,48 @@ module.exports.VendorAlignmentCatalogItem = VendorAlignmentCatalogItem;
 /**
  *
  */
+class VendorAudioDescriptionCatalogItem extends VendorCatalogItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorAudioDescriptionCatalogItem';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSourceLanguage() {
+	 	return this.sourceLanguage;
+	 }
+	
+	/**
+	 * @param sourceLanguage string 
+	 */
+	 setSourceLanguage(sourceLanguage) {
+	 	this.sourceLanguage = sourceLanguage;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getFlavorParamsId() {
+	 	return this.flavorParamsId;
+	 }
+	
+	/**
+	 * @param flavorParamsId int 
+	 */
+	 setFlavorParamsId(flavorParamsId) {
+	 	this.flavorParamsId = flavorParamsId;
+	 }
+}
+module.exports.VendorAudioDescriptionCatalogItem = VendorAudioDescriptionCatalogItem;
+
+/**
+ *
+ */
 class VendorCaptionsCatalogItem extends VendorCatalogItem{
 	
 	constructor(object = null) {
@@ -58336,6 +58420,33 @@ class BeaconFilter extends BeaconBaseFilter{
 	 }
 }
 module.exports.BeaconFilter = BeaconFilter;
+
+/**
+ *
+ */
+class BulkServiceFilterData extends BulkServiceFilterDataBase{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaBulkServiceFilterData';
+	}
+	
+	/**
+	 * Template object for new object creation
+	 * @return ObjectBase
+	 */
+	 getTemplateObject() {
+	 	return this.templateObject;
+	 }
+	
+	/**
+	 * @param templateObject ObjectBase Template object for new object creation
+	 */
+	 setTemplateObject(templateObject) {
+	 	this.templateObject = templateObject;
+	 }
+}
+module.exports.BulkServiceFilterData = BulkServiceFilterData;
 
 /**
  *
@@ -76330,6 +76441,21 @@ class UserEntryFilter extends UserEntryBaseFilter{
 	 setPrivacyContextIn(privacyContextIn) {
 	 	this.privacyContextIn = privacyContextIn;
 	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getPartnerId() {
+	 	return this.partnerId;
+	 }
+	
+	/**
+	 * @param partnerId int 
+	 */
+	 setPartnerId(partnerId) {
+	 	this.partnerId = partnerId;
+	 }
 }
 module.exports.UserEntryFilter = UserEntryFilter;
 
@@ -80016,6 +80142,18 @@ class VendorAlignmentCatalogItemFilter extends VendorCaptionsCatalogItemBaseFilt
 	}
 }
 module.exports.VendorAlignmentCatalogItemFilter = VendorAlignmentCatalogItemFilter;
+
+/**
+ *
+ */
+class VendorAudioDescriptionCatalogItemFilter extends VendorCaptionsCatalogItemBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorAudioDescriptionCatalogItemFilter';
+	}
+}
+module.exports.VendorAudioDescriptionCatalogItemFilter = VendorAudioDescriptionCatalogItemFilter;
 
 /**
  *

@@ -5605,7 +5605,7 @@ class userEntry{
 	/**
 	 * .
 	 * @param filter UserEntryFilter 
-	 * @return KalturaBulkUpload
+	 * @return int
 	 */
 	static bulkDelete(filter){
 		let kparams = {};

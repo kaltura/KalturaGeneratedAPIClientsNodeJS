@@ -933,6 +933,14 @@ class CuePoint extends kaltura.BaseObject{
 	
 	/**
 	 * 
+	 * @return int
+	 */
+	 getIntId() {
+	 	return this.intId;
+	 }
+	
+	/**
+	 * 
 	 * @return string
 	 */
 	 getCuePointType() {

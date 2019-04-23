@@ -3025,6 +3025,10 @@ STATUS_DESC : '-status',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
+module.exports.EsearchGroupUserFieldName = {
+GROUP_IDS : 'group_ids',
+};
+
 module.exports.EventCuePointOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 INT_ID_ASC : '+intId',

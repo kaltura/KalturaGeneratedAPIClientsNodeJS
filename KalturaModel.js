@@ -74298,6 +74298,48 @@ module.exports.ESearchGroupMetadataItem = ESearchGroupMetadataItem;
 /**
  *
  */
+class ESearchGroupUserItem extends ESearchAbstractUserItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchGroupUserItem';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getFieldName() {
+	 	return this.fieldName;
+	 }
+	
+	/**
+	 * @param fieldName string 
+	 */
+	 setFieldName(fieldName) {
+	 	this.fieldName = fieldName;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getCreationMode() {
+	 	return this.creationMode;
+	 }
+	
+	/**
+	 * @param creationMode int 
+	 */
+	 setCreationMode(creationMode) {
+	 	this.creationMode = creationMode;
+	 }
+}
+module.exports.ESearchGroupUserItem = ESearchGroupUserItem;
+
+/**
+ *
+ */
 class ESearchUnifiedItem extends ESearchAbstractEntryItem{
 	
 	constructor(object = null) {

@@ -3844,6 +3844,21 @@ class BatchHistoryData extends kaltura.BaseObject{
 	 setSessionId(sessionId) {
 	 	this.sessionId = sessionId;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSchedulerName() {
+	 	return this.schedulerName;
+	 }
+	
+	/**
+	 * @param schedulerName string 
+	 */
+	 setSchedulerName(schedulerName) {
+	 	this.schedulerName = schedulerName;
+	 }
 }
 module.exports.BatchHistoryData = BatchHistoryData;
 
@@ -19530,6 +19545,21 @@ class TrackEntry extends kaltura.BaseObject{
 	 */
 	 setUserIp(userIp) {
 	 	this.userIp = userIp;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getSessionId() {
+	 	return this.sessionId;
+	 }
+	
+	/**
+	 * @param sessionId int 
+	 */
+	 setSessionId(sessionId) {
+	 	this.sessionId = sessionId;
 	 }
 }
 module.exports.TrackEntry = TrackEntry;

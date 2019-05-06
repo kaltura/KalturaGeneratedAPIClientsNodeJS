@@ -8497,12 +8497,14 @@ class group{
 	/**
 	 * clone the group (groupId), and set group id with the neeGroupName.
 	 * @param originalGroupId string The unique identifier in the partner's system
-	 * @param newGroupName string The unique identifier in the partner's system
+	 * @param newGroupId string The unique identifier in the partner's system
+	 * @param newGroupName string The name of the new cloned group (optional, default: null)
 	 * @return KalturaGroup
 	 */
-	static cloneAction(originalGroupId, newGroupName){
+	static cloneAction(originalGroupId, newGroupId, newGroupName = null){
 		let kparams = {};
 		kparams.originalGroupId = originalGroupId;
+		kparams.newGroupId = newGroupId;
 		kparams.newGroupName = newGroupName;
 		return new kaltura.RequestBuilder('group_group', 'clone', kparams);
 	};

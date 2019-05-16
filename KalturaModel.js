@@ -21210,6 +21210,14 @@ class LiveStreamEntry extends LiveEntry{
 	 getPrimaryServerNodeId() {
 	 	return this.primaryServerNodeId;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSipToken() {
+	 	return this.sipToken;
+	 }
 }
 module.exports.LiveStreamEntry = LiveStreamEntry;
 

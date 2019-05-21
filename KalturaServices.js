@@ -3562,6 +3562,7 @@ module.exports.notification = notification;
  * @action get Retrieve partner object by Id.
  * @action getInfo Retrieve all info attributed to the partner
  * This action expects no parameters. It returns information for the current KS partnerId.
+ * @action getPublicInfo Returns partner public info by Id.
  * @action getSecrets Retrieve partner secret and admin secret.
  * @action getStatistics Get usage statistics for a partner
  * Calculation is done according to partner's package.
@@ -3609,6 +3610,17 @@ class partner{
 	static getInfo(){
 		let kparams = {};
 		return new kaltura.RequestBuilder('partner', 'getInfo', kparams);
+	};
+	
+	/**
+	 * Returns partner public info by Id.
+	 * @param id int  (optional, default: null)
+	 * @return KalturaPartnerPublicInfo
+	 */
+	static getPublicInfo(id = null){
+		let kparams = {};
+		kparams.id = id;
+		return new kaltura.RequestBuilder('partner', 'getPublicInfo', kparams);
 	};
 	
 	/**

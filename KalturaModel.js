@@ -23605,6 +23605,48 @@ module.exports.OptionalAnswer = OptionalAnswer;
 /**
  *
  */
+class PartnerPublicInfo extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaPartnerPublicInfo';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getAnalyticsUrl() {
+	 	return this.analyticsUrl;
+	 }
+	
+	/**
+	 * @param analyticsUrl string 
+	 */
+	 setAnalyticsUrl(analyticsUrl) {
+	 	this.analyticsUrl = analyticsUrl;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getOttEnvironmentUrl() {
+	 	return this.ottEnvironmentUrl;
+	 }
+	
+	/**
+	 * @param ottEnvironmentUrl string 
+	 */
+	 setOttEnvironmentUrl(ottEnvironmentUrl) {
+	 	this.ottEnvironmentUrl = ottEnvironmentUrl;
+	 }
+}
+module.exports.PartnerPublicInfo = PartnerPublicInfo;
+
+/**
+ *
+ */
 class PartnerStatistics extends kaltura.BaseObject{
 	
 	constructor(object = null) {

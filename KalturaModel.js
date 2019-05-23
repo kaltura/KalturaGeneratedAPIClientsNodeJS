@@ -23641,6 +23641,21 @@ class PartnerPublicInfo extends kaltura.BaseObject{
 	 setOttEnvironmentUrl(ottEnvironmentUrl) {
 	 	this.ottEnvironmentUrl = ottEnvironmentUrl;
 	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getAnalyticsPersistentSessionId() {
+	 	return this.analyticsPersistentSessionId;
+	 }
+	
+	/**
+	 * @param analyticsPersistentSessionId bool 
+	 */
+	 setAnalyticsPersistentSessionId(analyticsPersistentSessionId) {
+	 	this.analyticsPersistentSessionId = analyticsPersistentSessionId;
+	 }
 }
 module.exports.PartnerPublicInfo = PartnerPublicInfo;
 

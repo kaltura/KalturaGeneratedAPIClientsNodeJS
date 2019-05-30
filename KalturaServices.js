@@ -9662,7 +9662,7 @@ class scheduleEvent{
 	/**
 	 * Add new bulk upload batch job.
 	 * @param fileData file 
-	 * @param bulkUploadData BulkUploadICalJobData  (optional, default: null)
+	 * @param bulkUploadData BulkUploadScheduleEventJobData  (optional, default: null)
 	 * @return KalturaBulkUpload
 	 */
 	static addFromBulkUpload(fileData, bulkUploadData = null){

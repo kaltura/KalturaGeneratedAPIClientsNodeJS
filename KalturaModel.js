@@ -35785,6 +35785,246 @@ class BulkUploadResultScheduleEvent extends BulkUploadResult{
 	 setReferenceId(referenceId) {
 	 	this.referenceId = referenceId;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getTemplateEntryId() {
+	 	return this.templateEntryId;
+	 }
+	
+	/**
+	 * @param templateEntryId string 
+	 */
+	 setTemplateEntryId(templateEntryId) {
+	 	this.templateEntryId = templateEntryId;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getEventType() {
+	 	return this.eventType;
+	 }
+	
+	/**
+	 * @param eventType int 
+	 */
+	 setEventType(eventType) {
+	 	this.eventType = eventType;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getTitle() {
+	 	return this.title;
+	 }
+	
+	/**
+	 * @param title string 
+	 */
+	 setTitle(title) {
+	 	this.title = title;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getDescription() {
+	 	return this.description;
+	 }
+	
+	/**
+	 * @param description string 
+	 */
+	 setDescription(description) {
+	 	this.description = description;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getTags() {
+	 	return this.tags;
+	 }
+	
+	/**
+	 * @param tags string 
+	 */
+	 setTags(tags) {
+	 	this.tags = tags;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getCategoryIds() {
+	 	return this.categoryIds;
+	 }
+	
+	/**
+	 * @param categoryIds string 
+	 */
+	 setCategoryIds(categoryIds) {
+	 	this.categoryIds = categoryIds;
+	 }
+	
+	/**
+	 * ID of the resource specified for the new event
+	 * @return string
+	 */
+	 getResourceId() {
+	 	return this.resourceId;
+	 }
+	
+	/**
+	 * @param resourceId string ID of the resource specified for the new event
+	 */
+	 setResourceId(resourceId) {
+	 	this.resourceId = resourceId;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getStartTime() {
+	 	return this.startTime;
+	 }
+	
+	/**
+	 * @param startTime int 
+	 */
+	 setStartTime(startTime) {
+	 	this.startTime = startTime;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getDuration() {
+	 	return this.duration;
+	 }
+	
+	/**
+	 * @param duration int 
+	 */
+	 setDuration(duration) {
+	 	this.duration = duration;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getEndTime() {
+	 	return this.endTime;
+	 }
+	
+	/**
+	 * @param endTime int 
+	 */
+	 setEndTime(endTime) {
+	 	this.endTime = endTime;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getRecurrence() {
+	 	return this.recurrence;
+	 }
+	
+	/**
+	 * @param recurrence string 
+	 */
+	 setRecurrence(recurrence) {
+	 	this.recurrence = recurrence;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getCoEditors() {
+	 	return this.coEditors;
+	 }
+	
+	/**
+	 * @param coEditors string 
+	 */
+	 setCoEditors(coEditors) {
+	 	this.coEditors = coEditors;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getCoPublishers() {
+	 	return this.coPublishers;
+	 }
+	
+	/**
+	 * @param coPublishers string 
+	 */
+	 setCoPublishers(coPublishers) {
+	 	this.coPublishers = coPublishers;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getEventOrganizerId() {
+	 	return this.eventOrganizerId;
+	 }
+	
+	/**
+	 * @param eventOrganizerId string 
+	 */
+	 setEventOrganizerId(eventOrganizerId) {
+	 	this.eventOrganizerId = eventOrganizerId;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getContentOwnerId() {
+	 	return this.contentOwnerId;
+	 }
+	
+	/**
+	 * @param contentOwnerId string 
+	 */
+	 setContentOwnerId(contentOwnerId) {
+	 	this.contentOwnerId = contentOwnerId;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getTemplateEntryType() {
+	 	return this.templateEntryType;
+	 }
+	
+	/**
+	 * @param templateEntryType string 
+	 */
+	 setTemplateEntryType(templateEntryType) {
+	 	this.templateEntryType = templateEntryType;
+	 }
 }
 module.exports.BulkUploadResultScheduleEvent = BulkUploadResultScheduleEvent;
 
@@ -58643,29 +58883,14 @@ module.exports.BulkUploadFilterJobData = BulkUploadFilterJobData;
 /**
  *
  */
-class BulkUploadICalJobData extends BulkUploadJobData{
+class BulkUploadScheduleEventJobData extends BulkUploadJobData{
 	
 	constructor(object = null) {
 		super(object);
-		this.objectType = 'KalturaBulkUploadICalJobData';
+		this.objectType = 'KalturaBulkUploadScheduleEventJobData';
 	}
-	
-	/**
-	 * The type of the events that ill be created by this upload
-	 * @return int
-	 */
-	 getEventsType() {
-	 	return this.eventsType;
-	 }
-	
-	/**
-	 * @param eventsType int The type of the events that ill be created by this upload
-	 */
-	 setEventsType(eventsType) {
-	 	this.eventsType = eventsType;
-	 }
 }
-module.exports.BulkUploadICalJobData = BulkUploadICalJobData;
+module.exports.BulkUploadScheduleEventJobData = BulkUploadScheduleEventJobData;
 
 /**
  *
@@ -73372,6 +73597,68 @@ class BeaconScheduledResourceItem extends BeaconAbstractScheduledResourceItem{
 	 }
 }
 module.exports.BeaconScheduledResourceItem = BeaconScheduledResourceItem;
+
+/**
+ *
+ */
+class BulkUploadICalJobData extends BulkUploadScheduleEventJobData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaBulkUploadICalJobData';
+	}
+	
+	/**
+	 * The type of the events that ill be created by this upload
+	 * @return int
+	 */
+	 getEventsType() {
+	 	return this.eventsType;
+	 }
+	
+	/**
+	 * @param eventsType int The type of the events that ill be created by this upload
+	 */
+	 setEventsType(eventsType) {
+	 	this.eventsType = eventsType;
+	 }
+}
+module.exports.BulkUploadICalJobData = BulkUploadICalJobData;
+
+/**
+ *
+ */
+class BulkUploadScheduleEventCsvJobData extends BulkUploadScheduleEventJobData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaBulkUploadScheduleEventCsvJobData';
+	}
+	
+	/**
+	 * The version of the csv file
+	 * @return int
+	 */
+	 getCsvVersion() {
+	 	return this.csvVersion;
+	 }
+	
+	/**
+	 * Array containing CSV headers
+	 * @return array
+	 */
+	 getColumns() {
+	 	return this.columns;
+	 }
+	
+	/**
+	 * @param columns array Array containing CSV headers
+	 */
+	 setColumns(columns) {
+	 	this.columns = columns;
+	 }
+}
+module.exports.BulkUploadScheduleEventCsvJobData = BulkUploadScheduleEventCsvJobData;
 
 /**
  *

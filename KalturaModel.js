@@ -12728,6 +12728,21 @@ class Group extends BaseUser{
 	 getMembersCount() {
 	 	return this.membersCount;
 	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getProcessStatus() {
+	 	return this.processStatus;
+	 }
+	
+	/**
+	 * @param processStatus int 
+	 */
+	 setProcessStatus(processStatus) {
+	 	this.processStatus = processStatus;
+	 }
 }
 module.exports.Group = Group;
 
@@ -58822,6 +58837,36 @@ class BulkUploadCsvJobData extends BulkUploadJobData{
 	 */
 	 setColumns(columns) {
 	 	this.columns = columns;
+	 }
+	
+	/**
+	 * The object in process
+	 * @return string
+	 */
+	 getProcessObjectId() {
+	 	return this.processObjectId;
+	 }
+	
+	/**
+	 * @param processObjectId string The object in process
+	 */
+	 setProcessObjectId(processObjectId) {
+	 	this.processObjectId = processObjectId;
+	 }
+	
+	/**
+	 * The type of the object in process
+	 * @return string
+	 */
+	 getProcessObjectType() {
+	 	return this.processObjectType;
+	 }
+	
+	/**
+	 * @param processObjectType string The type of the object in process
+	 */
+	 setProcessObjectType(processObjectType) {
+	 	this.processObjectType = processObjectType;
 	 }
 }
 module.exports.BulkUploadCsvJobData = BulkUploadCsvJobData;

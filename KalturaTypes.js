@@ -552,6 +552,11 @@ ACTIVE : 2,
 DELETED : 3,
 };
 
+module.exports.GroupProcessStatus = {
+NONE : 0,
+PROCESSING : 1,
+};
+
 module.exports.GroupUserCreationMode = {
 MANUAL : 1,
 AUTOMATIC : 2,

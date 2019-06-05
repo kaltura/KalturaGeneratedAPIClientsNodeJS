@@ -5256,6 +5256,14 @@ class Partner extends kaltura.BaseObject{
 	 setESearchLanguages(eSearchLanguages) {
 	 	this.eSearchLanguages = eSearchLanguages;
 	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getAuthenticationType() {
+	 	return this.authenticationType;
+	 }
 }
 module.exports.Partner = Partner;
 

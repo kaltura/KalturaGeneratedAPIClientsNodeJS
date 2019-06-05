@@ -5788,6 +5788,7 @@ module.exports.userRole = userRole;
  * You may use either a userId or a loginId parameter for this action.
  * @action enableLogin Enables a user to log into a partner account using an email address and a password.
  * @action exportToCsv Creates a batch job that sends an email with a link to download a CSV containing a list of users.
+ * @action generateQrCode get QR image content.
  * @action get Retrieves a user object for a specified user ID.
  * @action getByLoginId Retrieves a user object for a user's login ID and partner ID.
  * A login ID is the email address used by a user to log into the system.
@@ -5900,6 +5901,17 @@ class user{
 		kparams.metadataProfileId = metadataProfileId;
 		kparams.additionalFields = additionalFields;
 		return new kaltura.RequestBuilder('user', 'exportToCsv', kparams);
+	};
+	
+	/**
+	 * get QR image content.
+	 * @param hashKey string 
+	 * @return string
+	 */
+	static generateQrCode(hashKey){
+		let kparams = {};
+		kparams.hashKey = hashKey;
+		return new kaltura.RequestBuilder('user', 'generateQrCode', kparams);
 	};
 	
 	/**

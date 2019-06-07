@@ -1291,6 +1291,7 @@ CAPTIONS : 1,
 TRANSLATION : 2,
 ALIGNMENT : 3,
 AUDIO_DESCRIPTION : 4,
+CHAPTERING : 5,
 };
 
 module.exports.VendorServiceTurnAroundTime = {

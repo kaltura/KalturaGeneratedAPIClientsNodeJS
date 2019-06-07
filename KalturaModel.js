@@ -5259,7 +5259,7 @@ class Partner extends kaltura.BaseObject{
 	
 	/**
 	 * 
-	 * @return bool
+	 * @return int
 	 */
 	 getAuthenticationType() {
 	 	return this.authenticationType;
@@ -37252,6 +37252,21 @@ class CategoryEntryCondition extends Condition{
 	 }
 	
 	/**
+	 * Category id's to check condition for
+	 * @return string
+	 */
+	 getCategoryIds() {
+	 	return this.categoryIds;
+	 }
+	
+	/**
+	 * @param categoryIds string Category id's to check condition for
+	 */
+	 setCategoryIds(categoryIds) {
+	 	this.categoryIds = categoryIds;
+	 }
+	
+	/**
 	 * Minimum category user level permission to validate
 	 * @return int
 	 */
@@ -55965,6 +55980,33 @@ class VendorCatalogItemListResponse extends ListResponse{
 	 }
 }
 module.exports.VendorCatalogItemListResponse = VendorCatalogItemListResponse;
+
+/**
+ *
+ */
+class VendorChapteringCatalogItem extends VendorCatalogItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorChapteringCatalogItem';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSourceLanguage() {
+	 	return this.sourceLanguage;
+	 }
+	
+	/**
+	 * @param sourceLanguage string 
+	 */
+	 setSourceLanguage(sourceLanguage) {
+	 	this.sourceLanguage = sourceLanguage;
+	 }
+}
+module.exports.VendorChapteringCatalogItem = VendorChapteringCatalogItem;
 
 /**
  *
@@ -80651,6 +80693,18 @@ class VendorCaptionsCatalogItemFilter extends VendorCaptionsCatalogItemBaseFilte
 	}
 }
 module.exports.VendorCaptionsCatalogItemFilter = VendorCaptionsCatalogItemFilter;
+
+/**
+ *
+ */
+class VendorChapteringCatalogItemFilter extends VendorCaptionsCatalogItemBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorChapteringCatalogItemFilter';
+	}
+}
+module.exports.VendorChapteringCatalogItemFilter = VendorChapteringCatalogItemFilter;
 
 /**
  *

@@ -210,6 +210,7 @@ class adminUser{
 	 * Set initial users password.
 	 * @param hashKey string 
 	 * @param newPassword string new password to set
+	 * @return KalturaAuthentication
 	 */
 	static setInitialPassword(hashKey, newPassword){
 		let kparams = {};
@@ -6051,6 +6052,7 @@ class user{
 	 * Set initial user password.
 	 * @param hashKey string The hash key used to identify the user (retrieved by email)
 	 * @param newPassword string The new password to set for the user
+	 * @return KalturaAuthentication
 	 */
 	static setInitialPassword(hashKey, newPassword){
 		let kparams = {};

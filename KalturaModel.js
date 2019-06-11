@@ -2411,6 +2411,33 @@ module.exports.AuditTrailChangeItem = AuditTrailChangeItem;
 /**
  *
  */
+class Authentication extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaAuthentication';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getQrCode() {
+	 	return this.qrCode;
+	 }
+	
+	/**
+	 * @param qrCode string 
+	 */
+	 setQrCode(qrCode) {
+	 	this.qrCode = qrCode;
+	 }
+}
+module.exports.Authentication = Authentication;
+
+/**
+ *
+ */
 class OperationAttributes extends kaltura.BaseObject{
 	
 	constructor(object = null) {

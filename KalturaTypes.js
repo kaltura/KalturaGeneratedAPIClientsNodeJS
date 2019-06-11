@@ -733,6 +733,12 @@ FALSE_VALUE : 0,
 TRUE_VALUE : 1,
 };
 
+module.exports.PartnerAuthenticationType = {
+PASSWORD_ONLY : 0,
+TWO_FACTOR_AUTH : 1,
+SSO : 2,
+};
+
 module.exports.PartnerGroupType = {
 PUBLISHER : 1,
 VAR_GROUP : 2,

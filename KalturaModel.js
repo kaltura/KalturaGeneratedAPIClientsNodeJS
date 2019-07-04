@@ -30638,21 +30638,6 @@ class UploadToken extends kaltura.BaseObject{
 	 setAutoFinalize(autoFinalize) {
 	 	this.autoFinalize = autoFinalize;
 	 }
-	
-	/**
-	 * set the minimum size in bytes for each uploaded part of the file
-	 * @return float
-	 */
-	 getMinimumChunkSize() {
-	 	return this.minimumChunkSize;
-	 }
-	
-	/**
-	 * @param minimumChunkSize float set the minimum size in bytes for each uploaded part of the file
-	 */
-	 setMinimumChunkSize(minimumChunkSize) {
-	 	this.minimumChunkSize = minimumChunkSize;
-	 }
 }
 module.exports.UploadToken = UploadToken;
 

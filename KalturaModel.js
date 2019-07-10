@@ -4930,6 +4930,21 @@ class Partner extends kaltura.BaseObject{
 	
 	/**
 	 * 
+	 * @return string
+	 */
+	 getAllowedFromEmailWhiteList() {
+	 	return this.allowedFromEmailWhiteList;
+	 }
+	
+	/**
+	 * @param allowedFromEmailWhiteList string 
+	 */
+	 setAllowedFromEmailWhiteList(allowedFromEmailWhiteList) {
+	 	this.allowedFromEmailWhiteList = allowedFromEmailWhiteList;
+	 }
+	
+	/**
+	 * 
 	 * @return int
 	 */
 	 getMaxUploadSize() {

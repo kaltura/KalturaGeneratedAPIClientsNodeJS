@@ -3629,13 +3629,15 @@ class partner{
 	 * @param partnerId int 
 	 * @param adminEmail string 
 	 * @param cmsPassword string 
+	 * @param otp string  (optional, default: null)
 	 * @return KalturaPartner
 	 */
-	static getSecrets(partnerId, adminEmail, cmsPassword){
+	static getSecrets(partnerId, adminEmail, cmsPassword, otp = null){
 		let kparams = {};
 		kparams.partnerId = partnerId;
 		kparams.adminEmail = adminEmail;
 		kparams.cmsPassword = cmsPassword;
+		kparams.otp = otp;
 		return new kaltura.RequestBuilder('partner', 'getSecrets', kparams);
 	};
 	

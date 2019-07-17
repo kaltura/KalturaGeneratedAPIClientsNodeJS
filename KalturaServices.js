@@ -225,14 +225,16 @@ class adminUser{
 	 * @param password string 
 	 * @param newEmail string Optional, provide only when you want to update the email (optional)
 	 * @param newPassword string  (optional)
+	 * @param otp string the user's one-time password (optional, default: null)
 	 * @return KalturaAdminUser
 	 */
-	static updatePassword(email, password, newEmail = '', newPassword = ''){
+	static updatePassword(email, password, newEmail = '', newPassword = '', otp = null){
 		let kparams = {};
 		kparams.email = email;
 		kparams.password = password;
 		kparams.newEmail = newEmail;
 		kparams.newPassword = newPassword;
+		kparams.otp = otp;
 		return new kaltura.RequestBuilder('adminuser', 'updatePassword', kparams);
 	};
 }
@@ -6085,8 +6087,9 @@ class user{
 	 * @param newPassword string Optional, The user's new password (optional)
 	 * @param newFirstName string Optional, The user's new first name (optional, default: null)
 	 * @param newLastName string Optional, The user's new last name (optional, default: null)
+	 * @param otp string the user's one-time password (optional, default: null)
 	 */
-	static updateLoginData(oldLoginId, password, newLoginId = '', newPassword = '', newFirstName = null, newLastName = null){
+	static updateLoginData(oldLoginId, password, newLoginId = '', newPassword = '', newFirstName = null, newLastName = null, otp = null){
 		let kparams = {};
 		kparams.oldLoginId = oldLoginId;
 		kparams.password = password;
@@ -6094,6 +6097,7 @@ class user{
 		kparams.newPassword = newPassword;
 		kparams.newFirstName = newFirstName;
 		kparams.newLastName = newLastName;
+		kparams.otp = otp;
 		return new kaltura.RequestBuilder('user', 'updateLoginData', kparams);
 	};
 }

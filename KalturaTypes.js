@@ -250,6 +250,11 @@ DONT_DISPLAY : 0,
 DISPLAY_WITH_LINK : 1,
 };
 
+module.exports.DistributeTrigger = {
+ENTRY_READY : 1,
+MODERATION_APPROVED : 2,
+};
+
 module.exports.DistributionAction = {
 SUBMIT : 1,
 UPDATE : 2,
@@ -1772,6 +1777,7 @@ UPDATED_AT_DESC : '-updatedAt',
 
 module.exports.BatchJobType = {
 CONVERT : '0',
+CONVERT_CAPTION_ASSET : 'caption.convertcaptionasset',
 PARSE_MULTI_LANGUAGE_CAPTION_ASSET : 'caption.parsemultilanguagecaptionasset',
 PARSE_CAPTION_ASSET : 'captionSearch.parseCaptionAsset',
 DISTRIBUTION_DELETE : 'contentDistribution.DistributionDelete',
@@ -1997,6 +2003,7 @@ SRT : '1',
 DFXP : '2',
 WEBVTT : '3',
 CAP : '4',
+SCC : '5',
 };
 
 module.exports.CatalogItemLanguage = {
@@ -2706,6 +2713,10 @@ LANGUAGE : 'language',
 START_TIME : 'start_time',
 };
 
+module.exports.ESearchCategoryAggregateByFieldName = {
+CATEGORY_NAME : 'category_name',
+};
+
 module.exports.ESearchCategoryEntryFieldName = {
 ANCESTOR_ID : 'ancestor_id',
 ANCESTOR_NAME : 'ancestor_name',
@@ -2755,6 +2766,11 @@ module.exports.ESearchCategoryUserFieldName = {
 USER_ID : 'user_id',
 };
 
+module.exports.ESearchCuePointAggregateByFieldName = {
+TAGS : 'tags',
+TYPE : 'type',
+};
+
 module.exports.ESearchCuePointFieldName = {
 ANSWERS : 'answers',
 END_TIME : 'end_time',
@@ -2768,6 +2784,13 @@ SUB_TYPE : 'sub_type',
 TAGS : 'tags',
 TEXT : 'text',
 TYPE : 'type',
+};
+
+module.exports.ESearchEntryAggregateByFieldName = {
+ACCESS_CONTROL_PROFILE : 'access_control_profile_id',
+ENTRY_TYPE : 'entry_type',
+MEDIA_TYPE : 'media_type',
+TAGS : 'tags',
 };
 
 module.exports.ESearchEntryFieldName = {
@@ -2882,6 +2905,9 @@ SPANISH : 'Spanish',
 SWEDISH : 'Swedish',
 THAI : 'Thai',
 TURKISH : 'Turkish',
+};
+
+module.exports.ESearchMetadataAggregateByFieldName = {
 };
 
 module.exports.ESearchSortOrder = {

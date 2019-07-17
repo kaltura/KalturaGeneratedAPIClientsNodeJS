@@ -10945,6 +10945,21 @@ class DistributionProfile extends kaltura.BaseObject{
 	 setRecommendedDcForExecute(recommendedDcForExecute) {
 	 	this.recommendedDcForExecute = recommendedDcForExecute;
 	 }
+	
+	/**
+	 * The event that trigger the automatic distribute
+	 * @return int
+	 */
+	 getDistributeTrigger() {
+	 	return this.distributeTrigger;
+	 }
+	
+	/**
+	 * @param distributeTrigger int The event that trigger the automatic distribute
+	 */
+	 setDistributeTrigger(distributeTrigger) {
+	 	this.distributeTrigger = distributeTrigger;
+	 }
 }
 module.exports.DistributionProfile = DistributionProfile;
 
@@ -12466,6 +12481,159 @@ class DropFolderFile extends kaltura.BaseObject{
 	 }
 }
 module.exports.DropFolderFile = DropFolderFile;
+
+/**
+ *
+ */
+class ESearchAggregationItem extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchAggregationItem';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getSize() {
+	 	return this.size;
+	 }
+	
+	/**
+	 * @param size int 
+	 */
+	 setSize(size) {
+	 	this.size = size;
+	 }
+}
+module.exports.ESearchAggregationItem = ESearchAggregationItem;
+
+/**
+ *
+ */
+class ESearchAggregation extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchAggregation';
+	}
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getAggregations() {
+	 	return this.aggregations;
+	 }
+	
+	/**
+	 * @param aggregations array 
+	 */
+	 setAggregations(aggregations) {
+	 	this.aggregations = aggregations;
+	 }
+}
+module.exports.ESearchAggregation = ESearchAggregation;
+
+/**
+ *
+ */
+class ESearchAggregationBucket extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchAggregationBucket';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getValue() {
+	 	return this.value;
+	 }
+	
+	/**
+	 * @param value string 
+	 */
+	 setValue(value) {
+	 	this.value = value;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getCount() {
+	 	return this.count;
+	 }
+	
+	/**
+	 * @param count int 
+	 */
+	 setCount(count) {
+	 	this.count = count;
+	 }
+}
+module.exports.ESearchAggregationBucket = ESearchAggregationBucket;
+
+/**
+ *
+ */
+class ESearchAggregationResponseItem extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchAggregationResponseItem';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getName() {
+	 	return this.name;
+	 }
+	
+	/**
+	 * @param name string 
+	 */
+	 setName(name) {
+	 	this.name = name;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getFieldName() {
+	 	return this.fieldName;
+	 }
+	
+	/**
+	 * @param fieldName string 
+	 */
+	 setFieldName(fieldName) {
+	 	this.fieldName = fieldName;
+	 }
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getBuckets() {
+	 	return this.buckets;
+	 }
+	
+	/**
+	 * @param buckets array 
+	 */
+	 setBuckets(buckets) {
+	 	this.buckets = buckets;
+	 }
+}
+module.exports.ESearchAggregationResponseItem = ESearchAggregationResponseItem;
 
 /**
  *
@@ -38889,6 +39057,93 @@ module.exports.ConversionProfileListResponse = ConversionProfileListResponse;
 /**
  *
  */
+class ConvertCaptionAssetJobData extends JobData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaConvertCaptionAssetJobData';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getCaptionAssetId() {
+	 	return this.captionAssetId;
+	 }
+	
+	/**
+	 * @param captionAssetId string 
+	 */
+	 setCaptionAssetId(captionAssetId) {
+	 	this.captionAssetId = captionAssetId;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getFileLocation() {
+	 	return this.fileLocation;
+	 }
+	
+	/**
+	 * @param fileLocation string 
+	 */
+	 setFileLocation(fileLocation) {
+	 	this.fileLocation = fileLocation;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getFileEncryptionKey() {
+	 	return this.fileEncryptionKey;
+	 }
+	
+	/**
+	 * @param fileEncryptionKey string 
+	 */
+	 setFileEncryptionKey(fileEncryptionKey) {
+	 	this.fileEncryptionKey = fileEncryptionKey;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getFromType() {
+	 	return this.fromType;
+	 }
+	
+	/**
+	 * @param fromType string 
+	 */
+	 setFromType(fromType) {
+	 	this.fromType = fromType;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getToType() {
+	 	return this.toType;
+	 }
+	
+	/**
+	 * @param toType string 
+	 */
+	 setToType(toType) {
+	 	this.toType = toType;
+	 }
+}
+module.exports.ConvertCaptionAssetJobData = ConvertCaptionAssetJobData;
+
+/**
+ *
+ */
 class ConvertEntryFlavorsObjectTask extends ObjectTask{
 	
 	constructor(object = null) {
@@ -42383,6 +42638,33 @@ module.exports.ESearchCaptionItemData = ESearchCaptionItemData;
 /**
  *
  */
+class ESearchCategoryAggregationItem extends ESearchAggregationItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchCategoryAggregationItem';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getFieldName() {
+	 	return this.fieldName;
+	 }
+	
+	/**
+	 * @param fieldName string 
+	 */
+	 setFieldName(fieldName) {
+	 	this.fieldName = fieldName;
+	 }
+}
+module.exports.ESearchCategoryAggregationItem = ESearchCategoryAggregationItem;
+
+/**
+ *
+ */
 class ESearchCategoryOrderByItem extends ESearchOrderByItem{
 	
 	constructor(object = null) {
@@ -42706,6 +42988,60 @@ module.exports.ESearchCuePointItemData = ESearchCuePointItemData;
 /**
  *
  */
+class ESearchCuepointsAggregationItem extends ESearchAggregationItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchCuepointsAggregationItem';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getFieldName() {
+	 	return this.fieldName;
+	 }
+	
+	/**
+	 * @param fieldName string 
+	 */
+	 setFieldName(fieldName) {
+	 	this.fieldName = fieldName;
+	 }
+}
+module.exports.ESearchCuepointsAggregationItem = ESearchCuepointsAggregationItem;
+
+/**
+ *
+ */
+class ESearchEntryAggregationItem extends ESearchAggregationItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchEntryAggregationItem';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getFieldName() {
+	 	return this.fieldName;
+	 }
+	
+	/**
+	 * @param fieldName string 
+	 */
+	 setFieldName(fieldName) {
+	 	this.fieldName = fieldName;
+	 }
+}
+module.exports.ESearchEntryAggregationItem = ESearchEntryAggregationItem;
+
+/**
+ *
+ */
 class ESearchEntryOrderByItem extends ESearchOrderByItem{
 	
 	constructor(object = null) {
@@ -42754,6 +43090,21 @@ class ESearchEntryParams extends ESearchParams{
 	 setSearchOperator(searchOperator) {
 	 	this.searchOperator = searchOperator;
 	 }
+	
+	/**
+	 * 
+	 * @return ESearchAggregation
+	 */
+	 getAggregations() {
+	 	return this.aggregations;
+	 }
+	
+	/**
+	 * @param aggregations ESearchAggregation 
+	 */
+	 setAggregations(aggregations) {
+	 	this.aggregations = aggregations;
+	 }
 }
 module.exports.ESearchEntryParams = ESearchEntryParams;
 
@@ -42773,6 +43124,14 @@ class ESearchEntryResponse extends ESearchResponse{
 	 */
 	 getObjects() {
 	 	return this.objects;
+	 }
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getAggregations() {
+	 	return this.aggregations;
 	 }
 }
 module.exports.ESearchEntryResponse = ESearchEntryResponse;
@@ -42954,6 +43313,33 @@ class ESearchHistoryListResponse extends ListResponse{
 	 }
 }
 module.exports.ESearchHistoryListResponse = ESearchHistoryListResponse;
+
+/**
+ *
+ */
+class ESearchMetadataAggregationItem extends ESearchAggregationItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchMetadataAggregationItem';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getFieldName() {
+	 	return this.fieldName;
+	 }
+	
+	/**
+	 * @param fieldName string 
+	 */
+	 setFieldName(fieldName) {
+	 	this.fieldName = fieldName;
+	 }
+}
+module.exports.ESearchMetadataAggregationItem = ESearchMetadataAggregationItem;
 
 /**
  *

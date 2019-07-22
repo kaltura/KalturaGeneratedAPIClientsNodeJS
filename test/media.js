@@ -162,13 +162,8 @@ describe("Add media", () => {
 						const rs = fs.createReadStream(filePath);
 						let resumeAt = 0;
 						rs.on('data', (data) => {
-							const p = kaltura.services.uploadToken.upload(
-								createdUploadToken.id,
-								data,
-								true,
-								rs.bytesRead === stats.size,
-								resumeAt,
-							).execute(client);
+							const p = kaltura.services.uploadToken.upload(createdUploadToken.id,data,true,rs.bytesRead === stats.size,resumeAt)
+							    .execute(client);
 							uploads.push(p);
 							resumeAt += data.length;
 						});

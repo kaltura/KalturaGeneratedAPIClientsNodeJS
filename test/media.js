@@ -145,7 +145,7 @@ describe("Add media", () => {
 						Buffer.alloc(0),
 						false,
 						false,
-						0,
+						0
 					).execute(client);
 				})
 				.then((uploadToken) => {

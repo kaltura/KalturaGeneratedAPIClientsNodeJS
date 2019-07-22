@@ -140,13 +140,8 @@ describe("Add media", () => {
 				.execute(client)
 				.then(token => {
 					createdUploadToken = token;
-					return kaltura.services.uploadToken.upload(
-						createdUploadToken.id,
-						Buffer.alloc(0),
-						false,
-						false,
-						0
-					).execute(client);
+					return kaltura.services.uploadToken.upload(createdUploadToken.id, Buffer.alloc(0) ,false, false, 0)
+					    .execute(client);
 				})
 				.then((uploadToken) => {
 					expect(uploadToken.status).to.equal(kaltura.enums.UploadTokenStatus.PARTIAL_UPLOAD);

@@ -274,17 +274,9 @@ class RequestBuilder extends kaltura.VolatileRequestData {
 					continue;
 				}
 
-				let fileName;
-				let data;
-				if (files[key] instanceof Buffer) {
-					fileName = 'chunk';
-					data = files[key];
-				} else {
-					let filePath = files[key];
-					fileName = path.basename(filePath);
-					data = fs.readFileSync(filePath);
-				}
-
+				let filePath = files[key];
+				let fileName = path.basename(filePath);
+				let data = fs.readFileSync(filePath);
 				let headers = ['Content-Disposition: form-data; name="' + key + '"; filename="' + fileName + '"' + crlf, 'Content-Type: application/octet-stream' + crlf];
 
 				postData.push(new Buffer(delimiter + crlf + headers.join('') + crlf));

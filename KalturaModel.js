@@ -61486,6 +61486,21 @@ class CrossKalturaDistributionJobProviderData extends ConfigurableDistributionJo
 	 }
 	
 	/**
+	 * Key-value array where the keys are IDs of distributed caption assets in the source account and the values are the matching IDs in the target account
+	 * @return string
+	 */
+	 getDistributedAttachmentAssets() {
+	 	return this.distributedAttachmentAssets;
+	 }
+	
+	/**
+	 * @param distributedAttachmentAssets string Key-value array where the keys are IDs of distributed caption assets in the source account and the values are the matching IDs in the target account
+	 */
+	 setDistributedAttachmentAssets(distributedAttachmentAssets) {
+	 	this.distributedAttachmentAssets = distributedAttachmentAssets;
+	 }
+	
+	/**
 	 * Key-value array where the keys are IDs of distributed cue points in the source account and the values are the matching IDs in the target account
 	 * @return string
 	 */
@@ -61645,6 +61660,66 @@ class CrossKalturaDistributionProfile extends ConfigurableDistributionProfile{
 	 */
 	 setDistributeCaptions(distributeCaptions) {
 	 	this.distributeCaptions = distributeCaptions;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getDesignatedCategories() {
+	 	return this.designatedCategories;
+	 }
+	
+	/**
+	 * @param designatedCategories string 
+	 */
+	 setDesignatedCategories(designatedCategories) {
+	 	this.designatedCategories = designatedCategories;
+	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getDistributeCategories() {
+	 	return this.distributeCategories;
+	 }
+	
+	/**
+	 * @param distributeCategories bool 
+	 */
+	 setDistributeCategories(distributeCategories) {
+	 	this.distributeCategories = distributeCategories;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getCollaboratorsCustomMetadataProfileId() {
+	 	return this.collaboratorsCustomMetadataProfileId;
+	 }
+	
+	/**
+	 * @param collaboratorsCustomMetadataProfileId string 
+	 */
+	 setCollaboratorsCustomMetadataProfileId(collaboratorsCustomMetadataProfileId) {
+	 	this.collaboratorsCustomMetadataProfileId = collaboratorsCustomMetadataProfileId;
+	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getCollaboratorsFromCustomMetadataProfile() {
+	 	return this.collaboratorsFromCustomMetadataProfile;
+	 }
+	
+	/**
+	 * @param collaboratorsFromCustomMetadataProfile bool 
+	 */
+	 setCollaboratorsFromCustomMetadataProfile(collaboratorsFromCustomMetadataProfile) {
+	 	this.collaboratorsFromCustomMetadataProfile = collaboratorsFromCustomMetadataProfile;
 	 }
 	
 	/**
@@ -61810,6 +61885,21 @@ class CrossKalturaDistributionProfile extends ConfigurableDistributionProfile{
 	 */
 	 setMapCaptionParamsIds(mapCaptionParamsIds) {
 	 	this.mapCaptionParamsIds = mapCaptionParamsIds;
+	 }
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getMapAttachmentParamsIds() {
+	 	return this.mapAttachmentParamsIds;
+	 }
+	
+	/**
+	 * @param mapAttachmentParamsIds array 
+	 */
+	 setMapAttachmentParamsIds(mapAttachmentParamsIds) {
+	 	this.mapAttachmentParamsIds = mapAttachmentParamsIds;
 	 }
 }
 module.exports.CrossKalturaDistributionProfile = CrossKalturaDistributionProfile;

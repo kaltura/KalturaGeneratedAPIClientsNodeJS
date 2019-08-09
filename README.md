@@ -1,5 +1,5 @@
 ## Kaltura node.js API Client Library.
-Compatible with Kaltura server version 15.4.0 and above.
+Compatible with Kaltura server version 15.5.0 and above.
 This client library replaces the older architecture that presented in previous node.js client library.
 
 [![NPM](https://nodei.co/npm/kaltura-client.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/kaltura-client/)
@@ -8,6 +8,20 @@ This client library replaces the older architecture that presented in previous n
 You can install this client library using npm with:
 ```
 npm install kaltura-client 
+```
+## Proxy settings for client
+If the Kaltura client has to be used behind a proxy, this can be set in the KalturaConfiguration by setting proxy
+to the url of the proxy. For example:
+
+```js
+const config = new kaltura.Configuration();
+    
+const proxyUrl = new URL('http://some.proxy.com');
+proxyUrl.username = 'user';
+proxyUrl.password = 'pass';
+    
+config.proxy = proxyUrl.toString();
+const client = new kaltura.Client(config);
 ```
 
 ## Sanity Check

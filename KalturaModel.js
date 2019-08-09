@@ -64316,6 +64316,33 @@ module.exports.EntryVendorTaskCsvJobData = EntryVendorTaskCsvJobData;
 /**
  *
  */
+class EventNotificationDispatchScope extends EventNotificationScope{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaEventNotificationDispatchScope';
+	}
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getDynamicValues() {
+	 	return this.dynamicValues;
+	 }
+	
+	/**
+	 * @param dynamicValues array 
+	 */
+	 setDynamicValues(dynamicValues) {
+	 	this.dynamicValues = dynamicValues;
+	 }
+}
+module.exports.EventNotificationDispatchScope = EventNotificationDispatchScope;
+
+/**
+ *
+ */
 class EventNotificationTemplateFilter extends EventNotificationTemplateBaseFilter{
 	
 	constructor(object = null) {

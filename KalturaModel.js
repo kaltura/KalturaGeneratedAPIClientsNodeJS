@@ -56314,6 +56314,21 @@ class VendorAudioDescriptionCatalogItem extends VendorCatalogItem{
 	 setFlavorParamsId(flavorParamsId) {
 	 	this.flavorParamsId = flavorParamsId;
 	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getClearAudioFlavorParamsId() {
+	 	return this.clearAudioFlavorParamsId;
+	 }
+	
+	/**
+	 * @param clearAudioFlavorParamsId int 
+	 */
+	 setClearAudioFlavorParamsId(clearAudioFlavorParamsId) {
+	 	this.clearAudioFlavorParamsId = clearAudioFlavorParamsId;
+	 }
 }
 module.exports.VendorAudioDescriptionCatalogItem = VendorAudioDescriptionCatalogItem;
 

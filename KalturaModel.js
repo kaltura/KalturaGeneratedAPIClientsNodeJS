@@ -55838,6 +55838,48 @@ module.exports.UrlTokenizerKs = UrlTokenizerKs;
 /**
  *
  */
+class UrlTokenizerL3 extends UrlTokenizer{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaUrlTokenizerL3';
+	}
+	
+	/**
+	 * gen
+	 * @return string
+	 */
+	 getGen() {
+	 	return this.gen;
+	 }
+	
+	/**
+	 * @param gen string gen
+	 */
+	 setGen(gen) {
+	 	this.gen = gen;
+	 }
+	
+	/**
+	 * paramName
+	 * @return string
+	 */
+	 getParamName() {
+	 	return this.paramName;
+	 }
+	
+	/**
+	 * @param paramName string paramName
+	 */
+	 setParamName(paramName) {
+	 	this.paramName = paramName;
+	 }
+}
+module.exports.UrlTokenizerL3 = UrlTokenizerL3;
+
+/**
+ *
+ */
 class UrlTokenizerLevel3 extends UrlTokenizer{
 	
 	constructor(object = null) {

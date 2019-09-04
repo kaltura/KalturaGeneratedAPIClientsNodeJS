@@ -6706,6 +6706,21 @@ class CaptionAsset extends Asset{
 	 setDisplayOnPlayer(displayOnPlayer) {
 	 	this.displayOnPlayer = displayOnPlayer;
 	 }
+	
+	/**
+	 * List of associated transcript asset id's, comma separated
+	 * @return string
+	 */
+	 getAssociatedTranscriptIds() {
+	 	return this.associatedTranscriptIds;
+	 }
+	
+	/**
+	 * @param associatedTranscriptIds string List of associated transcript asset id's, comma separated
+	 */
+	 setAssociatedTranscriptIds(associatedTranscriptIds) {
+	 	this.associatedTranscriptIds = associatedTranscriptIds;
+	 }
 }
 module.exports.CaptionAsset = CaptionAsset;
 

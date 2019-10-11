@@ -22946,6 +22946,21 @@ class PlayableEntryBaseFilter extends BaseEntryFilter{
 	 * 
 	 * @return int
 	 */
+	 getLastPlayedAtLessThanOrEqualOrNull() {
+	 	return this.lastPlayedAtLessThanOrEqualOrNull;
+	 }
+	
+	/**
+	 * @param lastPlayedAtLessThanOrEqualOrNull int 
+	 */
+	 setLastPlayedAtLessThanOrEqualOrNull(lastPlayedAtLessThanOrEqualOrNull) {
+	 	this.lastPlayedAtLessThanOrEqualOrNull = lastPlayedAtLessThanOrEqualOrNull;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
 	 getDurationLessThan() {
 	 	return this.durationLessThan;
 	 }

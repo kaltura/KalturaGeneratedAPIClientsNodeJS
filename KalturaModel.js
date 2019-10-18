@@ -14460,6 +14460,30 @@ class EntryVendorTask extends kaltura.BaseObject{
 	 setTaskJobData(taskJobData) {
 	 	this.taskJobData = taskJobData;
 	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getExpectedFinishTime() {
+	 	return this.expectedFinishTime;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getServiceType() {
+	 	return this.serviceType;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getServiceFeature() {
+	 	return this.serviceFeature;
+	 }
 }
 module.exports.EntryVendorTask = EntryVendorTask;
 
@@ -64369,6 +64393,36 @@ class EntryVendorTaskFilter extends EntryVendorTaskBaseFilter{
 	 */
 	 setFreeText(freeText) {
 	 	this.freeText = freeText;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getExpectedFinishTimeGreaterThanOrEqual() {
+	 	return this.expectedFinishTimeGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * @param expectedFinishTimeGreaterThanOrEqual int 
+	 */
+	 setExpectedFinishTimeGreaterThanOrEqual(expectedFinishTimeGreaterThanOrEqual) {
+	 	this.expectedFinishTimeGreaterThanOrEqual = expectedFinishTimeGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getExpectedFinishTimeLessThanOrEqual() {
+	 	return this.expectedFinishTimeLessThanOrEqual;
+	 }
+	
+	/**
+	 * @param expectedFinishTimeLessThanOrEqual int 
+	 */
+	 setExpectedFinishTimeLessThanOrEqual(expectedFinishTimeLessThanOrEqual) {
+	 	this.expectedFinishTimeLessThanOrEqual = expectedFinishTimeLessThanOrEqual;
 	 }
 }
 module.exports.EntryVendorTaskFilter = EntryVendorTaskFilter;

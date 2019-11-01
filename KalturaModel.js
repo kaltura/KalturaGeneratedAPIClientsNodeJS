@@ -44427,11 +44427,11 @@ module.exports.EmailNotificationTemplate = EmailNotificationTemplate;
 /**
  *
  */
-class UserBaseFilter extends RelatedFilter{
+class BaseUserBaseFilter extends RelatedFilter{
 	
 	constructor(object = null) {
 		super(object);
-		this.objectType = 'KalturaUserBaseFilter';
+		this.objectType = 'KalturaBaseUserBaseFilter';
 	}
 	
 	/**
@@ -44447,36 +44447,6 @@ class UserBaseFilter extends RelatedFilter{
 	 */
 	 setPartnerIdEqual(partnerIdEqual) {
 	 	this.partnerIdEqual = partnerIdEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getTypeEqual() {
-	 	return this.typeEqual;
-	 }
-	
-	/**
-	 * @param typeEqual int 
-	 */
-	 setTypeEqual(typeEqual) {
-	 	this.typeEqual = typeEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getTypeIn() {
-	 	return this.typeIn;
-	 }
-	
-	/**
-	 * @param typeIn string 
-	 */
-	 setTypeIn(typeIn) {
-	 	this.typeIn = typeIn;
 	 }
 	
 	/**
@@ -44631,6 +44601,105 @@ class UserBaseFilter extends RelatedFilter{
 	
 	/**
 	 * 
+	 * @return int
+	 */
+	 getUpdatedAtGreaterThanOrEqual() {
+	 	return this.updatedAtGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * @param updatedAtGreaterThanOrEqual int 
+	 */
+	 setUpdatedAtGreaterThanOrEqual(updatedAtGreaterThanOrEqual) {
+	 	this.updatedAtGreaterThanOrEqual = updatedAtGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getUpdatedAtLessThanOrEqual() {
+	 	return this.updatedAtLessThanOrEqual;
+	 }
+	
+	/**
+	 * @param updatedAtLessThanOrEqual int 
+	 */
+	 setUpdatedAtLessThanOrEqual(updatedAtLessThanOrEqual) {
+	 	this.updatedAtLessThanOrEqual = updatedAtLessThanOrEqual;
+	 }
+}
+module.exports.BaseUserBaseFilter = BaseUserBaseFilter;
+
+/**
+ *
+ */
+class BaseUserFilter extends BaseUserBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaBaseUserFilter';
+	}
+}
+module.exports.BaseUserFilter = BaseUserFilter;
+
+/**
+ *
+ */
+class UserBaseFilter extends BaseUserFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaUserBaseFilter';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getTypeEqual() {
+	 	return this.typeEqual;
+	 }
+	
+	/**
+	 * @param typeEqual int 
+	 */
+	 setTypeEqual(typeEqual) {
+	 	this.typeEqual = typeEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getTypeIn() {
+	 	return this.typeIn;
+	 }
+	
+	/**
+	 * @param typeIn string 
+	 */
+	 setTypeIn(typeIn) {
+	 	this.typeIn = typeIn;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getIsAdminEqual() {
+	 	return this.isAdminEqual;
+	 }
+	
+	/**
+	 * @param isAdminEqual int 
+	 */
+	 setIsAdminEqual(isAdminEqual) {
+	 	this.isAdminEqual = isAdminEqual;
+	 }
+	
+	/**
+	 * 
 	 * @return string
 	 */
 	 getFirstNameStartsWith() {
@@ -44657,21 +44726,6 @@ class UserBaseFilter extends RelatedFilter{
 	 */
 	 setLastNameStartsWith(lastNameStartsWith) {
 	 	this.lastNameStartsWith = lastNameStartsWith;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getIsAdminEqual() {
-	 	return this.isAdminEqual;
-	 }
-	
-	/**
-	 * @param isAdminEqual int 
-	 */
-	 setIsAdminEqual(isAdminEqual) {
-	 	this.isAdminEqual = isAdminEqual;
 	 }
 }
 module.exports.UserBaseFilter = UserBaseFilter;
@@ -78140,18 +78194,6 @@ module.exports.AdCuePointBaseFilter = AdCuePointBaseFilter;
 /**
  *
  */
-class AdminUserBaseFilter extends UserFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaAdminUserBaseFilter';
-	}
-}
-module.exports.AdminUserBaseFilter = AdminUserBaseFilter;
-
-/**
- *
- */
 class AmazonS3StorageProfileFilter extends AmazonS3StorageProfileBaseFilter{
 	
 	constructor(object = null) {
@@ -79706,18 +79748,6 @@ module.exports.GoogleVideoSyndicationFeedFilter = GoogleVideoSyndicationFeedFilt
 /**
  *
  */
-class GroupFilter extends UserFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaGroupFilter';
-	}
-}
-module.exports.GroupFilter = GroupFilter;
-
-/**
- *
- */
 class HttpNotificationTemplateFilter extends HttpNotificationTemplateBaseFilter{
 	
 	constructor(object = null) {
@@ -80542,18 +80572,6 @@ class AdCuePointFilter extends AdCuePointBaseFilter{
 	}
 }
 module.exports.AdCuePointFilter = AdCuePointFilter;
-
-/**
- *
- */
-class AdminUserFilter extends AdminUserBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaAdminUserFilter';
-	}
-}
-module.exports.AdminUserFilter = AdminUserFilter;
 
 /**
  *
@@ -81431,6 +81449,18 @@ module.exports.YoutubeApiDistributionProfileBaseFilter = YoutubeApiDistributionP
 /**
  *
  */
+class AdminUserBaseFilter extends UserFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaAdminUserBaseFilter';
+	}
+}
+module.exports.AdminUserBaseFilter = AdminUserBaseFilter;
+
+/**
+ *
+ */
 class AvnDistributionProfileFilter extends AvnDistributionProfileBaseFilter{
 	
 	constructor(object = null) {
@@ -81929,6 +81959,18 @@ module.exports.GenericXsltSyndicationFeedFilter = GenericXsltSyndicationFeedFilt
 /**
  *
  */
+class GroupFilter extends UserFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaGroupFilter';
+	}
+}
+module.exports.GroupFilter = GroupFilter;
+
+/**
+ *
+ */
 class HuluDistributionProfileFilter extends HuluDistributionProfileBaseFilter{
 	
 	constructor(object = null) {
@@ -82327,6 +82369,18 @@ class YoutubeApiDistributionProfileFilter extends YoutubeApiDistributionProfileB
 	}
 }
 module.exports.YoutubeApiDistributionProfileFilter = YoutubeApiDistributionProfileFilter;
+
+/**
+ *
+ */
+class AdminUserFilter extends AdminUserBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaAdminUserFilter';
+	}
+}
+module.exports.AdminUserFilter = AdminUserFilter;
 
 /**
  *

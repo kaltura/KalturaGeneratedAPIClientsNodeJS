@@ -2704,6 +2704,7 @@ UPDATED_AT_DESC : '-updatedAt',
 };
 
 module.exports.DropFolderType = {
+AP_FEED : 'ApFeedDropFolder.AP_FEED',
 FEED : 'FeedDropFolder.FEED',
 WEBEX : 'WebexDropFolder.WEBEX',
 LOCAL : '1',

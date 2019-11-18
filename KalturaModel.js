@@ -19071,6 +19071,96 @@ class MediaInfo extends kaltura.BaseObject{
 	 setMaxGOP(maxGOP) {
 	 	this.maxGOP = maxGOP;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getMatrixCoefficients() {
+	 	return this.matrixCoefficients;
+	 }
+	
+	/**
+	 * @param matrixCoefficients string 
+	 */
+	 setMatrixCoefficients(matrixCoefficients) {
+	 	this.matrixCoefficients = matrixCoefficients;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getColorTransfer() {
+	 	return this.colorTransfer;
+	 }
+	
+	/**
+	 * @param colorTransfer string 
+	 */
+	 setColorTransfer(colorTransfer) {
+	 	this.colorTransfer = colorTransfer;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getColorPrimaries() {
+	 	return this.colorPrimaries;
+	 }
+	
+	/**
+	 * @param colorPrimaries string 
+	 */
+	 setColorPrimaries(colorPrimaries) {
+	 	this.colorPrimaries = colorPrimaries;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getPixelFormat() {
+	 	return this.pixelFormat;
+	 }
+	
+	/**
+	 * @param pixelFormat string 
+	 */
+	 setPixelFormat(pixelFormat) {
+	 	this.pixelFormat = pixelFormat;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getChromaSubsampling() {
+	 	return this.chromaSubsampling;
+	 }
+	
+	/**
+	 * @param chromaSubsampling string 
+	 */
+	 setChromaSubsampling(chromaSubsampling) {
+	 	this.chromaSubsampling = chromaSubsampling;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getBitsDepth() {
+	 	return this.bitsDepth;
+	 }
+	
+	/**
+	 * @param bitsDepth int 
+	 */
+	 setBitsDepth(bitsDepth) {
+	 	this.bitsDepth = bitsDepth;
+	 }
 }
 module.exports.MediaInfo = MediaInfo;
 
@@ -22235,6 +22325,36 @@ class BaseEntryBaseFilter extends RelatedFilter{
 	 */
 	 setUpdatedAtLessThanOrEqual(updatedAtLessThanOrEqual) {
 	 	this.updatedAtLessThanOrEqual = updatedAtLessThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return float
+	 */
+	 getRankLessThanOrEqual() {
+	 	return this.rankLessThanOrEqual;
+	 }
+	
+	/**
+	 * @param rankLessThanOrEqual float 
+	 */
+	 setRankLessThanOrEqual(rankLessThanOrEqual) {
+	 	this.rankLessThanOrEqual = rankLessThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return float
+	 */
+	 getRankGreaterThanOrEqual() {
+	 	return this.rankGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * @param rankGreaterThanOrEqual float 
+	 */
+	 setRankGreaterThanOrEqual(rankGreaterThanOrEqual) {
+	 	this.rankGreaterThanOrEqual = rankGreaterThanOrEqual;
 	 }
 	
 	/**
@@ -26219,6 +26339,36 @@ class ReportInputFilter extends ReportInputBaseFilter{
 	 */
 	 setEntryIdIn(entryIdIn) {
 	 	this.entryIdIn = entryIdIn;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getPlaybackTypeIn() {
+	 	return this.playbackTypeIn;
+	 }
+	
+	/**
+	 * @param playbackTypeIn string 
+	 */
+	 setPlaybackTypeIn(playbackTypeIn) {
+	 	this.playbackTypeIn = playbackTypeIn;
+	 }
+	
+	/**
+	 * filter by playback context ids
+	 * @return string
+	 */
+	 getPlaybackContextIdsIn() {
+	 	return this.playbackContextIdsIn;
+	 }
+	
+	/**
+	 * @param playbackContextIdsIn string filter by playback context ids
+	 */
+	 setPlaybackContextIdsIn(playbackContextIdsIn) {
+	 	this.playbackContextIdsIn = playbackContextIdsIn;
 	 }
 }
 module.exports.ReportInputFilter = ReportInputFilter;

@@ -58736,33 +58736,6 @@ module.exports.AnonymousIPCondition = AnonymousIPCondition;
 /**
  *
  */
-class ApFeedDropFolder extends FeedDropFolder{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaApFeedDropFolder';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getApApiKey() {
-	 	return this.apApiKey;
-	 }
-	
-	/**
-	 * @param apApiKey string 
-	 */
-	 setApApiKey(apApiKey) {
-	 	this.apApiKey = apApiKey;
-	 }
-}
-module.exports.ApFeedDropFolder = ApFeedDropFolder;
-
-/**
- *
- */
 class AppTokenFilter extends AppTokenBaseFilter{
 	
 	constructor(object = null) {

@@ -4941,6 +4941,7 @@ CATEGORY : '2',
 USER : '3',
 PARTNER : '4',
 DYNAMIC_OBJECT : '5',
+USER_ENTRY : '6',
 };
 
 module.exports.MetadataOrderBy = {

@@ -7833,6 +7833,21 @@ class ConfMaps extends kaltura.BaseObject{
 	 }
 	
 	/**
+	 * 
+	 * @return string
+	 */
+	 getRawData() {
+	 	return this.rawData;
+	 }
+	
+	/**
+	 * @param rawData string 
+	 */
+	 setRawData(rawData) {
+	 	this.rawData = rawData;
+	 }
+	
+	/**
 	 * IsEditable - true / false
 	 * @return bool
 	 */
@@ -7844,8 +7859,8 @@ class ConfMaps extends kaltura.BaseObject{
 	 * Time of the last update
 	 * @return int
 	 */
-	 getLastUpdate() {
-	 	return this.lastUpdate;
+	 getCreatedAt() {
+	 	return this.createdAt;
 	 }
 	
 	/**

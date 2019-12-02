@@ -29901,6 +29901,36 @@ class StorageProfile extends kaltura.BaseObject{
 	 setShouldExportThumbs(shouldExportThumbs) {
 	 	this.shouldExportThumbs = shouldExportThumbs;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getMappedPackagerUrl() {
+	 	return this.mappedPackagerUrl;
+	 }
+	
+	/**
+	 * @param mappedPackagerUrl string 
+	 */
+	 setMappedPackagerUrl(mappedPackagerUrl) {
+	 	this.mappedPackagerUrl = mappedPackagerUrl;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getRegularPackagerUrl() {
+	 	return this.regularPackagerUrl;
+	 }
+	
+	/**
+	 * @param regularPackagerUrl string 
+	 */
+	 setRegularPackagerUrl(regularPackagerUrl) {
+	 	this.regularPackagerUrl = regularPackagerUrl;
+	 }
 }
 module.exports.StorageProfile = StorageProfile;
 

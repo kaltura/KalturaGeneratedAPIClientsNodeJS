@@ -7848,6 +7848,21 @@ class ConfMaps extends kaltura.BaseObject{
 	 }
 	
 	/**
+	 * 
+	 * @return string
+	 */
+	 getUserId() {
+	 	return this.userId;
+	 }
+	
+	/**
+	 * @param userId string 
+	 */
+	 setUserId(userId) {
+	 	this.userId = userId;
+	 }
+	
+	/**
 	 * IsEditable - true / false
 	 * @return bool
 	 */
@@ -26384,6 +26399,21 @@ class ReportInputFilter extends ReportInputBaseFilter{
 	 */
 	 setPlaybackContextIdsIn(playbackContextIdsIn) {
 	 	this.playbackContextIdsIn = playbackContextIdsIn;
+	 }
+	
+	/**
+	 * filter by root entry ids
+	 * @return string
+	 */
+	 getRootEntryIdIn() {
+	 	return this.rootEntryIdIn;
+	 }
+	
+	/**
+	 * @param rootEntryIdIn string filter by root entry ids
+	 */
+	 setRootEntryIdIn(rootEntryIdIn) {
+	 	this.rootEntryIdIn = rootEntryIdIn;
 	 }
 }
 module.exports.ReportInputFilter = ReportInputFilter;
@@ -76300,6 +76330,33 @@ class GroupUserFilter extends GroupUserBaseFilter{
 	}
 }
 module.exports.GroupUserFilter = GroupUserFilter;
+
+/**
+ *
+ */
+class HttpHeaderCondition extends RegexCondition{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaHttpHeaderCondition';
+	}
+	
+	/**
+	 * header name
+	 * @return string
+	 */
+	 getHeaderName() {
+	 	return this.headerName;
+	 }
+	
+	/**
+	 * @param headerName string header name
+	 */
+	 setHeaderName(headerName) {
+	 	this.headerName = headerName;
+	 }
+}
+module.exports.HttpHeaderCondition = HttpHeaderCondition;
 
 /**
  *

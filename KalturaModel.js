@@ -14794,6 +14794,35 @@ module.exports.EventNotificationTemplate = EventNotificationTemplate;
 /**
  *
  */
+class ExportToCsvOptions extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaExportToCsvOptions';
+	}
+	
+	/**
+	 * The format of the outputted date string. There are also several predefined date constants that may be used instead, so for example DATE_RSS contains the format string 'D, d M Y H:i:s'.
+ * https://www.php.net/manual/en/function.date.php
+	 * @return string
+	 */
+	 getFormat() {
+	 	return this.format;
+	 }
+	
+	/**
+	 * @param format string The format of the outputted date string. There are also several predefined date constants that may be used instead, so for example DATE_RSS contains the format string 'D, d M Y H:i:s'.
+ * https://www.php.net/manual/en/function.date.php
+	 */
+	 setFormat(format) {
+	 	this.format = format;
+	 }
+}
+module.exports.ExportToCsvOptions = ExportToCsvOptions;
+
+/**
+ *
+ */
 class ObjectIdentifier extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -67700,6 +67729,21 @@ class MediaEsearchExportToCsvJobData extends ExportCsvJobData{
 	 */
 	 setSearchParams(searchParams) {
 	 	this.searchParams = searchParams;
+	 }
+	
+	/**
+	 * options
+	 * @return array
+	 */
+	 getOptions() {
+	 	return this.options;
+	 }
+	
+	/**
+	 * @param options array options
+	 */
+	 setOptions(options) {
+	 	this.options = options;
 	 }
 }
 module.exports.MediaEsearchExportToCsvJobData = MediaEsearchExportToCsvJobData;

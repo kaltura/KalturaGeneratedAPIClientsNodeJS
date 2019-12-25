@@ -2850,6 +2850,7 @@ TAGS : 'tags',
 TEMPLATE_ENTRY_ID : 'template_entry_id',
 UPDATED_AT : 'updated_at',
 USER_NAMES : 'user_names',
+VOTES : 'votes',
 };
 
 module.exports.ESearchEntryOrderByFieldName = {

@@ -4965,12 +4965,22 @@ module.exports.syndicationFeed = syndicationFeed;
 /**
  *Class definition for the Kaltura service: system.
  * The available service actions:
+ * @action getHealthCheck .
  * @action getTime .
  * @action getVersion .
  * @action ping .
  * @action pingDatabase .
  */
 class system{
+	
+	/**
+	 * .
+	 * @return string
+	 */
+	static getHealthCheck(){
+		let kparams = {};
+		return new kaltura.RequestBuilder('system', 'getHealthCheck', kparams);
+	};
 	
 	/**
 	 * .

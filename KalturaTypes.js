@@ -8,7 +8,7 @@
 // to do with audio, video, and animation what Wiki platfroms allow them to do with
 // text.
 //
-// Copyright (C) 2006-2019  Kaltura Inc.
+// Copyright (C) 2006-2020  Kaltura Inc.
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as
@@ -1856,6 +1856,7 @@ CLIP_CONCAT : '47',
 COPY_CUE_POINTS : '48',
 EXPORT_CSV : '49',
 REPORT_EXPORT : '50',
+LIVE_ENTRY_ARCHIVE : '51',
 };
 
 module.exports.BeaconIndexType = {

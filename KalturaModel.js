@@ -8,7 +8,7 @@
 // to do with audio, video, and animation what Wiki platfroms allow them to do with
 // text.
 //
-// Copyright (C) 2006-2019  Kaltura Inc.
+// Copyright (C) 2006-2020  Kaltura Inc.
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as
@@ -20254,6 +20254,36 @@ class LiveEntryRecordingOptions extends kaltura.BaseObject{
 	 */
 	 setShouldMakeHidden(shouldMakeHidden) {
 	 	this.shouldMakeHidden = shouldMakeHidden;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getShouldAutoArchive() {
+	 	return this.shouldAutoArchive;
+	 }
+	
+	/**
+	 * @param shouldAutoArchive int 
+	 */
+	 setShouldAutoArchive(shouldAutoArchive) {
+	 	this.shouldAutoArchive = shouldAutoArchive;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getNonDeletedCuePointsTags() {
+	 	return this.nonDeletedCuePointsTags;
+	 }
+	
+	/**
+	 * @param nonDeletedCuePointsTags string 
+	 */
+	 setNonDeletedCuePointsTags(nonDeletedCuePointsTags) {
+	 	this.nonDeletedCuePointsTags = nonDeletedCuePointsTags;
 	 }
 }
 module.exports.LiveEntryRecordingOptions = LiveEntryRecordingOptions;
@@ -49302,6 +49332,33 @@ class LiveChannelSegmentListResponse extends ListResponse{
 	 }
 }
 module.exports.LiveChannelSegmentListResponse = LiveChannelSegmentListResponse;
+
+/**
+ *
+ */
+class LiveEntryArchiveJobData extends JobData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaLiveEntryArchiveJobData';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getLiveEntryId() {
+	 	return this.liveEntryId;
+	 }
+	
+	/**
+	 * @param liveEntryId string 
+	 */
+	 setLiveEntryId(liveEntryId) {
+	 	this.liveEntryId = liveEntryId;
+	 }
+}
+module.exports.LiveEntryArchiveJobData = LiveEntryArchiveJobData;
 
 /**
  *

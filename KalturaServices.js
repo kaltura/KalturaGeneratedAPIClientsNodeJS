@@ -8,7 +8,7 @@
 // to do with audio, video, and animation what Wiki platfroms allow them to do with
 // text.
 //
-// Copyright (C) 2006-2019  Kaltura Inc.
+// Copyright (C) 2006-2020  Kaltura Inc.
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as
@@ -2580,6 +2580,7 @@ module.exports.liveStats = liveStats;
  * The entry will be queued for provision.
  * @action addLiveStreamPushPublishConfiguration Add new pushPublish configuration to entry.
  * @action appendRecording Append recorded video to live entry.
+ * @action archive Archive a live entry which was recorded.
  * @action authenticate Authenticate live-stream entry against stream token and partner limitations.
  * @action createPeriodicSyncPoints Creates periodic metadata sync-point events on a live stream.
  * @action createRecordedEntry Create recorded entry id if it doesn't exist and make sure it happens on the DC that the live entry was created on.
@@ -2649,6 +2650,17 @@ class liveStream{
 		kparams.duration = duration;
 		kparams.isLastChunk = isLastChunk;
 		return new kaltura.RequestBuilder('livestream', 'appendRecording', kparams);
+	};
+	
+	/**
+	 * Archive a live entry which was recorded.
+	 * @param liveEntryId string 
+	 * @return bool
+	 */
+	static archive(liveEntryId){
+		let kparams = {};
+		kparams.liveEntryId = liveEntryId;
+		return new kaltura.RequestBuilder('livestream', 'archive', kparams);
 	};
 	
 	/**

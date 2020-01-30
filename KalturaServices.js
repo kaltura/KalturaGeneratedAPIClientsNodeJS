@@ -2586,6 +2586,7 @@ module.exports.liveStats = liveStats;
  * @action createRecordedEntry Create recorded entry id if it doesn't exist and make sure it happens on the DC that the live entry was created on.
  * @action delete Delete a live stream entry.
  * @action get Get live stream entry by ID.
+ * @action getDetails Delivering the status of a live stream (on-air/offline) if it is possible.
  * @action isLive Delivering the status of a live stream (on-air/offline) if it is possible.
  * @action list List live stream entries by filter with paging support.
  * @action regenerateStreamToken Regenerate new secure token for liveStream.
@@ -2732,6 +2733,17 @@ class liveStream{
 		kparams.entryId = entryId;
 		kparams.version = version;
 		return new kaltura.RequestBuilder('livestream', 'get', kparams);
+	};
+	
+	/**
+	 * Delivering the status of a live stream (on-air/offline) if it is possible.
+	 * @param id string ID of the live stream entry
+	 * @return KalturaLiveStreamDetails
+	 */
+	static getDetails(id){
+		let kparams = {};
+		kparams.id = id;
+		return new kaltura.RequestBuilder('livestream', 'getDetails', kparams);
 	};
 	
 	/**

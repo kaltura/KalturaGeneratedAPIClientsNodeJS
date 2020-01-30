@@ -19195,6 +19195,21 @@ class MediaInfo extends kaltura.BaseObject{
 	 * 
 	 * @return string
 	 */
+	 getColorSpace() {
+	 	return this.colorSpace;
+	 }
+	
+	/**
+	 * @param colorSpace string 
+	 */
+	 setColorSpace(colorSpace) {
+	 	this.colorSpace = colorSpace;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
 	 getChromaSubsampling() {
 	 	return this.chromaSubsampling;
 	 }
@@ -21443,6 +21458,93 @@ module.exports.LiveStreamBitrate = LiveStreamBitrate;
 /**
  *
  */
+class LiveStreamDetails extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaLiveStreamDetails';
+	}
+	
+	/**
+	 * The status of the primary stream
+	 * @return int
+	 */
+	 getPrimaryStreamStatus() {
+	 	return this.primaryStreamStatus;
+	 }
+	
+	/**
+	 * @param primaryStreamStatus int The status of the primary stream
+	 */
+	 setPrimaryStreamStatus(primaryStreamStatus) {
+	 	this.primaryStreamStatus = primaryStreamStatus;
+	 }
+	
+	/**
+	 * The status of the secondary stream
+	 * @return int
+	 */
+	 getSecondaryStreamStatus() {
+	 	return this.secondaryStreamStatus;
+	 }
+	
+	/**
+	 * @param secondaryStreamStatus int The status of the secondary stream
+	 */
+	 setSecondaryStreamStatus(secondaryStreamStatus) {
+	 	this.secondaryStreamStatus = secondaryStreamStatus;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getViewMode() {
+	 	return this.viewMode;
+	 }
+	
+	/**
+	 * @param viewMode int 
+	 */
+	 setViewMode(viewMode) {
+	 	this.viewMode = viewMode;
+	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getWasBroadcast() {
+	 	return this.wasBroadcast;
+	 }
+	
+	/**
+	 * @param wasBroadcast bool 
+	 */
+	 setWasBroadcast(wasBroadcast) {
+	 	this.wasBroadcast = wasBroadcast;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getBroadcastStatus() {
+	 	return this.broadcastStatus;
+	 }
+	
+	/**
+	 * @param broadcastStatus int 
+	 */
+	 setBroadcastStatus(broadcastStatus) {
+	 	this.broadcastStatus = broadcastStatus;
+	 }
+}
+module.exports.LiveStreamDetails = LiveStreamDetails;
+
+/**
+ *
+ */
 class LiveStreamEntry extends LiveEntry{
 	
 	constructor(object = null) {
@@ -21509,6 +21611,36 @@ class LiveStreamEntry extends LiveEntry{
 	 */
 	 setSecondaryBroadcastingUrl(secondaryBroadcastingUrl) {
 	 	this.secondaryBroadcastingUrl = secondaryBroadcastingUrl;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getPrimarySecuredBroadcastingUrl() {
+	 	return this.primarySecuredBroadcastingUrl;
+	 }
+	
+	/**
+	 * @param primarySecuredBroadcastingUrl string 
+	 */
+	 setPrimarySecuredBroadcastingUrl(primarySecuredBroadcastingUrl) {
+	 	this.primarySecuredBroadcastingUrl = primarySecuredBroadcastingUrl;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSecondarySecuredBroadcastingUrl() {
+	 	return this.secondarySecuredBroadcastingUrl;
+	 }
+	
+	/**
+	 * @param secondarySecuredBroadcastingUrl string 
+	 */
+	 setSecondarySecuredBroadcastingUrl(secondarySecuredBroadcastingUrl) {
+	 	this.secondarySecuredBroadcastingUrl = secondarySecuredBroadcastingUrl;
 	 }
 	
 	/**
@@ -26281,6 +26413,21 @@ class ReportInputFilter extends ReportInputBaseFilter{
 	 }
 	
 	/**
+	 * Filter by operating system
+	 * @return string
+	 */
+	 getOperatingSystemIn() {
+	 	return this.operatingSystemIn;
+	 }
+	
+	/**
+	 * @param operatingSystemIn string Filter by operating system
+	 */
+	 setOperatingSystemIn(operatingSystemIn) {
+	 	this.operatingSystemIn = operatingSystemIn;
+	 }
+	
+	/**
 	 * Filter by browser family
 	 * @return string
 	 */
@@ -26293,6 +26440,21 @@ class ReportInputFilter extends ReportInputBaseFilter{
 	 */
 	 setBrowserFamilyIn(browserFamilyIn) {
 	 	this.browserFamilyIn = browserFamilyIn;
+	 }
+	
+	/**
+	 * Filter by browser
+	 * @return string
+	 */
+	 getBrowserIn() {
+	 	return this.browserIn;
+	 }
+	
+	/**
+	 * @param browserIn string Filter by browser
+	 */
+	 setBrowserIn(browserIn) {
+	 	this.browserIn = browserIn;
 	 }
 	
 	/**
@@ -26473,6 +26635,51 @@ class ReportInputFilter extends ReportInputBaseFilter{
 	 */
 	 setRootEntryIdIn(rootEntryIdIn) {
 	 	this.rootEntryIdIn = rootEntryIdIn;
+	 }
+	
+	/**
+	 * filter by error code
+	 * @return string
+	 */
+	 getErrorCodeIn() {
+	 	return this.errorCodeIn;
+	 }
+	
+	/**
+	 * @param errorCodeIn string filter by error code
+	 */
+	 setErrorCodeIn(errorCodeIn) {
+	 	this.errorCodeIn = errorCodeIn;
+	 }
+	
+	/**
+	 * filter by player version
+	 * @return string
+	 */
+	 getPlayerVersionIn() {
+	 	return this.playerVersionIn;
+	 }
+	
+	/**
+	 * @param playerVersionIn string filter by player version
+	 */
+	 setPlayerVersionIn(playerVersionIn) {
+	 	this.playerVersionIn = playerVersionIn;
+	 }
+	
+	/**
+	 * filter by isp
+	 * @return string
+	 */
+	 getIspIn() {
+	 	return this.ispIn;
+	 }
+	
+	/**
+	 * @param ispIn string filter by isp
+	 */
+	 setIspIn(ispIn) {
+	 	this.ispIn = ispIn;
 	 }
 }
 module.exports.ReportInputFilter = ReportInputFilter;
@@ -45936,6 +46143,21 @@ class EntryServerNodeBaseFilter extends Filter{
 	
 	/**
 	 * 
+	 * @return string
+	 */
+	 getServerNodeIdIn() {
+	 	return this.serverNodeIdIn;
+	 }
+	
+	/**
+	 * @param serverNodeIdIn string 
+	 */
+	 setServerNodeIdIn(serverNodeIdIn) {
+	 	this.serverNodeIdIn = serverNodeIdIn;
+	 }
+	
+	/**
+	 * 
 	 * @return int
 	 */
 	 getCreatedAtLessThanOrEqual() {
@@ -55618,21 +55840,6 @@ class UnlimitedVendorCredit extends BaseVendorCredit{
 	 */
 	 setFromDate(fromDate) {
 	 	this.fromDate = fromDate;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getToDate() {
-	 	return this.toDate;
-	 }
-	
-	/**
-	 * @param toDate int 
-	 */
-	 setToDate(toDate) {
-	 	this.toDate = toDate;
 	 }
 }
 module.exports.UnlimitedVendorCredit = UnlimitedVendorCredit;

@@ -20300,6 +20300,21 @@ class LiveEntryRecordingOptions extends kaltura.BaseObject{
 	 setNonDeletedCuePointsTags(nonDeletedCuePointsTags) {
 	 	this.nonDeletedCuePointsTags = nonDeletedCuePointsTags;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getArchiveVodSuffixTimezone() {
+	 	return this.archiveVodSuffixTimezone;
+	 }
+	
+	/**
+	 * @param archiveVodSuffixTimezone string 
+	 */
+	 setArchiveVodSuffixTimezone(archiveVodSuffixTimezone) {
+	 	this.archiveVodSuffixTimezone = archiveVodSuffixTimezone;
+	 }
 }
 module.exports.LiveEntryRecordingOptions = LiveEntryRecordingOptions;
 
@@ -46274,6 +46289,21 @@ class EntryServerNodeBaseFilter extends Filter{
 	 */
 	 setServerTypeIn(serverTypeIn) {
 	 	this.serverTypeIn = serverTypeIn;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getServerTypeNotIn() {
+	 	return this.serverTypeNotIn;
+	 }
+	
+	/**
+	 * @param serverTypeNotIn string 
+	 */
+	 setServerTypeNotIn(serverTypeNotIn) {
+	 	this.serverTypeNotIn = serverTypeNotIn;
 	 }
 }
 module.exports.EntryServerNodeBaseFilter = EntryServerNodeBaseFilter;

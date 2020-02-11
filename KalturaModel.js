@@ -26696,6 +26696,21 @@ class ReportInputFilter extends ReportInputBaseFilter{
 	 setIspIn(ispIn) {
 	 	this.ispIn = ispIn;
 	 }
+	
+	/**
+	 * filter by application version
+	 * @return string
+	 */
+	 getApplicationVersionIn() {
+	 	return this.applicationVersionIn;
+	 }
+	
+	/**
+	 * @param applicationVersionIn string filter by application version
+	 */
+	 setApplicationVersionIn(applicationVersionIn) {
+	 	this.applicationVersionIn = applicationVersionIn;
+	 }
 }
 module.exports.ReportInputFilter = ReportInputFilter;
 
@@ -45451,6 +45466,33 @@ class EmailNotificationUserRecipientProvider extends EmailNotificationRecipientP
 	 }
 }
 module.exports.EmailNotificationUserRecipientProvider = EmailNotificationUserRecipientProvider;
+
+/**
+ *
+ */
+class EntryCaptionAdvancedFilter extends SearchItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaEntryCaptionAdvancedFilter';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getHasCaption() {
+	 	return this.hasCaption;
+	 }
+	
+	/**
+	 * @param hasCaption int 
+	 */
+	 setHasCaption(hasCaption) {
+	 	this.hasCaption = hasCaption;
+	 }
+}
+module.exports.EntryCaptionAdvancedFilter = EntryCaptionAdvancedFilter;
 
 /**
  *

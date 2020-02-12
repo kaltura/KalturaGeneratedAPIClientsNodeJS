@@ -2656,11 +2656,13 @@ class liveStream{
 	/**
 	 * Archive a live entry which was recorded.
 	 * @param liveEntryId string 
+	 * @param vodEntryId string 
 	 * @return bool
 	 */
-	static archive(liveEntryId){
+	static archive(liveEntryId, vodEntryId){
 		let kparams = {};
 		kparams.liveEntryId = liveEntryId;
+		kparams.vodEntryId = vodEntryId;
 		return new kaltura.RequestBuilder('livestream', 'archive', kparams);
 	};
 	

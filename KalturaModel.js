@@ -49651,6 +49651,21 @@ class LiveEntryArchiveJobData extends JobData{
 	 setLiveEntryId(liveEntryId) {
 	 	this.liveEntryId = liveEntryId;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getVodEntryId() {
+	 	return this.vodEntryId;
+	 }
+	
+	/**
+	 * @param vodEntryId string 
+	 */
+	 setVodEntryId(vodEntryId) {
+	 	this.vodEntryId = vodEntryId;
+	 }
 }
 module.exports.LiveEntryArchiveJobData = LiveEntryArchiveJobData;
 

@@ -46215,6 +46215,21 @@ class EntryServerNodeBaseFilter extends Filter{
 	
 	/**
 	 * 
+	 * @return string
+	 */
+	 getServerNodeIdNotIn() {
+	 	return this.serverNodeIdNotIn;
+	 }
+	
+	/**
+	 * @param serverNodeIdNotIn string 
+	 */
+	 setServerNodeIdNotIn(serverNodeIdNotIn) {
+	 	this.serverNodeIdNotIn = serverNodeIdNotIn;
+	 }
+	
+	/**
+	 * 
 	 * @return int
 	 */
 	 getCreatedAtLessThanOrEqual() {

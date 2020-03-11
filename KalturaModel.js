@@ -5306,6 +5306,70 @@ class Partner extends kaltura.BaseObject{
 	 getAuthenticationType() {
 	 	return this.authenticationType;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getExtendedFreeTrailExpiryReason() {
+	 	return this.extendedFreeTrailExpiryReason;
+	 }
+	
+	/**
+	 * Unix timestamp (In seconds)
+	 * @return int
+	 */
+	 getExtendedFreeTrailExpiryDate() {
+	 	return this.extendedFreeTrailExpiryDate;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getExtendedFreeTrail() {
+	 	return this.extendedFreeTrail;
+	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getExtendedFreeTrailEndsWarning() {
+	 	return this.extendedFreeTrailEndsWarning;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getEightyPercentWarning() {
+	 	return this.eightyPercentWarning;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getUsageLimitWarning() {
+	 	return this.usageLimitWarning;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getLastFreeTrialNotificationDay() {
+	 	return this.lastFreeTrialNotificationDay;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getMonitorUsage() {
+	 	return this.monitorUsage;
+	 }
 }
 module.exports.Partner = Partner;
 
@@ -51844,6 +51908,21 @@ class PartnerBaseFilter extends Filter{
 	 */
 	 setIdGreaterThan(idGreaterThan) {
 	 	this.idGreaterThan = idGreaterThan;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getMonitorUsageEqual() {
+	 	return this.monitorUsageEqual;
+	 }
+	
+	/**
+	 * @param monitorUsageEqual int 
+	 */
+	 setMonitorUsageEqual(monitorUsageEqual) {
+	 	this.monitorUsageEqual = monitorUsageEqual;
 	 }
 }
 module.exports.PartnerBaseFilter = PartnerBaseFilter;

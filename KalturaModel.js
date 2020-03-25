@@ -58012,6 +58012,150 @@ module.exports.VoicebaseJobProviderData = VoicebaseJobProviderData;
 /**
  *
  */
+class WatchLaterUserEntry extends UserEntry{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaWatchLaterUserEntry';
+	}
+}
+module.exports.WatchLaterUserEntry = WatchLaterUserEntry;
+
+/**
+ *
+ */
+class WatchLaterUserEntryAdvancedFilter extends SearchItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaWatchLaterUserEntryAdvancedFilter';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getIdEqual() {
+	 	return this.idEqual;
+	 }
+	
+	/**
+	 * @param idEqual int 
+	 */
+	 setIdEqual(idEqual) {
+	 	this.idEqual = idEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getIdIn() {
+	 	return this.idIn;
+	 }
+	
+	/**
+	 * @param idIn string 
+	 */
+	 setIdIn(idIn) {
+	 	this.idIn = idIn;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getUserIdEqual() {
+	 	return this.userIdEqual;
+	 }
+	
+	/**
+	 * @param userIdEqual string 
+	 */
+	 setUserIdEqual(userIdEqual) {
+	 	this.userIdEqual = userIdEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getUserIdIn() {
+	 	return this.userIdIn;
+	 }
+	
+	/**
+	 * @param userIdIn string 
+	 */
+	 setUserIdIn(userIdIn) {
+	 	this.userIdIn = userIdIn;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getUpdatedAtGreaterThanOrEqual() {
+	 	return this.updatedAtGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * @param updatedAtGreaterThanOrEqual int 
+	 */
+	 setUpdatedAtGreaterThanOrEqual(updatedAtGreaterThanOrEqual) {
+	 	this.updatedAtGreaterThanOrEqual = updatedAtGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getUpdatedAtLessThanOrEqual() {
+	 	return this.updatedAtLessThanOrEqual;
+	 }
+	
+	/**
+	 * @param updatedAtLessThanOrEqual int 
+	 */
+	 setUpdatedAtLessThanOrEqual(updatedAtLessThanOrEqual) {
+	 	this.updatedAtLessThanOrEqual = updatedAtLessThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getExtendedStatusEqual() {
+	 	return this.extendedStatusEqual;
+	 }
+	
+	/**
+	 * @param extendedStatusEqual string 
+	 */
+	 setExtendedStatusEqual(extendedStatusEqual) {
+	 	this.extendedStatusEqual = extendedStatusEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getExtendedStatusIn() {
+	 	return this.extendedStatusIn;
+	 }
+	
+	/**
+	 * @param extendedStatusIn string 
+	 */
+	 setExtendedStatusIn(extendedStatusIn) {
+	 	this.extendedStatusIn = extendedStatusIn;
+	 }
+}
+module.exports.WatchLaterUserEntryAdvancedFilter = WatchLaterUserEntryAdvancedFilter;
+
+/**
+ *
+ */
 class WebexDropFolder extends DropFolder{
 	
 	constructor(object = null) {
@@ -81217,6 +81361,18 @@ class ViewHistoryUserEntryFilter extends UserEntryFilter{
 	}
 }
 module.exports.ViewHistoryUserEntryFilter = ViewHistoryUserEntryFilter;
+
+/**
+ *
+ */
+class WatchLaterUserEntryFilter extends UserEntryFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaWatchLaterUserEntryFilter';
+	}
+}
+module.exports.WatchLaterUserEntryFilter = WatchLaterUserEntryFilter;
 
 /**
  *

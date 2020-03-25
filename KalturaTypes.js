@@ -5936,6 +5936,7 @@ DELETED : '2',
 module.exports.UserEntryType = {
 QUIZ : 'quiz.QUIZ',
 VIEW_HISTORY : 'viewHistory.VIEW_HISTORY',
+WATCH_LATER : 'watchLater.WATCH_LATER',
 };
 
 module.exports.UserLoginDataOrderBy = {

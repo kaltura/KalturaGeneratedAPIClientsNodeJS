@@ -20648,6 +20648,21 @@ class LiveEntry extends MediaEntry{
 	 getLastBroadcastEndTime() {
 	 	return this.lastBroadcastEndTime;
 	 }
+	
+	/**
+	 * The time when the entry was first live with view_all
+	 * @return int
+	 */
+	 getBroadcastTime() {
+	 	return this.broadcastTime;
+	 }
+	
+	/**
+	 * @param broadcastTime int The time when the entry was first live with view_all
+	 */
+	 setBroadcastTime(broadcastTime) {
+	 	this.broadcastTime = broadcastTime;
+	 }
 }
 module.exports.LiveEntry = LiveEntry;
 
@@ -26774,6 +26789,21 @@ class ReportInputFilter extends ReportInputBaseFilter{
 	 */
 	 setApplicationVersionIn(applicationVersionIn) {
 	 	this.applicationVersionIn = applicationVersionIn;
+	 }
+	
+	/**
+	 * filter by node id
+	 * @return string
+	 */
+	 getNodeIdsIn() {
+	 	return this.nodeIdsIn;
+	 }
+	
+	/**
+	 * @param nodeIdsIn string filter by node id
+	 */
+	 setNodeIdsIn(nodeIdsIn) {
+	 	this.nodeIdsIn = nodeIdsIn;
 	 }
 }
 module.exports.ReportInputFilter = ReportInputFilter;
@@ -51213,6 +51243,21 @@ class ModifyEntryObjectTask extends ObjectTask{
 	 */
 	 setInputEntitledUsersPublish(inputEntitledUsersPublish) {
 	 	this.inputEntitledUsersPublish = inputEntitledUsersPublish;
+	 }
+	
+	/**
+	 * Should clear the media repurposing data and therefore reset the process
+	 * @return bool
+	 */
+	 getResetMediaRepurposingProcess() {
+	 	return this.resetMediaRepurposingProcess;
+	 }
+	
+	/**
+	 * @param resetMediaRepurposingProcess bool Should clear the media repurposing data and therefore reset the process
+	 */
+	 setResetMediaRepurposingProcess(resetMediaRepurposingProcess) {
+	 	this.resetMediaRepurposingProcess = resetMediaRepurposingProcess;
 	 }
 }
 module.exports.ModifyEntryObjectTask = ModifyEntryObjectTask;

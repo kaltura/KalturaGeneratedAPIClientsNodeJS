@@ -2579,17 +2579,20 @@ module.exports.liveStats = liveStats;
  * @action add Adds new live stream entry.
  * The entry will be queued for provision.
  * @action addLiveStreamPushPublishConfiguration Add new pushPublish configuration to entry.
+ * @action allocateConferenceRoom Allocates a conference room or returns ones that has already been allocated.
  * @action appendRecording Append recorded video to live entry.
  * @action archive Archive a live entry which was recorded.
  * @action authenticate Authenticate live-stream entry against stream token and partner limitations.
  * @action createPeriodicSyncPoints Creates periodic metadata sync-point events on a live stream.
  * @action createRecordedEntry Create recorded entry id if it doesn't exist and make sure it happens on the DC that the live entry was created on.
  * @action delete Delete a live stream entry.
+ * @action finishConf When the conf is finished this API should be called.
  * @action get Get live stream entry by ID.
  * @action getDetails Delivering the status of a live stream (on-air/offline) if it is possible.
  * @action isLive Delivering the status of a live stream (on-air/offline) if it is possible.
  * @action list List live stream entries by filter with paging support.
  * @action regenerateStreamToken Regenerate new secure token for liveStream.
+ * @action registerConf Mark that the conference has actually started.
  * @action registerMediaServer Register media server to live entry.
  * @action removeLiveStreamPushPublishConfiguration Remove push publish configuration from entry.
  * @action setRecordedContent Set recorded video to live entry.
@@ -2630,6 +2633,19 @@ class liveStream{
 		kparams.url = url;
 		kparams.liveStreamConfiguration = liveStreamConfiguration;
 		return new kaltura.RequestBuilder('livestream', 'addLiveStreamPushPublishConfiguration', kparams);
+	};
+	
+	/**
+	 * Allocates a conference room or returns ones that has already been allocated.
+	 * @param entryId string 
+	 * @param env string  (optional)
+	 * @return KalturaRoomDetails
+	 */
+	static allocateConferenceRoom(entryId, env = ''){
+		let kparams = {};
+		kparams.entryId = entryId;
+		kparams.env = env;
+		return new kaltura.RequestBuilder('livestream', 'allocateConferenceRoom', kparams);
 	};
 	
 	/**
@@ -2725,6 +2741,19 @@ class liveStream{
 	};
 	
 	/**
+	 * When the conf is finished this API should be called.
+	 * @param entryId string 
+	 * @param serverNodeId int  (optional, default: null)
+	 * @return bool
+	 */
+	static finishConf(entryId, serverNodeId = null){
+		let kparams = {};
+		kparams.entryId = entryId;
+		kparams.serverNodeId = serverNodeId;
+		return new kaltura.RequestBuilder('livestream', 'finishConf', kparams);
+	};
+	
+	/**
 	 * Get live stream entry by ID.
 	 * @param entryId string Live stream entry id
 	 * @param version int Desired version of the data (optional, default: -1)
@@ -2783,6 +2812,17 @@ class liveStream{
 		let kparams = {};
 		kparams.entryId = entryId;
 		return new kaltura.RequestBuilder('livestream', 'regenerateStreamToken', kparams);
+	};
+	
+	/**
+	 * Mark that the conference has actually started.
+	 * @param entryId string 
+	 * @return bool
+	 */
+	static registerConf(entryId){
+		let kparams = {};
+		kparams.entryId = entryId;
+		return new kaltura.RequestBuilder('livestream', 'registerConf', kparams);
 	};
 	
 	/**
@@ -9310,6 +9350,65 @@ module.exports.quiz = quiz;
 
 
 /**
+ *Class definition for the Kaltura service: rating.
+ * The available service actions:
+ * @action checkRating .
+ * @action getRatingCounts .
+ * @action rate .
+ * @action removeRating .
+ */
+class rating{
+	
+	/**
+	 * .
+	 * @param entryId string 
+	 * @return int
+	 */
+	static checkRating(entryId){
+		let kparams = {};
+		kparams.entryId = entryId;
+		return new kaltura.RequestBuilder('rating_rating', 'checkRating', kparams);
+	};
+	
+	/**
+	 * .
+	 * @param filter RatingCountFilter 
+	 * @return KalturaRatingCountListResponse
+	 */
+	static getRatingCounts(filter){
+		let kparams = {};
+		kparams.filter = filter;
+		return new kaltura.RequestBuilder('rating_rating', 'getRatingCounts', kparams);
+	};
+	
+	/**
+	 * .
+	 * @param entryId string 
+	 * @param rank int 
+	 * @return int
+	 */
+	static rate(entryId, rank){
+		let kparams = {};
+		kparams.entryId = entryId;
+		kparams.rank = rank;
+		return new kaltura.RequestBuilder('rating_rating', 'rate', kparams);
+	};
+	
+	/**
+	 * .
+	 * @param entryId string 
+	 * @return bool
+	 */
+	static removeRating(entryId){
+		let kparams = {};
+		kparams.entryId = entryId;
+		return new kaltura.RequestBuilder('rating_rating', 'removeRating', kparams);
+	};
+}
+module.exports.rating = rating;
+
+
+/**
  *Class definition for the Kaltura service: vendorCatalogItem.
  * The available service actions:
  * @action add Allows you to add an service catalog item.
@@ -10180,6 +10279,146 @@ module.exports.shortLink = shortLink;
 
 
 /**
+ *Class definition for the Kaltura service: pexip.
+ * The available service actions:
+ * @action generateSipUrl .
+ * @action handleIncomingCall .
+ * @action listRooms .
+ */
+class pexip{
+	
+	/**
+	 * .
+	 * @param entryId string 
+	 * @param regenerate bool  (optional, default: false)
+	 * @return string
+	 */
+	static generateSipUrl(entryId, regenerate = false){
+		let kparams = {};
+		kparams.entryId = entryId;
+		kparams.regenerate = regenerate;
+		return new kaltura.RequestBuilder('sip_pexip', 'generateSipUrl', kparams);
+	};
+	
+	/**
+	 * .
+	 * @return bool
+	 */
+	static handleIncomingCall(){
+		let kparams = {};
+		return new kaltura.RequestBuilder('sip_pexip', 'handleIncomingCall', kparams);
+	};
+	
+	/**
+	 * .
+	 * @param offset int  (optional)
+	 * @param pageSize int  (optional, default: 500)
+	 * @param activeOnly bool  (optional, default: false)
+	 * @return array
+	 */
+	static listRooms(offset = 0, pageSize = 500, activeOnly = false){
+		let kparams = {};
+		kparams.offset = offset;
+		kparams.pageSize = pageSize;
+		kparams.activeOnly = activeOnly;
+		return new kaltura.RequestBuilder('sip_pexip', 'listRooms', kparams);
+	};
+}
+module.exports.pexip = pexip;
+
+
+/**
+ *Class definition for the Kaltura service: sso.
+ * The available service actions:
+ * @action add Adds a new sso configuration.
+ * @action delete Delete sso by ID.
+ * @action get Retrieves sso object.
+ * @action list Lists sso objects that are associated with an account.
+ * @action login Login with SSO, getting redirect url according to application type and partner Id
+ * or according to application type and domain.
+ * @action update Update sso by ID.
+ */
+class sso{
+	
+	/**
+	 * Adds a new sso configuration.
+	 * @param sso Sso a new sso configuration
+	 * @return KalturaSso
+	 */
+	static add(sso){
+		let kparams = {};
+		kparams.sso = sso;
+		return new kaltura.RequestBuilder('sso_sso', 'add', kparams);
+	};
+	
+	/**
+	 * Delete sso by ID.
+	 * @param ssoId int The unique identifier in the sso's object
+	 * @return KalturaSso
+	 */
+	static deleteAction(ssoId){
+		let kparams = {};
+		kparams.ssoId = ssoId;
+		return new kaltura.RequestBuilder('sso_sso', 'delete', kparams);
+	};
+	
+	/**
+	 * Retrieves sso object.
+	 * @param ssoId int The unique identifier in the sso's object
+	 * @return KalturaSso
+	 */
+	static get(ssoId){
+		let kparams = {};
+		kparams.ssoId = ssoId;
+		return new kaltura.RequestBuilder('sso_sso', 'get', kparams);
+	};
+	
+	/**
+	 * Lists sso objects that are associated with an account.
+	 * @param filter SsoFilter  (optional, default: null)
+	 * @param pager FilterPager A limit for the number of records to display on a page (optional, default: null)
+	 * @return KalturaSsoListResponse
+	 */
+	static listAction(filter = null, pager = null){
+		let kparams = {};
+		kparams.filter = filter;
+		kparams.pager = pager;
+		return new kaltura.RequestBuilder('sso_sso', 'list', kparams);
+	};
+	
+	/**
+	 * Login with SSO, getting redirect url according to application type and partner Id
+ * or according to application type and domain.
+	 * @param userId string 
+	 * @param applicationType string 
+	 * @param partnerId int  (optional, default: null)
+	 * @return string
+	 */
+	static login(userId, applicationType, partnerId = null){
+		let kparams = {};
+		kparams.userId = userId;
+		kparams.applicationType = applicationType;
+		kparams.partnerId = partnerId;
+		return new kaltura.RequestBuilder('sso_sso', 'login', kparams);
+	};
+	
+	/**
+	 * Update sso by ID.
+	 * @param ssoId int The unique identifier in the sso's object
+	 * @param sso Sso Id The unique identifier in the sso's object
+	 * @return KalturaSso
+	 */
+	static update(ssoId, sso){
+		let kparams = {};
+		kparams.ssoId = ssoId;
+		kparams.sso = sso;
+		return new kaltura.RequestBuilder('sso_sso', 'update', kparams);
+	};
+}
+module.exports.sso = sso;
+
+
+/**
  *Class definition for the Kaltura service: tag.
  * The available service actions:
  * @action deletePending Action goes over all tags with instanceCount==0 and checks whether they need to be removed from the DB. Returns number of removed tags.
@@ -10225,6 +10464,26 @@ class tag{
 	};
 }
 module.exports.tag = tag;
+
+
+/**
+ *Class definition for the Kaltura service: thumbnail.
+ * The available service actions:
+ * @action transform Retrieves a thumbnail according to the required transformation.
+ */
+class thumbnail{
+	
+	/**
+	 * Retrieves a thumbnail according to the required transformation.
+	 * @param transformString string 
+	 */
+	static transform(transformString){
+		let kparams = {};
+		kparams.transformString = transformString;
+		return new kaltura.RequestBuilder('thumbnail_thumbnail', 'transform', kparams);
+	};
+}
+module.exports.thumbnail = thumbnail;
 
 
 /**
@@ -10283,6 +10542,71 @@ class varConsole{
 	};
 }
 module.exports.varConsole = varConsole;
+
+
+/**
+ *Class definition for the Kaltura service: zoomVendor.
+ * The available service actions:
+ * @action deAuthorization .
+ * @action fetchRegistrationPage .
+ * @action oauthValidation .
+ * @action recordingComplete .
+ * @action submitRegistration .
+ */
+class zoomVendor{
+	
+	/**
+	 * .
+	 * @return string
+	 */
+	static deAuthorization(){
+		let kparams = {};
+		return new kaltura.RequestBuilder('vendor_zoomvendor', 'deAuthorization', kparams);
+	};
+	
+	/**
+	 * .
+	 * @param tokensData string 
+	 * @param iv string 
+	 */
+	static fetchRegistrationPage(tokensData, iv){
+		let kparams = {};
+		kparams.tokensData = tokensData;
+		kparams.iv = iv;
+		return new kaltura.RequestBuilder('vendor_zoomvendor', 'fetchRegistrationPage', kparams);
+	};
+	
+	/**
+	 * .
+	 * @return string
+	 */
+	static oauthValidation(){
+		let kparams = {};
+		return new kaltura.RequestBuilder('vendor_zoomvendor', 'oauthValidation', kparams);
+	};
+	
+	/**
+	 * .
+	 */
+	static recordingComplete(){
+		let kparams = {};
+		return new kaltura.RequestBuilder('vendor_zoomvendor', 'recordingComplete', kparams);
+	};
+	
+	/**
+	 * .
+	 * @param accountId string 
+	 * @param integrationSetting ZoomIntegrationSetting 
+	 * @return string
+	 */
+	static submitRegistration(accountId, integrationSetting){
+		let kparams = {};
+		kparams.accountId = accountId;
+		kparams.integrationSetting = integrationSetting;
+		return new kaltura.RequestBuilder('vendor_zoomvendor', 'submitRegistration', kparams);
+	};
+}
+module.exports.zoomVendor = zoomVendor;
 
 
 /**

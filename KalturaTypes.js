@@ -173,6 +173,12 @@ STATUS_DISABLED : 0,
 STATUS_ENABLED : 1,
 };
 
+module.exports.ConferenceRoomStatus = {
+CREATED : 1,
+READY : 2,
+ENDED : 3,
+};
+
 module.exports.ContributionPolicyType = {
 ALL : 1,
 MEMBERS_WITH_CONTRIBUTION_PERMISSION : 2,
@@ -575,6 +581,12 @@ MANAGER : 2,
 module.exports.GroupUserStatus = {
 ACTIVE : 0,
 DELETED : 1,
+};
+
+module.exports.HandleParticipantsMode = {
+ADD_AS_CO_PUBLISHERS : 0,
+ADD_AS_CO_VIEWERS : 1,
+IGNORE : 2,
 };
 
 module.exports.HttpNotificationAuthenticationMethod = {
@@ -1031,6 +1043,12 @@ RESTRICT_SITE_LIST : 0,
 ALLOW_SITE_LIST : 1,
 };
 
+module.exports.SsoStatus = {
+DISABLED : 1,
+ACTIVE : 2,
+DELETED : 3,
+};
+
 module.exports.StatsEventType = {
 WIDGET_LOADED : 1,
 MEDIA_LOADED : 2,
@@ -1382,6 +1400,12 @@ module.exports.YouTubeApiDistributionCaptionAction = {
 UPDATE_ACTION : 1,
 SUBMIT_ACTION : 2,
 DELETE_ACTION : 3,
+};
+
+module.exports.ZoomUsersMatching = {
+DO_NOT_MODIFY : 0,
+ADD_POSTFIX : 1,
+REMOVE_POSTFIX : 2,
 };
 
 module.exports.AccessControlOrderBy = {
@@ -2184,6 +2208,15 @@ FS : 'FileSystem',
 DB : 'database',
 };
 
+module.exports.ConferenceServerNodeOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+HEARTBEAT_TIME_ASC : '+heartbeatTime',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+HEARTBEAT_TIME_DESC : '-heartbeatTime',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
 module.exports.ConfigurableDistributionProfileOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
@@ -2526,6 +2559,7 @@ HULU : 'huluDistribution.HULU',
 IDETIC : 'ideticDistribution.IDETIC',
 METRO_PCS : 'metroPcsDistribution.METRO_PCS',
 MSN : 'msnDistribution.MSN',
+PODCAST : 'podcastDistribution.PODCAST',
 QUICKPLAY : 'quickPlayDistribution.QUICKPLAY',
 UNICORN : 'unicornDistribution.UNICORN',
 YAHOO : 'yahooDistribution.YAHOO',
@@ -3071,7 +3105,9 @@ NO_CONTENT : '7',
 
 module.exports.EntryType = {
 AUTOMATIC : '-1',
+CONFERENCE_ENTRY_SERVER : 'conference.CONFERENCE_ENTRY_SERVER',
 EXTERNAL_MEDIA : 'externalMedia.externalMedia',
+SIP_ENTRY_SERVER : 'sip.SIP_ENTRY_SERVER',
 MEDIA_CLIP : '1',
 MIX : '2',
 PLAYLIST : '5',
@@ -5336,6 +5372,16 @@ UPDATED_AT_DESC : '-updatedAt',
 WEIGHT_DESC : '-weight',
 };
 
+module.exports.PodcastDistributionProfileOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.PodcastDistributionProviderOrderBy = {
+};
+
 module.exports.PushNotificationCommandType = {
 CLEAR_QUEUE : 'CLEAR_QUEUE',
 };
@@ -5379,6 +5425,9 @@ CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.RatingCountOrderBy = {
 };
 
 module.exports.ReachProfileOrderBy = {
@@ -5704,6 +5753,9 @@ UPDATED_AT_DESC : '-updatedAt',
 };
 
 module.exports.ServerNodeType = {
+CONFERENCE_SERVER : 'conference.CONFERENCE_SERVER',
+LIVE_CLUSTER_MEDIA_SERVER : 'liveCluster.LIVE_CLUSTER_MEDIA_SERVER',
+SIP_SERVER : 'sip.SIP_SERVER',
 WOWZA_MEDIA_SERVER : 'wowza.WOWZA_MEDIA_SERVER',
 EDGE : '1',
 };
@@ -5725,6 +5777,15 @@ EXPIRES_AT_ASC : '+expiresAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 EXPIRES_AT_DESC : '-expiresAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.SipServerNodeOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+HEARTBEAT_TIME_ASC : '+heartbeatTime',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+HEARTBEAT_TIME_DESC : '-heartbeatTime',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
@@ -5938,6 +5999,7 @@ DELETED : '2',
 
 module.exports.UserEntryType = {
 QUIZ : 'quiz.QUIZ',
+REGISTRATION : 'registration.REGISTRATION',
 VIEW_HISTORY : 'viewHistory.VIEW_HISTORY',
 WATCH_LATER : 'watchLater.WATCH_LATER',
 };

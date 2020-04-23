@@ -25610,6 +25610,63 @@ module.exports.Quiz = Quiz;
 /**
  *
  */
+class RatingCount extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaRatingCount';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getEntryId() {
+	 	return this.entryId;
+	 }
+	
+	/**
+	 * @param entryId string 
+	 */
+	 setEntryId(entryId) {
+	 	this.entryId = entryId;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getRank() {
+	 	return this.rank;
+	 }
+	
+	/**
+	 * @param rank int 
+	 */
+	 setRank(rank) {
+	 	this.rank = rank;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getCount() {
+	 	return this.count;
+	 }
+	
+	/**
+	 * @param count int 
+	 */
+	 setCount(count) {
+	 	this.count = count;
+	 }
+}
+module.exports.RatingCount = RatingCount;
+
+/**
+ *
+ */
 class ReachProfile extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -27522,6 +27579,93 @@ module.exports.ResponseProfileCacheRecalculateResults = ResponseProfileCacheReca
 /**
  *
  */
+class RoomDetails extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaRoomDetails';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getServerUrl() {
+	 	return this.serverUrl;
+	 }
+	
+	/**
+	 * @param serverUrl string 
+	 */
+	 setServerUrl(serverUrl) {
+	 	this.serverUrl = serverUrl;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getEntryId() {
+	 	return this.entryId;
+	 }
+	
+	/**
+	 * @param entryId string 
+	 */
+	 setEntryId(entryId) {
+	 	this.entryId = entryId;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getToken() {
+	 	return this.token;
+	 }
+	
+	/**
+	 * @param token string 
+	 */
+	 setToken(token) {
+	 	this.token = token;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getExpiry() {
+	 	return this.expiry;
+	 }
+	
+	/**
+	 * @param expiry int 
+	 */
+	 setExpiry(expiry) {
+	 	this.expiry = expiry;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getServerName() {
+	 	return this.serverName;
+	 }
+	
+	/**
+	 * @param serverName string 
+	 */
+	 setServerName(serverName) {
+	 	this.serverName = serverName;
+	 }
+}
+module.exports.RoomDetails = RoomDetails;
+
+/**
+ *
+ */
 class ScheduleEventRecurrence extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -29318,6 +29462,132 @@ class SourceFileSyncDescriptor extends FileSyncDescriptor{
 	 }
 }
 module.exports.SourceFileSyncDescriptor = SourceFileSyncDescriptor;
+
+/**
+ *
+ */
+class Sso extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaSso';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getId() {
+	 	return this.id;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getApplicationType() {
+	 	return this.applicationType;
+	 }
+	
+	/**
+	 * @param applicationType string 
+	 */
+	 setApplicationType(applicationType) {
+	 	this.applicationType = applicationType;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getPartnerId() {
+	 	return this.partnerId;
+	 }
+	
+	/**
+	 * @param partnerId int 
+	 */
+	 setPartnerId(partnerId) {
+	 	this.partnerId = partnerId;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getDomain() {
+	 	return this.domain;
+	 }
+	
+	/**
+	 * @param domain string 
+	 */
+	 setDomain(domain) {
+	 	this.domain = domain;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getStatus() {
+	 	return this.status;
+	 }
+	
+	/**
+	 * @param status int 
+	 */
+	 setStatus(status) {
+	 	this.status = status;
+	 }
+	
+	/**
+	 * Creation date as Unix timestamp (In seconds)
+	 * @return int
+	 */
+	 getCreatedAt() {
+	 	return this.createdAt;
+	 }
+	
+	/**
+	 * Last update date as Unix timestamp (In seconds)
+	 * @return int
+	 */
+	 getUpdatedAt() {
+	 	return this.updatedAt;
+	 }
+	
+	/**
+	 * Redirect URL for a specific application type and (partner id or domain)
+	 * @return string
+	 */
+	 getRedirectUrl() {
+	 	return this.redirectUrl;
+	 }
+	
+	/**
+	 * @param redirectUrl string Redirect URL for a specific application type and (partner id or domain)
+	 */
+	 setRedirectUrl(redirectUrl) {
+	 	this.redirectUrl = redirectUrl;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getData() {
+	 	return this.data;
+	 }
+	
+	/**
+	 * @param data string 
+	 */
+	 setData(data) {
+	 	this.data = data;
+	 }
+}
+module.exports.Sso = Sso;
 
 /**
  *
@@ -33444,6 +33714,168 @@ class YouTubeApiCaptionDistributionInfo extends kaltura.BaseObject{
 	 }
 }
 module.exports.YouTubeApiCaptionDistributionInfo = YouTubeApiCaptionDistributionInfo;
+
+/**
+ *
+ */
+class ZoomIntegrationSetting extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaZoomIntegrationSetting';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getDefaultUserId() {
+	 	return this.defaultUserId;
+	 }
+	
+	/**
+	 * @param defaultUserId string 
+	 */
+	 setDefaultUserId(defaultUserId) {
+	 	this.defaultUserId = defaultUserId;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getZoomCategory() {
+	 	return this.zoomCategory;
+	 }
+	
+	/**
+	 * @param zoomCategory string 
+	 */
+	 setZoomCategory(zoomCategory) {
+	 	this.zoomCategory = zoomCategory;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getAccountId() {
+	 	return this.accountId;
+	 }
+	
+	/**
+	 * @param accountId string 
+	 */
+	 setAccountId(accountId) {
+	 	this.accountId = accountId;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getEnableRecordingUpload() {
+	 	return this.enableRecordingUpload;
+	 }
+	
+	/**
+	 * @param enableRecordingUpload int 
+	 */
+	 setEnableRecordingUpload(enableRecordingUpload) {
+	 	this.enableRecordingUpload = enableRecordingUpload;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getCreateUserIfNotExist() {
+	 	return this.createUserIfNotExist;
+	 }
+	
+	/**
+	 * @param createUserIfNotExist int 
+	 */
+	 setCreateUserIfNotExist(createUserIfNotExist) {
+	 	this.createUserIfNotExist = createUserIfNotExist;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getHandleParticipantMode() {
+	 	return this.handleParticipantMode;
+	 }
+	
+	/**
+	 * @param handleParticipantMode int 
+	 */
+	 setHandleParticipantMode(handleParticipantMode) {
+	 	this.handleParticipantMode = handleParticipantMode;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getZoomUserMatchingMode() {
+	 	return this.zoomUserMatchingMode;
+	 }
+	
+	/**
+	 * @param zoomUserMatchingMode int 
+	 */
+	 setZoomUserMatchingMode(zoomUserMatchingMode) {
+	 	this.zoomUserMatchingMode = zoomUserMatchingMode;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getZoomUserPostfix() {
+	 	return this.zoomUserPostfix;
+	 }
+	
+	/**
+	 * @param zoomUserPostfix string 
+	 */
+	 setZoomUserPostfix(zoomUserPostfix) {
+	 	this.zoomUserPostfix = zoomUserPostfix;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getZoomWebinarCategory() {
+	 	return this.zoomWebinarCategory;
+	 }
+	
+	/**
+	 * @param zoomWebinarCategory string 
+	 */
+	 setZoomWebinarCategory(zoomWebinarCategory) {
+	 	this.zoomWebinarCategory = zoomWebinarCategory;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getEnableWebinarUploads() {
+	 	return this.enableWebinarUploads;
+	 }
+	
+	/**
+	 * @param enableWebinarUploads int 
+	 */
+	 setEnableWebinarUploads(enableWebinarUploads) {
+	 	this.enableWebinarUploads = enableWebinarUploads;
+	 }
+}
+module.exports.ZoomIntegrationSetting = ZoomIntegrationSetting;
 
 /**
  *
@@ -39107,6 +39539,61 @@ class ConfMapsListResponse extends ListResponse{
 	 }
 }
 module.exports.ConfMapsListResponse = ConfMapsListResponse;
+
+/**
+ *
+ */
+class ConferenceEntryServerNode extends EntryServerNode{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaConferenceEntryServerNode';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getConfRoomStatus() {
+	 	return this.confRoomStatus;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getRegistered() {
+	 	return this.registered;
+	 }
+}
+module.exports.ConferenceEntryServerNode = ConferenceEntryServerNode;
+
+/**
+ *
+ */
+class ConferenceServerNode extends ServerNode{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaConferenceServerNode';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getServiceBaseUrl() {
+	 	return this.serviceBaseUrl;
+	 }
+	
+	/**
+	 * @param serviceBaseUrl string 
+	 */
+	 setServiceBaseUrl(serviceBaseUrl) {
+	 	this.serviceBaseUrl = serviceBaseUrl;
+	 }
+}
+module.exports.ConferenceServerNode = ConferenceServerNode;
 
 /**
  *
@@ -52313,6 +52800,125 @@ module.exports.PlaylistListResponse = PlaylistListResponse;
 /**
  *
  */
+class PodcastDistributionJobProviderData extends DistributionJobProviderData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaPodcastDistributionJobProviderData';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getXml() {
+	 	return this.xml;
+	 }
+	
+	/**
+	 * @param xml string 
+	 */
+	 setXml(xml) {
+	 	this.xml = xml;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getMetadataProfileId() {
+	 	return this.metadataProfileId;
+	 }
+	
+	/**
+	 * @param metadataProfileId int 
+	 */
+	 setMetadataProfileId(metadataProfileId) {
+	 	this.metadataProfileId = metadataProfileId;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getDistributionProfileId() {
+	 	return this.distributionProfileId;
+	 }
+	
+	/**
+	 * @param distributionProfileId int 
+	 */
+	 setDistributionProfileId(distributionProfileId) {
+	 	this.distributionProfileId = distributionProfileId;
+	 }
+}
+module.exports.PodcastDistributionJobProviderData = PodcastDistributionJobProviderData;
+
+/**
+ *
+ */
+class PodcastDistributionProfile extends DistributionProfile{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaPodcastDistributionProfile';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getXsl() {
+	 	return this.xsl;
+	 }
+	
+	/**
+	 * @param xsl string 
+	 */
+	 setXsl(xsl) {
+	 	this.xsl = xsl;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getFeedId() {
+	 	return this.feedId;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getMetadataProfileId() {
+	 	return this.metadataProfileId;
+	 }
+	
+	/**
+	 * @param metadataProfileId int 
+	 */
+	 setMetadataProfileId(metadataProfileId) {
+	 	this.metadataProfileId = metadataProfileId;
+	 }
+}
+module.exports.PodcastDistributionProfile = PodcastDistributionProfile;
+
+/**
+ *
+ */
+class PodcastDistributionProvider extends DistributionProvider{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaPodcastDistributionProvider';
+	}
+}
+module.exports.PodcastDistributionProvider = PodcastDistributionProvider;
+
+/**
+ *
+ */
 class ProvisionJobData extends JobData{
 	
 	constructor(object = null) {
@@ -52834,6 +53440,26 @@ module.exports.QuizUserEntry = QuizUserEntry;
 /**
  *
  */
+class RatingCountListResponse extends ListResponse{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaRatingCountListResponse';
+	}
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getObjects() {
+	 	return this.objects;
+	 }
+}
+module.exports.RatingCountListResponse = RatingCountListResponse;
+
+/**
+ *
+ */
 class ReachProfileListResponse extends ListResponse{
 	
 	constructor(object = null) {
@@ -52862,6 +53488,18 @@ class RecalculateCacheJobData extends JobData{
 	}
 }
 module.exports.RecalculateCacheJobData = RecalculateCacheJobData;
+
+/**
+ *
+ */
+class RegistrationUserEntry extends UserEntry{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaRegistrationUserEntry';
+	}
+}
+module.exports.RegistrationUserEntry = RegistrationUserEntry;
 
 /**
  *
@@ -54592,6 +55230,54 @@ module.exports.ShortLinkListResponse = ShortLinkListResponse;
 /**
  *
  */
+class SipEntryServerNode extends EntryServerNode{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaSipEntryServerNode';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSipRoomId() {
+	 	return this.sipRoomId;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSipPrimaryAdpId() {
+	 	return this.sipPrimaryAdpId;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSipSecondaryAdpId() {
+	 	return this.sipSecondaryAdpId;
+	 }
+}
+module.exports.SipEntryServerNode = SipEntryServerNode;
+
+/**
+ *
+ */
+class SipServerNode extends ServerNode{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaSipServerNode';
+	}
+}
+module.exports.SipServerNode = SipServerNode;
+
+/**
+ *
+ */
 class SiteRestriction extends BaseRestriction{
 	
 	constructor(object = null) {
@@ -54630,6 +55316,26 @@ class SiteRestriction extends BaseRestriction{
 	 }
 }
 module.exports.SiteRestriction = SiteRestriction;
+
+/**
+ *
+ */
+class SsoListResponse extends ListResponse{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaSsoListResponse';
+	}
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getObjects() {
+	 	return this.objects;
+	 }
+}
+module.exports.SsoListResponse = SsoListResponse;
 
 /**
  *
@@ -70500,6 +71206,48 @@ module.exports.QuizFilter = QuizFilter;
 /**
  *
  */
+class RatingCountBaseFilter extends RelatedFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaRatingCountBaseFilter';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getEntryIdEqual() {
+	 	return this.entryIdEqual;
+	 }
+	
+	/**
+	 * @param entryIdEqual string 
+	 */
+	 setEntryIdEqual(entryIdEqual) {
+	 	this.entryIdEqual = entryIdEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getRankIn() {
+	 	return this.rankIn;
+	 }
+	
+	/**
+	 * @param rankIn string 
+	 */
+	 setRankIn(rankIn) {
+	 	this.rankIn = rankIn;
+	 }
+}
+module.exports.RatingCountBaseFilter = RatingCountBaseFilter;
+
+/**
+ *
+ */
 class ReachProfileBaseFilter extends RelatedFilter{
 	
 	constructor(object = null) {
@@ -72071,6 +72819,168 @@ class SshImportJobData extends ImportJobData{
 	 }
 }
 module.exports.SshImportJobData = SshImportJobData;
+
+/**
+ *
+ */
+class SsoBaseFilter extends RelatedFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaSsoBaseFilter';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getIdEqual() {
+	 	return this.idEqual;
+	 }
+	
+	/**
+	 * @param idEqual int 
+	 */
+	 setIdEqual(idEqual) {
+	 	this.idEqual = idEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getIdIn() {
+	 	return this.idIn;
+	 }
+	
+	/**
+	 * @param idIn string 
+	 */
+	 setIdIn(idIn) {
+	 	this.idIn = idIn;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getApplicationTypeEqual() {
+	 	return this.applicationTypeEqual;
+	 }
+	
+	/**
+	 * @param applicationTypeEqual string 
+	 */
+	 setApplicationTypeEqual(applicationTypeEqual) {
+	 	this.applicationTypeEqual = applicationTypeEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getPartnerIdEqual() {
+	 	return this.partnerIdEqual;
+	 }
+	
+	/**
+	 * @param partnerIdEqual int 
+	 */
+	 setPartnerIdEqual(partnerIdEqual) {
+	 	this.partnerIdEqual = partnerIdEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getDomainEqual() {
+	 	return this.domainEqual;
+	 }
+	
+	/**
+	 * @param domainEqual string 
+	 */
+	 setDomainEqual(domainEqual) {
+	 	this.domainEqual = domainEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getStatusEqual() {
+	 	return this.statusEqual;
+	 }
+	
+	/**
+	 * @param statusEqual int 
+	 */
+	 setStatusEqual(statusEqual) {
+	 	this.statusEqual = statusEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getStatusIn() {
+	 	return this.statusIn;
+	 }
+	
+	/**
+	 * @param statusIn string 
+	 */
+	 setStatusIn(statusIn) {
+	 	this.statusIn = statusIn;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getCreatedAtGreaterThanOrEqual() {
+	 	return this.createdAtGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * @param createdAtGreaterThanOrEqual int 
+	 */
+	 setCreatedAtGreaterThanOrEqual(createdAtGreaterThanOrEqual) {
+	 	this.createdAtGreaterThanOrEqual = createdAtGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getCreatedAtLessThanOrEqual() {
+	 	return this.createdAtLessThanOrEqual;
+	 }
+	
+	/**
+	 * @param createdAtLessThanOrEqual int 
+	 */
+	 setCreatedAtLessThanOrEqual(createdAtLessThanOrEqual) {
+	 	this.createdAtLessThanOrEqual = createdAtLessThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getRedirectUrlEqual() {
+	 	return this.redirectUrlEqual;
+	 }
+	
+	/**
+	 * @param redirectUrlEqual string 
+	 */
+	 setRedirectUrlEqual(redirectUrlEqual) {
+	 	this.redirectUrlEqual = redirectUrlEqual;
+	 }
+}
+module.exports.SsoBaseFilter = SsoBaseFilter;
 
 /**
  *
@@ -75581,6 +76491,30 @@ module.exports.ConfMapsFilter = ConfMapsFilter;
 /**
  *
  */
+class ConferenceEntryServerNodeBaseFilter extends EntryServerNodeFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaConferenceEntryServerNodeBaseFilter';
+	}
+}
+module.exports.ConferenceEntryServerNodeBaseFilter = ConferenceEntryServerNodeBaseFilter;
+
+/**
+ *
+ */
+class ConferenceServerNodeBaseFilter extends ServerNodeFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaConferenceServerNodeBaseFilter';
+	}
+}
+module.exports.ConferenceServerNodeBaseFilter = ConferenceServerNodeBaseFilter;
+
+/**
+ *
+ */
 class ConfigurableDistributionProfileBaseFilter extends DistributionProfileFilter{
 	
 	constructor(object = null) {
@@ -77375,6 +78309,18 @@ module.exports.LiveChannelSegmentFilter = LiveChannelSegmentFilter;
 /**
  *
  */
+class LiveClusterMediaServerNode extends MediaServerNode{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaLiveClusterMediaServerNode';
+	}
+}
+module.exports.LiveClusterMediaServerNode = LiveClusterMediaServerNode;
+
+/**
+ *
+ */
 class LiveEntryCompareAttributeCondition extends SearchComparableAttributeCondition{
 	
 	constructor(object = null) {
@@ -77963,6 +78909,30 @@ module.exports.PlaylistMatchAttributeCondition = PlaylistMatchAttributeCondition
 /**
  *
  */
+class PodcastDistributionProfileBaseFilter extends DistributionProfileFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaPodcastDistributionProfileBaseFilter';
+	}
+}
+module.exports.PodcastDistributionProfileBaseFilter = PodcastDistributionProfileBaseFilter;
+
+/**
+ *
+ */
+class PodcastDistributionProviderBaseFilter extends DistributionProviderFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaPodcastDistributionProviderBaseFilter';
+	}
+}
+module.exports.PodcastDistributionProviderBaseFilter = PodcastDistributionProviderBaseFilter;
+
+/**
+ *
+ */
 class PushNotificationTemplateBaseFilter extends EventNotificationTemplateFilter{
 	
 	constructor(object = null) {
@@ -77983,6 +78953,18 @@ class QuickPlayDistributionProviderBaseFilter extends DistributionProviderFilter
 	}
 }
 module.exports.QuickPlayDistributionProviderBaseFilter = QuickPlayDistributionProviderBaseFilter;
+
+/**
+ *
+ */
+class RatingCountFilter extends RatingCountBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaRatingCountFilter';
+	}
+}
+module.exports.RatingCountFilter = RatingCountFilter;
 
 /**
  *
@@ -78308,6 +79290,30 @@ module.exports.SftpDropFolder = SftpDropFolder;
 /**
  *
  */
+class SipEntryServerNodeBaseFilter extends EntryServerNodeFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaSipEntryServerNodeBaseFilter';
+	}
+}
+module.exports.SipEntryServerNodeBaseFilter = SipEntryServerNodeBaseFilter;
+
+/**
+ *
+ */
+class SipServerNodeBaseFilter extends ServerNodeFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaSipServerNodeBaseFilter';
+	}
+}
+module.exports.SipServerNodeBaseFilter = SipServerNodeBaseFilter;
+
+/**
+ *
+ */
 class SshUrlResource extends UrlResource{
 	
 	constructor(object = null) {
@@ -78361,6 +79367,18 @@ class SshUrlResource extends UrlResource{
 	 }
 }
 module.exports.SshUrlResource = SshUrlResource;
+
+/**
+ *
+ */
+class SsoFilter extends SsoBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaSsoFilter';
+	}
+}
+module.exports.SsoFilter = SsoFilter;
 
 /**
  *
@@ -79892,6 +80910,30 @@ module.exports.ComcastMrssDistributionProviderFilter = ComcastMrssDistributionPr
 /**
  *
  */
+class ConferenceEntryServerNodeFilter extends ConferenceEntryServerNodeBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaConferenceEntryServerNodeFilter';
+	}
+}
+module.exports.ConferenceEntryServerNodeFilter = ConferenceEntryServerNodeFilter;
+
+/**
+ *
+ */
+class ConferenceServerNodeFilter extends ConferenceServerNodeBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaConferenceServerNodeFilter';
+	}
+}
+module.exports.ConferenceServerNodeFilter = ConferenceServerNodeFilter;
+
+/**
+ *
+ */
 class ConfigurableDistributionProfileFilter extends ConfigurableDistributionProfileBaseFilter{
 	
 	constructor(object = null) {
@@ -80846,6 +81888,30 @@ module.exports.PlaylistBaseFilter = PlaylistBaseFilter;
 /**
  *
  */
+class PodcastDistributionProfileFilter extends PodcastDistributionProfileBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaPodcastDistributionProfileFilter';
+	}
+}
+module.exports.PodcastDistributionProfileFilter = PodcastDistributionProfileFilter;
+
+/**
+ *
+ */
+class PodcastDistributionProviderFilter extends PodcastDistributionProviderBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaPodcastDistributionProviderFilter';
+	}
+}
+module.exports.PodcastDistributionProviderFilter = PodcastDistributionProviderFilter;
+
+/**
+ *
+ */
 class PushNotificationTemplateFilter extends PushNotificationTemplateBaseFilter{
 	
 	constructor(object = null) {
@@ -80939,6 +82005,18 @@ module.exports.QuizUserEntryBaseFilter = QuizUserEntryBaseFilter;
 /**
  *
  */
+class RegistrationUserEntryFilter extends UserEntryFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaRegistrationUserEntryFilter';
+	}
+}
+module.exports.RegistrationUserEntryFilter = RegistrationUserEntryFilter;
+
+/**
+ *
+ */
 class RemoteDropFolderFilter extends RemoteDropFolderBaseFilter{
 	
 	constructor(object = null) {
@@ -81001,6 +82079,30 @@ class ServerFileResource extends GenericDataCenterContentResource{
 	 }
 }
 module.exports.ServerFileResource = ServerFileResource;
+
+/**
+ *
+ */
+class SipEntryServerNodeFilter extends SipEntryServerNodeBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaSipEntryServerNodeFilter';
+	}
+}
+module.exports.SipEntryServerNodeFilter = SipEntryServerNodeFilter;
+
+/**
+ *
+ */
+class SipServerNodeFilter extends SipServerNodeBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaSipServerNodeFilter';
+	}
+}
+module.exports.SipServerNodeFilter = SipServerNodeFilter;
 
 /**
  *
@@ -83387,6 +84489,18 @@ module.exports.LiveAssetFilter = LiveAssetFilter;
 /**
  *
  */
+class LiveClusterMediaServerNodeBaseFilter extends MediaServerNodeFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaLiveClusterMediaServerNodeBaseFilter';
+	}
+}
+module.exports.LiveClusterMediaServerNodeBaseFilter = LiveClusterMediaServerNodeBaseFilter;
+
+/**
+ *
+ */
 class LiveParamsFilter extends LiveParamsBaseFilter{
 	
 	constructor(object = null) {
@@ -83671,6 +84785,18 @@ class ImageFlavorParamsOutputBaseFilter extends FlavorParamsOutputFilter{
 	}
 }
 module.exports.ImageFlavorParamsOutputBaseFilter = ImageFlavorParamsOutputBaseFilter;
+
+/**
+ *
+ */
+class LiveClusterMediaServerNodeFilter extends LiveClusterMediaServerNodeBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaLiveClusterMediaServerNodeFilter';
+	}
+}
+module.exports.LiveClusterMediaServerNodeFilter = LiveClusterMediaServerNodeFilter;
 
 /**
  *

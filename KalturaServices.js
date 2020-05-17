@@ -4862,6 +4862,7 @@ module.exports.stats = stats;
  * @action add Adds a storage profile to the Kaltura DB.
  * @action get Get storage profile by id.
  * @action list .
+ * @action lockPendingFileSyncs storage profile lockPendingFileSyncs action locks file syncs for export by the file sync periodic worker.
  * @action update Update storage profile by id.
  * @action updateStatus .
  */
@@ -4900,6 +4901,25 @@ class storageProfile{
 		kparams.filter = filter;
 		kparams.pager = pager;
 		return new kaltura.RequestBuilder('storageprofile', 'list', kparams);
+	};
+	
+	/**
+	 * storage profile lockPendingFileSyncs action locks file syncs for export by the file sync periodic worker.
+	 * @param filter FileSyncFilter 
+	 * @param workerId int The id of the file sync import worker
+	 * @param storageProfileId int The id of the storage profile
+	 * @param maxCount int The maximum number of file syncs that should be returned
+	 * @param maxSize int The maximum total size of file syncs that should be returned, this limit may be exceeded by one file sync (optional, default: null)
+	 * @return KalturaLockFileSyncsResponse
+	 */
+	static lockPendingFileSyncs(filter, workerId, storageProfileId, maxCount, maxSize = null){
+		let kparams = {};
+		kparams.filter = filter;
+		kparams.workerId = workerId;
+		kparams.storageProfileId = storageProfileId;
+		kparams.maxCount = maxCount;
+		kparams.maxSize = maxSize;
+		return new kaltura.RequestBuilder('storageprofile', 'lockPendingFileSyncs', kparams);
 	};
 	
 	/**
@@ -6736,6 +6756,7 @@ module.exports.businessProcessCase = businessProcessCase;
  * The available service actions:
  * @action add Add caption asset.
  * @action delete .
+ * @action export manually export an asset.
  * @action get .
  * @action getRemotePaths Get remote storage existing paths for the asset.
  * @action getUrl Get download URL for the asset.
@@ -6767,6 +6788,19 @@ class captionAsset{
 		let kparams = {};
 		kparams.captionAssetId = captionAssetId;
 		return new kaltura.RequestBuilder('caption_captionasset', 'delete', kparams);
+	};
+	
+	/**
+	 * manually export an asset.
+	 * @param assetId string 
+	 * @param storageProfileId int 
+	 * @return KalturaFlavorAsset
+	 */
+	static exportAction(assetId, storageProfileId){
+		let kparams = {};
+		kparams.assetId = assetId;
+		kparams.storageProfileId = storageProfileId;
+		return new kaltura.RequestBuilder('caption_captionasset', 'export', kparams);
 	};
 	
 	/**
@@ -8707,6 +8741,130 @@ module.exports.integration = integration;
 
 
 /**
+ *Class definition for the Kaltura service: interactivity.
+ * The available service actions:
+ * @action add Add a interactivity object.
+ * @action delete Delete a interactivity object by entry id.
+ * @action get Retrieve a interactivity object by entry id.
+ * @action update Update an existing interactivity object.
+ */
+class interactivity{
+	
+	/**
+	 * Add a interactivity object.
+	 * @param entryId string 
+	 * @param kalturaInteractivity Interactivity 
+	 * @return KalturaInteractivity
+	 */
+	static add(entryId, kalturaInteractivity){
+		let kparams = {};
+		kparams.entryId = entryId;
+		kparams.kalturaInteractivity = kalturaInteractivity;
+		return new kaltura.RequestBuilder('interactivity_interactivity', 'add', kparams);
+	};
+	
+	/**
+	 * Delete a interactivity object by entry id.
+	 * @param entryId string 
+	 */
+	static deleteAction(entryId){
+		let kparams = {};
+		kparams.entryId = entryId;
+		return new kaltura.RequestBuilder('interactivity_interactivity', 'delete', kparams);
+	};
+	
+	/**
+	 * Retrieve a interactivity object by entry id.
+	 * @param entryId string 
+	 * @return KalturaInteractivity
+	 */
+	static get(entryId){
+		let kparams = {};
+		kparams.entryId = entryId;
+		return new kaltura.RequestBuilder('interactivity_interactivity', 'get', kparams);
+	};
+	
+	/**
+	 * Update an existing interactivity object.
+	 * @param entryId string 
+	 * @param version int 
+	 * @param kalturaInteractivity Interactivity 
+	 * @return KalturaInteractivity
+	 */
+	static update(entryId, version, kalturaInteractivity){
+		let kparams = {};
+		kparams.entryId = entryId;
+		kparams.version = version;
+		kparams.kalturaInteractivity = kalturaInteractivity;
+		return new kaltura.RequestBuilder('interactivity_interactivity', 'update', kparams);
+	};
+}
+module.exports.interactivity = interactivity;
+
+
+/**
+ *Class definition for the Kaltura service: volatileInteractivity.
+ * The available service actions:
+ * @action add add a volatile interactivity object.
+ * @action delete Delete a volatile interactivity object by entry id.
+ * @action get Retrieve a volatile interactivity object by entry id.
+ * @action update Update a volatile interactivity object.
+ */
+class volatileInteractivity{
+	
+	/**
+	 * add a volatile interactivity object.
+	 * @param entryId string 
+	 * @param kalturaVolatileInteractivity VolatileInteractivity 
+	 * @return KalturaVolatileInteractivity
+	 */
+	static add(entryId, kalturaVolatileInteractivity){
+		let kparams = {};
+		kparams.entryId = entryId;
+		kparams.kalturaVolatileInteractivity = kalturaVolatileInteractivity;
+		return new kaltura.RequestBuilder('interactivity_volatileinteractivity', 'add', kparams);
+	};
+	
+	/**
+	 * Delete a volatile interactivity object by entry id.
+	 * @param entryId string 
+	 */
+	static deleteAction(entryId){
+		let kparams = {};
+		kparams.entryId = entryId;
+		return new kaltura.RequestBuilder('interactivity_volatileinteractivity', 'delete', kparams);
+	};
+	
+	/**
+	 * Retrieve a volatile interactivity object by entry id.
+	 * @param entryId string 
+	 * @return KalturaVolatileInteractivity
+	 */
+	static get(entryId){
+		let kparams = {};
+		kparams.entryId = entryId;
+		return new kaltura.RequestBuilder('interactivity_volatileinteractivity', 'get', kparams);
+	};
+	
+	/**
+	 * Update a volatile interactivity object.
+	 * @param entryId string 
+	 * @param version int 
+	 * @param kalturaVolatileInteractivity VolatileInteractivity 
+	 * @return KalturaVolatileInteractivity
+	 */
+	static update(entryId, version, kalturaVolatileInteractivity){
+		let kparams = {};
+		kparams.entryId = entryId;
+		kparams.version = version;
+		kparams.kalturaVolatileInteractivity = kalturaVolatileInteractivity;
+		return new kaltura.RequestBuilder('interactivity_volatileinteractivity', 'update', kparams);
+	};
+}
+module.exports.volatileInteractivity = volatileInteractivity;
+
+
+/**
  *Class definition for the Kaltura service: like.
  * The available service actions:
  * @action checkLikeExists .
@@ -9412,8 +9570,10 @@ module.exports.rating = rating;
  *Class definition for the Kaltura service: vendorCatalogItem.
  * The available service actions:
  * @action add Allows you to add an service catalog item.
+ * @action addFromBulkUpload .
  * @action delete Delete vedor catalog item object.
  * @action get Retrieve specific catalog item by id.
+ * @action getServeUrl .
  * @action list List KalturaVendorCatalogItem objects.
  * @action update Update an existing vedor catalog item object.
  * @action updateStatus Update vendor catalog item status by id.
@@ -9429,6 +9589,22 @@ class vendorCatalogItem{
 		let kparams = {};
 		kparams.vendorCatalogItem = vendorCatalogItem;
 		return new kaltura.RequestBuilder('reach_vendorcatalogitem', 'add', kparams);
+	};
+	
+	/**
+	 * .
+	 * @param fileData file 
+	 * @param bulkUploadData BulkUploadJobData  (optional, default: null)
+	 * @param bulkUploadVendorCatalogItemData BulkUploadVendorCatalogItemData  (optional, default: null)
+	 * @return KalturaBulkUpload
+	 */
+	static addFromBulkUpload(fileData, bulkUploadData = null, bulkUploadVendorCatalogItemData = null){
+		let kparams = {};
+		let kfiles = {};
+		kfiles.fileData = fileData;
+		kparams.bulkUploadData = bulkUploadData;
+		kparams.bulkUploadVendorCatalogItemData = bulkUploadVendorCatalogItemData;
+		return new kaltura.RequestBuilder('reach_vendorcatalogitem', 'addFromBulkUpload', kparams, kfiles);
 	};
 	
 	/**
@@ -9450,6 +9626,17 @@ class vendorCatalogItem{
 		let kparams = {};
 		kparams.id = id;
 		return new kaltura.RequestBuilder('reach_vendorcatalogitem', 'get', kparams);
+	};
+	
+	/**
+	 * .
+	 * @param vendorPartnerId int  (optional, default: null)
+	 * @return string
+	 */
+	static getServeUrl(vendorPartnerId = null){
+		let kparams = {};
+		kparams.vendorPartnerId = vendorPartnerId;
+		return new kaltura.RequestBuilder('reach_vendorcatalogitem', 'getServeUrl', kparams);
 	};
 	
 	/**

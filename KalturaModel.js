@@ -3016,6 +3016,57 @@ module.exports.BaseEntryCloneOptionItem = BaseEntryCloneOptionItem;
 /**
  *
  */
+class BaseInteractivity extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaBaseInteractivity';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getData() {
+	 	return this.data;
+	 }
+	
+	/**
+	 * @param data string 
+	 */
+	 setData(data) {
+	 	this.data = data;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getVersion() {
+	 	return this.version;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getEntryId() {
+	 	return this.entryId;
+	 }
+	
+	/**
+	 * Interactivity update date as Unix timestamp (In seconds)
+	 * @return int
+	 */
+	 getUpdatedAt() {
+	 	return this.updatedAt;
+	 }
+}
+module.exports.BaseInteractivity = BaseInteractivity;
+
+/**
+ *
+ */
 class BaseResponseProfile extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -14578,6 +14629,14 @@ class EntryVendorTask extends kaltura.BaseObject{
 	 getServiceFeature() {
 	 	return this.serviceFeature;
 	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getTurnAroundTime() {
+	 	return this.turnAroundTime;
+	 }
 }
 module.exports.EntryVendorTask = EntryVendorTask;
 
@@ -16064,6 +16123,36 @@ class FileSync extends kaltura.BaseObject{
 	 */
 	 getOriginalId() {
 	 	return this.originalId;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSrcPath() {
+	 	return this.srcPath;
+	 }
+	
+	/**
+	 * @param srcPath string 
+	 */
+	 setSrcPath(srcPath) {
+	 	this.srcPath = srcPath;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSrcEncKey() {
+	 	return this.srcEncKey;
+	 }
+	
+	/**
+	 * @param srcEncKey string 
+	 */
+	 setSrcEncKey(srcEncKey) {
+	 	this.srcEncKey = srcEncKey;
 	 }
 }
 module.exports.FileSync = FileSync;
@@ -26862,6 +26951,21 @@ class ReportInputFilter extends ReportInputBaseFilter{
 	 setNodeIdsIn(nodeIdsIn) {
 	 	this.nodeIdsIn = nodeIdsIn;
 	 }
+	
+	/**
+	 * filter by categories ancestor
+	 * @return string
+	 */
+	 getCategoriesAncestorIdIn() {
+	 	return this.categoriesAncestorIdIn;
+	 }
+	
+	/**
+	 * @param categoriesAncestorIdIn string filter by categories ancestor
+	 */
+	 setCategoriesAncestorIdIn(categoriesAncestorIdIn) {
+	 	this.categoriesAncestorIdIn = categoriesAncestorIdIn;
+	 }
 }
 module.exports.ReportInputFilter = ReportInputFilter;
 
@@ -30596,30 +30700,60 @@ class StorageProfile extends kaltura.BaseObject{
 	 * 
 	 * @return string
 	 */
-	 getMappedPackagerUrl() {
-	 	return this.mappedPackagerUrl;
+	 getPackagerUrl() {
+	 	return this.packagerUrl;
 	 }
 	
 	/**
-	 * @param mappedPackagerUrl string 
+	 * @param packagerUrl string 
 	 */
-	 setMappedPackagerUrl(mappedPackagerUrl) {
-	 	this.mappedPackagerUrl = mappedPackagerUrl;
+	 setPackagerUrl(packagerUrl) {
+	 	this.packagerUrl = packagerUrl;
+	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getExportPeriodically() {
+	 	return this.exportPeriodically;
+	 }
+	
+	/**
+	 * @param exportPeriodically bool 
+	 */
+	 setExportPeriodically(exportPeriodically) {
+	 	this.exportPeriodically = exportPeriodically;
 	 }
 	
 	/**
 	 * 
 	 * @return string
 	 */
-	 getRegularPackagerUrl() {
-	 	return this.regularPackagerUrl;
+	 getExcludedFlavorParamsIds() {
+	 	return this.excludedFlavorParamsIds;
 	 }
 	
 	/**
-	 * @param regularPackagerUrl string 
+	 * @param excludedFlavorParamsIds string 
 	 */
-	 setRegularPackagerUrl(regularPackagerUrl) {
-	 	this.regularPackagerUrl = regularPackagerUrl;
+	 setExcludedFlavorParamsIds(excludedFlavorParamsIds) {
+	 	this.excludedFlavorParamsIds = excludedFlavorParamsIds;
+	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getShouldExportCaptions() {
+	 	return this.shouldExportCaptions;
+	 }
+	
+	/**
+	 * @param shouldExportCaptions bool 
+	 */
+	 setShouldExportCaptions(shouldExportCaptions) {
+	 	this.shouldExportCaptions = shouldExportCaptions;
 	 }
 }
 module.exports.StorageProfile = StorageProfile;
@@ -37746,6 +37880,243 @@ module.exports.BulkUploadResultUserEntry = BulkUploadResultUserEntry;
 /**
  *
  */
+class BulkUploadResultVendorCatalogItem extends BulkUploadResult{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaBulkUploadResultVendorCatalogItem';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getVendorCatalogItemId() {
+	 	return this.vendorCatalogItemId;
+	 }
+	
+	/**
+	 * @param vendorCatalogItemId int 
+	 */
+	 setVendorCatalogItemId(vendorCatalogItemId) {
+	 	this.vendorCatalogItemId = vendorCatalogItemId;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getVendorPartnerId() {
+	 	return this.vendorPartnerId;
+	 }
+	
+	/**
+	 * @param vendorPartnerId int 
+	 */
+	 setVendorPartnerId(vendorPartnerId) {
+	 	this.vendorPartnerId = vendorPartnerId;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getName() {
+	 	return this.name;
+	 }
+	
+	/**
+	 * @param name string 
+	 */
+	 setName(name) {
+	 	this.name = name;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSystemName() {
+	 	return this.systemName;
+	 }
+	
+	/**
+	 * @param systemName string 
+	 */
+	 setSystemName(systemName) {
+	 	this.systemName = systemName;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getServiceFeature() {
+	 	return this.serviceFeature;
+	 }
+	
+	/**
+	 * @param serviceFeature int 
+	 */
+	 setServiceFeature(serviceFeature) {
+	 	this.serviceFeature = serviceFeature;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getServiceType() {
+	 	return this.serviceType;
+	 }
+	
+	/**
+	 * @param serviceType int 
+	 */
+	 setServiceType(serviceType) {
+	 	this.serviceType = serviceType;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getTurnAroundTime() {
+	 	return this.turnAroundTime;
+	 }
+	
+	/**
+	 * @param turnAroundTime int 
+	 */
+	 setTurnAroundTime(turnAroundTime) {
+	 	this.turnAroundTime = turnAroundTime;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSourceLanguage() {
+	 	return this.sourceLanguage;
+	 }
+	
+	/**
+	 * @param sourceLanguage string 
+	 */
+	 setSourceLanguage(sourceLanguage) {
+	 	this.sourceLanguage = sourceLanguage;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getTargetLanguage() {
+	 	return this.targetLanguage;
+	 }
+	
+	/**
+	 * @param targetLanguage string 
+	 */
+	 setTargetLanguage(targetLanguage) {
+	 	this.targetLanguage = targetLanguage;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getOutputFormat() {
+	 	return this.outputFormat;
+	 }
+	
+	/**
+	 * @param outputFormat int 
+	 */
+	 setOutputFormat(outputFormat) {
+	 	this.outputFormat = outputFormat;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getEnableSpeakerId() {
+	 	return this.enableSpeakerId;
+	 }
+	
+	/**
+	 * @param enableSpeakerId int 
+	 */
+	 setEnableSpeakerId(enableSpeakerId) {
+	 	this.enableSpeakerId = enableSpeakerId;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getFixedPriceAddons() {
+	 	return this.fixedPriceAddons;
+	 }
+	
+	/**
+	 * @param fixedPriceAddons int 
+	 */
+	 setFixedPriceAddons(fixedPriceAddons) {
+	 	this.fixedPriceAddons = fixedPriceAddons;
+	 }
+	
+	/**
+	 * 
+	 * @return VendorCatalogItemPricing
+	 */
+	 getPricing() {
+	 	return this.pricing;
+	 }
+	
+	/**
+	 * @param pricing VendorCatalogItemPricing 
+	 */
+	 setPricing(pricing) {
+	 	this.pricing = pricing;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getFlavorParamsId() {
+	 	return this.flavorParamsId;
+	 }
+	
+	/**
+	 * @param flavorParamsId int 
+	 */
+	 setFlavorParamsId(flavorParamsId) {
+	 	this.flavorParamsId = flavorParamsId;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getClearAudioFlavorParamsId() {
+	 	return this.clearAudioFlavorParamsId;
+	 }
+	
+	/**
+	 * @param clearAudioFlavorParamsId int 
+	 */
+	 setClearAudioFlavorParamsId(clearAudioFlavorParamsId) {
+	 	this.clearAudioFlavorParamsId = clearAudioFlavorParamsId;
+	 }
+}
+module.exports.BulkUploadResultVendorCatalogItem = BulkUploadResultVendorCatalogItem;
+
+/**
+ *
+ */
 class BulkUploadUserData extends BulkUploadObjectData{
 	
 	constructor(object = null) {
@@ -37754,6 +38125,18 @@ class BulkUploadUserData extends BulkUploadObjectData{
 	}
 }
 module.exports.BulkUploadUserData = BulkUploadUserData;
+
+/**
+ *
+ */
+class BulkUploadVendorCatalogItemData extends BulkUploadObjectData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaBulkUploadVendorCatalogItemData';
+	}
+}
+module.exports.BulkUploadVendorCatalogItemData = BulkUploadVendorCatalogItemData;
 
 /**
  *
@@ -50055,6 +50438,18 @@ module.exports.IntegrationJobData = IntegrationJobData;
 /**
  *
  */
+class Interactivity extends BaseInteractivity{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaInteractivity';
+	}
+}
+module.exports.Interactivity = Interactivity;
+
+/**
+ *
+ */
 class IpAddressRestriction extends BaseRestriction{
 	
 	constructor(object = null) {
@@ -58759,6 +59154,18 @@ class VoicebaseJobProviderData extends IntegrationJobProviderData{
 	 }
 }
 module.exports.VoicebaseJobProviderData = VoicebaseJobProviderData;
+
+/**
+ *
+ */
+class VolatileInteractivity extends BaseInteractivity{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVolatileInteractivity';
+	}
+}
+module.exports.VolatileInteractivity = VolatileInteractivity;
 
 /**
  *
@@ -83307,6 +83714,36 @@ class PlaylistFilter extends PlaylistBaseFilter{
 		super(object);
 		this.objectType = 'KalturaPlaylistFilter';
 	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getPlayListTypeEqual() {
+	 	return this.playListTypeEqual;
+	 }
+	
+	/**
+	 * @param playListTypeEqual int 
+	 */
+	 setPlayListTypeEqual(playListTypeEqual) {
+	 	this.playListTypeEqual = playListTypeEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getPlayListTypeIn() {
+	 	return this.playListTypeIn;
+	 }
+	
+	/**
+	 * @param playListTypeIn string 
+	 */
+	 setPlayListTypeIn(playListTypeIn) {
+	 	this.playListTypeIn = playListTypeIn;
+	 }
 }
 module.exports.PlaylistFilter = PlaylistFilter;
 

@@ -16154,6 +16154,21 @@ class FileSync extends kaltura.BaseObject{
 	 setSrcEncKey(srcEncKey) {
 	 	this.srcEncKey = srcEncKey;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getStorageClass() {
+	 	return this.storageClass;
+	 }
+	
+	/**
+	 * @param storageClass string 
+	 */
+	 setStorageClass(storageClass) {
+	 	this.storageClass = storageClass;
+	 }
 }
 module.exports.FileSync = FileSync;
 
@@ -63652,6 +63667,21 @@ class CrossKalturaDistributionJobProviderData extends ConfigurableDistributionJo
 	 }
 	
 	/**
+	 * Key-value array where the keys are IDs of distributed fileassets in the source account and the values are the matching IDs in the target account
+	 * @return string
+	 */
+	 getDistributedFileAssets() {
+	 	return this.distributedFileAssets;
+	 }
+	
+	/**
+	 * @param distributedFileAssets string Key-value array where the keys are IDs of distributed fileassets in the source account and the values are the matching IDs in the target account
+	 */
+	 setDistributedFileAssets(distributedFileAssets) {
+	 	this.distributedFileAssets = distributedFileAssets;
+	 }
+	
+	/**
 	 * Key-value array where the keys are IDs of distributed caption assets in the source account and the values are the matching IDs in the target account
 	 * @return string
 	 */
@@ -73440,6 +73470,36 @@ class StorageExportJobData extends StorageJobData{
 	 setCreateLink(createLink) {
 	 	this.createLink = createLink;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getAssetId() {
+	 	return this.assetId;
+	 }
+	
+	/**
+	 * @param assetId string 
+	 */
+	 setAssetId(assetId) {
+	 	this.assetId = assetId;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getExternalUrl() {
+	 	return this.externalUrl;
+	 }
+	
+	/**
+	 * @param externalUrl string 
+	 */
+	 setExternalUrl(externalUrl) {
+	 	this.externalUrl = externalUrl;
+	 }
 }
 module.exports.StorageExportJobData = StorageExportJobData;
 
@@ -76466,6 +76526,21 @@ class AmazonS3StorageExportJobData extends StorageExportJobData{
 	 */
 	 setEndPoint(endPoint) {
 	 	this.endPoint = endPoint;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getStorageClass() {
+	 	return this.storageClass;
+	 }
+	
+	/**
+	 * @param storageClass string 
+	 */
+	 setStorageClass(storageClass) {
+	 	this.storageClass = storageClass;
 	 }
 }
 module.exports.AmazonS3StorageExportJobData = AmazonS3StorageExportJobData;

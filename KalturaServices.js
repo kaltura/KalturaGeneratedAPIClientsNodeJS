@@ -4909,10 +4909,10 @@ class storageProfile{
 	 * @param workerId int The id of the file sync import worker
 	 * @param storageProfileId int The id of the storage profile
 	 * @param maxCount int The maximum number of file syncs that should be returned
-	 * @param maxSize int The maximum total size of file syncs that should be returned, this limit may be exceeded by one file sync (optional, default: null)
+	 * @param maxSize int The maximum total size of file syncs that should be returned, this limit may be exceeded by one file sync (optional, default: 9223372036854775807)
 	 * @return KalturaLockFileSyncsResponse
 	 */
-	static lockPendingFileSyncs(filter, workerId, storageProfileId, maxCount, maxSize = null){
+	static lockPendingFileSyncs(filter, workerId, storageProfileId, maxCount, maxSize = 9223372036854775807){
 		let kparams = {};
 		kparams.filter = filter;
 		kparams.workerId = workerId;

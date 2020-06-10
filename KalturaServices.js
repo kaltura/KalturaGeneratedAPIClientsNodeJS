@@ -5907,6 +5907,7 @@ module.exports.userRole = userRole;
  * @action update Updates an existing user object.
  * You can also use this action to update the userId.
  * @action updateLoginData Updates a user's login data: email, password, name.
+ * @action validateHashKey Validate hash key.
  */
 class user{
 	
@@ -6195,6 +6196,17 @@ class user{
 		kparams.newLastName = newLastName;
 		kparams.otp = otp;
 		return new kaltura.RequestBuilder('user', 'updateLoginData', kparams);
+	};
+	
+	/**
+	 * Validate hash key.
+	 * @param hashKey string The hash key used to identify the user (retrieved by email)
+	 * @return KalturaAuthentication
+	 */
+	static validateHashKey(hashKey){
+		let kparams = {};
+		kparams.hashKey = hashKey;
+		return new kaltura.RequestBuilder('user', 'validateHashKey', kparams);
 	};
 }
 module.exports.user = user;

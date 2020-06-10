@@ -23405,6 +23405,21 @@ class BaseEntryFilter extends BaseEntryBaseFilter{
 	
 	/**
 	 * 
+	 * @return string
+	 */
+	 getExcludedFreeTextGroups() {
+	 	return this.excludedFreeTextGroups;
+	 }
+	
+	/**
+	 * @param excludedFreeTextGroups string 
+	 */
+	 setExcludedFreeTextGroups(excludedFreeTextGroups) {
+	 	this.excludedFreeTextGroups = excludedFreeTextGroups;
+	 }
+	
+	/**
+	 * 
 	 * @return int
 	 */
 	 getIsRoot() {
@@ -34542,63 +34557,6 @@ class AddEntryVendorTaskAction extends RuleAction{
 	 }
 }
 module.exports.AddEntryVendorTaskAction = AddEntryVendorTaskAction;
-
-/**
- *
- */
-class AlignmentVendorTaskData extends VendorTaskData{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaAlignmentVendorTaskData';
-	}
-	
-	/**
-	 * The id of the text transcript object the vendor should use while runing the alignment task
-	 * @return string
-	 */
-	 getTextTranscriptAssetId() {
-	 	return this.textTranscriptAssetId;
-	 }
-	
-	/**
-	 * @param textTranscriptAssetId string The id of the text transcript object the vendor should use while runing the alignment task
-	 */
-	 setTextTranscriptAssetId(textTranscriptAssetId) {
-	 	this.textTranscriptAssetId = textTranscriptAssetId;
-	 }
-	
-	/**
-	 * Optional - The id of the json transcript object the vendor should update once alignment task processing is done
-	 * @return string
-	 */
-	 getJsonTranscriptAssetId() {
-	 	return this.jsonTranscriptAssetId;
-	 }
-	
-	/**
-	 * @param jsonTranscriptAssetId string Optional - The id of the json transcript object the vendor should update once alignment task processing is done
-	 */
-	 setJsonTranscriptAssetId(jsonTranscriptAssetId) {
-	 	this.jsonTranscriptAssetId = jsonTranscriptAssetId;
-	 }
-	
-	/**
-	 * Optional - The id of the caption asset object the vendor should update once alignment task processing is done
-	 * @return string
-	 */
-	 getCaptionAssetId() {
-	 	return this.captionAssetId;
-	 }
-	
-	/**
-	 * @param captionAssetId string Optional - The id of the caption asset object the vendor should update once alignment task processing is done
-	 */
-	 setCaptionAssetId(captionAssetId) {
-	 	this.captionAssetId = captionAssetId;
-	 }
-}
-module.exports.AlignmentVendorTaskData = AlignmentVendorTaskData;
 
 /**
  *
@@ -58536,6 +58494,33 @@ module.exports.VendorCredit = VendorCredit;
 /**
  *
  */
+class VendorTaskDataCaptionAsset extends VendorTaskData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorTaskDataCaptionAsset';
+	}
+	
+	/**
+	 * Optional - The id of the caption asset object
+	 * @return string
+	 */
+	 getCaptionAssetId() {
+	 	return this.captionAssetId;
+	 }
+	
+	/**
+	 * @param captionAssetId string Optional - The id of the caption asset object
+	 */
+	 setCaptionAssetId(captionAssetId) {
+	 	this.captionAssetId = captionAssetId;
+	 }
+}
+module.exports.VendorTaskDataCaptionAsset = VendorTaskDataCaptionAsset;
+
+/**
+ *
+ */
 class ViewHistoryUserEntry extends UserEntry{
 	
 	constructor(object = null) {
@@ -60571,6 +60556,48 @@ class AkamaiUniversalProvisionJobData extends ProvisionJobData{
 	 }
 }
 module.exports.AkamaiUniversalProvisionJobData = AkamaiUniversalProvisionJobData;
+
+/**
+ *
+ */
+class AlignmentVendorTaskData extends VendorTaskDataCaptionAsset{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaAlignmentVendorTaskData';
+	}
+	
+	/**
+	 * The id of the text transcript object the vendor should use while runing the alignment task
+	 * @return string
+	 */
+	 getTextTranscriptAssetId() {
+	 	return this.textTranscriptAssetId;
+	 }
+	
+	/**
+	 * @param textTranscriptAssetId string The id of the text transcript object the vendor should use while runing the alignment task
+	 */
+	 setTextTranscriptAssetId(textTranscriptAssetId) {
+	 	this.textTranscriptAssetId = textTranscriptAssetId;
+	 }
+	
+	/**
+	 * Optional - The id of the json transcript object the vendor should update once alignment task processing is done
+	 * @return string
+	 */
+	 getJsonTranscriptAssetId() {
+	 	return this.jsonTranscriptAssetId;
+	 }
+	
+	/**
+	 * @param jsonTranscriptAssetId string Optional - The id of the json transcript object the vendor should update once alignment task processing is done
+	 */
+	 setJsonTranscriptAssetId(jsonTranscriptAssetId) {
+	 	this.jsonTranscriptAssetId = jsonTranscriptAssetId;
+	 }
+}
+module.exports.AlignmentVendorTaskData = AlignmentVendorTaskData;
 
 /**
  *
@@ -63565,6 +63592,21 @@ class ConvertJobData extends ConvartableJobData{
 	 */
 	 setEngineMessage(engineMessage) {
 	 	this.engineMessage = engineMessage;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getUserCpu() {
+	 	return this.userCpu;
+	 }
+	
+	/**
+	 * @param userCpu int 
+	 */
+	 setUserCpu(userCpu) {
+	 	this.userCpu = userCpu;
 	 }
 }
 module.exports.ConvertJobData = ConvertJobData;
@@ -73637,6 +73679,18 @@ class TimedThumbAsset extends ThumbAsset{
 	 }
 }
 module.exports.TimedThumbAsset = TimedThumbAsset;
+
+/**
+ *
+ */
+class TranslationVendorTaskData extends VendorTaskDataCaptionAsset{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaTranslationVendorTaskData';
+	}
+}
+module.exports.TranslationVendorTaskData = TranslationVendorTaskData;
 
 /**
  *

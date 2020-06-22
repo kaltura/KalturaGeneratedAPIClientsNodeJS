@@ -23420,6 +23420,21 @@ class BaseEntryFilter extends BaseEntryBaseFilter{
 	
 	/**
 	 * 
+	 * @return string
+	 */
+	 getDescriptionLike() {
+	 	return this.descriptionLike;
+	 }
+	
+	/**
+	 * @param descriptionLike string 
+	 */
+	 setDescriptionLike(descriptionLike) {
+	 	this.descriptionLike = descriptionLike;
+	 }
+	
+	/**
+	 * 
 	 * @return int
 	 */
 	 getIsRoot() {

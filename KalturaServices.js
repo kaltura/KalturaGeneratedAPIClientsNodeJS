@@ -8788,11 +8788,13 @@ class interactivity{
 	/**
 	 * Retrieve a interactivity object by entry id.
 	 * @param entryId string 
+	 * @param dataFilter InteractivityDataFilter  (optional, default: null)
 	 * @return KalturaInteractivity
 	 */
-	static get(entryId){
+	static get(entryId, dataFilter = null){
 		let kparams = {};
 		kparams.entryId = entryId;
+		kparams.dataFilter = dataFilter;
 		return new kaltura.RequestBuilder('interactivity_interactivity', 'get', kparams);
 	};
 	

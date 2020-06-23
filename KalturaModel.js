@@ -18734,6 +18734,126 @@ module.exports.IntegrationJobTriggerData = IntegrationJobTriggerData;
 /**
  *
  */
+class InteractivityDataFieldsFilter extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaInteractivityDataFieldsFilter';
+	}
+	
+	/**
+	 * A string containing CSV list of fields to include
+	 * @return string
+	 */
+	 getFields() {
+	 	return this.fields;
+	 }
+	
+	/**
+	 * @param fields string A string containing CSV list of fields to include
+	 */
+	 setFields(fields) {
+	 	this.fields = fields;
+	 }
+}
+module.exports.InteractivityDataFieldsFilter = InteractivityDataFieldsFilter;
+
+/**
+ *
+ */
+class InteractivityRootFilter extends InteractivityDataFieldsFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaInteractivityRootFilter';
+	}
+}
+module.exports.InteractivityRootFilter = InteractivityRootFilter;
+
+/**
+ *
+ */
+class InteractivityNodeFilter extends InteractivityDataFieldsFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaInteractivityNodeFilter';
+	}
+}
+module.exports.InteractivityNodeFilter = InteractivityNodeFilter;
+
+/**
+ *
+ */
+class InteractivityInteractionFilter extends InteractivityDataFieldsFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaInteractivityInteractionFilter';
+	}
+}
+module.exports.InteractivityInteractionFilter = InteractivityInteractionFilter;
+
+/**
+ *
+ */
+class InteractivityDataFilter extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaInteractivityDataFilter';
+	}
+	
+	/**
+	 * 
+	 * @return InteractivityRootFilter
+	 */
+	 getRootFilter() {
+	 	return this.rootFilter;
+	 }
+	
+	/**
+	 * @param rootFilter InteractivityRootFilter 
+	 */
+	 setRootFilter(rootFilter) {
+	 	this.rootFilter = rootFilter;
+	 }
+	
+	/**
+	 * 
+	 * @return InteractivityNodeFilter
+	 */
+	 getNodeFilter() {
+	 	return this.nodeFilter;
+	 }
+	
+	/**
+	 * @param nodeFilter InteractivityNodeFilter 
+	 */
+	 setNodeFilter(nodeFilter) {
+	 	this.nodeFilter = nodeFilter;
+	 }
+	
+	/**
+	 * 
+	 * @return InteractivityInteractionFilter
+	 */
+	 getInteractionFilter() {
+	 	return this.interactionFilter;
+	 }
+	
+	/**
+	 * @param interactionFilter InteractivityInteractionFilter 
+	 */
+	 setInteractionFilter(interactionFilter) {
+	 	this.interactionFilter = interactionFilter;
+	 }
+}
+module.exports.InteractivityDataFilter = InteractivityDataFilter;
+
+/**
+ *
+ */
 class FileSyncListResponse extends ListResponse{
 	
 	constructor(object = null) {
@@ -27010,6 +27130,21 @@ class ReportInputFilter extends ReportInputBaseFilter{
 	 */
 	 setCategoriesAncestorIdIn(categoriesAncestorIdIn) {
 	 	this.categoriesAncestorIdIn = categoriesAncestorIdIn;
+	 }
+	
+	/**
+	 * filter by hotspot id
+	 * @return string
+	 */
+	 getHotspotIdIn() {
+	 	return this.hotspotIdIn;
+	 }
+	
+	/**
+	 * @param hotspotIdIn string filter by hotspot id
+	 */
+	 setHotspotIdIn(hotspotIdIn) {
+	 	this.hotspotIdIn = hotspotIdIn;
 	 }
 }
 module.exports.ReportInputFilter = ReportInputFilter;

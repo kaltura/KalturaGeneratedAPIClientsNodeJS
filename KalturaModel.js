@@ -30935,6 +30935,21 @@ class StorageProfile extends kaltura.BaseObject{
 	 setShouldExportCaptions(shouldExportCaptions) {
 	 	this.shouldExportCaptions = shouldExportCaptions;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getExcludedEntryTypes() {
+	 	return this.excludedEntryTypes;
+	 }
+	
+	/**
+	 * @param excludedEntryTypes string 
+	 */
+	 setExcludedEntryTypes(excludedEntryTypes) {
+	 	this.excludedEntryTypes = excludedEntryTypes;
+	 }
 }
 module.exports.StorageProfile = StorageProfile;
 

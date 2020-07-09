@@ -2998,6 +2998,36 @@ class BaseEntry extends kaltura.BaseObject{
 	 setDisplayInSearch(displayInSearch) {
 	 	this.displayInSearch = displayInSearch;
 	 }
+	
+	/**
+	 * Entry application
+	 * @return string
+	 */
+	 getApplication() {
+	 	return this.application;
+	 }
+	
+	/**
+	 * @param application string Entry application
+	 */
+	 setApplication(application) {
+	 	this.application = application;
+	 }
+	
+	/**
+	 * Entry application version
+	 * @return string
+	 */
+	 getApplicationVersion() {
+	 	return this.applicationVersion;
+	 }
+	
+	/**
+	 * @param applicationVersion string Entry application version
+	 */
+	 setApplicationVersion(applicationVersion) {
+	 	this.applicationVersion = applicationVersion;
+	 }
 }
 module.exports.BaseEntry = BaseEntry;
 
@@ -15265,6 +15295,21 @@ class MediaEntry extends PlayableEntry{
 	 */
 	 setSourceType(sourceType) {
 	 	this.sourceType = sourceType;
+	 }
+	
+	/**
+	 * The source version of the entry
+	 * @return string
+	 */
+	 getSourceVersion() {
+	 	return this.sourceVersion;
+	 }
+	
+	/**
+	 * @param sourceVersion string The source version of the entry
+	 */
+	 setSourceVersion(sourceVersion) {
+	 	this.sourceVersion = sourceVersion;
 	 }
 	
 	/**

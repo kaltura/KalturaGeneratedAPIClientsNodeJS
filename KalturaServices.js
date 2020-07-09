@@ -9803,6 +9803,7 @@ module.exports.reachProfile = reachProfile;
  * @action extendAccessKey Extend access key in case the existing one has expired.
  * @action get Retrieve specific entry vendor task by id.
  * @action getJobs get KalturaEntryVendorTask objects for specific vendor partner.
+ * @action getServeUrl .
  * @action list List KalturaEntryVendorTask objects.
  * @action reject Reject entry vendor task for execution.
  * @action serveCsv Will serve a requested csv.
@@ -9890,6 +9891,23 @@ class entryVendorTask{
 		kparams.filter = filter;
 		kparams.pager = pager;
 		return new kaltura.RequestBuilder('reach_entryvendortask', 'getJobs', kparams);
+	};
+	
+	/**
+	 * .
+	 * @param filterType string  (optional, default: null)
+	 * @param filterInput int  (optional, default: null)
+	 * @param status int  (optional, default: null)
+	 * @param dueDate string  (optional, default: null)
+	 * @return string
+	 */
+	static getServeUrl(filterType = null, filterInput = null, status = null, dueDate = null){
+		let kparams = {};
+		kparams.filterType = filterType;
+		kparams.filterInput = filterInput;
+		kparams.status = status;
+		kparams.dueDate = dueDate;
+		return new kaltura.RequestBuilder('reach_entryvendortask', 'getServeUrl', kparams);
 	};
 	
 	/**

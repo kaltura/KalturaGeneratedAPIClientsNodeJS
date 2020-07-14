@@ -1048,6 +1048,13 @@ class CuePoint extends kaltura.BaseObject{
 	 }
 	
 	/**
+	 * @param userId string 
+	 */
+	 setUserId(userId) {
+	 	this.userId = userId;
+	 }
+	
+	/**
 	 * 
 	 * @return string
 	 */
@@ -68437,6 +68444,21 @@ class HttpNotificationDispatchJobData extends EventNotificationDispatchJobData{
 	 */
 	 setMethod(method) {
 	 	this.method = method;
+	 }
+	
+	/**
+	 * The type of the data to send
+	 * @return string
+	 */
+	 getContentType() {
+	 	return this.contentType;
+	 }
+	
+	/**
+	 * @param contentType string The type of the data to send
+	 */
+	 setContentType(contentType) {
+	 	this.contentType = contentType;
 	 }
 	
 	/**

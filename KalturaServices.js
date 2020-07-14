@@ -10510,18 +10510,19 @@ class pexip{
 	 * .
 	 * @param entryId string 
 	 * @param regenerate bool  (optional, default: false)
+	 * @param sourceType int  (optional, default: 1)
 	 * @return string
 	 */
-	static generateSipUrl(entryId, regenerate = false){
+	static generateSipUrl(entryId, regenerate = false, sourceType = 1){
 		let kparams = {};
 		kparams.entryId = entryId;
 		kparams.regenerate = regenerate;
+		kparams.sourceType = sourceType;
 		return new kaltura.RequestBuilder('sip_pexip', 'generateSipUrl', kparams);
 	};
 	
 	/**
 	 * .
-	 * @return bool
 	 */
 	static handleIncomingCall(){
 		let kparams = {};

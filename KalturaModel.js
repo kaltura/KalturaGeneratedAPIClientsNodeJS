@@ -33277,6 +33277,21 @@ class Widget extends kaltura.BaseObject{
 	 setRoles(roles) {
 	 	this.roles = roles;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getPrivileges() {
+	 	return this.privileges;
+	 }
+	
+	/**
+	 * @param privileges string 
+	 */
+	 setPrivileges(privileges) {
+	 	this.privileges = privileges;
+	 }
 }
 module.exports.Widget = Widget;
 

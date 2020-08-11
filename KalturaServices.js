@@ -6131,10 +6131,12 @@ class user{
 	/**
 	 * Reset user's password and send the user an email to generate a new one.
 	 * @param email string The user's email address (login email)
+	 * @param linkType string kmc or kms (optional, enum: KalturaResetPassLinkType, default: null)
 	 */
-	static resetPassword(email){
+	static resetPassword(email, linkType = null){
 		let kparams = {};
 		kparams.email = email;
+		kparams.linkType = linkType;
 		return new kaltura.RequestBuilder('user', 'resetPassword', kparams);
 	};
 	
@@ -8111,6 +8113,8 @@ module.exports.drmLicenseAccess = drmLicenseAccess;
  * @action getExclusiveDropFolder getExclusive KalturaDropFolder object.
  * @action list List KalturaDropFolder objects.
  * @action update Update an existing KalturaDropFolder object.
+ * @action updateBasicFields .
+ * @action updateStatus .
  */
 class dropFolder{
 	
@@ -8199,6 +8203,31 @@ class dropFolder{
 		kparams.dropFolderId = dropFolderId;
 		kparams.dropFolder = dropFolder;
 		return new kaltura.RequestBuilder('dropfolder_dropfolder', 'update', kparams);
+	};
+	
+	/**
+	 * .
+	 * @param dropFolderId int 
+	 * @param dropFolder BasicFieldsDropFolder Id
+	 * @return KalturaDropFolder
+	 */
+	static updateBasicFields(dropFolderId, dropFolder){
+		let kparams = {};
+		kparams.dropFolderId = dropFolderId;
+		kparams.dropFolder = dropFolder;
+		return new kaltura.RequestBuilder('dropfolder_dropfolder', 'updateBasicFields', kparams);
+	};
+	
+	/**
+	 * .
+	 * @param dropFolderId int 
+	 * @param status int  (enum: KalturaDropFolderStatus)
+	 */
+	static updateStatus(dropFolderId, status){
+		let kparams = {};
+		kparams.dropFolderId = dropFolderId;
+		kparams.status = status;
+		return new kaltura.RequestBuilder('dropfolder_dropfolder', 'updateStatus', kparams);
 	};
 }
 module.exports.dropFolder = dropFolder;
@@ -10510,7 +10539,7 @@ class pexip{
 	 * .
 	 * @param entryId string 
 	 * @param regenerate bool  (optional, default: false)
-	 * @param sourceType int  (optional, default: 1)
+	 * @param sourceType int  (optional, enum: KalturaSipSourceType, default: 1)
 	 * @return string
 	 */
 	static generateSipUrl(entryId, regenerate = false, sourceType = 1){

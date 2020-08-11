@@ -22171,6 +22171,14 @@ class LiveStreamEntry extends LiveEntry{
 	 getSipToken() {
 	 	return this.sipToken;
 	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getSipSourceType() {
+	 	return this.sipSourceType;
+	 }
 }
 module.exports.LiveStreamEntry = LiveStreamEntry;
 

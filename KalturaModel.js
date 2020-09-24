@@ -13579,6 +13579,36 @@ class User extends BaseUser{
 	 setLoginEnabled(loginEnabled) {
 	 	this.loginEnabled = loginEnabled;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getRegistrationInfo() {
+	 	return this.registrationInfo;
+	 }
+	
+	/**
+	 * @param registrationInfo string 
+	 */
+	 setRegistrationInfo(registrationInfo) {
+	 	this.registrationInfo = registrationInfo;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getAttendanceInfo() {
+	 	return this.attendanceInfo;
+	 }
+	
+	/**
+	 * @param attendanceInfo string 
+	 */
+	 setAttendanceInfo(attendanceInfo) {
+	 	this.attendanceInfo = attendanceInfo;
+	 }
 }
 module.exports.User = User;
 

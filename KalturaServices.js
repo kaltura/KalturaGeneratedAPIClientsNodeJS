@@ -2780,10 +2780,10 @@ class liveStream{
 	/**
 	 * Delivering the status of a live stream (on-air/offline) if it is possible.
 	 * @param id string ID of the live stream
-	 * @param protocol string protocol of the stream to test (enum: KalturaPlaybackProtocol)
+	 * @param protocol string protocol of the stream to test (optional, enum: KalturaPlaybackProtocol, default: null)
 	 * @return bool
 	 */
-	static isLive(id, protocol){
+	static isLive(id, protocol = null){
 		let kparams = {};
 		kparams.id = id;
 		kparams.protocol = protocol;

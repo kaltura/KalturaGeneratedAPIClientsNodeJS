@@ -1629,6 +1629,14 @@ class Asset extends kaltura.BaseObject{
 	 setActualSourceAssetParamsIds(actualSourceAssetParamsIds) {
 	 	this.actualSourceAssetParamsIds = actualSourceAssetParamsIds;
 	 }
+	
+	/**
+	 * The size (in Bytes) of the asset
+	 * @return int
+	 */
+	 getSizeInBytes() {
+	 	return this.sizeInBytes;
+	 }
 }
 module.exports.Asset = Asset;
 
@@ -5268,6 +5276,14 @@ class Partner extends kaltura.BaseObject{
 	 */
 	 getIgnoreSeoLinks() {
 	 	return this.ignoreSeoLinks;
+	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getBlockDirectLogin() {
+	 	return this.blockDirectLogin;
 	 }
 	
 	/**
@@ -26591,6 +26607,48 @@ module.exports.ReportBaseTotal = ReportBaseTotal;
 /**
  *
  */
+class ReportExportFile extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaReportExportFile';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getFileId() {
+	 	return this.fileId;
+	 }
+	
+	/**
+	 * @param fileId string 
+	 */
+	 setFileId(fileId) {
+	 	this.fileId = fileId;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getFileName() {
+	 	return this.fileName;
+	 }
+	
+	/**
+	 * @param fileName string 
+	 */
+	 setFileName(fileName) {
+	 	this.fileName = fileName;
+	 }
+}
+module.exports.ReportExportFile = ReportExportFile;
+
+/**
+ *
+ */
 class ReportInputBaseFilter extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -27451,6 +27509,21 @@ class ReportExportParams extends kaltura.BaseObject{
 	 */
 	 setReportItems(reportItems) {
 	 	this.reportItems = reportItems;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getReportsItemsGroup() {
+	 	return this.reportsItemsGroup;
+	 }
+	
+	/**
+	 * @param reportsItemsGroup string 
+	 */
+	 setReportsItemsGroup(reportsItemsGroup) {
+	 	this.reportsItemsGroup = reportsItemsGroup;
 	 }
 }
 module.exports.ReportExportParams = ReportExportParams;
@@ -30649,6 +30722,21 @@ class StorageProfile extends kaltura.BaseObject{
 	 */
 	 setStorageBaseDir(storageBaseDir) {
 	 	this.storageBaseDir = storageBaseDir;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getPathPrefix() {
+	 	return this.pathPrefix;
+	 }
+	
+	/**
+	 * @param pathPrefix string 
+	 */
+	 setPathPrefix(pathPrefix) {
+	 	this.pathPrefix = pathPrefix;
 	 }
 	
 	/**
@@ -54327,6 +54415,36 @@ class ReportExportJobData extends JobData{
 	 setFilePaths(filePaths) {
 	 	this.filePaths = filePaths;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getReportsGroup() {
+	 	return this.reportsGroup;
+	 }
+	
+	/**
+	 * @param reportsGroup string 
+	 */
+	 setReportsGroup(reportsGroup) {
+	 	this.reportsGroup = reportsGroup;
+	 }
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getFiles() {
+	 	return this.files;
+	 }
+	
+	/**
+	 * @param files array 
+	 */
+	 setFiles(files) {
+	 	this.files = files;
+	 }
 }
 module.exports.ReportExportJobData = ReportExportJobData;
 
@@ -63866,6 +63984,21 @@ class ConvertJobData extends ConvartableJobData{
 	
 	/**
 	 * 
+	 * @return string
+	 */
+	 getDestFileSyncSharedPath() {
+	 	return this.destFileSyncSharedPath;
+	 }
+	
+	/**
+	 * @param destFileSyncSharedPath string 
+	 */
+	 setDestFileSyncSharedPath(destFileSyncSharedPath) {
+	 	this.destFileSyncSharedPath = destFileSyncSharedPath;
+	 }
+	
+	/**
+	 * 
 	 * @return int
 	 */
 	 getUserCpu() {
@@ -69743,6 +69876,36 @@ class LiveStreamScheduleEvent extends EntryScheduleEvent{
 	 */
 	 setProjectedAudience(projectedAudience) {
 	 	this.projectedAudience = projectedAudience;
+	 }
+	
+	/**
+	 * The entry ID of the source entry (for simulive)
+	 * @return string
+	 */
+	 getSourceEntryId() {
+	 	return this.sourceEntryId;
+	 }
+	
+	/**
+	 * @param sourceEntryId string The entry ID of the source entry (for simulive)
+	 */
+	 setSourceEntryId(sourceEntryId) {
+	 	this.sourceEntryId = sourceEntryId;
+	 }
+	
+	/**
+	 * The time relative time before the startTime considered as preStart time
+	 * @return int
+	 */
+	 getPreStartTime() {
+	 	return this.preStartTime;
+	 }
+	
+	/**
+	 * @param preStartTime int The time relative time before the startTime considered as preStart time
+	 */
+	 setPreStartTime(preStartTime) {
+	 	this.preStartTime = preStartTime;
 	 }
 }
 module.exports.LiveStreamScheduleEvent = LiveStreamScheduleEvent;

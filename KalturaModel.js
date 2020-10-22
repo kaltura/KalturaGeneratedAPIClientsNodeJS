@@ -41624,33 +41624,6 @@ module.exports.DeliveryProfileAkamaiHds = DeliveryProfileAkamaiHds;
 /**
  *
  */
-class DeliveryProfileAkamaiHttp extends DeliveryProfile{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaDeliveryProfileAkamaiHttp';
-	}
-	
-	/**
-	 * Should we use intelliseek
-	 * @return bool
-	 */
-	 getUseIntelliseek() {
-	 	return this.useIntelliseek;
-	 }
-	
-	/**
-	 * @param useIntelliseek bool Should we use intelliseek
-	 */
-	 setUseIntelliseek(useIntelliseek) {
-	 	this.useIntelliseek = useIntelliseek;
-	 }
-}
-module.exports.DeliveryProfileAkamaiHttp = DeliveryProfileAkamaiHttp;
-
-/**
- *
- */
 class DeliveryProfileBaseFilter extends Filter{
 	
 	constructor(object = null) {
@@ -41984,33 +41957,6 @@ module.exports.DeliveryProfileGenericHds = DeliveryProfileGenericHds;
 /**
  *
  */
-class DeliveryProfileGenericHttp extends DeliveryProfile{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaDeliveryProfileGenericHttp';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getPattern() {
-	 	return this.pattern;
-	 }
-	
-	/**
-	 * @param pattern string 
-	 */
-	 setPattern(pattern) {
-	 	this.pattern = pattern;
-	 }
-}
-module.exports.DeliveryProfileGenericHttp = DeliveryProfileGenericHttp;
-
-/**
- *
- */
 class DeliveryProfileGenericSilverLight extends DeliveryProfile{
 	
 	constructor(object = null) {
@@ -42034,6 +41980,33 @@ class DeliveryProfileGenericSilverLight extends DeliveryProfile{
 	 }
 }
 module.exports.DeliveryProfileGenericSilverLight = DeliveryProfileGenericSilverLight;
+
+/**
+ *
+ */
+class DeliveryProfileHttp extends DeliveryProfile{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaDeliveryProfileHttp';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getMaxSize() {
+	 	return this.maxSize;
+	 }
+	
+	/**
+	 * @param maxSize int 
+	 */
+	 setMaxSize(maxSize) {
+	 	this.maxSize = maxSize;
+	 }
+}
+module.exports.DeliveryProfileHttp = DeliveryProfileHttp;
 
 /**
  *
@@ -57744,6 +57717,33 @@ module.exports.UrlRecognizerAkamaiG2O = UrlRecognizerAkamaiG2O;
 /**
  *
  */
+class UrlRecognizerKaltura extends UrlRecognizer{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaUrlRecognizerKaltura';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getKey() {
+	 	return this.key;
+	 }
+	
+	/**
+	 * @param key string 
+	 */
+	 setKey(key) {
+	 	this.key = key;
+	 }
+}
+module.exports.UrlRecognizerKaltura = UrlRecognizerKaltura;
+
+/**
+ *
+ */
 class UrlTokenizerAkamaiHttp extends UrlTokenizer{
 	
 	constructor(object = null) {
@@ -58106,6 +58106,18 @@ class UrlTokenizerCloudFront extends UrlTokenizer{
 	 }
 }
 module.exports.UrlTokenizerCloudFront = UrlTokenizerCloudFront;
+
+/**
+ *
+ */
+class UrlTokenizerKaltura extends UrlTokenizer{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaUrlTokenizerKaltura';
+	}
+}
+module.exports.UrlTokenizerKaltura = UrlTokenizerKaltura;
 
 /**
  *
@@ -65109,6 +65121,33 @@ module.exports.DailymotionDistributionProfile = DailymotionDistributionProfile;
 /**
  *
  */
+class DeliveryProfileAkamaiHttp extends DeliveryProfileHttp{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaDeliveryProfileAkamaiHttp';
+	}
+	
+	/**
+	 * Should we use intelliseek
+	 * @return bool
+	 */
+	 getUseIntelliseek() {
+	 	return this.useIntelliseek;
+	 }
+	
+	/**
+	 * @param useIntelliseek bool Should we use intelliseek
+	 */
+	 setUseIntelliseek(useIntelliseek) {
+	 	this.useIntelliseek = useIntelliseek;
+	 }
+}
+module.exports.DeliveryProfileAkamaiHttp = DeliveryProfileAkamaiHttp;
+
+/**
+ *
+ */
 class DeliveryProfileFilter extends DeliveryProfileBaseFilter{
 	
 	constructor(object = null) {
@@ -65132,6 +65171,33 @@ class DeliveryProfileFilter extends DeliveryProfileBaseFilter{
 	 }
 }
 module.exports.DeliveryProfileFilter = DeliveryProfileFilter;
+
+/**
+ *
+ */
+class DeliveryProfileGenericHttp extends DeliveryProfileHttp{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaDeliveryProfileGenericHttp';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getPattern() {
+	 	return this.pattern;
+	 }
+	
+	/**
+	 * @param pattern string 
+	 */
+	 setPattern(pattern) {
+	 	this.pattern = pattern;
+	 }
+}
+module.exports.DeliveryProfileGenericHttp = DeliveryProfileGenericHttp;
 
 /**
  *
@@ -69906,6 +69972,21 @@ class LiveStreamScheduleEvent extends EntryScheduleEvent{
 	 */
 	 setPreStartTime(preStartTime) {
 	 	this.preStartTime = preStartTime;
+	 }
+	
+	/**
+	 * The time relative time before the endTime considered as postEnd time
+	 * @return int
+	 */
+	 getPostEndTime() {
+	 	return this.postEndTime;
+	 }
+	
+	/**
+	 * @param postEndTime int The time relative time before the endTime considered as postEnd time
+	 */
+	 setPostEndTime(postEndTime) {
+	 	this.postEndTime = postEndTime;
 	 }
 }
 module.exports.LiveStreamScheduleEvent = LiveStreamScheduleEvent;

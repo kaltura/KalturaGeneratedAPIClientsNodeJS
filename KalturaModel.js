@@ -14399,6 +14399,14 @@ class VendorTaskData extends kaltura.BaseObject{
 		super(object);
 		this.objectType = 'KalturaVendorTaskData';
 	}
+	
+	/**
+	 * The duration of the entry for which the task was created for in milliseconds
+	 * @return int
+	 */
+	 getEntryDuration() {
+	 	return this.entryDuration;
+	 }
 }
 module.exports.VendorTaskData = VendorTaskData;
 

@@ -25536,6 +25536,33 @@ module.exports.PlaybackSource = PlaybackSource;
 /**
  *
  */
+class TypedArray extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaTypedArray';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getCount() {
+	 	return this.count;
+	 }
+	
+	/**
+	 * @param count int 
+	 */
+	 setCount(count) {
+	 	this.count = count;
+	 }
+}
+module.exports.TypedArray = TypedArray;
+
+/**
+ *
+ */
 class PlaybackContext extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -25616,6 +25643,21 @@ class PlaybackContext extends kaltura.BaseObject{
 	 */
 	 setMessages(messages) {
 	 	this.messages = messages;
+	 }
+	
+	/**
+	 * 
+	 * @return TypedArray
+	 */
+	 getBumperData() {
+	 	return this.bumperData;
+	 }
+	
+	/**
+	 * @param bumperData TypedArray 
+	 */
+	 setBumperData(bumperData) {
+	 	this.bumperData = bumperData;
 	 }
 }
 module.exports.PlaybackContext = PlaybackContext;
@@ -33081,6 +33123,21 @@ class VendorCatalogItem extends kaltura.BaseObject{
 	 */
 	 setPricing(pricing) {
 	 	this.pricing = pricing;
+	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getAllowResubmission() {
+	 	return this.allowResubmission;
+	 }
+	
+	/**
+	 * @param allowResubmission bool 
+	 */
+	 setAllowResubmission(allowResubmission) {
+	 	this.allowResubmission = allowResubmission;
 	 }
 }
 module.exports.VendorCatalogItem = VendorCatalogItem;

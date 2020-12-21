@@ -10798,6 +10798,7 @@ module.exports.varConsole = varConsole;
  * The available service actions:
  * @action deAuthorization .
  * @action fetchRegistrationPage .
+ * @action get Retrieve zoom integration setting object by partner id.
  * @action oauthValidation .
  * @action recordingComplete .
  * @action submitRegistration .
@@ -10823,6 +10824,17 @@ class zoomVendor{
 		kparams.tokensData = tokensData;
 		kparams.iv = iv;
 		return new kaltura.RequestBuilder('vendor_zoomvendor', 'fetchRegistrationPage', kparams);
+	};
+	
+	/**
+	 * Retrieve zoom integration setting object by partner id.
+	 * @param partnerId int 
+	 * @return KalturaZoomIntegrationSetting
+	 */
+	static get(partnerId){
+		let kparams = {};
+		kparams.partnerId = partnerId;
+		return new kaltura.RequestBuilder('vendor_zoomvendor', 'get', kparams);
 	};
 	
 	/**

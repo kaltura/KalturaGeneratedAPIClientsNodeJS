@@ -34351,13 +34351,6 @@ class ZoomIntegrationSetting extends kaltura.BaseObject{
 	 }
 	
 	/**
-	 * @param accountId string 
-	 */
-	 setAccountId(accountId) {
-	 	this.accountId = accountId;
-	 }
-	
-	/**
 	 * 
 	 * @return int
 	 */
@@ -34391,15 +34384,15 @@ class ZoomIntegrationSetting extends kaltura.BaseObject{
 	 * 
 	 * @return int
 	 */
-	 getHandleParticipantMode() {
-	 	return this.handleParticipantMode;
+	 getHandleParticipantsMode() {
+	 	return this.handleParticipantsMode;
 	 }
 	
 	/**
-	 * @param handleParticipantMode int 
+	 * @param handleParticipantsMode int 
 	 */
-	 setHandleParticipantMode(handleParticipantMode) {
-	 	this.handleParticipantMode = handleParticipantMode;
+	 setHandleParticipantsMode(handleParticipantsMode) {
+	 	this.handleParticipantsMode = handleParticipantsMode;
 	 }
 	
 	/**
@@ -34460,6 +34453,21 @@ class ZoomIntegrationSetting extends kaltura.BaseObject{
 	 */
 	 setEnableWebinarUploads(enableWebinarUploads) {
 	 	this.enableWebinarUploads = enableWebinarUploads;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getConversionProfileId() {
+	 	return this.conversionProfileId;
+	 }
+	
+	/**
+	 * @param conversionProfileId int 
+	 */
+	 setConversionProfileId(conversionProfileId) {
+	 	this.conversionProfileId = conversionProfileId;
 	 }
 }
 module.exports.ZoomIntegrationSetting = ZoomIntegrationSetting;

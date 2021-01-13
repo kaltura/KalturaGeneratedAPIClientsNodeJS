@@ -8,7 +8,7 @@
 // to do with audio, video, and animation what Wiki platfroms allow them to do with
 // text.
 //
-// Copyright (C) 2006-2020  Kaltura Inc.
+// Copyright (C) 2006-2021  Kaltura Inc.
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as
@@ -26306,6 +26306,36 @@ class ReachProfile extends kaltura.BaseObject{
 	
 	/**
 	 * 
+	 * @return string
+	 */
+	 getLabelAdditionForMachineServiceType() {
+	 	return this.labelAdditionForMachineServiceType;
+	 }
+	
+	/**
+	 * @param labelAdditionForMachineServiceType string 
+	 */
+	 setLabelAdditionForMachineServiceType(labelAdditionForMachineServiceType) {
+	 	this.labelAdditionForMachineServiceType = labelAdditionForMachineServiceType;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getLabelAdditionForHumanServiceType() {
+	 	return this.labelAdditionForHumanServiceType;
+	 }
+	
+	/**
+	 * @param labelAdditionForHumanServiceType string 
+	 */
+	 setLabelAdditionForHumanServiceType(labelAdditionForHumanServiceType) {
+	 	this.labelAdditionForHumanServiceType = labelAdditionForHumanServiceType;
+	 }
+	
+	/**
+	 * 
 	 * @return int
 	 */
 	 getContentDeletionPolicy() {
@@ -27343,6 +27373,21 @@ class ReportInputFilter extends ReportInputBaseFilter{
 	 */
 	 setHotspotIdIn(hotspotIdIn) {
 	 	this.hotspotIdIn = hotspotIdIn;
+	 }
+	
+	/**
+	 * filter by crm id
+	 * @return string
+	 */
+	 getCrmIdIn() {
+	 	return this.crmIdIn;
+	 }
+	
+	/**
+	 * @param crmIdIn string filter by crm id
+	 */
+	 setCrmIdIn(crmIdIn) {
+	 	this.crmIdIn = crmIdIn;
 	 }
 }
 module.exports.ReportInputFilter = ReportInputFilter;
@@ -48374,6 +48419,21 @@ class ExportCsvJobData extends JobData{
 	 */
 	 setOutputPath(outputPath) {
 	 	this.outputPath = outputPath;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSharedOutputPath() {
+	 	return this.sharedOutputPath;
+	 }
+	
+	/**
+	 * @param sharedOutputPath string 
+	 */
+	 setSharedOutputPath(sharedOutputPath) {
+	 	this.sharedOutputPath = sharedOutputPath;
 	 }
 }
 module.exports.ExportCsvJobData = ExportCsvJobData;

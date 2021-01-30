@@ -27389,6 +27389,21 @@ class ReportInputFilter extends ReportInputBaseFilter{
 	 setCrmIdIn(crmIdIn) {
 	 	this.crmIdIn = crmIdIn;
 	 }
+	
+	/**
+	 * filter by playlist id
+	 * @return string
+	 */
+	 getPlaylistIdIn() {
+	 	return this.playlistIdIn;
+	 }
+	
+	/**
+	 * @param playlistIdIn string filter by playlist id
+	 */
+	 setPlaylistIdIn(playlistIdIn) {
+	 	this.playlistIdIn = playlistIdIn;
+	 }
 }
 module.exports.ReportInputFilter = ReportInputFilter;
 
@@ -50560,6 +50575,21 @@ class ImportJobData extends JobData{
 	 */
 	 setFileSize(fileSize) {
 	 	this.fileSize = fileSize;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getDestFileSharedPath() {
+	 	return this.destFileSharedPath;
+	 }
+	
+	/**
+	 * @param destFileSharedPath string 
+	 */
+	 setDestFileSharedPath(destFileSharedPath) {
+	 	this.destFileSharedPath = destFileSharedPath;
 	 }
 }
 module.exports.ImportJobData = ImportJobData;

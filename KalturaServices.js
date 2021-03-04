@@ -2188,12 +2188,12 @@ class groupUser{
 	/**
 	 * sync by userId and groupIds.
 	 * @param userId string 
-	 * @param groupIds string 
+	 * @param groupIds string  (optional, default: null)
 	 * @param removeFromExistingGroups bool  (optional, default: true)
 	 * @param createNewGroups bool  (optional, default: true)
 	 * @return KalturaBulkUpload
 	 */
-	static sync(userId, groupIds, removeFromExistingGroups = true, createNewGroups = true){
+	static sync(userId, groupIds = null, removeFromExistingGroups = true, createNewGroups = true){
 		let kparams = {};
 		kparams.userId = userId;
 		kparams.groupIds = groupIds;

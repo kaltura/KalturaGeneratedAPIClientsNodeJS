@@ -7600,6 +7600,21 @@ class Category extends kaltura.BaseObject{
 	 setAggregationCategories(aggregationCategories) {
 	 	this.aggregationCategories = aggregationCategories;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getAdminTags() {
+	 	return this.adminTags;
+	 }
+	
+	/**
+	 * @param adminTags string 
+	 */
+	 setAdminTags(adminTags) {
+	 	this.adminTags = adminTags;
+	 }
 }
 module.exports.Category = Category;
 
@@ -8112,6 +8127,21 @@ class ConfMaps extends kaltura.BaseObject{
 	 */
 	 setStatus(status) {
 	 	this.status = status;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getChangeDescription() {
+	 	return this.changeDescription;
+	 }
+	
+	/**
+	 * @param changeDescription string 
+	 */
+	 setChangeDescription(changeDescription) {
+	 	this.changeDescription = changeDescription;
 	 }
 }
 module.exports.ConfMaps = ConfMaps;
@@ -13624,6 +13654,51 @@ class User extends BaseUser{
 	 */
 	 setAttendanceInfo(attendanceInfo) {
 	 	this.attendanceInfo = attendanceInfo;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getTitle() {
+	 	return this.title;
+	 }
+	
+	/**
+	 * @param title string 
+	 */
+	 setTitle(title) {
+	 	this.title = title;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getCompany() {
+	 	return this.company;
+	 }
+	
+	/**
+	 * @param company string 
+	 */
+	 setCompany(company) {
+	 	this.company = company;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getKsPrivileges() {
+	 	return this.ksPrivileges;
+	 }
+	
+	/**
+	 * @param ksPrivileges string 
+	 */
+	 setKsPrivileges(ksPrivileges) {
+	 	this.ksPrivileges = ksPrivileges;
 	 }
 }
 module.exports.User = User;
@@ -27403,6 +27478,36 @@ class ReportInputFilter extends ReportInputBaseFilter{
 	 */
 	 setPlaylistIdIn(playlistIdIn) {
 	 	this.playlistIdIn = playlistIdIn;
+	 }
+	
+	/**
+	 * filter by domain
+	 * @return string
+	 */
+	 getDomainIn() {
+	 	return this.domainIn;
+	 }
+	
+	/**
+	 * @param domainIn string filter by domain
+	 */
+	 setDomainIn(domainIn) {
+	 	this.domainIn = domainIn;
+	 }
+	
+	/**
+	 * filter by canonical url
+	 * @return string
+	 */
+	 getCanonicalUrlIn() {
+	 	return this.canonicalUrlIn;
+	 }
+	
+	/**
+	 * @param canonicalUrlIn string filter by canonical url
+	 */
+	 setCanonicalUrlIn(canonicalUrlIn) {
+	 	this.canonicalUrlIn = canonicalUrlIn;
 	 }
 }
 module.exports.ReportInputFilter = ReportInputFilter;
@@ -51207,6 +51312,21 @@ class LiveEntryServerNode extends EntryServerNode{
 	 */
 	 setIsPlayableUser(isPlayableUser) {
 	 	this.isPlayableUser = isPlayableUser;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getViewMode() {
+	 	return this.viewMode;
+	 }
+	
+	/**
+	 * @param viewMode int 
+	 */
+	 setViewMode(viewMode) {
+	 	this.viewMode = viewMode;
 	 }
 }
 module.exports.LiveEntryServerNode = LiveEntryServerNode;

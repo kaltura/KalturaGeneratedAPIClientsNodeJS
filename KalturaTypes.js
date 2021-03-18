@@ -955,6 +955,7 @@ module.exports.ScheduleEventType = {
 RECORD : 1,
 LIVE_STREAM : 2,
 BLACKOUT : 3,
+MEETING : 4,
 };
 
 module.exports.ScheduleResourceStatus = {

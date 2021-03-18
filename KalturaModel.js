@@ -15290,6 +15290,21 @@ class StreamContainer extends kaltura.BaseObject{
 	 * 
 	 * @return string
 	 */
+	 getId() {
+	 	return this.id;
+	 }
+	
+	/**
+	 * @param id string 
+	 */
+	 setId(id) {
+	 	this.id = id;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
 	 getType() {
 	 	return this.type;
 	 }
@@ -70463,6 +70478,33 @@ module.exports.MediaServerNode = MediaServerNode;
 /**
  *
  */
+class MeetingScheduleEvent extends EntryScheduleEvent{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaMeetingScheduleEvent';
+	}
+	
+	/**
+	 * The time relative time before the startTime considered as preStart time
+	 * @return int
+	 */
+	 getPreStartTime() {
+	 	return this.preStartTime;
+	 }
+	
+	/**
+	 * @param preStartTime int The time relative time before the startTime considered as preStart time
+	 */
+	 setPreStartTime(preStartTime) {
+	 	this.preStartTime = preStartTime;
+	 }
+}
+module.exports.MeetingScheduleEvent = MeetingScheduleEvent;
+
+/**
+ *
+ */
 class MetadataBaseFilter extends RelatedFilter{
 	
 	constructor(object = null) {
@@ -75391,6 +75433,21 @@ class UsersCsvJobData extends ExportCsvJobData{
 	 */
 	 setAdditionalFields(additionalFields) {
 	 	this.additionalFields = additionalFields;
+	 }
+	
+	/**
+	 * Array of header names and their mapped user fields
+	 * @return array
+	 */
+	 getMappedFields() {
+	 	return this.mappedFields;
+	 }
+	
+	/**
+	 * @param mappedFields array Array of header names and their mapped user fields
+	 */
+	 setMappedFields(mappedFields) {
+	 	this.mappedFields = mappedFields;
 	 }
 }
 module.exports.UsersCsvJobData = UsersCsvJobData;
@@ -85489,6 +85546,18 @@ module.exports.MediaServerNodeFilter = MediaServerNodeFilter;
 /**
  *
  */
+class MeetingScheduleEventBaseFilter extends EntryScheduleEventFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaMeetingScheduleEventBaseFilter';
+	}
+}
+module.exports.MeetingScheduleEventBaseFilter = MeetingScheduleEventBaseFilter;
+
+/**
+ *
+ */
 class MetroPcsDistributionProfileFilter extends MetroPcsDistributionProfileBaseFilter{
 	
 	constructor(object = null) {
@@ -85911,6 +85980,18 @@ class MediaFlavorParamsFilter extends MediaFlavorParamsBaseFilter{
 	}
 }
 module.exports.MediaFlavorParamsFilter = MediaFlavorParamsFilter;
+
+/**
+ *
+ */
+class MeetingScheduleEventFilter extends MeetingScheduleEventBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaMeetingScheduleEventFilter';
+	}
+}
+module.exports.MeetingScheduleEventFilter = MeetingScheduleEventFilter;
 
 /**
  *

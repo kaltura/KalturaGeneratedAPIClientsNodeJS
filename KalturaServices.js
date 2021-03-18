@@ -5995,13 +5995,15 @@ class user{
 	 * @param filter UserFilter A filter used to exclude specific types of users (optional, default: null)
 	 * @param metadataProfileId int  (optional, default: null)
 	 * @param additionalFields array  (optional, default: null)
+	 * @param mappedFields array mapping between field (optional, default: null)
 	 * @return string
 	 */
-	static exportToCsv(filter = null, metadataProfileId = null, additionalFields = null){
+	static exportToCsv(filter = null, metadataProfileId = null, additionalFields = null, mappedFields = null){
 		let kparams = {};
 		kparams.filter = filter;
 		kparams.metadataProfileId = metadataProfileId;
 		kparams.additionalFields = additionalFields;
+		kparams.mappedFields = mappedFields;
 		return new kaltura.RequestBuilder('user', 'exportToCsv', kparams);
 	};
 	

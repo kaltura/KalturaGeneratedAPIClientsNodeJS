@@ -5615,33 +5615,6 @@ module.exports.BeaconScheduledResourceBaseItem = BeaconScheduledResourceBaseItem
 /**
  *
  */
-class BeaconSearchParams extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaBeaconSearchParams';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getObjectId() {
-	 	return this.objectId;
-	 }
-	
-	/**
-	 * @param objectId string 
-	 */
-	 setObjectId(objectId) {
-	 	this.objectId = objectId;
-	 }
-}
-module.exports.BeaconSearchParams = BeaconSearchParams;
-
-/**
- *
- */
 class ESearchOrderByItem extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -5692,33 +5665,6 @@ class BeaconSearchScheduledResourceOrderByItem extends ESearchOrderByItem{
 	 }
 }
 module.exports.BeaconSearchScheduledResourceOrderByItem = BeaconSearchScheduledResourceOrderByItem;
-
-/**
- *
- */
-class BeaconSearchScheduledResourceOrderBy extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaBeaconSearchScheduledResourceOrderBy';
-	}
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getOrderItems() {
-	 	return this.orderItems;
-	 }
-	
-	/**
-	 * @param orderItems array 
-	 */
-	 setOrderItems(orderItems) {
-	 	this.orderItems = orderItems;
-	 }
-}
-module.exports.BeaconSearchScheduledResourceOrderBy = BeaconSearchScheduledResourceOrderBy;
 
 /**
  *
@@ -6366,93 +6312,6 @@ class BulkUploadObjectData extends kaltura.BaseObject{
 	}
 }
 module.exports.BulkUploadObjectData = BulkUploadObjectData;
-
-/**
- *
- */
-class BusinessProcessCase extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaBusinessProcessCase';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getId() {
-	 	return this.id;
-	 }
-	
-	/**
-	 * @param id string 
-	 */
-	 setId(id) {
-	 	this.id = id;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getBusinessProcessId() {
-	 	return this.businessProcessId;
-	 }
-	
-	/**
-	 * @param businessProcessId string 
-	 */
-	 setBusinessProcessId(businessProcessId) {
-	 	this.businessProcessId = businessProcessId;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getBusinessProcessStartNotificationTemplateId() {
-	 	return this.businessProcessStartNotificationTemplateId;
-	 }
-	
-	/**
-	 * @param businessProcessStartNotificationTemplateId int 
-	 */
-	 setBusinessProcessStartNotificationTemplateId(businessProcessStartNotificationTemplateId) {
-	 	this.businessProcessStartNotificationTemplateId = businessProcessStartNotificationTemplateId;
-	 }
-	
-	/**
-	 * 
-	 * @return bool
-	 */
-	 getSuspended() {
-	 	return this.suspended;
-	 }
-	
-	/**
-	 * @param suspended bool 
-	 */
-	 setSuspended(suspended) {
-	 	this.suspended = suspended;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getActivityId() {
-	 	return this.activityId;
-	 }
-	
-	/**
-	 * @param activityId string 
-	 */
-	 setActivityId(activityId) {
-	 	this.activityId = activityId;
-	 }
-}
-module.exports.BusinessProcessCase = BusinessProcessCase;
 
 /**
  *
@@ -11498,78 +11357,6 @@ module.exports.DocumentEntry = DocumentEntry;
 /**
  *
  */
-class DrmLicenseAccessDetails extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaDrmLicenseAccessDetails';
-	}
-	
-	/**
-	 * Drm policy name
-	 * @return string
-	 */
-	 getPolicy() {
-	 	return this.policy;
-	 }
-	
-	/**
-	 * @param policy string Drm policy name
-	 */
-	 setPolicy(policy) {
-	 	this.policy = policy;
-	 }
-	
-	/**
-	 * movie duration in seconds
-	 * @return int
-	 */
-	 getDuration() {
-	 	return this.duration;
-	 }
-	
-	/**
-	 * @param duration int movie duration in seconds
-	 */
-	 setDuration(duration) {
-	 	this.duration = duration;
-	 }
-	
-	/**
-	 * playback window in seconds
-	 * @return int
-	 */
-	 getAbsolute_duration() {
-	 	return this.absolute_duration;
-	 }
-	
-	/**
-	 * @param absolute_duration int playback window in seconds
-	 */
-	 setAbsolute_duration(absolute_duration) {
-	 	this.absolute_duration = absolute_duration;
-	 }
-	
-	/**
-	 * 
-	 * @return array
-	 */
-	 getLicenseParams() {
-	 	return this.licenseParams;
-	 }
-	
-	/**
-	 * @param licenseParams array 
-	 */
-	 setLicenseParams(licenseParams) {
-	 	this.licenseParams = licenseParams;
-	 }
-}
-module.exports.DrmLicenseAccessDetails = DrmLicenseAccessDetails;
-
-/**
- *
- */
 class PluginData extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -12877,18 +12664,6 @@ class ESearchAggregationResponseItem extends kaltura.BaseObject{
 	 }
 }
 module.exports.ESearchAggregationResponseItem = ESearchAggregationResponseItem;
-
-/**
- *
- */
-class ESearchBaseFilter extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaESearchBaseFilter';
-	}
-}
-module.exports.ESearchBaseFilter = ESearchBaseFilter;
 
 /**
  *
@@ -25230,48 +25005,6 @@ module.exports.PlayReadyAnalogVideoOPIdHolder = PlayReadyAnalogVideoOPIdHolder;
 /**
  *
  */
-class PlayReadyContentKey extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaPlayReadyContentKey';
-	}
-	
-	/**
-	 * Guid - key id of the specific content
-	 * @return string
-	 */
-	 getKeyId() {
-	 	return this.keyId;
-	 }
-	
-	/**
-	 * @param keyId string Guid - key id of the specific content
-	 */
-	 setKeyId(keyId) {
-	 	this.keyId = keyId;
-	 }
-	
-	/**
-	 * License content key 64 bit encoded
-	 * @return string
-	 */
-	 getContentKey() {
-	 	return this.contentKey;
-	 }
-	
-	/**
-	 * @param contentKey string License content key 64 bit encoded
-	 */
-	 setContentKey(contentKey) {
-	 	this.contentKey = contentKey;
-	 }
-}
-module.exports.PlayReadyContentKey = PlayReadyContentKey;
-
-/**
- *
- */
 class PlayReadyCopyEnablerHolder extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -25421,78 +25154,6 @@ class PlayReadyPolicy extends DrmPolicy{
 	 }
 }
 module.exports.PlayReadyPolicy = PlayReadyPolicy;
-
-/**
- *
- */
-class PlayReadyLicenseDetails extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaPlayReadyLicenseDetails';
-	}
-	
-	/**
-	 * PlayReady policy object
-	 * @return PlayReadyPolicy
-	 */
-	 getPolicy() {
-	 	return this.policy;
-	 }
-	
-	/**
-	 * @param policy PlayReadyPolicy PlayReady policy object
-	 */
-	 setPolicy(policy) {
-	 	this.policy = policy;
-	 }
-	
-	/**
-	 * License begin date
-	 * @return int
-	 */
-	 getBeginDate() {
-	 	return this.beginDate;
-	 }
-	
-	/**
-	 * @param beginDate int License begin date
-	 */
-	 setBeginDate(beginDate) {
-	 	this.beginDate = beginDate;
-	 }
-	
-	/**
-	 * License expiration date
-	 * @return int
-	 */
-	 getExpirationDate() {
-	 	return this.expirationDate;
-	 }
-	
-	/**
-	 * @param expirationDate int License expiration date
-	 */
-	 setExpirationDate(expirationDate) {
-	 	this.expirationDate = expirationDate;
-	 }
-	
-	/**
-	 * License removal date
-	 * @return int
-	 */
-	 getRemovalDate() {
-	 	return this.removalDate;
-	 }
-	
-	/**
-	 * @param removalDate int License removal date
-	 */
-	 setRemovalDate(removalDate) {
-	 	this.removalDate = removalDate;
-	 }
-}
-module.exports.PlayReadyLicenseDetails = PlayReadyLicenseDetails;
 
 /**
  *
@@ -28252,93 +27913,6 @@ class ResponseProfileCacheRecalculateResults extends kaltura.BaseObject{
 	 }
 }
 module.exports.ResponseProfileCacheRecalculateResults = ResponseProfileCacheRecalculateResults;
-
-/**
- *
- */
-class RoomDetails extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaRoomDetails';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getServerUrl() {
-	 	return this.serverUrl;
-	 }
-	
-	/**
-	 * @param serverUrl string 
-	 */
-	 setServerUrl(serverUrl) {
-	 	this.serverUrl = serverUrl;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getEntryId() {
-	 	return this.entryId;
-	 }
-	
-	/**
-	 * @param entryId string 
-	 */
-	 setEntryId(entryId) {
-	 	this.entryId = entryId;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getToken() {
-	 	return this.token;
-	 }
-	
-	/**
-	 * @param token string 
-	 */
-	 setToken(token) {
-	 	this.token = token;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getExpiry() {
-	 	return this.expiry;
-	 }
-	
-	/**
-	 * @param expiry int 
-	 */
-	 setExpiry(expiry) {
-	 	this.expiry = expiry;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getServerName() {
-	 	return this.serverName;
-	 }
-	
-	/**
-	 * @param serverName string 
-	 */
-	 setServerName(serverName) {
-	 	this.serverName = serverName;
-	 }
-}
-module.exports.RoomDetails = RoomDetails;
 
 /**
  *
@@ -34485,176 +34059,6 @@ module.exports.YouTubeApiCaptionDistributionInfo = YouTubeApiCaptionDistribution
 /**
  *
  */
-class ZoomIntegrationSetting extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaZoomIntegrationSetting';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getDefaultUserId() {
-	 	return this.defaultUserId;
-	 }
-	
-	/**
-	 * @param defaultUserId string 
-	 */
-	 setDefaultUserId(defaultUserId) {
-	 	this.defaultUserId = defaultUserId;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getZoomCategory() {
-	 	return this.zoomCategory;
-	 }
-	
-	/**
-	 * @param zoomCategory string 
-	 */
-	 setZoomCategory(zoomCategory) {
-	 	this.zoomCategory = zoomCategory;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getAccountId() {
-	 	return this.accountId;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getEnableRecordingUpload() {
-	 	return this.enableRecordingUpload;
-	 }
-	
-	/**
-	 * @param enableRecordingUpload int 
-	 */
-	 setEnableRecordingUpload(enableRecordingUpload) {
-	 	this.enableRecordingUpload = enableRecordingUpload;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getCreateUserIfNotExist() {
-	 	return this.createUserIfNotExist;
-	 }
-	
-	/**
-	 * @param createUserIfNotExist int 
-	 */
-	 setCreateUserIfNotExist(createUserIfNotExist) {
-	 	this.createUserIfNotExist = createUserIfNotExist;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getHandleParticipantsMode() {
-	 	return this.handleParticipantsMode;
-	 }
-	
-	/**
-	 * @param handleParticipantsMode int 
-	 */
-	 setHandleParticipantsMode(handleParticipantsMode) {
-	 	this.handleParticipantsMode = handleParticipantsMode;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getZoomUserMatchingMode() {
-	 	return this.zoomUserMatchingMode;
-	 }
-	
-	/**
-	 * @param zoomUserMatchingMode int 
-	 */
-	 setZoomUserMatchingMode(zoomUserMatchingMode) {
-	 	this.zoomUserMatchingMode = zoomUserMatchingMode;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getZoomUserPostfix() {
-	 	return this.zoomUserPostfix;
-	 }
-	
-	/**
-	 * @param zoomUserPostfix string 
-	 */
-	 setZoomUserPostfix(zoomUserPostfix) {
-	 	this.zoomUserPostfix = zoomUserPostfix;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getZoomWebinarCategory() {
-	 	return this.zoomWebinarCategory;
-	 }
-	
-	/**
-	 * @param zoomWebinarCategory string 
-	 */
-	 setZoomWebinarCategory(zoomWebinarCategory) {
-	 	this.zoomWebinarCategory = zoomWebinarCategory;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getEnableWebinarUploads() {
-	 	return this.enableWebinarUploads;
-	 }
-	
-	/**
-	 * @param enableWebinarUploads int 
-	 */
-	 setEnableWebinarUploads(enableWebinarUploads) {
-	 	this.enableWebinarUploads = enableWebinarUploads;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getConversionProfileId() {
-	 	return this.conversionProfileId;
-	 }
-	
-	/**
-	 * @param conversionProfileId int 
-	 */
-	 setConversionProfileId(conversionProfileId) {
-	 	this.conversionProfileId = conversionProfileId;
-	 }
-}
-module.exports.ZoomIntegrationSetting = ZoomIntegrationSetting;
-
-/**
- *
- */
 class AccessControlBlockAction extends RuleAction{
 	
 	constructor(object = null) {
@@ -36480,48 +35884,6 @@ class BeaconScheduledResourceOperator extends BeaconScheduledResourceBaseItem{
 	 }
 }
 module.exports.BeaconScheduledResourceOperator = BeaconScheduledResourceOperator;
-
-/**
- *
- */
-class BeaconScheduledResourceSearchParams extends BeaconSearchParams{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaBeaconScheduledResourceSearchParams';
-	}
-	
-	/**
-	 * 
-	 * @return BeaconScheduledResourceOperator
-	 */
-	 getSearchOperator() {
-	 	return this.searchOperator;
-	 }
-	
-	/**
-	 * @param searchOperator BeaconScheduledResourceOperator 
-	 */
-	 setSearchOperator(searchOperator) {
-	 	this.searchOperator = searchOperator;
-	 }
-	
-	/**
-	 * 
-	 * @return BeaconSearchScheduledResourceOrderBy
-	 */
-	 getOrderBy() {
-	 	return this.orderBy;
-	 }
-	
-	/**
-	 * @param orderBy BeaconSearchScheduledResourceOrderBy 
-	 */
-	 setOrderBy(orderBy) {
-	 	this.orderBy = orderBy;
-	 }
-}
-module.exports.BeaconScheduledResourceSearchParams = BeaconScheduledResourceSearchParams;
 
 /**
  *
@@ -45347,48 +44709,6 @@ class ESearchGroupResponse extends ESearchResponse{
 	 }
 }
 module.exports.ESearchGroupResponse = ESearchGroupResponse;
-
-/**
- *
- */
-class ESearchHistoryFilter extends ESearchBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaESearchHistoryFilter';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSearchTermStartsWith() {
-	 	return this.searchTermStartsWith;
-	 }
-	
-	/**
-	 * @param searchTermStartsWith string 
-	 */
-	 setSearchTermStartsWith(searchTermStartsWith) {
-	 	this.searchTermStartsWith = searchTermStartsWith;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSearchedObjectIn() {
-	 	return this.searchedObjectIn;
-	 }
-	
-	/**
-	 * @param searchedObjectIn string 
-	 */
-	 setSearchedObjectIn(searchedObjectIn) {
-	 	this.searchedObjectIn = searchedObjectIn;
-	 }
-}
-module.exports.ESearchHistoryFilter = ESearchHistoryFilter;
 
 /**
  *

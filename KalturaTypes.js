@@ -583,6 +583,12 @@ ACTIVE : 0,
 DELETED : 1,
 };
 
+module.exports.HandleParticipantsMode = {
+ADD_AS_CO_PUBLISHERS : 0,
+ADD_AS_CO_VIEWERS : 1,
+IGNORE : 2,
+};
+
 module.exports.HttpNotificationAuthenticationMethod = {
 ANYSAFE : -18,
 ANY : -17,
@@ -1407,6 +1413,13 @@ module.exports.YouTubeApiDistributionCaptionAction = {
 UPDATE_ACTION : 1,
 SUBMIT_ACTION : 2,
 DELETE_ACTION : 3,
+};
+
+module.exports.ZoomUsersMatching = {
+DO_NOT_MODIFY : 0,
+ADD_POSTFIX : 1,
+REMOVE_POSTFIX : 2,
+CMS_MATCHING : 3,
 };
 
 module.exports.AccessControlOrderBy = {

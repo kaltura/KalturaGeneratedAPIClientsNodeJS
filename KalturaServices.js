@@ -5,7 +5,7 @@
 //                          |_|\_\__,_|_|\__|\_,_|_| \__,_|
 //
 // This file is part of the Kaltura Collaborative Media Suite which allows users
-// to do with audio, video, and animation what Wiki platfroms allow them to do with
+// to do with audio, video, and animation what Wiki platforms allow them to do with
 // text.
 //
 // Copyright (C) 2006-2021  Kaltura Inc.
@@ -370,6 +370,7 @@ module.exports.appToken = appToken;
  * @action count Count base entries by filter.
  * @action delete Delete an entry.
  * @action export .
+ * @action exportToCsv add batch job that sends an email with a link to download an updated CSV that contains list of entries.
  * @action flag Flag inappropriate entry for moderation.
  * @action get Get base entry by ID.
  * @action getByIds Get an array of KalturaBaseEntry objects by a comma-separated list of ids.
@@ -498,6 +499,23 @@ class baseEntry{
 		kparams.entryId = entryId;
 		kparams.storageProfileId = storageProfileId;
 		return new kaltura.RequestBuilder('baseentry', 'export', kparams);
+	};
+	
+	/**
+	 * add batch job that sends an email with a link to download an updated CSV that contains list of entries.
+	 * @param filter BaseEntryFilter A filter used to exclude specific entries (optional, default: null)
+	 * @param metadataProfileId int  (optional, default: null)
+	 * @param additionalFields array  (optional, default: null)
+	 * @param mappedFields array mapping between field headline and its mapped value (optional, default: null)
+	 * @return string
+	 */
+	static exportToCsv(filter = null, metadataProfileId = null, additionalFields = null, mappedFields = null){
+		let kparams = {};
+		kparams.filter = filter;
+		kparams.metadataProfileId = metadataProfileId;
+		kparams.additionalFields = additionalFields;
+		kparams.mappedFields = mappedFields;
+		return new kaltura.RequestBuilder('baseentry', 'exportToCsv', kparams);
 	};
 	
 	/**
@@ -10801,7 +10819,11 @@ module.exports.varConsole = varConsole;
  * @action deAuthorization .
  * @action fetchRegistrationPage .
  * @action get Retrieve zoom integration setting object by partner id.
+ * @action list List KalturaZoomIntegrationSetting objects.
+ * @action localRegistrationPage .
  * @action oauthValidation .
+ * @action preOauthValidation load html page the that will ask the user for its KMC URL, derive the region of the user from it,
+ * and redirect to the registration page in the correct region, while forwarding the necessary code for registration.
  * @action recordingComplete .
  * @action submitRegistration .
  */
@@ -10840,12 +10862,42 @@ class zoomVendor{
 	};
 	
 	/**
+	 * List KalturaZoomIntegrationSetting objects.
+	 * @param pager FilterPager Pager (optional, default: null)
+	 * @return KalturaZoomIntegrationSettingResponse
+	 */
+	static listAction(pager = null){
+		let kparams = {};
+		kparams.pager = pager;
+		return new kaltura.RequestBuilder('vendor_zoomvendor', 'list', kparams);
+	};
+	
+	/**
+	 * .
+	 * @param jwt string 
+	 */
+	static localRegistrationPage(jwt){
+		let kparams = {};
+		kparams.jwt = jwt;
+		return new kaltura.RequestBuilder('vendor_zoomvendor', 'localRegistrationPage', kparams);
+	};
+	
+	/**
 	 * .
 	 * @return string
 	 */
 	static oauthValidation(){
 		let kparams = {};
 		return new kaltura.RequestBuilder('vendor_zoomvendor', 'oauthValidation', kparams);
+	};
+	
+	/**
+	 * load html page the that will ask the user for its KMC URL, derive the region of the user from it,
+ * and redirect to the registration page in the correct region, while forwarding the necessary code for registration.
+	 */
+	static preOauthValidation(){
+		let kparams = {};
+		return new kaltura.RequestBuilder('vendor_zoomvendor', 'preOauthValidation', kparams);
 	};
 	
 	/**

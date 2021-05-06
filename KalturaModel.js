@@ -5,7 +5,7 @@
 //                          |_|\_\__,_|_|\__|\_,_|_| \__,_|
 //
 // This file is part of the Kaltura Collaborative Media Suite which allows users
-// to do with audio, video, and animation what Wiki platfroms allow them to do with
+// to do with audio, video, and animation what Wiki platforms allow them to do with
 // text.
 //
 // Copyright (C) 2006-2021  Kaltura Inc.
@@ -3042,6 +3042,21 @@ class BaseEntry extends kaltura.BaseObject{
 	 */
 	 setApplicationVersion(applicationVersion) {
 	 	this.applicationVersion = applicationVersion;
+	 }
+	
+	/**
+	 * Block auto transcript on Entry
+	 * @return bool
+	 */
+	 getBlockAutoTranscript() {
+	 	return this.blockAutoTranscript;
+	 }
+	
+	/**
+	 * @param blockAutoTranscript bool Block auto transcript on Entry
+	 */
+	 setBlockAutoTranscript(blockAutoTranscript) {
+	 	this.blockAutoTranscript = blockAutoTranscript;
 	 }
 }
 module.exports.BaseEntry = BaseEntry;
@@ -6820,6 +6835,21 @@ class CaptionAsset extends Asset{
 	 */
 	 setFormat(format) {
 	 	this.format = format;
+	 }
+	
+	/**
+	 * The source of the asset
+	 * @return string
+	 */
+	 getSource() {
+	 	return this.source;
+	 }
+	
+	/**
+	 * @param source string The source of the asset
+	 */
+	 setSource(source) {
+	 	this.source = source;
 	 }
 	
 	/**
@@ -25626,33 +25656,6 @@ module.exports.PlaybackSource = PlaybackSource;
 /**
  *
  */
-class TypedArray extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaTypedArray';
-	}
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getCount() {
-	 	return this.count;
-	 }
-	
-	/**
-	 * @param count int 
-	 */
-	 setCount(count) {
-	 	this.count = count;
-	 }
-}
-module.exports.TypedArray = TypedArray;
-
-/**
- *
- */
 class PlaybackContext extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -25737,14 +25740,14 @@ class PlaybackContext extends kaltura.BaseObject{
 	
 	/**
 	 * 
-	 * @return TypedArray
+	 * @return array
 	 */
 	 getBumperData() {
 	 	return this.bumperData;
 	 }
 	
 	/**
-	 * @param bumperData TypedArray 
+	 * @param bumperData array 
 	 */
 	 setBumperData(bumperData) {
 	 	this.bumperData = bumperData;
@@ -34648,6 +34651,66 @@ class ZoomIntegrationSetting extends kaltura.BaseObject{
 	 */
 	 setConversionProfileId(conversionProfileId) {
 	 	this.conversionProfileId = conversionProfileId;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getJwtToken() {
+	 	return this.jwtToken;
+	 }
+	
+	/**
+	 * @param jwtToken string 
+	 */
+	 setJwtToken(jwtToken) {
+	 	this.jwtToken = jwtToken;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getDeletionPolicy() {
+	 	return this.deletionPolicy;
+	 }
+	
+	/**
+	 * @param deletionPolicy int 
+	 */
+	 setDeletionPolicy(deletionPolicy) {
+	 	this.deletionPolicy = deletionPolicy;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getEnableZoomTranscription() {
+	 	return this.enableZoomTranscription;
+	 }
+	
+	/**
+	 * @param enableZoomTranscription int 
+	 */
+	 setEnableZoomTranscription(enableZoomTranscription) {
+	 	this.enableZoomTranscription = enableZoomTranscription;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getZoomAccountDescription() {
+	 	return this.zoomAccountDescription;
+	 }
+	
+	/**
+	 * @param zoomAccountDescription string 
+	 */
+	 setZoomAccountDescription(zoomAccountDescription) {
+	 	this.zoomAccountDescription = zoomAccountDescription;
 	 }
 }
 module.exports.ZoomIntegrationSetting = ZoomIntegrationSetting;
@@ -60748,6 +60811,26 @@ module.exports.YoutubeApiDistributionProvider = YoutubeApiDistributionProvider;
 /**
  *
  */
+class ZoomIntegrationSettingResponse extends ListResponse{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaZoomIntegrationSettingResponse';
+	}
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getObjects() {
+	 	return this.objects;
+	 }
+}
+module.exports.ZoomIntegrationSettingResponse = ZoomIntegrationSettingResponse;
+
+/**
+ *
+ */
 class AccessControlBaseFilter extends RelatedFilter{
 	
 	constructor(object = null) {
@@ -62066,6 +62149,18 @@ class AvnDistributionProfile extends ConfigurableDistributionProfile{
 	 }
 }
 module.exports.AvnDistributionProfile = AvnDistributionProfile;
+
+/**
+ *
+ */
+class BaseLiveScheduleEvent extends EntryScheduleEvent{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaBaseLiveScheduleEvent';
+	}
+}
+module.exports.BaseLiveScheduleEvent = BaseLiveScheduleEvent;
 
 /**
  *
@@ -70220,74 +70315,59 @@ module.exports.LiveParams = LiveParams;
 /**
  *
  */
-class LiveStreamScheduleEvent extends EntryScheduleEvent{
+class MappedObjectsCsvJobData extends ExportCsvJobData{
 	
 	constructor(object = null) {
 		super(object);
-		this.objectType = 'KalturaLiveStreamScheduleEvent';
+		this.objectType = 'KalturaMappedObjectsCsvJobData';
 	}
 	
 	/**
-	 * Defines the expected audience
+	 * The metadata profile we should look the xpath in
 	 * @return int
 	 */
-	 getProjectedAudience() {
-	 	return this.projectedAudience;
+	 getMetadataProfileId() {
+	 	return this.metadataProfileId;
 	 }
 	
 	/**
-	 * @param projectedAudience int Defines the expected audience
+	 * @param metadataProfileId int The metadata profile we should look the xpath in
 	 */
-	 setProjectedAudience(projectedAudience) {
-	 	this.projectedAudience = projectedAudience;
+	 setMetadataProfileId(metadataProfileId) {
+	 	this.metadataProfileId = metadataProfileId;
 	 }
 	
 	/**
-	 * The entry ID of the source entry (for simulive)
-	 * @return string
+	 * The xpath to look in the metadataProfileId  and the wanted csv field name
+	 * @return array
 	 */
-	 getSourceEntryId() {
-	 	return this.sourceEntryId;
+	 getAdditionalFields() {
+	 	return this.additionalFields;
 	 }
 	
 	/**
-	 * @param sourceEntryId string The entry ID of the source entry (for simulive)
+	 * @param additionalFields array The xpath to look in the metadataProfileId  and the wanted csv field name
 	 */
-	 setSourceEntryId(sourceEntryId) {
-	 	this.sourceEntryId = sourceEntryId;
+	 setAdditionalFields(additionalFields) {
+	 	this.additionalFields = additionalFields;
 	 }
 	
 	/**
-	 * The time relative time before the startTime considered as preStart time
-	 * @return int
+	 * Array of header names and their mapped user fields
+	 * @return array
 	 */
-	 getPreStartTime() {
-	 	return this.preStartTime;
+	 getMappedFields() {
+	 	return this.mappedFields;
 	 }
 	
 	/**
-	 * @param preStartTime int The time relative time before the startTime considered as preStart time
+	 * @param mappedFields array Array of header names and their mapped user fields
 	 */
-	 setPreStartTime(preStartTime) {
-	 	this.preStartTime = preStartTime;
-	 }
-	
-	/**
-	 * The time relative time before the endTime considered as postEnd time
-	 * @return int
-	 */
-	 getPostEndTime() {
-	 	return this.postEndTime;
-	 }
-	
-	/**
-	 * @param postEndTime int The time relative time before the endTime considered as postEnd time
-	 */
-	 setPostEndTime(postEndTime) {
-	 	this.postEndTime = postEndTime;
+	 setMappedFields(mappedFields) {
+	 	this.mappedFields = mappedFields;
 	 }
 }
-module.exports.LiveStreamScheduleEvent = LiveStreamScheduleEvent;
+module.exports.MappedObjectsCsvJobData = MappedObjectsCsvJobData;
 
 /**
  *
@@ -75383,78 +75463,6 @@ module.exports.UserRoleBaseFilter = UserRoleBaseFilter;
 /**
  *
  */
-class UsersCsvJobData extends ExportCsvJobData{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaUsersCsvJobData';
-	}
-	
-	/**
-	 * The filter should return the list of users that need to be specified in the csv
-	 * @return UserFilter
-	 */
-	 getFilter() {
-	 	return this.filter;
-	 }
-	
-	/**
-	 * @param filter UserFilter The filter should return the list of users that need to be specified in the csv
-	 */
-	 setFilter(filter) {
-	 	this.filter = filter;
-	 }
-	
-	/**
-	 * The metadata profile we should look the xpath in
-	 * @return int
-	 */
-	 getMetadataProfileId() {
-	 	return this.metadataProfileId;
-	 }
-	
-	/**
-	 * @param metadataProfileId int The metadata profile we should look the xpath in
-	 */
-	 setMetadataProfileId(metadataProfileId) {
-	 	this.metadataProfileId = metadataProfileId;
-	 }
-	
-	/**
-	 * The xpath to look in the metadataProfileId  and the wanted csv field name
-	 * @return array
-	 */
-	 getAdditionalFields() {
-	 	return this.additionalFields;
-	 }
-	
-	/**
-	 * @param additionalFields array The xpath to look in the metadataProfileId  and the wanted csv field name
-	 */
-	 setAdditionalFields(additionalFields) {
-	 	this.additionalFields = additionalFields;
-	 }
-	
-	/**
-	 * Array of header names and their mapped user fields
-	 * @return array
-	 */
-	 getMappedFields() {
-	 	return this.mappedFields;
-	 }
-	
-	/**
-	 * @param mappedFields array Array of header names and their mapped user fields
-	 */
-	 setMappedFields(mappedFields) {
-	 	this.mappedFields = mappedFields;
-	 }
-}
-module.exports.UsersCsvJobData = UsersCsvJobData;
-
-/**
- *
- */
 class VelocixProvisionJobData extends ProvisionJobData{
 	
 	constructor(object = null) {
@@ -78907,6 +78915,33 @@ module.exports.EmailNotificationTemplateBaseFilter = EmailNotificationTemplateBa
 /**
  *
  */
+class EntriesCsvJobData extends MappedObjectsCsvJobData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaEntriesCsvJobData';
+	}
+	
+	/**
+	 * The filter should return the list of entries that need to be specified in the csv
+	 * @return BaseEntryFilter
+	 */
+	 getFilter() {
+	 	return this.filter;
+	 }
+	
+	/**
+	 * @param filter BaseEntryFilter The filter should return the list of entries that need to be specified in the csv
+	 */
+	 setFilter(filter) {
+	 	this.filter = filter;
+	 }
+}
+module.exports.EntriesCsvJobData = EntriesCsvJobData;
+
+/**
+ *
+ */
 class EntryDistributionFilter extends EntryDistributionBaseFilter{
 	
 	constructor(object = null) {
@@ -79792,6 +79827,33 @@ module.exports.LiveEntryServerNodeBaseFilter = LiveEntryServerNodeBaseFilter;
 /**
  *
  */
+class LiveRedirectScheduleEvent extends BaseLiveScheduleEvent{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaLiveRedirectScheduleEvent';
+	}
+	
+	/**
+	 * The vod entry to redirect
+	 * @return string
+	 */
+	 getRedirectEntryId() {
+	 	return this.redirectEntryId;
+	 }
+	
+	/**
+	 * @param redirectEntryId string The vod entry to redirect
+	 */
+	 setRedirectEntryId(redirectEntryId) {
+	 	this.redirectEntryId = redirectEntryId;
+	 }
+}
+module.exports.LiveRedirectScheduleEvent = LiveRedirectScheduleEvent;
+
+/**
+ *
+ */
 class LiveStreamAdminEntryCompareAttributeCondition extends SearchComparableAttributeCondition{
 	
 	constructor(object = null) {
@@ -79896,6 +79958,78 @@ class LiveStreamEntryMatchAttributeCondition extends SearchMatchAttributeConditi
 	 }
 }
 module.exports.LiveStreamEntryMatchAttributeCondition = LiveStreamEntryMatchAttributeCondition;
+
+/**
+ *
+ */
+class LiveStreamScheduleEvent extends BaseLiveScheduleEvent{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaLiveStreamScheduleEvent';
+	}
+	
+	/**
+	 * The entry ID of the source entry (for simulive)
+	 * @return string
+	 */
+	 getSourceEntryId() {
+	 	return this.sourceEntryId;
+	 }
+	
+	/**
+	 * @param sourceEntryId string The entry ID of the source entry (for simulive)
+	 */
+	 setSourceEntryId(sourceEntryId) {
+	 	this.sourceEntryId = sourceEntryId;
+	 }
+	
+	/**
+	 * Defines the expected audience
+	 * @return int
+	 */
+	 getProjectedAudience() {
+	 	return this.projectedAudience;
+	 }
+	
+	/**
+	 * @param projectedAudience int Defines the expected audience
+	 */
+	 setProjectedAudience(projectedAudience) {
+	 	this.projectedAudience = projectedAudience;
+	 }
+	
+	/**
+	 * The time relative time before the startTime considered as preStart time
+	 * @return int
+	 */
+	 getPreStartTime() {
+	 	return this.preStartTime;
+	 }
+	
+	/**
+	 * @param preStartTime int The time relative time before the startTime considered as preStart time
+	 */
+	 setPreStartTime(preStartTime) {
+	 	this.preStartTime = preStartTime;
+	 }
+	
+	/**
+	 * The time relative time before the endTime considered as postEnd time
+	 * @return int
+	 */
+	 getPostEndTime() {
+	 	return this.postEndTime;
+	 }
+	
+	/**
+	 * @param postEndTime int The time relative time before the endTime considered as postEnd time
+	 */
+	 setPostEndTime(postEndTime) {
+	 	this.postEndTime = postEndTime;
+	 }
+}
+module.exports.LiveStreamScheduleEvent = LiveStreamScheduleEvent;
 
 /**
  *
@@ -81102,6 +81236,33 @@ class UserRoleFilter extends UserRoleBaseFilter{
 	}
 }
 module.exports.UserRoleFilter = UserRoleFilter;
+
+/**
+ *
+ */
+class UsersCsvJobData extends MappedObjectsCsvJobData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaUsersCsvJobData';
+	}
+	
+	/**
+	 * The filter should return the list of users that need to be specified in the csv
+	 * @return UserFilter
+	 */
+	 getFilter() {
+	 	return this.filter;
+	 }
+	
+	/**
+	 * @param filter UserFilter The filter should return the list of users that need to be specified in the csv
+	 */
+	 setFilter(filter) {
+	 	this.filter = filter;
+	 }
+}
+module.exports.UsersCsvJobData = UsersCsvJobData;
 
 /**
  *
@@ -85506,6 +85667,18 @@ class LiveParamsBaseFilter extends FlavorParamsFilter{
 	}
 }
 module.exports.LiveParamsBaseFilter = LiveParamsBaseFilter;
+
+/**
+ *
+ */
+class LiveRedirectScheduleEventFilter extends EntryScheduleEventFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaLiveRedirectScheduleEventFilter';
+	}
+}
+module.exports.LiveRedirectScheduleEventFilter = LiveRedirectScheduleEventFilter;
 
 /**
  *

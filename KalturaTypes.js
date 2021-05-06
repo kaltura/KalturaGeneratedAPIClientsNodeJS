@@ -5,7 +5,7 @@
 //                          |_|\_\__,_|_|\__|\_,_|_| \__,_|
 //
 // This file is part of the Kaltura Collaborative Media Suite which allows users
-// to do with audio, video, and animation what Wiki platfroms allow them to do with
+// to do with audio, video, and animation what Wiki platforms allow them to do with
 // text.
 //
 // Copyright (C) 2006-2021  Kaltura Inc.
@@ -956,6 +956,7 @@ RECORD : 1,
 LIVE_STREAM : 2,
 BLACKOUT : 3,
 MEETING : 4,
+LIVE_REDIRECT : 5,
 };
 
 module.exports.ScheduleResourceStatus = {
@@ -2063,6 +2064,11 @@ UPDATED_AT_DESC : '-updatedAt',
 };
 
 module.exports.CaptionParamsOrderBy = {
+};
+
+module.exports.CaptionSource = {
+UNKNOWN : '0',
+ZOOM : '1',
 };
 
 module.exports.CaptionType = {
@@ -5706,6 +5712,8 @@ TOP_DOMAINS_WEBCAST : '40008',
 TOP_USERS_WEBCAST : '40009',
 ENGAGEMENT_BREAKDOWN_WEBCAST : '40010',
 ENGAGMENT_TIMELINE_WEBCAST : '40011',
+ENGAGEMENT_TOOLS_WEBCAST : '40012',
+REACTIONS_BREAKDOWN_WEBCAST : '40013',
 };
 
 module.exports.ResetPassLinkType = {

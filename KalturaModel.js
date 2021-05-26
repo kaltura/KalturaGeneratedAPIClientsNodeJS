@@ -34712,6 +34712,51 @@ class ZoomIntegrationSetting extends kaltura.BaseObject{
 	 setZoomAccountDescription(zoomAccountDescription) {
 	 	this.zoomAccountDescription = zoomAccountDescription;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getCreatedAt() {
+	 	return this.createdAt;
+	 }
+	
+	/**
+	 * @param createdAt string 
+	 */
+	 setCreatedAt(createdAt) {
+	 	this.createdAt = createdAt;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getUpdatedAt() {
+	 	return this.updatedAt;
+	 }
+	
+	/**
+	 * @param updatedAt string 
+	 */
+	 setUpdatedAt(updatedAt) {
+	 	this.updatedAt = updatedAt;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getEnableMeetingUpload() {
+	 	return this.enableMeetingUpload;
+	 }
+	
+	/**
+	 * @param enableMeetingUpload int 
+	 */
+	 setEnableMeetingUpload(enableMeetingUpload) {
+	 	this.enableMeetingUpload = enableMeetingUpload;
+	 }
 }
 module.exports.ZoomIntegrationSetting = ZoomIntegrationSetting;
 
@@ -52790,6 +52835,21 @@ class ModifyEntryObjectTask extends ObjectTask{
 	 */
 	 setInputEntitledUsersPublish(inputEntitledUsersPublish) {
 	 	this.inputEntitledUsersPublish = inputEntitledUsersPublish;
+	 }
+	
+	/**
+	 * The input entitled users view to set on the entry
+	 * @return string
+	 */
+	 getInputEntitledUsersView() {
+	 	return this.inputEntitledUsersView;
+	 }
+	
+	/**
+	 * @param inputEntitledUsersView string The input entitled users view to set on the entry
+	 */
+	 setInputEntitledUsersView(inputEntitledUsersView) {
+	 	this.inputEntitledUsersView = inputEntitledUsersView;
 	 }
 	
 	/**

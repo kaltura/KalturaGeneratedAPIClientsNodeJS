@@ -10821,9 +10821,9 @@ module.exports.varConsole = varConsole;
  * @action get Retrieve zoom integration setting object by partner id.
  * @action list List KalturaZoomIntegrationSetting objects.
  * @action localRegistrationPage .
- * @action oauthValidation .
- * @action preOauthValidation load html page the that will ask the user for its KMC URL, derive the region of the user from it,
+ * @action oauthValidation load html page the that will ask the user for its KMC URL, derive the region of the user from it,
  * and redirect to the registration page in the correct region, while forwarding the necessary code for registration.
+ * @action preOauthValidation .
  * @action recordingComplete .
  * @action submitRegistration .
  */
@@ -10883,8 +10883,8 @@ class zoomVendor{
 	};
 	
 	/**
-	 * .
-	 * @return string
+	 * load html page the that will ask the user for its KMC URL, derive the region of the user from it,
+ * and redirect to the registration page in the correct region, while forwarding the necessary code for registration.
 	 */
 	static oauthValidation(){
 		let kparams = {};
@@ -10892,8 +10892,8 @@ class zoomVendor{
 	};
 	
 	/**
-	 * load html page the that will ask the user for its KMC URL, derive the region of the user from it,
- * and redirect to the registration page in the correct region, while forwarding the necessary code for registration.
+	 * .
+	 * @return string
 	 */
 	static preOauthValidation(){
 		let kparams = {};

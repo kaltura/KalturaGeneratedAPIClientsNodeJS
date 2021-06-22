@@ -1336,6 +1336,7 @@ TRANSLATION : 2,
 ALIGNMENT : 3,
 AUDIO_DESCRIPTION : 4,
 CHAPTERING : 5,
+INTELLIGENT_TAGGING : 6,
 };
 
 module.exports.VendorServiceTurnAroundTime = {
@@ -3170,6 +3171,7 @@ DOCUMENT : '10',
 
 module.exports.EntryVendorTaskOrderBy = {
 CREATED_AT_ASC : '+createdAt',
+EXPECTED_FINISH_TIME_ASC : '+expectedFinishTime',
 FINISH_TIME_ASC : '+finishTime',
 ID_ASC : '+id',
 PRICE_ASC : '+price',
@@ -3177,6 +3179,7 @@ QUEUE_TIME_ASC : '+queueTime',
 STATUS_ASC : '+status',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
+EXPECTED_FINISH_TIME_DESC : '-expectedFinishTime',
 FINISH_TIME_DESC : '-finishTime',
 ID_DESC : '-id',
 PRICE_DESC : '-price',
@@ -5497,6 +5500,9 @@ UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 ID_DESC : '-id',
 UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.ReachVendorEngineType = {
 };
 
 module.exports.RecordScheduleEventOrderBy = {

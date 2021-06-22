@@ -33309,6 +33309,36 @@ class VendorCatalogItem extends kaltura.BaseObject{
 	 }
 	
 	/**
+	 * Property showing the catalog item's engine type, in case a vendor can offer the same service via different engines
+	 * @return string
+	 */
+	 getEngineType() {
+	 	return this.engineType;
+	 }
+	
+	/**
+	 * @param engineType string Property showing the catalog item's engine type, in case a vendor can offer the same service via different engines
+	 */
+	 setEngineType(engineType) {
+	 	this.engineType = engineType;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSourceLanguage() {
+	 	return this.sourceLanguage;
+	 }
+	
+	/**
+	 * @param sourceLanguage string 
+	 */
+	 setSourceLanguage(sourceLanguage) {
+	 	this.sourceLanguage = sourceLanguage;
+	 }
+	
+	/**
 	 * 
 	 * @return bool
 	 */
@@ -51133,6 +51163,33 @@ module.exports.IntegrationJobData = IntegrationJobData;
 /**
  *
  */
+class IntelligentTaggingVendorTaskData extends VendorTaskData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaIntelligentTaggingVendorTaskData';
+	}
+	
+	/**
+	 * Optional - The id of the caption asset object
+	 * @return string
+	 */
+	 getAssetId() {
+	 	return this.assetId;
+	 }
+	
+	/**
+	 * @param assetId string Optional - The id of the caption asset object
+	 */
+	 setAssetId(assetId) {
+	 	this.assetId = assetId;
+	 }
+}
+module.exports.IntelligentTaggingVendorTaskData = IntelligentTaggingVendorTaskData;
+
+/**
+ *
+ */
 class Interactivity extends BaseInteractivity{
 	
 	constructor(object = null) {
@@ -59034,21 +59091,6 @@ class VendorAlignmentCatalogItem extends VendorCatalogItem{
 	
 	/**
 	 * 
-	 * @return string
-	 */
-	 getSourceLanguage() {
-	 	return this.sourceLanguage;
-	 }
-	
-	/**
-	 * @param sourceLanguage string 
-	 */
-	 setSourceLanguage(sourceLanguage) {
-	 	this.sourceLanguage = sourceLanguage;
-	 }
-	
-	/**
-	 * 
 	 * @return int
 	 */
 	 getOutputFormat() {
@@ -59073,21 +59115,6 @@ class VendorAudioDescriptionCatalogItem extends VendorCatalogItem{
 		super(object);
 		this.objectType = 'KalturaVendorAudioDescriptionCatalogItem';
 	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSourceLanguage() {
-	 	return this.sourceLanguage;
-	 }
-	
-	/**
-	 * @param sourceLanguage string 
-	 */
-	 setSourceLanguage(sourceLanguage) {
-	 	this.sourceLanguage = sourceLanguage;
-	 }
 	
 	/**
 	 * 
@@ -59130,21 +59157,6 @@ class VendorCaptionsCatalogItem extends VendorCatalogItem{
 		super(object);
 		this.objectType = 'KalturaVendorCaptionsCatalogItem';
 	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSourceLanguage() {
-	 	return this.sourceLanguage;
-	 }
-	
-	/**
-	 * @param sourceLanguage string 
-	 */
-	 setSourceLanguage(sourceLanguage) {
-	 	this.sourceLanguage = sourceLanguage;
-	 }
 	
 	/**
 	 * 
@@ -59222,21 +59234,6 @@ class VendorChapteringCatalogItem extends VendorCatalogItem{
 		super(object);
 		this.objectType = 'KalturaVendorChapteringCatalogItem';
 	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSourceLanguage() {
-	 	return this.sourceLanguage;
-	 }
-	
-	/**
-	 * @param sourceLanguage string 
-	 */
-	 setSourceLanguage(sourceLanguage) {
-	 	this.sourceLanguage = sourceLanguage;
-	 }
 }
 module.exports.VendorChapteringCatalogItem = VendorChapteringCatalogItem;
 
@@ -59311,6 +59308,18 @@ class VendorCredit extends BaseVendorCredit{
 	 }
 }
 module.exports.VendorCredit = VendorCredit;
+
+/**
+ *
+ */
+class VendorIntelligentTaggingCatalogItem extends VendorCatalogItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorIntelligentTaggingCatalogItem';
+	}
+}
+module.exports.VendorIntelligentTaggingCatalogItem = VendorIntelligentTaggingCatalogItem;
 
 /**
  *
@@ -67134,6 +67143,21 @@ class EntryVendorTaskBaseFilter extends RelatedFilter{
 	
 	/**
 	 * 
+	 * @return string
+	 */
+	 getIdNotIn() {
+	 	return this.idNotIn;
+	 }
+	
+	/**
+	 * @param idNotIn string 
+	 */
+	 setIdNotIn(idNotIn) {
+	 	this.idNotIn = idNotIn;
+	 }
+	
+	/**
+	 * 
 	 * @return int
 	 */
 	 getVendorPartnerIdEqual() {
@@ -67415,6 +67439,36 @@ class EntryVendorTaskBaseFilter extends RelatedFilter{
 	 */
 	 setContextEqual(contextEqual) {
 	 	this.contextEqual = contextEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getExpectedFinishTimeGreaterThanOrEqual() {
+	 	return this.expectedFinishTimeGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * @param expectedFinishTimeGreaterThanOrEqual int 
+	 */
+	 setExpectedFinishTimeGreaterThanOrEqual(expectedFinishTimeGreaterThanOrEqual) {
+	 	this.expectedFinishTimeGreaterThanOrEqual = expectedFinishTimeGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getExpectedFinishTimeLessThanOrEqual() {
+	 	return this.expectedFinishTimeLessThanOrEqual;
+	 }
+	
+	/**
+	 * @param expectedFinishTimeLessThanOrEqual int 
+	 */
+	 setExpectedFinishTimeLessThanOrEqual(expectedFinishTimeLessThanOrEqual) {
+	 	this.expectedFinishTimeLessThanOrEqual = expectedFinishTimeLessThanOrEqual;
 	 }
 }
 module.exports.EntryVendorTaskBaseFilter = EntryVendorTaskBaseFilter;

@@ -3663,6 +3663,7 @@ module.exports.notification = notification;
  * @action listFeatureStatus List partner's current processes' statuses.
  * @action listPartnersForUser Retrieve a list of partner objects which the current user is allowed to access.
  * @action register Create a new Partner object.
+ * @action registrationValidation Create a new Partner object.
  * @action update Update details and settings of an existing partner.
  */
 class partner{
@@ -3807,6 +3808,23 @@ class partner{
 		kparams.templatePartnerId = templatePartnerId;
 		kparams.silent = silent;
 		return new kaltura.RequestBuilder('partner', 'register', kparams);
+	};
+	
+	/**
+	 * Create a new Partner object.
+	 * @param partner Partner 
+	 * @param cmsPassword string  (optional)
+	 * @param templatePartnerId int  (optional, default: null)
+	 * @param silent bool  (optional, default: false)
+	 * @return bool
+	 */
+	static registrationValidation(partner, cmsPassword = '', templatePartnerId = null, silent = false){
+		let kparams = {};
+		kparams.partner = partner;
+		kparams.cmsPassword = cmsPassword;
+		kparams.templatePartnerId = templatePartnerId;
+		kparams.silent = silent;
+		return new kaltura.RequestBuilder('partner', 'registrationValidation', kparams);
 	};
 	
 	/**

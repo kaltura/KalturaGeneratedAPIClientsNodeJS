@@ -6161,6 +6161,7 @@ UPDATED_AT_DESC : '-updatedAt',
 
 module.exports.VideoCodec = {
 NONE : '',
+AV1 : 'AV1',
 APCH : 'apch',
 APCN : 'apcn',
 APCO : 'apco',

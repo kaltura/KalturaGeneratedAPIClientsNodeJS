@@ -5489,6 +5489,96 @@ class Partner extends kaltura.BaseObject{
 	 getMonitorUsage() {
 	 	return this.monitorUsage;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getPasswordStructureValidations() {
+	 	return this.passwordStructureValidations;
+	 }
+	
+	/**
+	 * @param passwordStructureValidations string 
+	 */
+	 setPasswordStructureValidations(passwordStructureValidations) {
+	 	this.passwordStructureValidations = passwordStructureValidations;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getPasswordStructureValidationsDescription() {
+	 	return this.passwordStructureValidationsDescription;
+	 }
+	
+	/**
+	 * @param passwordStructureValidationsDescription string 
+	 */
+	 setPasswordStructureValidationsDescription(passwordStructureValidationsDescription) {
+	 	this.passwordStructureValidationsDescription = passwordStructureValidationsDescription;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getPassReplaceFreq() {
+	 	return this.passReplaceFreq;
+	 }
+	
+	/**
+	 * @param passReplaceFreq int 
+	 */
+	 setPassReplaceFreq(passReplaceFreq) {
+	 	this.passReplaceFreq = passReplaceFreq;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getMaxLoginAttempts() {
+	 	return this.maxLoginAttempts;
+	 }
+	
+	/**
+	 * @param maxLoginAttempts int 
+	 */
+	 setMaxLoginAttempts(maxLoginAttempts) {
+	 	this.maxLoginAttempts = maxLoginAttempts;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getLoginBlockPeriod() {
+	 	return this.loginBlockPeriod;
+	 }
+	
+	/**
+	 * @param loginBlockPeriod int 
+	 */
+	 setLoginBlockPeriod(loginBlockPeriod) {
+	 	this.loginBlockPeriod = loginBlockPeriod;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getNumPrevPassToKeep() {
+	 	return this.numPrevPassToKeep;
+	 }
+	
+	/**
+	 * @param numPrevPassToKeep int 
+	 */
+	 setNumPrevPassToKeep(numPrevPassToKeep) {
+	 	this.numPrevPassToKeep = numPrevPassToKeep;
+	 }
 }
 module.exports.Partner = Partner;
 
@@ -12194,6 +12284,21 @@ class DropFolder extends kaltura.BaseObject{
 	 */
 	 setFileDeletePolicy(fileDeletePolicy) {
 	 	this.fileDeletePolicy = fileDeletePolicy;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getFileDeleteRegex() {
+	 	return this.fileDeleteRegex;
+	 }
+	
+	/**
+	 * @param fileDeleteRegex string 
+	 */
+	 setFileDeleteRegex(fileDeleteRegex) {
+	 	this.fileDeleteRegex = fileDeleteRegex;
 	 }
 	
 	/**

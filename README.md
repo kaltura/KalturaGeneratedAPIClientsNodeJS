@@ -1,5 +1,5 @@
 ## Kaltura node.js API Client Library.
-Compatible with Kaltura server version 17.3.0 and above.
+Compatible with Kaltura server version 17.5.0 and above.
 This client library replaces the older architecture that presented in previous node.js client library.
 
 [![NPM](https://nodei.co/npm/kaltura-client.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/kaltura-client/)

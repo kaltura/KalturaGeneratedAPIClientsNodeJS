@@ -947,6 +947,7 @@ module.exports.categoryEntry = categoryEntry;
  * The available service actions:
  * @action add Add new Category.
  * @action addFromBulkUpload .
+ * @action clone Clone Category.
  * @action delete Delete a Category.
  * @action get Get Category by id.
  * @action index Index Category by id.
@@ -982,6 +983,21 @@ class category{
 		kparams.bulkUploadData = bulkUploadData;
 		kparams.bulkUploadCategoryData = bulkUploadCategoryData;
 		return new kaltura.RequestBuilder('category', 'addFromBulkUpload', kparams, kfiles);
+	};
+	
+	/**
+	 * Clone Category.
+	 * @param categoryId int 
+	 * @param fromPartnerId int 
+	 * @param parentCategoryId int  (optional, default: null)
+	 * @return KalturaCategory
+	 */
+	static cloneAction(categoryId, fromPartnerId, parentCategoryId = null){
+		let kparams = {};
+		kparams.categoryId = categoryId;
+		kparams.fromPartnerId = fromPartnerId;
+		kparams.parentCategoryId = parentCategoryId;
+		return new kaltura.RequestBuilder('category', 'clone', kparams);
 	};
 	
 	/**
@@ -9769,7 +9785,7 @@ module.exports.vendorCatalogItem = vendorCatalogItem;
  * @action delete Delete vednor profile by id.
  * @action get Retrieve specific reach profile by id.
  * @action list List KalturaReachProfile objects.
- * @action syncCredit sync vednor profile credit.
+ * @action syncCredit sync vendor profile credit.
  * @action update Update an existing reach profile object.
  * @action updateStatus Update reach profile status by id.
  */
@@ -9821,7 +9837,7 @@ class reachProfile{
 	};
 	
 	/**
-	 * sync vednor profile credit.
+	 * sync vendor profile credit.
 	 * @param reachProfileId int 
 	 * @return KalturaReachProfile
 	 */
@@ -10940,6 +10956,81 @@ class zoomVendor{
 	};
 }
 module.exports.zoomVendor = zoomVendor;
+
+
+/**
+ *Class definition for the Kaltura service: vendorIntegration.
+ * The available service actions:
+ * @action add Add new integration setting object.
+ * @action delete Delete integration object by ID.
+ * @action get Retrieve integration setting object by ID.
+ * @action update Update an existing vedor catalog item object.
+ * @action updateStatus Update vendor catalog item status by id.
+ */
+class vendorIntegration{
+	
+	/**
+	 * Add new integration setting object.
+	 * @param integration IntegrationSetting 
+	 * @param remoteId string 
+	 * @return KalturaIntegrationSetting
+	 */
+	static add(integration, remoteId){
+		let kparams = {};
+		kparams.integration = integration;
+		kparams.remoteId = remoteId;
+		return new kaltura.RequestBuilder('vendor_vendorintegration', 'add', kparams);
+	};
+	
+	/**
+	 * Delete integration object by ID.
+	 * @param integrationId int 
+	 * @return KalturaIntegrationSetting
+	 */
+	static deleteAction(integrationId){
+		let kparams = {};
+		kparams.integrationId = integrationId;
+		return new kaltura.RequestBuilder('vendor_vendorintegration', 'delete', kparams);
+	};
+	
+	/**
+	 * Retrieve integration setting object by ID.
+	 * @param integrationId int 
+	 * @return KalturaIntegrationSetting
+	 */
+	static get(integrationId){
+		let kparams = {};
+		kparams.integrationId = integrationId;
+		return new kaltura.RequestBuilder('vendor_vendorintegration', 'get', kparams);
+	};
+	
+	/**
+	 * Update an existing vedor catalog item object.
+	 * @param id int 
+	 * @param integrationSetting IntegrationSetting 
+	 * @return KalturaIntegrationSetting
+	 */
+	static update(id, integrationSetting){
+		let kparams = {};
+		kparams.id = id;
+		kparams.integrationSetting = integrationSetting;
+		return new kaltura.RequestBuilder('vendor_vendorintegration', 'update', kparams);
+	};
+	
+	/**
+	 * Update vendor catalog item status by id.
+	 * @param id int 
+	 * @param status IntegrationSetting 
+	 * @return KalturaIntegrationSetting
+	 */
+	static updateStatus(id, status){
+		let kparams = {};
+		kparams.id = id;
+		kparams.status = status;
+		return new kaltura.RequestBuilder('vendor_vendorintegration', 'updateStatus', kparams);
+	};
+}
+module.exports.vendorIntegration = vendorIntegration;
 
 
 /**

@@ -5579,6 +5579,14 @@ class Partner extends kaltura.BaseObject{
 	 setNumPrevPassToKeep(numPrevPassToKeep) {
 	 	this.numPrevPassToKeep = numPrevPassToKeep;
 	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getTwoFactorAuthenticationMode() {
+	 	return this.twoFactorAuthenticationMode;
+	 }
 }
 module.exports.Partner = Partner;
 
@@ -11323,6 +11331,14 @@ class DistributionProfile extends kaltura.BaseObject{
 	 setDistributeTrigger(distributeTrigger) {
 	 	this.distributeTrigger = distributeTrigger;
 	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getSupportImageEntry() {
+	 	return this.supportImageEntry;
+	 }
 }
 module.exports.DistributionProfile = DistributionProfile;
 
@@ -13834,6 +13850,14 @@ class User extends BaseUser{
 	 */
 	 setKsPrivileges(ksPrivileges) {
 	 	this.ksPrivileges = ksPrivileges;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getEncryptedSeed() {
+	 	return this.encryptedSeed;
 	 }
 }
 module.exports.User = User;
@@ -19065,6 +19089,141 @@ module.exports.IntegrationJobTriggerData = IntegrationJobTriggerData;
 /**
  *
  */
+class IntegrationSetting extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaIntegrationSetting';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getId() {
+	 	return this.id;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getStatus() {
+	 	return this.status;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getDefaultUserId() {
+	 	return this.defaultUserId;
+	 }
+	
+	/**
+	 * @param defaultUserId string 
+	 */
+	 setDefaultUserId(defaultUserId) {
+	 	this.defaultUserId = defaultUserId;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getAccountId() {
+	 	return this.accountId;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getCreateUserIfNotExist() {
+	 	return this.createUserIfNotExist;
+	 }
+	
+	/**
+	 * @param createUserIfNotExist int 
+	 */
+	 setCreateUserIfNotExist(createUserIfNotExist) {
+	 	this.createUserIfNotExist = createUserIfNotExist;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getConversionProfileId() {
+	 	return this.conversionProfileId;
+	 }
+	
+	/**
+	 * @param conversionProfileId int 
+	 */
+	 setConversionProfileId(conversionProfileId) {
+	 	this.conversionProfileId = conversionProfileId;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getHandleParticipantsMode() {
+	 	return this.handleParticipantsMode;
+	 }
+	
+	/**
+	 * @param handleParticipantsMode int 
+	 */
+	 setHandleParticipantsMode(handleParticipantsMode) {
+	 	this.handleParticipantsMode = handleParticipantsMode;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getDeletionPolicy() {
+	 	return this.deletionPolicy;
+	 }
+	
+	/**
+	 * @param deletionPolicy int 
+	 */
+	 setDeletionPolicy(deletionPolicy) {
+	 	this.deletionPolicy = deletionPolicy;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getCreatedAt() {
+	 	return this.createdAt;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getUpdatedAt() {
+	 	return this.updatedAt;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getPartnerId() {
+	 	return this.partnerId;
+	 }
+}
+module.exports.IntegrationSetting = IntegrationSetting;
+
+/**
+ *
+ */
 class InteractivityDataFieldsFilter extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -20675,6 +20834,48 @@ class Like extends kaltura.BaseObject{
 	 }
 }
 module.exports.Like = Like;
+
+/**
+ *
+ */
+class LinkedScheduleEvent extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaLinkedScheduleEvent';
+	}
+	
+	/**
+	 * The time between the end of the event which it's id is in $eventId and the start of the event holding this object
+	 * @return int
+	 */
+	 getOffset() {
+	 	return this.offset;
+	 }
+	
+	/**
+	 * @param offset int The time between the end of the event which it's id is in $eventId and the start of the event holding this object
+	 */
+	 setOffset(offset) {
+	 	this.offset = offset;
+	 }
+	
+	/**
+	 * The id of the event influencing the start of the event holding this object
+	 * @return int
+	 */
+	 getEventId() {
+	 	return this.eventId;
+	 }
+	
+	/**
+	 * @param eventId int The id of the event influencing the start of the event holding this object
+	 */
+	 setEventId(eventId) {
+	 	this.eventId = eventId;
+	 }
+}
+module.exports.LinkedScheduleEvent = LinkedScheduleEvent;
 
 /**
  *
@@ -23950,6 +24151,21 @@ class BaseEntryFilter extends BaseEntryBaseFilter{
 	 */
 	 setRedirectFromEntryId(redirectFromEntryId) {
 	 	this.redirectFromEntryId = redirectFromEntryId;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getConversionProfileIdEqual() {
+	 	return this.conversionProfileIdEqual;
+	 }
+	
+	/**
+	 * @param conversionProfileIdEqual int 
+	 */
+	 setConversionProfileIdEqual(conversionProfileIdEqual) {
+	 	this.conversionProfileIdEqual = conversionProfileIdEqual;
 	 }
 }
 module.exports.BaseEntryFilter = BaseEntryFilter;
@@ -27863,6 +28079,21 @@ class ReportExportParams extends kaltura.BaseObject{
 	 setReportsItemsGroup(reportsItemsGroup) {
 	 	this.reportsItemsGroup = reportsItemsGroup;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getBaseUrl() {
+	 	return this.baseUrl;
+	 }
+	
+	/**
+	 * @param baseUrl string 
+	 */
+	 setBaseUrl(baseUrl) {
+	 	this.baseUrl = baseUrl;
+	 }
 }
 module.exports.ReportExportParams = ReportExportParams;
 
@@ -28849,6 +29080,36 @@ class ScheduleEvent extends kaltura.BaseObject{
 	 */
 	 setReferenceId(referenceId) {
 	 	this.referenceId = referenceId;
+	 }
+	
+	/**
+	 * Contains the Id of the event that influences the timing of this event and the offset of time
+	 * @return LinkedScheduleEvent
+	 */
+	 getLinkedTo() {
+	 	return this.linkedTo;
+	 }
+	
+	/**
+	 * @param linkedTo LinkedScheduleEvent Contains the Id of the event that influences the timing of this event and the offset of time
+	 */
+	 setLinkedTo(linkedTo) {
+	 	this.linkedTo = linkedTo;
+	 }
+	
+	/**
+	 * An array of Schedule Event Ids that their start time depends on the end of the current
+	 * @return string
+	 */
+	 getLinkedBy() {
+	 	return this.linkedBy;
+	 }
+	
+	/**
+	 * @param linkedBy string An array of Schedule Event Ids that their start time depends on the end of the current
+	 */
+	 setLinkedBy(linkedBy) {
+	 	this.linkedBy = linkedBy;
 	 }
 	
 	/**
@@ -34623,27 +34884,12 @@ module.exports.YouTubeApiCaptionDistributionInfo = YouTubeApiCaptionDistribution
 /**
  *
  */
-class ZoomIntegrationSetting extends kaltura.BaseObject{
+class ZoomIntegrationSetting extends IntegrationSetting{
 	
 	constructor(object = null) {
 		super(object);
 		this.objectType = 'KalturaZoomIntegrationSetting';
 	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getDefaultUserId() {
-	 	return this.defaultUserId;
-	 }
-	
-	/**
-	 * @param defaultUserId string 
-	 */
-	 setDefaultUserId(defaultUserId) {
-	 	this.defaultUserId = defaultUserId;
-	 }
 	
 	/**
 	 * 
@@ -34662,14 +34908,6 @@ class ZoomIntegrationSetting extends kaltura.BaseObject{
 	
 	/**
 	 * 
-	 * @return string
-	 */
-	 getAccountId() {
-	 	return this.accountId;
-	 }
-	
-	/**
-	 * 
 	 * @return int
 	 */
 	 getEnableRecordingUpload() {
@@ -34681,36 +34919,6 @@ class ZoomIntegrationSetting extends kaltura.BaseObject{
 	 */
 	 setEnableRecordingUpload(enableRecordingUpload) {
 	 	this.enableRecordingUpload = enableRecordingUpload;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getCreateUserIfNotExist() {
-	 	return this.createUserIfNotExist;
-	 }
-	
-	/**
-	 * @param createUserIfNotExist int 
-	 */
-	 setCreateUserIfNotExist(createUserIfNotExist) {
-	 	this.createUserIfNotExist = createUserIfNotExist;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getHandleParticipantsMode() {
-	 	return this.handleParticipantsMode;
-	 }
-	
-	/**
-	 * @param handleParticipantsMode int 
-	 */
-	 setHandleParticipantsMode(handleParticipantsMode) {
-	 	this.handleParticipantsMode = handleParticipantsMode;
 	 }
 	
 	/**
@@ -34775,21 +34983,6 @@ class ZoomIntegrationSetting extends kaltura.BaseObject{
 	
 	/**
 	 * 
-	 * @return int
-	 */
-	 getConversionProfileId() {
-	 	return this.conversionProfileId;
-	 }
-	
-	/**
-	 * @param conversionProfileId int 
-	 */
-	 setConversionProfileId(conversionProfileId) {
-	 	this.conversionProfileId = conversionProfileId;
-	 }
-	
-	/**
-	 * 
 	 * @return string
 	 */
 	 getJwtToken() {
@@ -34801,21 +34994,6 @@ class ZoomIntegrationSetting extends kaltura.BaseObject{
 	 */
 	 setJwtToken(jwtToken) {
 	 	this.jwtToken = jwtToken;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getDeletionPolicy() {
-	 	return this.deletionPolicy;
-	 }
-	
-	/**
-	 * @param deletionPolicy int 
-	 */
-	 setDeletionPolicy(deletionPolicy) {
-	 	this.deletionPolicy = deletionPolicy;
 	 }
 	
 	/**
@@ -34846,36 +35024,6 @@ class ZoomIntegrationSetting extends kaltura.BaseObject{
 	 */
 	 setZoomAccountDescription(zoomAccountDescription) {
 	 	this.zoomAccountDescription = zoomAccountDescription;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getCreatedAt() {
-	 	return this.createdAt;
-	 }
-	
-	/**
-	 * @param createdAt string 
-	 */
-	 setCreatedAt(createdAt) {
-	 	this.createdAt = createdAt;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getUpdatedAt() {
-	 	return this.updatedAt;
-	 }
-	
-	/**
-	 * @param updatedAt string 
-	 */
-	 setUpdatedAt(updatedAt) {
-	 	this.updatedAt = updatedAt;
 	 }
 	
 	/**
@@ -42638,29 +42786,29 @@ module.exports.DeliveryProfileRtmp = DeliveryProfileRtmp;
 /**
  *
  */
-class DeliveryProfileVodPackagerPlayServer extends DeliveryProfile{
+class DeliveryProfileVod extends DeliveryProfile{
 	
 	constructor(object = null) {
 		super(object);
-		this.objectType = 'KalturaDeliveryProfileVodPackagerPlayServer';
+		this.objectType = 'KalturaDeliveryProfileVod';
 	}
 	
 	/**
 	 * 
 	 * @return bool
 	 */
-	 getAdStitchingEnabled() {
-	 	return this.adStitchingEnabled;
+	 getSimuliveSupport() {
+	 	return this.simuliveSupport;
 	 }
 	
 	/**
-	 * @param adStitchingEnabled bool 
+	 * @param simuliveSupport bool 
 	 */
-	 setAdStitchingEnabled(adStitchingEnabled) {
-	 	this.adStitchingEnabled = adStitchingEnabled;
+	 setSimuliveSupport(simuliveSupport) {
+	 	this.simuliveSupport = simuliveSupport;
 	 }
 }
-module.exports.DeliveryProfileVodPackagerPlayServer = DeliveryProfileVodPackagerPlayServer;
+module.exports.DeliveryProfileVod = DeliveryProfileVod;
 
 /**
  *
@@ -47906,6 +48054,18 @@ class EntryScheduleEvent extends ScheduleEvent{
 	 }
 }
 module.exports.EntryScheduleEvent = EntryScheduleEvent;
+
+/**
+ *
+ */
+class EntryScheduledCondition extends Condition{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaEntryScheduledCondition';
+	}
+}
+module.exports.EntryScheduledCondition = EntryScheduledCondition;
 
 /**
  *
@@ -55000,6 +55160,21 @@ class ReportExportJobData extends JobData{
 	 */
 	 setFiles(files) {
 	 	this.files = files;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getBaseUrl() {
+	 	return this.baseUrl;
+	 }
+	
+	/**
+	 * @param baseUrl string 
+	 */
+	 setBaseUrl(baseUrl) {
+	 	this.baseUrl = baseUrl;
 	 }
 }
 module.exports.ReportExportJobData = ReportExportJobData;
@@ -65853,29 +66028,29 @@ module.exports.DeliveryProfileLivePackagerHls = DeliveryProfileLivePackagerHls;
 /**
  *
  */
-class DeliveryProfileVodPackagerHls extends DeliveryProfileVodPackagerPlayServer{
+class DeliveryProfileVodPackagerPlayServer extends DeliveryProfileVod{
 	
 	constructor(object = null) {
 		super(object);
-		this.objectType = 'KalturaDeliveryProfileVodPackagerHls';
+		this.objectType = 'KalturaDeliveryProfileVodPackagerPlayServer';
 	}
 	
 	/**
 	 * 
 	 * @return bool
 	 */
-	 getAllowFairplayOffline() {
-	 	return this.allowFairplayOffline;
+	 getAdStitchingEnabled() {
+	 	return this.adStitchingEnabled;
 	 }
 	
 	/**
-	 * @param allowFairplayOffline bool 
+	 * @param adStitchingEnabled bool 
 	 */
-	 setAllowFairplayOffline(allowFairplayOffline) {
-	 	this.allowFairplayOffline = allowFairplayOffline;
+	 setAdStitchingEnabled(adStitchingEnabled) {
+	 	this.adStitchingEnabled = adStitchingEnabled;
 	 }
 }
-module.exports.DeliveryProfileVodPackagerHls = DeliveryProfileVodPackagerHls;
+module.exports.DeliveryProfileVodPackagerPlayServer = DeliveryProfileVodPackagerPlayServer;
 
 /**
  *
@@ -76015,6 +76190,18 @@ module.exports.VirusScanProfileFilter = VirusScanProfileFilter;
 /**
  *
  */
+class VodScheduleEvent extends EntryScheduleEvent{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVodScheduleEvent';
+	}
+}
+module.exports.VodScheduleEvent = VodScheduleEvent;
+
+/**
+ *
+ */
 class WebexDropFolderContentProcessorJobData extends DropFolderContentProcessorJobData{
 	
 	constructor(object = null) {
@@ -78492,6 +78679,33 @@ module.exports.DeliveryProfileRtmpBaseFilter = DeliveryProfileRtmpBaseFilter;
 /**
  *
  */
+class DeliveryProfileVodPackagerHls extends DeliveryProfileVodPackagerPlayServer{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaDeliveryProfileVodPackagerHls';
+	}
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getAllowFairplayOffline() {
+	 	return this.allowFairplayOffline;
+	 }
+	
+	/**
+	 * @param allowFairplayOffline bool 
+	 */
+	 setAllowFairplayOffline(allowFairplayOffline) {
+	 	this.allowFairplayOffline = allowFairplayOffline;
+	 }
+}
+module.exports.DeliveryProfileVodPackagerHls = DeliveryProfileVodPackagerHls;
+
+/**
+ *
+ */
 class DeliveryServerNodeBaseFilter extends ServerNodeFilter{
 	
 	constructor(object = null) {
@@ -80216,6 +80430,36 @@ class LiveStreamScheduleEvent extends BaseLiveScheduleEvent{
 	 */
 	 setPostEndTime(postEndTime) {
 	 	this.postEndTime = postEndTime;
+	 }
+	
+	/**
+	 * The entry id of the pre start entry
+	 * @return string
+	 */
+	 getPreStartEntryId() {
+	 	return this.preStartEntryId;
+	 }
+	
+	/**
+	 * @param preStartEntryId string The entry id of the pre start entry
+	 */
+	 setPreStartEntryId(preStartEntryId) {
+	 	this.preStartEntryId = preStartEntryId;
+	 }
+	
+	/**
+	 * The entry id of the post end entry
+	 * @return string
+	 */
+	 getPostEndEntryId() {
+	 	return this.postEndEntryId;
+	 }
+	
+	/**
+	 * @param postEndEntryId string The entry id of the post end entry
+	 */
+	 setPostEndEntryId(postEndEntryId) {
+	 	this.postEndEntryId = postEndEntryId;
 	 }
 }
 module.exports.LiveStreamScheduleEvent = LiveStreamScheduleEvent;
@@ -86166,6 +86410,18 @@ module.exports.VendorTranslationCatalogItemBaseFilter = VendorTranslationCatalog
 /**
  *
  */
+class VodScheduleEventBaseFilter extends EntryScheduleEventFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVodScheduleEventBaseFilter';
+	}
+}
+module.exports.VodScheduleEventBaseFilter = VodScheduleEventBaseFilter;
+
+/**
+ *
+ */
 class WidevineFlavorAssetBaseFilter extends FlavorAssetFilter{
 	
 	constructor(object = null) {
@@ -86474,6 +86730,18 @@ class VendorTranslationCatalogItemFilter extends VendorTranslationCatalogItemBas
 	}
 }
 module.exports.VendorTranslationCatalogItemFilter = VendorTranslationCatalogItemFilter;
+
+/**
+ *
+ */
+class VodScheduleEventFilter extends VodScheduleEventBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVodScheduleEventFilter';
+	}
+}
+module.exports.VodScheduleEventFilter = VodScheduleEventFilter;
 
 /**
  *

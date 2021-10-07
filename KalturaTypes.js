@@ -957,6 +957,7 @@ LIVE_STREAM : 2,
 BLACKOUT : 3,
 MEETING : 4,
 LIVE_REDIRECT : 5,
+VOD : 6,
 };
 
 module.exports.ScheduleResourceStatus = {
@@ -1237,6 +1238,12 @@ UPDATE_ENTRY : 5,
 DELETED_ENTRY : 6,
 };
 
+module.exports.TwoFactorAuthenticationMode = {
+ALL : 0,
+ADMIN_USERS_ONLY : 1,
+NON_ADMIN_USERS_ONLY : 2,
+};
+
 module.exports.UiConfCreationMode = {
 WIZARD : 2,
 ADVANCED : 3,
@@ -1326,6 +1333,12 @@ DFXP : 2,
 
 module.exports.VendorCatalogItemStatus = {
 DEPRECATED : 1,
+ACTIVE : 2,
+DELETED : 3,
+};
+
+module.exports.VendorIntegrationStatus = {
+DISABLED : 1,
 ACTIVE : 2,
 DELETED : 3,
 };
@@ -2083,6 +2096,7 @@ SCC : '5',
 module.exports.CatalogItemLanguage = {
 AR : 'Arabic',
 YUE : 'Cantonese',
+CA : 'Catalan',
 ZH : 'Chinese',
 DA : 'Danish',
 NL : 'Dutch',
@@ -2242,6 +2256,7 @@ ANONYMOUS_IP : '15',
 ASSET_TYPE : '16',
 BOOLEAN : '17',
 HTTP_HEADER : '18',
+ENTRY_SCHEDULED : '19',
 };
 
 module.exports.ConfMapsSourceLocation = {
@@ -2685,6 +2700,7 @@ module.exports.DoubleClickDistributionProviderOrderBy = {
 };
 
 module.exports.DrmLicenseScenario = {
+NONE : '0',
 PROTECTION : 'playReady.PROTECTION',
 PURCHASE : 'playReady.PURCHASE',
 RENTAL : 'playReady.RENTAL',
@@ -5605,6 +5621,7 @@ INTERACTIVE_VIDEO_HOTSPOT_CLICKED_PERCENTILES : '56',
 INTERACTIVE_VIDEO_NODE_SWITCH_HOTSPOT_CLICKED_PERCENTILES : '57',
 TOP_CUSTOM_VAR2 : '58',
 TOP_CUSTOM_VAR3 : '59',
+SELF_SERVE_USAGE : '60',
 PARTNER_USAGE : '201',
 MAP_OVERLAY_COUNTRY_REALTIME : '10001',
 MAP_OVERLAY_REGION_REALTIME : '10002',
@@ -5643,6 +5660,7 @@ PLAYER_RELATED_INTERACTIONS_VPAAS : '20019',
 PLAYBACK_RATE_VPAAS : '20020',
 PARTNER_USAGE_VPAAS : '20021',
 TOP_PLAYBACK_CONTEXT_VPAAS : '20022',
+SELF_SERVE_USAGE_VPAAS : '20023',
 QOE_OVERVIEW : '30001',
 QOE_EXPERIENCE : '30002',
 QOE_EXPERIENCE_PLATFORMS : '30003',
@@ -6161,11 +6179,11 @@ UPDATED_AT_DESC : '-updatedAt',
 
 module.exports.VideoCodec = {
 NONE : '',
-AV1 : 'AV1',
 APCH : 'apch',
 APCN : 'apcn',
 APCO : 'apco',
 APCS : 'apcs',
+AV1 : 'av1',
 COPY : 'copy',
 DNXHD : 'dnxhd',
 DV : 'dv',

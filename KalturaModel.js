@@ -59682,6 +59682,21 @@ class ViewHistoryUserEntry extends UserEntry{
 	 setLastUpdateTime(lastUpdateTime) {
 	 	this.lastUpdateTime = lastUpdateTime;
 	 }
+	
+	/**
+	 * Property to save last entry ID played in a playlist
+	 * @return string
+	 */
+	 getPlaylistLastEntryId() {
+	 	return this.playlistLastEntryId;
+	 }
+	
+	/**
+	 * @param playlistLastEntryId string Property to save last entry ID played in a playlist
+	 */
+	 setPlaylistLastEntryId(playlistLastEntryId) {
+	 	this.playlistLastEntryId = playlistLastEntryId;
+	 }
 }
 module.exports.ViewHistoryUserEntry = ViewHistoryUserEntry;
 

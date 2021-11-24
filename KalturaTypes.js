@@ -2258,6 +2258,8 @@ ASSET_TYPE : '16',
 BOOLEAN : '17',
 HTTP_HEADER : '18',
 ENTRY_SCHEDULED : '19',
+ACTION_NAME : '20',
+URL_AUTH_PARAMS : '21',
 };
 
 module.exports.ConfMapsSourceLocation = {
@@ -2745,6 +2747,7 @@ ERROR_GET_PHISICAL_FILE_LIST : '3',
 ERROR_GET_DB_FILE_LIST : '4',
 DROP_FOLDER_APP_ERROR : '5',
 CONTENT_MATCH_POLICY_UNDEFINED : '6',
+MISSING_CONFIG : '7',
 };
 
 module.exports.DropFolderFileErrorCode = {
@@ -5555,6 +5558,7 @@ MINUTES : 'minutes',
 MONTHS : 'months',
 TEN_MINUTES : 'ten_minutes',
 TEN_SECONDS : 'ten_seconds',
+YEARS : 'years',
 };
 
 module.exports.ReportOrderBy = {

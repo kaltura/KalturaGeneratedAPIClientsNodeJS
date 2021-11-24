@@ -4708,6 +4708,33 @@ module.exports.ESearchLanguageItem = ESearchLanguageItem;
 /**
  *
  */
+class RegexItem extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaRegexItem';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getRegex() {
+	 	return this.regex;
+	 }
+	
+	/**
+	 * @param regex string 
+	 */
+	 setRegex(regex) {
+	 	this.regex = regex;
+	 }
+}
+module.exports.RegexItem = RegexItem;
+
+/**
+ *
+ */
 class Partner extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -5492,14 +5519,14 @@ class Partner extends kaltura.BaseObject{
 	
 	/**
 	 * 
-	 * @return string
+	 * @return array
 	 */
 	 getPasswordStructureValidations() {
 	 	return this.passwordStructureValidations;
 	 }
 	
 	/**
-	 * @param passwordStructureValidations string 
+	 * @param passwordStructureValidations array 
 	 */
 	 setPasswordStructureValidations(passwordStructureValidations) {
 	 	this.passwordStructureValidations = passwordStructureValidations;
@@ -5586,6 +5613,21 @@ class Partner extends kaltura.BaseObject{
 	 */
 	 getTwoFactorAuthenticationMode() {
 	 	return this.twoFactorAuthenticationMode;
+	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getIsSelfServe() {
+	 	return this.isSelfServe;
+	 }
+	
+	/**
+	 * @param isSelfServe bool 
+	 */
+	 setIsSelfServe(isSelfServe) {
+	 	this.isSelfServe = isSelfServe;
 	 }
 }
 module.exports.Partner = Partner;
@@ -58403,6 +58445,18 @@ module.exports.UploadTokenListResponse = UploadTokenListResponse;
 /**
  *
  */
+class UrlAuthenticationParamsCondition extends Condition{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaUrlAuthenticationParamsCondition';
+	}
+}
+module.exports.UrlAuthenticationParamsCondition = UrlAuthenticationParamsCondition;
+
+/**
+ *
+ */
 class UrlRecognizerAkamaiG2O extends UrlRecognizer{
 	
 	constructor(object = null) {
@@ -77737,6 +77791,18 @@ class AccessControlProfileFilter extends AccessControlProfileBaseFilter{
 	}
 }
 module.exports.AccessControlProfileFilter = AccessControlProfileFilter;
+
+/**
+ *
+ */
+class ActionNameCondition extends RegexCondition{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaActionNameCondition';
+	}
+}
+module.exports.ActionNameCondition = ActionNameCondition;
 
 /**
  *

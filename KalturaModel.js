@@ -12921,6 +12921,48 @@ module.exports.DropFolderFile = DropFolderFile;
 /**
  *
  */
+class DynamicEmailContents extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaDynamicEmailContents';
+	}
+	
+	/**
+	 * The subject of the customized email
+	 * @return string
+	 */
+	 getEmailSubject() {
+	 	return this.emailSubject;
+	 }
+	
+	/**
+	 * @param emailSubject string The subject of the customized email
+	 */
+	 setEmailSubject(emailSubject) {
+	 	this.emailSubject = emailSubject;
+	 }
+	
+	/**
+	 * The body of the customized email
+	 * @return string
+	 */
+	 getEmailBody() {
+	 	return this.emailBody;
+	 }
+	
+	/**
+	 * @param emailBody string The body of the customized email
+	 */
+	 setEmailBody(emailBody) {
+	 	this.emailBody = emailBody;
+	 }
+}
+module.exports.DynamicEmailContents = DynamicEmailContents;
+
+/**
+ *
+ */
 class ESearchAggregationItem extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -31678,6 +31720,21 @@ class StorageProfile extends kaltura.BaseObject{
 	 */
 	 setPassPhrase(passPhrase) {
 	 	this.passPhrase = passPhrase;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getPort() {
+	 	return this.port;
+	 }
+	
+	/**
+	 * @param port int 
+	 */
+	 setPort(port) {
+	 	this.port = port;
 	 }
 	
 	/**
@@ -52311,6 +52368,21 @@ class MailJobData extends JobData{
 	 */
 	 setSubjectParams(subjectParams) {
 	 	this.subjectParams = subjectParams;
+	 }
+	
+	/**
+	 * 
+	 * @return DynamicEmailContents
+	 */
+	 getDynamicEmailContents() {
+	 	return this.dynamicEmailContents;
+	 }
+	
+	/**
+	 * @param dynamicEmailContents DynamicEmailContents 
+	 */
+	 setDynamicEmailContents(dynamicEmailContents) {
+	 	this.dynamicEmailContents = dynamicEmailContents;
 	 }
 	
 	/**
@@ -74908,6 +74980,21 @@ class StorageExportJobData extends StorageJobData{
 	 */
 	 setExternalUrl(externalUrl) {
 	 	this.externalUrl = externalUrl;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getPort() {
+	 	return this.port;
+	 }
+	
+	/**
+	 * @param port int 
+	 */
+	 setPort(port) {
+	 	this.port = port;
 	 }
 }
 module.exports.StorageExportJobData = StorageExportJobData;

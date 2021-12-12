@@ -11020,7 +11020,7 @@ class vendorIntegration{
 	/**
 	 * Update vendor catalog item status by id.
 	 * @param id int 
-	 * @param status IntegrationSetting 
+	 * @param status int  (enum: KalturaVendorIntegrationStatus)
 	 * @return KalturaIntegrationSetting
 	 */
 	static updateStatus(id, status){

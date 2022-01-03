@@ -27932,6 +27932,21 @@ class ReportInputFilter extends ReportInputBaseFilter{
 	 setCanonicalUrlIn(canonicalUrlIn) {
 	 	this.canonicalUrlIn = canonicalUrlIn;
 	 }
+	
+	/**
+	 * filter by virtual event id
+	 * @return string
+	 */
+	 getVirtualEventIdIn() {
+	 	return this.virtualEventIdIn;
+	 }
+	
+	/**
+	 * @param virtualEventIdIn string filter by virtual event id
+	 */
+	 setVirtualEventIdIn(virtualEventIdIn) {
+	 	this.virtualEventIdIn = virtualEventIdIn;
+	 }
 }
 module.exports.ReportInputFilter = ReportInputFilter;
 
@@ -64905,6 +64920,21 @@ class ConvertJobData extends ConvartableJobData{
 	 */
 	 setUserCpu(userCpu) {
 	 	this.userCpu = userCpu;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getEstimatedEffort() {
+	 	return this.estimatedEffort;
+	 }
+	
+	/**
+	 * @param estimatedEffort int 
+	 */
+	 setEstimatedEffort(estimatedEffort) {
+	 	this.estimatedEffort = estimatedEffort;
 	 }
 }
 module.exports.ConvertJobData = ConvertJobData;

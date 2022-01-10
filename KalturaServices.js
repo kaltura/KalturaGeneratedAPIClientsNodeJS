@@ -5952,6 +5952,7 @@ module.exports.userRole = userRole;
  * @action login Logs a user into a partner account with a partner ID, a partner user ID (puser), and a user password.
  * @action loginByKs Logs a user to the destination account provided the KS' user ID is associated with the destination account and the loginData ID matches.
  * @action loginByLoginId Logs a user into a partner account with a user login ID and a user password.
+ * @action loginDataResetPassword Resets user login password.
  * @action notifyBan Notifies that a user is banned from an account.
  * @action resetPassword Reset user's password and send the user an email to generate a new one.
  * @action serveCsv Will serve a requested CSV.
@@ -6170,6 +6171,18 @@ class user{
 		kparams.privileges = privileges;
 		kparams.otp = otp;
 		return new kaltura.RequestBuilder('user', 'loginByLoginId', kparams);
+	};
+	
+	/**
+	 * Resets user login password.
+	 * @param loginDataId string The user's current email address that identified the user for login
+	 * @param newPassword string The user's new password
+	 */
+	static loginDataResetPassword(loginDataId, newPassword){
+		let kparams = {};
+		kparams.loginDataId = loginDataId;
+		kparams.newPassword = newPassword;
+		return new kaltura.RequestBuilder('user', 'loginDataResetPassword', kparams);
 	};
 	
 	/**

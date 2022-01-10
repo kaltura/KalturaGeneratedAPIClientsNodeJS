@@ -42852,6 +42852,21 @@ class DeliveryProfileLivePackager extends DeliveryProfile{
 	 setLivePackagerSigningDomain(livePackagerSigningDomain) {
 	 	this.livePackagerSigningDomain = livePackagerSigningDomain;
 	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getShouldRedirect() {
+	 	return this.shouldRedirect;
+	 }
+	
+	/**
+	 * @param shouldRedirect bool 
+	 */
+	 setShouldRedirect(shouldRedirect) {
+	 	this.shouldRedirect = shouldRedirect;
+	 }
 }
 module.exports.DeliveryProfileLivePackager = DeliveryProfileLivePackager;
 

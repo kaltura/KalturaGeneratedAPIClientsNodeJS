@@ -27,7 +27,7 @@ function session_start(){
     		}
 
     		client.setKs(ks);
-    		console.log("Session started: " + ks);
+    		console.log("Seesion started: " + ks);
     		resolve();
     	})
     	.execute(client);

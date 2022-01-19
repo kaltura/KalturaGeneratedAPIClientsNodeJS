@@ -32,8 +32,7 @@ const fs = require('fs');
 const path = require('path');
 const http = require('http');
 const https = require('https');
-const axios = require('axios');
-const url = require('url'); 
+const request = require('request');
 
 const kaltura = require('./KalturaRequestData');
 
@@ -164,38 +163,21 @@ class ClientBase extends kaltura.RequestData {
 	 */
 	setConfig(config) {
 		this.config = config;
-		const axiosDefaultConfig = {
-		    baseURL: config.serviceUrl,
-		    timeout: config.timeout,
-		};
 		if (config.getLogger() instanceof ILogger) {
 			this.shouldLog = true;
 		}
-		if (config.proxy) {
-		    // we only need this because in the past, we used the `request` module, which had a different way of
-		    // setting proxy config and we don't want to introduce breaking changes
-			let myproxy = url.parse(config.proxy, true);
-			let proxy = {
-			    host: myproxy.hostname,
-			    port: myproxy.port
-			}
-			if (myproxy.protocol == 'https:'){
-			    proxy.protocol = 'https';
-			}
-			if (myproxy.auth){
-			    let creds = myproxy.auth.split(':');
-			    proxy.auth = {
-				username: creds[0],
-				password: creds[1]
-			    }
-			}
-			console.log('Using a HTTP proxy:');
-			console.log(proxy);
-			axiosDefaultConfig.proxy =  proxy;
+		const options = {
+			timeout: config.timeout,
+			uri: config.serviceUrl,
+		};
+		if (config.agentOptions) {
+			const httpInterface = options.uri.startsWith('https') ? https : http;
+			options.agent = new httpInterface.Agent(config.agentOptions);
 		}
-
-		this.axios = axios.create(axiosDefaultConfig);
-
+		if (config.proxy) {
+			options.proxy = config.proxy;
+		}
+		this.request = request.defaults(options);
 	}
 
 	/**
@@ -278,8 +260,8 @@ class RequestBuilder extends kaltura.VolatileRequestData {
 		let headers = this.getHeaders(client);
 
 		let options = {
-			url: requestUrl,
-			method: 'post',
+			uri: requestUrl,
+			method: 'POST',
 			headers: headers
 		};
 
@@ -327,10 +309,18 @@ class RequestBuilder extends kaltura.VolatileRequestData {
 			body = jsonBody;
 		}
 
-		options.data = body;
-		//console.log ('LOVE');
-		client.axios(options)
-		.then((response) => {
+		options.body = body;
+
+		client.request(options, (err, response, data) => {
+			if (err) {
+				if (callback) {
+					callback(false, err);
+					return;
+				}
+				else {
+					throw new Error(json.message);
+				}
+			}
 			let sessionId;
 			let serverId;
 			for (var header in response.headers) {
@@ -341,13 +331,12 @@ class RequestBuilder extends kaltura.VolatileRequestData {
 					sessionId = response.headers[header];
 				}
 			}
-			client.debug('Response server [' + serverId + '] session [' + sessionId + ']: ' + response.data);
+			client.debug('Response server [' + serverId + '] session [' + sessionId + ']: ' + data);
 
 			let json;
 			try {
-				json = response.data;
+				json = JSON.parse(data);
 			} catch (err) {
-				client.log(err.toString());
 				json = {
 					error: err
 				}
@@ -371,15 +360,6 @@ class RequestBuilder extends kaltura.VolatileRequestData {
 			else if (callback) {
 				callback(true, json);
 			}
-		}, (err) => {
-		    client.log(err.toString());
-		    if (callback) {
-			    callback(false, err);
-			    return;
-		    }
-		    else {
-			    throw new Error(json.message);
-		    }
 		});
 	}
 

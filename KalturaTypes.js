@@ -8,7 +8,7 @@
 // to do with audio, video, and animation what Wiki platforms allow them to do with
 // text.
 //
-// Copyright (C) 2006-2021  Kaltura Inc.
+// Copyright (C) 2006-2022  Kaltura Inc.
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as
@@ -5743,6 +5743,11 @@ ENGAGEMENT_BREAKDOWN_WEBCAST : '40010',
 ENGAGMENT_TIMELINE_WEBCAST : '40011',
 ENGAGEMENT_TOOLS_WEBCAST : '40012',
 REACTIONS_BREAKDOWN_WEBCAST : '40013',
+VE_HIGHLIGHTS : '50000',
+VE_REGISTERED_PLATFORMS : '50001',
+VE_REGISTERED_INDUSTRY : '50002',
+VE_REGISTERED_ROLES : '50003',
+VE_REGISTERED_COUNTRIES : '50004',
 };
 
 module.exports.ResetPassLinkType = {

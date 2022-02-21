@@ -27947,6 +27947,21 @@ class ReportInputFilter extends ReportInputBaseFilter{
 	 setVirtualEventIdIn(virtualEventIdIn) {
 	 	this.virtualEventIdIn = virtualEventIdIn;
 	 }
+	
+	/**
+	 * filter by origin
+	 * @return string
+	 */
+	 getOriginIn() {
+	 	return this.originIn;
+	 }
+	
+	/**
+	 * @param originIn string filter by origin
+	 */
+	 setOriginIn(originIn) {
+	 	this.originIn = originIn;
+	 }
 }
 module.exports.ReportInputFilter = ReportInputFilter;
 
@@ -59748,6 +59763,63 @@ module.exports.VendorCredit = VendorCredit;
 /**
  *
  */
+class VendorDubbingCatalogItem extends VendorCatalogItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorDubbingCatalogItem';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getFlavorParamsId() {
+	 	return this.flavorParamsId;
+	 }
+	
+	/**
+	 * @param flavorParamsId int 
+	 */
+	 setFlavorParamsId(flavorParamsId) {
+	 	this.flavorParamsId = flavorParamsId;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getClearAudioFlavorParamsId() {
+	 	return this.clearAudioFlavorParamsId;
+	 }
+	
+	/**
+	 * @param clearAudioFlavorParamsId int 
+	 */
+	 setClearAudioFlavorParamsId(clearAudioFlavorParamsId) {
+	 	this.clearAudioFlavorParamsId = clearAudioFlavorParamsId;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getTargetLanguage() {
+	 	return this.targetLanguage;
+	 }
+	
+	/**
+	 * @param targetLanguage string 
+	 */
+	 setTargetLanguage(targetLanguage) {
+	 	this.targetLanguage = targetLanguage;
+	 }
+}
+module.exports.VendorDubbingCatalogItem = VendorDubbingCatalogItem;
+
+/**
+ *
+ */
 class VendorIntelligentTaggingCatalogItem extends VendorCatalogItem{
 	
 	constructor(object = null) {
@@ -80674,6 +80746,21 @@ class LiveStreamScheduleEvent extends BaseLiveScheduleEvent{
 	 setPostEndEntryId(postEndEntryId) {
 	 	this.postEndEntryId = postEndEntryId;
 	 }
+	
+	/**
+	 * Detect whether "real" live can interrupt to the "main" content
+	 * @return bool
+	 */
+	 getIsContentInterruptible() {
+	 	return this.isContentInterruptible;
+	 }
+	
+	/**
+	 * @param isContentInterruptible bool Detect whether "real" live can interrupt to the "main" content
+	 */
+	 setIsContentInterruptible(isContentInterruptible) {
+	 	this.isContentInterruptible = isContentInterruptible;
+	 }
 }
 module.exports.LiveStreamScheduleEvent = LiveStreamScheduleEvent;
 
@@ -84712,6 +84799,48 @@ module.exports.VendorCaptionsCatalogItemBaseFilter = VendorCaptionsCatalogItemBa
 /**
  *
  */
+class VendorDubbingCatalogItemBaseFilter extends VendorCatalogItemFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorDubbingCatalogItemBaseFilter';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getTargetLanguageEqual() {
+	 	return this.targetLanguageEqual;
+	 }
+	
+	/**
+	 * @param targetLanguageEqual string 
+	 */
+	 setTargetLanguageEqual(targetLanguageEqual) {
+	 	this.targetLanguageEqual = targetLanguageEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getTargetLanguageIn() {
+	 	return this.targetLanguageIn;
+	 }
+	
+	/**
+	 * @param targetLanguageIn string 
+	 */
+	 setTargetLanguageIn(targetLanguageIn) {
+	 	this.targetLanguageIn = targetLanguageIn;
+	 }
+}
+module.exports.VendorDubbingCatalogItemBaseFilter = VendorDubbingCatalogItemBaseFilter;
+
+/**
+ *
+ */
 class ViewHistoryUserEntryFilter extends UserEntryFilter{
 	
 	constructor(object = null) {
@@ -85695,6 +85824,18 @@ class VendorChapteringCatalogItemFilter extends VendorCaptionsCatalogItemBaseFil
 	}
 }
 module.exports.VendorChapteringCatalogItemFilter = VendorChapteringCatalogItemFilter;
+
+/**
+ *
+ */
+class VendorDubbingCatalogItemFilter extends VendorDubbingCatalogItemBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorDubbingCatalogItemFilter';
+	}
+}
+module.exports.VendorDubbingCatalogItemFilter = VendorDubbingCatalogItemFilter;
 
 /**
  *

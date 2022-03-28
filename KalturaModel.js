@@ -5629,6 +5629,22 @@ class Partner extends kaltura.BaseObject{
 	 setIsSelfServe(isSelfServe) {
 	 	this.isSelfServe = isSelfServe;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getAllowedDomains() {
+	 	return this.allowedDomains;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getExcludedAdminRoleName() {
+	 	return this.excludedAdminRoleName;
+	 }
 }
 module.exports.Partner = Partner;
 
@@ -13942,6 +13958,21 @@ class User extends BaseUser{
 	 */
 	 getEncryptedSeed() {
 	 	return this.encryptedSeed;
+	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getIsSsoExcluded() {
+	 	return this.isSsoExcluded;
+	 }
+	
+	/**
+	 * @param isSsoExcluded bool 
+	 */
+	 setIsSsoExcluded(isSsoExcluded) {
+	 	this.isSsoExcluded = isSsoExcluded;
 	 }
 }
 module.exports.User = User;
@@ -22611,6 +22642,66 @@ class LiveStreamEntry extends LiveEntry{
 	 * 
 	 * @return string
 	 */
+	 getPrimarySrtBroadcastingUrl() {
+	 	return this.primarySrtBroadcastingUrl;
+	 }
+	
+	/**
+	 * @param primarySrtBroadcastingUrl string 
+	 */
+	 setPrimarySrtBroadcastingUrl(primarySrtBroadcastingUrl) {
+	 	this.primarySrtBroadcastingUrl = primarySrtBroadcastingUrl;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getPrimarySrtStreamId() {
+	 	return this.primarySrtStreamId;
+	 }
+	
+	/**
+	 * @param primarySrtStreamId string 
+	 */
+	 setPrimarySrtStreamId(primarySrtStreamId) {
+	 	this.primarySrtStreamId = primarySrtStreamId;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSecondarySrtBroadcastingUrl() {
+	 	return this.secondarySrtBroadcastingUrl;
+	 }
+	
+	/**
+	 * @param secondarySrtBroadcastingUrl string 
+	 */
+	 setSecondarySrtBroadcastingUrl(secondarySrtBroadcastingUrl) {
+	 	this.secondarySrtBroadcastingUrl = secondarySrtBroadcastingUrl;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSecondarySrtStreamId() {
+	 	return this.secondarySrtStreamId;
+	 }
+	
+	/**
+	 * @param secondarySrtStreamId string 
+	 */
+	 setSecondarySrtStreamId(secondarySrtStreamId) {
+	 	this.secondarySrtStreamId = secondarySrtStreamId;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
 	 getStreamName() {
 	 	return this.streamName;
 	 }
@@ -22718,6 +22809,21 @@ class LiveStreamEntry extends LiveEntry{
 	 */
 	 getStreamUsername() {
 	 	return this.streamUsername;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSrtPass() {
+	 	return this.srtPass;
+	 }
+	
+	/**
+	 * @param srtPass string 
+	 */
+	 setSrtPass(srtPass) {
+	 	this.srtPass = srtPass;
 	 }
 	
 	/**

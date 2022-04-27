@@ -952,7 +952,7 @@ module.exports.categoryEntry = categoryEntry;
  * @action get Get Category by id.
  * @action index Index Category by id.
  * @action list List all categories.
- * @action move Move categories that belong to the same parent category to a target categroy - enabled only for ks with disable entitlement.
+ * @action move Move categories that belong to the same parent category to a target category - enabled only for ks with disable entitlement.
  * @action unlockCategories Unlock categories.
  * @action update Update Category.
  */
@@ -1050,7 +1050,7 @@ class category{
 	};
 	
 	/**
-	 * Move categories that belong to the same parent category to a target categroy - enabled only for ks with disable entitlement.
+	 * Move categories that belong to the same parent category to a target category - enabled only for ks with disable entitlement.
 	 * @param categoryIds string 
 	 * @param targetCategoryParentId int 
 	 * @return bool
@@ -4800,7 +4800,7 @@ module.exports.session = session;
  *Class definition for the Kaltura service: stats.
  * The available service actions:
  * @action collect Will write to the event log a single line representing the event
- * client version - will help interprete the line structure. different client versions might have slightly different data/data formats in the line
+ * client version - will help interpret the line structure. Different client versions might have slightly different data/data formats in the line
  * event_id - number is the row number in yuval's excel
  * datetime - same format as MySql's datetime - can change and should reflect the time zone
  * session id - can be some big random number or guid
@@ -4822,7 +4822,7 @@ module.exports.session = session;
  * 
  * KalturaStatsEvent $event.
  * @action kmcCollect Will collect the kmcEvent sent form the KMC client
- * // this will actually be an empty function because all events will be sent using GET and will anyway be logged in the apache log.
+ * // this will actually be an empty function because all events will be sent using GET and will anyway be logged in the Apache log.
  * @action reportDeviceCapabilities Use this action to report device capabilities to the kaltura server.
  * @action reportError Use this action to report errors to the kaltura server.
  * @action reportKceError .
@@ -4831,7 +4831,7 @@ class stats{
 	
 	/**
 	 * Will write to the event log a single line representing the event
- * client version - will help interprete the line structure. different client versions might have slightly different data/data formats in the line
+ * client version - will help interpret the line structure. Different client versions might have slightly different data/data formats in the line
  * event_id - number is the row number in yuval's excel
  * datetime - same format as MySql's datetime - can change and should reflect the time zone
  * session id - can be some big random number or guid
@@ -4863,7 +4863,7 @@ class stats{
 	
 	/**
 	 * Will collect the kmcEvent sent form the KMC client
- * // this will actually be an empty function because all events will be sent using GET and will anyway be logged in the apache log.
+ * // this will actually be an empty function because all events will be sent using GET and will anyway be logged in the Apache log.
 	 * @param kmcEvent StatsKmcEvent 
 	 */
 	static kmcCollect(kmcEvent){

@@ -2979,6 +2979,7 @@ VOTES : 'votes',
 };
 
 module.exports.ESearchGroupFieldName = {
+COMPANY : 'company',
 CREATED_AT : 'created_at',
 EMAIL : 'email',
 FIRST_NAME : 'first_name',
@@ -2988,6 +2989,7 @@ PERMISSION_NAMES : 'permission_names',
 ROLE_IDS : 'role_ids',
 SCREEN_NAME : 'screen_name',
 TAGS : 'tags',
+TITLE : 'title',
 UPDATED_AT : 'updated_at',
 USER_ID : 'user_id',
 };
@@ -3045,6 +3047,7 @@ ORDER_BY_DESC : 'desc',
 };
 
 module.exports.ESearchUserFieldName = {
+COMPANY : 'company',
 CREATED_AT : 'created_at',
 EMAIL : 'email',
 FIRST_NAME : 'first_name',
@@ -3054,6 +3057,7 @@ PERMISSION_NAMES : 'permission_names',
 ROLE_IDS : 'role_ids',
 SCREEN_NAME : 'screen_name',
 TAGS : 'tags',
+TITLE : 'title',
 UPDATED_AT : 'updated_at',
 USER_ID : 'user_id',
 TYPE : 'user_type',

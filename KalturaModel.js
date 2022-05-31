@@ -21416,14 +21416,14 @@ class LiveEntry extends MediaEntry{
 	
 	/**
 	 * The time (unix timestamp in milliseconds) in which the entry broadcast started or 0 when the entry is off the air
-	 * @return int
+	 * @return float
 	 */
 	 getCurrentBroadcastStartTime() {
 	 	return this.currentBroadcastStartTime;
 	 }
 	
 	/**
-	 * @param currentBroadcastStartTime int The time (unix timestamp in milliseconds) in which the entry broadcast started or 0 when the entry is off the air
+	 * @param currentBroadcastStartTime float The time (unix timestamp in milliseconds) in which the entry broadcast started or 0 when the entry is off the air
 	 */
 	 setCurrentBroadcastStartTime(currentBroadcastStartTime) {
 	 	this.currentBroadcastStartTime = currentBroadcastStartTime;
@@ -30933,14 +30933,14 @@ class StatsEvent extends kaltura.BaseObject{
 	
 	/**
 	 * the client's timestamp of this event
-	 * @return int
+	 * @return float
 	 */
 	 getEventTimestamp() {
 	 	return this.eventTimestamp;
 	 }
 	
 	/**
-	 * @param eventTimestamp int the client's timestamp of this event
+	 * @param eventTimestamp float the client's timestamp of this event
 	 */
 	 setEventTimestamp(eventTimestamp) {
 	 	this.eventTimestamp = eventTimestamp;
@@ -31283,14 +31283,14 @@ class StatsKmcEvent extends kaltura.BaseObject{
 	
 	/**
 	 * the client's timestamp of this event
-	 * @return int
+	 * @return float
 	 */
 	 getEventTimestamp() {
 	 	return this.eventTimestamp;
 	 }
 	
 	/**
-	 * @param eventTimestamp int the client's timestamp of this event
+	 * @param eventTimestamp float the client's timestamp of this event
 	 */
 	 setEventTimestamp(eventTimestamp) {
 	 	this.eventTimestamp = eventTimestamp;
@@ -35274,6 +35274,51 @@ class ZoomIntegrationSetting extends IntegrationSetting{
 	 */
 	 setEnableMeetingUpload(enableMeetingUpload) {
 	 	this.enableMeetingUpload = enableMeetingUpload;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getOptOutGroupNames() {
+	 	return this.optOutGroupNames;
+	 }
+	
+	/**
+	 * @param optOutGroupNames string 
+	 */
+	 setOptOutGroupNames(optOutGroupNames) {
+	 	this.optOutGroupNames = optOutGroupNames;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getOptInGroupNames() {
+	 	return this.optInGroupNames;
+	 }
+	
+	/**
+	 * @param optInGroupNames string 
+	 */
+	 setOptInGroupNames(optInGroupNames) {
+	 	this.optInGroupNames = optInGroupNames;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getGroupParticipationType() {
+	 	return this.groupParticipationType;
+	 }
+	
+	/**
+	 * @param groupParticipationType int 
+	 */
+	 setGroupParticipationType(groupParticipationType) {
+	 	this.groupParticipationType = groupParticipationType;
 	 }
 }
 module.exports.ZoomIntegrationSetting = ZoomIntegrationSetting;

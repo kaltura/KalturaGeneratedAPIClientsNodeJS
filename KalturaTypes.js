@@ -1432,6 +1432,12 @@ SUBMIT_ACTION : 2,
 DELETE_ACTION : 3,
 };
 
+module.exports.ZoomGroupParticipationType = {
+NO_CLASSIFICATION : 0,
+OPT_IN : 1,
+OPT_OUT : 2,
+};
+
 module.exports.ZoomUsersMatching = {
 DO_NOT_MODIFY : 0,
 ADD_POSTFIX : 1,

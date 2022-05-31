@@ -1,6 +1,6 @@
 {
   "name": "kaltura-client",
-  "version": "18.4.0",
+  "version": "18.6.0",
   "description": "Kaltura NodeJS client library (new implementation)",
   "main": "KalturaClient.js",
   "scripts": {
@@ -27,7 +27,7 @@
     "url": "https://github.com/kaltura/clients-generator/issues"
   },
   "dependencies": {
-    "axios": "^0.21.2",
+    "axios": "^0.27.2",
     "http": "*",
     "https": "*",
     "md5": "*",

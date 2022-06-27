@@ -15077,6 +15077,21 @@ class EntryVendorTask extends kaltura.BaseObject{
 	 getTurnAroundTime() {
 	 	return this.turnAroundTime;
 	 }
+	
+	/**
+	 * The vendor's task internal Id
+	 * @return string
+	 */
+	 getExternalTaskId() {
+	 	return this.externalTaskId;
+	 }
+	
+	/**
+	 * @param externalTaskId string The vendor's task internal Id
+	 */
+	 setExternalTaskId(externalTaskId) {
+	 	this.externalTaskId = externalTaskId;
+	 }
 }
 module.exports.EntryVendorTask = EntryVendorTask;
 
@@ -15365,9 +15380,8 @@ class ExportToCsvOptions extends kaltura.BaseObject{
 	}
 	
 	/**
-	 * Setting this property will cause additional columns to be added to the final report. The columns will be related to the specific object type passed (currently only MEDIA_CLIP is supported).
- * Please note that this property will NOT change the result filter in any way (i.e passing MEDIA_CLIP here will not force the report to return only media items).
- * /
+	 * The format of the outputted date string. There are also several predefined date constants that may be used instead, so for example DATE_RSS contains the format string 'D, d M Y H:i:s'.
+ * https://www.php.net/manual/en/function.date.php
 	 * @return string
 	 */
 	 getFormat() {
@@ -15375,12 +15389,43 @@ class ExportToCsvOptions extends kaltura.BaseObject{
 	 }
 	
 	/**
-	 * @param format string Setting this property will cause additional columns to be added to the final report. The columns will be related to the specific object type passed (currently only MEDIA_CLIP is supported).
- * Please note that this property will NOT change the result filter in any way (i.e passing MEDIA_CLIP here will not force the report to return only media items).
- * /
+	 * @param format string The format of the outputted date string. There are also several predefined date constants that may be used instead, so for example DATE_RSS contains the format string 'D, d M Y H:i:s'.
+ * https://www.php.net/manual/en/function.date.php
 	 */
 	 setFormat(format) {
 	 	this.format = format;
+	 }
+	
+	/**
+	 * Setting this property will cause additional columns to be added to the final report. The columns will be related to the specific object type passed (currently only MEDIA_CLIP is supported).
+ * Please note that this property will NOT change the result filter in any way (i.e passing MEDIA_CLIP here will not force the report to return only media items)
+	 * @return string
+	 */
+	 getTypeEqual() {
+	 	return this.typeEqual;
+	 }
+	
+	/**
+	 * @param typeEqual string Setting this property will cause additional columns to be added to the final report. The columns will be related to the specific object type passed (currently only MEDIA_CLIP is supported).
+ * Please note that this property will NOT change the result filter in any way (i.e passing MEDIA_CLIP here will not force the report to return only media items)
+	 */
+	 setTypeEqual(typeEqual) {
+	 	this.typeEqual = typeEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getDefaultHeader() {
+	 	return this.defaultHeader;
+	 }
+	
+	/**
+	 * @param defaultHeader int 
+	 */
+	 setDefaultHeader(defaultHeader) {
+	 	this.defaultHeader = defaultHeader;
 	 }
 }
 module.exports.ExportToCsvOptions = ExportToCsvOptions;
@@ -21839,6 +21884,63 @@ class LiveEntryServerNodeRecordingInfo extends kaltura.BaseObject{
 	 }
 }
 module.exports.LiveEntryServerNodeRecordingInfo = LiveEntryServerNodeRecordingInfo;
+
+/**
+ *
+ */
+class LiveFeature extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaLiveFeature';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSystemName() {
+	 	return this.systemName;
+	 }
+	
+	/**
+	 * @param systemName string 
+	 */
+	 setSystemName(systemName) {
+	 	this.systemName = systemName;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getPreStartTime() {
+	 	return this.preStartTime;
+	 }
+	
+	/**
+	 * @param preStartTime int 
+	 */
+	 setPreStartTime(preStartTime) {
+	 	this.preStartTime = preStartTime;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getPostEndTime() {
+	 	return this.postEndTime;
+	 }
+	
+	/**
+	 * @param postEndTime int 
+	 */
+	 setPostEndTime(postEndTime) {
+	 	this.postEndTime = postEndTime;
+	 }
+}
+module.exports.LiveFeature = LiveFeature;
 
 /**
  *
@@ -33102,6 +33204,22 @@ class UploadToken extends kaltura.BaseObject{
 	 */
 	 setAutoFinalize(autoFinalize) {
 	 	this.autoFinalize = autoFinalize;
+	 }
+	
+	/**
+	 * The value for the object_type field
+	 * @return string
+	 */
+	 getAttachedObjectType() {
+	 	return this.attachedObjectType;
+	 }
+	
+	/**
+	 * The value for the object_id field
+	 * @return string
+	 */
+	 getAttachedObjectId() {
+	 	return this.attachedObjectId;
 	 }
 }
 module.exports.UploadToken = UploadToken;
@@ -51806,6 +51924,33 @@ module.exports.IpAddressRestriction = IpAddressRestriction;
 /**
  *
  */
+class KeyValueExtended extends KeyValue{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaKeyValueExtended';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getPredefinedFormat() {
+	 	return this.predefinedFormat;
+	 }
+	
+	/**
+	 * @param predefinedFormat int 
+	 */
+	 setPredefinedFormat(predefinedFormat) {
+	 	this.predefinedFormat = predefinedFormat;
+	 }
+}
+module.exports.KeyValueExtended = KeyValueExtended;
+
+/**
+ *
+ */
 class KontikiStorageProfile extends StorageProfile{
 	
 	constructor(object = null) {
@@ -51891,6 +52036,78 @@ class LimitFlavorsRestriction extends BaseRestriction{
 	 }
 }
 module.exports.LimitFlavorsRestriction = LimitFlavorsRestriction;
+
+/**
+ *
+ */
+class LiveCaptionFeature extends LiveFeature{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaLiveCaptionFeature';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getMediaUrl() {
+	 	return this.mediaUrl;
+	 }
+	
+	/**
+	 * @param mediaUrl string 
+	 */
+	 setMediaUrl(mediaUrl) {
+	 	this.mediaUrl = mediaUrl;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getMediaKey() {
+	 	return this.mediaKey;
+	 }
+	
+	/**
+	 * @param mediaKey string 
+	 */
+	 setMediaKey(mediaKey) {
+	 	this.mediaKey = mediaKey;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getCaptionUrl() {
+	 	return this.captionUrl;
+	 }
+	
+	/**
+	 * @param captionUrl string 
+	 */
+	 setCaptionUrl(captionUrl) {
+	 	this.captionUrl = captionUrl;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getCaptionToken() {
+	 	return this.captionToken;
+	 }
+	
+	/**
+	 * @param captionToken string 
+	 */
+	 setCaptionToken(captionToken) {
+	 	this.captionToken = captionToken;
+	 }
+}
+module.exports.LiveCaptionFeature = LiveCaptionFeature;
 
 /**
  *
@@ -71141,6 +71358,21 @@ class MappedObjectsCsvJobData extends ExportCsvJobData{
 	 setMappedFields(mappedFields) {
 	 	this.mappedFields = mappedFields;
 	 }
+	
+	/**
+	 * 
+	 * @return ExportToCsvOptions
+	 */
+	 getOptions() {
+	 	return this.options;
+	 }
+	
+	/**
+	 * @param options ExportToCsvOptions 
+	 */
+	 setOptions(options) {
+	 	this.options = options;
+	 }
 }
 module.exports.MappedObjectsCsvJobData = MappedObjectsCsvJobData;
 
@@ -80913,6 +81145,21 @@ class LiveStreamScheduleEvent extends BaseLiveScheduleEvent{
 	 */
 	 setIsContentInterruptible(isContentInterruptible) {
 	 	this.isContentInterruptible = isContentInterruptible;
+	 }
+	
+	/**
+	 * list of live features that apply to the event
+	 * @return array
+	 */
+	 getLiveFeatures() {
+	 	return this.liveFeatures;
+	 }
+	
+	/**
+	 * @param liveFeatures array list of live features that apply to the event
+	 */
+	 setLiveFeatures(liveFeatures) {
+	 	this.liveFeatures = liveFeatures;
 	 }
 }
 module.exports.LiveStreamScheduleEvent = LiveStreamScheduleEvent;

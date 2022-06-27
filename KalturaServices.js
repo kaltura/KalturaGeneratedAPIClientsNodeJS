@@ -507,14 +507,16 @@ class baseEntry{
 	 * @param metadataProfileId int  (optional, default: null)
 	 * @param additionalFields array  (optional, default: null)
 	 * @param mappedFields array mapping between field headline and its mapped value (optional, default: null)
+	 * @param options ExportToCsvOptions  (optional, default: null)
 	 * @return string
 	 */
-	static exportToCsv(filter = null, metadataProfileId = null, additionalFields = null, mappedFields = null){
+	static exportToCsv(filter = null, metadataProfileId = null, additionalFields = null, mappedFields = null, options = null){
 		let kparams = {};
 		kparams.filter = filter;
 		kparams.metadataProfileId = metadataProfileId;
 		kparams.additionalFields = additionalFields;
 		kparams.mappedFields = mappedFields;
+		kparams.options = options;
 		return new kaltura.RequestBuilder('baseentry', 'exportToCsv', kparams);
 	};
 	
@@ -6049,14 +6051,16 @@ class user{
 	 * @param metadataProfileId int  (optional, default: null)
 	 * @param additionalFields array  (optional, default: null)
 	 * @param mappedFields array mapping between field (optional, default: null)
+	 * @param options ExportToCsvOptions  (optional, default: null)
 	 * @return string
 	 */
-	static exportToCsv(filter = null, metadataProfileId = null, additionalFields = null, mappedFields = null){
+	static exportToCsv(filter = null, metadataProfileId = null, additionalFields = null, mappedFields = null, options = null){
 		let kparams = {};
 		kparams.filter = filter;
 		kparams.metadataProfileId = metadataProfileId;
 		kparams.additionalFields = additionalFields;
 		kparams.mappedFields = mappedFields;
+		kparams.options = options;
 		return new kaltura.RequestBuilder('user', 'exportToCsv', kparams);
 	};
 	

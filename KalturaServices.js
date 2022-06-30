@@ -951,6 +951,7 @@ module.exports.categoryEntry = categoryEntry;
  * @action addFromBulkUpload .
  * @action clone Clone Category.
  * @action delete Delete a Category.
+ * @action exportToCsv Creates a batch job that sends an email with a link to download a CSV containing a list of categories.
  * @action get Get Category by id.
  * @action index Index Category by id.
  * @action list List all categories.
@@ -1012,6 +1013,25 @@ class category{
 		kparams.id = id;
 		kparams.moveEntriesToParentCategory = moveEntriesToParentCategory;
 		return new kaltura.RequestBuilder('category', 'delete', kparams);
+	};
+	
+	/**
+	 * Creates a batch job that sends an email with a link to download a CSV containing a list of categories.
+	 * @param filter CategoryFilter A filter used to exclude specific categories (optional, default: null)
+	 * @param metadataProfileId int  (optional, default: null)
+	 * @param additionalFields array  (optional, default: null)
+	 * @param mappedFields array mapping between field headline and its mapped value (optional, default: null)
+	 * @param options ExportToCsvOptions  (optional, default: null)
+	 * @return string
+	 */
+	static exportToCsv(filter = null, metadataProfileId = null, additionalFields = null, mappedFields = null, options = null){
+		let kparams = {};
+		kparams.filter = filter;
+		kparams.metadataProfileId = metadataProfileId;
+		kparams.additionalFields = additionalFields;
+		kparams.mappedFields = mappedFields;
+		kparams.options = options;
+		return new kaltura.RequestBuilder('category', 'exportToCsv', kparams);
 	};
 	
 	/**

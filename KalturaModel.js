@@ -33184,7 +33184,7 @@ class UploadToken extends kaltura.BaseObject{
 	 }
 	
 	/**
-	 * Upload url - to explicitly determine to which domain to adress the uploadToken->upload call
+	 * Upload url - to explicitly determine to which domain to address the uploadToken->upload call
 	 * @return string
 	 */
 	 getUploadUrl() {
@@ -33192,7 +33192,7 @@ class UploadToken extends kaltura.BaseObject{
 	 }
 	
 	/**
-	 * autoFinalize - Should the upload be finalized once the file size on disk matches the file size reproted when adding the upload token
+	 * autoFinalize - Should the upload be finalized once the file size on disk matches the file size reported when adding the upload token
 	 * @return int
 	 */
 	 getAutoFinalize() {
@@ -33200,14 +33200,14 @@ class UploadToken extends kaltura.BaseObject{
 	 }
 	
 	/**
-	 * @param autoFinalize int autoFinalize - Should the upload be finalized once the file size on disk matches the file size reproted when adding the upload token
+	 * @param autoFinalize int autoFinalize - Should the upload be finalized once the file size on disk matches the file size reported when adding the upload token
 	 */
 	 setAutoFinalize(autoFinalize) {
 	 	this.autoFinalize = autoFinalize;
 	 }
 	
 	/**
-	 * The value for the object_type field
+	 * The type of the object this token is attached to
 	 * @return string
 	 */
 	 getAttachedObjectType() {
@@ -33215,7 +33215,7 @@ class UploadToken extends kaltura.BaseObject{
 	 }
 	
 	/**
-	 * The value for the object_id field
+	 * The id of the object this token is attached to
 	 * @return string
 	 */
 	 getAttachedObjectId() {
@@ -78782,18 +78782,6 @@ module.exports.BusinessProcessNotificationTemplateBaseFilter = BusinessProcessNo
 /**
  *
  */
-class CategoryEntryFilter extends CategoryEntryBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaCategoryEntryFilter';
-	}
-}
-module.exports.CategoryEntryFilter = CategoryEntryFilter;
-
-/**
- *
- */
 class CategoryFilter extends CategoryBaseFilter{
 	
 	constructor(object = null) {
@@ -78922,6 +78910,45 @@ class CategoryFilter extends CategoryBaseFilter{
 	 }
 }
 module.exports.CategoryFilter = CategoryFilter;
+
+/**
+ *
+ */
+class CategoriesCsvJobData extends MappedObjectsCsvJobData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaCategoriesCsvJobData';
+	}
+	
+	/**
+	 * The filter should return the list of categories that need to be specified in the csv
+	 * @return CategoryFilter
+	 */
+	 getFilter() {
+	 	return this.filter;
+	 }
+	
+	/**
+	 * @param filter CategoryFilter The filter should return the list of categories that need to be specified in the csv
+	 */
+	 setFilter(filter) {
+	 	this.filter = filter;
+	 }
+}
+module.exports.CategoriesCsvJobData = CategoriesCsvJobData;
+
+/**
+ *
+ */
+class CategoryEntryFilter extends CategoryEntryBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaCategoryEntryFilter';
+	}
+}
+module.exports.CategoryEntryFilter = CategoryEntryFilter;
 
 /**
  *

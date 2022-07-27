@@ -28172,6 +28172,21 @@ class ReportInputFilter extends ReportInputBaseFilter{
 	 setOriginIn(originIn) {
 	 	this.originIn = originIn;
 	 }
+	
+	/**
+	 * filter by ui conf id
+	 * @return string
+	 */
+	 getUiConfIdIn() {
+	 	return this.uiConfIdIn;
+	 }
+	
+	/**
+	 * @param uiConfIdIn string filter by ui conf id
+	 */
+	 setUiConfIdIn(uiConfIdIn) {
+	 	this.uiConfIdIn = uiConfIdIn;
+	 }
 }
 module.exports.ReportInputFilter = ReportInputFilter;
 

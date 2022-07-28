@@ -494,6 +494,7 @@ REJECTED : 5,
 ERROR : 6,
 ABORTED : 7,
 PENDING_ENTRY_READY : 8,
+SCHEDULED : 9,
 };
 
 module.exports.EventNotificationTemplateStatus = {
@@ -1352,6 +1353,7 @@ AUDIO_DESCRIPTION : 4,
 CHAPTERING : 5,
 INTELLIGENT_TAGGING : 6,
 DUBBING : 7,
+LIVE_CAPTION : 8,
 };
 
 module.exports.VendorServiceTurnAroundTime = {

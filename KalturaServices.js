@@ -10139,6 +10139,7 @@ module.exports.PartnerCatalogItem = PartnerCatalogItem;
  * @action getConflicts List conflicting events for resourcesIds by event's dates.
  * @action list List KalturaScheduleEvent objects.
  * @action update Update an existing KalturaScheduleEvent object.
+ * @action updateLiveFeature Add feature to live event.
  */
 class scheduleEvent{
 	
@@ -10241,6 +10242,21 @@ class scheduleEvent{
 		kparams.scheduleEventId = scheduleEventId;
 		kparams.scheduleEvent = scheduleEvent;
 		return new kaltura.RequestBuilder('schedule_scheduleevent', 'update', kparams);
+	};
+	
+	/**
+	 * Add feature to live event.
+	 * @param scheduledEventId int 
+	 * @param featureName string 
+	 * @param liveFeature LiveFeature 
+	 * @return KalturaLiveStreamScheduleEvent
+	 */
+	static updateLiveFeature(scheduledEventId, featureName, liveFeature){
+		let kparams = {};
+		kparams.scheduledEventId = scheduledEventId;
+		kparams.featureName = featureName;
+		kparams.liveFeature = liveFeature;
+		return new kaltura.RequestBuilder('schedule_scheduleevent', 'updateLiveFeature', kparams);
 	};
 }
 module.exports.scheduleEvent = scheduleEvent;

@@ -56374,6 +56374,63 @@ module.exports.ScheduledTaskProfileListResponse = ScheduledTaskProfileListRespon
 /**
  *
  */
+class ScheduledVendorTaskData extends VendorTaskData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaScheduledVendorTaskData';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getStartDate() {
+	 	return this.startDate;
+	 }
+	
+	/**
+	 * @param startDate int 
+	 */
+	 setStartDate(startDate) {
+	 	this.startDate = startDate;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getEndDate() {
+	 	return this.endDate;
+	 }
+	
+	/**
+	 * @param endDate int 
+	 */
+	 setEndDate(endDate) {
+	 	this.endDate = endDate;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getScheduledEventId() {
+	 	return this.scheduledEventId;
+	 }
+	
+	/**
+	 * @param scheduledEventId int 
+	 */
+	 setScheduledEventId(scheduledEventId) {
+	 	this.scheduledEventId = scheduledEventId;
+	 }
+}
+module.exports.ScheduledVendorTaskData = ScheduledVendorTaskData;
+
+/**
+ *
+ */
 class SchedulerListResponse extends ListResponse{
 	
 	constructor(object = null) {
@@ -76824,6 +76881,63 @@ module.exports.VendorCatalogItemBaseFilter = VendorCatalogItemBaseFilter;
 /**
  *
  */
+class VendorLiveCaptionCatalogItem extends VendorCaptionsCatalogItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorLiveCaptionCatalogItem';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getMinimalRefundTime() {
+	 	return this.minimalRefundTime;
+	 }
+	
+	/**
+	 * @param minimalRefundTime int 
+	 */
+	 setMinimalRefundTime(minimalRefundTime) {
+	 	this.minimalRefundTime = minimalRefundTime;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getMinimalOrderTime() {
+	 	return this.minimalOrderTime;
+	 }
+	
+	/**
+	 * @param minimalOrderTime int 
+	 */
+	 setMinimalOrderTime(minimalOrderTime) {
+	 	this.minimalOrderTime = minimalOrderTime;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getDurationLimit() {
+	 	return this.durationLimit;
+	 }
+	
+	/**
+	 * @param durationLimit int 
+	 */
+	 setDurationLimit(durationLimit) {
+	 	this.durationLimit = durationLimit;
+	 }
+}
+module.exports.VendorLiveCaptionCatalogItem = VendorLiveCaptionCatalogItem;
+
+/**
+ *
+ */
 class VendorTranslationCatalogItem extends VendorCaptionsCatalogItem{
 	
 	constructor(object = null) {
@@ -86278,6 +86392,18 @@ class VendorDubbingCatalogItemFilter extends VendorDubbingCatalogItemBaseFilter{
 	}
 }
 module.exports.VendorDubbingCatalogItemFilter = VendorDubbingCatalogItemFilter;
+
+/**
+ *
+ */
+class VendorLiveCaptionCatalogItemFilter extends VendorCaptionsCatalogItemBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorLiveCaptionCatalogItemFilter';
+	}
+}
+module.exports.VendorLiveCaptionCatalogItemFilter = VendorLiveCaptionCatalogItemFilter;
 
 /**
  *

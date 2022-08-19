@@ -6201,6 +6201,7 @@ class user{
 	 * Resets user login password.
 	 * @param loginDataId string The user's current email address that identified the user for login
 	 * @param newPassword string The user's new password
+	 * @return KalturaUser
 	 */
 	static loginDataResetPassword(loginDataId, newPassword){
 		let kparams = {};

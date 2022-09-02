@@ -52395,6 +52395,63 @@ module.exports.LiveReportExportJobData = LiveReportExportJobData;
 /**
  *
  */
+class LiveRestreamFeature extends LiveFeature{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaLiveRestreamFeature';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getPrimaryUrl() {
+	 	return this.primaryUrl;
+	 }
+	
+	/**
+	 * @param primaryUrl string 
+	 */
+	 setPrimaryUrl(primaryUrl) {
+	 	this.primaryUrl = primaryUrl;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSecondaryUrl() {
+	 	return this.secondaryUrl;
+	 }
+	
+	/**
+	 * @param secondaryUrl string 
+	 */
+	 setSecondaryUrl(secondaryUrl) {
+	 	this.secondaryUrl = secondaryUrl;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getStreamKey() {
+	 	return this.streamKey;
+	 }
+	
+	/**
+	 * @param streamKey string 
+	 */
+	 setStreamKey(streamKey) {
+	 	this.streamKey = streamKey;
+	 }
+}
+module.exports.LiveRestreamFeature = LiveRestreamFeature;
+
+/**
+ *
+ */
 class LiveStatsListResponse extends ListResponse{
 	
 	constructor(object = null) {

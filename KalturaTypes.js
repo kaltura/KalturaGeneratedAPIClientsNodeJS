@@ -1249,6 +1249,7 @@ NON_ADMIN_USERS_ONLY : 2,
 module.exports.UiConfCreationMode = {
 WIZARD : 2,
 ADVANCED : 3,
+SYSTEM : 4,
 };
 
 module.exports.UiConfObjType = {

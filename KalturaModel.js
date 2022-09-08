@@ -47518,6 +47518,36 @@ class UserBaseFilter extends BaseUserFilter{
 	
 	/**
 	 * 
+	 * @return string
+	 */
+	 getIdEqual() {
+	 	return this.idEqual;
+	 }
+	
+	/**
+	 * @param idEqual string 
+	 */
+	 setIdEqual(idEqual) {
+	 	this.idEqual = idEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getIdIn() {
+	 	return this.idIn;
+	 }
+	
+	/**
+	 * @param idIn string 
+	 */
+	 setIdIn(idIn) {
+	 	this.idIn = idIn;
+	 }
+	
+	/**
+	 * 
 	 * @return int
 	 */
 	 getTypeEqual() {
@@ -47616,36 +47646,6 @@ class UserFilter extends UserBaseFilter{
 	 */
 	 setIdOrScreenNameStartsWith(idOrScreenNameStartsWith) {
 	 	this.idOrScreenNameStartsWith = idOrScreenNameStartsWith;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getIdEqual() {
-	 	return this.idEqual;
-	 }
-	
-	/**
-	 * @param idEqual string 
-	 */
-	 setIdEqual(idEqual) {
-	 	this.idEqual = idEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getIdIn() {
-	 	return this.idIn;
-	 }
-	
-	/**
-	 * @param idIn string 
-	 */
-	 setIdIn(idIn) {
-	 	this.idIn = idIn;
 	 }
 	
 	/**

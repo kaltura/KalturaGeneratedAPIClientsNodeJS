@@ -5645,6 +5645,21 @@ class Partner extends kaltura.BaseObject{
 	 getExcludedAdminRoleName() {
 	 	return this.excludedAdminRoleName;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getEventPlatformAllowedTemplates() {
+	 	return this.eventPlatformAllowedTemplates;
+	 }
+	
+	/**
+	 * @param eventPlatformAllowedTemplates string 
+	 */
+	 setEventPlatformAllowedTemplates(eventPlatformAllowedTemplates) {
+	 	this.eventPlatformAllowedTemplates = eventPlatformAllowedTemplates;
+	 }
 }
 module.exports.Partner = Partner;
 
@@ -35666,6 +35681,21 @@ class AccessControlModifyRequestHostRegexAction extends RuleAction{
 	 */
 	 setReplacmenServerNodeId(replacmenServerNodeId) {
 	 	this.replacmenServerNodeId = replacmenServerNodeId;
+	 }
+	
+	/**
+	 * Set this value if you want to check if the server is accessible before redirecting traffic to it (this value is in milliseconds)
+	 * @return int
+	 */
+	 getCheckAliveTimeoutMs() {
+	 	return this.checkAliveTimeoutMs;
+	 }
+	
+	/**
+	 * @param checkAliveTimeoutMs int Set this value if you want to check if the server is accessible before redirecting traffic to it (this value is in milliseconds)
+	 */
+	 setCheckAliveTimeoutMs(checkAliveTimeoutMs) {
+	 	this.checkAliveTimeoutMs = checkAliveTimeoutMs;
 	 }
 }
 module.exports.AccessControlModifyRequestHostRegexAction = AccessControlModifyRequestHostRegexAction;

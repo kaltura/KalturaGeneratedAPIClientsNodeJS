@@ -2453,6 +2453,48 @@ module.exports.Authentication = Authentication;
 /**
  *
  */
+class MultiLingualString extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaMultiLingualString';
+	}
+	
+	/**
+	 * The language of the value
+	 * @return string
+	 */
+	 getLanguage() {
+	 	return this.language;
+	 }
+	
+	/**
+	 * @param language string The language of the value
+	 */
+	 setLanguage(language) {
+	 	this.language = language;
+	 }
+	
+	/**
+	 * Value
+	 * @return string
+	 */
+	 getValue() {
+	 	return this.value;
+	 }
+	
+	/**
+	 * @param value string Value
+	 */
+	 setValue(value) {
+	 	this.value = value;
+	 }
+}
+module.exports.MultiLingualString = MultiLingualString;
+
+/**
+ *
+ */
 class OperationAttributes extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -2496,6 +2538,21 @@ class BaseEntry extends kaltura.BaseObject{
 	 }
 	
 	/**
+	 * Entry name (Min 1 chars)
+	 * @return array
+	 */
+	 getMultiLingual_name() {
+	 	return this.multiLingual_name;
+	 }
+	
+	/**
+	 * @param multiLingual_name array Entry name (Min 1 chars)
+	 */
+	 setMultiLingual_name(multiLingual_name) {
+	 	this.multiLingual_name = multiLingual_name;
+	 }
+	
+	/**
 	 * Entry description
 	 * @return string
 	 */
@@ -2508,6 +2565,21 @@ class BaseEntry extends kaltura.BaseObject{
 	 */
 	 setDescription(description) {
 	 	this.description = description;
+	 }
+	
+	/**
+	 * Entry description
+	 * @return array
+	 */
+	 getMultiLingual_description() {
+	 	return this.multiLingual_description;
+	 }
+	
+	/**
+	 * @param multiLingual_description array Entry description
+	 */
+	 setMultiLingual_description(multiLingual_description) {
+	 	this.multiLingual_description = multiLingual_description;
 	 }
 	
 	/**
@@ -2561,6 +2633,21 @@ class BaseEntry extends kaltura.BaseObject{
 	 */
 	 setTags(tags) {
 	 	this.tags = tags;
+	 }
+	
+	/**
+	 * Entry tags
+	 * @return array
+	 */
+	 getMultiLingual_tags() {
+	 	return this.multiLingual_tags;
+	 }
+	
+	/**
+	 * @param multiLingual_tags array Entry tags
+	 */
+	 setMultiLingual_tags(multiLingual_tags) {
+	 	this.multiLingual_tags = multiLingual_tags;
 	 }
 	
 	/**
@@ -28693,6 +28780,21 @@ class RequestConfiguration extends kaltura.BaseObject{
 	 */
 	 setKs(ks) {
 	 	this.ks = ks;
+	 }
+	
+	/**
+	 * language
+	 * @return string
+	 */
+	 getLanguage() {
+	 	return this.language;
+	 }
+	
+	/**
+	 * @param language string language
+	 */
+	 setLanguage(language) {
+	 	this.language = language;
 	 }
 	
 	/**

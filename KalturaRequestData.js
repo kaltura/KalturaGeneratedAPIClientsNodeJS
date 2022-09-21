@@ -119,6 +119,25 @@ class RequestData {
 		return this.requestData['ks'];
 	};
 	
+	/**
+	 * language
+	 * 
+	 * @param string language
+	 */
+	setLanguage(language){
+		this.requestData['language'] = language;
+		return this;
+	};
+	
+	/**
+	 * language
+	 * 
+	 * @return string
+	 */
+	getLanguage(){
+		return this.requestData['language'];
+	};
+	
 }
 
 class VolatileRequestData extends RequestData {

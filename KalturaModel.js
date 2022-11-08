@@ -5696,6 +5696,14 @@ class Partner extends kaltura.BaseObject{
 	
 	/**
 	 * 
+	 * @return bool
+	 */
+	 getAllowDefaultPasswordRestrictions() {
+	 	return this.allowDefaultPasswordRestrictions;
+	 }
+	
+	/**
+	 * 
 	 * @return int
 	 */
 	 getTwoFactorAuthenticationMode() {
@@ -5746,6 +5754,14 @@ class Partner extends kaltura.BaseObject{
 	 */
 	 setEventPlatformAllowedTemplates(eventPlatformAllowedTemplates) {
 	 	this.eventPlatformAllowedTemplates = eventPlatformAllowedTemplates;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getVerticalClassificationId() {
+	 	return this.verticalClassificationId;
 	 }
 }
 module.exports.Partner = Partner;
@@ -12433,7 +12449,7 @@ class DropFolder extends kaltura.BaseObject{
 	 }
 	
 	/**
-	 * The ammount of time, in seconds, that should pass so that a file with no change in size we'll be treated as "finished uploading to folder"
+	 * The amount of time, in seconds, that should pass so that a file with no change in size will be treated as "finished uploading to folder"
 	 * @return int
 	 */
 	 getFileSizeCheckInterval() {
@@ -12441,7 +12457,7 @@ class DropFolder extends kaltura.BaseObject{
 	 }
 	
 	/**
-	 * @param fileSizeCheckInterval int The ammount of time, in seconds, that should pass so that a file with no change in size we'll be treated as "finished uploading to folder"
+	 * @param fileSizeCheckInterval int The amount of time, in seconds, that should pass so that a file with no change in size will be treated as "finished uploading to folder"
 	 */
 	 setFileSizeCheckInterval(fileSizeCheckInterval) {
 	 	this.fileSizeCheckInterval = fileSizeCheckInterval;
@@ -52433,6 +52449,21 @@ class LiveEntryServerNode extends EntryServerNode{
 	 */
 	 setViewMode(viewMode) {
 	 	this.viewMode = viewMode;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getFeaturesUpdatedAt() {
+	 	return this.featuresUpdatedAt;
+	 }
+	
+	/**
+	 * @param featuresUpdatedAt int 
+	 */
+	 setFeaturesUpdatedAt(featuresUpdatedAt) {
+	 	this.featuresUpdatedAt = featuresUpdatedAt;
 	 }
 }
 module.exports.LiveEntryServerNode = LiveEntryServerNode;

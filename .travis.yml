@@ -1,8 +1,8 @@
 language: node_js
 node_js:
-      - "10"
       - "12"
       - "16"
+      - "18"
 #before_install: npm install --dev
 script: 
     - sed -e "s#@YOUR_PARTNER_ID@#$PARTNER_ID#g" -e "s#@YOUR_ADMIN_SECRET@#$ADMIN_SECRET#g" -e "s#@SERVICE_URL@#https://www.kaltura.com#g" config.template.json > config.json

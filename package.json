@@ -22,7 +22,7 @@
     "name": "Kaltura Community",
     "email": "community@kaltura.com"
   },
-  "license": "AGPLv3",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/kaltura/clients-generator/issues"
   },

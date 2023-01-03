@@ -13899,6 +13899,21 @@ class User extends BaseUser{
 	
 	/**
 	 * 
+	 * @return bool
+	 */
+	 getIsGuest() {
+	 	return this.isGuest;
+	 }
+	
+	/**
+	 * @param isGuest bool 
+	 */
+	 setIsGuest(isGuest) {
+	 	this.isGuest = isGuest;
+	 }
+	
+	/**
+	 * 
 	 * @return string
 	 */
 	 getRoleIds() {
@@ -14091,6 +14106,21 @@ class User extends BaseUser{
 	 */
 	 setIsSsoExcluded(isSsoExcluded) {
 	 	this.isSsoExcluded = isSsoExcluded;
+	 }
+	
+	/**
+	 * This field should be sent instead of the id field whenever you want to work with hashed user ids
+	 * @return string
+	 */
+	 getExternalId() {
+	 	return this.externalId;
+	 }
+	
+	/**
+	 * @param externalId string This field should be sent instead of the id field whenever you want to work with hashed user ids
+	 */
+	 setExternalId(externalId) {
+	 	this.externalId = externalId;
 	 }
 }
 module.exports.User = User;
@@ -19497,6 +19527,21 @@ class IntegrationSetting extends kaltura.BaseObject{
 	 */
 	 getPartnerId() {
 	 	return this.partnerId;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getEnableMeetingUpload() {
+	 	return this.enableMeetingUpload;
+	 }
+	
+	/**
+	 * @param enableMeetingUpload int 
+	 */
+	 setEnableMeetingUpload(enableMeetingUpload) {
+	 	this.enableMeetingUpload = enableMeetingUpload;
 	 }
 }
 module.exports.IntegrationSetting = IntegrationSetting;
@@ -35531,21 +35576,6 @@ class ZoomIntegrationSetting extends IntegrationSetting{
 	
 	/**
 	 * 
-	 * @return int
-	 */
-	 getEnableMeetingUpload() {
-	 	return this.enableMeetingUpload;
-	 }
-	
-	/**
-	 * @param enableMeetingUpload int 
-	 */
-	 setEnableMeetingUpload(enableMeetingUpload) {
-	 	this.enableMeetingUpload = enableMeetingUpload;
-	 }
-	
-	/**
-	 * 
 	 * @return string
 	 */
 	 getOptOutGroupNames() {
@@ -39384,6 +39414,21 @@ class BulkUploadResultUser extends BulkUploadResult{
 	 */
 	 setGroup(group) {
 	 	this.group = group;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getExternalId() {
+	 	return this.externalId;
+	 }
+	
+	/**
+	 * @param externalId string 
+	 */
+	 setExternalId(externalId) {
+	 	this.externalId = externalId;
 	 }
 }
 module.exports.BulkUploadResultUser = BulkUploadResultUser;
@@ -52268,6 +52313,21 @@ class LiveCaptionFeature extends LiveFeature{
 	 */
 	 setCaptionToken(captionToken) {
 	 	this.captionToken = captionToken;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getInputDelay() {
+	 	return this.inputDelay;
+	 }
+	
+	/**
+	 * @param inputDelay int 
+	 */
+	 setInputDelay(inputDelay) {
+	 	this.inputDelay = inputDelay;
 	 }
 }
 module.exports.LiveCaptionFeature = LiveCaptionFeature;

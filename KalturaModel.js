@@ -8,7 +8,7 @@
 // to do with audio, video, and animation what Wiki platforms allow them to do with
 // text.
 //
-// Copyright (C) 2006-2022  Kaltura Inc.
+// Copyright (C) 2006-2023  Kaltura Inc.
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as
@@ -19542,6 +19542,21 @@ class IntegrationSetting extends kaltura.BaseObject{
 	 */
 	 setEnableMeetingUpload(enableMeetingUpload) {
 	 	this.enableMeetingUpload = enableMeetingUpload;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getEnableMeetingChat() {
+	 	return this.enableMeetingChat;
+	 }
+	
+	/**
+	 * @param enableMeetingChat int 
+	 */
+	 setEnableMeetingChat(enableMeetingChat) {
+	 	this.enableMeetingChat = enableMeetingChat;
 	 }
 }
 module.exports.IntegrationSetting = IntegrationSetting;

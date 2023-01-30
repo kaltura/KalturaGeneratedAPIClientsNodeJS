@@ -8,7 +8,7 @@
 // to do with audio, video, and animation what Wiki platforms allow them to do with
 // text.
 //
-// Copyright (C) 2006-2022  Kaltura Inc.
+// Copyright (C) 2006-2023  Kaltura Inc.
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as
@@ -2095,6 +2095,7 @@ module.exports.CaptionParamsOrderBy = {
 module.exports.CaptionSource = {
 UNKNOWN : '0',
 ZOOM : '1',
+WEBEX : '2',
 };
 
 module.exports.CaptionType = {

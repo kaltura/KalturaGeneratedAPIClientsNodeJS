@@ -27387,6 +27387,21 @@ class UrlResource extends ContentResource{
 	 setForceAsyncDownload(forceAsyncDownload) {
 	 	this.forceAsyncDownload = forceAsyncDownload;
 	 }
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getUrlHeaders() {
+	 	return this.urlHeaders;
+	 }
+	
+	/**
+	 * @param urlHeaders array 
+	 */
+	 setUrlHeaders(urlHeaders) {
+	 	this.urlHeaders = urlHeaders;
+	 }
 }
 module.exports.UrlResource = UrlResource;
 
@@ -82607,6 +82622,21 @@ class SystemPartnerFilter extends PartnerFilter{
 	 */
 	 setPartnerParentIdIn(partnerParentIdIn) {
 	 	this.partnerParentIdIn = partnerParentIdIn;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getAdminEmailEqual() {
+	 	return this.adminEmailEqual;
+	 }
+	
+	/**
+	 * @param adminEmailEqual string 
+	 */
+	 setAdminEmailEqual(adminEmailEqual) {
+	 	this.adminEmailEqual = adminEmailEqual;
 	 }
 }
 module.exports.SystemPartnerFilter = SystemPartnerFilter;

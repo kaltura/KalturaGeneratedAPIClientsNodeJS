@@ -1332,6 +1332,7 @@ GROUP : 1,
 module.exports.VendorCatalogItemOutputFormat = {
 SRT : 1,
 DFXP : 2,
+VTT : 3,
 };
 
 module.exports.VendorCatalogItemStatus = {
@@ -1355,6 +1356,7 @@ CHAPTERING : 5,
 INTELLIGENT_TAGGING : 6,
 DUBBING : 7,
 LIVE_CAPTION : 8,
+EXTENDED_AUDIO_DESCRIPTION : 9,
 };
 
 module.exports.VendorServiceTurnAroundTime = {
@@ -2111,6 +2113,7 @@ AR : 'Arabic',
 YUE : 'Cantonese',
 CA : 'Catalan',
 ZH : 'Chinese',
+CS : 'Czech',
 DA : 'Danish',
 NL : 'Dutch',
 EN : 'English',

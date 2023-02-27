@@ -60572,6 +60572,63 @@ module.exports.VendorDubbingCatalogItem = VendorDubbingCatalogItem;
 /**
  *
  */
+class VendorExtendedAudioDescriptionCatalogItem extends VendorCatalogItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorExtendedAudioDescriptionCatalogItem';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getFlavorParamsId() {
+	 	return this.flavorParamsId;
+	 }
+	
+	/**
+	 * @param flavorParamsId int 
+	 */
+	 setFlavorParamsId(flavorParamsId) {
+	 	this.flavorParamsId = flavorParamsId;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getClearAudioFlavorParamsId() {
+	 	return this.clearAudioFlavorParamsId;
+	 }
+	
+	/**
+	 * @param clearAudioFlavorParamsId int 
+	 */
+	 setClearAudioFlavorParamsId(clearAudioFlavorParamsId) {
+	 	this.clearAudioFlavorParamsId = clearAudioFlavorParamsId;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getOutputFormat() {
+	 	return this.outputFormat;
+	 }
+	
+	/**
+	 * @param outputFormat int 
+	 */
+	 setOutputFormat(outputFormat) {
+	 	this.outputFormat = outputFormat;
+	 }
+}
+module.exports.VendorExtendedAudioDescriptionCatalogItem = VendorExtendedAudioDescriptionCatalogItem;
+
+/**
+ *
+ */
 class VendorIntelligentTaggingCatalogItem extends VendorCatalogItem{
 	
 	constructor(object = null) {
@@ -86717,6 +86774,18 @@ class VendorDubbingCatalogItemFilter extends VendorDubbingCatalogItemBaseFilter{
 	}
 }
 module.exports.VendorDubbingCatalogItemFilter = VendorDubbingCatalogItemFilter;
+
+/**
+ *
+ */
+class VendorExtendedAudioDescriptionCatalogItemFilter extends VendorCaptionsCatalogItemBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorExtendedAudioDescriptionCatalogItemFilter';
+	}
+}
+module.exports.VendorExtendedAudioDescriptionCatalogItemFilter = VendorExtendedAudioDescriptionCatalogItemFilter;
 
 /**
  *

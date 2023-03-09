@@ -24507,6 +24507,21 @@ class BaseEntryBaseFilter extends RelatedFilter{
 	 setTagsAdminTagsNameMultiLikeAnd(tagsAdminTagsNameMultiLikeAnd) {
 	 	this.tagsAdminTagsNameMultiLikeAnd = tagsAdminTagsNameMultiLikeAnd;
 	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getDisplayInSearchEqual() {
+	 	return this.displayInSearchEqual;
+	 }
+	
+	/**
+	 * @param displayInSearchEqual int 
+	 */
+	 setDisplayInSearchEqual(displayInSearchEqual) {
+	 	this.displayInSearchEqual = displayInSearchEqual;
+	 }
 }
 module.exports.BaseEntryBaseFilter = BaseEntryBaseFilter;
 

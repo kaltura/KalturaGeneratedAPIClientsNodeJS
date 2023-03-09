@@ -381,7 +381,9 @@ module.exports.appToken = appToken;
  * @action list List base entries by filter with paging support.
  * @action listByReferenceId List base entries by filter according to reference id.
  * @action listFlags List all pending flags for the entry.
+ * @action recycle Move the entry to the recycle bin.
  * @action reject Reject the entry and mark the pending flags (if any) as moderated (this will make the entry non-playable).
+ * @action restoreRecycled Restore the entry from the recycle bin.
  * @action update Update base entry. Only the properties that were set will be updated.
  * @action updateContent Update the content resource associated with the entry.
  * @action updateThumbnailFromSourceEntry Update entry thumbnail from a different entry by a specified time offset (in seconds).
@@ -644,6 +646,17 @@ class baseEntry{
 	};
 	
 	/**
+	 * Move the entry to the recycle bin.
+	 * @param entryId string 
+	 * @return KalturaBaseEntry
+	 */
+	static recycle(entryId){
+		let kparams = {};
+		kparams.entryId = entryId;
+		return new kaltura.RequestBuilder('baseentry', 'recycle', kparams);
+	};
+	
+	/**
 	 * Reject the entry and mark the pending flags (if any) as moderated (this will make the entry non-playable).
 	 * @param entryId string 
 	 */
@@ -651,6 +664,17 @@ class baseEntry{
 		let kparams = {};
 		kparams.entryId = entryId;
 		return new kaltura.RequestBuilder('baseentry', 'reject', kparams);
+	};
+	
+	/**
+	 * Restore the entry from the recycle bin.
+	 * @param entryId string 
+	 * @return KalturaBaseEntry
+	 */
+	static restoreRecycled(entryId){
+		let kparams = {};
+		kparams.entryId = entryId;
+		return new kaltura.RequestBuilder('baseentry', 'restoreRecycled', kparams);
 	};
 	
 	/**

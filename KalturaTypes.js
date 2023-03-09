@@ -413,6 +413,7 @@ LOW : 5,
 };
 
 module.exports.EntryDisplayInSearchType = {
+RECYCLED : -2,
 SYSTEM : -1,
 NONE : 0,
 PARTNER_ONLY : 1,
@@ -1390,6 +1391,7 @@ MACHINE : 2,
 module.exports.VendorTaskProcessingRegion = {
 US : 1,
 EU : 2,
+CA : 3,
 };
 
 module.exports.ViewMode = {
@@ -2939,6 +2941,7 @@ CREATED_AT : 'created_at',
 CREATOR_ID : 'creator_kuser_id',
 CREDIT : 'credit',
 DESCRIPTION : 'description',
+DISPLAY_IN_SEARCH : 'display_in_search',
 END_DATE : 'end_date',
 ENTITLED_USER_EDIT : 'entitled_kusers_edit',
 ENTITLED_USER_PUBLISH : 'entitled_kusers_publish',
@@ -3133,6 +3136,7 @@ KMS_GO : '4',
 WEBCAST_APP : '5',
 PERSONAL_CAPTURE : '6',
 KALTURA_MEETING : '7',
+EP : '8',
 };
 
 module.exports.EntryDistributionOrderBy = {

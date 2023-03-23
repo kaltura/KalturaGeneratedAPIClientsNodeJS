@@ -11199,6 +11199,78 @@ module.exports.virusScanProfile = virusScanProfile;
 
 
 /**
+ *Class definition for the Kaltura service: virtualEvent.
+ * The available service actions:
+ * @action add Add a new virtual event.
+ * @action delete Delete a virtual event.
+ * @action get Retrieve a virtual event by id.
+ * @action list List virtual events.
+ * @action update Update an existing virtual event.
+ */
+class virtualEvent{
+	
+	/**
+	 * Add a new virtual event.
+	 * @param virtualEvent VirtualEvent 
+	 * @return KalturaVirtualEvent
+	 */
+	static add(virtualEvent){
+		let kparams = {};
+		kparams.virtualEvent = virtualEvent;
+		return new kaltura.RequestBuilder('virtualevent_virtualevent', 'add', kparams);
+	};
+	
+	/**
+	 * Delete a virtual event.
+	 * @param id int 
+	 */
+	static deleteAction(id){
+		let kparams = {};
+		kparams.id = id;
+		return new kaltura.RequestBuilder('virtualevent_virtualevent', 'delete', kparams);
+	};
+	
+	/**
+	 * Retrieve a virtual event by id.
+	 * @param id int 
+	 * @return KalturaVirtualEvent
+	 */
+	static get(id){
+		let kparams = {};
+		kparams.id = id;
+		return new kaltura.RequestBuilder('virtualevent_virtualevent', 'get', kparams);
+	};
+	
+	/**
+	 * List virtual events.
+	 * @param filter VirtualEventFilter  (optional, default: null)
+	 * @param pager FilterPager  (optional, default: null)
+	 * @return KalturaVirtualEventListResponse
+	 */
+	static listAction(filter = null, pager = null){
+		let kparams = {};
+		kparams.filter = filter;
+		kparams.pager = pager;
+		return new kaltura.RequestBuilder('virtualevent_virtualevent', 'list', kparams);
+	};
+	
+	/**
+	 * Update an existing virtual event.
+	 * @param id int 
+	 * @param virtualEvent VirtualEvent 
+	 * @return KalturaVirtualEvent
+	 */
+	static update(id, virtualEvent){
+		let kparams = {};
+		kparams.id = id;
+		kparams.virtualEvent = virtualEvent;
+		return new kaltura.RequestBuilder('virtualevent_virtualevent', 'update', kparams);
+	};
+}
+module.exports.virtualEvent = virtualEvent;
+
+
+/**
  *Class definition for the Kaltura service: widevineDrm.
  * The available service actions:
  * @action getLicense Get license for encrypted content playback.

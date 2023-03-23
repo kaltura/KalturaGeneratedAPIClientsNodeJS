@@ -34317,6 +34317,208 @@ module.exports.VendorCatalogItem = VendorCatalogItem;
 /**
  *
  */
+class VirtualEvent extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVirtualEvent';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getId() {
+	 	return this.id;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getPartnerId() {
+	 	return this.partnerId;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getName() {
+	 	return this.name;
+	 }
+	
+	/**
+	 * @param name string 
+	 */
+	 setName(name) {
+	 	this.name = name;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getDescription() {
+	 	return this.description;
+	 }
+	
+	/**
+	 * @param description string 
+	 */
+	 setDescription(description) {
+	 	this.description = description;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getStatus() {
+	 	return this.status;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getTags() {
+	 	return this.tags;
+	 }
+	
+	/**
+	 * @param tags string 
+	 */
+	 setTags(tags) {
+	 	this.tags = tags;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getAttendeesGroupIds() {
+	 	return this.attendeesGroupIds;
+	 }
+	
+	/**
+	 * @param attendeesGroupIds string 
+	 */
+	 setAttendeesGroupIds(attendeesGroupIds) {
+	 	this.attendeesGroupIds = attendeesGroupIds;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getAdminsGroupIds() {
+	 	return this.adminsGroupIds;
+	 }
+	
+	/**
+	 * @param adminsGroupIds string 
+	 */
+	 setAdminsGroupIds(adminsGroupIds) {
+	 	this.adminsGroupIds = adminsGroupIds;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getRegistrationScheduleEventId() {
+	 	return this.registrationScheduleEventId;
+	 }
+	
+	/**
+	 * @param registrationScheduleEventId int 
+	 */
+	 setRegistrationScheduleEventId(registrationScheduleEventId) {
+	 	this.registrationScheduleEventId = registrationScheduleEventId;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getAgendaScheduleEventId() {
+	 	return this.agendaScheduleEventId;
+	 }
+	
+	/**
+	 * @param agendaScheduleEventId int 
+	 */
+	 setAgendaScheduleEventId(agendaScheduleEventId) {
+	 	this.agendaScheduleEventId = agendaScheduleEventId;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getMainEventScheduleEventId() {
+	 	return this.mainEventScheduleEventId;
+	 }
+	
+	/**
+	 * @param mainEventScheduleEventId int 
+	 */
+	 setMainEventScheduleEventId(mainEventScheduleEventId) {
+	 	this.mainEventScheduleEventId = mainEventScheduleEventId;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getCreatedAt() {
+	 	return this.createdAt;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getUpdatedAt() {
+	 	return this.updatedAt;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getDeletionDueDate() {
+	 	return this.deletionDueDate;
+	 }
+	
+	/**
+	 * @param deletionDueDate int 
+	 */
+	 setDeletionDueDate(deletionDueDate) {
+	 	this.deletionDueDate = deletionDueDate;
+	 }
+	
+	/**
+	 * JSON-Schema of the Registration Form
+	 * @return string
+	 */
+	 getRegistrationFormSchema() {
+	 	return this.registrationFormSchema;
+	 }
+	
+	/**
+	 * @param registrationFormSchema string JSON-Schema of the Registration Form
+	 */
+	 setRegistrationFormSchema(registrationFormSchema) {
+	 	this.registrationFormSchema = registrationFormSchema;
+	 }
+}
+module.exports.VirtualEvent = VirtualEvent;
+
+/**
+ *
+ */
 class VirusScanProfile extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -60887,6 +61089,252 @@ module.exports.ViewHistoryUserEntryAdvancedFilter = ViewHistoryUserEntryAdvanced
 /**
  *
  */
+class VirtualEventBaseFilter extends Filter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVirtualEventBaseFilter';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getIdEqual() {
+	 	return this.idEqual;
+	 }
+	
+	/**
+	 * @param idEqual int 
+	 */
+	 setIdEqual(idEqual) {
+	 	this.idEqual = idEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getIdIn() {
+	 	return this.idIn;
+	 }
+	
+	/**
+	 * @param idIn string 
+	 */
+	 setIdIn(idIn) {
+	 	this.idIn = idIn;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getIdNotIn() {
+	 	return this.idNotIn;
+	 }
+	
+	/**
+	 * @param idNotIn string 
+	 */
+	 setIdNotIn(idNotIn) {
+	 	this.idNotIn = idNotIn;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getPartnerIdEqual() {
+	 	return this.partnerIdEqual;
+	 }
+	
+	/**
+	 * @param partnerIdEqual int 
+	 */
+	 setPartnerIdEqual(partnerIdEqual) {
+	 	this.partnerIdEqual = partnerIdEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getPartnerIdIn() {
+	 	return this.partnerIdIn;
+	 }
+	
+	/**
+	 * @param partnerIdIn string 
+	 */
+	 setPartnerIdIn(partnerIdIn) {
+	 	this.partnerIdIn = partnerIdIn;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getStatusEqual() {
+	 	return this.statusEqual;
+	 }
+	
+	/**
+	 * @param statusEqual int 
+	 */
+	 setStatusEqual(statusEqual) {
+	 	this.statusEqual = statusEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getStatusIn() {
+	 	return this.statusIn;
+	 }
+	
+	/**
+	 * @param statusIn string 
+	 */
+	 setStatusIn(statusIn) {
+	 	this.statusIn = statusIn;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getCreatedAtGreaterThanOrEqual() {
+	 	return this.createdAtGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * @param createdAtGreaterThanOrEqual int 
+	 */
+	 setCreatedAtGreaterThanOrEqual(createdAtGreaterThanOrEqual) {
+	 	this.createdAtGreaterThanOrEqual = createdAtGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getCreatedAtLessThanOrEqual() {
+	 	return this.createdAtLessThanOrEqual;
+	 }
+	
+	/**
+	 * @param createdAtLessThanOrEqual int 
+	 */
+	 setCreatedAtLessThanOrEqual(createdAtLessThanOrEqual) {
+	 	this.createdAtLessThanOrEqual = createdAtLessThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getUpdatedAtGreaterThanOrEqual() {
+	 	return this.updatedAtGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * @param updatedAtGreaterThanOrEqual int 
+	 */
+	 setUpdatedAtGreaterThanOrEqual(updatedAtGreaterThanOrEqual) {
+	 	this.updatedAtGreaterThanOrEqual = updatedAtGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getUpdatedAtLessThanOrEqual() {
+	 	return this.updatedAtLessThanOrEqual;
+	 }
+	
+	/**
+	 * @param updatedAtLessThanOrEqual int 
+	 */
+	 setUpdatedAtLessThanOrEqual(updatedAtLessThanOrEqual) {
+	 	this.updatedAtLessThanOrEqual = updatedAtLessThanOrEqual;
+	 }
+}
+module.exports.VirtualEventBaseFilter = VirtualEventBaseFilter;
+
+/**
+ *
+ */
+class VirtualEventListResponse extends ListResponse{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVirtualEventListResponse';
+	}
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getObjects() {
+	 	return this.objects;
+	 }
+	
+	/**
+	 * @param objects array 
+	 */
+	 setObjects(objects) {
+	 	this.objects = objects;
+	 }
+}
+module.exports.VirtualEventListResponse = VirtualEventListResponse;
+
+/**
+ *
+ */
+class VirtualScheduleEvent extends ScheduleEvent{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVirtualScheduleEvent';
+	}
+	
+	/**
+	 * The ID of the virtual event connected to this Schedule Event
+	 * @return int
+	 */
+	 getVirtualEventId() {
+	 	return this.virtualEventId;
+	 }
+	
+	/**
+	 * @param virtualEventId int The ID of the virtual event connected to this Schedule Event
+	 */
+	 setVirtualEventId(virtualEventId) {
+	 	this.virtualEventId = virtualEventId;
+	 }
+	
+	/**
+	 * The type of the Virtual Schedule Event
+	 * @return int
+	 */
+	 getVirtualScheduleEventSubType() {
+	 	return this.virtualScheduleEventSubType;
+	 }
+	
+	/**
+	 * @param virtualScheduleEventSubType int The type of the Virtual Schedule Event
+	 */
+	 setVirtualScheduleEventSubType(virtualScheduleEventSubType) {
+	 	this.virtualScheduleEventSubType = virtualScheduleEventSubType;
+	 }
+}
+module.exports.VirtualScheduleEvent = VirtualScheduleEvent;
+
+/**
+ *
+ */
 class VirusScanJobData extends JobData{
 	
 	constructor(object = null) {
@@ -77347,6 +77795,18 @@ module.exports.VendorTranslationCatalogItem = VendorTranslationCatalogItem;
 /**
  *
  */
+class VirtualEventFilter extends VirtualEventBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVirtualEventFilter';
+	}
+}
+module.exports.VirtualEventFilter = VirtualEventFilter;
+
+/**
+ *
+ */
 class VirusScanProfileFilter extends VirusScanProfileBaseFilter{
 	
 	constructor(object = null) {
@@ -85806,6 +86266,18 @@ module.exports.ViewHistoryUserEntryFilter = ViewHistoryUserEntryFilter;
 /**
  *
  */
+class VirtualScheduleEventBaseFilter extends ScheduleEventFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVirtualScheduleEventBaseFilter';
+	}
+}
+module.exports.VirtualScheduleEventBaseFilter = VirtualScheduleEventBaseFilter;
+
+/**
+ *
+ */
 class WatchLaterUserEntryFilter extends UserEntryFilter{
 	
 	constructor(object = null) {
@@ -86813,6 +87285,18 @@ class VendorLiveCaptionCatalogItemFilter extends VendorCaptionsCatalogItemBaseFi
 	}
 }
 module.exports.VendorLiveCaptionCatalogItemFilter = VendorLiveCaptionCatalogItemFilter;
+
+/**
+ *
+ */
+class VirtualScheduleEventFilter extends VirtualScheduleEventBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVirtualScheduleEventFilter';
+	}
+}
+module.exports.VirtualScheduleEventFilter = VirtualScheduleEventFilter;
 
 /**
  *

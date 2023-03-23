@@ -1399,6 +1399,17 @@ PREVIEW : 0,
 ALLOW_ALL : 1,
 };
 
+module.exports.VirtualEventStatus = {
+ACTIVE : 2,
+DELETED : 3,
+};
+
+module.exports.VirtualScheduleEventSubType = {
+AGENDA : 1,
+REGISTRATION : 2,
+MAIN_EVENT : 3,
+};
+
 module.exports.VirusFoundAction = {
 NONE : 0,
 DELETE : 1,
@@ -6265,6 +6276,13 @@ VP9 : 'vp9',
 WMV2 : 'wmv2',
 WMV3 : 'wmv3',
 WVC1A : 'wvc1a',
+};
+
+module.exports.VirtualEventOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
 };
 
 module.exports.VirusScanEngineType = {

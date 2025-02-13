@@ -114,6 +114,11 @@ CBR : 1,
 VBR : 2,
 };
 
+module.exports.BorderStyle = {
+OUTLINE_WITH_SHADOW : 1,
+OPAQUE_BOX : 3,
+};
+
 module.exports.BulkUploadCsvVersion = {
 V1 : 1,
 V2 : 2,
@@ -127,6 +132,18 @@ READY : 2,
 DELETED : 3,
 IMPORTING : 7,
 EXPORTING : 9,
+};
+
+module.exports.CaptionsAlignment = {
+BOTTOM_LEFT : 1,
+BOTTOM_CENTER : 2,
+BOTTOM_RIGHT : 3,
+TOP_LEFT : 4,
+TOP_CENTER : 6,
+TOP_RIGHT : 7,
+CENTER_LEFT : 8,
+CENTER_CENTER : 10,
+CENTER_RIGHT : 11,
 };
 
 module.exports.CategoryEntryStatus = {
@@ -156,6 +173,12 @@ ACTIVE : 1,
 PENDING : 2,
 NOT_ACTIVE : 3,
 DELETED : 4,
+};
+
+module.exports.ChapterNamePolicy = {
+BY_ENTRY_ID : 1,
+BY_ENTRY_NAME : 2,
+NUMERICAL : 3,
 };
 
 module.exports.ChinaCacheAlgorithmType = {
@@ -201,6 +224,12 @@ BATCH : 5,
 
 module.exports.ControlPanelCommandType = {
 KILL : 4,
+};
+
+module.exports.CortexApiDistributionCaptionAction = {
+UPDATE_ACTION : 1,
+SUBMIT_ACTION : 2,
+DELETE_ACTION : 3,
 };
 
 module.exports.CountryRestrictionType = {
@@ -498,6 +527,11 @@ PENDING_ENTRY_READY : 8,
 SCHEDULED : 9,
 };
 
+module.exports.EventNotificationDelayedCondition = {
+NONE : 0,
+PENDING_ENTRY_READY : 1,
+};
+
 module.exports.EventNotificationTemplateStatus = {
 DISABLED : 1,
 ACTIVE : 2,
@@ -589,6 +623,8 @@ module.exports.HandleParticipantsMode = {
 ADD_AS_CO_PUBLISHERS : 0,
 ADD_AS_CO_VIEWERS : 1,
 IGNORE : 2,
+ADD_AS_CO_EDITORS : 3,
+ADD_AS_CO_EDITORS_CO_PUBLISHERS : 4,
 };
 
 module.exports.HttpNotificationAuthenticationMethod = {
@@ -620,6 +656,11 @@ MANUAL : 2,
 module.exports.IpAddressRestrictionType = {
 RESTRICT_LIST : 0,
 ALLOW_LIST : 1,
+};
+
+module.exports.KafkaNotificationFormat = {
+JSON : 1,
+AVRO : 2,
 };
 
 module.exports.LicenseType = {
@@ -896,11 +937,25 @@ APPENDED : 1,
 PER_SESSION : 2,
 };
 
+module.exports.RecordingFileType = {
+UNDEFINED : 0,
+VIDEO : 1,
+CHAT : 2,
+TRANSCRIPT : 3,
+AUDIO : 4,
+CC : 5,
+};
+
 module.exports.RecordingStatus = {
 STOPPED : 0,
 PAUSED : 1,
 ACTIVE : 2,
 DISABLED : 3,
+};
+
+module.exports.RecordingType = {
+MEETING : 0,
+WEBINAR : 1,
 };
 
 module.exports.ReportExportItemType = {
@@ -928,6 +983,11 @@ RESPONSE_TYPE_PHP_ARRAY : 4,
 RESPONSE_TYPE_HTML : 7,
 RESPONSE_TYPE_MRSS : 8,
 RESPONSE_TYPE_JSONP : 9,
+};
+
+module.exports.RoomType = {
+ROOM : 1,
+BREAKOUT : 2,
 };
 
 module.exports.ScheduleEventClassificationType = {
@@ -1232,13 +1292,9 @@ SLIDE : 1,
 CHAPTER : 2,
 };
 
-module.exports.TrackEntryEventType = {
-UPLOADED_FILE : 1,
-WEBCAM_COMPLETED : 2,
-IMPORT_STARTED : 3,
-ADD_ENTRY : 4,
-UPDATE_ENTRY : 5,
-DELETED_ENTRY : 6,
+module.exports.TvinciAssetsType = {
+REGULAR : 1,
+VIRTUAL : 2,
 };
 
 module.exports.TwoFactorAuthenticationMode = {
@@ -1275,6 +1331,8 @@ CLIPPER : 18,
 KSR : 19,
 KUPLOAD : 20,
 WEBCASTING : 21,
+SAP : 22,
+REELS : 23,
 };
 
 module.exports.UpdateMethodType = {
@@ -1300,6 +1358,16 @@ DELETED : 5,
 module.exports.UserAgentRestrictionType = {
 RESTRICT_LIST : 0,
 ALLOW_LIST : 1,
+};
+
+module.exports.UserEntryPermissionLevel = {
+SPEAKER : 1,
+ROOM_MODERATOR : 2,
+ATTENDEE : 3,
+ADMIN : 4,
+PREVIEW_ONLY : 5,
+CHAT_MODERATOR : 6,
+PANELIST : 7,
 };
 
 module.exports.UserJoinPolicyType = {
@@ -1336,6 +1404,11 @@ DFXP : 2,
 VTT : 3,
 };
 
+module.exports.VendorCatalogItemStage = {
+PRODUCTION : 1,
+QA : 2,
+};
+
 module.exports.VendorCatalogItemStatus = {
 DEPRECATED : 1,
 ACTIVE : 2,
@@ -1358,6 +1431,11 @@ INTELLIGENT_TAGGING : 6,
 DUBBING : 7,
 LIVE_CAPTION : 8,
 EXTENDED_AUDIO_DESCRIPTION : 9,
+CLIPS : 10,
+LIVE_TRANSLATION : 11,
+QUIZ : 12,
+SUMMARY : 13,
+VIDEO_ANALYSIS : 14,
 };
 
 module.exports.VendorServiceTurnAroundTime = {
@@ -1394,6 +1472,10 @@ EU : 2,
 CA : 3,
 };
 
+module.exports.VendorVideoAnalysisType = {
+OCR : 1,
+};
+
 module.exports.ViewMode = {
 PREVIEW : 0,
 ALLOW_ALL : 1,
@@ -1428,6 +1510,18 @@ module.exports.VirusScanProfileStatus = {
 DISABLED : 1,
 ENABLED : 2,
 DELETED : 3,
+};
+
+module.exports.WebexAPIGroupParticipationType = {
+NO_CLASSIFICATION : 0,
+OPT_IN : 1,
+OPT_OUT : 2,
+};
+
+module.exports.WebexAPIUsersMatching = {
+DO_NOT_MODIFY : 0,
+ADD_POSTFIX : 1,
+REMOVE_POSTFIX : 2,
 };
 
 module.exports.WidevineRepositorySyncMode = {
@@ -1651,6 +1745,16 @@ THUMBNAIL : '2',
 LIVE : '3',
 };
 
+module.exports.AttUverseDistributionProfileOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.AttUverseDistributionProviderOrderBy = {
+};
+
 module.exports.AttachmentAssetOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 DELETED_AT_ASC : '+deletedAt',
@@ -1753,6 +1857,7 @@ module.exports.BaseEntryCloneOptions = {
 AD_CUE_POINTS : 'adCuePoint.AD_CUE_POINTS',
 ANNOTATION_CUE_POINTS : 'annotation.ANNOTATION_CUE_POINTS',
 CODE_CUE_POINTS : 'codeCuePoint.CODE_CUE_POINTS',
+SESSION_CUE_POINTS : 'sessionCuePoint.SESSION_CUE_POINTS',
 THUMB_CUE_POINTS : 'thumbCuePoint.THUMB_CUE_POINTS',
 USERS : '1',
 CATEGORIES : '2',
@@ -1853,6 +1958,7 @@ ENTRY : '1',
 CATEGORY : '2',
 FILE_SYNC : '3',
 ASSET : '4',
+USER : '5',
 };
 
 module.exports.BatchJobOrderBy = {
@@ -1878,6 +1984,7 @@ UPDATED_AT_DESC : '-updatedAt',
 
 module.exports.BatchJobType = {
 CONVERT : '0',
+REACH_INTERNAL_QUEUE_HANDLER : 'ReachInternal.ReachInternalQueueHandler',
 CONVERT_CAPTION_ASSET : 'caption.convertcaptionasset',
 PARSE_MULTI_LANGUAGE_CAPTION_ASSET : 'caption.parsemultilanguagecaptionasset',
 PARSE_CAPTION_ASSET : 'captionSearch.parseCaptionAsset',
@@ -1895,6 +2002,7 @@ INTEGRATION : 'integration.Integration',
 ENTRY_VENDOR_TASK_CSV : 'reach.EntryVendorTasksCsv',
 SYNC_REACH_CREDIT_TASK : 'reach.SyncReachCreditTask',
 SCHEDULED_TASK : 'scheduledTask.ScheduledTask',
+SEARCH_TERM_CSV : 'searchHistory.searchTermsCsv',
 INDEX_TAGS : 'tagSearch.IndexTagsByPrivacyContext',
 TAG_RESOLVE : 'tagSearch.TagResolve',
 VIRUS_SCAN : 'virusScan.VirusScan',
@@ -1951,6 +2059,7 @@ STORAGE_PERIODIC_EXPORT : '53',
 STORAGE_PERIODIC_PURGE : '54',
 STORAGE_PERIODIC_DELETE_LOCAL : '55',
 REACH_JOB_CLEANER : '56',
+MULTI_CLIP_CONCAT : '57',
 };
 
 module.exports.BeaconIndexType = {
@@ -2104,6 +2213,11 @@ SIZE_DESC : '-size',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
+module.exports.CaptionAssetUsage = {
+CAPTION : '0',
+EXTENDED_AUDIO_DESCRIPTION : '1',
+};
+
 module.exports.CaptionParamsOrderBy = {
 };
 
@@ -2122,50 +2236,97 @@ SCC : '5',
 };
 
 module.exports.CatalogItemLanguage = {
+AF : 'Afrikaans',
 AR : 'Arabic',
+AUTO_DETECT : 'Auto Detect',
+AZ : 'Azerbaijani',
+BA : 'Bashkir',
+EU : 'Basque',
+BN : 'Bengali (Bangla)',
+BS : 'Bosnian',
+BG : 'Bulgarian',
+MY : 'Burmese',
+BE : 'Byelorussian (Belarusian)',
+KM : 'Cambodian',
 YUE : 'Cantonese',
 CA : 'Catalan',
 ZH : 'Chinese',
+HR : 'Croatian',
 CS : 'Czech',
 DA : 'Danish',
 NL : 'Dutch',
 EN : 'English',
 EN_US : 'English (American)',
+EN_AU : 'English (Australian)',
 EN_GB : 'English (British)',
+EO : 'Esperanto',
+ET : 'Estonian',
+FA : 'Farsi',
 FI : 'Finnish',
 FR : 'French',
 FR_CA : 'French (Canada)',
 GD : 'Gaelic (Scottish)',
+GL : 'Galician',
+KA : 'Georgian',
 DE : 'German',
 EL : 'Greek',
+GU : 'Gujarati',
 HE : 'Hebrew',
 HI : 'Hindi',
 HU : 'Hungarian',
 IS : 'Icelandic',
 IN : 'Indonesian',
+IA : 'Interlingua',
 GA : 'Irish',
 IT : 'Italian',
 JA : 'Japanese',
+JV : 'Javanese',
+KN : 'Kannada',
+KK : 'Kazakh',
 KO : 'Korean',
+LO : 'Laothian',
+LV : 'Latvian (Lettish)',
+LT : 'Lithuanian',
+MK : 'Macedonian',
+MS : 'Malay',
 ML : 'Malayalam',
 CMN : 'Mandarin Chinese',
+MR : 'Marathi',
+MN : 'Mongolian',
+NE : 'Nepali',
 NO : 'Norwegian',
+FA_IR : 'Persian (Iran)',
 PL : 'Polish',
 PT : 'Portuguese',
 PT_BR : 'Portuguese (Brazil)',
+PA : 'Punjabi',
 RO : 'Romanian',
 RU : 'Russian',
+SR : 'Serbian',
+ZH_CN : 'Simplified Chinese',
+SI : 'Sinhalese',
+SK : 'Slovak',
+SK_SK : 'Slovakian',
+SL : 'Slovenian',
 ES : 'Spanish',
 ES_XL : 'Spanish (Latin America)',
+SU : 'Sundanese',
+SW : 'Swahili (Kiswahili)',
 SV : 'Swedish',
+TL : 'Tagalog',
 ZH_TW : 'Taiwanese Mandarin',
 TA : 'Tamil',
+TE : 'Telugu',
 TH : 'Thai',
+ZH_HK : 'Traditional Chinese',
 TR : 'Turkish',
+UG : 'Uighur',
 UK : 'Ukrainian',
 UR : 'Urdu',
+UZ : 'Uzbek',
 VI : 'Vietnamese',
 CY : 'Welsh',
+XH : 'Xhosa',
 ZU : 'Zulu',
 };
 
@@ -2261,6 +2422,7 @@ module.exports.ComcastMrssDistributionProviderOrderBy = {
 };
 
 module.exports.ConditionType = {
+ABC_WATERMARK : 'abcScreenersWatermarkAccessControl.abcWatermark',
 EVENT_NOTIFICATION_FIELD : 'eventNotification.BooleanField',
 EVENT_NOTIFICATION_OBJECT_CHANGED : 'eventNotification.ObjectChanged',
 METADATA_FIELD_CHANGED : 'metadata.FieldChanged',
@@ -2379,6 +2541,16 @@ MEDIA : '1',
 LIVE_STREAM : '2',
 };
 
+module.exports.CortexApiDistributionProfileOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.CortexApiDistributionProviderOrderBy = {
+};
+
 module.exports.CrossKalturaDistributionProfileOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
@@ -2411,6 +2583,7 @@ CODE : 'codeCuePoint.Code',
 EVENT : 'eventCuePoint.Event',
 QUIZ_ANSWER : 'quiz.QUIZ_ANSWER',
 QUIZ_QUESTION : 'quiz.QUIZ_QUESTION',
+SESSION : 'sessionCuePoint.Session',
 THUMB : 'thumbCuePoint.Thumb',
 };
 
@@ -2563,6 +2736,8 @@ module.exports.DeliveryProfileType = {
 EDGE_CAST_HTTP : 'edgeCast.EDGE_CAST_HTTP',
 EDGE_CAST_RTMP : 'edgeCast.EDGE_CAST_RTMP',
 KONTIKI_HTTP : 'kontiki.KONTIKI_HTTP',
+UPLYNK_HTTP : 'uplynk.UPLYNK_HTTP',
+UPLYNK_RTMP : 'uplynk.UPLYNK_RTMP',
 VELOCIX_HDS : 'velocix.VELOCIX_HDS',
 VELOCIX_HLS : 'velocix.VELOCIX_HLS',
 APPLE_HTTP : '1',
@@ -2632,8 +2807,10 @@ module.exports.DistributionProviderOrderBy = {
 };
 
 module.exports.DistributionProviderType = {
+ATT_UVERSE : 'attUverseDistribution.ATT_UVERSE',
 AVN : 'avnDistribution.AVN',
 COMCAST_MRSS : 'comcastMrssDistribution.COMCAST_MRSS',
+CORTEX_API : 'cortexApiDistribution.CORTEX_API',
 CROSS_KALTURA : 'crossKalturaDistribution.CROSS_KALTURA',
 DAILYMOTION : 'dailymotionDistribution.DAILYMOTION',
 DOUBLECLICK : 'doubleClickDistribution.DOUBLECLICK',
@@ -2646,9 +2823,18 @@ HULU : 'huluDistribution.HULU',
 IDETIC : 'ideticDistribution.IDETIC',
 METRO_PCS : 'metroPcsDistribution.METRO_PCS',
 MSN : 'msnDistribution.MSN',
+NDN : 'ndnDistribution.NDN',
 PODCAST : 'podcastDistribution.PODCAST',
+PUSH_TO_NEWS : 'pushToNewsDistribution.PUSH_TO_NEWS',
 QUICKPLAY : 'quickPlayDistribution.QUICKPLAY',
+SYNACOR_HBO : 'synacorHboDistribution.SYNACOR_HBO',
+TIME_WARNER : 'timeWarnerDistribution.TIME_WARNER',
+TVCOM : 'tvComDistribution.TVCOM',
+TVINCI : 'tvinciDistribution.TVINCI',
 UNICORN : 'unicornDistribution.UNICORN',
+UVERSE_CLICK_TO_ORDER : 'uverseClickToOrderDistribution.UVERSE_CLICK_TO_ORDER',
+UVERSE : 'uverseDistribution.UVERSE',
+VERIZON_VCAST : 'verizonVcastDistribution.VERIZON_VCAST',
 YAHOO : 'yahooDistribution.YAHOO',
 YOUTUBE : 'youTubeDistribution.YOUTUBE',
 YOUTUBE_API : 'youtubeApiDistribution.YOUTUBE_API',
@@ -2802,6 +2988,7 @@ FILE_NO_MATCH : '13',
 };
 
 module.exports.DropFolderFileHandlerType = {
+TR_RDS : 'TrRdsSyncDropFolder.TR_RDS',
 XML : 'dropFolderXmlBulkUpload.XML',
 ICAL : 'scheduleDropFolder.ICAL',
 CONTENT : '1',
@@ -2838,8 +3025,15 @@ UPDATED_AT_DESC : '-updatedAt',
 };
 
 module.exports.DropFolderType = {
+AP_FEED : 'ApFeedDropFolder.AP_FEED',
 FEED : 'FeedDropFolder.FEED',
+MS_TEAMS : 'MicrosoftTeamsDropFolder.MS_TEAMS',
+S3DROPFOLDER : 'S3DropFolder.S3DROPFOLDER',
+TR_RDS_COMPANY : 'TrRdsSyncDropFolder.TR_RDS_COMPANY',
+TR_RDS_TMCTERM : 'TrRdsSyncDropFolder.TR_RDS_TMCTERM',
+WEBEX_API : 'WebexAPIDropFolder.WEBEX_API',
 WEBEX : 'WebexDropFolder.WEBEX',
+ZOOM : 'ZoomDropFolder.ZOOM',
 LOCAL : '1',
 FTP : '2',
 SCP : '3',
@@ -2946,6 +3140,7 @@ TAGS : 'tags',
 module.exports.ESearchEntryFieldName = {
 ACCESS_CONTROL_ID : 'access_control_id',
 ADMIN_TAGS : 'admin_tags',
+BROADCAST_ENTRY_ID : 'broadcast_entry_id',
 CAPTIONS_CONTENT : 'captions_content',
 CONVERSION_PROFILE_ID : 'conversion_profile_id',
 CREATED_AT : 'created_at',
@@ -2974,8 +3169,10 @@ PLAYS : 'plays',
 PUSH_PUBLISH : 'push_publish',
 RANK : 'rank',
 RECORDED_ENTRY_ID : 'recorded_entry_id',
+RECYCLED_AT : 'recycled_at',
 REDIRECT_ENTRY_ID : 'redirect_entry_id',
 REFERENCE_ID : 'reference_id',
+ROOM_TYPE : 'room_type',
 ROOT_ID : 'root_id',
 SITE_URL : 'site_url',
 SOURCE_TYPE : 'source_type',
@@ -2997,6 +3194,7 @@ PLAYS_LAST_1_DAY : 'plays_last_1_day',
 PLAYS_LAST_30_DAYS : 'plays_last_30_days',
 PLAYS_LAST_7_DAYS : 'plays_last_7_days',
 RANK : 'rank',
+RECYCLED_AT : 'recycled_at',
 START_DATE : 'start_date',
 UPDATED_AT : 'updated_at',
 VIEWS : 'views',
@@ -3007,12 +3205,14 @@ VOTES : 'votes',
 };
 
 module.exports.ESearchGroupFieldName = {
+CAPABILITIES : 'capabilities',
 COMPANY : 'company',
 COUNTRY : 'country',
 CREATED_AT : 'created_at',
 EMAIL : 'email',
 EXTERNAL_ID : 'external_id',
 FIRST_NAME : 'first_name',
+FULL_NAME : 'full_name',
 GROUP_IDS : 'group_ids',
 IS_ADMIN : 'is_admin',
 IS_HASHED : 'is_hashed',
@@ -3029,10 +3229,15 @@ USER_ID : 'user_id',
 
 module.exports.ESearchGroupOrderByFieldName = {
 CREATED_AT : 'created_at',
+FULL_NAME : 'full_name',
 MEMBERS_COUNT : 'members_count',
 USER_ID : 'puser_id',
 SCREEN_NAME : 'screen_name',
 UPDATED_AT : 'updated_at',
+};
+
+module.exports.ESearchHistoryAggregateFieldName = {
+SEARCH_TERM : 'search_term',
 };
 
 module.exports.ESearchLanguage = {
@@ -3080,12 +3285,14 @@ ORDER_BY_DESC : 'desc',
 };
 
 module.exports.ESearchUserFieldName = {
+CAPABILITIES : 'capabilities',
 COMPANY : 'company',
 COUNTRY : 'country',
 CREATED_AT : 'created_at',
 EMAIL : 'email',
 EXTERNAL_ID : 'external_id',
 FIRST_NAME : 'first_name',
+FULL_NAME : 'full_name',
 GROUP_IDS : 'group_ids',
 IS_ADMIN : 'is_admin',
 IS_HASHED : 'is_hashed',
@@ -3103,6 +3310,7 @@ TYPE : 'user_type',
 
 module.exports.ESearchUserOrderByFieldName = {
 CREATED_AT : 'created_at',
+FULL_NAME : 'full_name',
 USER_ID : 'puser_id',
 SCREEN_NAME : 'screen_name',
 UPDATED_AT : 'updated_at',
@@ -3223,6 +3431,7 @@ module.exports.EntryType = {
 AUTOMATIC : '-1',
 CONFERENCE_ENTRY_SERVER : 'conference.CONFERENCE_ENTRY_SERVER',
 EXTERNAL_MEDIA : 'externalMedia.externalMedia',
+ROOM : 'room.room',
 SIP_ENTRY_SERVER : 'sip.SIP_ENTRY_SERVER',
 MEDIA_CLIP : '1',
 MIX : '2',
@@ -3284,6 +3493,7 @@ DROP_FOLDER : 'dropFolderEventNotifications.DropFolder',
 DROP_FOLDER_FILE : 'dropFolderEventNotifications.DropFolderFile',
 METADATA : 'metadataEventNotifications.Metadata',
 TRANSCRIPT_ASSET : 'transcriptAssetEventNotifications.TranscriptAsset',
+VIRTUAL_EVENT : 'virtualEventEventNotifications.VirtualEvent',
 ENTRY : '1',
 CATEGORY : '2',
 ASSET : '3',
@@ -3351,11 +3561,13 @@ UPDATED_AT_DESC : '-updatedAt',
 };
 
 module.exports.EventNotificationTemplateType = {
+BOOLEAN : 'booleanNotification.Boolean',
 BPM_ABORT : 'businessProcessNotification.BusinessProcessAbort',
 BPM_SIGNAL : 'businessProcessNotification.BusinessProcessSignal',
 BPM_START : 'businessProcessNotification.BusinessProcessStart',
 EMAIL : 'emailNotification.Email',
 HTTP : 'httpNotification.Http',
+KAFKA : 'kafkaNotification.Kafka',
 PUSH : 'pushNotification.Push',
 };
 
@@ -3567,6 +3779,10 @@ UPDATED_AT_DESC : '-updatedAt',
 };
 
 module.exports.FtpScheduledDistributionProviderOrderBy = {
+};
+
+module.exports.GameObjectType = {
+LEADERBOARD : '1',
 };
 
 module.exports.GenericDistributionProfileOrderBy = {
@@ -3785,12 +4001,23 @@ module.exports.ImageFlavorParamsOutputOrderBy = {
 
 module.exports.IntegrationProviderType = {
 CIELO24 : 'cielo24.Cielo24',
+DEXTER : 'dexterIntegration.Dexter',
+EXAMPLE : 'exampleIntegration.Example',
 VOICEBASE : 'voicebase.Voicebase',
 };
 
 module.exports.IntegrationTriggerType = {
 BPM_EVENT_NOTIFICATION : 'bpmEventNotificationIntegration.BpmEventNotification',
 MANUAL : '1',
+};
+
+module.exports.KafkaNotificationTemplateOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+ID_ASC : '+id',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+ID_DESC : '-id',
+UPDATED_AT_DESC : '-updatedAt',
 };
 
 module.exports.KontikiStorageProfileOrderBy = {
@@ -3879,6 +4106,7 @@ BIK : 'Bikol',
 BIN : 'Bini',
 BPY : 'Bishnupriya Manipuri',
 BI : 'Bislama',
+BS : 'Bosnian',
 BR : 'Breton',
 BUG : 'Buginese',
 BG : 'Bulgarian',
@@ -3943,6 +4171,7 @@ EEE : 'E',
 EGL : 'Emilian',
 EN : 'English',
 EN_US : 'English (American)',
+EN_AU : 'English (Australian)',
 EN_GB : 'English (British)',
 ENM : 'English Middle (1100-1500)',
 MYV : 'Erzya',
@@ -3996,8 +4225,8 @@ HAA : 'Han',
 HNI : 'Hani',
 HA : 'Hausa',
 HAW : 'Hawaiian',
-IW : 'Hebrew',
 HE : 'Hebrew',
+IW : 'Hebrew',
 HEI : 'Heiltsuk',
 HID : 'Hidatsa',
 HIL : 'Hiligaynon',
@@ -4191,6 +4420,7 @@ PAP : 'Papiamento',
 PS : 'Pashto (Pushto)',
 PRP : 'Persian',
 PRS : 'Persian (Dari)',
+FA_IR : 'Persian (Iran)',
 PFL : 'Pfaelzisch',
 PCD : 'Picard',
 PMS : 'Piedmontese',
@@ -4258,6 +4488,7 @@ SCN : 'Sicilian',
 SID : 'Sidamo',
 BLA : 'Siksika',
 SZL : 'Silesian',
+ZH_CN : 'Simplified Chinese',
 SD : 'Sindhi',
 SI : 'Sinhalese',
 SS : 'Siswati',
@@ -4265,6 +4496,7 @@ SMS : 'Skolt Sami',
 SCS : 'Slavey North',
 XSL : 'Slavey South',
 SK : 'Slovak',
+SK_SK : 'Slovakian',
 SL : 'Slovenian',
 SO : 'Somali',
 SNK : 'Soninke',
@@ -4320,6 +4552,7 @@ OOD : 'Tohono Oodham',
 TPI : 'Tok Pisin',
 TO : 'Tonga',
 TOG : 'Tonga (Nyasa)',
+ZH_HK : 'Traditional Chinese',
 DDO : 'Tsez',
 TSI : 'Tsimshian',
 TS : 'Tsonga',
@@ -4362,8 +4595,8 @@ WUU : 'Wu Chinese',
 WYM : 'Wymysorys',
 XH : 'Xhosa',
 AME : 'Yanesha',
-JI : 'Yiddish',
 YI : 'Yiddish',
+JI : 'Yiddish',
 YO : 'Yoruba',
 ZAI : 'Zapotec Isthmus',
 DJE : 'Zarma',
@@ -5092,6 +5325,7 @@ module.exports.MediaInfoOrderBy = {
 
 module.exports.MediaParserType = {
 MEDIAINFO : '0',
+REMOTE_MEDIAINFO : 'remoteMediaInfo.RemoteMediaInfo',
 FFMPEG : '1',
 };
 
@@ -5238,9 +5472,20 @@ UPDATED_AT_DESC : '-updatedAt',
 module.exports.MsnDistributionProviderOrderBy = {
 };
 
+module.exports.NdnDistributionProfileOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.NdnDistributionProviderOrderBy = {
+};
+
 module.exports.ObjectFilterEngineType = {
 ENTRY : '1',
 ENTRY_VENDOR_TASK : '2',
+RECYCLE_BIN_CLEANUP : '3',
 };
 
 module.exports.ObjectTaskType = {
@@ -5255,6 +5500,7 @@ DELETE_LOCAL_CONTENT : '5',
 STORAGE_EXPORT : '6',
 MODIFY_ENTRY : '7',
 MAIL_NOTIFICATION : '8',
+RECYCLE_BIN_CLEANUP : '9',
 };
 
 module.exports.PartnerOrderBy = {
@@ -5567,6 +5813,8 @@ UPDATED_AT_DESC : '-updatedAt',
 };
 
 module.exports.ReachVendorEngineType = {
+OPEN_CALAIS : 'OpenCalaisReachVendor.OPEN_CALAIS',
+HELLO_WORLD : 'ReachInternal.HELLO_WORLD',
 };
 
 module.exports.RecordScheduleEventOrderBy = {
@@ -5694,6 +5942,7 @@ CONTENT_REALTIME : '10012',
 DISCOVERY_VIEW_REALTIME : '10013',
 TOP_ENDED_BROADCAST_ENTRIES : '10014',
 TOP_LIVE_NOW_ENTRIES : '10015',
+LIVE_MEETING_USERS_OVERVIEW_REALTIME : '10016',
 CONTENT_DROPOFF_VPAAS : '20001',
 TOP_SYNDICATION_VPAAS : '20002',
 USER_TOP_CONTENT_VPAAS : '20003',
@@ -5800,12 +6049,36 @@ VE_REGISTERED_INDUSTRY : '50002',
 VE_REGISTERED_ROLES : '50003',
 VE_REGISTERED_COUNTRIES : '50004',
 VE_REGISTERED_WORLD_REGIONS : '50005',
+VE_USER_HIGHLIGHTS : '50006',
+VE_ATTENDANCE_HIGHLIGHTS : '50007',
+VE_REGISTERED_COMPANIES : '50008',
+EP_WEBCAST_HIGHLIGHTS : '60001',
+EP_WEBCAST_UNIQUE_USERS : '60002',
+EP_WEBCAST_ENGAGEMENT : '60003',
+EP_WEBCAST_ENGAGEMENT_TIMELINE : '60004',
+EP_WEBCAST_TOP_RECORDING : '60005',
+EP_WEBCAST_TOP_PLATFORMS : '60006',
+EP_WEBCAST_MAP_OVERLAY_COUNTRY : '60007',
+EP_WEBCAST_MAP_OVERLAY_REGION : '60008',
+EP_WEBCAST_MAP_OVERLAY_CITY : '60009',
+EP_WEBCAST_LIVE_USER_ENGAGEMENT : '60010',
+EP_WEBCAST_LIVE_USER_ENGAGEMENT_LEVEL : '60011',
+EP_WEBCAST_VOD_USER_TOP_CONTENT : '60012',
+EP_WEBCAST_VOD_LIVE_USERS_ENGAGEMENT : '60013',
+EP_ATTENDEES : '60014',
+EP_VIEWTIME : '60015',
+EP_TOP_MOMENTS : '60016',
+EP_TOP_SESSIONS : '60017',
+EP_WEBCAST_ENGAGEMENT_OVER_TIME : '60018',
+CNC_PARTICIPATION : '70001',
 };
 
 module.exports.ResetPassLinkType = {
 KMC : '1',
 KMS : '2',
 KME : '3',
+EP : '4',
+KME_NR : '5',
 };
 
 module.exports.ResponseProfileOrderBy = {
@@ -5813,6 +6086,31 @@ CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.RoomEntryOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+END_DATE_ASC : '+endDate',
+MODERATION_COUNT_ASC : '+moderationCount',
+NAME_ASC : '+name',
+PARTNER_SORT_VALUE_ASC : '+partnerSortValue',
+RANK_ASC : '+rank',
+RECENT_ASC : '+recent',
+START_DATE_ASC : '+startDate',
+TOTAL_RANK_ASC : '+totalRank',
+UPDATED_AT_ASC : '+updatedAt',
+WEIGHT_ASC : '+weight',
+CREATED_AT_DESC : '-createdAt',
+END_DATE_DESC : '-endDate',
+MODERATION_COUNT_DESC : '-moderationCount',
+NAME_DESC : '-name',
+PARTNER_SORT_VALUE_DESC : '-partnerSortValue',
+RANK_DESC : '-rank',
+RECENT_DESC : '-recent',
+START_DATE_DESC : '-startDate',
+TOTAL_RANK_DESC : '-totalRank',
+UPDATED_AT_DESC : '-updatedAt',
+WEIGHT_DESC : '-weight',
 };
 
 module.exports.RuleActionType = {
@@ -5934,6 +6232,23 @@ WOWZA_MEDIA_SERVER : 'wowza.WOWZA_MEDIA_SERVER',
 EDGE : '1',
 };
 
+module.exports.SessionCuePointOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+END_TIME_ASC : '+endTime',
+INT_ID_ASC : '+intId',
+PARTNER_SORT_VALUE_ASC : '+partnerSortValue',
+START_TIME_ASC : '+startTime',
+TRIGGERED_AT_ASC : '+triggeredAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+END_TIME_DESC : '-endTime',
+INT_ID_DESC : '-intId',
+PARTNER_SORT_VALUE_DESC : '-partnerSortValue',
+START_TIME_DESC : '-startTime',
+TRIGGERED_AT_DESC : '-triggeredAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
 module.exports.SftpDropFolderOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 ID_ASC : '+id',
@@ -6010,10 +6325,25 @@ S3 : '6',
 LOCAL : '7',
 };
 
+module.exports.SummaryWritingStyleTaskData = {
+CASUAL : 'casual',
+FORMAL : 'formal',
+};
+
 module.exports.SwfFlavorParamsOrderBy = {
 };
 
 module.exports.SwfFlavorParamsOutputOrderBy = {
+};
+
+module.exports.SynacorHboDistributionProfileOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.SynacorHboDistributionProviderOrderBy = {
 };
 
 module.exports.SyndicationDistributionProfileOrderBy = {
@@ -6028,9 +6358,20 @@ CREATED_AT_DESC : '-createdAt',
 RECENT : 'recent',
 };
 
+module.exports.TVComDistributionProfileOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.TVComDistributionProviderOrderBy = {
+};
+
 module.exports.TaggedObjectType = {
 ENTRY : '1',
 CATEGORY : '2',
+LIVESTREAMENTRY : '3',
 };
 
 module.exports.ThumbAssetOrderBy = {
@@ -6063,6 +6404,16 @@ module.exports.ThumbParamsOrderBy = {
 };
 
 module.exports.ThumbParamsOutputOrderBy = {
+};
+
+module.exports.TimeWarnerDistributionProfileOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.TimeWarnerDistributionProviderOrderBy = {
 };
 
 module.exports.TimedThumbAssetOrderBy = {
@@ -6123,15 +6474,20 @@ TYPE_DESC : '-type',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
-module.exports.UiConfAdminOrderBy = {
+module.exports.TvinciDistributionProfileOrderBy = {
 CREATED_AT_ASC : '+createdAt',
-ID_ASC : '+id',
-NAME_ASC : '+name',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
-ID_DESC : '-id',
-NAME_DESC : '-name',
 UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.TvinciDistributionProviderOrderBy = {
+};
+
+module.exports.TypeOfSummaryTaskData = {
+CONCISE : 'concise',
+DETAILED : 'detailed',
+EXTENSIVE : 'extensive',
 };
 
 module.exports.UiConfOrderBy = {
@@ -6160,6 +6516,10 @@ CREATED_AT_ASC : '+createdAt',
 CREATED_AT_DESC : '-createdAt',
 };
 
+module.exports.UserCapabilityType = {
+SYNCED_GROUP : '0',
+};
+
 module.exports.UserEntryExtendedStatus = {
 SYNC_STATUS_ERROR : 'quiz.SYNC_STATUS_ERROR',
 SYNC_STATUS_SUCCESS : 'quiz.SYNC_STATUS_SUCCESS',
@@ -6179,9 +6539,11 @@ module.exports.UserEntryStatus = {
 QUIZ_SUBMITTED : 'quiz.3',
 ACTIVE : '1',
 DELETED : '2',
+RECYCLED : '3',
 };
 
 module.exports.UserEntryType = {
+PERMISSION_LEVEL : 'entryPermissionLevel.PERMISSION_LEVEL',
 QUIZ : 'quiz.QUIZ',
 REGISTRATION : 'registration.REGISTRATION',
 VIEW_HISTORY : 'viewHistory.VIEW_HISTORY',
@@ -6211,6 +6573,26 @@ NAME_DESC : '-name',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
+module.exports.UverseClickToOrderDistributionProfileOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.UverseClickToOrderDistributionProviderOrderBy = {
+};
+
+module.exports.UverseDistributionProfileOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.UverseDistributionProviderOrderBy = {
+};
+
 module.exports.VendorCaptionsCatalogItemOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 ID_ASC : '+id',
@@ -6230,6 +6612,7 @@ UPDATED_AT_DESC : '-updatedAt',
 };
 
 module.exports.VendorCatalogItemPriceFunction = {
+PRICE_PER_HOUR : 'kReachUtils::calcPricePerHour',
 PRICE_PER_MINUTE : 'kReachUtils::calcPricePerMinute',
 PRICE_PER_SECOND : 'kReachUtils::calcPricePerSecond',
 };
@@ -6248,6 +6631,16 @@ UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 ID_DESC : '-id',
 UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.VerizonVcastDistributionProfileOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.VerizonVcastDistributionProviderOrderBy = {
 };
 
 module.exports.VideoCodec = {
@@ -6442,4 +6835,10 @@ UPDATED_AT_DESC : '-updatedAt',
 };
 
 module.exports.YoutubeApiDistributionProviderOrderBy = {
+};
+
+module.exports.SecureHashingAlgo = {
+SHA_1 : 1,
+SHA_256 : 2,
+SHA_512 : 3,
 };

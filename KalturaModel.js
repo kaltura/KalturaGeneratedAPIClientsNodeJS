@@ -28750,6 +28750,21 @@ class ReportExportParams extends kaltura.BaseObject{
 	 }
 	
 	/**
+	 * 
+	 * @return string
+	 */
+	 getRecipientName() {
+	 	return this.recipientName;
+	 }
+	
+	/**
+	 * @param recipientName string 
+	 */
+	 setRecipientName(recipientName) {
+	 	this.recipientName = recipientName;
+	 }
+	
+	/**
 	 * Time zone offset in minutes (between client to UTC)
 	 * @return int
 	 */
@@ -47322,6 +47337,21 @@ class DropFolderFileBaseFilter extends Filter{
 	 * 
 	 * @return int
 	 */
+	 getIdGreaterThanOrEqual() {
+	 	return this.idGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * @param idGreaterThanOrEqual int 
+	 */
+	 setIdGreaterThanOrEqual(idGreaterThanOrEqual) {
+	 	this.idGreaterThanOrEqual = idGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
 	 getPartnerIdEqual() {
 	 	return this.partnerIdEqual;
 	 }
@@ -56558,6 +56588,63 @@ module.exports.ModerationFlagListResponse = ModerationFlagListResponse;
 /**
  *
  */
+class ModerationVendorTaskData extends VendorTaskData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaModerationVendorTaskData';
+	}
+	
+	/**
+	 * A comma seperated string of rule IDs
+	 * @return string
+	 */
+	 getRuleIds() {
+	 	return this.ruleIds;
+	 }
+	
+	/**
+	 * @param ruleIds string A comma seperated string of rule IDs
+	 */
+	 setRuleIds(ruleIds) {
+	 	this.ruleIds = ruleIds;
+	 }
+	
+	/**
+	 * A comma seperated string of policy IDs
+	 * @return string
+	 */
+	 getPolicyIds() {
+	 	return this.policyIds;
+	 }
+	
+	/**
+	 * @param policyIds string A comma seperated string of policy IDs
+	 */
+	 setPolicyIds(policyIds) {
+	 	this.policyIds = policyIds;
+	 }
+	
+	/**
+	 * JSON string containing the moderation output
+	 * @return string
+	 */
+	 getModerationOutputJson() {
+	 	return this.moderationOutputJson;
+	 }
+	
+	/**
+	 * @param moderationOutputJson string JSON string containing the moderation output
+	 */
+	 setModerationOutputJson(moderationOutputJson) {
+	 	this.moderationOutputJson = moderationOutputJson;
+	 }
+}
+module.exports.ModerationVendorTaskData = ModerationVendorTaskData;
+
+/**
+ *
+ */
 class ModifyCategoriesObjectTask extends ObjectTask{
 	
 	constructor(object = null) {
@@ -59044,6 +59131,21 @@ class ReportExportJobData extends JobData{
 	
 	/**
 	 * 
+	 * @return string
+	 */
+	 getRecipientName() {
+	 	return this.recipientName;
+	 }
+	
+	/**
+	 * @param recipientName string 
+	 */
+	 setRecipientName(recipientName) {
+	 	this.recipientName = recipientName;
+	 }
+	
+	/**
+	 * 
 	 * @return array
 	 */
 	 getReportItems() {
@@ -59386,6 +59488,18 @@ module.exports.RoomEntryListResponse = RoomEntryListResponse;
 /**
  *
  */
+class RsvpUserEntry extends UserEntry{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaRsvpUserEntry';
+	}
+}
+module.exports.RsvpUserEntry = RsvpUserEntry;
+
+/**
+ *
+ */
 class S3DropFolder extends DropFolder{
 	
 	constructor(object = null) {
@@ -59451,6 +59565,29 @@ class S3DropFolder extends DropFolder{
 	 */
 	 setS3Password(s3Password) {
 	 	this.s3Password = s3Password;
+	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getUseS3Arn() {
+	 	return this.useS3Arn;
+	 }
+	
+	/**
+	 * @param useS3Arn bool 
+	 */
+	 setUseS3Arn(useS3Arn) {
+	 	this.useS3Arn = useS3Arn;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getS3Arn() {
+	 	return this.s3Arn;
 	 }
 }
 module.exports.S3DropFolder = S3DropFolder;
@@ -64125,6 +64262,18 @@ class VendorIntelligentTaggingCatalogItem extends VendorCatalogItem{
 	}
 }
 module.exports.VendorIntelligentTaggingCatalogItem = VendorIntelligentTaggingCatalogItem;
+
+/**
+ *
+ */
+class VendorModerationCatalogItem extends VendorCatalogItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorModerationCatalogItem';
+	}
+}
+module.exports.VendorModerationCatalogItem = VendorModerationCatalogItem;
 
 /**
  *
@@ -91688,6 +91837,18 @@ module.exports.RoomEntryBaseFilter = RoomEntryBaseFilter;
 /**
  *
  */
+class RsvpUserEntryBaseFilter extends UserEntryFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaRsvpUserEntryBaseFilter';
+	}
+}
+module.exports.RsvpUserEntryBaseFilter = RsvpUserEntryBaseFilter;
+
+/**
+ *
+ */
 class ServerFileResource extends GenericDataCenterContentResource{
 	
 	constructor(object = null) {
@@ -92383,6 +92544,18 @@ class VendorIntelligentTaggingCatalogItemFilter extends VendorCatalogItemFilter{
 	}
 }
 module.exports.VendorIntelligentTaggingCatalogItemFilter = VendorIntelligentTaggingCatalogItemFilter;
+
+/**
+ *
+ */
+class VendorModerationCatalogItemFilter extends VendorCatalogItemFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorModerationCatalogItemFilter';
+	}
+}
+module.exports.VendorModerationCatalogItemFilter = VendorModerationCatalogItemFilter;
 
 /**
  *
@@ -93427,6 +93600,18 @@ class RoomEntryFilter extends RoomEntryBaseFilter{
 	}
 }
 module.exports.RoomEntryFilter = RoomEntryFilter;
+
+/**
+ *
+ */
+class RsvpUserEntryFilter extends RsvpUserEntryBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaRsvpUserEntryFilter';
+	}
+}
+module.exports.RsvpUserEntryFilter = RsvpUserEntryFilter;
 
 /**
  *

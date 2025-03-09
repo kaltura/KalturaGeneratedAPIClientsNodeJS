@@ -1436,6 +1436,7 @@ LIVE_TRANSLATION : 11,
 QUIZ : 12,
 SUMMARY : 13,
 VIDEO_ANALYSIS : 14,
+MODERATION : 15,
 };
 
 module.exports.VendorServiceTurnAroundTime = {
@@ -3492,6 +3493,9 @@ CUE_POINT : 'cuePointEventNotifications.CuePoint',
 DROP_FOLDER : 'dropFolderEventNotifications.DropFolder',
 DROP_FOLDER_FILE : 'dropFolderEventNotifications.DropFolderFile',
 METADATA : 'metadataEventNotifications.Metadata',
+SCHEDULE_EVENT : 'scheduleEventNotifications.ScheduleEvent',
+SCHEDULE_EVENT_RESOURCE : 'scheduleEventNotifications.ScheduleEventResource',
+SCHEDULE_RESOURCE : 'scheduleEventNotifications.ScheduleResource',
 TRANSCRIPT_ASSET : 'transcriptAssetEventNotifications.TranscriptAsset',
 VIRTUAL_EVENT : 'virtualEventEventNotifications.VirtualEvent',
 ENTRY : '1',
@@ -6113,6 +6117,13 @@ UPDATED_AT_DESC : '-updatedAt',
 WEIGHT_DESC : '-weight',
 };
 
+module.exports.RsvpUserEntryOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
 module.exports.RuleActionType = {
 DRM_POLICY : 'drm.DRM_POLICY',
 ADD_ENTRY_VENDOR_TASK : 'reach.ADD_ENTRY_VENDOR_TASK',
@@ -6546,6 +6557,7 @@ module.exports.UserEntryType = {
 PERMISSION_LEVEL : 'entryPermissionLevel.PERMISSION_LEVEL',
 QUIZ : 'quiz.QUIZ',
 REGISTRATION : 'registration.REGISTRATION',
+RSVP : 'rsvp.RSVP',
 VIEW_HISTORY : 'viewHistory.VIEW_HISTORY',
 WATCH_LATER : 'watchLater.WATCH_LATER',
 };

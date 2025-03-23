@@ -6086,6 +6086,7 @@ module.exports.userRole = userRole;
  * @action addFromBulkUpload .
  * @action checkLoginDataExists Action which checks whther user login.
  * @action delete Deletes a user from a partner account.
+ * @action demoteAdmin .
  * @action disableLogin Disables a user's ability to log into a partner account using an email address and a password.
  * You may use either a userId or a loginId parameter for this action.
  * @action enableLogin Enables a user to log into a partner account using an email address and a password.
@@ -6163,6 +6164,17 @@ class user{
 		let kparams = {};
 		kparams.userId = userId;
 		return new kaltura.RequestBuilder('user', 'delete', kparams);
+	};
+	
+	/**
+	 * .
+	 * @param userId string 
+	 * @return KalturaUser
+	 */
+	static demoteAdmin(userId){
+		let kparams = {};
+		kparams.userId = userId;
+		return new kaltura.RequestBuilder('user', 'demoteAdmin', kparams);
 	};
 	
 	/**

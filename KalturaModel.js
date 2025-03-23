@@ -55958,6 +55958,65 @@ module.exports.MediaListResponse = MediaListResponse;
 /**
  *
  */
+class MetadataEnrichmentVendorTaskData extends VendorTaskData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaMetadataEnrichmentVendorTaskData';
+	}
+	
+	/**
+	 * The level of detail for the metadata enrichment process
+	 * @return string
+	 */
+	 getDetailLevel() {
+	 	return this.detailLevel;
+	 }
+	
+	/**
+	 * @param detailLevel string The level of detail for the metadata enrichment process
+	 */
+	 setDetailLevel(detailLevel) {
+	 	this.detailLevel = detailLevel;
+	 }
+	
+	/**
+	 * Instructions describing what should be taken into account during the metadata enrichment process
+	 * @return string
+	 */
+	 getInstruction() {
+	 	return this.instruction;
+	 }
+	
+	/**
+	 * @param instruction string Instructions describing what should be taken into account during the metadata enrichment process
+	 */
+	 setInstruction(instruction) {
+	 	this.instruction = instruction;
+	 }
+	
+	/**
+	 * Metadata enrichment result as JSON string.
+ * For example: {"titles": ["The first title", "The second title"], "descriptions": ["The first description"], "tags": ["Tag1", "Tag2"]}
+	 * @return string
+	 */
+	 getOutputJson() {
+	 	return this.outputJson;
+	 }
+	
+	/**
+	 * @param outputJson string Metadata enrichment result as JSON string.
+ * For example: {"titles": ["The first title", "The second title"], "descriptions": ["The first description"], "tags": ["Tag1", "Tag2"]}
+	 */
+	 setOutputJson(outputJson) {
+	 	this.outputJson = outputJson;
+	 }
+}
+module.exports.MetadataEnrichmentVendorTaskData = MetadataEnrichmentVendorTaskData;
+
+/**
+ *
+ */
 class MetadataListResponse extends ListResponse{
 	
 	constructor(object = null) {
@@ -58698,6 +58757,21 @@ class QuizUserEntry extends UserEntry{
 	 */
 	 getVersion() {
 	 	return this.version;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getExtendedStatus() {
+	 	return this.extendedStatus;
+	 }
+	
+	/**
+	 * @param extendedStatus string 
+	 */
+	 setExtendedStatus(extendedStatus) {
+	 	this.extendedStatus = extendedStatus;
 	 }
 }
 module.exports.QuizUserEntry = QuizUserEntry;
@@ -64262,6 +64336,18 @@ class VendorIntelligentTaggingCatalogItem extends VendorCatalogItem{
 	}
 }
 module.exports.VendorIntelligentTaggingCatalogItem = VendorIntelligentTaggingCatalogItem;
+
+/**
+ *
+ */
+class VendorMetadataEnrichmentCatalogItem extends VendorCatalogItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorMetadataEnrichmentCatalogItem';
+	}
+}
+module.exports.VendorMetadataEnrichmentCatalogItem = VendorMetadataEnrichmentCatalogItem;
 
 /**
  *
@@ -92548,6 +92634,18 @@ module.exports.VendorIntelligentTaggingCatalogItemFilter = VendorIntelligentTagg
 /**
  *
  */
+class VendorMetadataEnrichmentCatalogItemFilter extends VendorCatalogItemFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorMetadataEnrichmentCatalogItemFilter';
+	}
+}
+module.exports.VendorMetadataEnrichmentCatalogItemFilter = VendorMetadataEnrichmentCatalogItemFilter;
+
+/**
+ *
+ */
 class VendorModerationCatalogItemFilter extends VendorCatalogItemFilter{
 	
 	constructor(object = null) {
@@ -93586,6 +93684,51 @@ class QuizUserEntryFilter extends QuizUserEntryBaseFilter{
 		super(object);
 		this.objectType = 'KalturaQuizUserEntryFilter';
 	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getExtendedStatusEqual() {
+	 	return this.extendedStatusEqual;
+	 }
+	
+	/**
+	 * @param extendedStatusEqual string 
+	 */
+	 setExtendedStatusEqual(extendedStatusEqual) {
+	 	this.extendedStatusEqual = extendedStatusEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getExtendedStatusIn() {
+	 	return this.extendedStatusIn;
+	 }
+	
+	/**
+	 * @param extendedStatusIn string 
+	 */
+	 setExtendedStatusIn(extendedStatusIn) {
+	 	this.extendedStatusIn = extendedStatusIn;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getExtendedStatusNotIn() {
+	 	return this.extendedStatusNotIn;
+	 }
+	
+	/**
+	 * @param extendedStatusNotIn string 
+	 */
+	 setExtendedStatusNotIn(extendedStatusNotIn) {
+	 	this.extendedStatusNotIn = extendedStatusNotIn;
+	 }
 }
 module.exports.QuizUserEntryFilter = QuizUserEntryFilter;
 

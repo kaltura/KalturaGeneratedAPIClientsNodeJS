@@ -1437,6 +1437,7 @@ QUIZ : 12,
 SUMMARY : 13,
 VIDEO_ANALYSIS : 14,
 MODERATION : 15,
+METADATA_ENRICHMENT : 16,
 };
 
 module.exports.VendorServiceTurnAroundTime = {

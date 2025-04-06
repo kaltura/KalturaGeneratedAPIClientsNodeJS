@@ -604,6 +604,11 @@ NONE : 0,
 PROCESSING : 1,
 };
 
+module.exports.GroupType = {
+GROUP : 1,
+APPLICATIVE_GROUP : 2,
+};
+
 module.exports.GroupUserCreationMode = {
 MANUAL : 1,
 AUTOMATIC : 2,
@@ -1396,6 +1401,7 @@ DELETED : 2,
 module.exports.UserType = {
 USER : 0,
 GROUP : 1,
+APPLICATIVE_GROUP : 2,
 };
 
 module.exports.VendorCatalogItemOutputFormat = {

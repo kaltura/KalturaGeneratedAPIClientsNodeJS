@@ -14311,6 +14311,21 @@ class Group extends BaseUser{
 	 setProcessStatus(processStatus) {
 	 	this.processStatus = processStatus;
 	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getGroupType() {
+	 	return this.groupType;
+	 }
+	
+	/**
+	 * @param groupType int 
+	 */
+	 setGroupType(groupType) {
+	 	this.groupType = groupType;
+	 }
 }
 module.exports.Group = Group;
 
@@ -20017,6 +20032,14 @@ class GroupUser extends kaltura.BaseObject{
 	 */
 	 setUserRole(userRole) {
 	 	this.userRole = userRole;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getGroupType() {
+	 	return this.groupType;
 	 }
 }
 module.exports.GroupUser = GroupUser;
@@ -87198,6 +87221,21 @@ class GroupUserFilter extends GroupUserBaseFilter{
 		super(object);
 		this.objectType = 'KalturaGroupUserFilter';
 	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getGroupType() {
+	 	return this.groupType;
+	 }
+	
+	/**
+	 * @param groupType int 
+	 */
+	 setGroupType(groupType) {
+	 	this.groupType = groupType;
+	 }
 }
 module.exports.GroupUserFilter = GroupUserFilter;
 
@@ -94587,6 +94625,21 @@ class GroupFilter extends UserFilter{
 		super(object);
 		this.objectType = 'KalturaGroupFilter';
 	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getGroupType() {
+	 	return this.groupType;
+	 }
+	
+	/**
+	 * @param groupType int 
+	 */
+	 setGroupType(groupType) {
+	 	this.groupType = groupType;
+	 }
 }
 module.exports.GroupFilter = GroupFilter;
 

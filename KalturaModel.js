@@ -28627,6 +28627,21 @@ class ReportResponseOptions extends kaltura.BaseObject{
 	 setSkipEmptyDates(skipEmptyDates) {
 	 	this.skipEmptyDates = skipEmptyDates;
 	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getUseFriendlyHeadersNames() {
+	 	return this.useFriendlyHeadersNames;
+	 }
+	
+	/**
+	 * @param useFriendlyHeadersNames bool 
+	 */
+	 setUseFriendlyHeadersNames(useFriendlyHeadersNames) {
+	 	this.useFriendlyHeadersNames = useFriendlyHeadersNames;
+	 }
 }
 module.exports.ReportResponseOptions = ReportResponseOptions;
 
@@ -35328,6 +35343,21 @@ class VendorCatalogItem extends kaltura.BaseObject{
 	 */
 	 setPartnerId(partnerId) {
 	 	this.partnerId = partnerId;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getDefaultReachProfileId() {
+	 	return this.defaultReachProfileId;
+	 }
+	
+	/**
+	 * @param defaultReachProfileId int 
+	 */
+	 setDefaultReachProfileId(defaultReachProfileId) {
+	 	this.defaultReachProfileId = defaultReachProfileId;
 	 }
 	
 	/**
@@ -60856,6 +60886,33 @@ class SessionRestriction extends BaseRestriction{
 	}
 }
 module.exports.SessionRestriction = SessionRestriction;
+
+/**
+ *
+ */
+class SessionTypeCondition extends Condition{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaSessionTypeCondition';
+	}
+	
+	/**
+	 * The privelege needed to remove the restriction
+	 * @return int
+	 */
+	 getSessionType() {
+	 	return this.sessionType;
+	 }
+	
+	/**
+	 * @param sessionType int The privelege needed to remove the restriction
+	 */
+	 setSessionType(sessionType) {
+	 	this.sessionType = sessionType;
+	 }
+}
+module.exports.SessionTypeCondition = SessionTypeCondition;
 
 /**
  *
@@ -89489,6 +89546,36 @@ class VendorLiveCaptionCatalogItem extends VendorLiveCatalogItem{
 		super(object);
 		this.objectType = 'KalturaVendorLiveCaptionCatalogItem';
 	}
+	
+	/**
+	 * How long before the live stream start should service activate? (in secs)
+	 * @return int
+	 */
+	 getStartTimeBuffer() {
+	 	return this.startTimeBuffer;
+	 }
+	
+	/**
+	 * @param startTimeBuffer int How long before the live stream start should service activate? (in secs)
+	 */
+	 setStartTimeBuffer(startTimeBuffer) {
+	 	this.startTimeBuffer = startTimeBuffer;
+	 }
+	
+	/**
+	 * How long after the live stream end should service de-activate? (in secs)
+	 * @return int
+	 */
+	 getEndTimeBuffer() {
+	 	return this.endTimeBuffer;
+	 }
+	
+	/**
+	 * @param endTimeBuffer int How long after the live stream end should service de-activate? (in secs)
+	 */
+	 setEndTimeBuffer(endTimeBuffer) {
+	 	this.endTimeBuffer = endTimeBuffer;
+	 }
 }
 module.exports.VendorLiveCaptionCatalogItem = VendorLiveCaptionCatalogItem;
 

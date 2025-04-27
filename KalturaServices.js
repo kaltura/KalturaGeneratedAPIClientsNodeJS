@@ -10842,11 +10842,13 @@ class PartnerCatalogItem{
 	/**
 	 * Assign existing catalogItem to specific account.
 	 * @param id int source catalog item to assign to partner
+	 * @param defaultReachProfileId int  (optional, default: null)
 	 * @return KalturaVendorCatalogItem
 	 */
-	static add(id){
+	static add(id, defaultReachProfileId = null){
 		let kparams = {};
 		kparams.id = id;
+		kparams.defaultReachProfileId = defaultReachProfileId;
 		return new kaltura.RequestBuilder('reach_partnercatalogitem', 'add', kparams);
 	};
 	

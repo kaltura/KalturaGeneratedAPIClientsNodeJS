@@ -2458,6 +2458,7 @@ HTTP_HEADER : '18',
 ENTRY_SCHEDULED : '19',
 ACTION_NAME : '20',
 URL_AUTH_PARAMS : '21',
+SESSION_TYPE : '22',
 };
 
 module.exports.ConfMapsSourceLocation = {

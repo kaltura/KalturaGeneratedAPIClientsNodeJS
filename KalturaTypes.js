@@ -489,6 +489,10 @@ FLAGGED_FOR_REVIEW : 5,
 AUTO_APPROVED : 6,
 };
 
+module.exports.EntryObjectType = {
+ENTRY : 1,
+};
+
 module.exports.EntryServerNodeRecordingStatus = {
 STOPPED : 0,
 ON_GOING : 1,
@@ -3365,6 +3369,7 @@ WEBCAST_APP : '5',
 PERSONAL_CAPTURE : '6',
 KALTURA_MEETING : '7',
 EP : '8',
+CONTENT_LAB : '9',
 };
 
 module.exports.EntryDistributionOrderBy = {

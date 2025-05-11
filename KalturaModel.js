@@ -15860,6 +15860,21 @@ class EntryVendorTask extends kaltura.BaseObject{
 	 }
 	
 	/**
+	 * 
+	 * @return int
+	 */
+	 getEntryObjectType() {
+	 	return this.entryObjectType;
+	 }
+	
+	/**
+	 * @param entryObjectType int 
+	 */
+	 setEntryObjectType(entryObjectType) {
+	 	this.entryObjectType = entryObjectType;
+	 }
+	
+	/**
 	 * The user ID that approved this task for execution (in case moderation is requested)
 	 * @return string
 	 */
@@ -35238,6 +35253,21 @@ class VendorCatalogItem extends kaltura.BaseObject{
 	 */
 	 setAllowResubmission(allowResubmission) {
 	 	this.allowResubmission = allowResubmission;
+	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getRequiresOverages() {
+	 	return this.requiresOverages;
+	 }
+	
+	/**
+	 * @param requiresOverages bool 
+	 */
+	 setRequiresOverages(requiresOverages) {
+	 	this.requiresOverages = requiresOverages;
 	 }
 	
 	/**
@@ -64288,6 +64318,21 @@ class VendorCredit extends BaseVendorCredit{
 	 setAddOn(addOn) {
 	 	this.addOn = addOn;
 	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getAllowNegativeOverageCredit() {
+	 	return this.allowNegativeOverageCredit;
+	 }
+	
+	/**
+	 * @param allowNegativeOverageCredit bool 
+	 */
+	 setAllowNegativeOverageCredit(allowNegativeOverageCredit) {
+	 	this.allowNegativeOverageCredit = allowNegativeOverageCredit;
+	 }
 }
 module.exports.VendorCredit = VendorCredit;
 
@@ -73561,6 +73606,51 @@ class EntryVendorTaskBaseFilter extends RelatedFilter{
 	 */
 	 setExpectedFinishTimeLessThanOrEqual(expectedFinishTimeLessThanOrEqual) {
 	 	this.expectedFinishTimeLessThanOrEqual = expectedFinishTimeLessThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getEntryObjectTypeEqual() {
+	 	return this.entryObjectTypeEqual;
+	 }
+	
+	/**
+	 * @param entryObjectTypeEqual int 
+	 */
+	 setEntryObjectTypeEqual(entryObjectTypeEqual) {
+	 	this.entryObjectTypeEqual = entryObjectTypeEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getEntryObjectTypeIn() {
+	 	return this.entryObjectTypeIn;
+	 }
+	
+	/**
+	 * @param entryObjectTypeIn string 
+	 */
+	 setEntryObjectTypeIn(entryObjectTypeIn) {
+	 	this.entryObjectTypeIn = entryObjectTypeIn;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getEntryObjectTypeNotIn() {
+	 	return this.entryObjectTypeNotIn;
+	 }
+	
+	/**
+	 * @param entryObjectTypeNotIn string 
+	 */
+	 setEntryObjectTypeNotIn(entryObjectTypeNotIn) {
+	 	this.entryObjectTypeNotIn = entryObjectTypeNotIn;
 	 }
 }
 module.exports.EntryVendorTaskBaseFilter = EntryVendorTaskBaseFilter;

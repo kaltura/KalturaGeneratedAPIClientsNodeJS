@@ -757,168 +757,42 @@ module.exports.AccessControlScope = AccessControlScope;
 /**
  *
  */
-class SearchItem extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaSearchItem';
-	}
-}
-module.exports.SearchItem = SearchItem;
-
-/**
- *
- */
-class Filter extends kaltura.BaseObject{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaFilter';
-	}
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getOrderBy() {
-	 	return this.orderBy;
-	 }
-	
-	/**
-	 * @param orderBy string 
-	 */
-	 setOrderBy(orderBy) {
-	 	this.orderBy = orderBy;
-	 }
-	
-	/**
-	 * 
-	 * @return SearchItem
-	 */
-	 getAdvancedSearch() {
-	 	return this.advancedSearch;
-	 }
-	
-	/**
-	 * @param advancedSearch SearchItem 
-	 */
-	 setAdvancedSearch(advancedSearch) {
-	 	this.advancedSearch = advancedSearch;
-	 }
-}
-module.exports.Filter = Filter;
-
-/**
- *
- */
-class ReportBaseFilter extends Filter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaReportBaseFilter';
-	}
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getIdEqual() {
-	 	return this.idEqual;
-	 }
-	
-	/**
-	 * @param idEqual int 
-	 */
-	 setIdEqual(idEqual) {
-	 	this.idEqual = idEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getIdIn() {
-	 	return this.idIn;
-	 }
-	
-	/**
-	 * @param idIn string 
-	 */
-	 setIdIn(idIn) {
-	 	this.idIn = idIn;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getPartnerIdEqual() {
-	 	return this.partnerIdEqual;
-	 }
-	
-	/**
-	 * @param partnerIdEqual int 
-	 */
-	 setPartnerIdEqual(partnerIdEqual) {
-	 	this.partnerIdEqual = partnerIdEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getPartnerIdIn() {
-	 	return this.partnerIdIn;
-	 }
-	
-	/**
-	 * @param partnerIdIn string 
-	 */
-	 setPartnerIdIn(partnerIdIn) {
-	 	this.partnerIdIn = partnerIdIn;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSystemNameEqual() {
-	 	return this.systemNameEqual;
-	 }
-	
-	/**
-	 * @param systemNameEqual string 
-	 */
-	 setSystemNameEqual(systemNameEqual) {
-	 	this.systemNameEqual = systemNameEqual;
-	 }
-	
-	/**
-	 * 
-	 * @return string
-	 */
-	 getSystemNameIn() {
-	 	return this.systemNameIn;
-	 }
-	
-	/**
-	 * @param systemNameIn string 
-	 */
-	 setSystemNameIn(systemNameIn) {
-	 	this.systemNameIn = systemNameIn;
-	 }
-}
-module.exports.ReportBaseFilter = ReportBaseFilter;
-
-/**
- *
- */
-class ReportFilter extends ReportBaseFilter{
+class ReportFilter extends kaltura.BaseObject{
 	
 	constructor(object = null) {
 		super(object);
 		this.objectType = 'KalturaReportFilter';
 	}
+	
+	/**
+	 * The dimension whose values should be filtered
+	 * @return string
+	 */
+	 getDimension() {
+	 	return this.dimension;
+	 }
+	
+	/**
+	 * @param dimension string The dimension whose values should be filtered
+	 */
+	 setDimension(dimension) {
+	 	this.dimension = dimension;
+	 }
+	
+	/**
+	 * The (comma separated) values to include in the filter
+	 * @return string
+	 */
+	 getValues() {
+	 	return this.values;
+	 }
+	
+	/**
+	 * @param values string The (comma separated) values to include in the filter
+	 */
+	 setValues(values) {
+	 	this.values = values;
+	 }
 }
 module.exports.ReportFilter = ReportFilter;
 
@@ -10798,6 +10672,60 @@ module.exports.UrlTokenizer = UrlTokenizer;
 /**
  *
  */
+class SearchItem extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaSearchItem';
+	}
+}
+module.exports.SearchItem = SearchItem;
+
+/**
+ *
+ */
+class Filter extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaFilter';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getOrderBy() {
+	 	return this.orderBy;
+	 }
+	
+	/**
+	 * @param orderBy string 
+	 */
+	 setOrderBy(orderBy) {
+	 	this.orderBy = orderBy;
+	 }
+	
+	/**
+	 * 
+	 * @return SearchItem
+	 */
+	 getAdvancedSearch() {
+	 	return this.advancedSearch;
+	 }
+	
+	/**
+	 * @param advancedSearch SearchItem 
+	 */
+	 setAdvancedSearch(advancedSearch) {
+	 	this.advancedSearch = advancedSearch;
+	 }
+}
+module.exports.Filter = Filter;
+
+/**
+ *
+ */
 class RelatedFilter extends Filter{
 	
 	constructor(object = null) {
@@ -14488,6 +14416,36 @@ class ESearchParams extends kaltura.BaseObject{
 	 setIgnoreSynonym(ignoreSynonym) {
 	 	this.ignoreSynonym = ignoreSynonym;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getObjectIds() {
+	 	return this.objectIds;
+	 }
+	
+	/**
+	 * @param objectIds string 
+	 */
+	 setObjectIds(objectIds) {
+	 	this.objectIds = objectIds;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getObjectIdsNotIn() {
+	 	return this.objectIdsNotIn;
+	 }
+	
+	/**
+	 * @param objectIdsNotIn int 
+	 */
+	 setObjectIdsNotIn(objectIdsNotIn) {
+	 	this.objectIdsNotIn = objectIdsNotIn;
+	 }
 }
 module.exports.ESearchParams = ESearchParams;
 
@@ -15872,6 +15830,21 @@ class EntryVendorTask extends kaltura.BaseObject{
 	 */
 	 setEntryObjectType(entryObjectType) {
 	 	this.entryObjectType = entryObjectType;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getUnitsUsed() {
+	 	return this.unitsUsed;
+	 }
+	
+	/**
+	 * @param unitsUsed int 
+	 */
+	 setUnitsUsed(unitsUsed) {
+	 	this.unitsUsed = unitsUsed;
 	 }
 	
 	/**
@@ -35259,15 +35232,15 @@ class VendorCatalogItem extends kaltura.BaseObject{
 	 * 
 	 * @return bool
 	 */
-	 getRequiresOverages() {
-	 	return this.requiresOverages;
+	 getPayPerUse() {
+	 	return this.payPerUse;
 	 }
 	
 	/**
-	 * @param requiresOverages bool 
+	 * @param payPerUse bool 
 	 */
-	 setRequiresOverages(requiresOverages) {
-	 	this.requiresOverages = requiresOverages;
+	 setPayPerUse(payPerUse) {
+	 	this.payPerUse = payPerUse;
 	 }
 	
 	/**
@@ -56768,6 +56741,21 @@ class ModerationVendorTaskData extends VendorTaskData{
 	 }
 	
 	/**
+	 * A comma seperated string of category IDs
+	 * @return string
+	 */
+	 getCategoryIds() {
+	 	return this.categoryIds;
+	 }
+	
+	/**
+	 * @param categoryIds string A comma seperated string of category IDs
+	 */
+	 setCategoryIds(categoryIds) {
+	 	this.categoryIds = categoryIds;
+	 }
+	
+	/**
 	 * JSON string containing the moderation output
 	 * @return string
 	 */
@@ -59264,6 +59252,108 @@ module.exports.RenderCaptionAttributes = RenderCaptionAttributes;
 /**
  *
  */
+class ReportBaseFilter extends Filter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaReportBaseFilter';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getIdEqual() {
+	 	return this.idEqual;
+	 }
+	
+	/**
+	 * @param idEqual int 
+	 */
+	 setIdEqual(idEqual) {
+	 	this.idEqual = idEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getIdIn() {
+	 	return this.idIn;
+	 }
+	
+	/**
+	 * @param idIn string 
+	 */
+	 setIdIn(idIn) {
+	 	this.idIn = idIn;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getPartnerIdEqual() {
+	 	return this.partnerIdEqual;
+	 }
+	
+	/**
+	 * @param partnerIdEqual int 
+	 */
+	 setPartnerIdEqual(partnerIdEqual) {
+	 	this.partnerIdEqual = partnerIdEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getPartnerIdIn() {
+	 	return this.partnerIdIn;
+	 }
+	
+	/**
+	 * @param partnerIdIn string 
+	 */
+	 setPartnerIdIn(partnerIdIn) {
+	 	this.partnerIdIn = partnerIdIn;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSystemNameEqual() {
+	 	return this.systemNameEqual;
+	 }
+	
+	/**
+	 * @param systemNameEqual string 
+	 */
+	 setSystemNameEqual(systemNameEqual) {
+	 	this.systemNameEqual = systemNameEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getSystemNameIn() {
+	 	return this.systemNameIn;
+	 }
+	
+	/**
+	 * @param systemNameIn string 
+	 */
+	 setSystemNameIn(systemNameIn) {
+	 	this.systemNameIn = systemNameIn;
+	 }
+}
+module.exports.ReportBaseFilter = ReportBaseFilter;
+
+/**
+ *
+ */
 class ReportExportJobData extends JobData{
 	
 	constructor(object = null) {
@@ -60360,6 +60450,33 @@ class SearchOperator extends SearchItem{
 	 }
 }
 module.exports.SearchOperator = SearchOperator;
+
+/**
+ *
+ */
+class SentimentAnalysisVendorTaskData extends VendorTaskData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaSentimentAnalysisVendorTaskData';
+	}
+	
+	/**
+	 * Language code
+	 * @return string
+	 */
+	 getLanguage() {
+	 	return this.language;
+	 }
+	
+	/**
+	 * @param language string Language code
+	 */
+	 setLanguage(language) {
+	 	this.language = language;
+	 }
+}
+module.exports.SentimentAnalysisVendorTaskData = SentimentAnalysisVendorTaskData;
 
 /**
  *
@@ -64318,21 +64435,6 @@ class VendorCredit extends BaseVendorCredit{
 	 setAddOn(addOn) {
 	 	this.addOn = addOn;
 	 }
-	
-	/**
-	 * 
-	 * @return bool
-	 */
-	 getAllowNegativeOverageCredit() {
-	 	return this.allowNegativeOverageCredit;
-	 }
-	
-	/**
-	 * @param allowNegativeOverageCredit bool 
-	 */
-	 setAllowNegativeOverageCredit(allowNegativeOverageCredit) {
-	 	this.allowNegativeOverageCredit = allowNegativeOverageCredit;
-	 }
 }
 module.exports.VendorCredit = VendorCredit;
 
@@ -64497,6 +64599,18 @@ class VendorQuizCatalogItem extends VendorCatalogItem{
 	}
 }
 module.exports.VendorQuizCatalogItem = VendorQuizCatalogItem;
+
+/**
+ *
+ */
+class VendorSentimentAnalysisCatalogItem extends VendorCatalogItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorSentimentAnalysisCatalogItem';
+	}
+}
+module.exports.VendorSentimentAnalysisCatalogItem = VendorSentimentAnalysisCatalogItem;
 
 /**
  *
@@ -92881,6 +92995,18 @@ class VendorQuizCatalogItemFilter extends VendorCatalogItemFilter{
 	}
 }
 module.exports.VendorQuizCatalogItemFilter = VendorQuizCatalogItemFilter;
+
+/**
+ *
+ */
+class VendorSentimentAnalysisCatalogItemFilter extends VendorCatalogItemFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorSentimentAnalysisCatalogItemFilter';
+	}
+}
+module.exports.VendorSentimentAnalysisCatalogItemFilter = VendorSentimentAnalysisCatalogItemFilter;
 
 /**
  *

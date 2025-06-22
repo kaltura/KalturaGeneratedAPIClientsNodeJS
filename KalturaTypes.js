@@ -1414,6 +1414,11 @@ DFXP : 2,
 VTT : 3,
 };
 
+module.exports.VendorCatalogItemSignLanguageOutputFormat = {
+ASPECT_RATIO_16_9 : 1,
+ASPECT_RATIO_4_3 : 2,
+};
+
 module.exports.VendorCatalogItemStage = {
 PRODUCTION : 1,
 QA : 2,
@@ -1423,6 +1428,10 @@ module.exports.VendorCatalogItemStatus = {
 DEPRECATED : 1,
 ACTIVE : 2,
 DELETED : 3,
+};
+
+module.exports.VendorDocumentEnrichmentType = {
+MD_CONVERSION : 1,
 };
 
 module.exports.VendorIntegrationStatus = {
@@ -1449,6 +1458,8 @@ VIDEO_ANALYSIS : 14,
 MODERATION : 15,
 METADATA_ENRICHMENT : 16,
 SENTIMENT_ANALYSIS : 17,
+DOCUMENT_ENRICHMENT : 18,
+SIGN_LANGUAGE : 19,
 };
 
 module.exports.VendorServiceTurnAroundTime = {
@@ -1784,6 +1795,7 @@ TEXT : '1',
 MEDIA : '2',
 DOCUMENT : '3',
 JSON : '4',
+MARKDOWN : '5',
 };
 
 module.exports.AudioCodec = {
@@ -2341,6 +2353,11 @@ VI : 'Vietnamese',
 CY : 'Welsh',
 XH : 'Xhosa',
 ZU : 'Zulu',
+};
+
+module.exports.CatalogItemSignLanguage = {
+ENGLISH_ASL : 'English (ASL)',
+ENGLISH_BSL : 'English (BSL)',
 };
 
 module.exports.CategoryEntryAdvancedOrderBy = {

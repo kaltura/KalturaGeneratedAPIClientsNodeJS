@@ -10661,6 +10661,7 @@ module.exports.reachProfile = reachProfile;
  * @action getServeUrl .
  * @action list List KalturaEntryVendorTask objects.
  * @action reject Reject entry vendor task for execution.
+ * @action replaceOutput .
  * @action serveCsv Will serve a requested csv.
  * @action update Update entry vendor task. Only the properties that were set will be updated.
  * @action updateJob Update entry vendor task. Only the properties that were set will be updated.
@@ -10789,6 +10790,19 @@ class entryVendorTask{
 		kparams.id = id;
 		kparams.rejectReason = rejectReason;
 		return new kaltura.RequestBuilder('reach_entryvendortask', 'reject', kparams);
+	};
+	
+	/**
+	 * .
+	 * @param id int vendor task id
+	 * @param newOutput string 
+	 * @return KalturaEntryVendorTask
+	 */
+	static replaceOutput(id, newOutput){
+		let kparams = {};
+		kparams.id = id;
+		kparams.newOutput = newOutput;
+		return new kaltura.RequestBuilder('reach_entryvendortask', 'replaceOutput', kparams);
 	};
 	
 	/**

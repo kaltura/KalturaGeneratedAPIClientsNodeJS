@@ -43213,80 +43213,6 @@ module.exports.ClipConcatJobData = ClipConcatJobData;
 /**
  *
  */
-class ClipsVendorTaskData extends VendorTaskData{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaClipsVendorTaskData';
-	}
-	
-	/**
-	 * Estimated duration of the clips, in seconds
-	 * @return int
-	 */
-	 getClipsDuration() {
-	 	return this.clipsDuration;
-	 }
-	
-	/**
-	 * @param clipsDuration int Estimated duration of the clips, in seconds
-	 */
-	 setClipsDuration(clipsDuration) {
-	 	this.clipsDuration = clipsDuration;
-	 }
-	
-	/**
-	 * Event session context ID used to enhance clip results
-	 * @return string
-	 */
-	 getEventSessionContextId() {
-	 	return this.eventSessionContextId;
-	 }
-	
-	/**
-	 * @param eventSessionContextId string Event session context ID used to enhance clip results
-	 */
-	 setEventSessionContextId(eventSessionContextId) {
-	 	this.eventSessionContextId = eventSessionContextId;
-	 }
-	
-	/**
-	 * Instruction describing the moments to capture or the objectives to achieve with the clips
-	 * @return string
-	 */
-	 getInstruction() {
-	 	return this.instruction;
-	 }
-	
-	/**
-	 * @param instruction string Instruction describing the moments to capture or the objectives to achieve with the clips
-	 */
-	 setInstruction(instruction) {
-	 	this.instruction = instruction;
-	 }
-	
-	/**
-	 * List of clips as JSON string.
- * For example: [{"title": "Title of the first clip", "description": "Description of the first clip", "tags": "Tagged-Example", "start": 127, "duration": 30}]
-	 * @return string
-	 */
-	 getClipsOutputJson() {
-	 	return this.clipsOutputJson;
-	 }
-	
-	/**
-	 * @param clipsOutputJson string List of clips as JSON string.
- * For example: [{"title": "Title of the first clip", "description": "Description of the first clip", "tags": "Tagged-Example", "start": 127, "duration": 30}]
-	 */
-	 setClipsOutputJson(clipsOutputJson) {
-	 	this.clipsOutputJson = clipsOutputJson;
-	 }
-}
-module.exports.ClipsVendorTaskData = ClipsVendorTaskData;
-
-/**
- *
- */
 class CodeCuePoint extends CuePoint{
 	
 	constructor(object = null) {
@@ -55509,6 +55435,48 @@ module.exports.LiveToVodJobData = LiveToVodJobData;
 /**
  *
  */
+class LocalizedVendorTaskData extends VendorTaskData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaLocalizedVendorTaskData';
+	}
+	
+	/**
+	 * Language code
+	 * @return string
+	 */
+	 getOutputLanguage() {
+	 	return this.outputLanguage;
+	 }
+	
+	/**
+	 * @param outputLanguage string Language code
+	 */
+	 setOutputLanguage(outputLanguage) {
+	 	this.outputLanguage = outputLanguage;
+	 }
+	
+	/**
+	 * result as JSON string
+	 * @return string
+	 */
+	 getOutputJson() {
+	 	return this.outputJson;
+	 }
+	
+	/**
+	 * @param outputJson string result as JSON string
+	 */
+	 setOutputJson(outputJson) {
+	 	this.outputJson = outputJson;
+	 }
+}
+module.exports.LocalizedVendorTaskData = LocalizedVendorTaskData;
+
+/**
+ *
+ */
 class LocationScheduleResource extends ScheduleResource{
 	
 	constructor(object = null) {
@@ -56010,65 +55978,6 @@ class MediaListResponse extends ListResponse{
 	 }
 }
 module.exports.MediaListResponse = MediaListResponse;
-
-/**
- *
- */
-class MetadataEnrichmentVendorTaskData extends VendorTaskData{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaMetadataEnrichmentVendorTaskData';
-	}
-	
-	/**
-	 * The level of detail for the metadata enrichment process
-	 * @return string
-	 */
-	 getDetailLevel() {
-	 	return this.detailLevel;
-	 }
-	
-	/**
-	 * @param detailLevel string The level of detail for the metadata enrichment process
-	 */
-	 setDetailLevel(detailLevel) {
-	 	this.detailLevel = detailLevel;
-	 }
-	
-	/**
-	 * Instructions describing what should be taken into account during the metadata enrichment process
-	 * @return string
-	 */
-	 getInstruction() {
-	 	return this.instruction;
-	 }
-	
-	/**
-	 * @param instruction string Instructions describing what should be taken into account during the metadata enrichment process
-	 */
-	 setInstruction(instruction) {
-	 	this.instruction = instruction;
-	 }
-	
-	/**
-	 * Metadata enrichment result as JSON string.
- * For example: {"titles": ["The first title", "The second title"], "descriptions": ["The first description"], "tags": ["Tag1", "Tag2"]}
-	 * @return string
-	 */
-	 getOutputJson() {
-	 	return this.outputJson;
-	 }
-	
-	/**
-	 * @param outputJson string Metadata enrichment result as JSON string.
- * For example: {"titles": ["The first title", "The second title"], "descriptions": ["The first description"], "tags": ["Tag1", "Tag2"]}
-	 */
-	 setOutputJson(outputJson) {
-	 	this.outputJson = outputJson;
-	 }
-}
-module.exports.MetadataEnrichmentVendorTaskData = MetadataEnrichmentVendorTaskData;
 
 /**
  *
@@ -58846,108 +58755,6 @@ class QuizUserEntry extends UserEntry{
 	 }
 }
 module.exports.QuizUserEntry = QuizUserEntry;
-
-/**
- *
- */
-class QuizVendorTaskData extends VendorTaskData{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaQuizVendorTaskData';
-	}
-	
-	/**
-	 * Number Of Questions
-	 * @return int
-	 */
-	 getNumberOfQuestions() {
-	 	return this.numberOfQuestions;
-	 }
-	
-	/**
-	 * @param numberOfQuestions int Number Of Questions
-	 */
-	 setNumberOfQuestions(numberOfQuestions) {
-	 	this.numberOfQuestions = numberOfQuestions;
-	 }
-	
-	/**
-	 * Questions Type
-	 * @return string
-	 */
-	 getQuestionsType() {
-	 	return this.questionsType;
-	 }
-	
-	/**
-	 * @param questionsType string Questions Type
-	 */
-	 setQuestionsType(questionsType) {
-	 	this.questionsType = questionsType;
-	 }
-	
-	/**
-	 * Quiz Context
-	 * @return string
-	 */
-	 getContext() {
-	 	return this.context;
-	 }
-	
-	/**
-	 * @param context string Quiz Context
-	 */
-	 setContext(context) {
-	 	this.context = context;
-	 }
-	
-	/**
-	 * Formal Style
-	 * @return string
-	 */
-	 getFormalStyle() {
-	 	return this.formalStyle;
-	 }
-	
-	/**
-	 * @param formalStyle string Formal Style
-	 */
-	 setFormalStyle(formalStyle) {
-	 	this.formalStyle = formalStyle;
-	 }
-	
-	/**
-	 * Create quiz flag
-	 * @return bool
-	 */
-	 getCreateQuiz() {
-	 	return this.createQuiz;
-	 }
-	
-	/**
-	 * @param createQuiz bool Create quiz flag
-	 */
-	 setCreateQuiz(createQuiz) {
-	 	this.createQuiz = createQuiz;
-	 }
-	
-	/**
-	 * Quiz entry Id
-	 * @return string
-	 */
-	 getQuizOutput() {
-	 	return this.quizOutput;
-	 }
-	
-	/**
-	 * @param quizOutput string Quiz entry Id
-	 */
-	 setQuizOutput(quizOutput) {
-	 	this.quizOutput = quizOutput;
-	 }
-}
-module.exports.QuizVendorTaskData = QuizVendorTaskData;
 
 /**
  *
@@ -61904,78 +61711,6 @@ module.exports.StorageProfileListResponse = StorageProfileListResponse;
 /**
  *
  */
-class SummaryVendorTaskData extends VendorTaskData{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaSummaryVendorTaskData';
-	}
-	
-	/**
-	 * Type of summary
-	 * @return string
-	 */
-	 getTypeOfSummary() {
-	 	return this.typeOfSummary;
-	 }
-	
-	/**
-	 * @param typeOfSummary string Type of summary
-	 */
-	 setTypeOfSummary(typeOfSummary) {
-	 	this.typeOfSummary = typeOfSummary;
-	 }
-	
-	/**
-	 * Writing style of the summary
-	 * @return string
-	 */
-	 getWritingStyle() {
-	 	return this.writingStyle;
-	 }
-	
-	/**
-	 * @param writingStyle string Writing style of the summary
-	 */
-	 setWritingStyle(writingStyle) {
-	 	this.writingStyle = writingStyle;
-	 }
-	
-	/**
-	 * Language code
-	 * @return string
-	 */
-	 getLanguage() {
-	 	return this.language;
-	 }
-	
-	/**
-	 * @param language string Language code
-	 */
-	 setLanguage(language) {
-	 	this.language = language;
-	 }
-	
-	/**
-	 * JSON string containing the summary output
-	 * @return string
-	 */
-	 getSummaryOutputJson() {
-	 	return this.summaryOutputJson;
-	 }
-	
-	/**
-	 * @param summaryOutputJson string JSON string containing the summary output
-	 */
-	 setSummaryOutputJson(summaryOutputJson) {
-	 	this.summaryOutputJson = summaryOutputJson;
-	 }
-}
-module.exports.SummaryVendorTaskData = SummaryVendorTaskData;
-
-/**
- *
- */
 class SynacorHboDistributionProvider extends DistributionProvider{
 	
 	constructor(object = null) {
@@ -64441,6 +64176,33 @@ module.exports.VendorCredit = VendorCredit;
 /**
  *
  */
+class VendorDocumentEnrichmentCatalogItem extends VendorCatalogItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorDocumentEnrichmentCatalogItem';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getDocumentEnrichmentType() {
+	 	return this.documentEnrichmentType;
+	 }
+	
+	/**
+	 * @param documentEnrichmentType int 
+	 */
+	 setDocumentEnrichmentType(documentEnrichmentType) {
+	 	this.documentEnrichmentType = documentEnrichmentType;
+	 }
+}
+module.exports.VendorDocumentEnrichmentCatalogItem = VendorDocumentEnrichmentCatalogItem;
+
+/**
+ *
+ */
 class VendorDubbingCatalogItem extends VendorCatalogItem{
 	
 	constructor(object = null) {
@@ -64611,6 +64373,48 @@ class VendorSentimentAnalysisCatalogItem extends VendorCatalogItem{
 	}
 }
 module.exports.VendorSentimentAnalysisCatalogItem = VendorSentimentAnalysisCatalogItem;
+
+/**
+ *
+ */
+class VendorSignLanguageCatalogItem extends VendorCatalogItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorSignLanguageCatalogItem';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getTargetLanguage() {
+	 	return this.targetLanguage;
+	 }
+	
+	/**
+	 * @param targetLanguage string 
+	 */
+	 setTargetLanguage(targetLanguage) {
+	 	this.targetLanguage = targetLanguage;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getOutputFormat() {
+	 	return this.outputFormat;
+	 }
+	
+	/**
+	 * @param outputFormat int 
+	 */
+	 setOutputFormat(outputFormat) {
+	 	this.outputFormat = outputFormat;
+	 }
+}
+module.exports.VendorSignLanguageCatalogItem = VendorSignLanguageCatalogItem;
 
 /**
  *
@@ -69689,6 +69493,80 @@ class ClippingTaskEntryServerNode extends TaskEntryServerNode{
 	 }
 }
 module.exports.ClippingTaskEntryServerNode = ClippingTaskEntryServerNode;
+
+/**
+ *
+ */
+class ClipsVendorTaskData extends LocalizedVendorTaskData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaClipsVendorTaskData';
+	}
+	
+	/**
+	 * Estimated duration of the clips, in seconds
+	 * @return int
+	 */
+	 getClipsDuration() {
+	 	return this.clipsDuration;
+	 }
+	
+	/**
+	 * @param clipsDuration int Estimated duration of the clips, in seconds
+	 */
+	 setClipsDuration(clipsDuration) {
+	 	this.clipsDuration = clipsDuration;
+	 }
+	
+	/**
+	 * Event session context ID used to enhance clip results
+	 * @return string
+	 */
+	 getEventSessionContextId() {
+	 	return this.eventSessionContextId;
+	 }
+	
+	/**
+	 * @param eventSessionContextId string Event session context ID used to enhance clip results
+	 */
+	 setEventSessionContextId(eventSessionContextId) {
+	 	this.eventSessionContextId = eventSessionContextId;
+	 }
+	
+	/**
+	 * Instruction describing the moments to capture or the objectives to achieve with the clips
+	 * @return string
+	 */
+	 getInstruction() {
+	 	return this.instruction;
+	 }
+	
+	/**
+	 * @param instruction string Instruction describing the moments to capture or the objectives to achieve with the clips
+	 */
+	 setInstruction(instruction) {
+	 	this.instruction = instruction;
+	 }
+	
+	/**
+	 * List of clips as JSON string.
+ * For example: [{"title": "Title of the first clip", "description": "Description of the first clip", "tags": "Tagged-Example", "start": 127, "duration": 30}]
+	 * @return string
+	 */
+	 getClipsOutputJson() {
+	 	return this.clipsOutputJson;
+	 }
+	
+	/**
+	 * @param clipsOutputJson string List of clips as JSON string.
+ * For example: [{"title": "Title of the first clip", "description": "Description of the first clip", "tags": "Tagged-Example", "start": 127, "duration": 30}]
+	 */
+	 setClipsOutputJson(clipsOutputJson) {
+	 	this.clipsOutputJson = clipsOutputJson;
+	 }
+}
+module.exports.ClipsVendorTaskData = ClipsVendorTaskData;
 
 /**
  *
@@ -77277,6 +77155,48 @@ module.exports.MetadataBaseFilter = MetadataBaseFilter;
 /**
  *
  */
+class MetadataEnrichmentVendorTaskData extends LocalizedVendorTaskData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaMetadataEnrichmentVendorTaskData';
+	}
+	
+	/**
+	 * The level of detail for the metadata enrichment process
+	 * @return string
+	 */
+	 getDetailLevel() {
+	 	return this.detailLevel;
+	 }
+	
+	/**
+	 * @param detailLevel string The level of detail for the metadata enrichment process
+	 */
+	 setDetailLevel(detailLevel) {
+	 	this.detailLevel = detailLevel;
+	 }
+	
+	/**
+	 * Instructions describing what should be taken into account during the metadata enrichment process
+	 * @return string
+	 */
+	 getInstruction() {
+	 	return this.instruction;
+	 }
+	
+	/**
+	 * @param instruction string Instructions describing what should be taken into account during the metadata enrichment process
+	 */
+	 setInstruction(instruction) {
+	 	this.instruction = instruction;
+	 }
+}
+module.exports.MetadataEnrichmentVendorTaskData = MetadataEnrichmentVendorTaskData;
+
+/**
+ *
+ */
 class MetadataFieldChangedCondition extends MatchCondition{
 	
 	constructor(object = null) {
@@ -79454,6 +79374,108 @@ module.exports.QuizFilter = QuizFilter;
 /**
  *
  */
+class QuizVendorTaskData extends LocalizedVendorTaskData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaQuizVendorTaskData';
+	}
+	
+	/**
+	 * Number Of Questions
+	 * @return int
+	 */
+	 getNumberOfQuestions() {
+	 	return this.numberOfQuestions;
+	 }
+	
+	/**
+	 * @param numberOfQuestions int Number Of Questions
+	 */
+	 setNumberOfQuestions(numberOfQuestions) {
+	 	this.numberOfQuestions = numberOfQuestions;
+	 }
+	
+	/**
+	 * Questions Type
+	 * @return string
+	 */
+	 getQuestionsType() {
+	 	return this.questionsType;
+	 }
+	
+	/**
+	 * @param questionsType string Questions Type
+	 */
+	 setQuestionsType(questionsType) {
+	 	this.questionsType = questionsType;
+	 }
+	
+	/**
+	 * Quiz Context
+	 * @return string
+	 */
+	 getContext() {
+	 	return this.context;
+	 }
+	
+	/**
+	 * @param context string Quiz Context
+	 */
+	 setContext(context) {
+	 	this.context = context;
+	 }
+	
+	/**
+	 * Formal Style
+	 * @return string
+	 */
+	 getFormalStyle() {
+	 	return this.formalStyle;
+	 }
+	
+	/**
+	 * @param formalStyle string Formal Style
+	 */
+	 setFormalStyle(formalStyle) {
+	 	this.formalStyle = formalStyle;
+	 }
+	
+	/**
+	 * Create quiz flag
+	 * @return bool
+	 */
+	 getCreateQuiz() {
+	 	return this.createQuiz;
+	 }
+	
+	/**
+	 * @param createQuiz bool Create quiz flag
+	 */
+	 setCreateQuiz(createQuiz) {
+	 	this.createQuiz = createQuiz;
+	 }
+	
+	/**
+	 * Quiz entry Id
+	 * @return string
+	 */
+	 getQuizOutput() {
+	 	return this.quizOutput;
+	 }
+	
+	/**
+	 * @param quizOutput string Quiz entry Id
+	 */
+	 setQuizOutput(quizOutput) {
+	 	this.quizOutput = quizOutput;
+	 }
+}
+module.exports.QuizVendorTaskData = QuizVendorTaskData;
+
+/**
+ *
+ */
 class RatingCountBaseFilter extends RelatedFilter{
 	
 	constructor(object = null) {
@@ -81394,6 +81416,63 @@ class StringResource extends ContentResource{
 	 }
 }
 module.exports.StringResource = StringResource;
+
+/**
+ *
+ */
+class SummaryVendorTaskData extends LocalizedVendorTaskData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaSummaryVendorTaskData';
+	}
+	
+	/**
+	 * Type of summary
+	 * @return string
+	 */
+	 getTypeOfSummary() {
+	 	return this.typeOfSummary;
+	 }
+	
+	/**
+	 * @param typeOfSummary string Type of summary
+	 */
+	 setTypeOfSummary(typeOfSummary) {
+	 	this.typeOfSummary = typeOfSummary;
+	 }
+	
+	/**
+	 * Writing style of the summary
+	 * @return string
+	 */
+	 getWritingStyle() {
+	 	return this.writingStyle;
+	 }
+	
+	/**
+	 * @param writingStyle string Writing style of the summary
+	 */
+	 setWritingStyle(writingStyle) {
+	 	this.writingStyle = writingStyle;
+	 }
+	
+	/**
+	 * JSON string containing the summary output
+	 * @return string
+	 */
+	 getSummaryOutputJson() {
+	 	return this.summaryOutputJson;
+	 }
+	
+	/**
+	 * @param summaryOutputJson string JSON string containing the summary output
+	 */
+	 setSummaryOutputJson(summaryOutputJson) {
+	 	this.summaryOutputJson = summaryOutputJson;
+	 }
+}
+module.exports.SummaryVendorTaskData = SummaryVendorTaskData;
 
 /**
  *
@@ -92909,6 +92988,18 @@ module.exports.VendorClipsCatalogItemFilter = VendorClipsCatalogItemFilter;
 /**
  *
  */
+class VendorDocumentEnrichmentCatalogItemFilter extends VendorCatalogItemFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorDocumentEnrichmentCatalogItemFilter';
+	}
+}
+module.exports.VendorDocumentEnrichmentCatalogItemFilter = VendorDocumentEnrichmentCatalogItemFilter;
+
+/**
+ *
+ */
 class VendorDubbingCatalogItemBaseFilter extends VendorCatalogItemFilter{
 	
 	constructor(object = null) {
@@ -94324,6 +94415,18 @@ class VendorLiveCaptionCatalogItemFilter extends VendorCaptionsCatalogItemBaseFi
 	}
 }
 module.exports.VendorLiveCaptionCatalogItemFilter = VendorLiveCaptionCatalogItemFilter;
+
+/**
+ *
+ */
+class VendorSignLanguageCatalogItemFilter extends VendorDubbingCatalogItemBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorSignLanguageCatalogItemFilter';
+	}
+}
+module.exports.VendorSignLanguageCatalogItemFilter = VendorSignLanguageCatalogItemFilter;
 
 /**
  *

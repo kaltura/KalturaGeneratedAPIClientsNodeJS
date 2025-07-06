@@ -37138,6 +37138,21 @@ class ZoomIntegrationSetting extends IntegrationSetting{
 	 setHandleAlternativeHostsMode(handleAlternativeHostsMode) {
 	 	this.handleAlternativeHostsMode = handleAlternativeHostsMode;
 	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getUserSearchMethod() {
+	 	return this.userSearchMethod;
+	 }
+	
+	/**
+	 * @param userSearchMethod int 
+	 */
+	 setUserSearchMethod(userSearchMethod) {
+	 	this.userSearchMethod = userSearchMethod;
+	 }
 }
 module.exports.ZoomIntegrationSetting = ZoomIntegrationSetting;
 
@@ -77190,6 +77205,55 @@ class MetadataEnrichmentVendorTaskData extends LocalizedVendorTaskData{
 	 */
 	 setInstruction(instruction) {
 	 	this.instruction = instruction;
+	 }
+	
+	/**
+	 * Indicates whether the metadata enrichment results should be automatically applied on the task entry.
+ * Default is false
+	 * @return bool
+	 */
+	 getShouldApply() {
+	 	return this.shouldApply;
+	 }
+	
+	/**
+	 * @param shouldApply bool Indicates whether the metadata enrichment results should be automatically applied on the task entry.
+ * Default is false
+	 */
+	 setShouldApply(shouldApply) {
+	 	this.shouldApply = shouldApply;
+	 }
+	
+	/**
+	 * Specifies how metadata fields should be applied during enrichment.
+ * If 'FILL_EMPTY_AND_OVERRIDE_LIST', use overrideFields to specify which fields to override
+	 * @return string
+	 */
+	 getApplyMode() {
+	 	return this.applyMode;
+	 }
+	
+	/**
+	 * @param applyMode string Specifies how metadata fields should be applied during enrichment.
+ * If 'FILL_EMPTY_AND_OVERRIDE_LIST', use overrideFields to specify which fields to override
+	 */
+	 setApplyMode(applyMode) {
+	 	this.applyMode = applyMode;
+	 }
+	
+	/**
+	 * List of entry fields to override when applyMode is set to 'FILL_EMPTY_AND_OVERRIDE_LIST'
+	 * @return array
+	 */
+	 getOverrideFields() {
+	 	return this.overrideFields;
+	 }
+	
+	/**
+	 * @param overrideFields array List of entry fields to override when applyMode is set to 'FILL_EMPTY_AND_OVERRIDE_LIST'
+	 */
+	 setOverrideFields(overrideFields) {
+	 	this.overrideFields = overrideFields;
 	 }
 }
 module.exports.MetadataEnrichmentVendorTaskData = MetadataEnrichmentVendorTaskData;

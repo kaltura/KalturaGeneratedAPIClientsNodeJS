@@ -1581,6 +1581,12 @@ REMOVE_POSTFIX : 2,
 CMS_MATCHING : 3,
 };
 
+module.exports.ZoomUsersSearchMethod = {
+ID : 0,
+EMAIL : 1,
+ALL : 2,
+};
+
 module.exports.AccessControlOrderBy = {
 CREATED_AT_ASC : '+createdAt',
 CREATED_AT_DESC : '-createdAt',
@@ -5372,6 +5378,12 @@ UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 HEARTBEAT_TIME_DESC : '-heartbeatTime',
 UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.MetadataEnrichmentApplyMode = {
+FILL_EMPTY : 'FILL_EMPTY',
+FILL_EMPTY_AND_OVERRIDE_LIST : 'FILL_EMPTY_AND_OVERRIDE_LIST',
+OVERRIDE_ALL : 'OVERRIDE_ALL',
 };
 
 module.exports.MetadataObjectType = {

@@ -22695,6 +22695,48 @@ module.exports.LiveStreamStats = LiveStreamStats;
 /**
  *
  */
+class MarkdownAsset extends AttachmentAsset{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaMarkdownAsset';
+	}
+	
+	/**
+	 * The percentage accuracy of the markdown - values between 0 and 100
+	 * @return int
+	 */
+	 getAccuracy() {
+	 	return this.accuracy;
+	 }
+	
+	/**
+	 * @param accuracy int The percentage accuracy of the markdown - values between 0 and 100
+	 */
+	 setAccuracy(accuracy) {
+	 	this.accuracy = accuracy;
+	 }
+	
+	/**
+	 * The provider of the markdown
+	 * @return string
+	 */
+	 getProviderType() {
+	 	return this.providerType;
+	 }
+	
+	/**
+	 * @param providerType string The provider of the markdown
+	 */
+	 setProviderType(providerType) {
+	 	this.providerType = providerType;
+	 }
+}
+module.exports.MarkdownAsset = MarkdownAsset;
+
+/**
+ *
+ */
 class BaseEntryBaseFilter extends RelatedFilter{
 	
 	constructor(object = null) {
@@ -33042,6 +33084,48 @@ module.exports.Tag = Tag;
 /**
  *
  */
+class TextualAttachmentAsset extends AttachmentAsset{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaTextualAttachmentAsset';
+	}
+	
+	/**
+	 * The language of the transcript
+	 * @return string
+	 */
+	 getLanguage() {
+	 	return this.language;
+	 }
+	
+	/**
+	 * @param language string The language of the transcript
+	 */
+	 setLanguage(language) {
+	 	this.language = language;
+	 }
+	
+	/**
+	 * Was verified by human or machine
+	 * @return int
+	 */
+	 getHumanVerified() {
+	 	return this.humanVerified;
+	 }
+	
+	/**
+	 * @param humanVerified int Was verified by human or machine
+	 */
+	 setHumanVerified(humanVerified) {
+	 	this.humanVerified = humanVerified;
+	 }
+}
+module.exports.TextualAttachmentAsset = TextualAttachmentAsset;
+
+/**
+ *
+ */
 class ThumbAsset extends Asset{
 	
 	constructor(object = null) {
@@ -33462,7 +33546,7 @@ module.exports.ThumbParamsOutput = ThumbParamsOutput;
 /**
  *
  */
-class TranscriptAsset extends AttachmentAsset{
+class TranscriptAsset extends TextualAttachmentAsset{
 	
 	constructor(object = null) {
 		super(object);
@@ -33482,36 +33566,6 @@ class TranscriptAsset extends AttachmentAsset{
 	 */
 	 setAccuracy(accuracy) {
 	 	this.accuracy = accuracy;
-	 }
-	
-	/**
-	 * Was verified by human or machine
-	 * @return int
-	 */
-	 getHumanVerified() {
-	 	return this.humanVerified;
-	 }
-	
-	/**
-	 * @param humanVerified int Was verified by human or machine
-	 */
-	 setHumanVerified(humanVerified) {
-	 	this.humanVerified = humanVerified;
-	 }
-	
-	/**
-	 * The language of the transcript
-	 * @return string
-	 */
-	 getLanguage() {
-	 	return this.language;
-	 }
-	
-	/**
-	 * @param language string The language of the transcript
-	 */
-	 setLanguage(language) {
-	 	this.language = language;
 	 }
 	
 	/**
@@ -55888,6 +55942,26 @@ module.exports.MailNotificationObjectTask = MailNotificationObjectTask;
 /**
  *
  */
+class MarkdownAssetListResponse extends ListResponse{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaMarkdownAssetListResponse';
+	}
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getObjects() {
+	 	return this.objects;
+	 }
+}
+module.exports.MarkdownAssetListResponse = MarkdownAssetListResponse;
+
+/**
+ *
+ */
 class MatchCondition extends Condition{
 	
 	constructor(object = null) {
@@ -62076,6 +62150,26 @@ module.exports.TaskEntryServerNode = TaskEntryServerNode;
 /**
  *
  */
+class TextualAttachmentAssetListResponse extends ListResponse{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaTextualAttachmentAssetListResponse';
+	}
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getObjects() {
+	 	return this.objects;
+	 }
+}
+module.exports.TextualAttachmentAssetListResponse = TextualAttachmentAssetListResponse;
+
+/**
+ *
+ */
 class ThumbAssetListResponse extends ListResponse{
 	
 	constructor(object = null) {
@@ -64412,21 +64506,6 @@ class VendorSignLanguageCatalogItem extends VendorCatalogItem{
 	 */
 	 setTargetLanguage(targetLanguage) {
 	 	this.targetLanguage = targetLanguage;
-	 }
-	
-	/**
-	 * 
-	 * @return int
-	 */
-	 getOutputFormat() {
-	 	return this.outputFormat;
-	 }
-	
-	/**
-	 * @param outputFormat int 
-	 */
-	 setOutputFormat(outputFormat) {
-	 	this.outputFormat = outputFormat;
 	 }
 }
 module.exports.VendorSignLanguageCatalogItem = VendorSignLanguageCatalogItem;
@@ -95368,6 +95447,18 @@ module.exports.TVComDistributionProfileFilter = TVComDistributionProfileFilter;
 /**
  *
  */
+class TextualAttachmentAssetBaseFilter extends AttachmentAssetFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaTextualAttachmentAssetBaseFilter';
+	}
+}
+module.exports.TextualAttachmentAssetBaseFilter = TextualAttachmentAssetBaseFilter;
+
+/**
+ *
+ */
 class ThumbParamsOutputBaseFilter extends ThumbParamsFilter{
 	
 	constructor(object = null) {
@@ -95460,18 +95551,6 @@ class TimedThumbAssetBaseFilter extends ThumbAssetFilter{
 	}
 }
 module.exports.TimedThumbAssetBaseFilter = TimedThumbAssetBaseFilter;
-
-/**
- *
- */
-class TranscriptAssetBaseFilter extends AttachmentAssetFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaTranscriptAssetBaseFilter';
-	}
-}
-module.exports.TranscriptAssetBaseFilter = TranscriptAssetBaseFilter;
 
 /**
  *
@@ -95869,6 +95948,18 @@ module.exports.SwfFlavorParamsFilter = SwfFlavorParamsFilter;
 /**
  *
  */
+class TextualAttachmentAssetFilter extends TextualAttachmentAssetBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaTextualAttachmentAssetFilter';
+	}
+}
+module.exports.TextualAttachmentAssetFilter = TextualAttachmentAssetFilter;
+
+/**
+ *
+ */
 class ThumbParamsOutputFilter extends ThumbParamsOutputBaseFilter{
 	
 	constructor(object = null) {
@@ -95889,18 +95980,6 @@ class TimedThumbAssetFilter extends TimedThumbAssetBaseFilter{
 	}
 }
 module.exports.TimedThumbAssetFilter = TimedThumbAssetFilter;
-
-/**
- *
- */
-class TranscriptAssetFilter extends TranscriptAssetBaseFilter{
-	
-	constructor(object = null) {
-		super(object);
-		this.objectType = 'KalturaTranscriptAssetFilter';
-	}
-}
-module.exports.TranscriptAssetFilter = TranscriptAssetFilter;
 
 /**
  *
@@ -96097,6 +96176,18 @@ module.exports.LiveEntryBaseFilter = LiveEntryBaseFilter;
 /**
  *
  */
+class MarkdownAssetBaseFilter extends TextualAttachmentAssetFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaMarkdownAssetBaseFilter';
+	}
+}
+module.exports.MarkdownAssetBaseFilter = MarkdownAssetBaseFilter;
+
+/**
+ *
+ */
 class MediaFlavorParamsOutputBaseFilter extends FlavorParamsOutputFilter{
 	
 	constructor(object = null) {
@@ -96153,6 +96244,18 @@ class SwfFlavorParamsOutputBaseFilter extends FlavorParamsOutputFilter{
 	}
 }
 module.exports.SwfFlavorParamsOutputBaseFilter = SwfFlavorParamsOutputBaseFilter;
+
+/**
+ *
+ */
+class TranscriptAssetBaseFilter extends TextualAttachmentAssetFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaTranscriptAssetBaseFilter';
+	}
+}
+module.exports.TranscriptAssetBaseFilter = TranscriptAssetBaseFilter;
 
 /**
  *
@@ -96274,6 +96377,18 @@ module.exports.LiveEntryFilter = LiveEntryFilter;
 /**
  *
  */
+class MarkdownAssetFilter extends MarkdownAssetBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaMarkdownAssetFilter';
+	}
+}
+module.exports.MarkdownAssetFilter = MarkdownAssetFilter;
+
+/**
+ *
+ */
 class MediaFlavorParamsOutputFilter extends MediaFlavorParamsOutputBaseFilter{
 	
 	constructor(object = null) {
@@ -96306,6 +96421,18 @@ class SwfFlavorParamsOutputFilter extends SwfFlavorParamsOutputBaseFilter{
 	}
 }
 module.exports.SwfFlavorParamsOutputFilter = SwfFlavorParamsOutputFilter;
+
+/**
+ *
+ */
+class TranscriptAssetFilter extends TranscriptAssetBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaTranscriptAssetFilter';
+	}
+}
+module.exports.TranscriptAssetFilter = TranscriptAssetFilter;
 
 /**
  *

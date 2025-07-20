@@ -491,6 +491,7 @@ AUTO_APPROVED : 6,
 
 module.exports.EntryObjectType = {
 ENTRY : 1,
+ASSET : 2,
 };
 
 module.exports.EntryServerNodeRecordingStatus = {
@@ -1414,11 +1415,6 @@ DFXP : 2,
 VTT : 3,
 };
 
-module.exports.VendorCatalogItemSignLanguageOutputFormat = {
-ASPECT_RATIO_16_9 : 1,
-ASPECT_RATIO_4_3 : 2,
-};
-
 module.exports.VendorCatalogItemStage = {
 PRODUCTION : 1,
 QA : 2,
@@ -1582,9 +1578,8 @@ CMS_MATCHING : 3,
 };
 
 module.exports.ZoomUsersSearchMethod = {
-ID : 0,
-EMAIL : 1,
-ALL : 2,
+EMAIL : 0,
+EXTERNAL : 1,
 };
 
 module.exports.AccessControlOrderBy = {
@@ -1770,6 +1765,7 @@ DOCUMENT : 'document.Document',
 IMAGE : 'document.Image',
 PDF : 'document.PDF',
 SWF : 'document.SWF',
+MARKDOWN : 'markdown.Markdown',
 TIMED_THUMB_ASSET : 'thumbCuePoint.timedThumb',
 TRANSCRIPT : 'transcript.Transcript',
 WIDEVINE_FLAVOR : 'widevine.WidevineFlavor',
@@ -5275,6 +5271,21 @@ MAIL_TYPE_REPORT_EXPORT_ABORT : '138',
 MAIL_TYPE_SIP_FAILURE : '139',
 };
 
+module.exports.MarkdownAssetOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+DELETED_AT_ASC : '+deletedAt',
+SIZE_ASC : '+size',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+DELETED_AT_DESC : '-deletedAt',
+SIZE_DESC : '-size',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.MarkdownProviderType = {
+KAI : '0',
+};
+
 module.exports.MatchConditionType = {
 MATCH_ANY : '1',
 MATCH_ALL : '2',
@@ -6115,6 +6126,7 @@ EP_VIEWTIME : '60015',
 EP_TOP_MOMENTS : '60016',
 EP_TOP_SESSIONS : '60017',
 EP_WEBCAST_ENGAGEMENT_OVER_TIME : '60018',
+EP_LATEST_DOWNLOADED_ATTACHMENTS : '60019',
 CNC_PARTICIPATION : '70001',
 QUIZ : 'quiz.QUIZ',
 QUIZ_AGGREGATE_BY_QUESTION : 'quiz.QUIZ_AGGREGATE_BY_QUESTION',

@@ -757,6 +757,48 @@ module.exports.AccessControlScope = AccessControlScope;
 /**
  *
  */
+class ActiveLiveStreamTime extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaActiveLiveStreamTime';
+	}
+	
+	/**
+	 * The start time of the live stream (unix timestamp in seconds)
+	 * @return int
+	 */
+	 getStartTime() {
+	 	return this.startTime;
+	 }
+	
+	/**
+	 * @param startTime int The start time of the live stream (unix timestamp in seconds)
+	 */
+	 setStartTime(startTime) {
+	 	this.startTime = startTime;
+	 }
+	
+	/**
+	 * The end time of the live stream (unix timestamp in seconds)
+	 * @return int
+	 */
+	 getEndTime() {
+	 	return this.endTime;
+	 }
+	
+	/**
+	 * @param endTime int The end time of the live stream (unix timestamp in seconds)
+	 */
+	 setEndTime(endTime) {
+	 	this.endTime = endTime;
+	 }
+}
+module.exports.ActiveLiveStreamTime = ActiveLiveStreamTime;
+
+/**
+ *
+ */
 class ReportFilter extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -26659,6 +26701,21 @@ class PlaybackContext extends kaltura.BaseObject{
 	 */
 	 setBumperData(bumperData) {
 	 	this.bumperData = bumperData;
+	 }
+	
+	/**
+	 * 
+	 * @return ActiveLiveStreamTime
+	 */
+	 getActiveLiveStreamTime() {
+	 	return this.activeLiveStreamTime;
+	 }
+	
+	/**
+	 * @param activeLiveStreamTime ActiveLiveStreamTime 
+	 */
+	 setActiveLiveStreamTime(activeLiveStreamTime) {
+	 	this.activeLiveStreamTime = activeLiveStreamTime;
 	 }
 }
 module.exports.PlaybackContext = PlaybackContext;
@@ -79612,6 +79669,21 @@ class QuizVendorTaskData extends LocalizedVendorTaskData{
 	 */
 	 setQuizOutput(quizOutput) {
 	 	this.quizOutput = quizOutput;
+	 }
+	
+	/**
+	 * Instructions describing what should be taken into account during the quiz creation process
+	 * @return string
+	 */
+	 getInstruction() {
+	 	return this.instruction;
+	 }
+	
+	/**
+	 * @param instruction string Instructions describing what should be taken into account during the quiz creation process
+	 */
+	 setInstruction(instruction) {
+	 	this.instruction = instruction;
 	 }
 }
 module.exports.QuizVendorTaskData = QuizVendorTaskData;

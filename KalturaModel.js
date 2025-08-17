@@ -28672,6 +28672,21 @@ class ReportInputFilter extends ReportInputBaseFilter{
 	 setEventSessionContextIdIn(eventSessionContextIdIn) {
 	 	this.eventSessionContextIdIn = eventSessionContextIdIn;
 	 }
+	
+	/**
+	 * filter by event video codec
+	 * @return string
+	 */
+	 getVideoCodecIn() {
+	 	return this.videoCodecIn;
+	 }
+	
+	/**
+	 * @param videoCodecIn string filter by event video codec
+	 */
+	 setVideoCodecIn(videoCodecIn) {
+	 	this.videoCodecIn = videoCodecIn;
+	 }
 }
 module.exports.ReportInputFilter = ReportInputFilter;
 
@@ -81685,6 +81700,21 @@ class SummaryVendorTaskData extends LocalizedVendorTaskData{
 	 */
 	 setSummaryOutputJson(summaryOutputJson) {
 	 	this.summaryOutputJson = summaryOutputJson;
+	 }
+	
+	/**
+	 * Additional instruction for the summary
+	 * @return string
+	 */
+	 getInstruction() {
+	 	return this.instruction;
+	 }
+	
+	/**
+	 * @param instruction string Additional instruction for the summary
+	 */
+	 setInstruction(instruction) {
+	 	this.instruction = instruction;
 	 }
 }
 module.exports.SummaryVendorTaskData = SummaryVendorTaskData;

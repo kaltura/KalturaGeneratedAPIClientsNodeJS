@@ -38042,6 +38042,21 @@ class AddEntryVendorTaskAction extends RuleAction{
 	 setCatalogItemIds(catalogItemIds) {
 	 	this.catalogItemIds = catalogItemIds;
 	 }
+	
+	/**
+	 * Entry Object Type
+	 * @return int
+	 */
+	 getEntryObjectType() {
+	 	return this.entryObjectType;
+	 }
+	
+	/**
+	 * @param entryObjectType int Entry Object Type
+	 */
+	 setEntryObjectType(entryObjectType) {
+	 	this.entryObjectType = entryObjectType;
+	 }
 }
 module.exports.AddEntryVendorTaskAction = AddEntryVendorTaskAction;
 

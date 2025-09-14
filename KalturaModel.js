@@ -53529,6 +53529,21 @@ class HttpNotificationDataFields extends HttpNotificationData{
 		super(object);
 		this.objectType = 'KalturaHttpNotificationDataFields';
 	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getContentType() {
+	 	return this.contentType;
+	 }
+	
+	/**
+	 * @param contentType string 
+	 */
+	 setContentType(contentType) {
+	 	this.contentType = contentType;
+	 }
 }
 module.exports.HttpNotificationDataFields = HttpNotificationDataFields;
 
@@ -53555,6 +53570,21 @@ class HttpNotificationDataText extends HttpNotificationData{
 	 */
 	 setContent(content) {
 	 	this.content = content;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getContentType() {
+	 	return this.contentType;
+	 }
+	
+	/**
+	 * @param contentType string 
+	 */
+	 setContentType(contentType) {
+	 	this.contentType = contentType;
 	 }
 }
 module.exports.HttpNotificationDataText = HttpNotificationDataText;

@@ -2283,8 +2283,10 @@ CS : 'Czech',
 DA : 'Danish',
 NL : 'Dutch',
 EN : 'English',
+EN_ASL : 'English (ASL)',
 EN_US : 'English (American)',
 EN_AU : 'English (Australian)',
+EN_BSL : 'English (BSL)',
 EN_GB : 'English (British)',
 EO : 'Esperanto',
 ET : 'Estonian',
@@ -2355,11 +2357,6 @@ VI : 'Vietnamese',
 CY : 'Welsh',
 XH : 'Xhosa',
 ZU : 'Zulu',
-};
-
-module.exports.CatalogItemSignLanguage = {
-ENGLISH_ASL : 'English (ASL)',
-ENGLISH_BSL : 'English (BSL)',
 };
 
 module.exports.CategoryEntryAdvancedOrderBy = {

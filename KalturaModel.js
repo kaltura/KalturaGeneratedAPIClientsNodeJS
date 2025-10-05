@@ -53673,6 +53673,21 @@ class HttpNotificationObjectData extends HttpNotificationData{
 	 setDataStringReplacements(dataStringReplacements) {
 	 	this.dataStringReplacements = dataStringReplacements;
 	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getResponseProfileId() {
+	 	return this.responseProfileId;
+	 }
+	
+	/**
+	 * @param responseProfileId int 
+	 */
+	 setResponseProfileId(responseProfileId) {
+	 	this.responseProfileId = responseProfileId;
+	 }
 }
 module.exports.HttpNotificationObjectData = HttpNotificationObjectData;
 

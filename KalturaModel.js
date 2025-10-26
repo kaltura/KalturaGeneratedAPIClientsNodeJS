@@ -29617,6 +29617,21 @@ class RoomEntry extends BaseEntry{
 	 setTemplateRoomEntryId(templateRoomEntryId) {
 	 	this.templateRoomEntryId = templateRoomEntryId;
 	 }
+	
+	/**
+	 * The entryId of the recording
+	 * @return string
+	 */
+	 getRecordedEntryId() {
+	 	return this.recordedEntryId;
+	 }
+	
+	/**
+	 * @param recordedEntryId string The entryId of the recording
+	 */
+	 setRecordedEntryId(recordedEntryId) {
+	 	this.recordedEntryId = recordedEntryId;
+	 }
 }
 module.exports.RoomEntry = RoomEntry;
 

@@ -50447,6 +50447,21 @@ class EntryCaptionAdvancedFilter extends SearchItem{
 	 setHasCaption(hasCaption) {
 	 	this.hasCaption = hasCaption;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getLanguage() {
+	 	return this.language;
+	 }
+	
+	/**
+	 * @param language string 
+	 */
+	 setLanguage(language) {
+	 	this.language = language;
+	 }
 }
 module.exports.EntryCaptionAdvancedFilter = EntryCaptionAdvancedFilter;
 
@@ -75147,6 +75162,21 @@ class FtpDistributionProfile extends ConfigurableDistributionProfile{
 	 */
 	 setAssetFilenameXslt(assetFilenameXslt) {
 	 	this.assetFilenameXslt = assetFilenameXslt;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getDataContentFilenameXslt() {
+	 	return this.dataContentFilenameXslt;
+	 }
+	
+	/**
+	 * @param dataContentFilenameXslt string 
+	 */
+	 setDataContentFilenameXslt(dataContentFilenameXslt) {
+	 	this.dataContentFilenameXslt = dataContentFilenameXslt;
 	 }
 	
 	/**

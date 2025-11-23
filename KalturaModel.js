@@ -41480,6 +41480,21 @@ class BulkUploadResultUser extends BulkUploadResult{
 	 setCapabilities(capabilities) {
 	 	this.capabilities = capabilities;
 	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getGroupUserCreationMode() {
+	 	return this.groupUserCreationMode;
+	 }
+	
+	/**
+	 * @param groupUserCreationMode int 
+	 */
+	 setGroupUserCreationMode(groupUserCreationMode) {
+	 	this.groupUserCreationMode = groupUserCreationMode;
+	 }
 }
 module.exports.BulkUploadResultUser = BulkUploadResultUser;
 
@@ -48098,6 +48113,36 @@ class ESearchCaptionItemData extends ESearchItemData{
 	 setLabel(label) {
 	 	this.label = label;
 	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getAccuracy() {
+	 	return this.accuracy;
+	 }
+	
+	/**
+	 * @param accuracy int 
+	 */
+	 setAccuracy(accuracy) {
+	 	this.accuracy = accuracy;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getUsage() {
+	 	return this.usage;
+	 }
+	
+	/**
+	 * @param usage int 
+	 */
+	 setUsage(usage) {
+	 	this.usage = usage;
+	 }
 }
 module.exports.ESearchCaptionItemData = ESearchCaptionItemData;
 
@@ -50461,6 +50506,81 @@ class EntryCaptionAdvancedFilter extends SearchItem{
 	 */
 	 setLanguage(language) {
 	 	this.language = language;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getAccuracyGreaterThanOrEqual() {
+	 	return this.accuracyGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * @param accuracyGreaterThanOrEqual int 
+	 */
+	 setAccuracyGreaterThanOrEqual(accuracyGreaterThanOrEqual) {
+	 	this.accuracyGreaterThanOrEqual = accuracyGreaterThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getAccuracyLessThanOrEqual() {
+	 	return this.accuracyLessThanOrEqual;
+	 }
+	
+	/**
+	 * @param accuracyLessThanOrEqual int 
+	 */
+	 setAccuracyLessThanOrEqual(accuracyLessThanOrEqual) {
+	 	this.accuracyLessThanOrEqual = accuracyLessThanOrEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getAccuracyGreaterThan() {
+	 	return this.accuracyGreaterThan;
+	 }
+	
+	/**
+	 * @param accuracyGreaterThan int 
+	 */
+	 setAccuracyGreaterThan(accuracyGreaterThan) {
+	 	this.accuracyGreaterThan = accuracyGreaterThan;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getAccuracyLessThan() {
+	 	return this.accuracyLessThan;
+	 }
+	
+	/**
+	 * @param accuracyLessThan int 
+	 */
+	 setAccuracyLessThan(accuracyLessThan) {
+	 	this.accuracyLessThan = accuracyLessThan;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getUsage() {
+	 	return this.usage;
+	 }
+	
+	/**
+	 * @param usage string 
+	 */
+	 setUsage(usage) {
+	 	this.usage = usage;
 	 }
 }
 module.exports.EntryCaptionAdvancedFilter = EntryCaptionAdvancedFilter;

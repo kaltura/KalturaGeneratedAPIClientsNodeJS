@@ -10662,6 +10662,7 @@ module.exports.reachProfile = reachProfile;
  * @action list List KalturaEntryVendorTask objects.
  * @action reject Reject entry vendor task for execution.
  * @action replaceOutput .
+ * @action reset Reset entry vendor task. change status back to pending with a new catalog item.
  * @action serveCsv Will serve a requested csv.
  * @action update Update entry vendor task. Only the properties that were set will be updated.
  * @action updateJob Update entry vendor task. Only the properties that were set will be updated.
@@ -10803,6 +10804,19 @@ class entryVendorTask{
 		kparams.id = id;
 		kparams.newOutput = newOutput;
 		return new kaltura.RequestBuilder('reach_entryvendortask', 'replaceOutput', kparams);
+	};
+	
+	/**
+	 * Reset entry vendor task. change status back to pending with a new catalog item.
+	 * @param id int vendor task id to reset
+	 * @param catalogItemId int new catalog item
+	 * @return KalturaEntryVendorTask
+	 */
+	static reset(id, catalogItemId){
+		let kparams = {};
+		kparams.id = id;
+		kparams.catalogItemId = catalogItemId;
+		return new kaltura.RequestBuilder('reach_entryvendortask', 'reset', kparams);
 	};
 	
 	/**

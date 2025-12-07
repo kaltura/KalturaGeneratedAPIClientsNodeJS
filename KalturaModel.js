@@ -1305,6 +1305,21 @@ class Annotation extends CuePoint{
 	 setSearchableOnEntry(searchableOnEntry) {
 	 	this.searchableOnEntry = searchableOnEntry;
 	 }
+	
+	/**
+	 * In case of cloned annotation it will hold source cuepoint createdAt
+	 * @return int
+	 */
+	 getOriginalCuePointCreateAt() {
+	 	return this.originalCuePointCreateAt;
+	 }
+	
+	/**
+	 * @param originalCuePointCreateAt int In case of cloned annotation it will hold source cuepoint createdAt
+	 */
+	 setOriginalCuePointCreateAt(originalCuePointCreateAt) {
+	 	this.originalCuePointCreateAt = originalCuePointCreateAt;
+	 }
 }
 module.exports.Annotation = Annotation;
 
@@ -18501,6 +18516,14 @@ class FlavorParams extends AssetParams{
 	 */
 	 setClipDuration(clipDuration) {
 	 	this.clipDuration = clipDuration;
+	 }
+	
+	/**
+	 * Audio languages extracted from multiStream field
+	 * @return array
+	 */
+	 getAudioLanguages() {
+	 	return this.audioLanguages;
 	 }
 }
 module.exports.FlavorParams = FlavorParams;

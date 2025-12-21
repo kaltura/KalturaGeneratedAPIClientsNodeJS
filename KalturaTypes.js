@@ -3310,6 +3310,25 @@ TURKISH : 'Turkish',
 module.exports.ESearchMetadataAggregateByFieldName = {
 };
 
+module.exports.ESearchScoreFunctionBoostMode = {
+MULTIPLY : 'multiply',
+SUM : 'sum',
+};
+
+module.exports.ESearchScoreFunctionDecayAlgorithm = {
+EXP : 'exp',
+GAUSS : 'gauss',
+LINEAR : 'linear',
+};
+
+module.exports.ESearchScoreFunctionField = {
+CREATED_AT : 'created_at',
+};
+
+module.exports.ESearchScoreFunctionOrigin = {
+NOW : 'now',
+};
+
 module.exports.ESearchSortOrder = {
 ORDER_BY_ASC : 'asc',
 ORDER_BY_DESC : 'desc',

@@ -14407,6 +14407,123 @@ module.exports.ESearchOrderBy = ESearchOrderBy;
 /**
  *
  */
+class ESearchScoreFunctionParams extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaESearchScoreFunctionParams';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getDecayAlgorithm() {
+	 	return this.decayAlgorithm;
+	 }
+	
+	/**
+	 * @param decayAlgorithm string 
+	 */
+	 setDecayAlgorithm(decayAlgorithm) {
+	 	this.decayAlgorithm = decayAlgorithm;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getFunctionField() {
+	 	return this.functionField;
+	 }
+	
+	/**
+	 * @param functionField string 
+	 */
+	 setFunctionField(functionField) {
+	 	this.functionField = functionField;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getBoostMode() {
+	 	return this.boostMode;
+	 }
+	
+	/**
+	 * @param boostMode string 
+	 */
+	 setBoostMode(boostMode) {
+	 	this.boostMode = boostMode;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getOrigin() {
+	 	return this.origin;
+	 }
+	
+	/**
+	 * @param origin string 
+	 */
+	 setOrigin(origin) {
+	 	this.origin = origin;
+	 }
+	
+	/**
+	 * 
+	 * @return float
+	 */
+	 getWeight() {
+	 	return this.weight;
+	 }
+	
+	/**
+	 * @param weight float 
+	 */
+	 setWeight(weight) {
+	 	this.weight = weight;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getScale() {
+	 	return this.scale;
+	 }
+	
+	/**
+	 * @param scale string 
+	 */
+	 setScale(scale) {
+	 	this.scale = scale;
+	 }
+	
+	/**
+	 * 
+	 * @return float
+	 */
+	 getDecay() {
+	 	return this.decay;
+	 }
+	
+	/**
+	 * @param decay float 
+	 */
+	 setDecay(decay) {
+	 	this.decay = decay;
+	 }
+}
+module.exports.ESearchScoreFunctionParams = ESearchScoreFunctionParams;
+
+/**
+ *
+ */
 class ESearchParams extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -14502,6 +14619,21 @@ class ESearchParams extends kaltura.BaseObject{
 	 */
 	 setObjectIdsNotIn(objectIdsNotIn) {
 	 	this.objectIdsNotIn = objectIdsNotIn;
+	 }
+	
+	/**
+	 * 
+	 * @return ESearchScoreFunctionParams
+	 */
+	 getScoreFunctionParams() {
+	 	return this.scoreFunctionParams;
+	 }
+	
+	/**
+	 * @param scoreFunctionParams ESearchScoreFunctionParams 
+	 */
+	 setScoreFunctionParams(scoreFunctionParams) {
+	 	this.scoreFunctionParams = scoreFunctionParams;
 	 }
 }
 module.exports.ESearchParams = ESearchParams;

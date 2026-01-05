@@ -39379,6 +39379,36 @@ class BaseSyndicationFeedBaseFilter extends Filter{
 		super(object);
 		this.objectType = 'KalturaBaseSyndicationFeedBaseFilter';
 	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getIdEqual() {
+	 	return this.idEqual;
+	 }
+	
+	/**
+	 * @param idEqual string 
+	 */
+	 setIdEqual(idEqual) {
+	 	this.idEqual = idEqual;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getIdIn() {
+	 	return this.idIn;
+	 }
+	
+	/**
+	 * @param idIn string 
+	 */
+	 setIdIn(idIn) {
+	 	this.idIn = idIn;
+	 }
 }
 module.exports.BaseSyndicationFeedBaseFilter = BaseSyndicationFeedBaseFilter;
 
@@ -71147,6 +71177,21 @@ class CortexApiDistributionJobProviderData extends ConfigurableDistributionJobPr
 	 */
 	 setCaptionsInfo(captionsInfo) {
 	 	this.captionsInfo = captionsInfo;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getMediaType() {
+	 	return this.mediaType;
+	 }
+	
+	/**
+	 * @param mediaType int 
+	 */
+	 setMediaType(mediaType) {
+	 	this.mediaType = mediaType;
 	 }
 }
 module.exports.CortexApiDistributionJobProviderData = CortexApiDistributionJobProviderData;

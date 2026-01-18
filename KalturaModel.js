@@ -34697,6 +34697,13 @@ class UserEntry extends kaltura.BaseObject{
 	 }
 	
 	/**
+	 * @param status string 
+	 */
+	 setStatus(status) {
+	 	this.status = status;
+	 }
+	
+	/**
 	 * 
 	 * @return int
 	 */
@@ -63307,6 +63314,48 @@ class UnlimitedVendorCredit extends BaseVendorCredit{
 	 }
 }
 module.exports.UnlimitedVendorCredit = UnlimitedVendorCredit;
+
+/**
+ *
+ */
+class UpdateUserEntriesData extends JobData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaUpdateUserEntriesData';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getOldStatus() {
+	 	return this.oldStatus;
+	 }
+	
+	/**
+	 * @param oldStatus string 
+	 */
+	 setOldStatus(oldStatus) {
+	 	this.oldStatus = oldStatus;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getNewStatus() {
+	 	return this.newStatus;
+	 }
+	
+	/**
+	 * @param newStatus string 
+	 */
+	 setNewStatus(newStatus) {
+	 	this.newStatus = newStatus;
+	 }
+}
+module.exports.UpdateUserEntriesData = UpdateUserEntriesData;
 
 /**
  *

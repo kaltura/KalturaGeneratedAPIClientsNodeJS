@@ -16227,6 +16227,14 @@ class EntryVendorTask extends kaltura.BaseObject{
 	 setExternalTaskId(externalTaskId) {
 	 	this.externalTaskId = externalTaskId;
 	 }
+	
+	/**
+	 * Indicates if the task is pay-per-use based on the catalog item
+	 * @return bool
+	 */
+	 getIsPayPerUse() {
+	 	return this.isPayPerUse;
+	 }
 }
 module.exports.EntryVendorTask = EntryVendorTask;
 
@@ -61796,6 +61804,48 @@ module.exports.SiteRestriction = SiteRestriction;
 /**
  *
  */
+class SpeechToVideoVendorTaskData extends VendorTaskData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaSpeechToVideoVendorTaskData';
+	}
+	
+	/**
+	 * The identifier of the avatar to be used for generating the video
+	 * @return string
+	 */
+	 getAvatarId() {
+	 	return this.avatarId;
+	 }
+	
+	/**
+	 * @param avatarId string The identifier of the avatar to be used for generating the video
+	 */
+	 setAvatarId(avatarId) {
+	 	this.avatarId = avatarId;
+	 }
+	
+	/**
+	 * Optional. Conversion profile to be used for the generated video media entry
+	 * @return int
+	 */
+	 getConversionProfileId() {
+	 	return this.conversionProfileId;
+	 }
+	
+	/**
+	 * @param conversionProfileId int Optional. Conversion profile to be used for the generated video media entry
+	 */
+	 setConversionProfileId(conversionProfileId) {
+	 	this.conversionProfileId = conversionProfileId;
+	 }
+}
+module.exports.SpeechToVideoVendorTaskData = SpeechToVideoVendorTaskData;
+
+/**
+ *
+ */
 class SsoListResponse extends ListResponse{
 	
 	constructor(object = null) {
@@ -65025,6 +65075,18 @@ class VendorSignLanguageCatalogItem extends VendorCatalogItem{
 	 }
 }
 module.exports.VendorSignLanguageCatalogItem = VendorSignLanguageCatalogItem;
+
+/**
+ *
+ */
+class VendorSpeechToVideoCatalogItem extends VendorCatalogItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorSpeechToVideoCatalogItem';
+	}
+}
+module.exports.VendorSpeechToVideoCatalogItem = VendorSpeechToVideoCatalogItem;
 
 /**
  *
@@ -93817,6 +93879,18 @@ class VendorSentimentAnalysisCatalogItemFilter extends VendorCatalogItemFilter{
 	}
 }
 module.exports.VendorSentimentAnalysisCatalogItemFilter = VendorSentimentAnalysisCatalogItemFilter;
+
+/**
+ *
+ */
+class VendorSpeechToVideoCatalogItemFilter extends VendorCatalogItemFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorSpeechToVideoCatalogItemFilter';
+	}
+}
+module.exports.VendorSpeechToVideoCatalogItemFilter = VendorSpeechToVideoCatalogItemFilter;
 
 /**
  *

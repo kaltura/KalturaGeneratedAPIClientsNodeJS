@@ -16227,14 +16227,6 @@ class EntryVendorTask extends kaltura.BaseObject{
 	 setExternalTaskId(externalTaskId) {
 	 	this.externalTaskId = externalTaskId;
 	 }
-	
-	/**
-	 * Indicates if the task is pay-per-use based on the catalog item
-	 * @return bool
-	 */
-	 getIsPayPerUse() {
-	 	return this.isPayPerUse;
-	 }
 }
 module.exports.EntryVendorTask = EntryVendorTask;
 
@@ -22938,6 +22930,18 @@ class MarkdownAsset extends AttachmentAsset{
 	 }
 }
 module.exports.MarkdownAsset = MarkdownAsset;
+
+/**
+ *
+ */
+class MediaCompositionAttributes extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaMediaCompositionAttributes';
+	}
+}
+module.exports.MediaCompositionAttributes = MediaCompositionAttributes;
 
 /**
  *
@@ -31556,6 +31560,21 @@ class ShortLink extends kaltura.BaseObject{
 	
 	/**
 	 * 
+	 * @return string
+	 */
+	 getUniqueId() {
+	 	return this.uniqueId;
+	 }
+	
+	/**
+	 * @param uniqueId string 
+	 */
+	 setUniqueId(uniqueId) {
+	 	this.uniqueId = uniqueId;
+	 }
+	
+	/**
+	 * 
 	 * @return int
 	 */
 	 getStatus() {
@@ -32878,6 +32897,33 @@ class StorageProfile extends kaltura.BaseObject{
 	 }
 }
 module.exports.StorageProfile = StorageProfile;
+
+/**
+ *
+ */
+class StringArrayObject extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaStringArrayObject';
+	}
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getValue() {
+	 	return this.value;
+	 }
+	
+	/**
+	 * @param value array 
+	 */
+	 setValue(value) {
+	 	this.value = value;
+	 }
+}
+module.exports.StringArrayObject = StringArrayObject;
 
 /**
  *
@@ -43446,6 +43492,21 @@ class ClipAttributes extends OperationAttributes{
 	 setCaptionAttributes(captionAttributes) {
 	 	this.captionAttributes = captionAttributes;
 	 }
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getMediaCompositionAttributesArray() {
+	 	return this.mediaCompositionAttributesArray;
+	 }
+	
+	/**
+	 * @param mediaCompositionAttributesArray array 
+	 */
+	 setMediaCompositionAttributesArray(mediaCompositionAttributesArray) {
+	 	this.mediaCompositionAttributesArray = mediaCompositionAttributesArray;
+	 }
 }
 module.exports.ClipAttributes = ClipAttributes;
 
@@ -43777,6 +43838,21 @@ class ConcatJobData extends JobData{
 	 */
 	 setSrcFiles(srcFiles) {
 	 	this.srcFiles = srcFiles;
+	 }
+	
+	/**
+	 * Additional input files to be used in conversion pre concatenation
+	 * @return array
+	 */
+	 getInputFiles() {
+	 	return this.inputFiles;
+	 }
+	
+	/**
+	 * @param inputFiles array Additional input files to be used in conversion pre concatenation
+	 */
+	 setInputFiles(inputFiles) {
+	 	this.inputFiles = inputFiles;
 	 }
 	
 	/**
@@ -57902,6 +57978,48 @@ module.exports.OrCondition = OrCondition;
 /**
  *
  */
+class OverlayAttributes extends MediaCompositionAttributes{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaOverlayAttributes';
+	}
+	
+	/**
+	 * Only KalturaEntryResource and KalturaAssetResource are supported
+	 * @return ContentResource
+	 */
+	 getResource() {
+	 	return this.resource;
+	 }
+	
+	/**
+	 * @param resource ContentResource Only KalturaEntryResource and KalturaAssetResource are supported
+	 */
+	 setResource(resource) {
+	 	this.resource = resource;
+	 }
+	
+	/**
+	 * Only KalturaReplaceBackgroundAttributes is supported
+	 * @return array
+	 */
+	 getResourceMediaCompositionAttributesArray() {
+	 	return this.resourceMediaCompositionAttributesArray;
+	 }
+	
+	/**
+	 * @param resourceMediaCompositionAttributesArray array Only KalturaReplaceBackgroundAttributes is supported
+	 */
+	 setResourceMediaCompositionAttributesArray(resourceMediaCompositionAttributesArray) {
+	 	this.resourceMediaCompositionAttributesArray = resourceMediaCompositionAttributesArray;
+	 }
+}
+module.exports.OverlayAttributes = OverlayAttributes;
+
+/**
+ *
+ */
 class ParseCaptionAssetJobData extends JobData{
 	
 	constructor(object = null) {
@@ -59626,6 +59744,33 @@ class RenderCaptionAttributes extends CaptionAttributes{
 	 }
 }
 module.exports.RenderCaptionAttributes = RenderCaptionAttributes;
+
+/**
+ *
+ */
+class ReplaceBackgroundAttributes extends MediaCompositionAttributes{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaReplaceBackgroundAttributes';
+	}
+	
+	/**
+	 * Only KalturaEntryResource and KalturaAssetResource are supported
+	 * @return ContentResource
+	 */
+	 getResource() {
+	 	return this.resource;
+	 }
+	
+	/**
+	 * @param resource ContentResource Only KalturaEntryResource and KalturaAssetResource are supported
+	 */
+	 setResource(resource) {
+	 	this.resource = resource;
+	 }
+}
+module.exports.ReplaceBackgroundAttributes = ReplaceBackgroundAttributes;
 
 /**
  *
@@ -61687,6 +61832,21 @@ class ShortLinkBaseFilter extends Filter{
 	 */
 	 setStatusIn(statusIn) {
 	 	this.statusIn = statusIn;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getUniqueIdEqual() {
+	 	return this.uniqueIdEqual;
+	 }
+	
+	/**
+	 * @param uniqueIdEqual string 
+	 */
+	 setUniqueIdEqual(uniqueIdEqual) {
+	 	this.uniqueIdEqual = uniqueIdEqual;
 	 }
 }
 module.exports.ShortLinkBaseFilter = ShortLinkBaseFilter;

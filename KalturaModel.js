@@ -27000,6 +27000,48 @@ module.exports.Playlist = Playlist;
 /**
  *
  */
+class Position extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaPosition';
+	}
+	
+	/**
+	 * 
+	 * @return float
+	 */
+	 getX() {
+	 	return this.x;
+	 }
+	
+	/**
+	 * @param x float 
+	 */
+	 setX(x) {
+	 	this.x = x;
+	 }
+	
+	/**
+	 * 
+	 * @return float
+	 */
+	 getY() {
+	 	return this.y;
+	 }
+	
+	/**
+	 * @param y float 
+	 */
+	 setY(y) {
+	 	this.y = y;
+	 }
+}
+module.exports.Position = Position;
+
+/**
+ *
+ */
 class PushEventNotificationParameter extends EventNotificationParameter{
 	
 	constructor(object = null) {
@@ -54615,6 +54657,45 @@ module.exports.IdeticDistributionProvider = IdeticDistributionProvider;
 /**
  *
  */
+class ImmersiveAgentCallVendorTaskData extends VendorTaskData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaImmersiveAgentCallVendorTaskData';
+	}
+	
+	/**
+	 * The unique identifier for the immersive agent call
+	 * @return string
+	 */
+	 getCallId() {
+	 	return this.callId;
+	 }
+	
+	/**
+	 * @param callId string The unique identifier for the immersive agent call
+	 */
+	 setCallId(callId) {
+	 	this.callId = callId;
+	 }
+}
+module.exports.ImmersiveAgentCallVendorTaskData = ImmersiveAgentCallVendorTaskData;
+
+/**
+ *
+ */
+class ImmersiveAgentChatVendorTaskData extends VendorTaskData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaImmersiveAgentChatVendorTaskData';
+	}
+}
+module.exports.ImmersiveAgentChatVendorTaskData = ImmersiveAgentChatVendorTaskData;
+
+/**
+ *
+ */
 class ImportJobData extends JobData{
 	
 	constructor(object = null) {
@@ -59769,6 +59850,51 @@ class ReplaceBackgroundAttributes extends MediaCompositionAttributes{
 	 setResource(resource) {
 	 	this.resource = resource;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getBackgroundColorCode() {
+	 	return this.backgroundColorCode;
+	 }
+	
+	/**
+	 * @param backgroundColorCode string 
+	 */
+	 setBackgroundColorCode(backgroundColorCode) {
+	 	this.backgroundColorCode = backgroundColorCode;
+	 }
+	
+	/**
+	 * 
+	 * @return float
+	 */
+	 getForegroundScalePercentage() {
+	 	return this.foregroundScalePercentage;
+	 }
+	
+	/**
+	 * @param foregroundScalePercentage float 
+	 */
+	 setForegroundScalePercentage(foregroundScalePercentage) {
+	 	this.foregroundScalePercentage = foregroundScalePercentage;
+	 }
+	
+	/**
+	 * 
+	 * @return Position
+	 */
+	 getForegroundPositionPercentage() {
+	 	return this.foregroundPositionPercentage;
+	 }
+	
+	/**
+	 * @param foregroundPositionPercentage Position 
+	 */
+	 setForegroundPositionPercentage(foregroundPositionPercentage) {
+	 	this.foregroundPositionPercentage = foregroundPositionPercentage;
+	 }
 }
 module.exports.ReplaceBackgroundAttributes = ReplaceBackgroundAttributes;
 
@@ -60010,6 +60136,48 @@ class ReportListResponse extends ListResponse{
 	 }
 }
 module.exports.ReportListResponse = ReportListResponse;
+
+/**
+ *
+ */
+class ResolutionCropAttributes extends DimensionsAttributes{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaResolutionCropAttributes';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getTargetWidth() {
+	 	return this.targetWidth;
+	 }
+	
+	/**
+	 * @param targetWidth int 
+	 */
+	 setTargetWidth(targetWidth) {
+	 	this.targetWidth = targetWidth;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getTargetHeight() {
+	 	return this.targetHeight;
+	 }
+	
+	/**
+	 * @param targetHeight int 
+	 */
+	 setTargetHeight(targetHeight) {
+	 	this.targetHeight = targetHeight;
+	 }
+}
+module.exports.ResolutionCropAttributes = ResolutionCropAttributes;
 
 /**
  *
@@ -65152,6 +65320,30 @@ module.exports.VendorExtendedAudioDescriptionCatalogItem = VendorExtendedAudioDe
 /**
  *
  */
+class VendorImmersiveAgentCallCatalogItem extends VendorCatalogItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorImmersiveAgentCallCatalogItem';
+	}
+}
+module.exports.VendorImmersiveAgentCallCatalogItem = VendorImmersiveAgentCallCatalogItem;
+
+/**
+ *
+ */
+class VendorImmersiveAgentChatCatalogItem extends VendorCatalogItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorImmersiveAgentChatCatalogItem';
+	}
+}
+module.exports.VendorImmersiveAgentChatCatalogItem = VendorImmersiveAgentChatCatalogItem;
+
+/**
+ *
+ */
 class VendorIntelligentTaggingCatalogItem extends VendorCatalogItem{
 	
 	constructor(object = null) {
@@ -67365,6 +67557,21 @@ class ZoomDropFolder extends DropFolder{
 	 */
 	 setLastHandledMeetingTime(lastHandledMeetingTime) {
 	 	this.lastHandledMeetingTime = lastHandledMeetingTime;
+	 }
+	
+	/**
+	 * The amount of time, in seconds, to wait before processing a drop folder file
+	 * @return int
+	 */
+	 getFileProcessingGracePeriod() {
+	 	return this.fileProcessingGracePeriod;
+	 }
+	
+	/**
+	 * @param fileProcessingGracePeriod int The amount of time, in seconds, to wait before processing a drop folder file
+	 */
+	 setFileProcessingGracePeriod(fileProcessingGracePeriod) {
+	 	this.fileProcessingGracePeriod = fileProcessingGracePeriod;
 	 }
 }
 module.exports.ZoomDropFolder = ZoomDropFolder;
@@ -93979,6 +94186,30 @@ class VendorDubbingCatalogItemBaseFilter extends VendorCatalogItemFilter{
 	 }
 }
 module.exports.VendorDubbingCatalogItemBaseFilter = VendorDubbingCatalogItemBaseFilter;
+
+/**
+ *
+ */
+class VendorImmersiveAgentCallCatalogItemFilter extends VendorCatalogItemFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorImmersiveAgentCallCatalogItemFilter';
+	}
+}
+module.exports.VendorImmersiveAgentCallCatalogItemFilter = VendorImmersiveAgentCallCatalogItemFilter;
+
+/**
+ *
+ */
+class VendorImmersiveAgentChatCatalogItemFilter extends VendorCatalogItemFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorImmersiveAgentChatCatalogItemFilter';
+	}
+}
+module.exports.VendorImmersiveAgentChatCatalogItemFilter = VendorImmersiveAgentChatCatalogItemFilter;
 
 /**
  *

@@ -2270,6 +2270,33 @@ module.exports.AttachmentAsset = AttachmentAsset;
 /**
  *
  */
+class AudioAttributes extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaAudioAttributes';
+	}
+	
+	/**
+	 * 
+	 * @return float
+	 */
+	 getVolume() {
+	 	return this.volume;
+	 }
+	
+	/**
+	 * @param volume float 
+	 */
+	 setVolume(volume) {
+	 	this.volume = volume;
+	 }
+}
+module.exports.AudioAttributes = AudioAttributes;
+
+/**
+ *
+ */
 class AuditTrailInfo extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -16227,6 +16254,21 @@ class EntryVendorTask extends kaltura.BaseObject{
 	 setExternalTaskId(externalTaskId) {
 	 	this.externalTaskId = externalTaskId;
 	 }
+	
+	/**
+	 * The identifier of the external object for EXTERNAL_OBJECT type tasks
+	 * @return string
+	 */
+	 getExternalObjectId() {
+	 	return this.externalObjectId;
+	 }
+	
+	/**
+	 * @param externalObjectId string The identifier of the external object for EXTERNAL_OBJECT type tasks
+	 */
+	 setExternalObjectId(externalObjectId) {
+	 	this.externalObjectId = externalObjectId;
+	 }
 }
 module.exports.EntryVendorTask = EntryVendorTask;
 
@@ -28895,6 +28937,51 @@ class ReportInputFilter extends ReportInputBaseFilter{
 	 */
 	 setVideoCodecIn(videoCodecIn) {
 	 	this.videoCodecIn = videoCodecIn;
+	 }
+	
+	/**
+	 * filter by agent id
+	 * @return string
+	 */
+	 getAgentIdIn() {
+	 	return this.agentIdIn;
+	 }
+	
+	/**
+	 * @param agentIdIn string filter by agent id
+	 */
+	 setAgentIdIn(agentIdIn) {
+	 	this.agentIdIn = agentIdIn;
+	 }
+	
+	/**
+	 * filter by Genie id
+	 * @return string
+	 */
+	 getGenieIdIn() {
+	 	return this.genieIdIn;
+	 }
+	
+	/**
+	 * @param genieIdIn string filter by Genie id
+	 */
+	 setGenieIdIn(genieIdIn) {
+	 	this.genieIdIn = genieIdIn;
+	 }
+	
+	/**
+	 * filter by reach profile id
+	 * @return string
+	 */
+	 getReachProfileIdIn() {
+	 	return this.reachProfileIdIn;
+	 }
+	
+	/**
+	 * @param reachProfileIdIn string filter by reach profile id
+	 */
+	 setReachProfileIdIn(reachProfileIdIn) {
+	 	this.reachProfileIdIn = reachProfileIdIn;
 	 }
 }
 module.exports.ReportInputFilter = ReportInputFilter;
@@ -58095,6 +58182,81 @@ class OverlayAttributes extends MediaCompositionAttributes{
 	 setResourceMediaCompositionAttributesArray(resourceMediaCompositionAttributesArray) {
 	 	this.resourceMediaCompositionAttributesArray = resourceMediaCompositionAttributesArray;
 	 }
+	
+	/**
+	 * 
+	 * @return float
+	 */
+	 getMarginsPercentage() {
+	 	return this.marginsPercentage;
+	 }
+	
+	/**
+	 * @param marginsPercentage float 
+	 */
+	 setMarginsPercentage(marginsPercentage) {
+	 	this.marginsPercentage = marginsPercentage;
+	 }
+	
+	/**
+	 * 
+	 * @return float
+	 */
+	 getOverlayScalePercentage() {
+	 	return this.overlayScalePercentage;
+	 }
+	
+	/**
+	 * @param overlayScalePercentage float 
+	 */
+	 setOverlayScalePercentage(overlayScalePercentage) {
+	 	this.overlayScalePercentage = overlayScalePercentage;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getOverlayPlacement() {
+	 	return this.overlayPlacement;
+	 }
+	
+	/**
+	 * @param overlayPlacement int 
+	 */
+	 setOverlayPlacement(overlayPlacement) {
+	 	this.overlayPlacement = overlayPlacement;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getOverlayShape() {
+	 	return this.overlayShape;
+	 }
+	
+	/**
+	 * @param overlayShape int 
+	 */
+	 setOverlayShape(overlayShape) {
+	 	this.overlayShape = overlayShape;
+	 }
+	
+	/**
+	 * 
+	 * @return AudioAttributes
+	 */
+	 getAudioAttributes() {
+	 	return this.audioAttributes;
+	 }
+	
+	/**
+	 * @param audioAttributes AudioAttributes 
+	 */
+	 setAudioAttributes(audioAttributes) {
+	 	this.audioAttributes = audioAttributes;
+	 }
 }
 module.exports.OverlayAttributes = OverlayAttributes;
 
@@ -59894,6 +60056,21 @@ class ReplaceBackgroundAttributes extends MediaCompositionAttributes{
 	 */
 	 setForegroundPositionPercentage(foregroundPositionPercentage) {
 	 	this.foregroundPositionPercentage = foregroundPositionPercentage;
+	 }
+	
+	/**
+	 * 
+	 * @return AudioAttributes
+	 */
+	 getAudioAttributes() {
+	 	return this.audioAttributes;
+	 }
+	
+	/**
+	 * @param audioAttributes AudioAttributes 
+	 */
+	 setAudioAttributes(audioAttributes) {
+	 	this.audioAttributes = audioAttributes;
 	 }
 }
 module.exports.ReplaceBackgroundAttributes = ReplaceBackgroundAttributes;
@@ -65002,6 +65179,18 @@ class VendorAudioDescriptionCatalogItem extends VendorCatalogItem{
 	 }
 }
 module.exports.VendorAudioDescriptionCatalogItem = VendorAudioDescriptionCatalogItem;
+
+/**
+ *
+ */
+class VendorAvatarVodCatalogItem extends VendorCatalogItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorAvatarVodCatalogItem';
+	}
+}
+module.exports.VendorAvatarVodCatalogItem = VendorAvatarVodCatalogItem;
 
 /**
  *
@@ -94048,6 +94237,18 @@ class UverseDistributionProviderFilter extends UverseDistributionProviderBaseFil
 	}
 }
 module.exports.UverseDistributionProviderFilter = UverseDistributionProviderFilter;
+
+/**
+ *
+ */
+class VendorAvatarVodCatalogItemFilter extends VendorCatalogItemFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorAvatarVodCatalogItemFilter';
+	}
+}
+module.exports.VendorAvatarVodCatalogItemFilter = VendorAvatarVodCatalogItemFilter;
 
 /**
  *

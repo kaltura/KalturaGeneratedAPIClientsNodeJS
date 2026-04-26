@@ -6118,6 +6118,21 @@ class Partner extends kaltura.BaseObject{
 	 setAllowedEmailDomainsForAdmins(allowedEmailDomainsForAdmins) {
 	 	this.allowedEmailDomainsForAdmins = allowedEmailDomainsForAdmins;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getExternalIdentifier() {
+	 	return this.externalIdentifier;
+	 }
+	
+	/**
+	 * @param externalIdentifier string 
+	 */
+	 setExternalIdentifier(externalIdentifier) {
+	 	this.externalIdentifier = externalIdentifier;
+	 }
 }
 module.exports.Partner = Partner;
 
@@ -27697,6 +27712,13 @@ class ReachProfile extends kaltura.BaseObject{
 	 }
 	
 	/**
+	 * @param usedCredit float 
+	 */
+	 setUsedCredit(usedCredit) {
+	 	this.usedCredit = usedCredit;
+	 }
+	
+	/**
 	 * 
 	 * @return array
 	 */
@@ -28982,6 +29004,21 @@ class ReportInputFilter extends ReportInputBaseFilter{
 	 */
 	 setReachProfileIdIn(reachProfileIdIn) {
 	 	this.reachProfileIdIn = reachProfileIdIn;
+	 }
+	
+	/**
+	 * filter by preview mode
+	 * @return bool
+	 */
+	 getIsPreview() {
+	 	return this.isPreview;
+	 }
+	
+	/**
+	 * @param isPreview bool filter by preview mode
+	 */
+	 setIsPreview(isPreview) {
+	 	this.isPreview = isPreview;
 	 }
 }
 module.exports.ReportInputFilter = ReportInputFilter;

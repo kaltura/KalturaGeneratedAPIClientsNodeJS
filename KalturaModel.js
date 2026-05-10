@@ -22679,6 +22679,14 @@ class LiveStreamEntry extends LiveEntry{
 	 }
 	
 	/**
+	 * Indicates whether the live entry is ready to be deleted
+	 * @return bool
+	 */
+	 getReadyForDeletion() {
+	 	return this.readyForDeletion;
+	 }
+	
+	/**
 	 * URL Manager to handle the live stream URL (for instance, add token)
 	 * @return string
 	 */

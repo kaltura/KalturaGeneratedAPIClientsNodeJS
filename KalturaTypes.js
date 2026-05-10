@@ -3284,6 +3284,7 @@ TAGS : 'tags',
 TITLE : 'title',
 UPDATED_AT : 'updated_at',
 USER_ID : 'user_id',
+TYPE : 'user_type',
 };
 
 module.exports.ESearchGroupOrderByFieldName = {

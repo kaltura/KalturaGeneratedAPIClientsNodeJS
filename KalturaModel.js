@@ -11775,6 +11775,48 @@ module.exports.DimensionsAttributes = DimensionsAttributes;
 /**
  *
  */
+class DimensionsPercentage extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaDimensionsPercentage';
+	}
+	
+	/**
+	 * 
+	 * @return float
+	 */
+	 getHeightPercentage() {
+	 	return this.heightPercentage;
+	 }
+	
+	/**
+	 * @param heightPercentage float 
+	 */
+	 setHeightPercentage(heightPercentage) {
+	 	this.heightPercentage = heightPercentage;
+	 }
+	
+	/**
+	 * 
+	 * @return float
+	 */
+	 getWidthPercentage() {
+	 	return this.widthPercentage;
+	 }
+	
+	/**
+	 * @param widthPercentage float 
+	 */
+	 setWidthPercentage(widthPercentage) {
+	 	this.widthPercentage = widthPercentage;
+	 }
+}
+module.exports.DimensionsPercentage = DimensionsPercentage;
+
+/**
+ *
+ */
 class DistributionFieldConfig extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -26068,6 +26110,48 @@ class OptionalAnswer extends kaltura.BaseObject{
 	 }
 }
 module.exports.OptionalAnswer = OptionalAnswer;
+
+/**
+ *
+ */
+class OverlayScaleAttribute extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaOverlayScaleAttribute';
+	}
+	
+	/**
+	 * 
+	 * @return DimensionsPercentage
+	 */
+	 getScalePercentage() {
+	 	return this.scalePercentage;
+	 }
+	
+	/**
+	 * @param scalePercentage DimensionsPercentage 
+	 */
+	 setScalePercentage(scalePercentage) {
+	 	this.scalePercentage = scalePercentage;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getScaleBehavior() {
+	 	return this.scaleBehavior;
+	 }
+	
+	/**
+	 * @param scaleBehavior int 
+	 */
+	 setScaleBehavior(scaleBehavior) {
+	 	this.scaleBehavior = scaleBehavior;
+	 }
+}
+module.exports.OverlayScaleAttribute = OverlayScaleAttribute;
 
 /**
  *
@@ -58230,14 +58314,14 @@ class OverlayAttributes extends MediaCompositionAttributes{
 	
 	/**
 	 * 
-	 * @return float
+	 * @return DimensionsPercentage
 	 */
 	 getMarginsPercentage() {
 	 	return this.marginsPercentage;
 	 }
 	
 	/**
-	 * @param marginsPercentage float 
+	 * @param marginsPercentage DimensionsPercentage 
 	 */
 	 setMarginsPercentage(marginsPercentage) {
 	 	this.marginsPercentage = marginsPercentage;
@@ -58245,17 +58329,17 @@ class OverlayAttributes extends MediaCompositionAttributes{
 	
 	/**
 	 * 
-	 * @return float
+	 * @return OverlayScaleAttribute
 	 */
-	 getOverlayScalePercentage() {
-	 	return this.overlayScalePercentage;
+	 getOverlayScaleAttribute() {
+	 	return this.overlayScaleAttribute;
 	 }
 	
 	/**
-	 * @param overlayScalePercentage float 
+	 * @param overlayScaleAttribute OverlayScaleAttribute 
 	 */
-	 setOverlayScalePercentage(overlayScalePercentage) {
-	 	this.overlayScalePercentage = overlayScalePercentage;
+	 setOverlayScaleAttribute(overlayScaleAttribute) {
+	 	this.overlayScaleAttribute = overlayScaleAttribute;
 	 }
 	
 	/**

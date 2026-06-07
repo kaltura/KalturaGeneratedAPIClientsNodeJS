@@ -1,6 +1,6 @@
 {
   "name": "kaltura-client",
-  "version": "22.20.0",
+  "version": "23.0.0",
   "description": "Kaltura NodeJS client library (new implementation)",
   "main": "KalturaClient.js",
   "scripts": {

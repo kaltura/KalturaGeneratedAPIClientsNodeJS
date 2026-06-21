@@ -15931,6 +15931,48 @@ module.exports.EntryServerNode = EntryServerNode;
 /**
  *
  */
+class EntryVendorTaskUnit extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaEntryVendorTaskUnit';
+	}
+	
+	/**
+	 * 
+	 * @return float
+	 */
+	 getUnitsUsed() {
+	 	return this.unitsUsed;
+	 }
+	
+	/**
+	 * @param unitsUsed float 
+	 */
+	 setUnitsUsed(unitsUsed) {
+	 	this.unitsUsed = unitsUsed;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getServiceName() {
+	 	return this.serviceName;
+	 }
+	
+	/**
+	 * @param serviceName string 
+	 */
+	 setServiceName(serviceName) {
+	 	this.serviceName = serviceName;
+	 }
+}
+module.exports.EntryVendorTaskUnit = EntryVendorTaskUnit;
+
+/**
+ *
+ */
 class VendorTaskData extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -16118,6 +16160,21 @@ class EntryVendorTask extends kaltura.BaseObject{
 	 */
 	 setUnitsUsed(unitsUsed) {
 	 	this.unitsUsed = unitsUsed;
+	 }
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getUnitsUsedArray() {
+	 	return this.unitsUsedArray;
+	 }
+	
+	/**
+	 * @param unitsUsedArray array 
+	 */
+	 setUnitsUsedArray(unitsUsedArray) {
+	 	this.unitsUsedArray = unitsUsedArray;
 	 }
 	
 	/**
@@ -25993,7 +26050,7 @@ class OperationResource extends ContentResource{
 	}
 	
 	/**
-	 * Only KalturaEntryResource and KalturaAssetResource are supported
+	 * Only KalturaEntryResource, KalturaAssetResource and KalturaDocumentImagesResource are supported
 	 * @return ContentResource
 	 */
 	 getResource() {
@@ -26001,7 +26058,7 @@ class OperationResource extends ContentResource{
 	 }
 	
 	/**
-	 * @param resource ContentResource Only KalturaEntryResource and KalturaAssetResource are supported
+	 * @param resource ContentResource Only KalturaEntryResource, KalturaAssetResource and KalturaDocumentImagesResource are supported
 	 */
 	 setResource(resource) {
 	 	this.resource = resource;
@@ -35661,6 +35718,48 @@ module.exports.VendorCatalogItemPricing = VendorCatalogItemPricing;
 /**
  *
  */
+class VendorCatalogItemUnitPricing extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorCatalogItemUnitPricing';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getServiceName() {
+	 	return this.serviceName;
+	 }
+	
+	/**
+	 * @param serviceName string 
+	 */
+	 setServiceName(serviceName) {
+	 	this.serviceName = serviceName;
+	 }
+	
+	/**
+	 * 
+	 * @return VendorCatalogItemPricing
+	 */
+	 getPriceUnit() {
+	 	return this.priceUnit;
+	 }
+	
+	/**
+	 * @param priceUnit VendorCatalogItemPricing 
+	 */
+	 setPriceUnit(priceUnit) {
+	 	this.priceUnit = priceUnit;
+	 }
+}
+module.exports.VendorCatalogItemUnitPricing = VendorCatalogItemUnitPricing;
+
+/**
+ *
+ */
 class VendorCatalogItem extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -35796,6 +35895,21 @@ class VendorCatalogItem extends kaltura.BaseObject{
 	 */
 	 setPricing(pricing) {
 	 	this.pricing = pricing;
+	 }
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getPricingArray() {
+	 	return this.pricingArray;
+	 }
+	
+	/**
+	 * @param pricingArray array 
+	 */
+	 setPricingArray(pricingArray) {
+	 	this.pricingArray = pricingArray;
 	 }
 	
 	/**
@@ -58283,7 +58397,7 @@ class OverlayAttributes extends MediaCompositionAttributes{
 	}
 	
 	/**
-	 * Only KalturaEntryResource and KalturaAssetResource are supported
+	 * Only KalturaEntryResource, KalturaAssetResource and KalturaDocumentImagesResource are supported
 	 * @return ContentResource
 	 */
 	 getResource() {
@@ -58291,7 +58405,7 @@ class OverlayAttributes extends MediaCompositionAttributes{
 	 }
 	
 	/**
-	 * @param resource ContentResource Only KalturaEntryResource and KalturaAssetResource are supported
+	 * @param resource ContentResource Only KalturaEntryResource, KalturaAssetResource and KalturaDocumentImagesResource are supported
 	 */
 	 setResource(resource) {
 	 	this.resource = resource;
@@ -60128,7 +60242,7 @@ class ReplaceBackgroundAttributes extends MediaCompositionAttributes{
 	}
 	
 	/**
-	 * Only KalturaEntryResource and KalturaAssetResource are supported
+	 * Only KalturaEntryResource, KalturaAssetResource and KalturaDocumentImagesResource are supported
 	 * @return ContentResource
 	 */
 	 getResource() {
@@ -60136,7 +60250,7 @@ class ReplaceBackgroundAttributes extends MediaCompositionAttributes{
 	 }
 	
 	/**
-	 * @param resource ContentResource Only KalturaEntryResource and KalturaAssetResource are supported
+	 * @param resource ContentResource Only KalturaEntryResource, KalturaAssetResource and KalturaDocumentImagesResource are supported
 	 */
 	 setResource(resource) {
 	 	this.resource = resource;
@@ -73428,6 +73542,48 @@ class DocumentFlavorParams extends FlavorParams{
 	}
 }
 module.exports.DocumentFlavorParams = DocumentFlavorParams;
+
+/**
+ *
+ */
+class DocumentImagesResource extends ContentResource{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaDocumentImagesResource';
+	}
+	
+	/**
+	 * ID of the flavor asset containing the image list
+	 * @return string
+	 */
+	 getFlavorAssetId() {
+	 	return this.flavorAssetId;
+	 }
+	
+	/**
+	 * @param flavorAssetId string ID of the flavor asset containing the image list
+	 */
+	 setFlavorAssetId(flavorAssetId) {
+	 	this.flavorAssetId = flavorAssetId;
+	 }
+	
+	/**
+	 * Zero-based index of the image to retrieve from the list
+	 * @return int
+	 */
+	 getIndex() {
+	 	return this.index;
+	 }
+	
+	/**
+	 * @param index int Zero-based index of the image to retrieve from the list
+	 */
+	 setIndex(index) {
+	 	this.index = index;
+	 }
+}
+module.exports.DocumentImagesResource = DocumentImagesResource;
 
 /**
  *

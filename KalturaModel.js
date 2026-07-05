@@ -27911,6 +27911,21 @@ class ReachProfile extends kaltura.BaseObject{
 	 setVendorTaskProcessingRegion(vendorTaskProcessingRegion) {
 	 	this.vendorTaskProcessingRegion = vendorTaskProcessingRegion;
 	 }
+	
+	/**
+	 * Comma separated catalogItemIds that are allowed for ordering using this reach profile
+	 * @return string
+	 */
+	 getAllowedCatalogItemIds() {
+	 	return this.allowedCatalogItemIds;
+	 }
+	
+	/**
+	 * @param allowedCatalogItemIds string Comma separated catalogItemIds that are allowed for ordering using this reach profile
+	 */
+	 setAllowedCatalogItemIds(allowedCatalogItemIds) {
+	 	this.allowedCatalogItemIds = allowedCatalogItemIds;
+	 }
 }
 module.exports.ReachProfile = ReachProfile;
 

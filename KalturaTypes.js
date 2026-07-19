@@ -3953,6 +3953,13 @@ CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
 };
 
+module.exports.HTMLPurifierBehaviourType = {
+IGNORE : '0',
+NOTIFY : '1',
+SANITIZE : '2',
+BLOCK : '3',
+};
+
 module.exports.HttpNotificationCertificateType = {
 DER : 'DER',
 ENG : 'ENG',

@@ -6133,6 +6133,66 @@ class Partner extends kaltura.BaseObject{
 	 setExternalIdentifier(externalIdentifier) {
 	 	this.externalIdentifier = externalIdentifier;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getHtmlPurifierBehaviour() {
+	 	return this.htmlPurifierBehaviour;
+	 }
+	
+	/**
+	 * @param htmlPurifierBehaviour string 
+	 */
+	 setHtmlPurifierBehaviour(htmlPurifierBehaviour) {
+	 	this.htmlPurifierBehaviour = htmlPurifierBehaviour;
+	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getHtmlPurifierBaseListUsage() {
+	 	return this.htmlPurifierBaseListUsage;
+	 }
+	
+	/**
+	 * @param htmlPurifierBaseListUsage bool 
+	 */
+	 setHtmlPurifierBaseListUsage(htmlPurifierBaseListUsage) {
+	 	this.htmlPurifierBaseListUsage = htmlPurifierBaseListUsage;
+	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getPurifyImageContent() {
+	 	return this.purifyImageContent;
+	 }
+	
+	/**
+	 * @param purifyImageContent bool 
+	 */
+	 setPurifyImageContent(purifyImageContent) {
+	 	this.purifyImageContent = purifyImageContent;
+	 }
+	
+	/**
+	 * 
+	 * @return bool
+	 */
+	 getFileTypeRestrictionEnabled() {
+	 	return this.fileTypeRestrictionEnabled;
+	 }
+	
+	/**
+	 * @param fileTypeRestrictionEnabled bool 
+	 */
+	 setFileTypeRestrictionEnabled(fileTypeRestrictionEnabled) {
+	 	this.fileTypeRestrictionEnabled = fileTypeRestrictionEnabled;
+	 }
 }
 module.exports.Partner = Partner;
 
@@ -15986,6 +16046,21 @@ class VendorTaskData extends kaltura.BaseObject{
 	 */
 	 getEntryDuration() {
 	 	return this.entryDuration;
+	 }
+	
+	/**
+	 * string containing the comment provided by vendor
+	 * @return string
+	 */
+	 getVendorComment() {
+	 	return this.vendorComment;
+	 }
+	
+	/**
+	 * @param vendorComment string string containing the comment provided by vendor
+	 */
+	 setVendorComment(vendorComment) {
+	 	this.vendorComment = vendorComment;
 	 }
 }
 module.exports.VendorTaskData = VendorTaskData;
@@ -42361,6 +42436,21 @@ class BulkUploadResultVendorCatalogItem extends BulkUploadResult{
 	 */
 	 setPricing(pricing) {
 	 	this.pricing = pricing;
+	 }
+	
+	/**
+	 * 
+	 * @return array
+	 */
+	 getPricingArray() {
+	 	return this.pricingArray;
+	 }
+	
+	/**
+	 * @param pricingArray array 
+	 */
+	 setPricingArray(pricingArray) {
+	 	this.pricingArray = pricingArray;
 	 }
 	
 	/**

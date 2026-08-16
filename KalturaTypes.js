@@ -1497,6 +1497,7 @@ FOUR_BUSINESS_DAYS : 4,
 FIVE_BUSINESS_DAYS : 5,
 SIX_BUSINESS_DAYS : 6,
 SEVEN_BUSINESS_DAYS : 7,
+TEN_BUSINESS_DAYS : 10,
 THIRTY_MINUTES : 1800,
 TWO_HOURS : 7200,
 THREE_HOURS : 10800,
@@ -1513,6 +1514,7 @@ TEN_DAYS : 864000,
 module.exports.VendorServiceType = {
 HUMAN : 1,
 MACHINE : 2,
+HYBRID : 3,
 };
 
 module.exports.VendorTaskProcessingRegion = {

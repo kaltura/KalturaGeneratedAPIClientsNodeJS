@@ -27751,6 +27751,21 @@ class ReachProfile extends kaltura.BaseObject{
 	 * 
 	 * @return int
 	 */
+	 getEnableHybridModeration() {
+	 	return this.enableHybridModeration;
+	 }
+	
+	/**
+	 * @param enableHybridModeration int 
+	 */
+	 setEnableHybridModeration(enableHybridModeration) {
+	 	this.enableHybridModeration = enableHybridModeration;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
 	 getAutoDisplayMachineCaptionsOnPlayer() {
 	 	return this.autoDisplayMachineCaptionsOnPlayer;
 	 }
@@ -27775,6 +27790,21 @@ class ReachProfile extends kaltura.BaseObject{
 	 */
 	 setAutoDisplayHumanCaptionsOnPlayer(autoDisplayHumanCaptionsOnPlayer) {
 	 	this.autoDisplayHumanCaptionsOnPlayer = autoDisplayHumanCaptionsOnPlayer;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getAutoDisplayHybridCaptionsOnPlayer() {
+	 	return this.autoDisplayHybridCaptionsOnPlayer;
+	 }
+	
+	/**
+	 * @param autoDisplayHybridCaptionsOnPlayer int 
+	 */
+	 setAutoDisplayHybridCaptionsOnPlayer(autoDisplayHybridCaptionsOnPlayer) {
+	 	this.autoDisplayHybridCaptionsOnPlayer = autoDisplayHybridCaptionsOnPlayer;
 	 }
 	
 	/**
@@ -27880,6 +27910,21 @@ class ReachProfile extends kaltura.BaseObject{
 	 */
 	 setLabelAdditionForHumanServiceType(labelAdditionForHumanServiceType) {
 	 	this.labelAdditionForHumanServiceType = labelAdditionForHumanServiceType;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getLabelAdditionForHybridServiceType() {
+	 	return this.labelAdditionForHybridServiceType;
+	 }
+	
+	/**
+	 * @param labelAdditionForHybridServiceType string 
+	 */
+	 setLabelAdditionForHybridServiceType(labelAdditionForHybridServiceType) {
+	 	this.labelAdditionForHybridServiceType = labelAdditionForHybridServiceType;
 	 }
 	
 	/**
@@ -29258,6 +29303,21 @@ class ReportInputFilter extends ReportInputBaseFilter{
 	 */
 	 setIsPreview(isPreview) {
 	 	this.isPreview = isPreview;
+	 }
+	
+	/**
+	 * filter by stream type
+	 * @return string
+	 */
+	 getStreamTypeIn() {
+	 	return this.streamTypeIn;
+	 }
+	
+	/**
+	 * @param streamTypeIn string filter by stream type
+	 */
+	 setStreamTypeIn(streamTypeIn) {
+	 	this.streamTypeIn = streamTypeIn;
 	 }
 }
 module.exports.ReportInputFilter = ReportInputFilter;
@@ -39607,6 +39667,18 @@ module.exports.AttributeCondition = AttributeCondition;
 /**
  *
  */
+class AudioDescriptionVendorTaskData extends VendorTaskData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaAudioDescriptionVendorTaskData';
+	}
+}
+module.exports.AudioDescriptionVendorTaskData = AudioDescriptionVendorTaskData;
+
+/**
+ *
+ */
 class AuditTrailChangeInfo extends AuditTrailInfo{
 	
 	constructor(object = null) {
@@ -42482,6 +42554,21 @@ class BulkUploadResultVendorCatalogItem extends BulkUploadResult{
 	 setClearAudioFlavorParamsId(clearAudioFlavorParamsId) {
 	 	this.clearAudioFlavorParamsId = clearAudioFlavorParamsId;
 	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getVendorData() {
+	 	return this.vendorData;
+	 }
+	
+	/**
+	 * @param vendorData string 
+	 */
+	 setVendorData(vendorData) {
+	 	this.vendorData = vendorData;
+	 }
 }
 module.exports.BulkUploadResultVendorCatalogItem = BulkUploadResultVendorCatalogItem;
 
@@ -42939,6 +43026,18 @@ class CaptionParamsListResponse extends ListResponse{
 	 }
 }
 module.exports.CaptionParamsListResponse = CaptionParamsListResponse;
+
+/**
+ *
+ */
+class CaptionVendorTaskData extends VendorTaskData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaCaptionVendorTaskData';
+	}
+}
+module.exports.CaptionVendorTaskData = CaptionVendorTaskData;
 
 /**
  *
@@ -48766,6 +48865,18 @@ class DropFolderXmlBulkUploadFileHandlerConfig extends DropFolderFileHandlerConf
 	}
 }
 module.exports.DropFolderXmlBulkUploadFileHandlerConfig = DropFolderXmlBulkUploadFileHandlerConfig;
+
+/**
+ *
+ */
+class DubbingVendorTaskData extends VendorTaskData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaDubbingVendorTaskData';
+	}
+}
+module.exports.DubbingVendorTaskData = DubbingVendorTaskData;
 
 /**
  *
@@ -62563,6 +62674,33 @@ class ShortLinkListResponse extends ListResponse{
 	 }
 }
 module.exports.ShortLinkListResponse = ShortLinkListResponse;
+
+/**
+ *
+ */
+class SignLanguageVendorTaskData extends VendorTaskData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaSignLanguageVendorTaskData';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getAssetId() {
+	 	return this.assetId;
+	 }
+	
+	/**
+	 * @param assetId string 
+	 */
+	 setAssetId(assetId) {
+	 	this.assetId = assetId;
+	 }
+}
+module.exports.SignLanguageVendorTaskData = SignLanguageVendorTaskData;
 
 /**
  *

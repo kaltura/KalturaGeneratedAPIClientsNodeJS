@@ -12725,6 +12725,14 @@ class DocumentEntry extends BaseEntry{
 	 getAssetParamsIds() {
 	 	return this.assetParamsIds;
 	 }
+	
+	/**
+	 * Number of views
+	 * @return int
+	 */
+	 getViews() {
+	 	return this.views;
+	 }
 }
 module.exports.DocumentEntry = DocumentEntry;
 
@@ -41065,6 +41073,21 @@ class BulkUploadResultCategory extends BulkUploadResult{
 	 */
 	 setModeration(moderation) {
 	 	this.moderation = moderation;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getAdminTags() {
+	 	return this.adminTags;
+	 }
+	
+	/**
+	 * @param adminTags string 
+	 */
+	 setAdminTags(adminTags) {
+	 	this.adminTags = adminTags;
 	 }
 }
 module.exports.BulkUploadResultCategory = BulkUploadResultCategory;

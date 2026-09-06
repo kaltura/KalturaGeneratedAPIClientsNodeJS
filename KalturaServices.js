@@ -9571,6 +9571,45 @@ module.exports.drmLicenseAccess = drmLicenseAccess;
 
 
 /**
+ *Class definition for the Kaltura service: keyManagementPolicy.
+ * The available service actions:
+ * @action get .
+ * @action update .
+ */
+class keyManagementPolicy{
+	
+	/**
+	 * .
+	 * @param objectType int  (enum: KalturaKeyManagementPolicyObjectType)
+	 * @param objectId string 
+	 * @return KalturaKeyManagementPolicy
+	 */
+	static get(objectType, objectId){
+		let kparams = {};
+		kparams.objectType = objectType;
+		kparams.objectId = objectId;
+		return new kaltura.RequestBuilder('drm_keymanagementpolicy', 'get', kparams);
+	};
+	
+	/**
+	 * .
+	 * @param objectType int  (enum: KalturaKeyManagementPolicyObjectType)
+	 * @param objectId string 
+	 * @param keyManagementPolicy KeyManagementPolicy 
+	 * @return KalturaKeyManagementPolicy
+	 */
+	static update(objectType, objectId, keyManagementPolicy){
+		let kparams = {};
+		kparams.objectType = objectType;
+		kparams.objectId = objectId;
+		kparams.keyManagementPolicy = keyManagementPolicy;
+		return new kaltura.RequestBuilder('drm_keymanagementpolicy', 'update', kparams);
+	};
+}
+module.exports.keyManagementPolicy = keyManagementPolicy;
+
+
+/**
  *Class definition for the Kaltura service: widevineDrm.
  * The available service actions:
  * @action getLicense Get license for encrypted content playback.

@@ -20956,6 +20956,33 @@ module.exports.InteractivityDataFilter = InteractivityDataFilter;
 /**
  *
  */
+class KeyManagementPolicy extends kaltura.BaseObject{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaKeyManagementPolicy';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getKeyManagementPolicy() {
+	 	return this.keyManagementPolicy;
+	 }
+	
+	/**
+	 * @param keyManagementPolicy int 
+	 */
+	 setKeyManagementPolicy(keyManagementPolicy) {
+	 	this.keyManagementPolicy = keyManagementPolicy;
+	 }
+}
+module.exports.KeyManagementPolicy = KeyManagementPolicy;
+
+/**
+ *
+ */
 class Like extends kaltura.BaseObject{
 	
 	constructor(object = null) {
@@ -66042,6 +66069,30 @@ module.exports.VendorImmersiveAgentChatCatalogItem = VendorImmersiveAgentChatCat
 /**
  *
  */
+class VendorImmersiveAgentEvalCatalogItem extends VendorCatalogItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorImmersiveAgentEvalCatalogItem';
+	}
+}
+module.exports.VendorImmersiveAgentEvalCatalogItem = VendorImmersiveAgentEvalCatalogItem;
+
+/**
+ *
+ */
+class VendorImmersiveAgentPreviewCatalogItem extends VendorCatalogItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorImmersiveAgentPreviewCatalogItem';
+	}
+}
+module.exports.VendorImmersiveAgentPreviewCatalogItem = VendorImmersiveAgentPreviewCatalogItem;
+
+/**
+ *
+ */
 class VendorIntelligentTaggingCatalogItem extends VendorCatalogItem{
 	
 	constructor(object = null) {
@@ -66050,6 +66101,18 @@ class VendorIntelligentTaggingCatalogItem extends VendorCatalogItem{
 	}
 }
 module.exports.VendorIntelligentTaggingCatalogItem = VendorIntelligentTaggingCatalogItem;
+
+/**
+ *
+ */
+class VendorLlmModelsCatalogItem extends VendorCatalogItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorLlmModelsCatalogItem';
+	}
+}
+module.exports.VendorLlmModelsCatalogItem = VendorLlmModelsCatalogItem;
 
 /**
  *
@@ -94966,6 +95029,30 @@ module.exports.VendorImmersiveAgentChatCatalogItemFilter = VendorImmersiveAgentC
 /**
  *
  */
+class VendorImmersiveAgentEvalCatalogItemFilter extends VendorCatalogItemFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorImmersiveAgentEvalCatalogItemFilter';
+	}
+}
+module.exports.VendorImmersiveAgentEvalCatalogItemFilter = VendorImmersiveAgentEvalCatalogItemFilter;
+
+/**
+ *
+ */
+class VendorImmersiveAgentPreviewCatalogItemFilter extends VendorCatalogItemFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorImmersiveAgentPreviewCatalogItemFilter';
+	}
+}
+module.exports.VendorImmersiveAgentPreviewCatalogItemFilter = VendorImmersiveAgentPreviewCatalogItemFilter;
+
+/**
+ *
+ */
 class VendorIntelligentTaggingCatalogItemFilter extends VendorCatalogItemFilter{
 	
 	constructor(object = null) {
@@ -94974,6 +95061,18 @@ class VendorIntelligentTaggingCatalogItemFilter extends VendorCatalogItemFilter{
 	}
 }
 module.exports.VendorIntelligentTaggingCatalogItemFilter = VendorIntelligentTaggingCatalogItemFilter;
+
+/**
+ *
+ */
+class VendorLlmModelsCatalogItemFilter extends VendorCatalogItemFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorLlmModelsCatalogItemFilter';
+	}
+}
+module.exports.VendorLlmModelsCatalogItemFilter = VendorLlmModelsCatalogItemFilter;
 
 /**
  *

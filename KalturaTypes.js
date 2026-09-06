@@ -348,6 +348,20 @@ SWF : 12,
 PDF : 13,
 };
 
+module.exports.DrmKeyManagementPolicy = {
+UNKNOWN : 0,
+CLEAR : 1,
+SHARED_KEY : 2,
+ALL_VIDEO : 3,
+SD_HD : 4,
+SD_HD_UHD : 5,
+SD_HD_UHD1_UHD2 : 6,
+SD_HD1_HD2_UHD1_UHD2 : 7,
+SD_HD1_HD2_UHD : 8,
+SDHD1_HD2_UHD : 9,
+SDHD1_HD2_UHD1_UHD2 : 10,
+};
+
 module.exports.DrmLicenseExpirationPolicy = {
 FIXED_DURATION : 1,
 ENTRY_SCHEDULING_END : 2,
@@ -672,6 +686,11 @@ ALLOW_LIST : 1,
 module.exports.KafkaNotificationFormat = {
 JSON : 1,
 AVRO : 2,
+};
+
+module.exports.KeyManagementPolicyObjectType = {
+PARTNER : 1,
+ENTRY : 2,
 };
 
 module.exports.LicenseType = {
@@ -1485,6 +1504,9 @@ SPEECH_TO_VIDEO : 20,
 IMMERSIVE_AGENT_CALL : 21,
 IMMERSIVE_AGENT_CHAT : 22,
 AVATAR_VOD : 23,
+LLM_MODELS : 24,
+IMMERSIVE_AGENT_EVAL : 25,
+IMMERSIVE_AGENT_PREVIEW : 26,
 };
 
 module.exports.VendorServiceTurnAroundTime = {

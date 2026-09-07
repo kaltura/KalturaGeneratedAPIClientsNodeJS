@@ -27,7 +27,7 @@
 // @ignore
 // ===================================================================================================
 
-const md5 = require('md5');
+const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
@@ -260,7 +260,7 @@ class RequestBuilder extends kaltura.VolatileRequestData {
 
 			str += v + k;
 		}
-		return md5(str);
+		return crypto.createHash('sha256').update(str).digest('hex');
 	}
 
 	/**

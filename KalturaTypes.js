@@ -1507,6 +1507,7 @@ AVATAR_VOD : 23,
 LLM_MODELS : 24,
 IMMERSIVE_AGENT_EVAL : 25,
 IMMERSIVE_AGENT_PREVIEW : 26,
+VIDEO_GENERATION : 27,
 };
 
 module.exports.VendorServiceTurnAroundTime = {
@@ -2916,6 +2917,7 @@ NDN : 'ndnDistribution.NDN',
 PODCAST : 'podcastDistribution.PODCAST',
 PUSH_TO_NEWS : 'pushToNewsDistribution.PUSH_TO_NEWS',
 QUICKPLAY : 'quickPlayDistribution.QUICKPLAY',
+RAIN_FOCUS : 'rainFocusDistribution.RAIN_FOCUS',
 SYNACOR_HBO : 'synacorHboDistribution.SYNACOR_HBO',
 TIME_WARNER : 'timeWarnerDistribution.TIME_WARNER',
 TVCOM : 'tvComDistribution.TVCOM',
@@ -5949,6 +5951,16 @@ CREATED_AT_ASC : '+createdAt',
 UPDATED_AT_ASC : '+updatedAt',
 CREATED_AT_DESC : '-createdAt',
 UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.RainFocusDistributionProfileOrderBy = {
+CREATED_AT_ASC : '+createdAt',
+UPDATED_AT_ASC : '+updatedAt',
+CREATED_AT_DESC : '-createdAt',
+UPDATED_AT_DESC : '-updatedAt',
+};
+
+module.exports.RainFocusDistributionProviderOrderBy = {
 };
 
 module.exports.RatingCountOrderBy = {

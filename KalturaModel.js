@@ -6181,6 +6181,21 @@ class Partner extends kaltura.BaseObject{
 	
 	/**
 	 * 
+	 * @return string
+	 */
+	 getHtmlPurifierAllowedTags() {
+	 	return this.htmlPurifierAllowedTags;
+	 }
+	
+	/**
+	 * @param htmlPurifierAllowedTags string 
+	 */
+	 setHtmlPurifierAllowedTags(htmlPurifierAllowedTags) {
+	 	this.htmlPurifierAllowedTags = htmlPurifierAllowedTags;
+	 }
+	
+	/**
+	 * 
 	 * @return bool
 	 */
 	 getFileTypeRestrictionEnabled() {
@@ -29353,6 +29368,21 @@ class ReportInputFilter extends ReportInputBaseFilter{
 	 */
 	 setStreamTypeIn(streamTypeIn) {
 	 	this.streamTypeIn = streamTypeIn;
+	 }
+	
+	/**
+	 * filter by reach catalog item id
+	 * @return string
+	 */
+	 getReachCatalogItemIdIn() {
+	 	return this.reachCatalogItemIdIn;
+	 }
+	
+	/**
+	 * @param reachCatalogItemIdIn string filter by reach catalog item id
+	 */
+	 setReachCatalogItemIdIn(reachCatalogItemIdIn) {
+	 	this.reachCatalogItemIdIn = reachCatalogItemIdIn;
 	 }
 }
 module.exports.ReportInputFilter = ReportInputFilter;
@@ -60200,6 +60230,18 @@ module.exports.QuizUserEntry = QuizUserEntry;
 /**
  *
  */
+class RainFocusDistributionProvider extends DistributionProvider{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaRainFocusDistributionProvider';
+	}
+}
+module.exports.RainFocusDistributionProvider = RainFocusDistributionProvider;
+
+/**
+ *
+ */
 class RatingCountListResponse extends ListResponse{
 	
 	constructor(object = null) {
@@ -66281,6 +66323,18 @@ class VendorVideoAnalysisCatalogItem extends VendorCatalogItem{
 	 }
 }
 module.exports.VendorVideoAnalysisCatalogItem = VendorVideoAnalysisCatalogItem;
+
+/**
+ *
+ */
+class VendorVideoGenerationCatalogItem extends VendorCatalogItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorVideoGenerationCatalogItem';
+	}
+}
+module.exports.VendorVideoGenerationCatalogItem = VendorVideoGenerationCatalogItem;
 
 /**
  *
@@ -81412,6 +81466,195 @@ module.exports.QuizVendorTaskData = QuizVendorTaskData;
 /**
  *
  */
+class RainFocusDistributionJobProviderData extends ConfigurableDistributionJobProviderData{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaRainFocusDistributionJobProviderData';
+	}
+}
+module.exports.RainFocusDistributionJobProviderData = RainFocusDistributionJobProviderData;
+
+/**
+ *
+ */
+class RainFocusDistributionProfile extends ConfigurableDistributionProfile{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaRainFocusDistributionProfile';
+	}
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getOauthTokenUrl() {
+	 	return this.oauthTokenUrl;
+	 }
+	
+	/**
+	 * @param oauthTokenUrl string 
+	 */
+	 setOauthTokenUrl(oauthTokenUrl) {
+	 	this.oauthTokenUrl = oauthTokenUrl;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getVideoPublishEndpointUrl() {
+	 	return this.videoPublishEndpointUrl;
+	 }
+	
+	/**
+	 * @param videoPublishEndpointUrl string 
+	 */
+	 setVideoPublishEndpointUrl(videoPublishEndpointUrl) {
+	 	this.videoPublishEndpointUrl = videoPublishEndpointUrl;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getOauthScope() {
+	 	return this.oauthScope;
+	 }
+	
+	/**
+	 * @param oauthScope string 
+	 */
+	 setOauthScope(oauthScope) {
+	 	this.oauthScope = oauthScope;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getClientId() {
+	 	return this.clientId;
+	 }
+	
+	/**
+	 * @param clientId string 
+	 */
+	 setClientId(clientId) {
+	 	this.clientId = clientId;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getClientSecretPrimary() {
+	 	return this.clientSecretPrimary;
+	 }
+	
+	/**
+	 * @param clientSecretPrimary string 
+	 */
+	 setClientSecretPrimary(clientSecretPrimary) {
+	 	this.clientSecretPrimary = clientSecretPrimary;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getClientSecretSecondary() {
+	 	return this.clientSecretSecondary;
+	 }
+	
+	/**
+	 * @param clientSecretSecondary string 
+	 */
+	 setClientSecretSecondary(clientSecretSecondary) {
+	 	this.clientSecretSecondary = clientSecretSecondary;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getActiveSecret() {
+	 	return this.activeSecret;
+	 }
+	
+	/**
+	 * @param activeSecret string 
+	 */
+	 setActiveSecret(activeSecret) {
+	 	this.activeSecret = activeSecret;
+	 }
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getMediaType() {
+	 	return this.mediaType;
+	 }
+	
+	/**
+	 * @param mediaType int 
+	 */
+	 setMediaType(mediaType) {
+	 	this.mediaType = mediaType;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getPlayerId() {
+	 	return this.playerId;
+	 }
+	
+	/**
+	 * @param playerId string 
+	 */
+	 setPlayerId(playerId) {
+	 	this.playerId = playerId;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getMetadataProfileId() {
+	 	return this.metadataProfileId;
+	 }
+	
+	/**
+	 * @param metadataProfileId string 
+	 */
+	 setMetadataProfileId(metadataProfileId) {
+	 	this.metadataProfileId = metadataProfileId;
+	 }
+	
+	/**
+	 * 
+	 * @return string
+	 */
+	 getMetadataFieldNames() {
+	 	return this.metadataFieldNames;
+	 }
+	
+	/**
+	 * @param metadataFieldNames string 
+	 */
+	 setMetadataFieldNames(metadataFieldNames) {
+	 	this.metadataFieldNames = metadataFieldNames;
+	 }
+}
+module.exports.RainFocusDistributionProfile = RainFocusDistributionProfile;
+
+/**
+ *
+ */
 class RatingCountBaseFilter extends RelatedFilter{
 	
 	constructor(object = null) {
@@ -90727,6 +90970,18 @@ module.exports.QuickPlayDistributionProviderBaseFilter = QuickPlayDistributionPr
 /**
  *
  */
+class RainFocusDistributionProviderBaseFilter extends DistributionProviderFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaRainFocusDistributionProviderBaseFilter';
+	}
+}
+module.exports.RainFocusDistributionProviderBaseFilter = RainFocusDistributionProviderBaseFilter;
+
+/**
+ *
+ */
 class RatingCountFilter extends RatingCountBaseFilter{
 	
 	constructor(object = null) {
@@ -94219,6 +94474,18 @@ module.exports.QuizUserEntryBaseFilter = QuizUserEntryBaseFilter;
 /**
  *
  */
+class RainFocusDistributionProviderFilter extends RainFocusDistributionProviderBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaRainFocusDistributionProviderFilter';
+	}
+}
+module.exports.RainFocusDistributionProviderFilter = RainFocusDistributionProviderFilter;
+
+/**
+ *
+ */
 class RegistrationUserEntryFilter extends UserEntryFilter{
 	
 	constructor(object = null) {
@@ -95157,6 +95424,18 @@ class VendorVideoAnalysisCatalogItemFilter extends VendorCatalogItemFilter{
 	}
 }
 module.exports.VendorVideoAnalysisCatalogItemFilter = VendorVideoAnalysisCatalogItemFilter;
+
+/**
+ *
+ */
+class VendorVideoGenerationCatalogItemFilter extends VendorCatalogItemFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorVideoGenerationCatalogItemFilter';
+	}
+}
+module.exports.VendorVideoGenerationCatalogItemFilter = VendorVideoGenerationCatalogItemFilter;
 
 /**
  *
@@ -96198,6 +96477,18 @@ class QuizUserEntryFilter extends QuizUserEntryBaseFilter{
 	 }
 }
 module.exports.QuizUserEntryFilter = QuizUserEntryFilter;
+
+/**
+ *
+ */
+class RainFocusDistributionProfileBaseFilter extends ConfigurableDistributionProfileFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaRainFocusDistributionProfileBaseFilter';
+	}
+}
+module.exports.RainFocusDistributionProfileBaseFilter = RainFocusDistributionProfileBaseFilter;
 
 /**
  *
@@ -97275,6 +97566,18 @@ class QuickPlayDistributionProfileFilter extends QuickPlayDistributionProfileBas
 	}
 }
 module.exports.QuickPlayDistributionProfileFilter = QuickPlayDistributionProfileFilter;
+
+/**
+ *
+ */
+class RainFocusDistributionProfileFilter extends RainFocusDistributionProfileBaseFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaRainFocusDistributionProfileFilter';
+	}
+}
+module.exports.RainFocusDistributionProfileFilter = RainFocusDistributionProfileFilter;
 
 /**
  *

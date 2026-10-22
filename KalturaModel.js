@@ -66339,6 +66339,33 @@ module.exports.VendorVideoGenerationCatalogItem = VendorVideoGenerationCatalogIt
 /**
  *
  */
+class VendorVisualDescriptionCatalogItem extends VendorCatalogItem{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorVisualDescriptionCatalogItem';
+	}
+	
+	/**
+	 * 
+	 * @return int
+	 */
+	 getMaxVideoDuration() {
+	 	return this.maxVideoDuration;
+	 }
+	
+	/**
+	 * @param maxVideoDuration int 
+	 */
+	 setMaxVideoDuration(maxVideoDuration) {
+	 	this.maxVideoDuration = maxVideoDuration;
+	 }
+}
+module.exports.VendorVisualDescriptionCatalogItem = VendorVisualDescriptionCatalogItem;
+
+/**
+ *
+ */
 class VerizonVcastDistributionProvider extends DistributionProvider{
 	
 	constructor(object = null) {
@@ -95436,6 +95463,18 @@ class VendorVideoGenerationCatalogItemFilter extends VendorCatalogItemFilter{
 	}
 }
 module.exports.VendorVideoGenerationCatalogItemFilter = VendorVideoGenerationCatalogItemFilter;
+
+/**
+ *
+ */
+class VendorVisualDescriptionCatalogItemFilter extends VendorCatalogItemFilter{
+	
+	constructor(object = null) {
+		super(object);
+		this.objectType = 'KalturaVendorVisualDescriptionCatalogItemFilter';
+	}
+}
+module.exports.VendorVisualDescriptionCatalogItemFilter = VendorVisualDescriptionCatalogItemFilter;
 
 /**
  *
